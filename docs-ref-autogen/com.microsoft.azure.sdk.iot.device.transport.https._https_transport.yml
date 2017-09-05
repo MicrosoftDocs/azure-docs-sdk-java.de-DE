@@ -1,0 +1,650 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    id: _https_transport
+    parent: com.microsoft.azure.sdk.iot.device.transport.https
+    children:
+      - 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage(Message,IotHubEventCallback,Object)'
+      - 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage(Message,IotHubResponseCallback,Object)'
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.close()
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.handleMessage()
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.HttpsTransport(DeviceClientConfig)
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.invokeCallbacks()
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.isEmpty()
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.open()
+      - 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.sendMessages()
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: HttpsTransport
+    nameWithType: HttpsTransport
+    fullName: com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport
+    type: Class
+    source:
+      remote: &ref_0
+        path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-iot-sdk-java'
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 28
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Eine HTTPS-Übertragung. Enthält Funktionen zum Hinzufügen von Nachrichten und Senden von Nachrichten im Batchmodus für einen IoT Hub. Puffer nicht gesendete Nachrichten, bis sie durch einen IoT Hub empfangen werden. Ein Transport bei der Erstellung gebunden ist, den folgenden Parametern: IoT Hub-Namen, Geräte-ID, Geräteschlüssel und Nachricht gültige Sekunden. </p>
+      <p>Der Transport kann auch einen IoT Hub für Nachrichten abrufen und einen benutzerdefinierte Meldung Rückruf aufzurufen, wenn eine Nachricht und Rückruf gefunden wird. </p>
+    syntax:
+      content: public class HttpsTransport implements IotHubTransport
+    inheritance:
+      - java.lang.Object
+      - Closeable
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage(Message,IotHubEventCallback,Object)'
+    id: 'addMessage(Message,IotHubEventCallback,Object)'
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: 'addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+    nameWithType: 'HttpsTransport.addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+    fullName: 'void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 135
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
+      <p></p>
+    syntax:
+      content: 'public void addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+      parameters:
+        - id: message
+          type: com.microsoft.azure.sdk.iot.device._message
+          description: <p>Die zu sendende Meldung. </p>
+        - id: callback
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_event_callback
+          description: '<p>der Rückruf aufgerufen, wenn eine Antwort für die Nachricht empfangen wird. </p>'
+        - id: callbackContext
+          type: '79317049'
+          description: '<p>der Kontext übergeben werden, wenn der Rückruf aufgerufen wird.</p>'
+    overridden: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubEventCallback,Object)'
+    exceptions:
+      - type: 12fe80de
+        description: <p>Wenn der Transport nicht geöffnet wurde oder bereits geschlossen wird. </p>
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage(Message,IotHubResponseCallback,Object)'
+    id: 'addMessage(Message,IotHubResponseCallback,Object)'
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: 'addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+    nameWithType: 'HttpsTransport.addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+    fullName: 'void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 161
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
+      <p></p>
+    syntax:
+      content: 'public void addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+      parameters:
+        - id: message
+          type: com.microsoft.azure.sdk.iot.device._message
+          description: <p>Die zu sendende Meldung. </p>
+        - id: callback
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_response_callback
+          description: '<p>der Rückruf aufgerufen, wenn eine Antwort für die Nachricht empfangen wird. </p>'
+        - id: callbackContext
+          type: '79317049'
+          description: '<p>der Kontext übergeben werden, wenn der Rückruf aufgerufen wird.</p>'
+    overridden: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubResponseCallback,Object)'
+    exceptions:
+      - type: 12fe80de
+        description: <p>Wenn der Transport nicht geöffnet wurde oder bereits geschlossen wird. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.close()
+    id: close()
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: close()
+    nameWithType: HttpsTransport.close()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.close()
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.close*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 96
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<programlisting><codeline><highlight class="normal">close()<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void close()
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.close()
+    exceptions:
+      - type: cbf33bbe
+        description: '<p>Wenn ein Fehler auftritt, schließen Sie den Transport. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.handleMessage()
+    id: handleMessage()
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: handleMessage()
+    nameWithType: HttpsTransport.handleMessage()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.handleMessage()
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.handleMessage*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 279
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Ruft die Nachrichtenrückruf auf, wenn eine Nachricht gefunden wird, und antwortet mit dem IoT Hub auf wie die verarbeitete Nachricht durch den IoT Hub behandelt werden sollen. </p>
+      <p>Wenn keine Nachrichtenrückruf festgelegt ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void handleMessage()
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.handleMessage()
+    exceptions:
+      - type: cbf33bbe
+        description: '<p>Wenn der Server konnte nicht erreicht werden oder wenn die Antwort sendet IoT Hub meldungsergebnis keinen Statuscode <ref refid="" kindref="compound">IotHubStatusCode #OK_EMPTY</ref>. </p>'
+      - type: 12fe80de
+        description: <p>Wenn der Transport nicht geöffnet wurde oder bereits geschlossen wird. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.HttpsTransport(DeviceClientConfig)
+    id: HttpsTransport(DeviceClientConfig)
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: HttpsTransport(DeviceClientConfig config)
+    nameWithType: HttpsTransport.HttpsTransport(DeviceClientConfig config)
+    fullName: com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.HttpsTransport(DeviceClientConfig config)
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.HttpsTransport*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 56
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Erstellt eine Instanz aus der angegebenen <xref href="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p></p>
+    syntax:
+      content: public HttpsTransport(DeviceClientConfig config)
+      parameters:
+        - id: config
+          type: com.microsoft.azure.sdk.iot.device._device_client_config
+          description: <p>Konfigurationsparameter für eine Verbindung mit IoT Hub. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.invokeCallbacks()
+    id: invokeCallbacks()
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: invokeCallbacks()
+    nameWithType: HttpsTransport.invokeCallbacks()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.invokeCallbacks()
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.invokeCallbacks*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 233
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Ruft die Rückrufe für alle abgeschlossenen Anforderungen.</p>
+      <p></p>
+    syntax:
+      content: public void invokeCallbacks()
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.invokeCallbacks()
+    exceptions:
+      - type: 12fe80de
+        description: <p>Wenn der Transport nicht geöffnet wurde oder bereits geschlossen wird. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.isEmpty()
+    id: isEmpty()
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: isEmpty()
+    nameWithType: HttpsTransport.isEmpty()
+    fullName: boolean com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.isEmpty()
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.isEmpty*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 319
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Zurück, andernfalls True, wenn der Transport keine weiteren Nachrichten mehr verarbeiten, und "false".</p>
+      <p></p>
+    syntax:
+      content: public boolean isEmpty()
+      return:
+        type: 4fc6e284
+        description: '<p>"true", wenn der Transport keine weiteren Nachrichten zur Handle und "false", andernfalls hat. </p>'
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.isEmpty()
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.open()
+    id: open()
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: open()
+    nameWithType: HttpsTransport.open()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.open()
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.open*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 75
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Stellt einen Kommunikationskanal mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void open()
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.open()
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn ein Kommunikationskanal hergestellt werden kann. </p>
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
+    id: 'registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: 'registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+    nameWithType: 'HttpsTransport.registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+    fullName: 'void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.registerConnectionStateCallback*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 334
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Registriert einen Rückruf ausgeführt werden, sobald die Https-Verbindung verloren geht oder hergestellt wird.</p>
+      <p></p>
+    syntax:
+      content: 'public void registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+      parameters:
+        - id: callback
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
+          description: <p>der Rückruf aufgerufen werden. </p>
+        - id: callbackContext
+          type: '79317049'
+          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <programlisting> <codeline> <highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> Wenn kein Rückruf bereitgestellt wird. </p>'
+    overridden: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
+    exceptions:
+      - type: b1c38b44
+        description: '<p>Um diese Funktionalität ist nicht verfügbar, da HTTPS zustandslos ist, zu melden. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.sendMessages()
+    id: sendMessages()
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: sendMessages()
+    nameWithType: HttpsTransport.sendMessages()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.sendMessages()
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.sendMessages*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 182
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Sendet alle Nachrichten in der Warteschlange Transport als Batchanforderung.</p>
+      <p></p>
+    syntax:
+      content: public void sendMessages()
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.sendMessages()
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn der Server nicht erreicht werden konnte. </p>
+      - type: 12fe80de
+        description: <p>Wenn der Transport nicht geöffnet wurde oder bereits geschlossen wird. </p>
+references:
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.HttpsTransport*
+    name: HttpsTransport
+    nameWithType: HttpsTransport.HttpsTransport
+    fullName: com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.HttpsTransport
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: cbf33bbe
+    spec.java:
+      - name: IOException
+        fullName: IOException
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.open*
+    name: open
+    nameWithType: HttpsTransport.open
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.open
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.close*
+    name: close
+    nameWithType: HttpsTransport.close
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.close
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: 12fe80de
+    spec.java:
+      - name: IllegalStateException
+        fullName: IllegalStateException
+  - uid: '79317049'
+    spec.java:
+      - name: Object
+        fullName: Object
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.addMessage*
+    name: addMessage
+    nameWithType: HttpsTransport.addMessage
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.addMessage
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.sendMessages*
+    name: sendMessages
+    nameWithType: HttpsTransport.sendMessages
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.sendMessages
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.invokeCallbacks*
+    name: invokeCallbacks
+    nameWithType: HttpsTransport.invokeCallbacks
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.invokeCallbacks
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.handleMessage*
+    name: handleMessage
+    nameWithType: HttpsTransport.handleMessage
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.handleMessage
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: 4fc6e284
+    spec.java:
+      - name: boolean
+        fullName: boolean
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.isEmpty*
+    name: isEmpty
+    nameWithType: HttpsTransport.isEmpty
+    fullName: boolean com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.isEmpty
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: b1c38b44
+    spec.java:
+      - name: UnsupportedOperationException
+        fullName: UnsupportedOperationException
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.registerConnectionStateCallback*
+    name: registerConnectionStateCallback
+    nameWithType: HttpsTransport.registerConnectionStateCallback
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.registerConnectionStateCallback
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    parent: com.microsoft.azure.sdk.iot.device.transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: IotHubTransport
+    nameWithType: IotHubTransport
+    fullName: com.microsoft.azure.sdk.iot.device.transport.IotHubTransport
+    type: Interface
+    summary: <p>Eine Schnittstelle für einen IoT Hub-Transport. </p>
+    syntax:
+      content: public interface IotHubTransport
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport._https_transport_state
+    parent: com.microsoft.azure.sdk.iot.device.transport.https
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport._https_transport_state.yml
+    name: HttpsTransport.HttpsTransportState
+    nameWithType: HttpsTransport.HttpsTransportState
+    fullName: com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.HttpsTransportState
+    type: Enum
+    summary: <p>Der Status der HTTPS-Transport. </p>
+    syntax:
+      content: protected enum HttpsTransportState
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection
+    parent: com.microsoft.azure.sdk.iot.device.transport.https
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection.yml
+    name: HttpsIotHubConnection
+    nameWithType: HttpsIotHubConnection
+    fullName: com.microsoft.azure.sdk.iot.device.transport.https.HttpsIotHubConnection
+    type: Class
+    summary: <p>Eine HTTPS-Verbindung zwischen einem Gerät und IoT Hub. Enthält Funktionen für die Verbindung synchron mit den anderen IoT Hub-Ressourcen-URIs. </p>
+    syntax:
+      content: public class HttpsIotHubConnection
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_outbound_packet
+    parent: com.microsoft.azure.sdk.iot.device.transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_outbound_packet.yml
+    name: IotHubOutboundPacket
+    nameWithType: IotHubOutboundPacket
+    fullName: com.microsoft.azure.sdk.iot.device.transport.IotHubOutboundPacket
+    type: Class
+    summary: <p>Ein Paket mit den Daten für einen IoT Hub-Transport zum Senden einer Nachricht erforderlich sind. </p>
+    syntax:
+      content: public class IotHubOutboundPacket
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_callback_packet
+    parent: com.microsoft.azure.sdk.iot.device.transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_callback_packet.yml
+    name: IotHubCallbackPacket
+    nameWithType: IotHubCallbackPacket
+    fullName: com.microsoft.azure.sdk.iot.device.transport.IotHubCallbackPacket
+    type: Class
+    summary: '<p>Ein Paket mit der erforderlichen Daten für einen IoT Hub-Transport, einen Rückruf aufzurufen. </p>'
+    syntax:
+      content: public class IotHubCallbackPacket
+  - uid: com.microsoft.azure.sdk.iot.device._device_client_config
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._device_client_config.yml
+    name: DeviceClientConfig
+    nameWithType: DeviceClientConfig
+    fullName: com.microsoft.azure.sdk.iot.device.DeviceClientConfig
+    type: Class
+    summary: <p>Konfigurationseinstellungen für einen IoT Hub-Client. Überprüft alle benutzerdefinierten Einstellungen an. </p>
+    syntax:
+      content: public class DeviceClientConfig
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.open()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: open()
+    nameWithType: IotHubTransport.open()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.open()
+    type: Method
+    summary: |-
+      <p>Stellt einen Kommunikationskanal mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void open()
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.close()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: close()
+    nameWithType: IotHubTransport.close()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.close()
+    type: Method
+    summary: |-
+      <p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<programlisting><codeline><highlight class="normal">close()<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void close()
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubEventCallback,Object)'
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: 'addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+    nameWithType: 'IotHubTransport.addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+    fullName: 'void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+    type: Method
+    summary: |-
+      <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
+      <p></p>
+    syntax:
+      content: 'public void addMessage(Message message, IotHubEventCallback callback, Object callbackContext)'
+      parameters:
+        - id: message
+          type: com.microsoft.azure.sdk.iot.device._message
+          description: <p>Die zu sendende Meldung. </p>
+        - id: callback
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_event_callback
+          description: '<p>der Rückruf aufgerufen, wenn eine Antwort für die Nachricht empfangen wird. </p>'
+        - id: callbackContext
+          type: '79317049'
+          description: '<p>der Kontext übergeben werden, wenn der Rückruf aufgerufen wird. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device._message
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._message.yml
+    name: Message
+    nameWithType: Message
+    fullName: com.microsoft.azure.sdk.iot.device.Message
+    type: Class
+    syntax:
+      content: public class Message
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_event_callback
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.yml
+    name: IotHubEventCallback
+    nameWithType: IotHubEventCallback
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubEventCallback
+    type: Interface
+    summary: |-
+      <p>Eine Schnittstelle für einen Ereignisrückruf IoT Hub.</p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+    syntax:
+      content: public interface IotHubEventCallback
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubResponseCallback,Object)'
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: 'addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+    nameWithType: 'IotHubTransport.addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+    fullName: 'void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+    type: Method
+    summary: |-
+      <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
+      <p></p>
+    syntax:
+      content: 'public void addMessage(Message message, IotHubResponseCallback callback, Object callbackContext)'
+      parameters:
+        - id: message
+          type: com.microsoft.azure.sdk.iot.device._message
+          description: <p>Die zu sendende Meldung. </p>
+        - id: callback
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_response_callback
+          description: '<p>der Rückruf aufgerufen, wenn eine Antwort für die Nachricht empfangen wird. </p>'
+        - id: callbackContext
+          type: '79317049'
+          description: '<p>der Kontext übergeben werden, wenn der Rückruf aufgerufen wird. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_response_callback
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_response_callback.yml
+    name: IotHubResponseCallback
+    nameWithType: IotHubResponseCallback
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubResponseCallback
+    type: Interface
+    summary: |-
+      <p>Eine Schnittstelle für ein IoT Hub-Antwort-Rückruf.</p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_response_callback.execute(ResponseMessage,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+    syntax:
+      content: public interface IotHubResponseCallback
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.sendMessages()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: sendMessages()
+    nameWithType: IotHubTransport.sendMessages()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.sendMessages()
+    type: Method
+    summary: |-
+      <p>Sendet alle Nachrichten in der Warteschlange Transport. Wenn eine vorherige Sendeversuch Fehler ist aufgetreten, versucht die Funktion, die Nachrichten in der vorherigen Versuch erneut zu senden.</p>
+      <p></p>
+    syntax:
+      content: public void sendMessages()
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.invokeCallbacks()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: invokeCallbacks()
+    nameWithType: IotHubTransport.invokeCallbacks()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.invokeCallbacks()
+    type: Method
+    summary: <p>Ruft die Rückrufe für alle abgeschlossenen Anforderungen. </p>
+    syntax:
+      content: public void invokeCallbacks()
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.handleMessage()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: handleMessage()
+    nameWithType: IotHubTransport.handleMessage()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.handleMessage()
+    type: Method
+    summary: |-
+      <p>Ruft die Nachrichtenrückruf auf, wenn eine Nachricht gefunden wird, und antwortet mit dem IoT Hub auf wie die verarbeitete Nachricht durch den IoT Hub behandelt werden sollen. </p>
+      <p>Wenn keine Nachrichtenrückruf festgelegt ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void handleMessage()
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.isEmpty()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: isEmpty()
+    nameWithType: IotHubTransport.isEmpty()
+    fullName: boolean com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.isEmpty()
+    type: Method
+    summary: |-
+      <p>Gibt<programlisting><codeline><highlight class="normal">"true"<sp> </sp> </highlight> </codeline> </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class="normal">"false"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls.</p>
+      <p></p>
+    syntax:
+      content: public boolean isEmpty()
+      return:
+        type: 4fc6e284
+        description: "<p>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">\"true\"<sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class=\"normal\">\"false\"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls. </p>"
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: 'registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+    nameWithType: 'IotHubTransport.registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+    fullName: 'void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+    type: Method
+    summary: |-
+      <p>Registriert einen Rückruf ausgeführt werden, wenn die Verbindung mit dem IoT Hub verloren geht oder hergestellt wird.</p>
+      <p></p>
+    syntax:
+      content: 'public void registerConnectionStateCallback(IotHubConnectionStateCallback callback, Object callbackContext)'
+      parameters:
+        - id: callback
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
+          description: <p>der Rückruf aufgerufen werden. </p>
+        - id: callbackContext
+          type: '79317049'
+          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <programlisting> <codeline> <highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> Wenn kein Rückruf bereitgestellt wird. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback.yml
+    name: IotHubConnectionStateCallback
+    nameWithType: IotHubConnectionStateCallback
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionStateCallback
+    type: Interface
+    summary: |-
+      <p>Eine Schnittstelle für ein IoT Hub-Verbindung-Status-Rückruf.</p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <ref refid="" kindref="compound">IotHubConnectionStateCallback #Execute(IotHubConnectionState, Object)</ref> übergibt den Verbindungsstatus (nach unten, Erfolg usw.). </p>
+    syntax:
+      content: public interface IotHubConnectionStateCallback
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_message
+    parent: com.microsoft.azure.sdk.iot.device.transport.https
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_message.yml
+    name: HttpsMessage
+    nameWithType: HttpsMessage
+    fullName: com.microsoft.azure.sdk.iot.device.transport.https.HttpsMessage
+    type: Interface
+    summary: <p>Eine HTTPS-Nachricht. Eine HTTPS-Nachricht aus einer einfachen IoT Hub-Nachricht durch die Eigenschaftennamen zeichnet sich mit "- app - Iothub" dem Präfix und nach der expliziten Spezifikation des Content-Type. </p>
+    syntax:
+      content: public interface HttpsMessage
+  - uid: com.microsoft.azure.sdk.iot.device._response_message
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._response_message.yml
+    name: ResponseMessage
+    nameWithType: ResponseMessage
+    fullName: com.microsoft.azure.sdk.iot.device.ResponseMessage
+    type: Class
+    summary: <p>Erweitern <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> zur Unterstützung von Statusantwort </p>
+    syntax:
+      content: public class ResponseMessage

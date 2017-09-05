@@ -1,0 +1,268 @@
+### YamlMime:ManagedReference
+items:
+  - uid: system.fabric.health._cluster_health
+    id: _cluster_health
+    parent: system.fabric.health
+    children:
+      - system.fabric.health._cluster_health.getApplicationHealthStates()
+      - system.fabric.health._cluster_health.getNodeHealthStates()
+    href: system.fabric.health._cluster_health.yml
+    langs:
+      - java
+    name: ClusterHealth
+    nameWithType: ClusterHealth
+    fullName: system.fabric.health.ClusterHealth
+    type: Class
+    source:
+      remote: &ref_0
+        path: src/prod/src/java/system.fabric/src/system/fabric/health/ClusterHealth.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/system.fabric/src/system/fabric/health/ClusterHealth.java
+      startLine: 11
+    package: system.fabric.health
+    summary: '<p>Die Integrität des Clusters dar, der vom <xref href="system.fabric._health_client.getClusterHealthAsync(ClusterHealthQueryDescription)" data-throw-if-not-resolved="false"></xref> . Enthält den Integritätsstatus des Clusters aggregiert und Integritätsstatus für die Cluster-Anwendung und Knoten. </p>'
+    syntax:
+      content: public class ClusterHealth extends EntityHealth
+    inheritance:
+      - java.lang.Object
+      - system.fabric.health._entity_health
+    inheritedMembers:
+      - 'system.fabric.health._entity_health.EntityHealth(int,List<HealthEvent>,List<HealthEvaluation>)'
+      - system.fabric.health._entity_health.getAggregatedHealthState()
+      - system.fabric.health._entity_health.getHealthEvents()
+      - system.fabric.health._entity_health.getUnhealthyEvaluations()
+  - uid: system.fabric.health._cluster_health.getApplicationHealthStates()
+    id: getApplicationHealthStates()
+    parent: system.fabric.health._cluster_health
+    href: system.fabric.health._cluster_health.yml
+    langs:
+      - java
+    name: getApplicationHealthStates()
+    nameWithType: ClusterHealth.getApplicationHealthStates()
+    fullName: List<ApplicationHealthState> system.fabric.health.ClusterHealth.getApplicationHealthStates()
+    overload: system.fabric.health._cluster_health.getApplicationHealthStates*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/health/ClusterHealth.java
+      startLine: 57
+    package: system.fabric.health
+    summary: |-
+      <p>Ruft die Clusterknoten anwendungsintegritätszustände als gefunden wurde im Health Store.</p>
+      <p></p>
+    syntax:
+      content: public List<ApplicationHealthState> getApplicationHealthStates()
+      return:
+        type: 5618da2dsystem.fabric.health._application_health_statea08ddfce
+        description: '<p>Die Clusteranwendungen wie im Health Store. Nur Anwendungen, die berücksichtigen die <xref href="system.fabric._cluster_health_query_description.getApplicationHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Anwendungen zurückgegeben. Alle Anwendungen werden ausgewertet, um zu bestimmen, den Clusterzustand aggregiert. </p>'
+  - uid: system.fabric.health._cluster_health.getNodeHealthStates()
+    id: getNodeHealthStates()
+    parent: system.fabric.health._cluster_health
+    href: system.fabric.health._cluster_health.yml
+    langs:
+      - java
+    name: getNodeHealthStates()
+    nameWithType: ClusterHealth.getNodeHealthStates()
+    fullName: List<NodeHealthState> system.fabric.health.ClusterHealth.getNodeHealthStates()
+    overload: system.fabric.health._cluster_health.getNodeHealthStates*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/health/ClusterHealth.java
+      startLine: 43
+    package: system.fabric.health
+    summary: |-
+      <p>Ruft die Clusterknoten knotenintegritätszustände als gefunden wurde im Health Store.</p>
+      <p>
+      Alle Knoten werden ausgewertet, um zu bestimmen, den Clusterzustand aggregiert. </p>
+    syntax:
+      content: public List<NodeHealthState> getNodeHealthStates()
+      return:
+        type: 5618da2dsystem.fabric.health._node_health_statea08ddfce
+        description: '<p>Die Clusterknoten im Health Store als gefunden. Nur Knoten, deren berücksichtigen die <xref href="system.fabric._cluster_health_query_description.getNodeHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Knoten zurückgegeben. </p>'
+references:
+  - uid: 5618da2dsystem.fabric.health._node_health_statea08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: system.fabric.health._node_health_state
+        name: NodeHealthState
+        fullName: system.fabric.health.NodeHealthState
+        href: system.fabric.health._node_health_state.yml
+      - name: '>'
+        fullName: '>'
+  - uid: system.fabric.health._cluster_health.getNodeHealthStates*
+    name: getNodeHealthStates
+    nameWithType: ClusterHealth.getNodeHealthStates
+    fullName: List<NodeHealthState> system.fabric.health.ClusterHealth.getNodeHealthStates
+    package: system.fabric.health
+  - uid: 5618da2dsystem.fabric.health._application_health_statea08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: system.fabric.health._application_health_state
+        name: ApplicationHealthState
+        fullName: system.fabric.health.ApplicationHealthState
+        href: system.fabric.health._application_health_state.yml
+      - name: '>'
+        fullName: '>'
+  - uid: system.fabric.health._cluster_health.getApplicationHealthStates*
+    name: getApplicationHealthStates
+    nameWithType: ClusterHealth.getApplicationHealthStates
+    fullName: List<ApplicationHealthState> system.fabric.health.ClusterHealth.getApplicationHealthStates
+    package: system.fabric.health
+  - uid: 'system.fabric.health._entity_health.EntityHealth(int,List<HealthEvent>,List<HealthEvaluation>)'
+    parent: system.fabric.health._entity_health
+    href: system.fabric.health._entity_health.yml
+    name: 'EntityHealth(int aggregatedHealthState, List<HealthEvent> healthEvents, List<HealthEvaluation> unhealthyEvaluations)'
+    nameWithType: 'EntityHealth.EntityHealth(int aggregatedHealthState, List<HealthEvent> healthEvents, List<HealthEvaluation> unhealthyEvaluations)'
+    fullName: 'system.fabric.health.EntityHealth.EntityHealth(int aggregatedHealthState, List<HealthEvent> healthEvents, List<HealthEvaluation> unhealthyEvaluations)'
+    type: Constructor
+    syntax:
+      content: 'protected EntityHealth(int aggregatedHealthState, List<HealthEvent> healthEvents, List<HealthEvaluation> unhealthyEvaluations)'
+      parameters:
+        - id: aggregatedHealthState
+          type: f75371fa
+        - id: healthEvents
+          type: 5618da2dsystem.fabric.health._health_eventa08ddfce
+        - id: unhealthyEvaluations
+          type: 5618da2dsystem.fabric.health._health_evaluationa08ddfce
+  - uid: system.fabric.health._entity_health.getAggregatedHealthState()
+    parent: system.fabric.health._entity_health
+    href: system.fabric.health._entity_health.yml
+    name: getAggregatedHealthState()
+    nameWithType: EntityHealth.getAggregatedHealthState()
+    fullName: HealthState system.fabric.health.EntityHealth.getAggregatedHealthState()
+    type: Method
+    summary: |-
+      <p>Ruft den Zustand der Entität, die aggregiert.</p>
+      <p></p>
+    syntax:
+      content: public HealthState getAggregatedHealthState()
+      return:
+        type: system.fabric.health._health_state
+        description: "<p>\r\n\r\n  <xref href=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\"></xref>der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie. </p>"
+  - uid: system.fabric.health._entity_health.getHealthEvents()
+    parent: system.fabric.health._entity_health
+    href: system.fabric.health._entity_health.yml
+    name: getHealthEvents()
+    nameWithType: EntityHealth.getHealthEvents()
+    fullName: List<HealthEvent> system.fabric.health.EntityHealth.getHealthEvents()
+    type: Method
+    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
+    syntax:
+      content: public List<HealthEvent> getHealthEvents()
+      return:
+        type: 5618da2dsystem.fabric.health._health_eventa08ddfce
+        description: <p>Die integritätsereignisse bei der Entität gemeldet wird. </p>
+  - uid: system.fabric.health._entity_health.getUnhealthyEvaluations()
+    parent: system.fabric.health._entity_health
+    href: system.fabric.health._entity_health.yml
+    name: getUnhealthyEvaluations()
+    nameWithType: EntityHealth.getUnhealthyEvaluations()
+    fullName: List<HealthEvaluation> system.fabric.health.EntityHealth.getUnhealthyEvaluations()
+    type: Method
+    summary: |-
+      <p>Ruft die fehlerhaften auswertungen, die zeigen, warum der aktuellen aggregierte Integritätsstatus vom Integritätsdienst zurückgegeben wurde.</p>
+      <p></p>
+    syntax:
+      content: public List<HealthEvaluation> getUnhealthyEvaluations()
+      return:
+        type: 5618da2dsystem.fabric.health._health_evaluationa08ddfce
+        description: '<p>Die fehlerhaften auswertungen, die beschreiben, warum der aktuellen aggregierte Integritätsstatus vom Integritätsdienst zurückgegeben wurde. </p>'
+  - uid: system.fabric.health._entity_health
+    parent: system.fabric.health
+    href: system.fabric.health._entity_health.yml
+    name: EntityHealth
+    nameWithType: EntityHealth
+    fullName: system.fabric.health.EntityHealth
+    type: Class
+    summary: <p>Stellt die Basisklasse für alle Entitätsintegrität verknüpften Klassen. </p>
+    syntax:
+      content: public class EntityHealth
+  - uid: system.fabric.health._node_health_state
+    parent: system.fabric.health
+    href: system.fabric.health._node_health_state.yml
+    name: NodeHealthState
+    nameWithType: NodeHealthState
+    fullName: system.fabric.health.NodeHealthState
+    type: Class
+    summary: '<p>Stellt den Integritätsstatus eines Knotens, der die Knoten-ID und der aggregierte Integritätszustand enthält. </p>'
+    syntax:
+      content: public class NodeHealthState
+  - uid: system.fabric.health._application_health_state
+    parent: system.fabric.health
+    href: system.fabric.health._application_health_state.yml
+    name: ApplicationHealthState
+    nameWithType: ApplicationHealthState
+    fullName: system.fabric.health.ApplicationHealthState
+    type: Class
+    summary: '<p>Stellt den Integritätsstatus einer Anwendung, die Anwendungs-ID und der aggregierte Integritätszustand enthält. </p>'
+    syntax:
+      content: public class ApplicationHealthState extends EntityHealthState
+  - uid: system.fabric.health._health_event
+    parent: system.fabric.health
+    href: system.fabric.health._health_event.yml
+    name: HealthEvent
+    nameWithType: HealthEvent
+    fullName: system.fabric.health.HealthEvent
+    type: Class
+    summary: '<p>Ein <xref href="system.fabric.health._health_event" data-throw-if-not-resolved="false"></xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
+    syntax:
+      content: public class HealthEvent
+  - uid: system.fabric.health._health_evaluation
+    parent: system.fabric.health
+    href: system.fabric.health._health_evaluation.yml
+    name: HealthEvaluation
+    nameWithType: HealthEvaluation
+    fullName: system.fabric.health.HealthEvaluation
+    type: Class
+    summary: '<p>Stellt eine integritätsauswertung, die die Daten und den Algorithmus, die vom Health Store verwendet werden, um den Zustand einer Entität auszuwerten beschreibt. </p>'
+    syntax:
+      content: public class HealthEvaluation
+  - uid: system.fabric._cluster_health_query_description.getNodeHealthStatesFilter()
+    parent: system.fabric._cluster_health_query_description
+    href: system.fabric._cluster_health_query_description.yml
+    name: getNodeHealthStatesFilter()
+    nameWithType: ClusterHealthQueryDescription.getNodeHealthStatesFilter()
+    fullName: NodeHealthStatesFilter system.fabric.ClusterHealthQueryDescription.getNodeHealthStatesFilter()
+    type: Method
+    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._node_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>werden nur die Knoten, die dem Filter entsprechen zurückgegeben werden. Alle Knoten dienen zum Auswerten des integritätszustands der Cluster aggregiert. Wenn der Filter nicht angegeben ist, werden alle Knoten des Clusters zurückgegeben. </p>"
+    syntax:
+      content: public NodeHealthStatesFilter getNodeHealthStatesFilter()
+      return:
+        type: system.fabric._node_health_states_filter
+        description: <p>Der Filter für <xref href="system.fabric.health._node_health_state" data-throw-if-not-resolved="false"></xref> untergeordneten Elemente. </p>
+  - uid: system.fabric._cluster_health_query_description.getApplicationHealthStatesFilter()
+    parent: system.fabric._cluster_health_query_description
+    href: system.fabric._cluster_health_query_description.yml
+    name: getApplicationHealthStatesFilter()
+    nameWithType: ClusterHealthQueryDescription.getApplicationHealthStatesFilter()
+    fullName: ApplicationHealthStatesFilter system.fabric.ClusterHealthQueryDescription.getApplicationHealthStatesFilter()
+    type: Method
+    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._application_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>nur Anwendungen, die dem Filter entsprechen zurückgegeben werden. Alle Anwendungen dienen zum Auswerten des integritätszustands der Cluster aggregiert. Wenn der Filter nicht angegeben ist, werden alle Clusteranwendungen zurückgegeben. </p>"
+    syntax:
+      content: public ApplicationHealthStatesFilter getApplicationHealthStatesFilter()
+      return:
+        type: system.fabric._application_health_states_filter
+        description: <p>Der Filter für <xref href="system.fabric.health._application_health_state" data-throw-if-not-resolved="false"></xref> untergeordneten Elemente. </p>
+  - uid: system.fabric._health_client.getClusterHealthAsync(ClusterHealthQueryDescription)
+    parent: system.fabric._health_client
+    href: system.fabric._health_client.yml
+    name: getClusterHealthAsync(ClusterHealthQueryDescription queryDescription)
+    nameWithType: HealthClient.getClusterHealthAsync(ClusterHealthQueryDescription queryDescription)
+    fullName: CompletableFuture<ClusterHealth> system.fabric.HealthClient.getClusterHealthAsync(ClusterHealthQueryDescription queryDescription)
+    type: Method
+    summary: |-
+      <p>Ruft Sie die Integrität des Service Fabric-Cluster mit einer Beschreibung der Abfrage asynchron ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<ClusterHealth> getClusterHealthAsync(ClusterHealthQueryDescription queryDescription)
+      parameters:
+        - id: queryDescription
+          type: system.fabric._cluster_health_query_description
+          description: '<p>Die Beschreibung der Abfrage, die Abfrageparameter wie Integritätsrichtlinien definiert filtert usw.. </p>'
+      return:
+        type: 9cdf14d0system.fabric.health._cluster_healtha08ddfce
+        description: <p>Die Integrität von Service Fabric-Cluster. </p>

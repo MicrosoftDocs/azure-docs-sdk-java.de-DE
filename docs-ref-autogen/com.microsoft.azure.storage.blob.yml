@@ -1,0 +1,430 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.storage.blob
+    id: blob
+    children:
+      - com.microsoft.azure.storage.blob._blob_container_permissions
+      - com.microsoft.azure.storage.blob._blob_container_properties
+      - com.microsoft.azure.storage.blob._blob_container_public_access_type
+      - com.microsoft.azure.storage.blob._blob_encryption_policy
+      - com.microsoft.azure.storage.blob._blob_input_stream
+      - com.microsoft.azure.storage.blob._blob_listing_details
+      - com.microsoft.azure.storage.blob._blob_output_stream
+      - com.microsoft.azure.storage.blob._blob_properties
+      - com.microsoft.azure.storage.blob._blob_request_options
+      - com.microsoft.azure.storage.blob._blob_type
+      - com.microsoft.azure.storage.blob._block_entry
+      - com.microsoft.azure.storage.blob._block_listing_filter
+      - com.microsoft.azure.storage.blob._block_search_mode
+      - com.microsoft.azure.storage.blob._cloud_append_blob
+      - com.microsoft.azure.storage.blob._cloud_blob
+      - com.microsoft.azure.storage.blob._cloud_blob_client
+      - com.microsoft.azure.storage.blob._cloud_blob_container
+      - com.microsoft.azure.storage.blob._cloud_blob_directory
+      - com.microsoft.azure.storage.blob._cloud_block_blob
+      - com.microsoft.azure.storage.blob._cloud_page_blob
+      - com.microsoft.azure.storage.blob._container_listing_details
+      - com.microsoft.azure.storage.blob._copy_state
+      - com.microsoft.azure.storage.blob._copy_status
+      - com.microsoft.azure.storage.blob._delete_snapshots_option
+      - com.microsoft.azure.storage.blob._lease_duration
+      - com.microsoft.azure.storage.blob._lease_state
+      - com.microsoft.azure.storage.blob._lease_status
+      - com.microsoft.azure.storage.blob._length_limiting_stream
+      - com.microsoft.azure.storage.blob._list_blob_item
+      - com.microsoft.azure.storage.blob._page_range
+      - com.microsoft.azure.storage.blob._page_range_diff
+      - com.microsoft.azure.storage.blob._premium_page_blob_tier
+      - com.microsoft.azure.storage.blob._shared_access_blob_headers
+      - com.microsoft.azure.storage.blob._shared_access_blob_permissions
+      - com.microsoft.azure.storage.blob._shared_access_blob_policy
+      - com.microsoft.azure.storage.blob._sub_stream
+    href: com.microsoft.azure.storage.blob.yml
+    langs:
+      - java
+    name: com.microsoft.azure.storage.blob
+    nameWithType: com.microsoft.azure.storage.blob
+    fullName: com.microsoft.azure.storage.blob
+    type: Namespace
+    source:
+      remote:
+        path: microsoft-azure-storage/src/com/microsoft/azure/storage/blob/BlobAttributes.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-storage-java'
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/blob/BlobAttributes.java
+      startLine: 14
+    syntax:
+      content: package com.microsoft.azure.storage.blob
+references:
+  - uid: com.microsoft.azure.storage.blob._blob_container_permissions
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_container_permissions.yml
+    name: BlobContainerPermissions
+    nameWithType: BlobContainerPermissions
+    fullName: com.microsoft.azure.storage.blob.BlobContainerPermissions
+    type: Class
+    summary: |-
+      <p>Stellt die Berechtigungen für einen Container dar. </p>
+      <p>Die Berechtigungen des Containers enthält zwei Arten von zugriffseinstellungen für den Container:<itemizedlist><listitem><p>Der Container öffentlichen Zugriff Einstellung, dargestellt durch die <ref refid="" kindref="compound">"publicAccess"</ref> Eigenschaft. Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p></listitem><listitem><p>Zugriffsrichtlinien für den Container, dargestellt durch die <xref href="com.microsoft.azure.storage._permissions.getSharedAccessPolicies()" data-throw-if-not-resolved="false"></xref> Methode. Diese Einstellung verweist auf eine Auflistung der freigegebenen Zugriffsrichtlinien für den Container. Eine SAS-Richtlinie kann verwendet werden, um die Startzeit, Ablaufzeit und Berechtigungen für eine oder mehrere SAS zu steuern. Eine shared Access Signature bietet es sich um delegierte Zugriff auf Ressourcen des Containers. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten von Berechtigungen für Container finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224643">Verwalten des Zugriffs auf Container und Blobs</ulink>. </p>
+    syntax:
+      content: public class BlobContainerPermissions extends Permissions<SharedAccessBlobPolicy>
+  - uid: com.microsoft.azure.storage.blob._blob_container_properties
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_container_properties.yml
+    name: BlobContainerProperties
+    nameWithType: BlobContainerProperties
+    fullName: com.microsoft.azure.storage.blob.BlobContainerProperties
+    type: Class
+    summary: <p>Stellt die Systemeigenschaften für einen Container dar. </p>
+    syntax:
+      content: public class BlobContainerProperties
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
+    name: BlobContainerPublicAccessType
+    nameWithType: BlobContainerPublicAccessType
+    fullName: com.microsoft.azure.storage.blob.BlobContainerPublicAccessType
+    type: Enum
+    summary: |-
+      <p>Gibt die Ebene des öffentlichen Zugriffs, der für den Container zulässig ist. </p>
+      <p>Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p>
+      <p>Die <xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()" data-throw-if-not-resolved="false"></xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
+    syntax:
+      content: public enum BlobContainerPublicAccessType
+  - uid: com.microsoft.azure.storage.blob._blob_encryption_policy
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_encryption_policy.yml
+    name: BlobEncryptionPolicy
+    nameWithType: BlobEncryptionPolicy
+    fullName: com.microsoft.azure.storage.blob.BlobEncryptionPolicy
+    type: Class
+    summary: '<p>Stellt eine Verschlüsselungsrichtlinie für Blob, die zum Ausführen der Umschlag Verschlüsselung/Entschlüsselung von Azure-Blobs verwendet wird. </p>'
+    syntax:
+      content: public class BlobEncryptionPolicy
+  - uid: com.microsoft.azure.storage.blob._blob_input_stream
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_input_stream.yml
+    name: BlobInputStream
+    nameWithType: BlobInputStream
+    fullName: com.microsoft.azure.storage.blob.BlobInputStream
+    type: Class
+    summary: <p>Stellt einen Eingabedatenstrom zum Lesen einer bestimmten Blob-Ressource an. </p>
+    syntax:
+      content: public class BlobInputStream
+  - uid: com.microsoft.azure.storage.blob._blob_listing_details
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_listing_details.yml
+    name: BlobListingDetails
+    nameWithType: BlobListingDetails
+    fullName: com.microsoft.azure.storage.blob.BlobListingDetails
+    type: Enum
+    summary: |-
+      <p>Gibt an, welche Elemente beim Auflisten eines BLOB-Satzes eingeschlossen. </p>
+      <p>Standardmäßig werden die Blöcke mit ausgeführtem Commit immer zurückgegeben. Verwenden Sie die Werte in dieser Enumeration Momentaufnahmen, Metadaten und/oder Blöcke enthalten. </p>
+    syntax:
+      content: public enum BlobListingDetails
+  - uid: com.microsoft.azure.storage.blob._blob_output_stream
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_output_stream.yml
+    name: BlobOutputStream
+    nameWithType: BlobOutputStream
+    fullName: com.microsoft.azure.storage.blob.BlobOutputStream
+    type: Class
+    syntax:
+      content: public class BlobOutputStream
+  - uid: com.microsoft.azure.storage.blob._blob_properties
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_properties.yml
+    name: BlobProperties
+    nameWithType: BlobProperties
+    fullName: com.microsoft.azure.storage.blob.BlobProperties
+    type: Class
+    summary: <p>Stellt die Systemeigenschaften für ein Blob dar. </p>
+    syntax:
+      content: public class BlobProperties
+  - uid: com.microsoft.azure.storage.blob._blob_request_options
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_request_options.yml
+    name: BlobRequestOptions
+    nameWithType: BlobRequestOptions
+    fullName: com.microsoft.azure.storage.blob.BlobRequestOptions
+    type: Class
+    summary: '<p>Stellt eine Reihe von Optionen, die für eine Anforderung angegeben werden kann. </p>'
+    syntax:
+      content: public class BlobRequestOptions extends RequestOptions
+  - uid: com.microsoft.azure.storage.blob._blob_type
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._blob_type.yml
+    name: BlobType
+    nameWithType: BlobType
+    fullName: com.microsoft.azure.storage.blob.BlobType
+    type: Enum
+    summary: <p>Gibt den Typ eines BLOBs. </p>
+    syntax:
+      content: public enum BlobType
+  - uid: com.microsoft.azure.storage.blob._block_entry
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._block_entry.yml
+    name: BlockEntry
+    nameWithType: BlockEntry
+    fullName: com.microsoft.azure.storage.blob.BlockEntry
+    type: Class
+    summary: '<p>Eine Klasse, die auf Liste und Commit Blöcke verwendet, wird eine <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref>. </p>'
+    syntax:
+      content: public class BlockEntry
+  - uid: com.microsoft.azure.storage.blob._block_listing_filter
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._block_listing_filter.yml
+    name: BlockListingFilter
+    nameWithType: BlockListingFilter
+    fullName: com.microsoft.azure.storage.blob.BlockListingFilter
+    type: Enum
+    summary: '<p>Gibt an, ob nur Blöcke mit ausgeführtem Commit, nur die Blöcke ohne ausgeführten Commit oder alle Blöcke aufgelistet werden soll. </p>'
+    syntax:
+      content: public enum BlockListingFilter
+  - uid: com.microsoft.azure.storage.blob._block_search_mode
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._block_search_mode.yml
+    name: BlockSearchMode
+    nameWithType: BlockSearchMode
+    fullName: com.microsoft.azure.storage.blob.BlockSearchMode
+    type: Enum
+    summary: '<p>Gibt an, welcher Block Listen zu einem angegebenen Block durchsucht werden sollen. </p>'
+    syntax:
+      content: public enum BlockSearchMode
+  - uid: com.microsoft.azure.storage.blob._cloud_append_blob
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_append_blob.yml
+    name: CloudAppendBlob
+    nameWithType: CloudAppendBlob
+    fullName: com.microsoft.azure.storage.blob.CloudAppendBlob
+    type: Class
+    summary: <p>Stellt ein Microsoft Azure fügt Blob. </p>
+    syntax:
+      content: public class CloudAppendBlob extends CloudBlob
+  - uid: com.microsoft.azure.storage.blob._cloud_blob
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_blob.yml
+    name: CloudBlob
+    nameWithType: CloudBlob
+    fullName: com.microsoft.azure.storage.blob.CloudBlob
+    type: Class
+    summary: <p>Stellt ein Microsoft Azure-Blob dar. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Klassen. </p>
+    syntax:
+      content: public class CloudBlob implements ListBlobItem
+  - uid: com.microsoft.azure.storage.blob._cloud_blob_client
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_blob_client.yml
+    name: CloudBlobClient
+    nameWithType: CloudBlobClient
+    fullName: com.microsoft.azure.storage.blob.CloudBlobClient
+    type: Class
+    summary: |-
+      <p>Stellt einen Client für den Zugriff auf den Microsoft Azure Blob-Dienst bereit. </p>
+      <p>Diese Klasse stellt einen Zugriffspunkt für den Blob-Dienst. Der Dienstclient kapselt den Basis-URI für den Blob-Dienst. Wenn der Dienstclient für den authentifizierten Zugriff verwendet wird, kapselt er auch die Anmeldeinformationen für den Zugriff auf das Speicherkonto an. </p>
+    syntax:
+      content: public class CloudBlobClient extends ServiceClient
+  - uid: com.microsoft.azure.storage.blob._cloud_blob_container
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_blob_container.yml
+    name: CloudBlobContainer
+    nameWithType: CloudBlobContainer
+    fullName: com.microsoft.azure.storage.blob.CloudBlobContainer
+    type: Class
+    summary: |-
+      <p>Stellt einen Container im Microsoft Azure Blob-Dienst dar. </p>
+      <p>Container enthalten die Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false"></xref> Objekte und Verzeichnisse enthalten die Block- und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+    syntax:
+      content: public class CloudBlobContainer
+  - uid: com.microsoft.azure.storage.blob._cloud_blob_directory
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_blob_directory.yml
+    name: CloudBlobDirectory
+    nameWithType: CloudBlobDirectory
+    fullName: com.microsoft.azure.storage.blob.CloudBlobDirectory
+    type: Class
+    summary: |-
+      <p>Stellt ein virtuelles Verzeichnis des Blobs, die durch ein Trennzeichen gekennzeichnet. </p>
+      <p>Container, die als gekapselt sind <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> Objekte, enthalten die Verzeichnisse und Verzeichnisse enthalten die Block-Blobs und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+    syntax:
+      content: public class CloudBlobDirectory implements ListBlobItem
+  - uid: com.microsoft.azure.storage.blob._cloud_block_blob
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_block_blob.yml
+    name: CloudBlockBlob
+    nameWithType: CloudBlockBlob
+    fullName: com.microsoft.azure.storage.blob.CloudBlockBlob
+    type: Class
+    summary: '<p>Stellt ein Blob, das als eine Reihe von Blöcken hochgeladen wird. </p>'
+    syntax:
+      content: public class CloudBlockBlob extends CloudBlob
+  - uid: com.microsoft.azure.storage.blob._cloud_page_blob
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._cloud_page_blob.yml
+    name: CloudPageBlob
+    nameWithType: CloudPageBlob
+    fullName: com.microsoft.azure.storage.blob.CloudPageBlob
+    type: Class
+    summary: <p>Stellt einen Microsoft Azure-Seitenblob dar. </p>
+    syntax:
+      content: public class CloudPageBlob extends CloudBlob
+  - uid: com.microsoft.azure.storage.blob._container_listing_details
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._container_listing_details.yml
+    name: ContainerListingDetails
+    nameWithType: ContainerListingDetails
+    fullName: com.microsoft.azure.storage.blob.ContainerListingDetails
+    type: Enum
+    summary: '<p>Gibt an, welche details beim Auflisten der Container in diesem Speicherkonto eingeschlossen werden. </p>'
+    syntax:
+      content: public enum ContainerListingDetails
+  - uid: com.microsoft.azure.storage.blob._copy_state
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._copy_state.yml
+    name: CopyState
+    nameWithType: CopyState
+    fullName: com.microsoft.azure.storage.blob.CopyState
+    type: Class
+    summary: <p>Stellt die Attribute eines Kopiervorgangs dar. </p>
+    syntax:
+      content: public class CopyState
+  - uid: com.microsoft.azure.storage.blob._copy_status
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._copy_status.yml
+    name: CopyStatus
+    nameWithType: CopyStatus
+    fullName: com.microsoft.azure.storage.blob.CopyStatus
+    type: Enum
+    summary: <p>Stellt den Status eines Blob-Kopiervorgangs dar. </p>
+    syntax:
+      content: public enum CopyStatus
+  - uid: com.microsoft.azure.storage.blob._delete_snapshots_option
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._delete_snapshots_option.yml
+    name: DeleteSnapshotsOption
+    nameWithType: DeleteSnapshotsOption
+    fullName: com.microsoft.azure.storage.blob.DeleteSnapshotsOption
+    type: Enum
+    summary: '<p>Gibt Optionen an, wenn Delete-Vorgänge aufrufen. </p>'
+    syntax:
+      content: public enum DeleteSnapshotsOption
+  - uid: com.microsoft.azure.storage.blob._lease_duration
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._lease_duration.yml
+    name: LeaseDuration
+    nameWithType: LeaseDuration
+    fullName: com.microsoft.azure.storage.blob.LeaseDuration
+    type: Enum
+    summary: <p>Die Leasedauer einer Ressource. </p>
+    syntax:
+      content: public enum LeaseDuration
+  - uid: com.microsoft.azure.storage.blob._lease_state
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._lease_state.yml
+    name: LeaseState
+    nameWithType: LeaseState
+    fullName: com.microsoft.azure.storage.blob.LeaseState
+    type: Enum
+    summary: <p>Der Leasestatus einer Ressource. </p>
+    syntax:
+      content: public enum LeaseState
+  - uid: com.microsoft.azure.storage.blob._lease_status
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._lease_status.yml
+    name: LeaseStatus
+    nameWithType: LeaseStatus
+    fullName: com.microsoft.azure.storage.blob.LeaseStatus
+    type: Enum
+    summary: |-
+      <p>Gibt an, der Leasestatus des Blob. </p>
+      <p>Sie können überprüfen, dass die Leasestatus eines BLOB, um zu bestimmen, ob sie aktuell über eine aktive Lease (für exklusiv / Schreibzugriff gesperrt) verfügt, oder ob er für den Zugriff mit exklusivem Schreibzugriff verfügbar ist. </p>
+    syntax:
+      content: public enum LeaseStatus
+  - uid: com.microsoft.azure.storage.blob._length_limiting_stream
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._length_limiting_stream.yml
+    name: LengthLimitingStream
+    nameWithType: LengthLimitingStream
+    fullName: com.microsoft.azure.storage.blob.LengthLimitingStream
+    type: Class
+    syntax:
+      content: public class LengthLimitingStream extends BlobOutputStream
+  - uid: com.microsoft.azure.storage.blob._list_blob_item
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._list_blob_item.yml
+    name: ListBlobItem
+    nameWithType: ListBlobItem
+    fullName: com.microsoft.azure.storage.blob.ListBlobItem
+    type: Interface
+    summary: '<p>Stellt ein Element, das von einem Blob-Auflistungsvorgang zurückgegeben werden kann. </p>'
+    syntax:
+      content: public interface ListBlobItem
+  - uid: com.microsoft.azure.storage.blob._page_range
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._page_range.yml
+    name: PageRange
+    nameWithType: PageRange
+    fullName: com.microsoft.azure.storage.blob.PageRange
+    type: Class
+    summary: <p>Stellt einen Bereich von Seiten in einem Seitenblob dar. </p>
+    syntax:
+      content: public class PageRange
+  - uid: com.microsoft.azure.storage.blob._page_range_diff
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._page_range_diff.yml
+    name: PageRangeDiff
+    nameWithType: PageRangeDiff
+    fullName: com.microsoft.azure.storage.blob.PageRangeDiff
+    type: Class
+    summary: '<p>Stellt einen Bereich von Seiten, die in ein Seiten-Blob seit der vorherigen Momentaufnahme angegeben geändert wurden. </p>'
+    syntax:
+      content: public class PageRangeDiff extends PageRange
+  - uid: com.microsoft.azure.storage.blob._premium_page_blob_tier
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._premium_page_blob_tier.yml
+    name: PremiumPageBlobTier
+    nameWithType: PremiumPageBlobTier
+    fullName: com.microsoft.azure.storage.blob.PremiumPageBlobTier
+    type: Enum
+    summary: '<p>Die Ebene des Seitenblobs. Bitte sehen Sie sich <ulink url="https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage#scalability-and-performance-targets">https://docs.microsoft.com/en-us/azure/storage/storage-premium-storage#scalability-and-performance-targets</ulink> ausführliche Informationen auf die entsprechende IOPS-Wert und den Durchsatz pro <xref href="com.microsoft.azure.storage.blob._premium_page_blob_tier" data-throw-if-not-resolved="false"></xref>. </p>'
+    syntax:
+      content: public enum PremiumPageBlobTier
+  - uid: com.microsoft.azure.storage.blob._shared_access_blob_headers
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._shared_access_blob_headers.yml
+    name: SharedAccessBlobHeaders
+    nameWithType: SharedAccessBlobHeaders
+    fullName: com.microsoft.azure.storage.blob.SharedAccessBlobHeaders
+    type: Class
+    summary: '<p>Stellt die optionalen Header, die mit Blobs über SAS zugegriffen zurückgegeben werden können. </p>'
+    syntax:
+      content: public class SharedAccessBlobHeaders extends SharedAccessHeaders
+  - uid: com.microsoft.azure.storage.blob._shared_access_blob_permissions
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._shared_access_blob_permissions.yml
+    name: SharedAccessBlobPermissions
+    nameWithType: SharedAccessBlobPermissions
+    fullName: com.microsoft.azure.storage.blob.SharedAccessBlobPermissions
+    type: Enum
+    summary: <p>Gibt den Satz von möglichen Berechtigungen für eine SAS-Richtlinie. </p>
+    syntax:
+      content: public enum SharedAccessBlobPermissions
+  - uid: com.microsoft.azure.storage.blob._shared_access_blob_policy
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._shared_access_blob_policy.yml
+    name: SharedAccessBlobPolicy
+    nameWithType: SharedAccessBlobPolicy
+    fullName: com.microsoft.azure.storage.blob.SharedAccessBlobPolicy
+    type: Class
+    summary: '<p>Stellt eine SAS-Richtlinie, die die Startzeit, Ablaufzeit und Berechtigungen für eine SAS angibt. </p>'
+    syntax:
+      content: public class SharedAccessBlobPolicy extends SharedAccessPolicy
+  - uid: com.microsoft.azure.storage.blob._sub_stream
+    parent: com.microsoft.azure.storage.blob
+    href: com.microsoft.azure.storage.blob._sub_stream.yml
+    name: SubStream
+    nameWithType: SubStream
+    fullName: com.microsoft.azure.storage.blob.SubStream
+    type: Class
+    syntax:
+      content: public class SubStream

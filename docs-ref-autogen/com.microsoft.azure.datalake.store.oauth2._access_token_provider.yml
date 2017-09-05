@@ -1,0 +1,196 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider
+    id: _access_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    children:
+      - com.microsoft.azure.datalake.store.oauth2._access_token_provider.getToken()
+      - com.microsoft.azure.datalake.store.oauth2._access_token_provider.refreshToken()
+      - com.microsoft.azure.datalake.store.oauth2._access_token_provider.token()
+    href: com.microsoft.azure.datalake.store.oauth2._access_token_provider.yml
+    langs:
+      - java
+    name: AccessTokenProvider
+    nameWithType: AccessTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider
+    type: Class
+    source:
+      remote: &ref_0
+        path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+        branch: master
+        repo: 'https://github.com/azure/azure-data-lake-store-java'
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+      startLine: 21
+    package: com.microsoft.azure.datalake.store.oauth2
+    summary: |-
+      <p>Ein Azure Active Directory-Token bei der Anforderung zurück. Der Anbieter kann das Token zwischenspeichern, wenn sie bereits abgerufen wurde. Wenn dies der Fall ist, ist der Anbieter für Ablauf überprüfen und aktualisieren nach Bedarf zuständig. </p>
+      <p>In anderen Worten: Dies ist einem Tokencache, der Token angefordert, abruft, wenn die im Cache gespeicherten Token abgelaufen ist. </p>
+    syntax:
+      content: public class AccessTokenProvider
+    inheritance:
+      - java.lang.Object
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.getToken()
+    id: getToken()
+    parent: com.microsoft.azure.datalake.store.oauth2._access_token_provider
+    href: com.microsoft.azure.datalake.store.oauth2._access_token_provider.yml
+    langs:
+      - java
+    name: getToken()
+    nameWithType: AccessTokenProvider.getToken()
+    fullName: synchronized AzureADToken com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider.getToken()
+    overload: com.microsoft.azure.datalake.store.oauth2._access_token_provider.getToken*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+      startLine: 32
+    package: com.microsoft.azure.datalake.store.oauth2
+    summary: |-
+      <p>Gibt die <xref href="com.microsoft.azure.datalake.store.oauth2._azure_a_d_token" data-throw-if-not-resolved="false"></xref> zwischengespeichert (oder abzurufenden), von dieser Instanz.</p>
+      <p></p>
+    syntax:
+      content: public synchronized AzureADToken getToken()
+      return:
+        type: cffad4f2com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\"></xref>das Zugriffstoken enthält </p>"
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn Fehler beim Abrufen von token </p>
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.refreshToken()
+    id: refreshToken()
+    parent: com.microsoft.azure.datalake.store.oauth2._access_token_provider
+    href: com.microsoft.azure.datalake.store.oauth2._access_token_provider.yml
+    langs:
+      - java
+    name: refreshToken()
+    nameWithType: AccessTokenProvider.refreshToken()
+    fullName: abstract AzureADToken com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider.refreshToken()
+    overload: com.microsoft.azure.datalake.store.oauth2._access_token_provider.refreshToken*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+      startLine: 51
+    package: com.microsoft.azure.datalake.store.oauth2
+    summary: |-
+      <p>die Methode, die das Zugriffstoken abzurufen. Abgeleitete Klassen müssen diese Methode, um tatsächlich Abrufen eines Tokens aus Azure Active Directory überschreiben. </p>
+      <p>Diese Methode wird zu Beginn aufgerufen werden und anschließend ein Mal, wenn das Token läuft bald ab. </p>
+      <p></p>
+    syntax:
+      content: protected abstract AzureADToken refreshToken()
+      return:
+        type: 13c86962com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\"></xref>das Zugriffstoken enthält </p>"
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn Fehler beim Abrufen von token </p>
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.token()
+    id: token()
+    parent: com.microsoft.azure.datalake.store.oauth2._access_token_provider
+    href: com.microsoft.azure.datalake.store.oauth2._access_token_provider.yml
+    langs:
+      - java
+    name: token
+    nameWithType: AccessTokenProvider.token
+    fullName: AzureADToken com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider.token
+    type: Field
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+      startLine: 23
+    package: com.microsoft.azure.datalake.store.oauth2
+    syntax:
+      content: protected AzureADToken token
+      return:
+        type: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+references:
+  - uid: cbf33bbe
+    spec.java:
+      - name: IOException
+        fullName: IOException
+  - uid: cffad4f2com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+    spec.java:
+      - name: 'synchronized '
+        fullName: 'synchronized '
+      - uid: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+        name: AzureADToken
+        fullName: com.microsoft.azure.datalake.store.oauth2.AzureADToken
+        href: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token.yml
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.getToken*
+    name: getToken
+    nameWithType: AccessTokenProvider.getToken
+    fullName: synchronized AzureADToken com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider.getToken
+    package: com.microsoft.azure.datalake.store.oauth2
+  - uid: 13c86962com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+    spec.java:
+      - name: 'abstract '
+        fullName: 'abstract '
+      - uid: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+        name: AzureADToken
+        fullName: com.microsoft.azure.datalake.store.oauth2.AzureADToken
+        href: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token.yml
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.refreshToken*
+    name: refreshToken
+    nameWithType: AccessTokenProvider.refreshToken
+    fullName: abstract AzureADToken com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider.refreshToken
+    package: com.microsoft.azure.datalake.store.oauth2
+  - uid: com.microsoft.azure.datalake.store.oauth2._client_creds_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._client_creds_token_provider.yml
+    name: ClientCredsTokenProvider
+    nameWithType: ClientCredsTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.ClientCredsTokenProvider
+    type: Class
+    summary: <p>Token basierend auf Anmeldeinformationen des Clients enthält </p>
+    syntax:
+      content: public class ClientCredsTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._device_code_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._device_code_token_provider.yml
+    name: DeviceCodeTokenProvider
+    nameWithType: DeviceCodeTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.DeviceCodeTokenProvider
+    type: Class
+    summary: '<p>Ermöglicht die interaktive Anmeldung in nicht-Browser basieren Kontexte. Zeigt eine Meldung, die der Aufforderung zum Anmelden mit dem Browser, mit dem bereitgestellten Link und Code. </p>'
+    syntax:
+      content: public class DeviceCodeTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.yml
+    name: MsiTokenProvider
+    nameWithType: MsiTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider
+    type: Class
+    summary: <p>Bietet Token basierend auf Azure-VM-Dienstidentität verwaltet </p>
+    syntax:
+      content: public class MsiTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._refresh_token_based_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._refresh_token_based_token_provider.yml
+    name: RefreshTokenBasedTokenProvider
+    nameWithType: RefreshTokenBasedTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.RefreshTokenBasedTokenProvider
+    type: Class
+    summary: '<p>Basierend auf Aktualisierungstoken, das Token enthält </p>'
+    syntax:
+      content: public class RefreshTokenBasedTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._user_password_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._user_password_token_provider.yml
+    name: UserPasswordTokenProvider
+    nameWithType: UserPasswordTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.UserPasswordTokenProvider
+    type: Class
+    summary: <p>Bietet Token basierend auf Benutzername und Kennwort </p>
+    syntax:
+      content: public class UserPasswordTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token.yml
+    name: AzureADToken
+    nameWithType: AzureADToken
+    fullName: com.microsoft.azure.datalake.store.oauth2.AzureADToken
+    type: Class
+    summary: <p>-Objekt Represnting das AAD-Zugriffstoken zu verwendende HTTP-Anforderungen an Azure Data Lake-Speicher vornehmen. </p>
+    syntax:
+      content: public class AzureADToken

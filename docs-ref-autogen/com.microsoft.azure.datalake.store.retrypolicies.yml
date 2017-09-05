@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.datalake.store.retrypolicies
+    id: retrypolicies
+    children:
+      - com.microsoft.azure.datalake.store.retrypolicies._exponential_backoff_policy
+      - com.microsoft.azure.datalake.store.retrypolicies._no_retry_policy
+      - com.microsoft.azure.datalake.store.retrypolicies._retry_policy
+    href: com.microsoft.azure.datalake.store.retrypolicies.yml
+    langs:
+      - java
+    name: com.microsoft.azure.datalake.store.retrypolicies
+    nameWithType: com.microsoft.azure.datalake.store.retrypolicies
+    fullName: com.microsoft.azure.datalake.store.retrypolicies
+    type: Namespace
+    source:
+      remote:
+        path: src/main/java/com/microsoft/azure/datalake/store/retrypolicies/ExponentialBackoffPolicy.java
+        branch: master
+        repo: 'https://github.com/azure/azure-data-lake-store-java'
+      path: src/main/java/com/microsoft/azure/datalake/store/retrypolicies/ExponentialBackoffPolicy.java
+      startLine: 6
+    summary: <p>Alle wiederholungsrichtlinien. </p>
+    syntax:
+      content: package com.microsoft.azure.datalake.store.retrypolicies
+references:
+  - uid: com.microsoft.azure.datalake.store.retrypolicies._exponential_backoff_policy
+    parent: com.microsoft.azure.datalake.store.retrypolicies
+    href: com.microsoft.azure.datalake.store.retrypolicies._exponential_backoff_policy.yml
+    name: ExponentialBackoffPolicy
+    nameWithType: ExponentialBackoffPolicy
+    fullName: com.microsoft.azure.datalake.store.retrypolicies.ExponentialBackoffPolicy
+    type: Class
+    summary: |-
+      <p>implementiert verschiedene wiederholen Sie Ihre Entscheidungen basierend auf den Fehler.</p>
+      <p>
+
+        <itemizedlist>
+
+          <listitem>
+
+            <p>Führen Sie für Nonretryable Fehler (3xx, die meisten 4xx und einige Rückgabecodes 5xx) keine Wiederholung. </p>
+
+          </listitem>
+
+          <listitem>
+
+            <p>Führen Sie für die Einschränkung Fehler, ein erneuter Versuch mit exponenzieller Wartezeit </p>
+
+          </listitem>
+
+          <listitem>
+
+            <p>Führen Sie bei allen anderen Fehlern ein erneuter Versuch mit linearen Wartezeit </p>
+
+          </listitem>
+
+        </itemizedlist>
+
+      </p>
+    syntax:
+      content: public class ExponentialBackoffPolicy implements RetryPolicy
+  - uid: com.microsoft.azure.datalake.store.retrypolicies._no_retry_policy
+    parent: com.microsoft.azure.datalake.store.retrypolicies
+    href: com.microsoft.azure.datalake.store.retrypolicies._no_retry_policy.yml
+    name: NoRetryPolicy
+    nameWithType: NoRetryPolicy
+    fullName: com.microsoft.azure.datalake.store.retrypolicies.NoRetryPolicy
+    type: Class
+    summary: |-
+      <p>Keine Wiederholung jemals. Gibt immer "false" zeigt an, dass diese Erequest nicht wiederholt werden sollte zurück.</p>
+      <p>Dies sollte verwendet werden, und wiederholen Sie dann ist nicht sicher und at-Most-Once-Semantik mit dem Aufruf der Benutzer möchte. Dies ist nützlich für nicht idempotente-Methoden, in dem der Fehler vom letzten Aufruf zurückgegebene abschließend Erfolg oder Fehler des Aufrufs gibt keine. Z. B. wenn ein Anfügen erfolgreich ausgeführt wird, auf dem Back-End ein Timeout auftritt, Anfügen wiederholen sie dann die Daten zweimal, um die Datei. </p>
+    syntax:
+      content: public class NoRetryPolicy implements RetryPolicy
+  - uid: com.microsoft.azure.datalake.store.retrypolicies._retry_policy
+    parent: com.microsoft.azure.datalake.store.retrypolicies
+    href: com.microsoft.azure.datalake.store.retrypolicies._retry_policy.yml
+    name: RetryPolicy
+    nameWithType: RetryPolicy
+    fullName: com.microsoft.azure.datalake.store.retrypolicies.RetryPolicy
+    type: Interface
+    summary: |-
+      <p>die <xref href="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false"></xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll. </p>
+      <p>Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien. </p>
+    syntax:
+      content: public interface RetryPolicy

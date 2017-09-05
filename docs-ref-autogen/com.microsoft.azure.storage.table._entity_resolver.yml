@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.storage.table._entity_resolver
+    id: _entity_resolver
+    parent: com.microsoft.azure.storage.table
+    children:
+      - 'com.microsoft.azure.storage.table._entity_resolver.resolve(String,String,Date,HashMap<String, EntityProperty>,String)'
+    href: com.microsoft.azure.storage.table._entity_resolver.yml
+    langs:
+      - java
+    name: EntityResolver<T>
+    nameWithType: EntityResolver<T>
+    fullName: com.microsoft.azure.storage.table.EntityResolver<T>
+    type: Interface
+    source:
+      remote: &ref_0
+        path: microsoft-azure-storage/src/com/microsoft/azure/storage/table/EntityResolver.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-storage-java'
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/table/EntityResolver.java
+      startLine: 36
+    package: com.microsoft.azure.storage.table
+    summary: |-
+      <p>Eine Schnittstelle zum Client-Side-Projektion für eine abgerufene Entität ausführen. Ein <xref href="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false"></xref> Instanz muss eine Methode, die Entitätsdaten, die von den Parametern, die als eine neue Instanz der durch den Typparameter angegebene Typ übergeben dargestellt projizieren implementieren. </p>
+      <p>Diese Schnittstelle ist nützlich für die Konvertierung direkt von Tabellendaten für die Entität in eine Art von Objekt ohne eine separate Tabelle Entität Klassentyp, der für jede Eigenschaft einzeln deserialisiert. Ein Client kann z. B. eine Client Side Projektion Ausführen einer <emphasis>Kunden</emphasis> Entität durch eine einfache Rückkehr der für die <emphasis>CustomerName</emphasis> Eigenschaft der einzelnen Entitäten. Das Ergebnis dieser Projektion werden eine Auflistung von s, die Kundennamen jedes enthält.</p>
+      <p></p>
+    syntax: &ref_1
+      content: public interface EntityResolver<T>
+      typeParameters:
+        - type: 8ce1ecb9
+          description: '<p>Der Typ des Objekts, das der Konfliktlöser erzeugt. </p>'
+  - uid: 'com.microsoft.azure.storage.table._entity_resolver.resolve(String,String,Date,HashMap<String, EntityProperty>,String)'
+    id: 'resolve(String,String,Date,HashMap<String, EntityProperty>,String)'
+    parent: com.microsoft.azure.storage.table._entity_resolver
+    href: com.microsoft.azure.storage.table._entity_resolver.yml
+    langs:
+      - java
+    name: 'resolve(String partitionKey, String rowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag)'
+    nameWithType: 'EntityResolver<T>.resolve(String partitionKey, String rowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag)'
+    fullName: 'T com.microsoft.azure.storage.table.EntityResolver<T>.resolve(String partitionKey, String rowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag)'
+    overload: com.microsoft.azure.storage.table._entity_resolver.resolve*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/table/EntityResolver.java
+      startLine: 58
+    package: com.microsoft.azure.storage.table
+    summary: |-
+      <p>Gibt einen Verweis auf eine neue Objektinstanz der Typ, der eine Projektion für die angegebene Tabelle Entitätsdaten enthält.</p>
+      <p></p>
+    syntax:
+      content: 'public T resolve(String partitionKey, String rowKey, Date timeStamp, HashMap<String, EntityProperty> properties, String etag)'
+      parameters:
+        - id: partitionKey
+          type: '26831127'
+          description: <p>Ein <code>String</code> mit dem PartitionKey-Wert für die Entität. </p>
+        - id: rowKey
+          type: '26831127'
+          description: <p>Ein <code>String</code> mit dem RowKey-Wert für die Entität. </p>
+        - id: timeStamp
+          type: '12977444'
+          description: <p>Ein <code>java.util.Date</code> mit dem Timestamp-Wert für die Entität. </p>
+        - id: properties
+          type: 292b5718com.microsoft.azure.storage.table._entity_propertya08ddfce
+          description: '<p>Die <code>java.util.HashMap</code> von <code>String</code> Eigenschaftsnamen so <xref href="com.microsoft.azure.storage.table._entity_property" data-throw-if-not-resolved="false"></xref> Data-Type-Wert-Paare, die Tabellendaten für die Entität darstellt. </p>'
+        - id: etag
+          type: '26831127'
+          description: <p>Ein <code>String</code> mit dem Etag für die Entität. </p>
+      return:
+        type: 8ce1ecb9
+        description: <p>Ein Verweis auf eine Instanz des Typs <code>T</code> als eine Projektion für die Parameter der Entität erstellt. </p>
+    exceptions:
+      - type: com.microsoft.azure.storage._storage_exception
+        description: <p>Wenn ein Fehler während des Vorgangs auftritt. </p>
+references:
+  - uid: 8ce1ecb9
+    spec.java:
+      - name: T
+        fullName: T
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: '12977444'
+    spec.java:
+      - name: Date
+        fullName: Date
+  - uid: 292b5718com.microsoft.azure.storage.table._entity_propertya08ddfce
+    spec.java:
+      - name: 'HashMap<String, '
+        fullName: 'HashMap<String, '
+      - uid: com.microsoft.azure.storage.table._entity_property
+        name: EntityProperty
+        fullName: com.microsoft.azure.storage.table.EntityProperty
+        href: com.microsoft.azure.storage.table._entity_property.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.storage.table._entity_resolver.resolve*
+    name: resolve
+    nameWithType: EntityResolver<T>.resolve
+    fullName: T com.microsoft.azure.storage.table.EntityResolver<T>.resolve
+    package: com.microsoft.azure.storage.table
+  - uid: com.microsoft.azure.storage.table._entity_property
+    parent: com.microsoft.azure.storage.table
+    href: com.microsoft.azure.storage.table._entity_property.yml
+    name: EntityProperty
+    nameWithType: EntityProperty
+    fullName: com.microsoft.azure.storage.table.EntityProperty
+    type: Class
+    summary: "<p>Eine Klasse, die einen einzelnen typisierte Eigenschaft-Wert in einer Tabellenentität darstellt. Ein <xref href=\"com.microsoft.azure.storage.table._entity_property\" data-throw-if-not-resolved=\"false\"></xref> speichert, die der Datentyp als ein <xref href=\"com.microsoft.azure.storage.table._edm_type\" data-throw-if-not-resolved=\"false\"></xref>. Der Wert, der für die Objekttypen zugeordnet, aber nicht für primitive Typen möglicherweise serialisiert und gespeichert als ein. </p>\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.storage.table._entity_property\" data-throw-if-not-resolved=\"false\"></xref>Stellt überladene Konstruktoren und Überladungen der Methode für unterstützte Werttypen bereit. Jede überladenen Konstruktor oder eine Methode legt die <xref href=\"com.microsoft.azure.storage.table._edm_type\" data-throw-if-not-resolved=\"false\"></xref> und den Wert entsprechend basierend auf den Parametertyp serialisiert. </p>\n\n<p>Gehen Sie die <emphasis>Typ</emphasis> Methoden zum Deserialisieren einer <xref href=\"com.microsoft.azure.storage.table._entity_property\" data-throw-if-not-resolved=\"false\"></xref> in den entsprechenden Java-Typ. Die Methode löst eine <ref refid=\"\" kindref=\"compound\">ParseException</ref> oder <ref refid=\"\" kindref=\"compound\">IllegalArgumentException</ref> Wenn die <xref href=\"com.microsoft.azure.storage.table._entity_property\" data-throw-if-not-resolved=\"false\"></xref> kann mit dem Java-Typ nicht deserialisiert werden. </p>"
+    syntax:
+      content: public class EntityProperty
+  - uid: com.microsoft.azure.storage._storage_exception
+    parent: com.microsoft.azure.storage
+    href: com.microsoft.azure.storage._storage_exception.yml
+    name: StorageException
+    nameWithType: StorageException
+    fullName: com.microsoft.azure.storage.StorageException
+    type: Class
+    summary: <p>Repräsentiert eine Ausnahme für den Microsoft Azure-Speicherdienst. </p>
+    syntax:
+      content: public class StorageException
+  - uid: com.microsoft.azure.storage.table._entity_resolver
+    parent: com.microsoft.azure.storage.table
+    href: com.microsoft.azure.storage.table._entity_resolver.yml
+    name: EntityResolver<T>
+    nameWithType: EntityResolver<T>
+    fullName: com.microsoft.azure.storage.table.EntityResolver<T>
+    type: Interface
+    summary: |-
+      <p>Eine Schnittstelle zum Client-Side-Projektion für eine abgerufene Entität ausführen. Ein <xref href="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false"></xref> Instanz muss eine Methode, die Entitätsdaten, die von den Parametern, die als eine neue Instanz der durch den Typparameter angegebene Typ übergeben dargestellt projizieren implementieren. </p>
+      <p>Diese Schnittstelle ist nützlich für die Konvertierung direkt von Tabellendaten für die Entität in eine Art von Objekt ohne eine separate Tabelle Entität Klassentyp, der für jede Eigenschaft einzeln deserialisiert. Ein Client kann z. B. eine Client Side Projektion Ausführen einer <emphasis>Kunden</emphasis> Entität durch eine einfache Rückkehr der für die <emphasis>CustomerName</emphasis> Eigenschaft der einzelnen Entitäten. Das Ergebnis dieser Projektion werden eine Auflistung von s, die Kundennamen jedes enthält.</p>
+      <p></p>
+    syntax: *ref_1

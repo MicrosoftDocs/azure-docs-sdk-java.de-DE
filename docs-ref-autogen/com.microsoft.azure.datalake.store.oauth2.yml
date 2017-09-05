@@ -1,0 +1,124 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.datalake.store.oauth2
+    id: oauth2
+    children:
+      - com.microsoft.azure.datalake.store.oauth2._access_token_provider
+      - com.microsoft.azure.datalake.store.oauth2._azure_a_d_authenticator
+      - com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+      - com.microsoft.azure.datalake.store.oauth2._client_creds_token_provider
+      - com.microsoft.azure.datalake.store.oauth2._device_code_token_provider
+      - com.microsoft.azure.datalake.store.oauth2._msi_token_provider
+      - com.microsoft.azure.datalake.store.oauth2._refresh_token_based_token_provider
+      - com.microsoft.azure.datalake.store.oauth2._refresh_token_info
+      - com.microsoft.azure.datalake.store.oauth2._user_password_token_provider
+    href: com.microsoft.azure.datalake.store.oauth2.yml
+    langs:
+      - java
+    name: com.microsoft.azure.datalake.store.oauth2
+    nameWithType: com.microsoft.azure.datalake.store.oauth2
+    fullName: com.microsoft.azure.datalake.store.oauth2
+    type: Namespace
+    source:
+      remote:
+        path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+        branch: master
+        repo: 'https://github.com/azure/azure-data-lake-store-java'
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AccessTokenProvider.java
+      startLine: 6
+    summary: <p>Klassen zum Hilfe abrufen und Verwalten von Azure Active Directory-Token </p>
+    syntax:
+      content: package com.microsoft.azure.datalake.store.oauth2
+references:
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._access_token_provider.yml
+    name: AccessTokenProvider
+    nameWithType: AccessTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider
+    type: Class
+    summary: |-
+      <p>Ein Azure Active Directory-Token bei der Anforderung zurück. Der Anbieter kann das Token zwischenspeichern, wenn sie bereits abgerufen wurde. Wenn dies der Fall ist, ist der Anbieter für Ablauf überprüfen und aktualisieren nach Bedarf zuständig. </p>
+      <p>In anderen Worten: Dies ist einem Tokencache, der Token angefordert, abruft, wenn die im Cache gespeicherten Token abgelaufen ist. </p>
+    syntax:
+      content: public class AccessTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._azure_a_d_authenticator
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._azure_a_d_authenticator.yml
+    name: AzureADAuthenticator
+    nameWithType: AzureADAuthenticator
+    fullName: com.microsoft.azure.datalake.store.oauth2.AzureADAuthenticator
+    type: Class
+    summary: '<p>Diese Klasse stellt Hilfsmethoden zum Abrufen von AAD-Token. Auch wenn es bequem, ist es nicht notwendig, diese Methoden verwenden, um die Token zu erhalten. Kunden können jede andere Methode verwenden (z. B. mithilfe des adal4j-Clients) zum Abrufen von Token. </p>'
+    syntax:
+      content: public class AzureADAuthenticator
+  - uid: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token.yml
+    name: AzureADToken
+    nameWithType: AzureADToken
+    fullName: com.microsoft.azure.datalake.store.oauth2.AzureADToken
+    type: Class
+    summary: <p>-Objekt Represnting das AAD-Zugriffstoken zu verwendende HTTP-Anforderungen an Azure Data Lake-Speicher vornehmen. </p>
+    syntax:
+      content: public class AzureADToken
+  - uid: com.microsoft.azure.datalake.store.oauth2._client_creds_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._client_creds_token_provider.yml
+    name: ClientCredsTokenProvider
+    nameWithType: ClientCredsTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.ClientCredsTokenProvider
+    type: Class
+    summary: <p>Token basierend auf Anmeldeinformationen des Clients enthält </p>
+    syntax:
+      content: public class ClientCredsTokenProvider extends AccessTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._device_code_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._device_code_token_provider.yml
+    name: DeviceCodeTokenProvider
+    nameWithType: DeviceCodeTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.DeviceCodeTokenProvider
+    type: Class
+    summary: '<p>Ermöglicht die interaktive Anmeldung in nicht-Browser basieren Kontexte. Zeigt eine Meldung, die der Aufforderung zum Anmelden mit dem Browser, mit dem bereitgestellten Link und Code. </p>'
+    syntax:
+      content: public class DeviceCodeTokenProvider extends AccessTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.yml
+    name: MsiTokenProvider
+    nameWithType: MsiTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider
+    type: Class
+    summary: <p>Bietet Token basierend auf Azure-VM-Dienstidentität verwaltet </p>
+    syntax:
+      content: public class MsiTokenProvider extends AccessTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._refresh_token_based_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._refresh_token_based_token_provider.yml
+    name: RefreshTokenBasedTokenProvider
+    nameWithType: RefreshTokenBasedTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.RefreshTokenBasedTokenProvider
+    type: Class
+    summary: '<p>Basierend auf Aktualisierungstoken, das Token enthält </p>'
+    syntax:
+      content: public class RefreshTokenBasedTokenProvider extends AccessTokenProvider
+  - uid: com.microsoft.azure.datalake.store.oauth2._refresh_token_info
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._refresh_token_info.yml
+    name: RefreshTokenInfo
+    nameWithType: RefreshTokenInfo
+    fullName: com.microsoft.azure.datalake.store.oauth2.RefreshTokenInfo
+    type: Class
+    summary: <p>Informationen über das Aktualisierungstoken und das zugeordnete Zugriffstoken </p>
+    syntax:
+      content: public class RefreshTokenInfo
+  - uid: com.microsoft.azure.datalake.store.oauth2._user_password_token_provider
+    parent: com.microsoft.azure.datalake.store.oauth2
+    href: com.microsoft.azure.datalake.store.oauth2._user_password_token_provider.yml
+    name: UserPasswordTokenProvider
+    nameWithType: UserPasswordTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.UserPasswordTokenProvider
+    type: Class
+    summary: <p>Bietet Token basierend auf Benutzername und Kennwort </p>
+    syntax:
+      content: public class UserPasswordTokenProvider extends AccessTokenProvider

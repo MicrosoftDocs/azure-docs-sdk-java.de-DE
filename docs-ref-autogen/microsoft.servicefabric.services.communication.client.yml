@@ -1,0 +1,177 @@
+### YamlMime:ManagedReference
+items:
+  - uid: microsoft.servicefabric.services.communication.client
+    id: client
+    children:
+      - microsoft.servicefabric.services.communication.client._communication_client
+      - microsoft.servicefabric.services.communication.client._communication_client_factory
+      - microsoft.servicefabric.services.communication.client._communication_client_factory_base
+      - microsoft.servicefabric.services.communication.client._exception_handler
+      - microsoft.servicefabric.services.communication.client._exception_handling_result
+      - microsoft.servicefabric.services.communication.client._exception_handling_retry_result
+      - microsoft.servicefabric.services.communication.client._exception_handling_throw_result
+      - microsoft.servicefabric.services.communication.client._exception_information
+      - microsoft.servicefabric.services.communication.client._fabric_service_partition_client
+      - microsoft.servicefabric.services.communication.client._operation_retry_control
+      - microsoft.servicefabric.services.communication.client._operation_retry_settings
+      - microsoft.servicefabric.services.communication.client._service_partition_client
+      - microsoft.servicefabric.services.communication.client._target_replica_selector
+    href: microsoft.servicefabric.services.communication.client.yml
+    langs:
+      - java
+    name: microsoft.servicefabric.services.communication.client
+    nameWithType: microsoft.servicefabric.services.communication.client
+    fullName: microsoft.servicefabric.services.communication.client
+    type: Namespace
+    source:
+      remote:
+        path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/services/communication/client/CommunicationClient.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/services/communication/client/CommunicationClient.java
+    syntax:
+      content: package microsoft.servicefabric.services.communication.client
+references:
+  - uid: microsoft.servicefabric.services.communication.client._communication_client
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._communication_client.yml
+    name: CommunicationClient
+    nameWithType: CommunicationClient
+    fullName: microsoft.servicefabric.services.communication.client.CommunicationClient
+    type: Interface
+    summary: '<p>Definiert die Schnittstelle, die die Kommunikation zwischen Client für zuverlässige Dienste darstellt. </p>'
+    syntax:
+      content: public interface CommunicationClient
+  - uid: microsoft.servicefabric.services.communication.client._communication_client_factory
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._communication_client_factory.yml
+    name: CommunicationClientFactory<TCommunicationClient>
+    nameWithType: CommunicationClientFactory<TCommunicationClient>
+    fullName: microsoft.servicefabric.services.communication.client.CommunicationClientFactory<TCommunicationClient>
+    type: Interface
+    summary: '<p>Definiert die Schnittstelle, die implementiert werden muss, um eine Factory für die Kommunikation von Clients mit einem Service Fabric-Dienst kommuniziert bereitzustellen. </p>'
+    syntax:
+      content: public interface CommunicationClientFactory<TCommunicationClient extends CommunicationClient>
+      typeParameters:
+        - type: 4500d4bf
+  - uid: microsoft.servicefabric.services.communication.client._communication_client_factory_base
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._communication_client_factory_base.yml
+    name: CommunicationClientFactoryBase<T>
+    nameWithType: CommunicationClientFactoryBase<T>
+    fullName: microsoft.servicefabric.services.communication.client.CommunicationClientFactoryBase<T>
+    type: Class
+    summary: |-
+      <p>Stellt die grundlegende Implementierung der <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false"></xref> zum Erstellen von Kommunikation von Clients zum Kommunizieren mit Service Fabric-Dienste verwendet. Erweitern der <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory_base" data-throw-if-not-resolved="false"></xref> Klasse, um die Kommunikation von Clients benutzerdefinierte transportimplementierungen erstellen. Diese Klasse verwaltet einen Cache der Kommunikation zwischen Clients und versucht, die Clients für Anforderungen an den gleichen Dienstendpunkt wiederverwenden.</p>
+      <p></p>
+    syntax:
+      content: public class CommunicationClientFactoryBase<T extends CommunicationClient> implements CommunicationClientFactory<T>
+      typeParameters:
+        - type: 8ce1ecb9
+          description: <p>Kommunikation-Clienttyp </p>
+  - uid: microsoft.servicefabric.services.communication.client._exception_handler
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._exception_handler.yml
+    name: ExceptionHandler
+    nameWithType: ExceptionHandler
+    fullName: microsoft.servicefabric.services.communication.client.ExceptionHandler
+    type: Interface
+    summary: <p>Definiert die Schnittstelle für die Ausnahmebehandlung bei der Kommunikation mit Service Fabric-Dienste gefunden. </p>
+    syntax:
+      content: public interface ExceptionHandler
+  - uid: microsoft.servicefabric.services.communication.client._exception_handling_result
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._exception_handling_result.yml
+    name: ExceptionHandlingResult
+    nameWithType: ExceptionHandlingResult
+    fullName: microsoft.servicefabric.services.communication.client.ExceptionHandlingResult
+    type: Class
+    summary: <p>Gibt die Basisklasse für die Behandlung von Ausnahmen während der Dienst-Kommunikation zwischen Client und das Ergebnis an. </p>
+    syntax:
+      content: public class ExceptionHandlingResult
+  - uid: microsoft.servicefabric.services.communication.client._exception_handling_retry_result
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._exception_handling_retry_result.yml
+    name: ExceptionHandlingRetryResult
+    nameWithType: ExceptionHandlingRetryResult
+    fullName: microsoft.servicefabric.services.communication.client.ExceptionHandlingRetryResult
+    type: Class
+    summary: '<p>Gibt an, die Ausnahmebehandlung Ergebnis, wenn die Anforderung vom Client zum Dienst wiederholt werden kann </p>'
+    syntax:
+      content: public class ExceptionHandlingRetryResult extends ExceptionHandlingResult
+  - uid: microsoft.servicefabric.services.communication.client._exception_handling_throw_result
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._exception_handling_throw_result.yml
+    name: ExceptionHandlingThrowResult
+    nameWithType: ExceptionHandlingThrowResult
+    fullName: microsoft.servicefabric.services.communication.client.ExceptionHandlingThrowResult
+    type: Class
+    summary: '<p>Gibt an, die Ausnahmebehandlung Ergebnis, wenn die Anforderung vom Client an den Dienst nicht wiederholt werden kann </p>'
+    syntax:
+      content: public class ExceptionHandlingThrowResult extends ExceptionHandlingResult
+  - uid: microsoft.servicefabric.services.communication.client._exception_information
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._exception_information.yml
+    name: ExceptionInformation
+    nameWithType: ExceptionInformation
+    fullName: microsoft.servicefabric.services.communication.client.ExceptionInformation
+    type: Class
+    summary: '<p>Gibt die Klasse, die die Ausnahme, die auf den Kommunikationskanal angezeigt und zusätzliche Informationen erforderlich, um diese Ausnahme behandeln kapselt. </p>'
+    syntax:
+      content: public class ExceptionInformation
+  - uid: microsoft.servicefabric.services.communication.client._fabric_service_partition_client
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._fabric_service_partition_client.yml
+    name: FabricServicePartitionClient<C>
+    nameWithType: FabricServicePartitionClient<C>
+    fullName: microsoft.servicefabric.services.communication.client.FabricServicePartitionClient<C>
+    type: Class
+    summary: |-
+      <p>Gibt eine Instanz der Kommunikation zwischen Client, der kommunizieren kann mit den Replikaten einer bestimmten Partition an.</p>
+      <p></p>
+    syntax:
+      content: public class FabricServicePartitionClient<C extends CommunicationClient> implements ServicePartitionClient<C>
+      typeParameters:
+        - type: 37f8610d
+          description: <p>Kommunikation-Clienttyp </p>
+  - uid: microsoft.servicefabric.services.communication.client._operation_retry_control
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._operation_retry_control.yml
+    name: OperationRetryControl
+    nameWithType: OperationRetryControl
+    fullName: microsoft.servicefabric.services.communication.client.OperationRetryControl
+    type: Class
+    summary: '<p>Gibt an, dass die wiederholungsrichtlinie für die Ausnahmen bei der Kommunikation vom Client zum Dienst erhalten. </p>'
+    syntax:
+      content: public class OperationRetryControl
+  - uid: microsoft.servicefabric.services.communication.client._operation_retry_settings
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._operation_retry_settings.yml
+    name: OperationRetrySettings
+    nameWithType: OperationRetrySettings
+    fullName: microsoft.servicefabric.services.communication.client.OperationRetrySettings
+    type: Class
+    syntax:
+      content: public class OperationRetrySettings
+  - uid: microsoft.servicefabric.services.communication.client._service_partition_client
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._service_partition_client.yml
+    name: ServicePartitionClient<TCommunicationClient>
+    nameWithType: ServicePartitionClient<TCommunicationClient>
+    fullName: microsoft.servicefabric.services.communication.client.ServicePartitionClient<TCommunicationClient>
+    type: Interface
+    summary: '<p>Gibt eine Instanz der Kommunikation zwischen Client, der kommunizieren kann mit den Replikaten einer bestimmten Partition an. </p>'
+    syntax:
+      content: public interface ServicePartitionClient<TCommunicationClient extends CommunicationClient>
+      typeParameters:
+        - type: 4500d4bf
+  - uid: microsoft.servicefabric.services.communication.client._target_replica_selector
+    parent: microsoft.servicefabric.services.communication.client
+    href: microsoft.servicefabric.services.communication.client._target_replica_selector.yml
+    name: TargetReplicaSelector
+    nameWithType: TargetReplicaSelector
+    fullName: microsoft.servicefabric.services.communication.client.TargetReplicaSelector
+    type: Enum
+    summary: '<p>Diese Enumeration gibt an, wie der Zielreplikat oder die Instanz gewählt werden sollte, wenn einen Kommunikationskanal für eine bestimmte Partition zu erstellen. </p>'
+    syntax:
+      content: public enum TargetReplicaSelector

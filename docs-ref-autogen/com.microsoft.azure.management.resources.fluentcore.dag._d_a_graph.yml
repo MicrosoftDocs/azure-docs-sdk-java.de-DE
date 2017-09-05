@@ -1,0 +1,544 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    id: _d_a_graph
+    parent: com.microsoft.azure.management.resources.fluentcore.dag
+    children:
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.DAGraph(NodeT)
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNext()
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNode(String)
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.hasParent()
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isPreparer()
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isRootNode(NodeT)
+      - 'com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.merge(DAGraph<DataT, NodeT>)'
+      - 'com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.mergeChildToParent(String,NodeT)'
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.prepare()
+      - com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportCompletion(NodeT)
+      - 'com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportError(NodeT,Throwable)'
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: 'DAGraph<DataT,NodeT,NodeT>'
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT,NodeT,NodeT>'
+    type: Class
+    source:
+      remote: &ref_0
+        path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        repo: 'https://github.com/Azure/azure-sdk-for-java'
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 19
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Der Typ eine DAG (gerichtetes azyklisches Diagramm) darstellt. </p>
+      <p>Jeder Knoten in einer DAG, wird durch dargestellt.<xref href="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false"></xref></p>
+      <p></p>
+    syntax: &ref_1
+      content: 'public class DAGraph<DataT,NodeT extends DAGNode<DataT,NodeT>> extends Graph<DataT, NodeT>'
+      typeParameters:
+        - type: 7aacc8e4
+          description: <p>Der Typ der in der Graph-Knoten gespeicherten Daten </p>
+        - type: 3166dcd3
+          description: <p>Der Typ der Knoten im Diagramm </p>
+        - type: 3166dcd3
+          description: <p>Der Typ der Knoten im Diagramm </p>
+    inheritance:
+      - java.lang.Object
+      - com.microsoft.azure.management.resources.fluentcore.dag._graph
+    inheritedMembers:
+      - com.microsoft.azure.management.resources.fluentcore.dag._graph.addNode(NodeT)
+      - 'com.microsoft.azure.management.resources.fluentcore.dag._graph.findPath(String,String)'
+      - com.microsoft.azure.management.resources.fluentcore.dag._graph.getNodes()
+      - com.microsoft.azure.management.resources.fluentcore.dag._graph.graph()
+      - com.microsoft.azure.management.resources.fluentcore.dag._graph.Graph()
+      - com.microsoft.azure.management.resources.fluentcore.dag._graph.visit(Visitor)
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.DAGraph(NodeT)
+    id: DAGraph(NodeT)
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: DAGraph(NodeT rootNode)
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.DAGraph(NodeT rootNode)'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.DAGraph(NodeT rootNode)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.DAGraph*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 38
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Erstellt eine neue DAG.</p>
+      <p></p>
+    syntax:
+      content: public DAGraph(NodeT rootNode)
+      parameters:
+        - id: rootNode
+          type: 3166dcd3
+          description: <p>der Stammknoten dieses DAG </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNext()
+    id: getNext()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: getNext()
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.getNext()'
+    fullName: 'NodeT com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.getNext()'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNext*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 133
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Ruft nächsten Knoten in der DAG besitzt keine Abhängigkeit oder alle seine Abhängigkeiten werden aufgelöst und verbraucht werden.</p>
+      <p></p>
+    syntax:
+      content: public NodeT getNext()
+      return:
+        type: 3166dcd3
+        description: '<p>zu diesem Zeitpunkt ist nächsten Knoten oder Null, wenn alle Knoten untersucht haben oder kein Knoten verfügbar. </p>'
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNode(String)
+    id: getNode(String)
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: getNode(String key)
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.getNode(String key)'
+    fullName: 'NodeT com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.getNode(String key)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNode*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 146
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: <p>Ruft einen Knoten aus dem Diagramm mit dem angegebenen Schlüssel ab. </p>
+    syntax:
+      content: public NodeT getNode(String key)
+      parameters:
+        - id: key
+          type: '26831127'
+          description: <p>der Schlüssel des Knotens </p>
+      return:
+        type: 3166dcd3
+        description: <p>der Knoten </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.hasParent()
+    id: hasParent()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: hasParent()
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.hasParent()'
+    fullName: 'boolean com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.hasParent()'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.hasParent*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 48
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    syntax:
+      content: public boolean hasParent()
+      return:
+        type: 4fc6e284
+        description: "<p>\r\n\r\n  <code>true</code>Wenn diese DAG mit einem anderen DAG zusammengeführt wird und daher ein übergeordnetes Element besitzt </p>"
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isPreparer()
+    id: isPreparer()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: isPreparer()
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.isPreparer()'
+    fullName: 'boolean com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.isPreparer()'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isPreparer*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 66
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    syntax:
+      content: public boolean isPreparer()
+      return:
+        type: 4fc6e284
+        description: "<p>\r\n\r\n  <code>true</code>Wenn diese dag der Antragsteller, der für die Vorbereitung der DAG Durchlauf verantwortlich ist. </p>"
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isRootNode(NodeT)
+    id: isRootNode(NodeT)
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: isRootNode(NodeT node)
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.isRootNode(NodeT node)'
+    fullName: 'boolean com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.isRootNode(NodeT node)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isRootNode*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 58
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Überprüft, ob der angegebene Knoten den Stammknoten dieser Dag ist.</p>
+      <p></p>
+    syntax:
+      content: public boolean isRootNode(NodeT node)
+      parameters:
+        - id: node
+          type: 3166dcd3
+          description: <p>der Knoten <xref href="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false"></xref> überprüft werden soll </p>
+      return:
+        type: 4fc6e284
+        description: "<p>\r\n\r\n  <code>true</code>Wenn der angegebene Knoten Stammknoten ist. </p>"
+  - uid: 'com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.merge(DAGraph<DataT, NodeT>)'
+    id: 'merge(DAGraph<DataT, NodeT>)'
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: 'merge(DAGraph<DataT, NodeT> parent)'
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.merge(DAGraph<DataT, NodeT> parent)'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.merge(DAGraph<DataT, NodeT> parent)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.merge*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 78
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Zusammenführen dieser DAG mit einem anderen DAG. </p>
+      <p>Dies wird dieser DAG als untergeordnetes Element DAG markieren, die Abhängigkeiten von Knoten in dieser DAG werden mit zusammengeführt werden (in kopiert) das übergeordnete Element DAG</p>
+      <p></p>
+    syntax:
+      content: 'public void merge(DAGraph<DataT, NodeT> parent)'
+      parameters:
+        - id: parent
+          type: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph513491d4
+          description: <p>das übergeordnete Element DAG </p>
+  - uid: 'com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.mergeChildToParent(String,NodeT)'
+    id: 'mergeChildToParent(String,NodeT)'
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: 'mergeChildToParent(String parentKey, NodeT childNode)'
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.mergeChildToParent(String parentKey, NodeT childNode)'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.mergeChildToParent(String parentKey, NodeT childNode)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.mergeChildToParent*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 96
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Zusammenführungen DAG zugeordneten ChildNode auf DAG verknüpft sind mit einem übergeordneten Knoten des angegebenen Schlüssels.</p>
+      <p></p>
+    syntax:
+      content: 'public void mergeChildToParent(String parentKey, NodeT childNode)'
+      parameters:
+        - id: parentKey
+          type: '26831127'
+          description: <p>der Schlüssel des übergeordneten Knotens </p>
+        - id: childNode
+          type: 3166dcd3
+          description: <p>der untergeordnete Knoten </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.prepare()
+    id: prepare()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: prepare()
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.prepare()'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.prepare()'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.prepare*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 112
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: '<p>Wird diese DAG für einen Durchlauf befinden, die mit GetNext-Methode wird jeder Aufruf von GetNext gibt nächsten Knoten in der DAG ohne Abhängigkeiten vorbereitet. </p>'
+    syntax:
+      content: public void prepare()
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportCompletion(NodeT)
+    id: reportCompletion(NodeT)
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: reportCompletion(NodeT completed)
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.reportCompletion(NodeT completed)'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.reportCompletion(NodeT completed)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportCompletion*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 155
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Berichte, die ein Knoten daher aufgelöst wird anderen Knoten hängt können diese Methode verwenden.</p>
+      <p></p>
+    syntax:
+      content: public void reportCompletion(NodeT completed)
+      parameters:
+        - id: completed
+          type: 3166dcd3
+          description: <p>der Knoten kann jetzt verwendet werden </p>
+  - uid: 'com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportError(NodeT,Throwable)'
+    id: 'reportError(NodeT,Throwable)'
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    langs:
+      - java
+    name: 'reportError(NodeT faulted, Throwable throwable)'
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.reportError(NodeT faulted, Throwable throwable)'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.reportError(NodeT faulted, Throwable throwable)'
+    overload: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportError*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/DAGraph.java
+      startLine: 178
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+    summary: |-
+      <p>Gibt an, dass ein Knoten fehlerhaft ist.</p>
+      <p></p>
+    syntax:
+      content: 'public void reportError(NodeT faulted, Throwable throwable)'
+      parameters:
+        - id: faulted
+          type: 3166dcd3
+          description: <p>der Knoten fehlerhaft </p>
+        - id: throwable
+          type: a04fafd7
+          description: <p>die Ursache für Fehler </p>
+references:
+  - uid: 7aacc8e4
+    spec.java:
+      - name: DataT
+        fullName: DataT
+  - uid: 3166dcd3
+    spec.java:
+      - name: NodeT
+        fullName: NodeT
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.DAGraph*
+    name: DAGraph
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.DAGraph'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.DAGraph'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: 4fc6e284
+    spec.java:
+      - name: boolean
+        fullName: boolean
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.hasParent*
+    name: hasParent
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.hasParent'
+    fullName: 'boolean com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.hasParent'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isRootNode*
+    name: isRootNode
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.isRootNode'
+    fullName: 'boolean com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.isRootNode'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.isPreparer*
+    name: isPreparer
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.isPreparer'
+    fullName: 'boolean com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.isPreparer'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph513491d4
+    spec.java:
+      - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+        name: DAGraph
+        fullName: com.microsoft.azure.management.resources.fluentcore.dag.DAGraph
+        href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+      - name: '<DataT, NodeT>'
+        fullName: '<DataT, NodeT>'
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.merge*
+    name: merge
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.merge'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.merge'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.mergeChildToParent*
+    name: mergeChildToParent
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.mergeChildToParent'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.mergeChildToParent'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.prepare*
+    name: prepare
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.prepare'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.prepare'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNext*
+    name: getNext
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.getNext'
+    fullName: 'NodeT com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.getNext'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.getNode*
+    name: getNode
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.getNode'
+    fullName: 'NodeT com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.getNode'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportCompletion*
+    name: reportCompletion
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.reportCompletion'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.reportCompletion'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: a04fafd7
+    spec.java:
+      - name: Throwable
+        fullName: Throwable
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.reportError*
+    name: reportError
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>.reportError'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT, NodeT extends DAGNode<DataT, NodeT>.reportError'
+    package: com.microsoft.azure.management.resources.fluentcore.dag
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._graph.addNode(NodeT)
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: addNode(NodeT node)
+    nameWithType: 'Graph<DataT,NodeT,NodeT>.addNode(NodeT node)'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT, NodeT extends Node<DataT, NodeT>.addNode(NodeT node)'
+    type: Method
+    summary: |-
+      <p>Fügt einen Knoten zu diesem Diagramm.</p>
+      <p></p>
+    syntax:
+      content: public void addNode(NodeT node)
+      parameters:
+        - id: node
+          type: 3166dcd3
+          description: <p>der Knoten </p>
+  - uid: 'com.microsoft.azure.management.resources.fluentcore.dag._graph.findPath(String,String)'
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: 'findPath(String start, String end)'
+    nameWithType: 'Graph<DataT,NodeT,NodeT>.findPath(String start, String end)'
+    fullName: 'String com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT, NodeT extends Node<DataT, NodeT>.findPath(String start, String end)'
+    type: Method
+    syntax:
+      content: 'protected String findPath(String start, String end)'
+      parameters:
+        - id: start
+          type: '26831127'
+        - id: end
+          type: '26831127'
+      return:
+        type: '26831127'
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._graph.getNodes()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: getNodes()
+    nameWithType: 'Graph<DataT,NodeT,NodeT>.getNodes()'
+    fullName: 'Collection<NodeT> com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT, NodeT extends Node<DataT, NodeT>.getNodes()'
+    type: Method
+    syntax:
+      content: public Collection<NodeT> getNodes()
+      return:
+        type: 97fa570e
+        description: <p>alle Knoten im Diagramm. </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._graph.graph()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: graph
+    nameWithType: 'Graph<DataT,NodeT,NodeT>.graph'
+    fullName: 'Map<String, NodeT> com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT, NodeT extends Node<DataT, NodeT>.graph'
+    type: Field
+    summary: <p>das zugrunde liegende Diagramm. </p>
+    syntax:
+      content: 'protected Map<String, NodeT> graph'
+      return:
+        type: a3cb62d6
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._graph.Graph()
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: Graph()
+    nameWithType: 'Graph<DataT,NodeT,NodeT>.Graph()'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT, NodeT extends Node<DataT, NodeT>.Graph()'
+    type: Constructor
+    summary: <p>Erstellt ein gerichtetes Diagramm an. </p>
+    syntax:
+      content: public Graph()
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._graph.visit(Visitor)
+    parent: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: visit(Visitor visitor)
+    nameWithType: 'Graph<DataT,NodeT,NodeT>.visit(Visitor visitor)'
+    fullName: 'void com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT, NodeT extends Node<DataT, NodeT>.visit(Visitor visitor)'
+    type: Method
+    summary: |-
+      <p>Führen Sie DFS-Besuch in diesem Diagramm. </p>
+      <p>Gerichtete Diagramm wird in der DFS-Reihenfolge durchlaufen werden, und der Besucher benachrichtigt werden, wie die Suche wird erklärt, jeder Knoten und Edge.</p>
+      <p></p>
+    syntax:
+      content: public void visit(Visitor visitor)
+      parameters:
+        - id: visitor
+          type: bb01fbc9
+          description: <p>die Graph-Besucher </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._graph
+    parent: com.microsoft.azure.management.resources.fluentcore.dag
+    href: com.microsoft.azure.management.resources.fluentcore.dag._graph.yml
+    name: 'Graph<DataT,NodeT,NodeT>'
+    nameWithType: 'Graph<DataT,NodeT,NodeT>'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.Graph<DataT,NodeT,NodeT>'
+    type: Class
+    summary: |-
+      <p>Geben Sie eine gerichtetes Diagramm Datenstruktur darstellt. </p>
+      <p>Jeder Knoten in einem Diagramm wird durch dargestellt.<xref href="com.microsoft.azure.management.resources.fluentcore.dag._node" data-throw-if-not-resolved="false"></xref></p>
+      <p></p>
+    syntax:
+      content: 'public class Graph<DataT,NodeT extends Node<DataT,NodeT>>'
+      typeParameters:
+        - type: 7aacc8e4
+          description: <p>Der Typ der in der Graph-Knoten gespeicherten Daten </p>
+        - type: 3166dcd3
+          description: <p>Der Typ der Knoten im Diagramm </p>
+        - type: 3166dcd3
+          description: <p>Der Typ der Knoten im Diagramm </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node
+    parent: com.microsoft.azure.management.resources.fluentcore.dag
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node.yml
+    name: 'DAGNode<DataT,NodeT,NodeT>'
+    nameWithType: 'DAGNode<DataT,NodeT,NodeT>'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.DAGNode<DataT,NodeT,NodeT>'
+    type: Class
+    summary: |-
+      <p>Der Typ, der Knoten im darstellt eine <xref href="com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph" data-throw-if-not-resolved="false"></xref>.</p>
+      <p></p>
+    syntax:
+      content: 'public class DAGNode<DataT,NodeT extends DAGNode<DataT,NodeT>> extends Node<DataT, NodeT>'
+      typeParameters:
+        - type: 7aacc8e4
+          description: <p>Der Typ der im Knoten "" gespeicherten Daten </p>
+        - type: 3166dcd3
+          description: <p>Der Typ des Knotens </p>
+        - type: 3166dcd3
+          description: <p>Der Typ des Knotens </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph
+    parent: com.microsoft.azure.management.resources.fluentcore.dag
+    href: com.microsoft.azure.management.resources.fluentcore.dag._d_a_graph.yml
+    name: 'DAGraph<DataT,NodeT,NodeT>'
+    nameWithType: 'DAGraph<DataT,NodeT,NodeT>'
+    fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.DAGraph<DataT,NodeT,NodeT>'
+    type: Class
+    summary: |-
+      <p>Der Typ eine DAG (gerichtetes azyklisches Diagramm) darstellt. </p>
+      <p>Jeder Knoten in einer DAG, wird durch dargestellt.<xref href="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false"></xref></p>
+      <p></p>
+    syntax: *ref_1

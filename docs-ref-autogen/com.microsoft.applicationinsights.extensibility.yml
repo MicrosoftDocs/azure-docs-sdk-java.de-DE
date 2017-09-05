@@ -1,0 +1,103 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.applicationinsights.extensibility
+    id: extensibility
+    children:
+      - com.microsoft.applicationinsights.extensibility._context_initializer
+      - com.microsoft.applicationinsights.extensibility._performance_counters_collection_plugin
+      - com.microsoft.applicationinsights.extensibility._performance_counters_factory
+      - com.microsoft.applicationinsights.extensibility._telemetry_initializer
+      - com.microsoft.applicationinsights.extensibility._telemetry_module
+      - com.microsoft.applicationinsights.extensibility._telemetry_processor
+    href: com.microsoft.applicationinsights.extensibility.yml
+    langs:
+      - java
+    name: com.microsoft.applicationinsights.extensibility
+    nameWithType: com.microsoft.applicationinsights.extensibility
+    fullName: com.microsoft.applicationinsights.extensibility
+    type: Namespace
+    source:
+      remote:
+        path: '[generated]'
+      path: '[generated]'
+    syntax:
+      content: package com.microsoft.applicationinsights.extensibility
+references:
+  - uid: com.microsoft.applicationinsights.extensibility.context
+    href: com.microsoft.applicationinsights.extensibility.context.yml
+    name: com.microsoft.applicationinsights.extensibility.context
+    nameWithType: com.microsoft.applicationinsights.extensibility.context
+    fullName: com.microsoft.applicationinsights.extensibility.context
+    type: Namespace
+    syntax:
+      content: package com.microsoft.applicationinsights.extensibility.context
+  - uid: com.microsoft.applicationinsights.extensibility.initializer
+    href: com.microsoft.applicationinsights.extensibility.initializer.yml
+    name: com.microsoft.applicationinsights.extensibility.initializer
+    nameWithType: com.microsoft.applicationinsights.extensibility.initializer
+    fullName: com.microsoft.applicationinsights.extensibility.initializer
+    type: Namespace
+    syntax:
+      content: package com.microsoft.applicationinsights.extensibility.initializer
+  - uid: com.microsoft.applicationinsights.extensibility._context_initializer
+    parent: com.microsoft.applicationinsights.extensibility
+    href: com.microsoft.applicationinsights.extensibility._context_initializer.yml
+    name: ContextInitializer
+    nameWithType: ContextInitializer
+    fullName: com.microsoft.applicationinsights.extensibility.ContextInitializer
+    type: Interface
+    summary: '<p>Stellt ein Objekt, das für TelemetryContext unterstützenden Logik implementiert. <xref href="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false"></xref></p>'
+    syntax:
+      content: public interface ContextInitializer
+  - uid: com.microsoft.applicationinsights.extensibility._performance_counters_collection_plugin
+    parent: com.microsoft.applicationinsights.extensibility
+    href: com.microsoft.applicationinsights.extensibility._performance_counters_collection_plugin.yml
+    name: PerformanceCountersCollectionPlugin
+    nameWithType: PerformanceCountersCollectionPlugin
+    fullName: com.microsoft.applicationinsights.extensibility.PerformanceCountersCollectionPlugin
+    type: Interface
+    summary: <p>Gupele erstellt auf 9/13/2016. </p>
+    syntax:
+      content: public interface PerformanceCountersCollectionPlugin
+  - uid: com.microsoft.applicationinsights.extensibility._performance_counters_factory
+    parent: com.microsoft.applicationinsights.extensibility
+    href: com.microsoft.applicationinsights.extensibility._performance_counters_factory.yml
+    name: PerformanceCountersFactory
+    nameWithType: PerformanceCountersFactory
+    fullName: com.microsoft.applicationinsights.extensibility.PerformanceCountersFactory
+    type: Interface
+    summary: |-
+      <p>Definiert die Schnittstelle, die konkrete Factorys befolgen sollten. Die wichtigste Methode ist dasjenige, das kann die erforderlichen Leistungsindikatoren erstellen.</p>
+      <p>Gupele erstellt 3/3/2015. </p>
+    syntax:
+      content: public interface PerformanceCountersFactory
+  - uid: com.microsoft.applicationinsights.extensibility._telemetry_initializer
+    parent: com.microsoft.applicationinsights.extensibility
+    href: com.microsoft.applicationinsights.extensibility._telemetry_initializer.yml
+    name: TelemetryInitializer
+    nameWithType: TelemetryInitializer
+    fullName: com.microsoft.applicationinsights.extensibility.TelemetryInitializer
+    type: Interface
+    summary: <p>Schnittstelle für Telemetrie intitializers </p>
+    syntax:
+      content: public interface TelemetryInitializer
+  - uid: com.microsoft.applicationinsights.extensibility._telemetry_module
+    parent: com.microsoft.applicationinsights.extensibility
+    href: com.microsoft.applicationinsights.extensibility._telemetry_module.yml
+    name: TelemetryModule
+    nameWithType: TelemetryModule
+    fullName: com.microsoft.applicationinsights.extensibility.TelemetryModule
+    type: Interface
+    summary: <p>Eine Schnittstelle für Telemetrie Module. </p>
+    syntax:
+      content: public interface TelemetryModule
+  - uid: com.microsoft.applicationinsights.extensibility._telemetry_processor
+    parent: com.microsoft.applicationinsights.extensibility
+    href: com.microsoft.applicationinsights.extensibility._telemetry_processor.yml
+    name: TelemetryProcessor
+    nameWithType: TelemetryProcessor
+    fullName: com.microsoft.applicationinsights.extensibility.TelemetryProcessor
+    type: Interface
+    summary: "<p>Ruft die Methode eine <ref refid=\"\" kindref=\"compound\">Telemetrie</ref> -Instanz, die gesendet werden kann. Dies ist die Möglichkeit, genehmigen oder ablehnen. Rückgabe von \"false\" bedeutet, dass die Telemetrie nicht gesendet werden, wird während \"True\" bedeutet, dass die Genehmigung.</p>\n<p>Die Telemetrie möglicherweise andere Filter durchlaufen, obwohl dessen senden, die verweigert, möglicherweise.</p>\n<p>Dieser Prozessor aktivieren, Sie es in der ApplicationInsights.xml wie folgt hinzufügen müssen:</p>\n<p>\r\n  <preformatted>\r\n    <programlisting>\r\n      <codeline>\r\n        <highlight class=\"normal\">&lt;TelemetryProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;CustomProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;Prozessor<sp></sp>type=\"full.path.to.Filter\"&gt; </highlight> \r\n      </codeline> \r\n      <codeline> \r\n        <highlight class=\"normal\"> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> &lt;Hinzufügen<sp></sp>Name = \"Eigenschaft\"<sp></sp>Wert = \"StringValue\" /&gt; </highlight> \r\n      </codeline> \r\n      <codeline> \r\n        <highlight class=\"normal\"> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> &lt;/Processor&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;/CustomProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">&lt;/TelemetryProcessors&gt; </highlight> \r\n      </codeline> \r\n    </programlisting>*</preformatted>\r\n</p>\n<p>Beachten Sie, dass die Klasse definiert eine Eigenschaft mit dem Namen \"Property\", der zu konfiguriert ist. Jede Eigenschaft, die Sie konfigurieren möchten muss eine öffentliche 'SetX'-Methode, z. B. \"SetProperty\" in diesem Beispiel verfügen <bold>'SetX'-Methoden ausgelöste Ausnahmen werden abgefangen werden, durch das Framework, die den Filter ignoriert werden kann</bold></p>\n<p>Gupele erstellt am 7/26/2016. </p>"
+    syntax:
+      content: public interface TelemetryProcessor

@@ -1,0 +1,1982 @@
+### YamlMime:ManagedReference
+items:
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider
+    id: _volatile_actor_state_provider
+    parent: microsoft.servicefabric.actors
+    children:
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.abort()
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.actorActivatedAsync(ActorId)
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync(BackupOption,Duration,BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.changeRoleAsync(ReplicaRole,CancellationToken)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.closeAsync(CancellationToken)
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.containsStateAsync(ActorId,String)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.currentReplicaRole()
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.deleteReminderAsync(ActorId,String)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.enumerateStateNamesAsync(ActorId)
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.getActorsAsync(int,ContinuationToken)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyContext()
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.getLastCommittedSequenceNumber()
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.initialize(ActorTypeInformation)
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.initialize(StatefulServiceInitializationParameters)
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.loadRemindersAsync(CancellationToken)
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.loadStateAsync(ActorId,String)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.onDataLossAsync(CancellationToken)
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.onSnapshotAsync(Duration)
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.removeActorAsync(ActorId)
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync(String)
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync(String,RestorePolicy)'
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.saveReminderAsync(ActorId,ActorReminder)'
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.saveStateAsync(ActorId,List<ActorStateChange>)'
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.traceId()
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.traceType()
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.transientErrorRetryDelay()
+      - 'microsoft.servicefabric.actors._volatile_actor_state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider()
+      - microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider(ReplicatorSettings)
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: VolatileActorStateProvider
+    nameWithType: VolatileActorStateProvider
+    fullName: microsoft.servicefabric.actors.VolatileActorStateProvider
+    type: Class
+    source:
+      remote: &ref_0
+        path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 60
+    package: microsoft.servicefabric.actors
+    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>Implementierung für flüchtige Persistenz Einstufige <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref>Status ist nur im Arbeitsspeicher beibehalten werden. </p>"
+    syntax: &ref_1
+      content: 'public class VolatileActorStateProvider implements ActorStateProvider,StateProvider'
+    inheritance:
+      - java.lang.Object
+      - microsoft.servicefabric.data._state_provider_replica
+      - microsoft.servicefabric.actors._actor_state_provider
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.abort()
+    id: abort()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: abort()
+    nameWithType: VolatileActorStateProvider.abort()
+    fullName: void microsoft.servicefabric.actors.VolatileActorStateProvider.abort()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.abort*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 243
+    package: microsoft.servicefabric.actors
+    summary: "<p>Bricht einen Zustand Anbieter Replikat erzwungen ab. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dies im Allgemeinen tritt auf, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder wenn das Replikat Lebenszyklus aufgrund von internen Fehlern von Service Fabric zuverlässig verwalten kann. </p>"
+    syntax:
+      content: public void abort()
+    overridden: microsoft.servicefabric.data._state_provider_replica.abort()
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.actorActivatedAsync(ActorId)
+    id: actorActivatedAsync(ActorId)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: actorActivatedAsync(ActorId actorId)
+    nameWithType: VolatileActorStateProvider.actorActivatedAsync(ActorId actorId)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.actorActivatedAsync(ActorId actorId)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.actorActivatedAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 545
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Diese Methode wird im Rahmen des Aktivierungsprozesses des Akteurs, mit der angegebenen Id. aufgerufen.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<?> actorActivatedAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, die aktiviert wird. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen stellt <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> Verarbeiten der abfragebenachrichtigung Aktivierung. </p>'
+    overridden: microsoft.servicefabric.actors._actor_state_provider.actorActivatedAsync(ActorId)
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync(BackupOption,Duration,BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    id: 'backupAsync(BackupOption,Duration,BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    nameWithType: 'VolatileActorStateProvider.backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 279
+    package: microsoft.servicefabric.actors
+    summary: "<p>Führt eine vollständige Sicherung der Status, die von dieser Akteur State-Anbieter verwaltet werden</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Sichern/Wiederherstellen wird nicht von <xref href=\"microsoft.servicefabric.actors._volatile_actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+      parameters:
+        - id: option
+          type: microsoft.servicefabric.data._backup_option
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.data._backup_option\" data-throw-if-not-resolved=\"false\"></xref>für den Rückruf </p>"
+        - id: timeout
+          type: e02a2de0
+          description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">java.time.Duration</ref> , beschreibt Timeout für die Sicherung </p>"
+        - id: backupCallback
+          type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
+          description: '<p>BackupCallbackCallback, die aufgerufen werden, wenn der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+    overridden: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BackupOption,Duration,BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    exceptions:
+      - type: b1c38b44
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    id: 'backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    nameWithType: 'VolatileActorStateProvider.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 257
+    package: microsoft.servicefabric.actors
+    summary: "<p>Führt eine vollständige Sicherung der Status, die von dieser Akteur State-Anbieter verwaltet werden</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Sichern/Wiederherstellen wird nicht von <xref href=\"microsoft.servicefabric.actors._volatile_actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+      parameters:
+        - id: backupCallback
+          type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
+          description: '<p>BackupCallbackCallback, die aufgerufen werden, wenn der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+    overridden: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    exceptions:
+      - type: b1c38b44
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.changeRoleAsync(ReplicaRole,CancellationToken)'
+    id: 'changeRoleAsync(ReplicaRole,CancellationToken)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+    nameWithType: 'VolatileActorStateProvider.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.changeRoleAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 180
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Dem State-Anbieter-Replikat zu benachrichtigen, dass seine Rolle geändert hat, z. B. um Primary oder Secondary sein.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+      parameters:
+        - id: newRole
+          type: system.fabric._replica_role
+          description: '<p>Die neue <ref refid="" kindref="compound">ReplicaRole</ref>, z. B. Primary oder Secondary sein. </p>'
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Rolle Änderungsvorgang darstellt. </p>'
+    overridden: 'microsoft.servicefabric.data._state_provider_replica.changeRoleAsync(ReplicaRole,CancellationToken)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.closeAsync(CancellationToken)
+    id: closeAsync(CancellationToken)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: closeAsync(CancellationToken cancellationToken)
+    nameWithType: VolatileActorStateProvider.closeAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.closeAsync(CancellationToken cancellationToken)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.closeAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 231
+    package: microsoft.servicefabric.actors
+    summary: "<p>Geschlossen Sie das Replikat der State-Anbieter ordnungsgemäß werden.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dies im Allgemeinen tritt auf, wenn das Replikat Code ein Upgrade wird, das Replikat aufgrund des Lastenausgleichs verschoben wird oder ein vorübergehender Fehler erkannt wird. </p>"
+    syntax:
+      content: public CompletableFuture<?> closeAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
+    overridden: microsoft.servicefabric.data._state_provider_replica.closeAsync(CancellationToken)
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.containsStateAsync(ActorId,String)'
+    id: 'containsStateAsync(ActorId,String)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'containsStateAsync(ActorId actorId, String stateName)'
+    nameWithType: 'VolatileActorStateProvider.containsStateAsync(ActorId actorId, String stateName)'
+    fullName: 'CompletableFuture<Boolean> microsoft.servicefabric.actors.VolatileActorStateProvider.containsStateAsync(ActorId actorId, String stateName)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.containsStateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 652
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Überprüft, ob zustandsanbieter Akteur eine actorzustands mit dem angegebenen Namen enthält.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Boolean> containsStateAsync(ActorId actorId, String stateName)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, deren Zustand Vorhandensein überprüft. </p>'
+        - id: stateName
+          type: '26831127'
+          description: <p>Name des Zustands Akteur Vorhandensein überprüft. </p>
+      return:
+        type: 7e53ac82
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. Der Wert von TResult-Parameter ist "true", wenn der Status mit dem angegebenen Namen ist vorhanden, andernfalls "false". </p>'
+    overridden: 'microsoft.servicefabric.actors._actor_state_provider.containsStateAsync(ActorId,String)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.currentReplicaRole()
+    id: currentReplicaRole()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: currentReplicaRole()
+    nameWithType: VolatileActorStateProvider.currentReplicaRole()
+    fullName: ReplicaRole microsoft.servicefabric.actors.VolatileActorStateProvider.currentReplicaRole()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.currentReplicaRole*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 834
+    package: microsoft.servicefabric.actors
+    syntax:
+      content: public ReplicaRole currentReplicaRole()
+      return:
+        type: system.fabric._replica_role
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.deleteReminderAsync(ActorId,String)'
+    id: 'deleteReminderAsync(ActorId,String)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'deleteReminderAsync(ActorId actorId, String reminderName)'
+    nameWithType: 'VolatileActorStateProvider.deleteReminderAsync(ActorId actorId, String reminderName)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.deleteReminderAsync(ActorId actorId, String reminderName)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.deleteReminderAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 797
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Löscht die angegebene Akteur Erinnerung an, falls vorhanden.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> deleteReminderAsync(ActorId actorId, String reminderName)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, der Erinnerung zu löschen. </p>'
+        - id: reminderName
+          type: '26831127'
+          description: <p>Der Name der Erinnerung zu löschen. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Löschvorgang darstellt. </p>'
+    overridden: 'microsoft.servicefabric.actors._actor_state_provider.deleteReminderAsync(ActorId,String)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.enumerateStateNamesAsync(ActorId)
+    id: enumerateStateNamesAsync(ActorId)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: enumerateStateNamesAsync(ActorId actorId)
+    nameWithType: VolatileActorStateProvider.enumerateStateNamesAsync(ActorId actorId)
+    fullName: CompletableFuture<List<String>> microsoft.servicefabric.actors.VolatileActorStateProvider.enumerateStateNamesAsync(ActorId actorId)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.enumerateStateNamesAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 723
+    package: microsoft.servicefabric.actors
+    summary: "<p>Erstellt ein aufzählbares Objekt von allen zugeordneten angegebenen Akteur Ländernamen.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>vom Akteur State-Anbieter zurückgegebenes sicher gleichzeitig mit der Lesevorgänge verwendet wird und schreibt in das State-Anbieter. Es stellt eine Momentaufnahme für die konsistente Sicht der State-Anbieter dar. </p>"
+    syntax:
+      content: public CompletableFuture<List<String>> enumerateStateNamesAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für die enumerable erstellt. </p>'
+      return:
+        type: d20512af
+        description: '<p>Eine Aufgabe, die den asynchronen Enumerationsvorgang darstellt. Der Wert von TResult-Parameter ist ein aufzählbares Objekt von dem alle Namen angegebenen Akteur zugeordnet. </p>'
+    overridden: microsoft.servicefabric.actors._actor_state_provider.enumerateStateNamesAsync(ActorId)
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.getActorsAsync(int,ContinuationToken)'
+    id: 'getActorsAsync(int,ContinuationToken)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'getActorsAsync(int itemsCount, ContinuationToken continuationToken)'
+    nameWithType: 'VolatileActorStateProvider.getActorsAsync(int itemsCount, ContinuationToken continuationToken)'
+    fullName: 'CompletableFuture<PagedResult<ActorId>> microsoft.servicefabric.actors.VolatileActorStateProvider.getActorsAsync(int itemsCount, ContinuationToken continuationToken)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.getActorsAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 757
+    package: microsoft.servicefabric.actors
+    summary: "<p>Ruft den ActorIds aus der State-Anbieter ab.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> der </p>"
+    syntax:
+      content: 'public CompletableFuture<PagedResult<ActorId>> getActorsAsync(int itemsCount, ContinuationToken continuationToken)'
+      parameters:
+        - id: itemsCount
+          type: f75371fa
+          description: <p>Die Anzahl der zurückzugebenden angeforderten Elemente. </p>
+        - id: continuationToken
+          type: microsoft.servicefabric.actors._continuation_token
+          description: '<p>Ein Fortsetzungstoken, um die Ergebnisse von Abfragen zu starten. Ein null-Wert des Fortsetzungstokens bedeutet Zurückgeben von Werten Form Anfang starten. </p>'
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._paged_result78504a52microsoft.servicefabric.actors._actor_ide7daa122
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang des Aufrufs an Server darstellt. </p>'
+    overridden: 'microsoft.servicefabric.actors._actor_state_provider.getActorsAsync(int,ContinuationToken)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyContext()
+    id: getCopyContext()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: getCopyContext()
+    nameWithType: VolatileActorStateProvider.getCopyContext()
+    fullName: OperationDataStream microsoft.servicefabric.actors.VolatileActorStateProvider.getCopyContext()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyContext*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 459
+    package: microsoft.servicefabric.actors
+    summary: "<p>Kontext auf einem sekundären Replikat erhält, nachdem es erstellt und geöffnet, um den Kontext mit dem primären Replikat zu senden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>das primäre Replikat analysiert den Kontext und zurücksendet Status über <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref>. <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref>wird aufgerufen, auf neu erstellt werden, inaktive sekundäre Replikate und bietet einen Mechanismus zum asynchron eine bidirektionale Konversation mit dem primären Replikat hergestellt. Das sekundäre Replikat sendet <ref refid=\"\" kindref=\"compound\">OperationData</ref> Objekte, die mit dem das primäre Replikat den Status des Sammelns von Kontext auf dem sekundären Replikat bestimmen kann. Das primäre Replikat sendet seinerseits den erforderlichen Zustand zurück. Finden Sie unter <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> an das primäre Replikat für die andere Hälfte des Austausches. Für InMemory-Dienste die <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref> Methode wird nicht aufgerufen, da der Status der sekundären Replikate bekannt ist (sie sind leer und benötigen alle Status). </p>"
+    syntax:
+      content: public OperationDataStream getCopyContext()
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <ref refid="" kindref="compound">OperationDataStream</ref>. </p>
+    overridden: system.fabric._state_provider.getCopyContext()
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+    id: 'getCopyState(SequenceNumber,OperationDataStream)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    nameWithType: 'VolatileActorStateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    fullName: 'OperationDataStream microsoft.servicefabric.actors.VolatileActorStateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyState*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 493
+    package: microsoft.servicefabric.actors
+    summary: "<p>Ruft die Status für ein primäres Replikat, das erforderlich sind, um ein sekundäres Replikat zu erstellen.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>genauso <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref> ermöglicht das sekundäre Replikat das primäre Replikat über Kontext an ein <ref refid=\"\" kindref=\"compound\">OperationDataStream</ref>, <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> ermöglicht das primäre Replikat antwortet ein <ref refid=\"\" kindref=\"compound\">OperationDataStream</ref>. Der Datenstrom enthält Objekte, die an das sekundäre Replikat über übermittelt werden die <ref refid=\"\" kindref=\"compound\">StateReplicator#getCopyStream()</ref> Methode der <ref refid=\"\" kindref=\"compound\">FabricReplicator</ref> Klasse. Implementieren Sie die Objekte <ref refid=\"\" kindref=\"compound\">Vorgang</ref> und die angegebenen Daten enthalten. Wenn das primäre Replikat dieser Aufruf empfängt, sollte er erstellen und Zurückgeben einer anderen <ref refid=\"\" kindref=\"compound\">OperationDataStream</ref> enthält <ref refid=\"\" kindref=\"compound\">OperationData</ref>. <ref refid=\"\" kindref=\"compound\">OperationData</ref> des datensynchronisierungsstatus darstellt, die das sekundäre Replikat </p>"
+    syntax:
+      content: 'public OperationDataStream getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+      parameters:
+        - id: upToSequenceNumber
+          type: system.fabric._sequence_number
+          description: '<p>Die maximale letzte Sequenznummer (LSN), die im Stream über Kopiervorgang platziert werden, sollten die <ref refid="" kindref="compound">StateReplicator#getCopyStream()</ref> Methode. LSNs, die größer als diese Zahl werden an das sekundäre Replikat als Teil der replikationsdatenstrom über übermittelt die <ref refid="" kindref="compound">StateReplicator#getReplicationStream()</ref> Methode. </p>'
+        - id: copyContext
+          type: system.fabric._operation_data_stream
+          description: '<p>Ein <ref refid="" kindref="compound">OperationDataStream</ref> , enthält die <ref refid="" kindref="compound">OperationData</ref> Objekte, die vom sekundären Replikat erstellt werden. erfordert die Stand </p>'
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <ref refid="" kindref="compound">OperationDataStream</ref>. </p>
+    overridden: 'system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+    exceptions:
+      - type: 12fe80de
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.getLastCommittedSequenceNumber()
+    id: getLastCommittedSequenceNumber()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: getLastCommittedSequenceNumber()
+    nameWithType: VolatileActorStateProvider.getLastCommittedSequenceNumber()
+    fullName: long microsoft.servicefabric.actors.VolatileActorStateProvider.getLastCommittedSequenceNumber()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.getLastCommittedSequenceNumber*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 361
+    package: microsoft.servicefabric.actors
+    summary: "<p>Ruft die letzte Sequenznummer, die der Dienst ein Commit ausgeführt wurde.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>diese Methode wird von einem Dienst aufgerufen, wenn zuerst gestartet wurde, gestartet werden soll, für den Fall, dass sie persistenten Status hat und vermutlich Daten verloren gehen. Beim Start eines zustandsbehafteten dienstreplikats, hat er die Option zum Wiederherstellen von Daten, die beibehalten wurden möglicherweise von früheren Updates. Wenn ein Zustand, der auf diese Weise wiederhergestellt werden, ist seines aktuellen Fortschritts die letzte geschriebene Sequenznummer für diese Daten an. Volatile-Dienst kann einfach 0 zurückgeben. Beachten Sie, dass diese Methode nicht aufgerufen wird, um eine neue primäre Wahl während eines Failovers, zu bestimmen, da der aktuelle Status für die ein Commit ausgeführt wurde bereits bekannt ist die <ref refid=\"\" kindref=\"compound\">FabricReplicator</ref> Klasse zu diesem Zeitpunkt. </p>"
+    syntax:
+      content: public long getLastCommittedSequenceNumber()
+      return:
+        type: 0364520f
+        description: <p>Long-Wert. </p>
+    overridden: system.fabric._state_provider.getLastCommittedSequenceNumber()
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.initialize(ActorTypeInformation)
+    id: initialize(ActorTypeInformation)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: initialize(ActorTypeInformation actorTypeInformation)
+    nameWithType: VolatileActorStateProvider.initialize(ActorTypeInformation actorTypeInformation)
+    fullName: void microsoft.servicefabric.actors.VolatileActorStateProvider.initialize(ActorTypeInformation actorTypeInformation)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.initialize*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 533
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Initialisiert die Akteur-State-Anbieter mit Typinformationen des Akteurs Typs zugeordnet.</p>
+      <p></p>
+    syntax:
+      content: public void initialize(ActorTypeInformation actorTypeInformation)
+      parameters:
+        - id: actorTypeInformation
+          type: microsoft.servicefabric.actors._actor_type_information
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_type_information\" data-throw-if-not-resolved=\"false\"></xref>Geben Sie die Informationen der Akteurklasse. </p>"
+    overridden: microsoft.servicefabric.actors._actor_state_provider.initialize(ActorTypeInformation)
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.initialize(StatefulServiceInitializationParameters)
+    id: initialize(StatefulServiceInitializationParameters)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: initialize(StatefulServiceInitializationParameters initializationParameters)
+    nameWithType: VolatileActorStateProvider.initialize(StatefulServiceInitializationParameters initializationParameters)
+    fullName: void microsoft.servicefabric.actors.VolatileActorStateProvider.initialize(StatefulServiceInitializationParameters initializationParameters)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.initialize*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 130
+    package: microsoft.servicefabric.actors
+    summary: "<p>Das Status Anbieter Replikat unter Verwendung des Diensts Initialisierung zu initialisieren.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>keine komplexen Verarbeitung bei der Initialisierung erfolgen soll. Teuer oder lang ausgeführte Initialisierung sollte im OpenAsync erfolgen. </p>"
+    syntax:
+      content: public void initialize(StatefulServiceInitializationParameters initializationParameters)
+      parameters:
+        - id: initializationParameters
+          type: system.fabric._stateful_service_initialization_parameters
+          description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">StatefulServiceInitializationParameters</ref> z. B. Dienstnamen, Partitions-Id, Replikat-Id und Code-Paketinformationen. </p>"
+    overridden: microsoft.servicefabric.data._state_provider_replica.initialize(StatefulServiceInitializationParameters)
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.loadRemindersAsync(CancellationToken)
+    id: loadRemindersAsync(CancellationToken)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: loadRemindersAsync(CancellationToken cancellationToken)
+    nameWithType: VolatileActorStateProvider.loadRemindersAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<ActorReminderCollection> microsoft.servicefabric.actors.VolatileActorStateProvider.loadRemindersAsync(CancellationToken cancellationToken)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.loadRemindersAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 815
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Lädt alle Erinnerungen, die in der Akteur-State-Anbieter enthalten sind.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<ActorReminderCollection> loadRemindersAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._actor_reminder_collectiona08ddfce
+        description: '<p>Eine Aufgabe, die den asynchrone Ladevorgang darstellt. Der Wert von TResult-Parameter ist eine Auflistung von alle Akteur Erinnerungen in der Akteur-State-Anbieter enthalten sind. </p>'
+    overridden: microsoft.servicefabric.actors._actor_state_provider.loadRemindersAsync(CancellationToken)
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.loadStateAsync(ActorId,String)'
+    id: 'loadStateAsync(ActorId,String)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'loadStateAsync(ActorId actorId, String stateName)'
+    nameWithType: 'VolatileActorStateProvider.loadStateAsync(ActorId actorId, String stateName)'
+    fullName: 'public<T> CompletableFuture<T> microsoft.servicefabric.actors.VolatileActorStateProvider.loadStateAsync(ActorId actorId, String stateName)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.loadStateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 572
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Lädt den Akteur-Zustand, der dem angegebenen Zustand zugeordnet.</p>
+      <p></p>
+    syntax:
+      content: 'public <T> CompletableFuture<T> loadStateAsync(ActorId actorId, String stateName)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, die aktiviert wird. </p>'
+        - id: stateName
+          type: '26831127'
+          description: <p>StateName. </p>
+      return:
+        type: 6d056e8b
+        description: '<p>Eine Aufgabe, die den asynchrone Ladevorgang darstellt. Der Wert von TResult-Parameter enthält Wert des actorzustands angegebenen Zustand zugeordnet. </p>'
+    overridden: 'microsoft.servicefabric.actors._actor_state_provider.loadStateAsync(ActorId,String)'
+    exceptions:
+      - type: c27a23df
+        description: <p>Wenn <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> zugeordneten Status angegebene Statusname ist nicht vorhanden. </p>
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.onDataLossAsync(CancellationToken)
+    id: onDataLossAsync(CancellationToken)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: onDataLossAsync(CancellationToken cancellationToken)
+    nameWithType: VolatileActorStateProvider.onDataLossAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<Boolean> microsoft.servicefabric.actors.VolatileActorStateProvider.onDataLossAsync(CancellationToken cancellationToken)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.onDataLossAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 434
+    package: microsoft.servicefabric.actors
+    summary: "<p>Gibt an, dass ein schreibquorums Replikate in dieser Replikatsatz verloren gegangen ist und daher Datenverlust aufgetreten sind. Die Replikatgruppe besteht aus der Mehrheit der Replikate, die das primäre Replikat enthält.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>bei die Service Fabric-Laufzeit einen Fehler des ein Quorum der Replikate, der das primäre Replikat enthält berücksichtigt, wählt ein neues primäres Replikat und sofort ruft diese Methode auf dem neuen primären Replikat. Ein primäres Replikat, das eines möglichen Datenverlusts informiert ist die Möglichkeit, den Zustand aus einer externen Datenquelle wiederherstellen oder kann weiterhin mit dem Status ausgeführt wird, die derzeit. Wenn der Dienst mit seinem aktuellen Zustand ausgeführt werden weiterhin, sollte es \"false\" von dieser Methode zurückgeben, der gibt an, dass keine Änderung vorgenommen wurde. Wenn es wiederhergestellt oder geändert Datenbankzustands, z. B. unvollständige Arbeit ein Rollback sollte \"true\" zurückgeben. Wenn \"true\" zurückgegeben wird, muss der Status in den anderen Replikaten angenommen werden, falsch zu sein. Aus diesem Grund die Service Fabric-Laufzeit die anderen Replikaten in der Replikatgruppe entfernt und erneut erstellt werden. </p>"
+    syntax:
+      content: public CompletableFuture<Boolean> onDataLossAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 7e53ac82
+        description: '<p>Gibt <ref refid="" kindref="compound">java.util.concurrent.CompletableFuture</ref> des Typs <ref refid="" kindref="compound">java.lang.Boolean</ref>, Wert, der angibt, ob der Zustand geändert hat. Die Methode gibt "true", falls es sich ändert, oder wenn es nicht geändert hat, gibt die Methode "false" zurück. </p>'
+    overridden: system.fabric._state_provider.onDataLossAsync(CancellationToken)
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.onSnapshotAsync(Duration)
+    id: onSnapshotAsync(Duration)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: onSnapshotAsync(Duration currentLogicalTime)
+    nameWithType: VolatileActorStateProvider.onSnapshotAsync(Duration currentLogicalTime)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.onSnapshotAsync(Duration currentLogicalTime)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.onSnapshotAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 336
+    package: microsoft.servicefabric.actors
+    syntax:
+      content: public CompletableFuture<?> onSnapshotAsync(Duration currentLogicalTime)
+      parameters:
+        - id: currentLogicalTime
+          type: e02a2de0
+      return:
+        type: 16409f84
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
+    id: 'openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+    nameWithType: 'VolatileActorStateProvider.openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<Replicator> microsoft.servicefabric.actors.VolatileActorStateProvider.openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.openAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 155
+    package: microsoft.servicefabric.actors
+    summary: "<p>Öffnen Sie das Replikat des Status-Anbieter für die Verwendung an.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Initialisierungsaufgaben für erweiterte State-Anbieter zu diesem Zeitpunkt gestartet werden können. </p>"
+    syntax:
+      content: 'public CompletableFuture<Replicator> openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+      parameters:
+        - id: openMode
+          type: system.fabric._replica_open_mode
+          description: '<p>Die <ref refid="" kindref="compound">ReplicaOpenMode</ref> , der angibt, ob es sich um ein neues oder vorhandenes Replikat handelt. </p>'
+        - id: partition
+          type: system.fabric._stateful_service_partition
+          description: '<p>Die <ref refid="" kindref="compound">StatefulServicePartition</ref> Partition, die das Replikat gehört. </p>'
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 9cdf14d0system.fabric._replicatora08ddfce
+        description: '<p>Eine Aufgabe, die den asynchronen Öffnungsvorgang darstellt. Das Ergebnis enthält Replikator für die Replikation des Status zwischen Replikaten Anbieter Status in der Partition verantwortlich. </p>'
+    overridden: 'microsoft.servicefabric.data._state_provider_replica.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.removeActorAsync(ActorId)
+    id: removeActorAsync(ActorId)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: removeActorAsync(ActorId actorId)
+    nameWithType: VolatileActorStateProvider.removeActorAsync(ActorId actorId)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.removeActorAsync(ActorId actorId)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.removeActorAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 672
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Entfernt alle vorhandenen Status und Erinnerungen angegebenen Akteur atomar zugeordnet.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<?> removeActorAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für den Status zu entfernt. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Entfernungsvorgang darstellt. </p>'
+    overridden: microsoft.servicefabric.actors._actor_state_provider.removeActorAsync(ActorId)
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync(String)
+    id: restoreAsync(String)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: restoreAsync(String backupFolderPath)
+    nameWithType: VolatileActorStateProvider.restoreAsync(String backupFolderPath)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.restoreAsync(String backupFolderPath)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 302
+    package: microsoft.servicefabric.actors
+    summary: '<p>Wiederherstellen eine Sicherung von <ref refid="" kindref="compound">microsoft.servicefabric.data.StateProviderReplica#backupAsync(BiFunction)</ref> oder <ref refid="" kindref="compound">microsoft.servicefabric.data.StateProviderReplica#backupAsync (BackupOption, Dauer, BiFunction)</ref><bold>"Hinweise":</bold>Sichern/Wiederherstellen wird nicht von <xref href="microsoft.servicefabric.actors._volatile_actor_state_provider" data-throw-if-not-resolved="false"></xref>. </p>'
+    syntax:
+      content: public CompletableFuture<?> restoreAsync(String backupFolderPath)
+      parameters:
+        - id: backupFolderPath
+          type: '26831127'
+          description: <p>Verzeichnis aus dem Replikat wiederhergestellt wird. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+    overridden: microsoft.servicefabric.data._state_provider_replica.restoreAsync(String)
+    exceptions:
+      - type: b1c38b44
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync(String,RestorePolicy)'
+    id: 'restoreAsync(String,RestorePolicy)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+    nameWithType: 'VolatileActorStateProvider.restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 324
+    package: microsoft.servicefabric.actors
+    summary: '<p>Wiederherstellen eine Sicherung von <ref refid="" kindref="compound">microsoft.servicefabric.data.StateProviderReplica#backupAsync(BiFunction)</ref> oder <ref refid="" kindref="compound">microsoft.servicefabric.data.StateProviderReplica#backupAsync (BackupOption, Dauer, BiFunction)</ref><bold>"Hinweise":</bold>Sichern/Wiederherstellen wird nicht von <xref href="microsoft.servicefabric.actors._volatile_actor_state_provider" data-throw-if-not-resolved="false"></xref>. </p>'
+    syntax:
+      content: 'public CompletableFuture<?> restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+      parameters:
+        - id: backupFolderPath
+          type: '26831127'
+          description: <p>Verzeichnis aus dem Replikat wiederhergestellt wird. </p>
+        - id: restorePolicy
+          type: microsoft.servicefabric.data._restore_policy
+          description: <p>Die <ref refid="" kindref="compound">RestorePolicy</ref>. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+    overridden: 'microsoft.servicefabric.data._state_provider_replica.restoreAsync(String,RestorePolicy)'
+    exceptions:
+      - type: b1c38b44
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.saveReminderAsync(ActorId,ActorReminder)'
+    id: 'saveReminderAsync(ActorId,ActorReminder)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+    nameWithType: 'VolatileActorStateProvider.saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.saveReminderAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 778
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Speichert die angegebenen Akteur Erinnerung an. Wenn eine Akteur Erinnerung mit dem angegebenen Namen nicht vorhanden ist, fügt es hinzu, dass die Akteur Erinnerung andernfalls vorhandenen Akteur Erinnerung mit demselben Namen aktualisiert wird.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: <p>ID der Akteur für die Erinnerung zu speichern. </p>
+        - id: reminder
+          type: microsoft.servicefabric.actors._actor_reminder
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref>Erinnerung zu speichern. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Speichervorgang darstellt. </p>'
+    overridden: 'microsoft.servicefabric.actors._actor_state_provider.saveReminderAsync(ActorId,ActorReminder)'
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.saveStateAsync(ActorId,List<ActorStateChange>)'
+    id: 'saveStateAsync(ActorId,List<ActorStateChange>)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+    nameWithType: 'VolatileActorStateProvider.saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.saveStateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 607
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Speichert den angegebenen Berechtigungssatz Akteur Zustandsänderungen atomar an.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für die die statusänderungen zu speichern. </p>'
+        - id: stateChanges
+          type: 5618da2dmicrosoft.servicefabric.actors._actor_state_changea08ddfce
+          description: <p>Die Auflistung von Zustandsänderungen zu speichern. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Speichervorgang darstellt. Die Auflistung von Zustandsänderungen sollte nur ein Element für einen bestimmten Zustand enthalten. Der Speichervorgang Vorgang schlägt fehl, auf den Versuch, eine actorzustands hinzuzufügen, die bereits vorhanden ist oder aktualisieren/entfernen einen Akteur-Zustand, der nicht vorhanden ist. </p>'
+    overridden: 'microsoft.servicefabric.actors._actor_state_provider.saveStateAsync(ActorId,List<ActorStateChange>)'
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
+    id: 'setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+    nameWithType: 'VolatileActorStateProvider.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+    fullName: 'void microsoft.servicefabric.actors.VolatileActorStateProvider.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.setOnDataLossCallback*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 330
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Systemfunktion, die während der potenziellen Datenverlust</p>
+      <p></p>
+    syntax:
+      content: 'public void setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+      parameters:
+        - id: onDataLossAsync
+          type: 432ffe41system.fabric._cancellation_token774bd4f0
+          description: '<p>TODO. Funktion, die als Teil der Verarbeitung von mutmaßlicher Verlust aufgerufen. Funktion nimmt CancellationToken und gibt eine CompletableFuture, die die asynchrone Verarbeitung des Ereignisses darstellt. "True" zurückgeben, gibt an, dass das Replikat Zustand wiederhergestellt wurde. False gibt an, dass das Replikat Zustand nicht geändert wurde. </p>'
+    overridden: 'microsoft.servicefabric.data._state_provider_replica.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.traceId()
+    id: traceId()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: traceId()
+    nameWithType: VolatileActorStateProvider.traceId()
+    fullName: String microsoft.servicefabric.actors.VolatileActorStateProvider.traceId()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.traceId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 829
+    package: microsoft.servicefabric.actors
+    syntax:
+      content: public String traceId()
+      return:
+        type: '26831127'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.traceType()
+    id: traceType()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: traceType()
+    nameWithType: VolatileActorStateProvider.traceType()
+    fullName: String microsoft.servicefabric.actors.VolatileActorStateProvider.traceType()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.traceType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 824
+    package: microsoft.servicefabric.actors
+    syntax:
+      content: public String traceType()
+      return:
+        type: '26831127'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.transientErrorRetryDelay()
+    id: transientErrorRetryDelay()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: transientErrorRetryDelay()
+    nameWithType: VolatileActorStateProvider.transientErrorRetryDelay()
+    fullName: Duration microsoft.servicefabric.actors.VolatileActorStateProvider.transientErrorRetryDelay()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.transientErrorRetryDelay*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 839
+    package: microsoft.servicefabric.actors
+    syntax:
+      content: public Duration transientErrorRetryDelay()
+      return:
+        type: e02a2de0
+  - uid: 'microsoft.servicefabric.actors._volatile_actor_state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+    id: 'updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: 'updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    nameWithType: 'VolatileActorStateProvider.updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.updateEpochAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 401
+    package: microsoft.servicefabric.actors
+    summary: "<p>Ein Replikat zeigt an, dass die Konfiguration einer Replikatgruppe aufgrund einer Änderung der geändert oder ändern, mit dem primären Replikat versucht. Die Änderung tritt aufgrund eines Fehlers oder Lastenausgleich des vorherigen primären Replikats. Epoche Änderungen fungieren als einer Barrier-Klasse, indem Sie segmentieren Vorgänge in die genaue Konfiguration Zeiträume, in denen sie von einem bestimmten primären Replikat gesendet wurden.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>diese Methode wird aufgerufen, weil das primäre Replikat der Replikatgruppe geändert hat, oder eine Änderung Angriffsversuch. Sekundäre Replikate empfangen diese Methode, wenn sie sind im Begriff, das neue primäre Replikat oder, wenn sie nicht zum neuen primären Replikat sind, sie erhalten sie beim Versuch, das neue primäre Replikat aus dem replikationsdatenstrom den ersten Vorgang entnommen werden. Diese Methode möglicherweise von primäre Replikaten gelegentlich angezeigt werden, wenn versucht wird, das primäre Replikat auszutauschen, was nicht gelingt. Die Informationen in der <xref href=\"system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> -Methode ermöglicht dem Dienst um einen Vektor Status aufrecht ist eine Liste der einzelnen Epoche, die das Replikat empfangen hat und die maximale LSN, die sie enthalten. Die Bearbeitung Vektordaten werden zusammen mit den aktuellen angewendeten maximale LSN eignet sich für ein sekundäres Replikat zu beschreiben, wie weit der Vorgang fortgeschritten ist während des Kopiervorgangs zu senden. Vergleichen von Fortschritt Vektoren, die während des Kopiervorgangs von sekundären Replikaten empfangen werden kann primäre Replikaten zu bestimmen, ob das sekundäre Replikat auf dem neuesten Stand ist, welchen Status an das sekundäre Replikat gesendet werden muss und gibt an, ob das sekundäre Replikat \"false\" Fortschritt erzielt hat. \"False\" Status bedeutet, dass es sich bei eine LSN in einer vorherigen Epoche größer als die LSN war, in denen das primäre Replikat empfängt. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+      parameters:
+        - id: epoch
+          type: system.fabric._epoch
+          description: <p>Die neue <ref refid="" kindref="compound">Epoche</ref>. </p>
+        - id: previousEpochLastSequenceNumber
+          type: system.fabric._sequence_number
+          description: '<p>Die maximale Sequenznummer (LSN), die in der vorherigen Epoche beobachtet wurden sollten. </p>'
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: <p>Gibt die Aufgabe zurück. </p>
+    overridden: 'system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider()
+    id: VolatileActorStateProvider()
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: VolatileActorStateProvider()
+    nameWithType: VolatileActorStateProvider.VolatileActorStateProvider()
+    fullName: microsoft.servicefabric.actors.VolatileActorStateProvider.VolatileActorStateProvider()
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 92
+    package: microsoft.servicefabric.actors
+    summary: <p>Erstellt eine Instanz des <xref href="microsoft.servicefabric.actors._volatile_actor_state_provider" data-throw-if-not-resolved="false"></xref>. </p>
+    syntax:
+      content: public VolatileActorStateProvider()
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider(ReplicatorSettings)
+    id: VolatileActorStateProvider(ReplicatorSettings)
+    parent: microsoft.servicefabric.actors._volatile_actor_state_provider
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    langs:
+      - java
+    name: VolatileActorStateProvider(ReplicatorSettings replicatorSettings)
+    nameWithType: VolatileActorStateProvider.VolatileActorStateProvider(ReplicatorSettings replicatorSettings)
+    fullName: microsoft.servicefabric.actors.VolatileActorStateProvider.VolatileActorStateProvider(ReplicatorSettings replicatorSettings)
+    overload: microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/VolatileActorStateProvider.java
+      startLine: 103
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Erstellt eine Instanz des <xref href="microsoft.servicefabric.actors._volatile_actor_state_provider" data-throw-if-not-resolved="false"></xref> Replikator Einstellungen angegeben.</p>
+      <p></p>
+    syntax:
+      content: public VolatileActorStateProvider(ReplicatorSettings replicatorSettings)
+      parameters:
+        - id: replicatorSettings
+          type: system.fabric._replicator_settings
+          description: '<p>Ein <ref refid="" kindref="compound">ReplicatorSettings</ref> -Objekt, das Replikator Einstellungen beschrieben. </p>'
+references:
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.VolatileActorStateProvider*
+    name: VolatileActorStateProvider
+    nameWithType: VolatileActorStateProvider.VolatileActorStateProvider
+    fullName: microsoft.servicefabric.actors.VolatileActorStateProvider.VolatileActorStateProvider
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.initialize*
+    name: initialize
+    nameWithType: VolatileActorStateProvider.initialize
+    fullName: void microsoft.servicefabric.actors.VolatileActorStateProvider.initialize
+    package: microsoft.servicefabric.actors
+  - uid: 9cdf14d0system.fabric._replicatora08ddfce
+    spec.java:
+      - name: CompletableFuture<
+        fullName: CompletableFuture<
+      - uid: system.fabric._replicator
+        name: Replicator
+        fullName: system.fabric.Replicator
+        href: system.fabric._replicator.yml
+      - name: '>'
+        fullName: '>'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.openAsync*
+    name: openAsync
+    nameWithType: VolatileActorStateProvider.openAsync
+    fullName: CompletableFuture<Replicator> microsoft.servicefabric.actors.VolatileActorStateProvider.openAsync
+    package: microsoft.servicefabric.actors
+  - uid: 16409f84
+    spec.java:
+      - name: CompletableFuture<?>
+        fullName: CompletableFuture<?>
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.changeRoleAsync*
+    name: changeRoleAsync
+    nameWithType: VolatileActorStateProvider.changeRoleAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.changeRoleAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.closeAsync*
+    name: closeAsync
+    nameWithType: VolatileActorStateProvider.closeAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.closeAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.abort*
+    name: abort
+    nameWithType: VolatileActorStateProvider.abort
+    fullName: void microsoft.servicefabric.actors.VolatileActorStateProvider.abort
+    package: microsoft.servicefabric.actors
+  - uid: b1c38b44
+    spec.java:
+      - name: UnsupportedOperationException
+        fullName: UnsupportedOperationException
+  - uid: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
+    spec.java:
+      - name: BiFunction<
+        fullName: BiFunction<
+      - uid: microsoft.servicefabric.data._backup_info
+        name: BackupInfo
+        fullName: microsoft.servicefabric.data.BackupInfo
+        href: microsoft.servicefabric.data._backup_info.yml
+      - name: ', '
+        fullName: ', '
+      - uid: system.fabric._cancellation_token
+        name: CancellationToken
+        fullName: system.fabric.CancellationToken
+        href: system.fabric._cancellation_token.yml
+      - name: ', CompletableFuture<Boolean>>'
+        fullName: ', CompletableFuture<Boolean>>'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.backupAsync*
+    name: backupAsync
+    nameWithType: VolatileActorStateProvider.backupAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.backupAsync
+    package: microsoft.servicefabric.actors
+  - uid: e02a2de0
+    spec.java:
+      - name: Duration
+        fullName: Duration
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.restoreAsync*
+    name: restoreAsync
+    nameWithType: VolatileActorStateProvider.restoreAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.restoreAsync
+    package: microsoft.servicefabric.actors
+  - uid: 432ffe41system.fabric._cancellation_token774bd4f0
+    spec.java:
+      - name: Function<
+        fullName: Function<
+      - uid: system.fabric._cancellation_token
+        name: CancellationToken
+        fullName: system.fabric.CancellationToken
+        href: system.fabric._cancellation_token.yml
+      - name: ', CompletableFuture<Boolean>>'
+        fullName: ', CompletableFuture<Boolean>>'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.setOnDataLossCallback*
+    name: setOnDataLossCallback
+    nameWithType: VolatileActorStateProvider.setOnDataLossCallback
+    fullName: void microsoft.servicefabric.actors.VolatileActorStateProvider.setOnDataLossCallback
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.onSnapshotAsync*
+    name: onSnapshotAsync
+    nameWithType: VolatileActorStateProvider.onSnapshotAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.onSnapshotAsync
+    package: microsoft.servicefabric.actors
+  - uid: 0364520f
+    spec.java:
+      - name: long
+        fullName: long
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.getLastCommittedSequenceNumber*
+    name: getLastCommittedSequenceNumber
+    nameWithType: VolatileActorStateProvider.getLastCommittedSequenceNumber
+    fullName: long microsoft.servicefabric.actors.VolatileActorStateProvider.getLastCommittedSequenceNumber
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.updateEpochAsync*
+    name: updateEpochAsync
+    nameWithType: VolatileActorStateProvider.updateEpochAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.updateEpochAsync
+    package: microsoft.servicefabric.actors
+  - uid: 7e53ac82
+    spec.java:
+      - name: CompletableFuture<Boolean>
+        fullName: CompletableFuture<Boolean>
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.onDataLossAsync*
+    name: onDataLossAsync
+    nameWithType: VolatileActorStateProvider.onDataLossAsync
+    fullName: CompletableFuture<Boolean> microsoft.servicefabric.actors.VolatileActorStateProvider.onDataLossAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyContext*
+    name: getCopyContext
+    nameWithType: VolatileActorStateProvider.getCopyContext
+    fullName: OperationDataStream microsoft.servicefabric.actors.VolatileActorStateProvider.getCopyContext
+    package: microsoft.servicefabric.actors
+  - uid: 12fe80de
+    spec.java:
+      - name: IllegalStateException
+        fullName: IllegalStateException
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.getCopyState*
+    name: getCopyState
+    nameWithType: VolatileActorStateProvider.getCopyState
+    fullName: OperationDataStream microsoft.servicefabric.actors.VolatileActorStateProvider.getCopyState
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.actorActivatedAsync*
+    name: actorActivatedAsync
+    nameWithType: VolatileActorStateProvider.actorActivatedAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.actorActivatedAsync
+    package: microsoft.servicefabric.actors
+  - uid: 5618da2dmicrosoft.servicefabric.actors._actor_state_changea08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: microsoft.servicefabric.actors._actor_state_change
+        name: ActorStateChange
+        fullName: microsoft.servicefabric.actors.ActorStateChange
+        href: microsoft.servicefabric.actors._actor_state_change.yml
+      - name: '>'
+        fullName: '>'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.saveStateAsync*
+    name: saveStateAsync
+    nameWithType: VolatileActorStateProvider.saveStateAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.saveStateAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.containsStateAsync*
+    name: containsStateAsync
+    nameWithType: VolatileActorStateProvider.containsStateAsync
+    fullName: CompletableFuture<Boolean> microsoft.servicefabric.actors.VolatileActorStateProvider.containsStateAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.removeActorAsync*
+    name: removeActorAsync
+    nameWithType: VolatileActorStateProvider.removeActorAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.removeActorAsync
+    package: microsoft.servicefabric.actors
+  - uid: d20512af
+    spec.java:
+      - name: CompletableFuture<List<String>>
+        fullName: CompletableFuture<List<String>>
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.enumerateStateNamesAsync*
+    name: enumerateStateNamesAsync
+    nameWithType: VolatileActorStateProvider.enumerateStateNamesAsync
+    fullName: CompletableFuture<List<String>> microsoft.servicefabric.actors.VolatileActorStateProvider.enumerateStateNamesAsync
+    package: microsoft.servicefabric.actors
+  - uid: f75371fa
+    spec.java:
+      - name: int
+        fullName: int
+  - uid: 9cdf14d0microsoft.servicefabric.actors._paged_result78504a52microsoft.servicefabric.actors._actor_ide7daa122
+    spec.java:
+      - name: CompletableFuture<
+        fullName: CompletableFuture<
+      - uid: microsoft.servicefabric.actors._paged_result
+        name: PagedResult
+        fullName: microsoft.servicefabric.actors.PagedResult
+        href: microsoft.servicefabric.actors._paged_result.yml
+      - name: <
+        fullName: <
+      - uid: microsoft.servicefabric.actors._actor_id
+        name: ActorId
+        fullName: microsoft.servicefabric.actors.ActorId
+        href: microsoft.servicefabric.actors._actor_id.yml
+      - name: '>>'
+        fullName: '>>'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.getActorsAsync*
+    name: getActorsAsync
+    nameWithType: VolatileActorStateProvider.getActorsAsync
+    fullName: CompletableFuture<PagedResult<ActorId>> microsoft.servicefabric.actors.VolatileActorStateProvider.getActorsAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.saveReminderAsync*
+    name: saveReminderAsync
+    nameWithType: VolatileActorStateProvider.saveReminderAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.saveReminderAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.deleteReminderAsync*
+    name: deleteReminderAsync
+    nameWithType: VolatileActorStateProvider.deleteReminderAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.VolatileActorStateProvider.deleteReminderAsync
+    package: microsoft.servicefabric.actors
+  - uid: 9cdf14d0microsoft.servicefabric.actors._actor_reminder_collectiona08ddfce
+    spec.java:
+      - name: CompletableFuture<
+        fullName: CompletableFuture<
+      - uid: microsoft.servicefabric.actors._actor_reminder_collection
+        name: ActorReminderCollection
+        fullName: microsoft.servicefabric.actors.ActorReminderCollection
+        href: microsoft.servicefabric.actors._actor_reminder_collection.yml
+      - name: '>'
+        fullName: '>'
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.loadRemindersAsync*
+    name: loadRemindersAsync
+    nameWithType: VolatileActorStateProvider.loadRemindersAsync
+    fullName: CompletableFuture<ActorReminderCollection> microsoft.servicefabric.actors.VolatileActorStateProvider.loadRemindersAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.traceType*
+    name: traceType
+    nameWithType: VolatileActorStateProvider.traceType
+    fullName: String microsoft.servicefabric.actors.VolatileActorStateProvider.traceType
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.traceId*
+    name: traceId
+    nameWithType: VolatileActorStateProvider.traceId
+    fullName: String microsoft.servicefabric.actors.VolatileActorStateProvider.traceId
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.currentReplicaRole*
+    name: currentReplicaRole
+    nameWithType: VolatileActorStateProvider.currentReplicaRole
+    fullName: ReplicaRole microsoft.servicefabric.actors.VolatileActorStateProvider.currentReplicaRole
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.transientErrorRetryDelay*
+    name: transientErrorRetryDelay
+    nameWithType: VolatileActorStateProvider.transientErrorRetryDelay
+    fullName: Duration microsoft.servicefabric.actors.VolatileActorStateProvider.transientErrorRetryDelay
+    package: microsoft.servicefabric.actors
+  - uid: c27a23df
+    spec.java:
+      - name: FabricKeyNotFoundException
+        fullName: FabricKeyNotFoundException
+  - uid: 6d056e8b
+    spec.java:
+      - name: <T> CompletableFuture<T>
+        fullName: <T> CompletableFuture<T>
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider.loadStateAsync*
+    name: loadStateAsync
+    nameWithType: VolatileActorStateProvider.loadStateAsync
+    fullName: public<T> CompletableFuture<T> microsoft.servicefabric.actors.VolatileActorStateProvider.loadStateAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._actor_state_provider
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: ActorStateProvider
+    nameWithType: ActorStateProvider
+    fullName: microsoft.servicefabric.actors.ActorStateProvider
+    type: Interface
+    summary: '<p>Stellt die Schnittstelle, die ein Akteur State-Anbieter für Akteur-Laufzeit für die Kommunikation zu implementieren muss. </p>'
+    syntax:
+      content: public interface ActorStateProvider extends StateProviderReplica
+  - uid: system.fabric._state_provider
+    parent: system.fabric
+    href: system.fabric._state_provider.yml
+    name: StateProvider
+    nameWithType: StateProvider
+    fullName: system.fabric.StateProvider
+    type: Interface
+    summary: '<p>Definiert das Verhalten, das ein Dienst implementieren muss, um die Interaktion mit der <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref>. </p>'
+    syntax:
+      content: public interface StateProvider
+  - uid: microsoft.servicefabric.actors._actor_type_information
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_type_information.yml
+    name: ActorTypeInformation
+    nameWithType: ActorTypeInformation
+    fullName: microsoft.servicefabric.actors.ActorTypeInformation
+    type: Class
+    summary: <p>Enthält Informationen zum Implementieren von eines Akteurs Typ an. </p>
+    syntax:
+      content: public class ActorTypeInformation
+  - uid: system.fabric._fabric_replicator
+    parent: system.fabric
+    href: system.fabric._fabric_replicator.yml
+    name: FabricReplicator
+    nameWithType: FabricReplicator
+    fullName: system.fabric.FabricReplicator
+    type: Class
+    summary: "<p>Repliziert den Status für hohe Verfügbarkeit und Zuverlässigkeit. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>stellt die Standardimplementierung von der <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\"></xref>, und <xref href=\"system.fabric._primary_replicator\" data-throw-if-not-resolved=\"false\"></xref> Schnittstellen, die Benutzerdienste werden, zusammen mit ihrer Implementierung von verwendet können der <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref> Schnittstelle. Eine Instanz von der <ref refid=\"\" kindref=\"compound\">system.fabric.FabricReplicator</ref> Klasse abgerufen wird, über die <xref href=\"system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)\" data-throw-if-not-resolved=\"false\"></xref> -Methode, die in umgewandelt werden kann <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> für die Verwendung. </p>"
+    syntax:
+      content: public class FabricReplicator implements Replicator
+  - uid: system.fabric._state_replicator2
+    parent: system.fabric
+    href: system.fabric._state_replicator2.yml
+    name: StateReplicator2
+    nameWithType: StateReplicator2
+    fullName: system.fabric.StateReplicator2
+    type: Interface
+    summary: '<p>Macht Funktionen im Zusammenhang mit Replikation, von der <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref> Klasse, mit denen <xref href="system.fabric._state_provider" data-throw-if-not-resolved="false"></xref> zum Replizieren von Zustand, um hohe Verfügbarkeit sicherzustellen. </p>'
+    syntax:
+      content: public interface StateReplicator2 extends StateReplicator
+  - uid: system.fabric._replica_role
+    parent: system.fabric
+    href: system.fabric._replica_role.yml
+    name: ReplicaRole
+    nameWithType: ReplicaRole
+    fullName: system.fabric.ReplicaRole
+    type: Enum
+    syntax:
+      content: public enum ReplicaRole
+  - uid: system.fabric._stateful_service_partition
+    parent: system.fabric
+    href: system.fabric._stateful_service_partition.yml
+    name: StatefulServicePartition
+    nameWithType: StatefulServicePartition
+    fullName: system.fabric.StatefulServicePartition
+    type: Interface
+    syntax:
+      content: public interface StatefulServicePartition extends ServicePartition
+  - uid: system.fabric._stateful_service_initialization_parameters
+    parent: system.fabric
+    href: system.fabric._stateful_service_initialization_parameters.yml
+    name: StatefulServiceInitializationParameters
+    nameWithType: StatefulServiceInitializationParameters
+    fullName: system.fabric.StatefulServiceInitializationParameters
+    type: Class
+    summary: <p>Definiert die Dienst-Initialisierungsparameter für ein zustandsbehafteter Dienst. </p>
+    syntax:
+      content: public class StatefulServiceInitializationParameters extends ServiceInitializationParameters
+  - uid: system.fabric._replicator_settings
+    parent: system.fabric
+    href: system.fabric._replicator_settings.yml
+    name: ReplicatorSettings
+    nameWithType: ReplicatorSettings
+    fullName: system.fabric.ReplicatorSettings
+    type: Class
+    syntax:
+      content: public class ReplicatorSettings
+  - uid: microsoft.servicefabric.actors._volatile_actor_state_provider
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._volatile_actor_state_provider.yml
+    name: VolatileActorStateProvider
+    nameWithType: VolatileActorStateProvider
+    fullName: microsoft.servicefabric.actors.VolatileActorStateProvider
+    type: Class
+    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>Implementierung für flüchtige Persistenz Einstufige <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref>Status ist nur im Arbeitsspeicher beibehalten werden. </p>"
+    syntax: *ref_1
+  - uid: microsoft.servicefabric.data._state_provider_replica.initialize(StatefulServiceInitializationParameters)
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: initialize(StatefulServiceInitializationParameters initializationParameters)
+    nameWithType: StateProviderReplica.initialize(StatefulServiceInitializationParameters initializationParameters)
+    fullName: void microsoft.servicefabric.data.StateProviderReplica.initialize(StatefulServiceInitializationParameters initializationParameters)
+    type: Method
+    summary: "<p>Das Status Anbieter Replikat unter Verwendung des Diensts Initialisierung zu initialisieren.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>keine komplexen Verarbeitung bei der Initialisierung erfolgen soll. Teuer oder lang ausgeführte Initialisierung sollte im OpenAsync erfolgen. </p>"
+    syntax:
+      content: public void initialize(StatefulServiceInitializationParameters initializationParameters)
+      parameters:
+        - id: initializationParameters
+          type: system.fabric._stateful_service_initialization_parameters
+          description: '<p>Initialisierungsinformationen für Dienst z. B. Dienstnamen, Partitions-Id, Replikat-Id und Code-Paketinformationen. </p>'
+  - uid: system.fabric._replicator
+    parent: system.fabric
+    href: system.fabric._replicator.yml
+    name: Replicator
+    nameWithType: Replicator
+    fullName: system.fabric.Replicator
+    type: Interface
+    syntax:
+      content: public interface Replicator extends PrimaryReplicator
+  - uid: 'microsoft.servicefabric.data._state_provider_replica.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: 'openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+    nameWithType: 'StateProviderReplica.openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<Replicator> microsoft.servicefabric.data.StateProviderReplica.openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+    type: Method
+    summary: "<p>Öffnen Sie das Replikat des Status-Anbieter für die Verwendung an.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Initialisierungsaufgaben für erweiterte State-Anbieter zu diesem Zeitpunkt gestartet werden können. </p>"
+    syntax:
+      content: 'public CompletableFuture<Replicator> openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
+      parameters:
+        - id: openMode
+          type: system.fabric._replica_open_mode
+          description: '<p>Gibt an, ob es sich um ein neues oder vorhandenes Replikat handelt. </p>'
+        - id: partition
+          type: system.fabric._stateful_service_partition
+          description: <p>Die Partition dieses Replikat gehört. </p>
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 9cdf14d0system.fabric._replicatora08ddfce
+        description: '<p>Eine Aufgabe, die den asynchronen Öffnungsvorgang darstellt. Das Ergebnis enthält Replikator für die Replikation des Status zwischen Replikaten Anbieter Status in der Partition verantwortlich. </p>'
+  - uid: system.fabric._replica_open_mode
+    parent: system.fabric
+    href: system.fabric._replica_open_mode.yml
+    name: ReplicaOpenMode
+    nameWithType: ReplicaOpenMode
+    fullName: system.fabric.ReplicaOpenMode
+    type: Enum
+    syntax:
+      content: public enum ReplicaOpenMode
+  - uid: system.fabric._cancellation_token
+    parent: system.fabric
+    href: system.fabric._cancellation_token.yml
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: system.fabric.CancellationToken
+    type: Class
+    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    syntax:
+      content: public class CancellationToken
+  - uid: 'microsoft.servicefabric.data._state_provider_replica.changeRoleAsync(ReplicaRole,CancellationToken)'
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: 'changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+    nameWithType: 'StateProviderReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+    type: Method
+    summary: |-
+      <p>Dem State-Anbieter-Replikat zu benachrichtigen, dass seine Rolle geändert hat, z. B. um Primary oder Secondary sein.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
+      parameters:
+        - id: newRole
+          type: system.fabric._replica_role
+          description: '<p>Die neue replikatrolle, z. B. Primary oder Secondary sein. </p>'
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Rolle Änderungsvorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.data._state_provider_replica.closeAsync(CancellationToken)
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: closeAsync(CancellationToken cancellationToken)
+    nameWithType: StateProviderReplica.closeAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.closeAsync(CancellationToken cancellationToken)
+    type: Method
+    summary: "<p>Geschlossen Sie das Replikat der State-Anbieter ordnungsgemäß werden.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dies im Allgemeinen tritt auf, wenn das Replikat Code ein Upgrade wird, das Replikat aufgrund des Lastenausgleichs verschoben wird oder ein vorübergehender Fehler erkannt wird. </p>"
+    syntax:
+      content: public CompletableFuture<?> closeAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.data._state_provider_replica.abort()
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: abort()
+    nameWithType: StateProviderReplica.abort()
+    fullName: void microsoft.servicefabric.data.StateProviderReplica.abort()
+    type: Method
+    summary: "<p>Bricht einen Zustand Anbieter Replikat erzwungen ab. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dies im Allgemeinen tritt auf, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder wenn das Replikat Lifecycle aufgrund von internen Fehlern von Service Fabric zuverlässig verwalten kann. </p>"
+    syntax:
+      content: public void abort()
+  - uid: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: 'backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    nameWithType: 'StateProviderReplica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    type: Method
+    summary: "<p>Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem ReliableStateManager verwaltet werden.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt. Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben. Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben. Darüber hinaus wird Sicherung als fehlgeschlagen markiert. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+      parameters:
+        - id: backupCallback
+          type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
+          description: '<p>Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.data._backup_info
+    parent: microsoft.servicefabric.data
+    href: microsoft.servicefabric.data._backup_info.yml
+    name: BackupInfo
+    nameWithType: BackupInfo
+    fullName: microsoft.servicefabric.data.BackupInfo
+    type: Class
+    summary: <p>Enthält Informationen über die Sicherung. </p>
+    syntax:
+      content: public class BackupInfo
+  - uid: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BackupOption,Duration,BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: 'backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    nameWithType: 'StateProviderReplica.backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+    type: Method
+    summary: "<p>Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem ReliableStateManager verwaltet werden.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt. Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben. Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben. Darüber hinaus wird Sicherung als fehlgeschlagen markiert. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
+      parameters:
+        - id: option
+          type: microsoft.servicefabric.data._backup_option
+          description: <p>Der Typ der Sicherung ausführen. </p>
+        - id: timeout
+          type: e02a2de0
+          description: <p>Das Timeout für diesen Vorgang. </p>
+        - id: backupCallback
+          type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
+          description: '<p>Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.data._backup_option
+    parent: microsoft.servicefabric.data
+    href: microsoft.servicefabric.data._backup_option.yml
+    name: BackupOption
+    nameWithType: BackupOption
+    fullName: microsoft.servicefabric.data.BackupOption
+    type: Enum
+    summary: <p>Gibt die Art der Sicherung an. </p>
+    syntax:
+      content: public enum BackupOption
+  - uid: microsoft.servicefabric.data._state_provider_replica.restoreAsync(String)
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: restoreAsync(String backupFolderPath)
+    nameWithType: StateProviderReplica.restoreAsync(String backupFolderPath)
+    fullName: CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.restoreAsync(String backupFolderPath)
+    type: Method
+    summary: "<p>Stellen Sie eine Sicherung wieder her.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>eine sichere Wiederherstellung ausgeführt, d. h., die Wiederherstellung wird nur ausgeführt, wenn Sie die Daten zum Wiederherstellen nach Status, der das aktuelle Replikat ist. </p>"
+    syntax:
+      content: public CompletableFuture<?> restoreAsync(String backupFolderPath)
+      parameters:
+        - id: backupFolderPath
+          type: '26831127'
+          description: '<p>Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden. Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+  - uid: 'microsoft.servicefabric.data._state_provider_replica.restoreAsync(String,RestorePolicy)'
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: 'restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+    nameWithType: 'StateProviderReplica.restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+    type: Method
+    summary: |-
+      <p>Stellen Sie eine Sicherung wieder her.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
+      parameters:
+        - id: backupFolderPath
+          type: '26831127'
+          description: '<p>Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden. Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. </p>'
+        - id: restorePolicy
+          type: microsoft.servicefabric.data._restore_policy
+          description: <p>Die Richtlinie für die Wiederherstellung. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.data._restore_policy
+    parent: microsoft.servicefabric.data
+    href: microsoft.servicefabric.data._restore_policy.yml
+    name: RestorePolicy
+    nameWithType: RestorePolicy
+    fullName: microsoft.servicefabric.data.RestorePolicy
+    type: Enum
+    summary: <p>Richtlinie für den Wiederherstellungsvorgang. </p>
+    syntax:
+      content: public enum RestorePolicy
+  - uid: 'microsoft.servicefabric.data._state_provider_replica.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
+    parent: microsoft.servicefabric.data._state_provider_replica
+    href: microsoft.servicefabric.data._state_provider_replica.yml
+    name: 'setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+    nameWithType: 'StateProviderReplica.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+    fullName: 'void microsoft.servicefabric.data.StateProviderReplica.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+    type: Method
+    summary: |-
+      <p>Systemfunktion, die während der potenziellen Datenverlust</p>
+      <p></p>
+    syntax:
+      content: 'public void setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
+      parameters:
+        - id: onDataLossAsync
+          type: 432ffe41system.fabric._cancellation_token774bd4f0
+          description: '<p>TODO. Funktion, die als Teil der Verarbeitung von mutmaßlicher Verlust aufgerufen. Funktion nimmt CancellationToken und gibt eine CompletableFuture, die die asynchrone Verarbeitung des Ereignisses darstellt. "True" zurückgeben, gibt an, dass das Replikat Zustand wiederhergestellt wurde. False gibt an, dass das Replikat Zustand nicht geändert wurde. </p>'
+  - uid: system.fabric._state_provider.getLastCommittedSequenceNumber()
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: getLastCommittedSequenceNumber()
+    nameWithType: StateProvider.getLastCommittedSequenceNumber()
+    fullName: long system.fabric.StateProvider.getLastCommittedSequenceNumber()
+    type: Method
+    summary: |-
+      <p>Ruft die letzte Sequenznummer, die der Dienst ein Commit ausgeführt wurde.</p>
+      <p></p>
+    syntax:
+      content: public long getLastCommittedSequenceNumber()
+      return:
+        type: 0364520f
+        description: <p>Long-Wert. </p>
+  - uid: 'system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: 'updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    nameWithType: 'StateProvider.updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<?> system.fabric.StateProvider.updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    type: Method
+    summary: "<p>Ein Replikat zeigt an, dass die Konfiguration einer Replikatgruppe aufgrund einer Änderung der geändert oder ändern, mit dem primären Replikat versucht. Die Änderung tritt aufgrund eines Fehlers oder Lastenausgleich des vorherigen primären Replikats. <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref>Änderungen fungieren als einer Barrier-Klasse, indem Sie segmentieren Vorgänge in die genaue Konfiguration Zeiträume, in denen sie von einem bestimmten primären Replikat gesendet wurden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>die Informationen in der <xref href=\"system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> -Methode ermöglicht dem Dienst um einen Vektor Status aufrecht ist eine Liste der einzelnen Epoche, die das Replikat empfangen hat und die maximale LSN, die sie enthalten. Die Bearbeitung Vektordaten werden zusammen mit den aktuellen angewendeten maximale LSN eignet sich für ein sekundäres Replikat während des Kopiervorgangs zu senden, um den Status des Replikats zu beschreiben. Vergleichen von Fortschritt Vektoren, die während des Kopiervorgangs von sekundären Replikaten empfangen werden kann primäre Replikaten zu bestimmen, ob das sekundäre Replikat auf dem neuesten Stand ist, welchen Status an das sekundäre Replikat gesendet werden muss und gibt an, ob das sekundäre Replikat \"false\" Fortschritt erzielt hat. \"False\" Status bedeutet, dass ein sekundäres Replikat meldet wurde eine LSN in einer vorherigen Epoche größer als die LSN, die das primäre Replikat in seinen Fortschritt Vektor verfügt. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+      parameters:
+        - id: epoch
+          type: system.fabric._epoch
+          description: <p>Die neue <xref href="system.fabric._epoch" data-throw-if-not-resolved="false"></xref>. </p>
+        - id: previousEpochLastSequenceNumber
+          type: system.fabric._sequence_number
+          description: <p>Die maximale Sequenznummer (LSN) in der vorherigen Epoche. </p>
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: <p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref>. </p>
+  - uid: system.fabric._epoch
+    parent: system.fabric
+    href: system.fabric._epoch.yml
+    name: Epoch
+    nameWithType: Epoch
+    fullName: system.fabric.Epoch
+    type: Class
+    summary: "<p>Stellt die aktuelle Version der Service Fabric-Partition an. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>ein <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> ist eine Konfiguration Zahl für die Partition als Ganzes. Beim Festlegen der Konfiguration des Replikats Änderungen, z. B., wenn das primäre Replikat ändert, werden die Vorgänge, die vom neuen primären Replikat repliziert werden als ein neues werden bezeichnet <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> aus. der von dem alten primären Replikat gesendet wurden. Die Tatsache, die dass das primäre geändert hat ist nicht direkt sichtbar auf sekundäre Replikate, die nicht durch einen Fehler in der Regel betroffen sind, die das ursprüngliche primäre Replikat betroffen. Um nachzuverfolgen, dass sich das primäre Replikat geändert wurde, an das sekundäre Replikat übertragen werden. Diese Kommunikation erfolgt über die <xref href=\"system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> Methode. Die meisten Dienste können die Details der inneren Felder ignorieren die <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> wie es in der Regel ausreichend ist zu wissen, dass die <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> wurde geändert und Epochs, um zu bestimmen, relative Reihenfolge der Vorgänge und-Ereignisse im System zu vergleichen. Zu diesem Zweck sind Vergleichsoperationen bereitgestellt. </p>"
+    syntax:
+      content: public class Epoch
+  - uid: system.fabric._sequence_number
+    parent: system.fabric
+    href: system.fabric._sequence_number.yml
+    name: SequenceNumber
+    nameWithType: SequenceNumber
+    fullName: system.fabric.SequenceNumber
+    type: Class
+    syntax:
+      content: public class SequenceNumber
+  - uid: system.fabric._state_provider.onDataLossAsync(CancellationToken)
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: onDataLossAsync(CancellationToken cancellationToken)
+    nameWithType: StateProvider.onDataLossAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<Boolean> system.fabric.StateProvider.onDataLossAsync(CancellationToken cancellationToken)
+    type: Method
+    summary: "<p>Gibt an, dass ein schreibquorums Replikate in dieser Replikatsatz verloren gegangen ist und daher Datenverlust aufgetreten sind. Die Replikatgruppe besteht aus der Mehrheit der Replikate, die das primäre Replikat enthält.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>bei die Service Fabric-Laufzeit einen Fehler des ein Quorum der Replikate, der das primäre Replikat enthält berücksichtigt, wählt ein neues primäres Replikat und sofort ruft diese Methode auf dem neuen primären Replikat. Ein primäres Replikat, das eines möglichen Datenverlusts informiert ist die Möglichkeit, den Zustand aus einer externen Datenquelle wiederherstellen oder kann weiterhin mit dem Status ausgeführt wird, die derzeit. Wenn der Dienst mit seinem aktuellen Zustand ausgeführt werden weiterhin, sollte es \"false\" von dieser Methode zurückgeben, der gibt an, dass keine Änderung vorgenommen wurde. Wenn es wiederhergestellt oder geändert Datenbankzustands, z. B. unvollständige Arbeit ein Rollback sollte \"true\" zurückgeben. Wenn \"true\" zurückgegeben wird, muss der Status in den anderen Replikaten angenommen werden, falsch zu sein. Aus diesem Grund die Service Fabric-Laufzeit die anderen Replikaten in der Replikatgruppe entfernt und erneut erstellt werden. </p>"
+    syntax:
+      content: public CompletableFuture<Boolean> onDataLossAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 7e53ac82
+        description: '<p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref> des Typs <ref refid="" kindref="compound">java.lang.Boolean</ref>, Wert, der angibt, ob die State-Anbieter als Teil der Verarbeitung dieser benachrichtigungs seinen Status geändert wurde </p>'
+  - uid: system.fabric._operation_data_stream
+    parent: system.fabric
+    href: system.fabric._operation_data_stream.yml
+    name: OperationDataStream
+    nameWithType: OperationDataStream
+    fullName: system.fabric.OperationDataStream
+    type: Interface
+    syntax:
+      content: public interface OperationDataStream
+  - uid: system.fabric._state_provider.getCopyContext()
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: getCopyContext()
+    nameWithType: StateProvider.getCopyContext()
+    fullName: OperationDataStream system.fabric.StateProvider.getCopyContext()
+    type: Method
+    summary: "<p>Kontext auf einem sekundären Replikat erhält, nachdem es erstellt und geöffnet, um den Kontext mit dem primären Replikat zu senden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>das primäre Replikat analysiert den Kontext und zurücksendet Status über <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> . <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref>wird aufgerufen, auf neu erstellt werden, inaktive sekundäre Replikate und bietet einen Mechanismus zum asynchron eine bidirektionale Konversation mit dem primären Replikat hergestellt. Das sekundäre Replikat sendet <xref href=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\"></xref> Objekte, die mit dem das primäre Replikat den Status des Sammelns von Kontext auf dem sekundären Replikat bestimmen kann. Das primäre Replikat sendet seinerseits den erforderlichen Zustand zurück. Finden Sie unter <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> an das primäre Replikat für die andere Hälfte des Austausches. Für InMemory-Dienste die <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref> Methode wird nicht aufgerufen, da der Status der sekundären Replikate bekannt ist (sie sind leer und benötigen alle Status). </p>"
+    syntax:
+      content: public OperationDataStream getCopyContext()
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <xref href="system.fabric._operation_data_stream" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: 'system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: 'getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    nameWithType: 'StateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    fullName: 'OperationDataStream system.fabric.StateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    type: Method
+    summary: "<p>Ruft die Status für ein primäres Replikat, das erforderlich sind, um ein sekundäres Replikat zu erstellen.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>genauso <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref> ermöglicht das sekundäre Replikat das primäre Replikat über Kontext an ein <xref href=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> ermöglicht das primäre Replikat antwortet ein <xref href=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\"></xref>. Der Datenstrom enthält Objekte, die an das sekundäre Replikat über übermittelt werden die <ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#getCopyStream()</ref> Methode der <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref> Klasse. Implementieren Sie die Objekte <xref href=\"system.fabric._operation\" data-throw-if-not-resolved=\"false\"></xref> und die angegebenen Daten enthalten. Wenn das primäre Replikat dieser Aufruf empfängt, sollte er erstellen und Zurückgeben einer anderen <xref href=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\"></xref> enthält <xref href=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\"></xref>. <xref href=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\"></xref>der datensynchronisierungsstatus darstellt, die das sekundäre Replikat </p>"
+    syntax:
+      content: 'public OperationDataStream getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+      parameters:
+        - id: upToSequenceNumber
+          type: system.fabric._sequence_number
+          description: '<p>Die maximale letzte Sequenznummer (LSN), die im Stream über Kopiervorgang platziert werden, sollten die <ref refid="" kindref="compound">system.fabric.StateReplicator#getCopyStream()</ref> Methode. LSNs, die größer als diese Zahl werden an das sekundäre Replikat als Teil der replikationsdatenstrom über übermittelt die <ref refid="" kindref="compound">system.fabric.StateReplicator#getReplicationStream()</ref> Methode. </p>'
+        - id: copyContext
+          type: system.fabric._operation_data_stream
+          description: '<p>Ein <xref href="system.fabric._operation_data_stream" data-throw-if-not-resolved="false"></xref> , enthält die <xref href="system.fabric._operation_data" data-throw-if-not-resolved="false"></xref> Objekte, die vom sekundären Replikat erstellt werden. erfordert die Stand </p>'
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <xref href="system.fabric._operation_data_stream" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: microsoft.servicefabric.actors._actor_state_provider.initialize(ActorTypeInformation)
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: initialize(ActorTypeInformation actorTypeInformation)
+    nameWithType: ActorStateProvider.initialize(ActorTypeInformation actorTypeInformation)
+    fullName: void microsoft.servicefabric.actors.ActorStateProvider.initialize(ActorTypeInformation actorTypeInformation)
+    type: Method
+    summary: |-
+      <p>Initialisiert die Akteur-State-Anbieter mit Typinformationen des Akteurs Typs zugeordnet.</p>
+      <p></p>
+    syntax:
+      content: public void initialize(ActorTypeInformation actorTypeInformation)
+      parameters:
+        - id: actorTypeInformation
+          type: microsoft.servicefabric.actors._actor_type_information
+          description: <p>Geben Sie die Informationen der Akteurklasse </p>
+  - uid: microsoft.servicefabric.actors._actor_state_provider.actorActivatedAsync(ActorId)
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: actorActivatedAsync(ActorId actorId)
+    nameWithType: ActorStateProvider.actorActivatedAsync(ActorId actorId)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorStateProvider.actorActivatedAsync(ActorId actorId)
+    type: Method
+    summary: |-
+      <p>Diese Methode wird im Rahmen des Aktivierungsprozesses des Akteurs, mit der angegebenen Id. aufgerufen.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<?> actorActivatedAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, die aktiviert wird. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen stellt <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> Verarbeiten der abfragebenachrichtigung Aktivierung. </p>'
+  - uid: microsoft.servicefabric.actors._actor_id
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_id.yml
+    name: ActorId
+    nameWithType: ActorId
+    fullName: microsoft.servicefabric.actors.ActorId
+    type: Class
+    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>die Identität der Akteur innerhalb eines Diensts Akteur. Akteure können festgestellt werden, indem <ref refid=\"\" kindref=\"compound\">java.lang.String</ref>, <ref refid=\"\" kindref=\"compound\">java.util.UUID</ref> oder lang. </p>"
+    syntax:
+      content: public class ActorId
+  - uid: microsoft.servicefabric.actors._actor
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor.yml
+    name: Actor
+    nameWithType: Actor
+    fullName: microsoft.servicefabric.actors.Actor
+    type: Interface
+    summary: <p>Die Basisschnittstelle für das zuverlässige Akteur Schnittstellen erben. </p>
+    syntax:
+      content: public interface Actor
+  - uid: 'microsoft.servicefabric.actors._actor_state_provider.saveStateAsync(ActorId,List<ActorStateChange>)'
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: 'saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+    nameWithType: 'ActorStateProvider.saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.ActorStateProvider.saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+    type: Method
+    summary: "<p>Speichert den angegebenen Berechtigungssatz Akteur Zustandsänderungen atomar an.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> die Auflistung von Zustandsänderungen dürfen nur ein Element für den Namen eines angegebenen Status. Der Speichervorgang Vorgang schlägt fehl, auf den Versuch, eine actorzustands hinzuzufügen, die bereits vorhanden ist oder aktualisieren/entfernen einen Akteur-Zustand, der nicht vorhanden ist. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> saveStateAsync(ActorId actorId, List<ActorStateChange> stateChanges)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für die die statusänderungen zu speichern. </p>'
+        - id: stateChanges
+          type: 5618da2dmicrosoft.servicefabric.actors._actor_state_changea08ddfce
+          description: <p>Die Auflistung von Zustandsänderungen zu speichern. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Speichervorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_state_change
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_state_change.yml
+    name: ActorStateChange
+    nameWithType: ActorStateChange
+    fullName: microsoft.servicefabric.actors.ActorStateChange
+    type: Class
+    summary: <p>Stellt ein Akteur Zustand mit einem angegebenen Zustand "-Namen ändern. </p>
+    syntax:
+      content: public class ActorStateChange
+  - uid: 'microsoft.servicefabric.actors._actor_state_provider.containsStateAsync(ActorId,String)'
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: 'containsStateAsync(ActorId actorId, String stateName)'
+    nameWithType: 'ActorStateProvider.containsStateAsync(ActorId actorId, String stateName)'
+    fullName: 'CompletableFuture<Boolean> microsoft.servicefabric.actors.ActorStateProvider.containsStateAsync(ActorId actorId, String stateName)'
+    type: Method
+    summary: |-
+      <p>Überprüft, ob zustandsanbieter Akteur eine actorzustands mit dem angegebenen Namen enthält.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Boolean> containsStateAsync(ActorId actorId, String stateName)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, deren Zustand Vorhandensein überprüft. </p>'
+        - id: stateName
+          type: '26831127'
+          description: <p>Name des Zustands Akteur Vorhandensein überprüft. </p>
+      return:
+        type: 7e53ac82
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. Der Wert von TResult-Parameter ist "true", wenn der Status mit dem angegebenen Namen ist vorhanden, andernfalls "false". </p>'
+  - uid: microsoft.servicefabric.actors._actor_state_provider.removeActorAsync(ActorId)
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: removeActorAsync(ActorId actorId)
+    nameWithType: ActorStateProvider.removeActorAsync(ActorId actorId)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorStateProvider.removeActorAsync(ActorId actorId)
+    type: Method
+    summary: |-
+      <p>Entfernt alle vorhandenen Status und Erinnerungen angegebenen Akteur atomar zugeordnet.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<?> removeActorAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für den Status zu entfernt. </p>'
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Entfernungsvorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_state_provider.enumerateStateNamesAsync(ActorId)
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: enumerateStateNamesAsync(ActorId actorId)
+    nameWithType: ActorStateProvider.enumerateStateNamesAsync(ActorId actorId)
+    fullName: CompletableFuture<List<String>> microsoft.servicefabric.actors.ActorStateProvider.enumerateStateNamesAsync(ActorId actorId)
+    type: Method
+    summary: "<p>Erstellt ein aufzählbares Objekt von allen zugeordneten angegebenen Akteur Ländernamen.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>vom Akteur State-Anbieter zurückgegebenes sicher gleichzeitig mit der Lesevorgänge verwendet wird und schreibt in das State-Anbieter. Es stellt eine Momentaufnahme für die konsistente Sicht der State-Anbieter dar. </p>"
+    syntax:
+      content: public CompletableFuture<List<String>> enumerateStateNamesAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für die enumerable erstellt. </p>'
+      return:
+        type: d20512af
+        description: '<p>Eine Aufgabe, die den asynchronen Enumerationsvorgang darstellt. Der Wert von TResult-Parameter ist ein aufzählbares Objekt von dem alle Namen angegebenen Akteur zugeordnet. </p>'
+  - uid: microsoft.servicefabric.actors._paged_result
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._paged_result.yml
+    name: PagedResult<T>
+    nameWithType: PagedResult<T>
+    fullName: microsoft.servicefabric.actors.PagedResult<T>
+    type: Class
+    summary: |-
+      <p>Das Ergebnis des actoraufrufen, die Abfrage darstellt.</p>
+      <p></p>
+    syntax:
+      content: public class PagedResult<T>
+      typeParameters:
+        - type: 8ce1ecb9
+          description: '<p>Der Typ der Elemente, die dieses Abfrageergebnis enthält. </p>'
+  - uid: 'microsoft.servicefabric.actors._actor_state_provider.getActorsAsync(int,ContinuationToken)'
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: 'getActorsAsync(int numItemsToReturn, ContinuationToken continuationToken)'
+    nameWithType: 'ActorStateProvider.getActorsAsync(int numItemsToReturn, ContinuationToken continuationToken)'
+    fullName: 'CompletableFuture<PagedResult<ActorId>> microsoft.servicefabric.actors.ActorStateProvider.getActorsAsync(int numItemsToReturn, ContinuationToken continuationToken)'
+    type: Method
+    summary: "<p>Ruft den ActorIds aus der State-Anbieter ab.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> der </p>"
+    syntax:
+      content: 'public CompletableFuture<PagedResult<ActorId>> getActorsAsync(int numItemsToReturn, ContinuationToken continuationToken)'
+      parameters:
+        - id: numItemsToReturn
+          type: f75371fa
+          description: <p>Die Anzahl der zurückzugebenden angeforderten Elemente. </p>
+        - id: continuationToken
+          type: microsoft.servicefabric.actors._continuation_token
+          description: '<p>Ein Fortsetzungstoken, um die Ergebnisse von Abfragen zu starten. Ein null-Wert des Fortsetzungstokens bedeutet Zurückgeben von Werten Form Anfang starten. </p>'
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._paged_result78504a52microsoft.servicefabric.actors._actor_ide7daa122
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang des Aufrufs an Server darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._continuation_token
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._continuation_token.yml
+    name: ContinuationToken
+    nameWithType: ContinuationToken
+    fullName: microsoft.servicefabric.actors.ContinuationToken
+    type: Class
+    summary: "<p>Stellt ein Fortsetzungstoken für Abfragevorgänge dar. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>eine Methode, die möglicherweise eine Teilmenge der Ergebnisse über Zurückgeben einer <xref href=\"microsoft.servicefabric.actors._paged_result\" data-throw-if-not-resolved=\"false\"></xref> Objekt gibt auch ein Fortsetzungstoken zurück, in das Objekt, das in einem nachfolgenden Aufruf verwendet werden kann, um den nächsten Satz verfügbarer Ergebnisse zurückzugeben. </p>"
+    syntax:
+      content: public class ContinuationToken
+  - uid: 'microsoft.servicefabric.actors._actor_state_provider.saveReminderAsync(ActorId,ActorReminder)'
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: 'saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+    nameWithType: 'ActorStateProvider.saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.ActorStateProvider.saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+    type: Method
+    summary: |-
+      <p>Speichert die angegebenen Akteur Erinnerung an. Wenn eine Akteur Erinnerung mit dem angegebenen Namen nicht vorhanden ist, fügt es hinzu, dass die Akteur Erinnerung andernfalls vorhandenen Akteur Erinnerung mit demselben Namen aktualisiert wird.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> saveReminderAsync(ActorId actorId, ActorReminder reminder)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für die die Erinnerung zu speichern. </p>'
+        - id: reminder
+          type: microsoft.servicefabric.actors._actor_reminder
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref>Erinnerung zu speichern. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Speichervorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_reminder
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_reminder.yml
+    name: ActorReminder
+    nameWithType: ActorReminder
+    fullName: microsoft.servicefabric.actors.ActorReminder
+    type: Interface
+    summary: <p>Kapselt die Erinnerung legen Sie für ein<xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref></p>
+    syntax:
+      content: public interface ActorReminder
+  - uid: 'microsoft.servicefabric.actors._actor_state_provider.deleteReminderAsync(ActorId,String)'
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: 'deleteReminderAsync(ActorId actorId, String reminderName)'
+    nameWithType: 'ActorStateProvider.deleteReminderAsync(ActorId actorId, String reminderName)'
+    fullName: 'CompletableFuture<?> microsoft.servicefabric.actors.ActorStateProvider.deleteReminderAsync(ActorId actorId, String reminderName)'
+    type: Method
+    summary: |-
+      <p>Löscht die angegebene Akteur Erinnerung an, falls vorhanden.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<?> deleteReminderAsync(ActorId actorId, String reminderName)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, der die Erinnerung gelöscht. </p>'
+        - id: reminderName
+          type: '26831127'
+          description: <p>Der Name der Erinnerung zu löschen. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Löschvorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_reminder_collection
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_reminder_collection.yml
+    name: ActorReminderCollection
+    nameWithType: ActorReminderCollection
+    fullName: microsoft.servicefabric.actors.ActorReminderCollection
+    type: Interface
+    summary: <p>Erfasst <xref href="microsoft.servicefabric.actors._actor_reminder_state" data-throw-if-not-resolved="false"></xref> für Akteure </p>
+    syntax:
+      content: public interface ActorReminderCollection
+  - uid: microsoft.servicefabric.actors._actor_state_provider.loadRemindersAsync(CancellationToken)
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: loadRemindersAsync(CancellationToken cancellationToken)
+    nameWithType: ActorStateProvider.loadRemindersAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<ActorReminderCollection> microsoft.servicefabric.actors.ActorStateProvider.loadRemindersAsync(CancellationToken cancellationToken)
+    type: Method
+    summary: |-
+      <p>Lädt alle Erinnerungen, die in der Akteur-State-Anbieter enthalten sind.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<ActorReminderCollection> loadRemindersAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._actor_reminder_collectiona08ddfce
+        description: '<p>Eine Aufgabe, die den asynchrone Ladevorgang darstellt. Der Wert von TResult-Parameter ist eine Auflistung von alle Akteur Erinnerungen in der Akteur-State-Anbieter enthalten sind. </p>'
+  - uid: 'microsoft.servicefabric.actors._actor_state_provider.loadStateAsync(ActorId,String)'
+    parent: microsoft.servicefabric.actors._actor_state_provider
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: 'loadStateAsync(ActorId actorId, String stateName)'
+    nameWithType: 'ActorStateProvider.loadStateAsync(ActorId actorId, String stateName)'
+    fullName: '<T> CompletableFuture<T> microsoft.servicefabric.actors.ActorStateProvider.loadStateAsync(ActorId actorId, String stateName)'
+    type: Method
+    summary: |-
+      <p>Lädt den Akteur-Zustand, der dem angegebenen Zustand zugeordnet.</p>
+      <p></p>
+    syntax:
+      content: 'public <T> CompletableFuture<T> loadStateAsync(ActorId actorId, String stateName)'
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: '<p>Die ID des Akteurs, für das Laden des Zustands. </p>'
+        - id: stateName
+          type: '26831127'
+          description: <p>Name des Zustands Akteur geladen. </p>
+      return:
+        type: 6d056e8b
+        description: '<p>Eine Aufgabe, die den asynchrone Ladevorgang darstellt. Der Wert von TResult-Parameter enthält Wert des actorzustands angegebenen Zustand zugeordnet. </p>'
+  - uid: system.fabric._configuration_package
+    parent: system.fabric
+    href: system.fabric._configuration_package.yml
+    name: ConfigurationPackage
+    nameWithType: ConfigurationPackage
+    fullName: system.fabric.ConfigurationPackage
+    type: Class
+    summary: <p>Stellt ein Konfigurationspaket an. </p>
+    syntax:
+      content: public class ConfigurationPackage

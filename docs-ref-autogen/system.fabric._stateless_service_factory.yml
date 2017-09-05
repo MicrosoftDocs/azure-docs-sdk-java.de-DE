@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+  - uid: system.fabric._stateless_service_factory
+    id: _stateless_service_factory
+    parent: system.fabric
+    children:
+      - 'system.fabric._stateless_service_factory.createInstance(String,URI,byte [],UUID,long)'
+    href: system.fabric._stateless_service_factory.yml
+    langs:
+      - java
+    name: StatelessServiceFactory
+    nameWithType: StatelessServiceFactory
+    fullName: system.fabric.StatelessServiceFactory
+    type: Interface
+    source:
+      remote: &ref_0
+        path: src/prod/src/java/system.fabric/src/system/fabric/StatelessServiceFactory.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/system.fabric/src/system/fabric/StatelessServiceFactory.java
+      startLine: 21
+    package: system.fabric
+    summary: "<p>Stellt eine zustandslosen Diensts-Factory, die zum Erstellen von Instanzen eines bestimmten Typs von zustandslosen Diensts zuständig ist. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>zustandslosen Diensts Factorys registriert werden, die <xref href=\"system.fabric._fabric_runtime\" data-throw-if-not-resolved=\"false\"></xref> von Diensthosts über <ref refid=\"\" kindref=\"compound\">system.fabric.FabricRuntime#registerStatelessServiceFactory(java.lang.String,system.fabric.StatelessServiceFactory)</ref> oder <ref refid=\"\" kindref=\"compound\">system.fabric.FabricRuntime#registerStatelessServiceFactoryAsync(java.lang.String,system.fabric.StatelessServiceFactory,java.time.Duration)</ref></p>"
+    syntax:
+      content: public interface StatelessServiceFactory
+  - uid: 'system.fabric._stateless_service_factory.createInstance(String,URI,byte [],UUID,long)'
+    id: 'createInstance(String,URI,byte [],UUID,long)'
+    parent: system.fabric._stateless_service_factory
+    href: system.fabric._stateless_service_factory.yml
+    langs:
+      - java
+    name: 'createInstance(String serviceTypeName, URI serviceName, byte[] initializationData, UUID partitionId, long instanceId)'
+    nameWithType: 'StatelessServiceFactory.createInstance(String serviceTypeName, URI serviceName, byte[] initializationData, UUID partitionId, long instanceId)'
+    fullName: 'StatelessServiceInstance system.fabric.StatelessServiceFactory.createInstance(String serviceTypeName, URI serviceName, byte[] initializationData, UUID partitionId, long instanceId)'
+    overload: system.fabric._stateless_service_factory.createInstance*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/StatelessServiceFactory.java
+      startLine: 44
+    package: system.fabric
+    summary: |-
+      <p>Erstellt eine zustandslosen Dienstinstanz für einen bestimmten Dienst. Diese Methode wird von Service Fabric aufgerufen.</p>
+      <p></p>
+    syntax:
+      content: 'public StatelessServiceInstance createInstance(String serviceTypeName, URI serviceName, byte[] initializationData, UUID partitionId, long instanceId)'
+      parameters:
+        - id: serviceTypeName
+          type: '26831127'
+          description: '<p>Der Diensttyp, den Service Fabric anfordert, erstellt werden. </p>'
+        - id: serviceName
+          type: '62304784'
+          description: '<p>Der Fabric: / name (Uri) des Diensts, der dieses Replikat zugeordnet ist. </p>'
+        - id: initializationData
+          type: ccd9418d
+          description: '<p>Ein Bytearray, das die Initialisierungsdaten enthält, die als Teil dieser Dienste ursprünglich übergeben wurde <xref href="system.fabric._service_description" data-throw-if-not-resolved="false"></xref>. </p>'
+        - id: partitionId
+          type: add9545a
+          description: <p>Die Partition-ID (GUID) der dieses Replikat zugeordnet ist. </p>
+        - id: instanceId
+          type: 0364520f
+          description: <p>Die Replikat-ID für dieses Replikat vom Typ long. </p>
+      return:
+        type: system.fabric._stateless_service_instance
+        description: <p>Gibt <xref href="system.fabric._stateless_service_instance" data-throw-if-not-resolved="false"></xref>. </p>
+    exceptions:
+      - type: 84fa3863
+        description: <p>Bei der instanzerstellung </p>
+      - type: 81e09942
+        description: <p>Für den Zugriff voilation </p>
+references:
+  - uid: 84fa3863
+    spec.java:
+      - name: InstantiationException
+        fullName: InstantiationException
+  - uid: 81e09942
+    spec.java:
+      - name: IllegalAccessException
+        fullName: IllegalAccessException
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: '62304784'
+    spec.java:
+      - name: URI
+        fullName: URI
+  - uid: ccd9418d
+    spec.java:
+      - name: 'byte []'
+        fullName: 'byte []'
+  - uid: add9545a
+    spec.java:
+      - name: UUID
+        fullName: UUID
+  - uid: 0364520f
+    spec.java:
+      - name: long
+        fullName: long
+  - uid: system.fabric._stateless_service_factory.createInstance*
+    name: createInstance
+    nameWithType: StatelessServiceFactory.createInstance
+    fullName: StatelessServiceInstance system.fabric.StatelessServiceFactory.createInstance
+    package: system.fabric
+  - uid: microsoft.servicefabric.services.runtime._stateless_service_instance_factory
+  - uid: system.fabric._default_service_factory
+  - uid: system.fabric._stateless_service_instance
+    parent: system.fabric
+    href: system.fabric._stateless_service_instance.yml
+    name: StatelessServiceInstance
+    nameWithType: StatelessServiceInstance
+    fullName: system.fabric.StatelessServiceInstance
+    type: Interface
+    summary: '<p>Zustandslose Dienste sind diejenigen, bei die kein Zustand aufweisen, die Verwaltung von Service Fabric ist erforderlich. Zustandslose Diensttypen müssen diese Schnittstelle implementieren. </p>'
+    syntax:
+      content: public interface StatelessServiceInstance
+  - uid: system.fabric._service_description
+    parent: system.fabric
+    href: system.fabric._service_description.yml
+    name: ServiceDescription
+    nameWithType: ServiceDescription
+    fullName: system.fabric.ServiceDescription
+    type: Class
+    summary: '<p>Ein <xref href="system.fabric._service_description" data-throw-if-not-resolved="false"></xref> enthält alle Informationen, die zum Erstellen eines Diensts erforderlich sind. </p>'
+    syntax:
+      content: public class ServiceDescription
+  - uid: system.fabric._fabric_runtime
+    parent: system.fabric
+    href: system.fabric._fabric_runtime.yml
+    name: FabricRuntime
+    nameWithType: FabricRuntime
+    fullName: system.fabric.FabricRuntime
+    type: Class
+    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref href="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false"></xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> ] oder direkt Diensttypen. </p>'
+    syntax:
+      content: public class FabricRuntime

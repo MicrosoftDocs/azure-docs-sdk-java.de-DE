@@ -1,0 +1,481 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry
+    id: _telemetry
+    parent: com.microsoft.applicationinsights.telemetry
+    children:
+      - com.microsoft.applicationinsights.telemetry._telemetry.getContext()
+      - com.microsoft.applicationinsights.telemetry._telemetry.getProperties()
+      - com.microsoft.applicationinsights.telemetry._telemetry.getSequence()
+      - com.microsoft.applicationinsights.telemetry._telemetry.getTimestamp()
+      - com.microsoft.applicationinsights.telemetry._telemetry.reset()
+      - com.microsoft.applicationinsights.telemetry._telemetry.sanitize()
+      - com.microsoft.applicationinsights.telemetry._telemetry.serialize(JsonTelemetryDataSerializer)
+      - com.microsoft.applicationinsights.telemetry._telemetry.setSequence(String)
+      - com.microsoft.applicationinsights.telemetry._telemetry.setTimestamp(Date)
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: Telemetry
+    nameWithType: Telemetry
+    fullName: com.microsoft.applicationinsights.telemetry.Telemetry
+    type: Interface
+    source:
+      remote: &ref_0
+        path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+        branch: master
+        repo: 'https://github.com/Microsoft/ApplicationInsights-Java'
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 30
+    package: com.microsoft.applicationinsights.telemetry
+    summary: <p>Die Basis Telemetrie-Typ-Schnittstelle für das Application Insights. </p>
+    syntax:
+      content: public interface Telemetry extends JsonSerializable
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getContext()
+    id: getContext()
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: getContext()
+    nameWithType: Telemetry.getContext()
+    fullName: TelemetryContext com.microsoft.applicationinsights.telemetry.Telemetry.getContext()
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.getContext*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 67
+    package: com.microsoft.applicationinsights.telemetry
+    summary: <p>Ruft den Kontext dieser Telemetrie-Instanz zugeordnet. </p>
+    syntax:
+      content: public TelemetryContext getContext()
+      return:
+        type: com.microsoft.applicationinsights.telemetry._telemetry_context
+        description: '<p>Kontext, die dieser Instanz zugeordnet werden. </p>'
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getProperties()
+    id: getProperties()
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: getProperties()
+    nameWithType: Telemetry.getProperties()
+    fullName: 'Map<String,String> com.microsoft.applicationinsights.telemetry.Telemetry.getProperties()'
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.getProperties*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 73
+    package: com.microsoft.applicationinsights.telemetry
+    summary: <p>Ruft die Zuordnung der Anwendung definierte Eigenschaftennamen und Werte ab. </p>
+    syntax:
+      content: 'public Map<String, String> getProperties()'
+      return:
+        type: 689c8cb5
+        description: <p>Zuordnung von Eigenschaften. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getSequence()
+    id: getSequence()
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: getSequence()
+    nameWithType: Telemetry.getSequence()
+    fullName: String com.microsoft.applicationinsights.telemetry.Telemetry.getSequence()
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.getSequence*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 49
+    package: com.microsoft.applicationinsights.telemetry
+    summary: |-
+      <p>Sequenzfeld verwendet, um die absolute Reihenfolge der hochgeladenen Ereignisse zu verfolgen. Es ist ein mit dem zweiteiligen-Wert, der einen stabilen Bezeichner für die aktuelle Boot-Sitzung und ein inkrementeller Bezeichner für jedes Ereignis hinzugefügt wird, um der Upload-Warteschlange enthält.</p>
+      <p>Die Sequenz können verfolgen, wie viele Ereignisse ausgelöst wurden und wie viele Ereignisse hochgeladen wurden und aktiviert die Identifizierung von Daten während der Upload- und Deduplizierung der Ereignisse auf dem Server eingehend verloren gehen.</p>
+      <p>Ruft die aktuelle Sequenz ab. </p>
+    syntax:
+      content: public String getSequence()
+      return:
+        type: '26831127'
+        description: <p>Die aktuelle Sequenznummer. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getTimestamp()
+    id: getTimestamp()
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: getTimestamp()
+    nameWithType: Telemetry.getTimestamp()
+    fullName: Date com.microsoft.applicationinsights.telemetry.Telemetry.getTimestamp()
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.getTimestamp*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 36
+    package: com.microsoft.applicationinsights.telemetry
+    summary: '<p>Ruft die Zeit an, wann die Telemetrie aufgezeichnet wurde </p>'
+    syntax:
+      content: public Date getTimestamp()
+      return:
+        type: '12977444'
+        description: <p>Aufgezeichnete Zeit. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.reset()
+    id: reset()
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: reset()
+    nameWithType: Telemetry.reset()
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.reset()
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.reset*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 87
+    package: com.microsoft.applicationinsights.telemetry
+    syntax:
+      content: public void reset()
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.sanitize()
+    id: sanitize()
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: sanitize()
+    nameWithType: Telemetry.sanitize()
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.sanitize()
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.sanitize*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 78
+    package: com.microsoft.applicationinsights.telemetry
+    summary: '<p>Bereinigt die Eigenschaften der Telemetrie-Elements, das basierend auf DP-Einschränkungen. </p>'
+    syntax:
+      content: public void sanitize()
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.serialize(JsonTelemetryDataSerializer)
+    id: serialize(JsonTelemetryDataSerializer)
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: serialize(JsonTelemetryDataSerializer writer)
+    nameWithType: Telemetry.serialize(JsonTelemetryDataSerializer writer)
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.serialize(JsonTelemetryDataSerializer writer)
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.serialize*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 85
+    package: com.microsoft.applicationinsights.telemetry
+    summary: <p>Serialisiert sich selbst in Json mit der<xref href="com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer" data-throw-if-not-resolved="false"></xref></p>
+    syntax:
+      content: public void serialize(JsonTelemetryDataSerializer writer)
+      parameters:
+        - id: writer
+          type: com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer
+          description: '<p>Der Writer, der hilft bei der Serialisierung in Json-format </p>'
+    overridden: com.microsoft.applicationinsights.telemetry._json_serializable.serialize(JsonTelemetryDataSerializer)
+    exceptions:
+      - type: cbf33bbe
+        description: <p>eine mögliche Ausnahme </p>
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.setSequence(String)
+    id: setSequence(String)
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: setSequence(String sequence)
+    nameWithType: Telemetry.setSequence(String sequence)
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.setSequence(String sequence)
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.setSequence*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 55
+    package: com.microsoft.applicationinsights.telemetry
+    summary: <p>Legt die Reihenfolge fest. </p>
+    syntax:
+      content: public void setSequence(String sequence)
+      parameters:
+        - id: sequence
+          type: '26831127'
+          description: <p>Die Sequenz. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.setTimestamp(Date)
+    id: setTimestamp(Date)
+    parent: com.microsoft.applicationinsights.telemetry._telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry.yml
+    langs:
+      - java
+    name: setTimestamp(Date date)
+    nameWithType: Telemetry.setTimestamp(Date date)
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.setTimestamp(Date date)
+    overload: com.microsoft.applicationinsights.telemetry._telemetry.setTimestamp*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/Telemetry.java
+      startLine: 61
+    package: com.microsoft.applicationinsights.telemetry
+    summary: '<p>Legt die Zeit an, wann die Telemetrie aufgezeichnet wurde </p>'
+    syntax:
+      content: public void setTimestamp(Date date)
+      parameters:
+        - id: date
+          type: '12977444'
+          description: <p>Aufgezeichnete Zeit. </p>
+references:
+  - uid: '12977444'
+    spec.java:
+      - name: Date
+        fullName: Date
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getTimestamp*
+    name: getTimestamp
+    nameWithType: Telemetry.getTimestamp
+    fullName: Date com.microsoft.applicationinsights.telemetry.Telemetry.getTimestamp
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getSequence*
+    name: getSequence
+    nameWithType: Telemetry.getSequence
+    fullName: String com.microsoft.applicationinsights.telemetry.Telemetry.getSequence
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.setSequence*
+    name: setSequence
+    nameWithType: Telemetry.setSequence
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.setSequence
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.setTimestamp*
+    name: setTimestamp
+    nameWithType: Telemetry.setTimestamp
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.setTimestamp
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getContext*
+    name: getContext
+    nameWithType: Telemetry.getContext
+    fullName: TelemetryContext com.microsoft.applicationinsights.telemetry.Telemetry.getContext
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: 689c8cb5
+    spec.java:
+      - name: 'Map<String, String>'
+        fullName: 'Map<String, String>'
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.getProperties*
+    name: getProperties
+    nameWithType: Telemetry.getProperties
+    fullName: 'Map<String,String> com.microsoft.applicationinsights.telemetry.Telemetry.getProperties'
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.sanitize*
+    name: sanitize
+    nameWithType: Telemetry.sanitize
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.sanitize
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: cbf33bbe
+    spec.java:
+      - name: IOException
+        fullName: IOException
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.serialize*
+    name: serialize
+    nameWithType: Telemetry.serialize
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.serialize
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry.reset*
+    name: reset
+    nameWithType: Telemetry.reset
+    fullName: void com.microsoft.applicationinsights.telemetry.Telemetry.reset
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._json_serializable
+    parent: com.microsoft.applicationinsights.telemetry
+    href: com.microsoft.applicationinsights.telemetry._json_serializable.yml
+    name: JsonSerializable
+    nameWithType: JsonSerializable
+    fullName: com.microsoft.applicationinsights.telemetry.JsonSerializable
+    type: Interface
+    summary: '<p>Stellt Objekte, die Serialisierung in JSON unterstützen. </p>'
+    syntax:
+      content: public interface JsonSerializable
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry
+    parent: com.microsoft.applicationinsights.telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: BaseTelemetry<T>
+    nameWithType: BaseTelemetry<T>
+    fullName: com.microsoft.applicationinsights.telemetry.BaseTelemetry<T>
+    type: Class
+    summary: <p>Die übergeordnete Klasse für alle Telemetrie-Datenklassen. </p>
+    syntax:
+      content: public class BaseTelemetry<T extends Domain> implements Telemetry
+      typeParameters:
+        - type: 8ce1ecb9
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.getTimestamp()
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: getTimestamp()
+    nameWithType: BaseTelemetry<T>.getTimestamp()
+    fullName: Date com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.getTimestamp()
+    type: Method
+    summary: |-
+      <p>Ruft Datum und Uhrzeit, wann das Ereignis aufgezeichnet wurde.</p>
+      <p></p>
+    syntax:
+      content: public Date getTimestamp()
+      return:
+        type: '12977444'
+        description: <p>Der Zeitstempel als Datum </p>
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.getSequence()
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: getSequence()
+    nameWithType: BaseTelemetry<T>.getSequence()
+    fullName: String com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.getSequence()
+    type: Method
+    summary: |-
+      <p>Sequenzfeld verwendet, um die absolute Reihenfolge der hochgeladenen Ereignisse zu verfolgen. Es ist ein mit dem zweiteiligen-Wert, der einen stabilen Bezeichner für die aktuelle Boot-Sitzung und ein inkrementeller Bezeichner für jedes Ereignis hinzugefügt wird, um der Upload-Warteschlange enthält. </p>
+      <p>Die Sequenz können verfolgen, wie viele Ereignisse ausgelöst wurden und wie viele Ereignisse hochgeladen wurden und aktiviert die Identifizierung von Daten während der Upload- und Deduplizierung der Ereignisse auf dem Server eingehend verloren gehen. </p>
+      <p>Ruft den Wert ab, der absolute Reihenfolge der Telemetrie-Elements definiert.</p>
+      <p></p>
+    syntax:
+      content: public String getSequence()
+      return:
+        type: '26831127'
+        description: <p>Die Sequenz von der <xref href="com.microsoft.applicationinsights.telemetry._telemetry" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.setSequence(String)
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: setSequence(String sequence)
+    nameWithType: BaseTelemetry<T>.setSequence(String sequence)
+    fullName: void com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.setSequence(String sequence)
+    type: Method
+    summary: |-
+      <p>Legt den Wert an, der absolute Reihenfolge der Telemetrie-Elements definiert.</p>
+      <p></p>
+    syntax:
+      content: public void setSequence(String sequence)
+      parameters:
+        - id: sequence
+          type: '26831127'
+          description: <p>Die Sequenz von der <xref href="com.microsoft.applicationinsights.telemetry._telemetry" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.setTimestamp(Date)
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: setTimestamp(Date date)
+    nameWithType: BaseTelemetry<T>.setTimestamp(Date date)
+    fullName: void com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.setTimestamp(Date date)
+    type: Method
+    summary: |-
+      <p>Legt Datum und Uhrzeit, wann das Ereignis aufgezeichnet wurde.</p>
+      <p></p>
+    syntax:
+      content: public void setTimestamp(Date date)
+      parameters:
+        - id: date
+          type: '12977444'
+          description: <p>Der Zeitstempel als Datum. </p>
+  - uid: com.microsoft.applicationinsights.telemetry._telemetry_context
+    parent: com.microsoft.applicationinsights.telemetry
+    href: com.microsoft.applicationinsights.telemetry._telemetry_context.yml
+    name: TelemetryContext
+    nameWithType: TelemetryContext
+    fullName: com.microsoft.applicationinsights.telemetry.TelemetryContext
+    type: Class
+    summary: '<p>Stellt einen Kontext für das Senden von Telemetriedaten an Application Insights-Dienst. Der Kontext enthält Daten, die mit jedem Element Telemetrie gesendet werden. Es enthält instrumentierungsschlüssel; die Id des aktuellen, für das Korrelieren von verwandten Telemetrie-Elementen; und Benutzer, Sitzungs-und Gerät. Sie können auch Eigenschaften, die jedes Element der Telemetrie hinzugefügt werden, und können verwendet werden, festlegen, in das Portal, um die Telemetrie zu filtern, die diesem Kontext verwendet. </p>'
+    syntax:
+      content: public class TelemetryContext
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.getContext()
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: getContext()
+    nameWithType: BaseTelemetry<T>.getContext()
+    fullName: TelemetryContext com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.getContext()
+    type: Method
+    summary: |-
+      <p>Ruft das aktuelle Element der Telemetrie zugeordneten Kontext.</p>
+      <p></p>
+    syntax:
+      content: public TelemetryContext getContext()
+      return:
+        type: com.microsoft.applicationinsights.telemetry._telemetry_context
+        description: <p>der Kontext </p>
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.getProperties()
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: getProperties()
+    nameWithType: BaseTelemetry<T>.getProperties()
+    fullName: 'Map<String, String> com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.getProperties()'
+    type: Method
+    summary: |-
+      <p>Ruft ein Wörterbuch von anwendungsdefinierten Eigenschaftennamen und Werte, die zusätzliche Informationen zu diesem Ereignis.</p>
+      <p></p>
+    syntax:
+      content: 'public Map<String, String> getProperties()'
+      return:
+        type: 689c8cb5
+        description: <p>Die Eigenschaften </p>
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.sanitize()
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: sanitize()
+    nameWithType: BaseTelemetry<T>.sanitize()
+    fullName: void com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.sanitize()
+    type: Method
+    summary: '<p>Gewährleistet, dass die zu sendenden Daten werden von ungültigen Zeichen bereinigt richtigen Länge usw.. </p>'
+    syntax:
+      content: public void sanitize()
+  - uid: com.microsoft.applicationinsights.telemetry._json_serializable.serialize(JsonTelemetryDataSerializer)
+    parent: com.microsoft.applicationinsights.telemetry._json_serializable
+    href: com.microsoft.applicationinsights.telemetry._json_serializable.yml
+    name: serialize(JsonTelemetryDataSerializer serializer)
+    nameWithType: JsonSerializable.serialize(JsonTelemetryDataSerializer serializer)
+    fullName: void com.microsoft.applicationinsights.telemetry.JsonSerializable.serialize(JsonTelemetryDataSerializer serializer)
+    type: Method
+    summary: <p>Schreibt JSON-Darstellung des Objekts in den angegebenen Writer. </p>
+    syntax:
+      content: public void serialize(JsonTelemetryDataSerializer serializer)
+      parameters:
+        - id: serializer
+          type: com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer
+          description: <p>Die <xref href="com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer" data-throw-if-not-resolved="false"></xref> dient außerdem zur Serialisierung in JSON-Format </p>
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.serialize(JsonTelemetryDataSerializer)
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: serialize(JsonTelemetryDataSerializer writer)
+    nameWithType: BaseTelemetry<T>.serialize(JsonTelemetryDataSerializer writer)
+    fullName: void com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.serialize(JsonTelemetryDataSerializer writer)
+    type: Method
+    summary: |-
+      <p>Wird dieses Objekt im JSON-Format serialisiert.</p>
+      <p></p>
+    syntax:
+      content: public void serialize(JsonTelemetryDataSerializer writer)
+      parameters:
+        - id: writer
+          type: com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer
+          description: '<p>Der Writer, der hilft bei der Serialisierung in Json-format </p>'
+  - uid: com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer
+    parent: com.microsoft.applicationinsights.telemetry
+    href: com.microsoft.applicationinsights.telemetry._json_telemetry_data_serializer.yml
+    name: JsonTelemetryDataSerializer
+    nameWithType: JsonTelemetryDataSerializer
+    fullName: com.microsoft.applicationinsights.telemetry.JsonTelemetryDataSerializer
+    type: Class
+    summary: '<p>Diese Klasse weiß, wie Daten zu transformieren, um relevante <xref href="com.microsoft.applicationinsights.telemetry._telemetry" data-throw-if-not-resolved="false"></xref> Instanzen in JSON. </p>'
+    syntax:
+      content: public class JsonTelemetryDataSerializer
+  - uid: com.microsoft.applicationinsights.telemetry._base_telemetry.reset()
+    parent: com.microsoft.applicationinsights.telemetry._base_telemetry
+    href: com.microsoft.applicationinsights.telemetry._base_telemetry.yml
+    name: reset()
+    nameWithType: BaseTelemetry<T>.reset()
+    fullName: void com.microsoft.applicationinsights.telemetry.BaseTelemetry<T extends Domain>.reset()
+    type: Method
+    syntax:
+      content: public void reset()

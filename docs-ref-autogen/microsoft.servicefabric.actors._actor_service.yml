@@ -1,0 +1,228 @@
+### YamlMime:ManagedReference
+items:
+  - uid: microsoft.servicefabric.actors._actor_service
+    id: _actor_service
+    parent: microsoft.servicefabric.actors
+    children:
+      - microsoft.servicefabric.actors._actor_service.deleteActorAsync(ActorId)
+      - microsoft.servicefabric.actors._actor_service.getActorsAsync(ContinuationToken)
+    href: microsoft.servicefabric.actors._actor_service.yml
+    langs:
+      - java
+    name: ActorService
+    nameWithType: ActorService
+    fullName: microsoft.servicefabric.actors.ActorService
+    type: Interface
+    source:
+      remote: &ref_0
+        path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/ActorService.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/ActorService.java
+      startLine: 9
+    package: microsoft.servicefabric.actors
+    summary: '<p>Definiert die Schnittstelle enthält Methoden, die zur aufgerufen werden können <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> -Dienstebene. </p>'
+    syntax:
+      content: public interface ActorService extends Service
+  - uid: microsoft.servicefabric.actors._actor_service.deleteActorAsync(ActorId)
+    id: deleteActorAsync(ActorId)
+    parent: microsoft.servicefabric.actors._actor_service
+    href: microsoft.servicefabric.actors._actor_service.yml
+    langs:
+      - java
+    name: deleteActorAsync(ActorId actorId)
+    nameWithType: ActorService.deleteActorAsync(ActorId actorId)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorService.deleteActorAsync(ActorId actorId)
+    overload: microsoft.servicefabric.actors._actor_service.deleteActorAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/ActorService.java
+      startLine: 33
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Löscht eine <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> aus der <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> Dienst.</p>
+      <p>
+      Akteur active werden deaktiviert, und der Zustand von zustandsanbieter werden ebenfalls gelöscht. Ein Status des actorzustands wird von zustandsanbieter gelöscht werden. Wenn für eine nicht existierende Akteur-Id in das System Diese Methode aufgerufen wird, kann er nicht ausgeführt werden. </p>
+    syntax:
+      content: public CompletableFuture<?> deleteActorAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>der Akteur gelöscht werden soll. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang des Aufrufs an Server darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_service.getActorsAsync(ContinuationToken)
+    id: getActorsAsync(ContinuationToken)
+    parent: microsoft.servicefabric.actors._actor_service
+    href: microsoft.servicefabric.actors._actor_service.yml
+    langs:
+      - java
+    name: getActorsAsync(ContinuationToken continuationToken)
+    nameWithType: ActorService.getActorsAsync(ContinuationToken continuationToken)
+    fullName: CompletableFuture<PagedResult<ActorInformation>> microsoft.servicefabric.actors.ActorService.getActorsAsync(ContinuationToken continuationToken)
+    overload: microsoft.servicefabric.actors._actor_service.getActorsAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/ActorService.java
+      startLine: 19
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Ruft die Liste von Akteuren durch Abfragen des Akteur-Diensts ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<PagedResult<ActorInformation>> getActorsAsync(ContinuationToken continuationToken)
+      parameters:
+        - id: continuationToken
+          type: microsoft.servicefabric.actors._continuation_token
+          description: '<p>Ein Fortsetzungstoken, um die Ergebnisse von Abfragen zu starten. Ein null-Wert des Fortsetzungstokens bedeutet Zurückgeben von Werten Form Anfang starten. </p>'
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._paged_result78504a52microsoft.servicefabric.actors._actor_informatione7daa122
+        description: '<p>Ein Future, das den asynchronen Vorgang des Aufrufs an Server darstellt. </p>'
+references:
+  - uid: 9cdf14d0microsoft.servicefabric.actors._paged_result78504a52microsoft.servicefabric.actors._actor_informatione7daa122
+    spec.java:
+      - name: CompletableFuture<
+        fullName: CompletableFuture<
+      - uid: microsoft.servicefabric.actors._paged_result
+        name: PagedResult
+        fullName: microsoft.servicefabric.actors.PagedResult
+        href: microsoft.servicefabric.actors._paged_result.yml
+      - name: <
+        fullName: <
+      - uid: microsoft.servicefabric.actors._actor_information
+        name: ActorInformation
+        fullName: microsoft.servicefabric.actors.ActorInformation
+        href: microsoft.servicefabric.actors._actor_information.yml
+      - name: '>>'
+        fullName: '>>'
+  - uid: microsoft.servicefabric.actors._actor_service.getActorsAsync*
+    name: getActorsAsync
+    nameWithType: ActorService.getActorsAsync
+    fullName: CompletableFuture<PagedResult<ActorInformation>> microsoft.servicefabric.actors.ActorService.getActorsAsync
+    package: microsoft.servicefabric.actors
+  - uid: 16409f84
+    spec.java:
+      - name: CompletableFuture<?>
+        fullName: CompletableFuture<?>
+  - uid: microsoft.servicefabric.actors._actor_service.deleteActorAsync*
+    name: deleteActorAsync
+    nameWithType: ActorService.deleteActorAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorService.deleteActorAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.services.remoting._service
+    parent: microsoft.servicefabric.services.remoting
+    href: microsoft.servicefabric.services.remoting._service.yml
+    name: Service
+    nameWithType: Service
+    fullName: microsoft.servicefabric.services.remoting.Service
+    type: Interface
+    summary: '<p>Dies ist die Markierungsschnittstelle zum Aktivieren von Remoting-Schnittstelle für Dienste. Ein <xref href="microsoft.servicefabric.services.remoting._service_remoting_listener" data-throw-if-not-resolved="false"></xref> bietet Remoting für alle Schnittstellen vom Dienst implementiert, die von dieser Schnittstelle ableiten. Die Remoteausführung Schnittstellen können über einen Proxyserver auf dem Client zugegriffen werden. </p>'
+    syntax:
+      content: public interface Service
+  - uid: microsoft.servicefabric.actors._fabric_actor_service
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._fabric_actor_service.yml
+    name: FabricActorService
+    nameWithType: FabricActorService
+    fullName: microsoft.servicefabric.actors.FabricActorService
+    type: Class
+    summary: "<p>Stellt die Basisklasse für Microsoft Service Fabric-basierten zuverlässige Akteure Dienst dar. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Ableiten von dieser Klasse, die einen eigenen benutzerdefinierten Akteur-Dienst zu implementieren, wenn Sie alle Verhalten des Diensts für die Akteure außer Kraft setzen möchten. </p>"
+    syntax:
+      content: public class FabricActorService
+  - uid: microsoft.servicefabric.actors._paged_result
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._paged_result.yml
+    name: PagedResult<T>
+    nameWithType: PagedResult<T>
+    fullName: microsoft.servicefabric.actors.PagedResult<T>
+    type: Class
+    summary: |-
+      <p>Das Ergebnis des actoraufrufen, die Abfrage darstellt.</p>
+      <p></p>
+    syntax:
+      content: public class PagedResult<T>
+      typeParameters:
+        - type: 8ce1ecb9
+          description: '<p>Der Typ der Elemente, die dieses Abfrageergebnis enthält. </p>'
+  - uid: microsoft.servicefabric.actors._actor_information
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_information.yml
+    name: ActorInformation
+    nameWithType: ActorInformation
+    fullName: microsoft.servicefabric.actors.ActorInformation
+    type: Class
+    summary: <p>Stellt die Informationen zu einem Akteur zurückgegebenes <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> Methodenaufruf abzufragen. </p>
+    syntax:
+      content: public class ActorInformation
+  - uid: microsoft.servicefabric.actors._fabric_actor_service.getActorsAsync(ContinuationToken)
+    parent: microsoft.servicefabric.actors._fabric_actor_service
+    href: microsoft.servicefabric.actors._fabric_actor_service.yml
+    name: getActorsAsync(ContinuationToken continuationToken)
+    nameWithType: FabricActorService.getActorsAsync(ContinuationToken continuationToken)
+    fullName: CompletableFuture<PagedResult<ActorInformation>> microsoft.servicefabric.actors.FabricActorService.getActorsAsync(ContinuationToken continuationToken)
+    type: Method
+    summary: |-
+      <p>Ruft die Liste von Akteuren durch Abfragen des Akteur-Diensts ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<PagedResult<ActorInformation>> getActorsAsync(ContinuationToken continuationToken)
+      parameters:
+        - id: continuationToken
+          type: microsoft.servicefabric.actors._continuation_token
+          description: '<p>Ein Fortsetzungstoken, um die Ergebnisse von Abfragen zu starten. Ein null-Wert des Fortsetzungstokens bedeutet Zurückgeben von Werten Form Anfang starten. </p>'
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._paged_result78504a52microsoft.servicefabric.actors._actor_informatione7daa122
+        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , die den asynchronen Vorgang des Aufrufs an Server darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._continuation_token
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._continuation_token.yml
+    name: ContinuationToken
+    nameWithType: ContinuationToken
+    fullName: microsoft.servicefabric.actors.ContinuationToken
+    type: Class
+    summary: "<p>Stellt ein Fortsetzungstoken für Abfragevorgänge dar. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>eine Methode, die möglicherweise eine Teilmenge der Ergebnisse über Zurückgeben einer <xref href=\"microsoft.servicefabric.actors._paged_result\" data-throw-if-not-resolved=\"false\"></xref> Objekt gibt auch ein Fortsetzungstoken zurück, in das Objekt, das in einem nachfolgenden Aufruf verwendet werden kann, um den nächsten Satz verfügbarer Ergebnisse zurückzugeben. </p>"
+    syntax:
+      content: public class ContinuationToken
+  - uid: microsoft.servicefabric.actors._fabric_actor_service.deleteActorAsync(ActorId)
+    parent: microsoft.servicefabric.actors._fabric_actor_service
+    href: microsoft.servicefabric.actors._fabric_actor_service.yml
+    name: deleteActorAsync(ActorId actorId)
+    nameWithType: FabricActorService.deleteActorAsync(ActorId actorId)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.FabricActorService.deleteActorAsync(ActorId actorId)
+    type: Method
+    summary: |-
+      <p>Löscht eine <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> aus der <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> Dienst.</p>
+      <p>
+      Akteur active werden deaktiviert, und der Zustand von zustandsanbieter werden ebenfalls gelöscht. Ein Status des actorzustands wird von zustandsanbieter gelöscht werden. Wenn für eine nicht existierende Akteur-Id in das System Diese Methode aufgerufen wird, kann er nicht ausgeführt werden. </p>
+    syntax:
+      content: public CompletableFuture<?> deleteActorAsync(ActorId actorId)
+      parameters:
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>der Akteur gelöscht werden soll. </p>"
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang des Aufrufs an Server darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_id
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_id.yml
+    name: ActorId
+    nameWithType: ActorId
+    fullName: microsoft.servicefabric.actors.ActorId
+    type: Class
+    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>die Identität der Akteur innerhalb eines Diensts Akteur. Akteure können festgestellt werden, indem <ref refid=\"\" kindref=\"compound\">java.lang.String</ref>, <ref refid=\"\" kindref=\"compound\">java.util.UUID</ref> oder lang. </p>"
+    syntax:
+      content: public class ActorId
+  - uid: microsoft.servicefabric.actors._actor
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor.yml
+    name: Actor
+    nameWithType: Actor
+    fullName: microsoft.servicefabric.actors.Actor
+    type: Interface
+    summary: <p>Die Basisschnittstelle für das zuverlässige Akteur Schnittstellen erben. </p>
+    syntax:
+      content: public interface Actor

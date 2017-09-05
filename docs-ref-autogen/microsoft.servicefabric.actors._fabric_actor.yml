@@ -1,0 +1,502 @@
+### YamlMime:ManagedReference
+items:
+  - uid: microsoft.servicefabric.actors._fabric_actor
+    id: _fabric_actor
+    parent: microsoft.servicefabric.actors
+    children:
+      - 'microsoft.servicefabric.actors._fabric_actor.FabricActor(FabricActorService,ActorId)'
+      - microsoft.servicefabric.actors._fabric_actor.saveStateAsync()
+      - microsoft.servicefabric.actors._fabric_actor.stateManager()
+    href: microsoft.servicefabric.actors._fabric_actor.yml
+    langs:
+      - java
+    name: FabricActor
+    nameWithType: FabricActor
+    fullName: microsoft.servicefabric.actors.FabricActor
+    type: Class
+    source:
+      remote: &ref_0
+        path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/FabricActor.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/FabricActor.java
+      startLine: 13
+    package: microsoft.servicefabric.actors
+    summary: "<p>Stellt einen Akteur, der mehrere zuverlässige \"benannte\" Status zugeordnet aufweisen kann. <xref href=\"microsoft.servicefabric.actors._actor_base\" data-throw-if-not-resolved=\"false\"></xref></p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    syntax: &ref_1
+      content: public class FabricActor extends ActorBase
+    inheritance:
+      - java.lang.Object
+      - microsoft.servicefabric.actors._actor_base
+    inheritedMembers:
+      - microsoft.servicefabric.actors._actor_base.getActorService()
+      - microsoft.servicefabric.actors._actor_base.getApplicationName()
+      - microsoft.servicefabric.actors._actor_base.getId()
+      - microsoft.servicefabric.actors._actor_base.getReminder(String)
+      - microsoft.servicefabric.actors._actor_base.getServiceUri()
+      - microsoft.servicefabric.actors._actor_base.onActivateAsync()
+      - microsoft.servicefabric.actors._actor_base.onDeactivateAsync()
+      - microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)
+      - microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)
+      - 'microsoft.servicefabric.actors._actor_base.registerReminderAsync(String,byte [],Duration,Duration)'
+      - 'microsoft.servicefabric.actors._actor_base.registerTimer(Function<Object, CompletableFuture<?>>,Object,Duration,Duration)'
+      - 'microsoft.servicefabric.actors._actor_base.registerTimer(Function<Object, CompletableFuture<?>>,String,Object,Duration,Duration)'
+      - microsoft.servicefabric.actors._actor_base.unregisterReminderAsync(ActorReminder)
+      - microsoft.servicefabric.actors._actor_base.unregisterTimer(ActorTimer)
+  - uid: 'microsoft.servicefabric.actors._fabric_actor.FabricActor(FabricActorService,ActorId)'
+    id: 'FabricActor(FabricActorService,ActorId)'
+    parent: microsoft.servicefabric.actors._fabric_actor
+    href: microsoft.servicefabric.actors._fabric_actor.yml
+    langs:
+      - java
+    name: 'FabricActor(FabricActorService actorService, ActorId actorId)'
+    nameWithType: 'FabricActor.FabricActor(FabricActorService actorService, ActorId actorId)'
+    fullName: 'microsoft.servicefabric.actors.FabricActor.FabricActor(FabricActorService actorService, ActorId actorId)'
+    overload: microsoft.servicefabric.actors._fabric_actor.FabricActor*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/FabricActor.java
+      startLine: 25
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Initialisiert eine neue Instanz der<xref href="microsoft.servicefabric.actors._fabric_actor" data-throw-if-not-resolved="false"></xref></p>
+      <p></p>
+    syntax:
+      content: 'protected FabricActor(FabricActorService actorService, ActorId actorId)'
+      parameters:
+        - id: actorService
+          type: microsoft.servicefabric.actors._fabric_actor_service
+          description: <p>Die <xref href="microsoft.servicefabric.actors._fabric_actor_service" data-throw-if-not-resolved="false"></xref> dieser Akteur-Instanz gehostet wird. </p>
+        - id: actorId
+          type: microsoft.servicefabric.actors._actor_id
+          description: <p>Die <xref href="microsoft.servicefabric.actors._actor_id" data-throw-if-not-resolved="false"></xref> für diese Instanz Akteur. </p>
+  - uid: microsoft.servicefabric.actors._fabric_actor.saveStateAsync()
+    id: saveStateAsync()
+    parent: microsoft.servicefabric.actors._fabric_actor
+    href: microsoft.servicefabric.actors._fabric_actor.yml
+    langs:
+      - java
+    name: saveStateAsync()
+    nameWithType: FabricActor.saveStateAsync()
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.FabricActor.saveStateAsync()
+    overload: microsoft.servicefabric.actors._fabric_actor.saveStateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/FabricActor.java
+      startLine: 48
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Speichert alle statusänderungen (Hinzufügen/Aktualisieren/Entfernen), die seit dem letzten Aufruf von <xref href="microsoft.servicefabric.actors._fabric_actor.saveStateAsync()" data-throw-if-not-resolved="false"></xref>, zu der Akteur State-Anbieter, die der Akteur zugeordnet.</p>
+      <p></p>
+    syntax: &ref_2
+      content: protected CompletableFuture<?> saveStateAsync()
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen Speichervorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._fabric_actor.stateManager()
+    id: stateManager()
+    parent: microsoft.servicefabric.actors._fabric_actor
+    href: microsoft.servicefabric.actors._fabric_actor.yml
+    langs:
+      - java
+    name: stateManager()
+    nameWithType: FabricActor.stateManager()
+    fullName: ActorStateManager microsoft.servicefabric.actors.FabricActor.stateManager()
+    overload: microsoft.servicefabric.actors._fabric_actor.stateManager*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/FabricActor.java
+      startLine: 37
+    package: microsoft.servicefabric.actors
+    summary: |-
+      <p>Ruft den Status-Manager für <xref href="microsoft.servicefabric.actors._fabric_actor" data-throw-if-not-resolved="false"></xref> die zum Abrufen/Hinzufügen/Aktualisieren/Entfernen mit dem Namen Zustände verwendet werden können.</p>
+      <p></p>
+    syntax:
+      content: public ActorStateManager stateManager()
+      return:
+        type: microsoft.servicefabric.actors._actor_state_manager
+        description: <p>Ein <xref href="microsoft.servicefabric.actors._actor_state_manager" data-throw-if-not-resolved="false"></xref> die zum Verwalten des actorzustands verwendet werden können. </p>
+references:
+  - uid: microsoft.servicefabric.actors._fabric_actor.FabricActor*
+    name: FabricActor
+    nameWithType: FabricActor.FabricActor
+    fullName: microsoft.servicefabric.actors.FabricActor.FabricActor
+    package: microsoft.servicefabric.actors
+  - uid: 16409f84
+    spec.java:
+      - name: CompletableFuture<?>
+        fullName: CompletableFuture<?>
+  - uid: microsoft.servicefabric.actors._fabric_actor.saveStateAsync*
+    name: saveStateAsync
+    nameWithType: FabricActor.saveStateAsync
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.FabricActor.saveStateAsync
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._fabric_actor.stateManager*
+    name: stateManager
+    nameWithType: FabricActor.stateManager
+    fullName: ActorStateManager microsoft.servicefabric.actors.FabricActor.stateManager
+    package: microsoft.servicefabric.actors
+  - uid: microsoft.servicefabric.actors._actor_base.getActorService()
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: getActorService()
+    nameWithType: ActorBase.getActorService()
+    fullName: FabricActorService microsoft.servicefabric.actors.ActorBase.getActorService()
+    type: Method
+    summary: |-
+      <p>Ruft die statusbehafteten dienstreplikats, die den Akteur gehostet wird.</p>
+      <p></p>
+    syntax:
+      content: public FabricActorService getActorService()
+      return:
+        type: microsoft.servicefabric.actors._fabric_actor_service
+        description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._fabric_actor_service\" data-throw-if-not-resolved=\"false\"></xref>Das hosting des Akteurs zustandsbehafteten dienstreplikats darstellt. Akteur. </p>"
+  - uid: microsoft.servicefabric.actors._actor_base.getApplicationName()
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: getApplicationName()
+    nameWithType: ActorBase.getApplicationName()
+    fullName: String microsoft.servicefabric.actors.ActorBase.getApplicationName()
+    type: Method
+    summary: |-
+      <p>Ruft den Namen der Anwendung, die den Akteur-Dienst enthält, der dieser Akteur gehostet wird.</p>
+      <p></p>
+    syntax:
+      content: public String getApplicationName()
+      return:
+        type: '26831127'
+        description: '<p>Der Name der Anwendung, die der Akteur-Dienst enthält, der dieser Akteur gehostet wird. </p>'
+  - uid: microsoft.servicefabric.actors._actor_base.getId()
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: getId()
+    nameWithType: ActorBase.getId()
+    fullName: ActorId microsoft.servicefabric.actors.ActorBase.getId()
+    type: Method
+    summary: |-
+      <p>Ruft die Identität des dieser Akteur mit dem Akteur-Dienst ab.</p>
+      <p></p>
+    syntax:
+      content: public ActorId getId()
+      return:
+        type: microsoft.servicefabric.actors._actor_id
+        description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>für die der Akteur. </p>"
+  - uid: microsoft.servicefabric.actors._actor_base.getReminder(String)
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: getReminder(String reminderName)
+    nameWithType: ActorBase.getReminder(String reminderName)
+    fullName: ActorReminder microsoft.servicefabric.actors.ActorBase.getReminder(String reminderName)
+    type: Method
+    summary: |-
+      <p>Ruft die Erinnerung Akteur mit dem angegebenen Namen ab.</p>
+      <p></p>
+    syntax:
+      content: protected ActorReminder getReminder(String reminderName)
+      parameters:
+        - id: reminderName
+          type: '26831127'
+          description: <p>Der Name der abzurufenden Erinnerung. </p>
+      return:
+        type: microsoft.servicefabric.actors._actor_reminder
+        description: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_reminder" data-throw-if-not-resolved="false"></xref> , eine Akteur Erinnerung darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_base.getServiceUri()
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: getServiceUri()
+    nameWithType: ActorBase.getServiceUri()
+    fullName: URI microsoft.servicefabric.actors.ActorBase.getServiceUri()
+    type: Method
+    summary: |-
+      <p>Ruft den Uri des Diensts Akteur, der dieser Akteur gehostet wird.</p>
+      <p></p>
+    syntax:
+      content: public URI getServiceUri()
+      return:
+        type: '62304784'
+        description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">java.net.URI</ref> des Akteurs-Diensts, der dieser Akteur gehostet wird. </p>"
+  - uid: microsoft.servicefabric.actors._actor_base.onActivateAsync()
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: onActivateAsync()
+    nameWithType: ActorBase.onActivateAsync()
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorBase.onActivateAsync()
+    type: Method
+    summary: |-
+      <p>Überschreiben Sie diese Methode zum Initialisieren der Elemente, Zustand initialisieren oder Zeitgeber zu registrieren. Diese Methode wird rechts aufgerufen, nachdem der Akteur aktiviert wird, und vor jeder Methode aufrufen oder Erinnerungen darauf weitergeleitet werden.</p>
+      <p></p>
+    syntax:
+      content: protected CompletableFuture<?> onActivateAsync()
+      return:
+        type: 16409f84
+        description: '<p>Eine CompletableFuture, die ausstehenden OnActivateAsync-Vorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_base.onDeactivateAsync()
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: onDeactivateAsync()
+    nameWithType: ActorBase.onDeactivateAsync()
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorBase.onDeactivateAsync()
+    type: Method
+    summary: |-
+      <p>Überschreiben Sie diese Methode zum Aufheben der Registrierung die Zeitgeber einschließlich Ressourcen freizugeben. Diese Methode wird direkt aufgerufen, bevor der Akteur deaktiviert wird.</p>
+      <p></p>
+    syntax:
+      content: protected CompletableFuture<?> onDeactivateAsync()
+      return:
+        type: 16409f84
+        description: '<p>Eine CompletableFuture, die ausstehenden OnDeactivateAsync Vorgang darstellt. </p>'
+  - uid: microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: onPostActorMethodAsync(ActorMethodContext actorMethodContext)
+    nameWithType: ActorBase.onPostActorMethodAsync(ActorMethodContext actorMethodContext)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorBase.onPostActorMethodAsync(ActorMethodContext actorMethodContext)
+    type: Method
+    summary: |-
+      <p>Diese Methode wird aufgerufen, von Akteur Runtime eine Akteur-Methode Ausführung beendet wurde. Überschreiben Sie diese Methode für eine Aktion ausgeführt, nachdem eine Akteur-Methode die Ausführung beendet ist.</p>
+      <p></p>
+    syntax:
+      content: protected CompletableFuture<?> onPostActorMethodAsync(ActorMethodContext actorMethodContext)
+      parameters:
+        - id: actorMethodContext
+          type: microsoft.servicefabric.actors._actor_method_context
+          description: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false"></xref> beschreiben die Methode, die vom Akteur-Laufzeit, bevor Sie diese Methode aufgerufen wurde. </p>'
+      return:
+        type: 16409f84
+        description: |-
+          <p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , post, actor-Method-Vorgang darstellt. <verbatim>    &lt;b&gt;"Hinweise":&lt;/b&gt; diese Methode wird aufgerufen, indem Akteur zur Laufzeit vor:
+
+              &lt;ul&gt;
+
+              &lt;li&gt;Invoking an actor interface method when a client request comes.&lt;/li&gt;
+
+              &lt;li&gt;Invoking a method on {@link Remindable} interface when a reminder fires.&lt;/li&gt;
+
+              &lt;li&gt;Invoking a timer callback when timer fires.&lt;/li&gt;
+
+              &lt;/ul&gt;</verbatim></p>
+  - uid: microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: onPreActorMethodAsync(ActorMethodContext actorMethodContext)
+    nameWithType: ActorBase.onPreActorMethodAsync(ActorMethodContext actorMethodContext)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorBase.onPreActorMethodAsync(ActorMethodContext actorMethodContext)
+    type: Method
+    summary: |-
+      <p>Diese Methode wird von Akteur Laufzeit aufgerufen, unmittelbar vor eine Akteur-Methode aufrufen. Überschreiben Sie diese Methode zum Ausführen von Maßnahmen, die vor einem Akteur-Methode aufgerufen wird.</p>
+      <p></p>
+    syntax:
+      content: protected CompletableFuture<?> onPreActorMethodAsync(ActorMethodContext actorMethodContext)
+      parameters:
+        - id: actorMethodContext
+          type: microsoft.servicefabric.actors._actor_method_context
+          description: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false"></xref> beschreiben die Methode, die vom Akteur Common Language Runtime nach Abschluss dieser Methode aufgerufen wird. </p>'
+      return:
+        type: 16409f84
+        description: |-
+          <p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , actor--Methode Vorgang darstellt. <verbatim>    &lt;b&gt;"Hinweise":&lt;/b&gt;diese Methode wird aufgerufen, indem Akteur zur Laufzeit vor:
+
+              &lt;ul&gt;
+
+              &lt;li&gt;Invoking an actor interface method when a client request comes.&lt;/li&gt;
+
+              &lt;li&gt;Invoking a method on {@link Remindable} interface when a reminder fires.&lt;/li&gt;
+
+              &lt;li&gt;Invoking a timer callback when timer fires.&lt;/li&gt;
+
+              &lt;/ul&gt;</verbatim></p>
+  - uid: 'microsoft.servicefabric.actors._actor_base.registerReminderAsync(String,byte [],Duration,Duration)'
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: 'registerReminderAsync(String reminderName, byte[] state, Duration dueTime, Duration period)'
+    nameWithType: 'ActorBase.registerReminderAsync(String reminderName, byte[] state, Duration dueTime, Duration period)'
+    fullName: 'CompletableFuture<ActorReminder> microsoft.servicefabric.actors.ActorBase.registerReminderAsync(String reminderName, byte[] state, Duration dueTime, Duration period)'
+    type: Method
+    summary: |-
+      <p>Registriert die angegebene Erinnerung Akteur.</p>
+      <p></p>
+    syntax:
+      content: 'protected CompletableFuture<ActorReminder> registerReminderAsync(String reminderName, byte[] state, Duration dueTime, Duration period)'
+      parameters:
+        - id: reminderName
+          type: '26831127'
+          description: <p>Name der Erinnerung registrieren </p>
+        - id: state
+          type: ccd9418d
+          description: <p>Status Erinnerung zugeordnet. </p>
+        - id: dueTime
+          type: e02a2de0
+          description: '<p>Ein <ref refid="" kindref="compound">java.time.Duration</ref> , das die Zeitspanne für die Verzögerung, die Erinnerung auslösen darstellt. Geben Sie (-1) Millisekunde an, um zu verhindern, dass Erinnerung ausgelöst. Geben Sie 0 (null) fest, um die Erinnerung sofort ausgelöst. </p>'
+        - id: period
+          type: e02a2de0
+          description: '<p>Das Zeitintervall zwischen den Auslösen von Erinnerungen. Geben Sie (-1) Millisekunde an, um regelmäßige Auslösen von Ereignissen zu deaktivieren. </p>'
+      return:
+        type: 9cdf14d0microsoft.servicefabric.actors._actor_remindera08ddfce
+        description: '<p>Eine Aufgabe, die den asynchronen Registrierungsvorgang darstellt. Der Wert von TResult-Parameter ist ein <xref href="microsoft.servicefabric.actors._actor_reminder" data-throw-if-not-resolved="false"></xref> , die der Akteur Erinnerung, die registriert war darstellt. </p>'
+  - uid: 'microsoft.servicefabric.actors._actor_base.registerTimer(Function<Object, CompletableFuture<?>>,Object,Duration,Duration)'
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: 'registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, Object state, Duration dueTime, Duration period)'
+    nameWithType: 'ActorBase.registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, Object state, Duration dueTime, Duration period)'
+    fullName: 'ActorTimer microsoft.servicefabric.actors.ActorBase.registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, Object state, Duration dueTime, Duration period)'
+    type: Method
+    summary: |-
+      <p>Registriert einen Zeitgeber für den Akteur.</p>
+      <p></p>
+    syntax:
+      content: 'protected ActorTimer registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, Object state, Duration dueTime, Duration period)'
+      parameters:
+        - id: asyncCallback
+          type: 05842176
+          description: '<p>Rückruf, der aufgerufen wird, wenn der Zeitgeber ausgelöst wird. </p>'
+        - id: state
+          type: '79317049'
+          description: <p>Status Zeitgeberrückruf übergeben. </p>
+        - id: dueTime
+          type: e02a2de0
+          description: '<p>Zeitspanne, wenn Akteur Timer aufgrund erster Stelle steht. </p>'
+        - id: period
+          type: e02a2de0
+          description: <p>Die Zeitspanne für nachfolgende Akteur Timer-Aufruf. </p>
+      return:
+        type: microsoft.servicefabric.actors._actor_timer
+        description: <p>Gibt <xref href="microsoft.servicefabric.actors._actor_timer" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+  - uid: 'microsoft.servicefabric.actors._actor_base.registerTimer(Function<Object, CompletableFuture<?>>,String,Object,Duration,Duration)'
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: 'registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, String asyncCallbackFunctionName, Object state, Duration dueTime, Duration period)'
+    nameWithType: 'ActorBase.registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, String asyncCallbackFunctionName, Object state, Duration dueTime, Duration period)'
+    fullName: 'ActorTimer microsoft.servicefabric.actors.ActorBase.registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, String asyncCallbackFunctionName, Object state, Duration dueTime, Duration period)'
+    type: Method
+    summary: |-
+      <p>Registriert einen Zeitgeber für den Akteur.</p>
+      <p></p>
+    syntax:
+      content: 'protected ActorTimer registerTimer(Function<Object, CompletableFuture<?>> asyncCallback, String asyncCallbackFunctionName, Object state, Duration dueTime, Duration period)'
+      parameters:
+        - id: asyncCallback
+          type: 05842176
+          description: '<p>Rückruf, der aufgerufen wird, wenn der Zeitgeber ausgelöst wird. </p>'
+        - id: asyncCallbackFunctionName
+          type: '26831127'
+          description: '<p>Name der AsyncCallBack-Funktion. Es kann verwendet werden, <xref href="microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false"></xref> und <xref href="microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false"></xref> So initiieren Sie eine Benutzeraufgabe auf vor und nach dem Aufruf dieser Funktion. Die Eigenschaft <xref href="microsoft.servicefabric.actors._actor_method_context.getMethodName()" data-throw-if-not-resolved="false"></xref> erhalten den Methodennamen. </p>'
+        - id: state
+          type: '79317049'
+          description: <p>Status Zeitgeberrückruf übergeben. </p>
+        - id: dueTime
+          type: e02a2de0
+          description: '<p>Zeitspanne, wenn Akteur Timer aufgrund erster Stelle steht. </p>'
+        - id: period
+          type: e02a2de0
+          description: <p>Die Zeitspanne für nachfolgende Akteur Timer-Aufruf. </p>
+      return:
+        type: microsoft.servicefabric.actors._actor_timer
+        description: <p>Gibt <xref href="microsoft.servicefabric.actors._actor_timer" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+  - uid: microsoft.servicefabric.actors._actor_base.unregisterReminderAsync(ActorReminder)
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: unregisterReminderAsync(ActorReminder reminder)
+    nameWithType: ActorBase.unregisterReminderAsync(ActorReminder reminder)
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.ActorBase.unregisterReminderAsync(ActorReminder reminder)
+    type: Method
+    summary: |-
+      <p>Hebt die Registrierung der angegebenen Erinnerung mit Akteur.</p>
+      <p></p>
+    syntax:
+      content: protected CompletableFuture<?> unregisterReminderAsync(ActorReminder reminder)
+      parameters:
+        - id: reminder
+          type: microsoft.servicefabric.actors._actor_reminder
+          description: <p>Der Akteur Erinnerung beim Aufheben der Registrierung. </p>
+      return:
+        type: 16409f84
+        description: '<p>Eine Aufgabe, die den asynchronen stellt Aufhebung der Registrierung Vorgang. </p>'
+  - uid: microsoft.servicefabric.actors._actor_base.unregisterTimer(ActorTimer)
+    parent: microsoft.servicefabric.actors._actor_base
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: unregisterTimer(ActorTimer timer)
+    nameWithType: ActorBase.unregisterTimer(ActorTimer timer)
+    fullName: void microsoft.servicefabric.actors.ActorBase.unregisterTimer(ActorTimer timer)
+    type: Method
+    summary: |-
+      <p>Hebt die Registrierung eines Zeitgebers, der zuvor auf dieser Akteur festgelegt.</p>
+      <p></p>
+    syntax:
+      content: protected void unregisterTimer(ActorTimer timer)
+      parameters:
+        - id: timer
+          type: microsoft.servicefabric.actors._actor_timer
+          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_timer\" data-throw-if-not-resolved=\"false\"></xref>für Zeitgeber, der nicht aufgehoben werden muss. </p>"
+  - uid: microsoft.servicefabric.actors._actor_base
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_base.yml
+    name: ActorBase
+    nameWithType: ActorBase
+    fullName: microsoft.servicefabric.actors.ActorBase
+    type: Class
+    summary: "<p>Stellt die Basisklasse für Akteure. <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref></p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Dies ist ein Basistyp für Akteur, bietet die Funktionalität, die durch Ableiten von Akteur implementiert Akteure gemeinsam ist <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref> der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    syntax:
+      content: public class ActorBase
+  - uid: microsoft.servicefabric.actors._actor_state_manager
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_state_manager.yml
+    name: ActorStateManager
+    nameWithType: ActorStateManager
+    fullName: microsoft.servicefabric.actors.ActorStateManager
+    type: Interface
+    summary: '<p>Stellt die Schnittstelle, die Status-Manager für <xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref> implementiert. </p>'
+    syntax:
+      content: public interface ActorStateManager
+  - uid: microsoft.servicefabric.actors._fabric_actor_service
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._fabric_actor_service.yml
+    name: FabricActorService
+    nameWithType: FabricActorService
+    fullName: microsoft.servicefabric.actors.FabricActorService
+    type: Class
+    summary: "<p>Stellt die Basisklasse für Microsoft Service Fabric-basierten zuverlässige Akteure Dienst dar. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Ableiten von dieser Klasse, die einen eigenen benutzerdefinierten Akteur-Dienst zu implementieren, wenn Sie alle Verhalten des Diensts für die Akteure außer Kraft setzen möchten. </p>"
+    syntax:
+      content: public class FabricActorService
+  - uid: microsoft.servicefabric.actors._actor_id
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_id.yml
+    name: ActorId
+    nameWithType: ActorId
+    fullName: microsoft.servicefabric.actors.ActorId
+    type: Class
+    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>die Identität der Akteur innerhalb eines Diensts Akteur. Akteure können festgestellt werden, indem <ref refid=\"\" kindref=\"compound\">java.lang.String</ref>, <ref refid=\"\" kindref=\"compound\">java.util.UUID</ref> oder lang. </p>"
+    syntax:
+      content: public class ActorId
+  - uid: microsoft.servicefabric.actors._fabric_actor
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._fabric_actor.yml
+    name: FabricActor
+    nameWithType: FabricActor
+    fullName: microsoft.servicefabric.actors.FabricActor
+    type: Class
+    summary: "<p>Stellt einen Akteur, der mehrere zuverlässige \"benannte\" Status zugeordnet aufweisen kann. <xref href=\"microsoft.servicefabric.actors._actor_base\" data-throw-if-not-resolved=\"false\"></xref></p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    syntax: *ref_1
+  - uid: microsoft.servicefabric.actors._fabric_actor.saveStateAsync()
+    parent: microsoft.servicefabric.actors._fabric_actor
+    href: microsoft.servicefabric.actors._fabric_actor.yml
+    name: saveStateAsync()
+    nameWithType: FabricActor.saveStateAsync()
+    fullName: CompletableFuture<?> microsoft.servicefabric.actors.FabricActor.saveStateAsync()
+    type: Method
+    summary: |-
+      <p>Speichert alle statusänderungen (Hinzufügen/Aktualisieren/Entfernen), die seit dem letzten Aufruf von <xref href="microsoft.servicefabric.actors._fabric_actor.saveStateAsync()" data-throw-if-not-resolved="false"></xref>, zu der Akteur State-Anbieter, die der Akteur zugeordnet.</p>
+      <p></p>
+    syntax: *ref_2
+  - uid: microsoft.servicefabric.actors._actor_state_provider
+    parent: microsoft.servicefabric.actors
+    href: microsoft.servicefabric.actors._actor_state_provider.yml
+    name: ActorStateProvider
+    nameWithType: ActorStateProvider
+    fullName: microsoft.servicefabric.actors.ActorStateProvider
+    type: Interface
+    summary: '<p>Stellt die Schnittstelle, die ein Akteur State-Anbieter für Akteur-Laufzeit für die Kommunikation zu implementieren muss. </p>'
+    syntax:
+      content: public interface ActorStateProvider extends StateProviderReplica

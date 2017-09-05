@@ -1,0 +1,629 @@
+### YamlMime:ManagedReference
+items:
+  - uid: system.fabric._repair_management_client
+    id: _repair_management_client
+    parent: system.fabric
+    children:
+      - 'system.fabric._repair_management_client.cancelRepairTaskAsync(String,long,boolean)'
+      - 'system.fabric._repair_management_client.cancelRepairTaskAsync(String,long,boolean,Duration)'
+      - system.fabric._repair_management_client.close()
+      - system.fabric._repair_management_client.createRepairTaskAsync(RepairTask)
+      - 'system.fabric._repair_management_client.createRepairTaskAsync(RepairTask,Duration)'
+      - 'system.fabric._repair_management_client.deleteRepairTaskAsync(String,long)'
+      - 'system.fabric._repair_management_client.deleteRepairTaskAsync(String,long,Duration)'
+      - 'system.fabric._repair_management_client.forceApproveRepairTaskAsync(String,long)'
+      - 'system.fabric._repair_management_client.forceApproveRepairTaskAsync(String,long,Duration)'
+      - system.fabric._repair_management_client.getRepairTaskListAsync()
+      - system.fabric._repair_management_client.getRepairTaskListAsync(Duration)
+      - 'system.fabric._repair_management_client.getRepairTaskListAsync(String,RepairTaskStateFilter,String)'
+      - 'system.fabric._repair_management_client.getRepairTaskListAsync(String,RepairTaskStateFilter,String,Duration)'
+      - system.fabric._repair_management_client.updateRepairExecutionStateAsync(RepairTask)
+      - 'system.fabric._repair_management_client.updateRepairExecutionStateAsync(RepairTask,Duration)'
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: RepairManagementClient
+    nameWithType: RepairManagementClient
+    fullName: system.fabric.RepairManagementClient
+    type: Class
+    source:
+      remote: &ref_0
+        path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 18
+    package: system.fabric
+    summary: <p>Stellt Methoden zum Verwalten von Tasks reparieren. </p>
+    syntax:
+      content: public class RepairManagementClient
+    inheritance:
+      - java.lang.Object
+      - AutoCloseable
+  - uid: 'system.fabric._repair_management_client.cancelRepairTaskAsync(String,long,boolean)'
+    id: 'cancelRepairTaskAsync(String,long,boolean)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort)'
+    nameWithType: 'RepairManagementClient.cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort)'
+    fullName: 'CompletableFuture<Long> system.fabric.RepairManagementClient.cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort)'
+    overload: system.fabric._repair_management_client.cancelRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 126
+    package: system.fabric
+    summary: |-
+      <p>Fordert den Abbruch des Tasks "angegebenen reparieren".</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Long> cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort)'
+      parameters:
+        - id: repairTaskId
+          type: '26831127'
+          description: <p>Die ID des Tasks "Reparieren" werden abgebrochen. </p>
+        - id: version
+          type: 0364520f
+          description: '<p>Die aktuelle Versionsnummer des Tasks "Reparieren". Wenn ungleich 0 (null) ist, wird die Anforderung nur erfolgreich, wenn dieser Wert den tatsächlichen aktuellen Wert des Tasks "Reparieren" übereinstimmt. Wenn der Wert 0 ist, wird keine Überprüfung der Version ausgeführt. </p>'
+        - id: requestAbort
+          type: 4fc6e284
+          description: '<p>"True", wenn die Reparatur so bald wie möglich beendet werden soll, auch wenn er bereits mit der Ausführung begonnen. "False", wenn die Reparatur abgebrochen werden sollte, nur dann, wenn die Ausführung noch nicht gestartet wurde. </p>'
+      return:
+        type: 30822cb1
+        description: <p>Die neue Versionsnummer des Tasks "Reparieren". </p>
+  - uid: 'system.fabric._repair_management_client.cancelRepairTaskAsync(String,long,boolean,Duration)'
+    id: 'cancelRepairTaskAsync(String,long,boolean,Duration)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort, Duration timeout)'
+    nameWithType: 'RepairManagementClient.cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort, Duration timeout)'
+    fullName: 'CompletableFuture<Long> system.fabric.RepairManagementClient.cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort, Duration timeout)'
+    overload: system.fabric._repair_management_client.cancelRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 153
+    package: system.fabric
+    summary: |-
+      <p>Fordert den Abbruch des Tasks "angegebenen reparieren".</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Long> cancelRepairTaskAsync(String repairTaskId, long version, boolean requestAbort, Duration timeout)'
+      parameters:
+        - id: repairTaskId
+          type: '26831127'
+          description: <p>Die ID des Tasks "Reparieren" werden abgebrochen. </p>
+        - id: version
+          type: 0364520f
+          description: '<p>Die aktuelle Versionsnummer des Tasks "Reparieren". Wenn ungleich 0 (null) ist, wird die Anforderung nur erfolgreich, wenn dieser Wert den tatsächlichen aktuellen Wert des Tasks "Reparieren" übereinstimmt. Wenn der Wert 0 ist, wird keine Überprüfung der Version ausgeführt. </p>'
+        - id: requestAbort
+          type: 4fc6e284
+          description: '<p>"True", wenn die Reparatur so bald wie möglich beendet werden soll, auch wenn er bereits mit der Ausführung begonnen. "False", wenn die Reparatur abgebrochen werden sollte, nur dann, wenn die Ausführung noch nicht gestartet wurde. </p>'
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 30822cb1
+        description: <p>Die neue Versionsnummer des Tasks "Reparieren". </p>
+  - uid: system.fabric._repair_management_client.close()
+    id: close()
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: close()
+    nameWithType: RepairManagementClient.close()
+    fullName: void system.fabric.RepairManagementClient.close()
+    overload: system.fabric._repair_management_client.close*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 542
+    package: system.fabric
+    syntax:
+      content: public void close()
+  - uid: system.fabric._repair_management_client.createRepairTaskAsync(RepairTask)
+    id: createRepairTaskAsync(RepairTask)
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: createRepairTaskAsync(RepairTask repairTask)
+    nameWithType: RepairManagementClient.createRepairTaskAsync(RepairTask repairTask)
+    fullName: CompletableFuture<Long> system.fabric.RepairManagementClient.createRepairTaskAsync(RepairTask repairTask)
+    overload: system.fabric._repair_management_client.createRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 93
+    package: system.fabric
+    summary: |-
+      <p>Erstellt einen neuen Reparaturtask an.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<Long> createRepairTaskAsync(RepairTask repairTask)
+      parameters:
+        - id: repairTask
+          type: system.fabric._repair_task
+          description: <p>Die Beschreibung des Tasks "Reparieren" erstellt werden. </p>
+      return:
+        type: 30822cb1
+        description: <p>Die Versionsnummer des Tasks neu erstellter reparieren. </p>
+  - uid: 'system.fabric._repair_management_client.createRepairTaskAsync(RepairTask,Duration)'
+    id: 'createRepairTaskAsync(RepairTask,Duration)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'createRepairTaskAsync(RepairTask repairTask, Duration timeout)'
+    nameWithType: 'RepairManagementClient.createRepairTaskAsync(RepairTask repairTask, Duration timeout)'
+    fullName: 'CompletableFuture<Long> system.fabric.RepairManagementClient.createRepairTaskAsync(RepairTask repairTask, Duration timeout)'
+    overload: system.fabric._repair_management_client.createRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 107
+    package: system.fabric
+    summary: |-
+      <p>Erstellt einen neuen Reparaturtask an.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Long> createRepairTaskAsync(RepairTask repairTask, Duration timeout)'
+      parameters:
+        - id: repairTask
+          type: system.fabric._repair_task
+          description: <p>Die Beschreibung des Tasks "Reparieren" erstellt werden. </p>
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 30822cb1
+        description: <p>Die Versionsnummer des Tasks neu erstellter reparieren. </p>
+  - uid: 'system.fabric._repair_management_client.deleteRepairTaskAsync(String,long)'
+    id: 'deleteRepairTaskAsync(String,long)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'deleteRepairTaskAsync(String repairTaskId, long version)'
+    nameWithType: 'RepairManagementClient.deleteRepairTaskAsync(String repairTaskId, long version)'
+    fullName: 'CompletableFuture system.fabric.RepairManagementClient.deleteRepairTaskAsync(String repairTaskId, long version)'
+    overload: system.fabric._repair_management_client.deleteRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 209
+    package: system.fabric
+    summary: |-
+      <p>Löscht die angegebenen reparaturaufgabe an.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture deleteRepairTaskAsync(String repairTaskId, long version)'
+      parameters:
+        - id: repairTaskId
+          type: '26831127'
+          description: <p>Die ID des Tasks "abgeschlossenen Reparaturvorgang" gelöscht werden soll. </p>
+        - id: version
+          type: 0364520f
+          description: '<p>Die aktuelle Versionsnummer des Tasks "Reparieren". Wenn ungleich 0 (null) ist, wird die Anforderung nur erfolgreich, wenn dieser Wert den tatsächlichen aktuellen Wert des Tasks "Reparieren" übereinstimmt. Wenn der Wert 0 ist, wird keine Überprüfung der Version ausgeführt. </p>'
+      return:
+        type: 5f2aaa64
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
+  - uid: 'system.fabric._repair_management_client.deleteRepairTaskAsync(String,long,Duration)'
+    id: 'deleteRepairTaskAsync(String,long,Duration)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'deleteRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+    nameWithType: 'RepairManagementClient.deleteRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+    fullName: 'CompletableFuture system.fabric.RepairManagementClient.deleteRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+    overload: system.fabric._repair_management_client.deleteRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 231
+    package: system.fabric
+    summary: |-
+      <p>Löscht die angegebenen reparaturaufgabe an.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture deleteRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+      parameters:
+        - id: repairTaskId
+          type: '26831127'
+          description: <p>Die ID des Tasks "abgeschlossenen Reparaturvorgang" gelöscht werden soll. </p>
+        - id: version
+          type: 0364520f
+          description: '<p>Die aktuelle Versionsnummer des Tasks "Reparieren". Wenn ungleich 0 (null) ist, wird die Anforderung nur erfolgreich, wenn dieser Wert den tatsächlichen aktuellen Wert des Tasks "Reparieren" übereinstimmt. Wenn der Wert 0 ist, wird keine Überprüfung der Version ausgeführt. </p>'
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 5f2aaa64
+        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
+  - uid: 'system.fabric._repair_management_client.forceApproveRepairTaskAsync(String,long)'
+    id: 'forceApproveRepairTaskAsync(String,long)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'forceApproveRepairTaskAsync(String repairTaskId, long version)'
+    nameWithType: 'RepairManagementClient.forceApproveRepairTaskAsync(String repairTaskId, long version)'
+    fullName: 'CompletableFuture<Long> system.fabric.RepairManagementClient.forceApproveRepairTaskAsync(String repairTaskId, long version)'
+    overload: system.fabric._repair_management_client.forceApproveRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 172
+    package: system.fabric
+    summary: |-
+      <p>Erzwingt, dass die Genehmigung des Tasks "angegebenen reparieren".</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Long> forceApproveRepairTaskAsync(String repairTaskId, long version)'
+      parameters:
+        - id: repairTaskId
+          type: '26831127'
+          description: <p>Die ID des Tasks "Reparieren" genehmigt werden. </p>
+        - id: version
+          type: 0364520f
+          description: '<p>Die aktuelle Versionsnummer des Tasks "Reparieren". Wenn ungleich 0 (null) ist, wird die Anforderung nur erfolgreich, wenn dieser Wert den tatsächlichen aktuellen Wert des Tasks "Reparieren" übereinstimmt. Wenn der Wert 0 ist, wird keine Überprüfung der Version ausgeführt. </p>'
+      return:
+        type: 30822cb1
+        description: <p>Die neue Versionsnummer des Tasks "Reparieren". </p>
+  - uid: 'system.fabric._repair_management_client.forceApproveRepairTaskAsync(String,long,Duration)'
+    id: 'forceApproveRepairTaskAsync(String,long,Duration)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'forceApproveRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+    nameWithType: 'RepairManagementClient.forceApproveRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+    fullName: 'CompletableFuture<Long> system.fabric.RepairManagementClient.forceApproveRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+    overload: system.fabric._repair_management_client.forceApproveRepairTaskAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 194
+    package: system.fabric
+    summary: |-
+      <p>Erzwingt, dass die Genehmigung des Tasks "angegebenen reparieren".</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Long> forceApproveRepairTaskAsync(String repairTaskId, long version, Duration timeout)'
+      parameters:
+        - id: repairTaskId
+          type: '26831127'
+          description: <p>Die ID des Tasks "Reparieren" genehmigt werden. </p>
+        - id: version
+          type: 0364520f
+          description: '<p>Die aktuelle Versionsnummer des Tasks "Reparieren". Wenn ungleich 0 (null) ist, wird die Anforderung nur erfolgreich, wenn dieser Wert den tatsächlichen aktuellen Wert des Tasks "Reparieren" übereinstimmt. Wenn der Wert 0 ist, wird keine Überprüfung der Version ausgeführt. </p>'
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 30822cb1
+        description: <p>Die neue Versionsnummer des Tasks "Reparieren". </p>
+  - uid: system.fabric._repair_management_client.getRepairTaskListAsync()
+    id: getRepairTaskListAsync()
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: getRepairTaskListAsync()
+    nameWithType: RepairManagementClient.getRepairTaskListAsync()
+    fullName: CompletableFuture<RepairTaskList> system.fabric.RepairManagementClient.getRepairTaskListAsync()
+    overload: system.fabric._repair_management_client.getRepairTaskListAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 265
+    package: system.fabric
+    summary: |-
+      <p>Ruft eine Liste aller reparieren Aufgaben ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<RepairTaskList> getRepairTaskListAsync()
+      return:
+        type: 9cdf14d0system.fabric.repair._repair_task_lista08ddfce
+        description: <p>Die Liste der Tasks für alle reparieren. </p>
+  - uid: system.fabric._repair_management_client.getRepairTaskListAsync(Duration)
+    id: getRepairTaskListAsync(Duration)
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: getRepairTaskListAsync(Duration timeout)
+    nameWithType: RepairManagementClient.getRepairTaskListAsync(Duration timeout)
+    fullName: CompletableFuture<RepairTaskList> system.fabric.RepairManagementClient.getRepairTaskListAsync(Duration timeout)
+    overload: system.fabric._repair_management_client.getRepairTaskListAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 279
+    package: system.fabric
+    summary: |-
+      <p>Ruft eine Liste aller reparieren Aufgaben ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<RepairTaskList> getRepairTaskListAsync(Duration timeout)
+      parameters:
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 9cdf14d0system.fabric.repair._repair_task_lista08ddfce
+        description: <p>Die Liste der Tasks für alle reparieren. </p>
+  - uid: 'system.fabric._repair_management_client.getRepairTaskListAsync(String,RepairTaskStateFilter,String)'
+    id: 'getRepairTaskListAsync(String,RepairTaskStateFilter,String)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter)'
+    nameWithType: 'RepairManagementClient.getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter)'
+    fullName: 'CompletableFuture<RepairTaskList> system.fabric.RepairManagementClient.getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter)'
+    overload: system.fabric._repair_management_client.getRepairTaskListAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 298
+    package: system.fabric
+    summary: |-
+      <p>Ruft eine Liste der Tasks reparieren, die alle angegebenen Filter entsprechen.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<RepairTaskList> getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter)'
+      parameters:
+        - id: taskIdFilter
+          type: '26831127'
+          description: '<p>Die Reparatur Task-ID-Präfix verglichen werden. Der Task-ID wird kein Filter angewendet, wenn der Wert null ist, </p>'
+        - id: stateFilter
+          type: system.fabric.repair._repair_task_state_filter
+          description: '<p>Eine bitweise Kombination der Filter-Statuswerte, die angeben, welche Aufgabe Zustände sollte in der Liste enthalten sein. </p>'
+        - id: executorFilter
+          type: '26831127'
+          description: '<p>Der Name der Executor für die Reparatur, deren beanspruchte Aufgaben in der Liste enthalten sein soll. Bei null wird kein Filter auf den Namen der Executor angewendet. </p>'
+      return:
+        type: 9cdf14d0system.fabric.repair._repair_task_lista08ddfce
+        description: '<p>Die Liste der Tasks reparieren, die alle angegebenen Filter entsprechen. </p>'
+  - uid: 'system.fabric._repair_management_client.getRepairTaskListAsync(String,RepairTaskStateFilter,String,Duration)'
+    id: 'getRepairTaskListAsync(String,RepairTaskStateFilter,String,Duration)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter, Duration timeout)'
+    nameWithType: 'RepairManagementClient.getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter, Duration timeout)'
+    fullName: 'CompletableFuture<RepairTaskList> system.fabric.RepairManagementClient.getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter, Duration timeout)'
+    overload: system.fabric._repair_management_client.getRepairTaskListAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 323
+    package: system.fabric
+    summary: |-
+      <p>Ruft eine Liste der Tasks reparieren, die alle angegebenen Filter entsprechen.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<RepairTaskList> getRepairTaskListAsync(String taskIdFilter, RepairTaskStateFilter stateFilter, String executorFilter, Duration timeout)'
+      parameters:
+        - id: taskIdFilter
+          type: '26831127'
+          description: '<p>Die Reparatur Task-ID-Präfix verglichen werden. Der Task-ID wird kein Filter angewendet, wenn der Wert null ist, </p>'
+        - id: stateFilter
+          type: system.fabric.repair._repair_task_state_filter
+          description: '<p>Eine bitweise Kombination der Filter-Statuswerte, die angeben, welche Aufgabe Zustände sollte in der Liste enthalten sein. </p>'
+        - id: executorFilter
+          type: '26831127'
+          description: '<p>Der Name der Executor für die Reparatur, deren beanspruchte Aufgaben in der Liste enthalten sein soll. Bei null wird kein Filter auf den Namen der Executor angewendet. </p>'
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 9cdf14d0system.fabric.repair._repair_task_lista08ddfce
+        description: '<p>Die Liste der Tasks reparieren, die alle angegebenen Filter entsprechen. </p>'
+  - uid: system.fabric._repair_management_client.updateRepairExecutionStateAsync(RepairTask)
+    id: updateRepairExecutionStateAsync(RepairTask)
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: updateRepairExecutionStateAsync(RepairTask repairTask)
+    nameWithType: RepairManagementClient.updateRepairExecutionStateAsync(RepairTask repairTask)
+    fullName: CompletableFuture<Long> system.fabric.RepairManagementClient.updateRepairExecutionStateAsync(RepairTask repairTask)
+    overload: system.fabric._repair_management_client.updateRepairExecutionStateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 242
+    package: system.fabric
+    summary: |-
+      <p>Aktualisiert eine reparaturaufgabe.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<Long> updateRepairExecutionStateAsync(RepairTask repairTask)
+      parameters:
+        - id: repairTask
+          type: system.fabric._repair_task
+          description: <p>Die geänderte reparaturaufgabe. </p>
+      return:
+        type: 30822cb1
+        description: <p>Die neue Versionsnummer des Tasks "Reparieren". </p>
+  - uid: 'system.fabric._repair_management_client.updateRepairExecutionStateAsync(RepairTask,Duration)'
+    id: 'updateRepairExecutionStateAsync(RepairTask,Duration)'
+    parent: system.fabric._repair_management_client
+    href: system.fabric._repair_management_client.yml
+    langs:
+      - java
+    name: 'updateRepairExecutionStateAsync(RepairTask repairTask, Duration timeout)'
+    nameWithType: 'RepairManagementClient.updateRepairExecutionStateAsync(RepairTask repairTask, Duration timeout)'
+    fullName: 'CompletableFuture<Long> system.fabric.RepairManagementClient.updateRepairExecutionStateAsync(RepairTask repairTask, Duration timeout)'
+    overload: system.fabric._repair_management_client.updateRepairExecutionStateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/RepairManagementClient.java
+      startLine: 256
+    package: system.fabric
+    summary: |-
+      <p>Aktualisiert eine reparaturaufgabe.</p>
+      <p></p>
+    syntax:
+      content: 'public CompletableFuture<Long> updateRepairExecutionStateAsync(RepairTask repairTask, Duration timeout)'
+      parameters:
+        - id: repairTask
+          type: system.fabric._repair_task
+          description: <p>Die geänderte reparaturaufgabe. </p>
+        - id: timeout
+          type: e02a2de0
+          description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref>. </p>'
+      return:
+        type: 30822cb1
+        description: <p>Die neue Versionsnummer des Tasks "Reparieren". </p>
+references:
+  - uid: 30822cb1
+    spec.java:
+      - name: CompletableFuture<Long>
+        fullName: CompletableFuture<Long>
+  - uid: system.fabric._repair_management_client.createRepairTaskAsync*
+    name: createRepairTaskAsync
+    nameWithType: RepairManagementClient.createRepairTaskAsync
+    fullName: CompletableFuture<Long> system.fabric.RepairManagementClient.createRepairTaskAsync
+    package: system.fabric
+  - uid: e02a2de0
+    spec.java:
+      - name: Duration
+        fullName: Duration
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: 0364520f
+    spec.java:
+      - name: long
+        fullName: long
+  - uid: 4fc6e284
+    spec.java:
+      - name: boolean
+        fullName: boolean
+  - uid: system.fabric._repair_management_client.cancelRepairTaskAsync*
+    name: cancelRepairTaskAsync
+    nameWithType: RepairManagementClient.cancelRepairTaskAsync
+    fullName: CompletableFuture<Long> system.fabric.RepairManagementClient.cancelRepairTaskAsync
+    package: system.fabric
+  - uid: system.fabric._repair_management_client.forceApproveRepairTaskAsync*
+    name: forceApproveRepairTaskAsync
+    nameWithType: RepairManagementClient.forceApproveRepairTaskAsync
+    fullName: CompletableFuture<Long> system.fabric.RepairManagementClient.forceApproveRepairTaskAsync
+    package: system.fabric
+  - uid: 5f2aaa64
+    spec.java:
+      - name: CompletableFuture
+        fullName: CompletableFuture
+  - uid: system.fabric._repair_management_client.deleteRepairTaskAsync*
+    name: deleteRepairTaskAsync
+    nameWithType: RepairManagementClient.deleteRepairTaskAsync
+    fullName: CompletableFuture system.fabric.RepairManagementClient.deleteRepairTaskAsync
+    package: system.fabric
+  - uid: system.fabric._repair_management_client.updateRepairExecutionStateAsync*
+    name: updateRepairExecutionStateAsync
+    nameWithType: RepairManagementClient.updateRepairExecutionStateAsync
+    fullName: CompletableFuture<Long> system.fabric.RepairManagementClient.updateRepairExecutionStateAsync
+    package: system.fabric
+  - uid: 9cdf14d0system.fabric.repair._repair_task_lista08ddfce
+    spec.java:
+      - name: CompletableFuture<
+        fullName: CompletableFuture<
+      - uid: system.fabric.repair._repair_task_list
+        name: RepairTaskList
+        fullName: system.fabric.repair.RepairTaskList
+        href: system.fabric.repair._repair_task_list.yml
+      - name: '>'
+        fullName: '>'
+  - uid: system.fabric._repair_management_client.getRepairTaskListAsync*
+    name: getRepairTaskListAsync
+    nameWithType: RepairManagementClient.getRepairTaskListAsync
+    fullName: CompletableFuture<RepairTaskList> system.fabric.RepairManagementClient.getRepairTaskListAsync
+    package: system.fabric
+  - uid: system.fabric._repair_management_client.close*
+    name: close
+    nameWithType: RepairManagementClient.close
+    fullName: void system.fabric.RepairManagementClient.close
+    package: system.fabric
+  - uid: system.fabric._repair_scope_identifier
+    parent: system.fabric
+    href: system.fabric._repair_scope_identifier.yml
+    name: RepairScopeIdentifier
+    nameWithType: RepairScopeIdentifier
+    fullName: system.fabric.RepairScopeIdentifier
+    type: Class
+    summary: '<p>Beschreibt den Bereich der reparaturaufträgen. Diese Klasse unterstützt die Service Fabric-Plattform. Es ist nicht vorgesehen, direkt aus Ihrem Code aufgerufen werden. </p>'
+    syntax:
+      content: public class RepairScopeIdentifier
+  - uid: system.fabric.interop._native_async_callback
+    parent: system.fabric.interop
+    href: system.fabric.interop._native_async_callback.yml
+    name: NativeAsyncCallback
+    nameWithType: NativeAsyncCallback
+    fullName: system.fabric.interop.NativeAsyncCallback
+    type: Interface
+    syntax:
+      content: public interface NativeAsyncCallback
+  - uid: system.fabric.repair._repair_task_list
+    parent: system.fabric.repair
+    href: system.fabric.repair._repair_task_list.yml
+    name: RepairTaskList
+    nameWithType: RepairTaskList
+    fullName: system.fabric.repair.RepairTaskList
+    type: Class
+    summary: '<p>Stellt eine Liste von <xref href="system.fabric._repair_task" data-throw-if-not-resolved="false"></xref> Objekte. Diese Klasse unterstützt die Service Fabric-Plattform. Es ist nicht vorgesehen, direkt aus Ihrem Code aufgerufen werden. </p>'
+    syntax:
+      content: public class RepairTaskList
+  - uid: system.fabric._repair_task
+    parent: system.fabric
+    href: system.fabric._repair_task.yml
+    name: RepairTask
+    nameWithType: RepairTask
+    fullName: system.fabric.RepairTask
+    type: Class
+    summary: '<p>Stellt eine Aufgabe, reparieren, die erläutert, welche Art von Repair angefordert wurde, was ihren Status ist und was das endgültige Ergebnis war. Diese Klasse unterstützt die Service Fabric-Plattform. Es ist nicht vorgesehen, direkt aus Ihrem Code aufgerufen werden. </p>'
+    syntax:
+      content: public class RepairTask
+  - uid: system.fabric._pin_collection
+    parent: system.fabric
+    href: system.fabric._pin_collection.yml
+    name: PinCollection
+    nameWithType: PinCollection
+    fullName: system.fabric.PinCollection
+    type: Class
+    syntax:
+      content: public class PinCollection
+  - uid: system.fabric.repair._repair_task_state_filter
+    parent: system.fabric.repair
+    href: system.fabric.repair._repair_task_state_filter.yml
+    name: RepairTaskStateFilter
+    nameWithType: RepairTaskStateFilter
+    fullName: system.fabric.repair.RepairTaskStateFilter
+    type: Enum
+    syntax:
+      content: public enum RepairTaskStateFilter

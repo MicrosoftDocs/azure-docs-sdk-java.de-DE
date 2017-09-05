@@ -1,0 +1,460 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.servicebus.primitives
+    id: primitives
+    children:
+      - com.microsoft.azure.servicebus.primitives._authorization_failed_exception
+      - com.microsoft.azure.servicebus.primitives._client_constants
+      - com.microsoft.azure.servicebus.primitives._client_entity
+      - com.microsoft.azure.servicebus.primitives._communication_exception
+      - com.microsoft.azure.servicebus.primitives._connection_string_builder
+      - com.microsoft.azure.servicebus.primitives._core_message_receiver
+      - com.microsoft.azure.servicebus.primitives._core_message_sender
+      - com.microsoft.azure.servicebus.primitives._exception_util
+      - com.microsoft.azure.servicebus.primitives._illegal_connection_string_format_exception
+      - com.microsoft.azure.servicebus.primitives._message_lock_lost_exception
+      - com.microsoft.azure.servicebus.primitives._message_not_found_exception
+      - com.microsoft.azure.servicebus.primitives._message_with_delivery_tag
+      - com.microsoft.azure.servicebus.primitives._message_with_lock_token
+      - com.microsoft.azure.servicebus.primitives._messaging_entity_already_exists_exception
+      - com.microsoft.azure.servicebus.primitives._messaging_entity_disabled_exception
+      - com.microsoft.azure.servicebus.primitives._messaging_entity_not_found_exception
+      - com.microsoft.azure.servicebus.primitives._messaging_factory
+      - com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler
+      - com.microsoft.azure.servicebus.primitives._operation_cancelled_exception
+      - com.microsoft.azure.servicebus.primitives._pair
+      - com.microsoft.azure.servicebus.primitives._payload_size_exceeded_exception
+      - com.microsoft.azure.servicebus.primitives._quota_exceeded_exception
+      - com.microsoft.azure.servicebus.primitives._receiver_disconnected_exception
+      - com.microsoft.azure.servicebus.primitives._receiver_error_context
+      - com.microsoft.azure.servicebus.primitives._request_response_utils
+      - com.microsoft.azure.servicebus.primitives._request_response_work_item
+      - com.microsoft.azure.servicebus.primitives._retry_exponential
+      - com.microsoft.azure.servicebus.primitives._retry_policy
+      - com.microsoft.azure.servicebus.primitives._s_a_s_util
+      - com.microsoft.azure.servicebus.primitives._sender_error_context
+      - com.microsoft.azure.servicebus.primitives._server_busy_exception
+      - com.microsoft.azure.servicebus.primitives._service_bus_exception
+      - com.microsoft.azure.servicebus.primitives._session_cannot_be_locked_exception
+      - com.microsoft.azure.servicebus.primitives._session_lock_lost_exception
+      - com.microsoft.azure.servicebus.primitives._settle_mode_pair
+      - com.microsoft.azure.servicebus.primitives._string_util
+      - com.microsoft.azure.servicebus.primitives._timeout_exception
+      - com.microsoft.azure.servicebus.primitives._timeout_tracker
+      - com.microsoft.azure.servicebus.primitives._timer
+      - com.microsoft.azure.servicebus.primitives._timer_type
+      - com.microsoft.azure.servicebus.primitives._tracking_util
+      - com.microsoft.azure.servicebus.primitives._util
+    href: com.microsoft.azure.servicebus.primitives.yml
+    langs:
+      - java
+    name: com.microsoft.azure.servicebus.primitives
+    nameWithType: com.microsoft.azure.servicebus.primitives
+    fullName: com.microsoft.azure.servicebus.primitives
+    type: Namespace
+    source:
+      remote:
+        path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/AsyncUtil.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-service-bus-java'
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/AsyncUtil.java
+    syntax:
+      content: package com.microsoft.azure.servicebus.primitives
+references:
+  - uid: com.microsoft.azure.servicebus.primitives._authorization_failed_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._authorization_failed_exception.yml
+    name: AuthorizationFailedException
+    nameWithType: AuthorizationFailedException
+    fullName: com.microsoft.azure.servicebus.primitives.AuthorizationFailedException
+    type: Class
+    summary: '<p>Autorisierung Ausnahmefehler ausgelöst wird, wenn Fehler aufgetreten ist, während die Benutzerberechtigungen zum Ausführen der gewünschten Vorgänge autorisieren. Wenn diese Ausnahme festgestellt Benutzer sollte überprüfen Sie, ob das Token-Schlüssel in der Verbindungszeichenfolge angegebenen gültig ist, und verfügt über die korrekte Ausführung Recht für die vorgesehenen Vorgänge (z. B. empfangsaufruf müssen Lauschen Anspruch, der die Schlüssel bzw. das Token zugeordnet). </p>'
+    syntax:
+      content: public class AuthorizationFailedException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._client_constants
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._client_constants.yml
+    name: ClientConstants
+    nameWithType: ClientConstants
+    fullName: com.microsoft.azure.servicebus.primitives.ClientConstants
+    type: Class
+    syntax:
+      content: public class ClientConstants
+  - uid: com.microsoft.azure.servicebus.primitives._client_entity
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._client_entity.yml
+    name: ClientEntity
+    nameWithType: ClientEntity
+    fullName: com.microsoft.azure.servicebus.primitives.ClientEntity
+    type: Class
+    summary: '<p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c Main Zwecke: CloseAll clusterentitäten intern-Klasse </p>'
+    syntax:
+      content: public class ClientEntity
+  - uid: com.microsoft.azure.servicebus.primitives._communication_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._communication_exception.yml
+    name: CommunicationException
+    nameWithType: CommunicationException
+    fullName: com.microsoft.azure.servicebus.primitives.CommunicationException
+    type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Client-Side-Konnektivitätsproblem vorhanden ist. Konnektivität der Clienteinstellungen für den Dienst empfängt diese Ausnahme Benutzer wann überprüft werden soll:<itemizedlist><listitem><p>Überprüfen Sie die richtige Hostname und Portnummer, die im Endpunkt verwendet. </p></listitem><listitem><p>Überprüfen Sie für alle möglichen Proxyeinstellungen, die Amqp-Ports zu blockieren, kann </p></listitem><listitem><p>Überprüfen Sie alle Firewalleinstellungen, die Amqp Ports blockieren können </p></listitem><listitem><p>Überprüfen Sie für jede allgemeine Probleme bei der Netzwerkverbindung sowie die Netzwerklatenz. </p></listitem></itemizedlist></p>'
+    syntax:
+      content: public class CommunicationException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._connection_string_builder
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._connection_string_builder.yml
+    name: ConnectionStringBuilder
+    nameWithType: ConnectionStringBuilder
+    fullName: com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder
+    type: Class
+    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\"></xref>kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>\n\n<p>Beispielcode: <preformatted> <programlisting> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>ConnectionStringBuilder<sp></sp>ConnectionStringBuilder<sp></sp>=<sp></sp>neue<sp></sp>ConnectionStringBuilder (</highlight></codeline><codeline><highlight class=\"normal\"><sp></sp><sp></sp><sp></sp><sp></sp>\"ServiceBusNamespaceName\",<sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>\"ServiceBusEntityName\",<sp></sp>//<sp></sp>\"eventhubname\"<sp></sp>oder<sp></sp>QueueName<sp></sp>oder<sp></sp>Name_des_themas<sp></sp></highlight></codeline><codeline><highlight class=\"normal\"><sp></sp><sp></sp><sp></sp><sp></sp>\"SharedAccessSignatureKeyName\",<sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>\"SharedAccessSignatureKey\");</highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\">Zeichenfolge<sp></sp>\"ConnectionString\"<sp></sp>=<sp></sp>connectionStringBuilder.toString();</highlight></codeline></programlisting></preformatted></p>\n<p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste \";\". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, die die Service Bus-Namespace enthält </p></listitem><listitem><p>EntityPath - der Pfad zu der Servicebus-Entität (Warteschlange/Thema/Eventhub/Abonnement/Consumergroup/Partition) </p></listitem><listitem><p>SharedAccessKeyName - der entsprechenden freigegebenen Zugriffsrichtlinie im Schlüsselnamen für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem></itemizedlist></p>"
+    syntax:
+      content: public class ConnectionStringBuilder
+  - uid: com.microsoft.azure.servicebus.primitives._core_message_receiver
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._core_message_receiver.yml
+    name: CoreMessageReceiver
+    nameWithType: CoreMessageReceiver
+    fullName: com.microsoft.azure.servicebus.primitives.CoreMessageReceiver
+    type: Class
+    summary: '<p>Allgemeine Empfänger, die alle Amqp abstrahiert bezogene Details übersetzt Reaktor ereignisgesteuerten Modell in asynchrone Api zu erhalten </p>'
+    syntax:
+      content: public class CoreMessageReceiver extends ClientEntity
+  - uid: com.microsoft.azure.servicebus.primitives._core_message_sender
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._core_message_sender.yml
+    name: CoreMessageSender
+    nameWithType: CoreMessageSender
+    fullName: com.microsoft.azure.servicebus.primitives.CoreMessageSender
+    type: Class
+    summary: <p>Abstrahiert alle Amqp bezogene Informationen übersetzt Reaktor ereignisgesteuerten Modell in asynchronen Senden Api </p>
+    syntax:
+      content: public class CoreMessageSender extends ClientEntity
+  - uid: com.microsoft.azure.servicebus.primitives._exception_util
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._exception_util.yml
+    name: ExceptionUtil
+    nameWithType: ExceptionUtil
+    fullName: com.microsoft.azure.servicebus.primitives.ExceptionUtil
+    type: Class
+    syntax:
+      content: public class ExceptionUtil
+  - uid: com.microsoft.azure.servicebus.primitives._illegal_connection_string_format_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._illegal_connection_string_format_exception.yml
+    name: IllegalConnectionStringFormatException
+    nameWithType: IllegalConnectionStringFormatException
+    fullName: com.microsoft.azure.servicebus.primitives.IllegalConnectionStringFormatException
+    type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn die bereitgestellte Verbindungszeichenfolge die Anforderungen für die Verbindung nicht erfüllt. </p>'
+    syntax:
+      content: public class IllegalConnectionStringFormatException
+  - uid: com.microsoft.azure.servicebus.primitives._message_lock_lost_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._message_lock_lost_exception.yml
+    name: MessageLockLostException
+    nameWithType: MessageLockLostException
+    fullName: com.microsoft.azure.servicebus.primitives.MessageLockLostException
+    type: Class
+    syntax:
+      content: public class MessageLockLostException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._message_not_found_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._message_not_found_exception.yml
+    name: MessageNotFoundException
+    nameWithType: MessageNotFoundException
+    fullName: com.microsoft.azure.servicebus.primitives.MessageNotFoundException
+    type: Class
+    syntax:
+      content: public class MessageNotFoundException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._message_with_delivery_tag
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._message_with_delivery_tag.yml
+    name: MessageWithDeliveryTag
+    nameWithType: MessageWithDeliveryTag
+    fullName: com.microsoft.azure.servicebus.primitives.MessageWithDeliveryTag
+    type: Class
+    syntax:
+      content: public class MessageWithDeliveryTag
+  - uid: com.microsoft.azure.servicebus.primitives._message_with_lock_token
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._message_with_lock_token.yml
+    name: MessageWithLockToken
+    nameWithType: MessageWithLockToken
+    fullName: com.microsoft.azure.servicebus.primitives.MessageWithLockToken
+    type: Class
+    syntax:
+      content: public class MessageWithLockToken
+  - uid: com.microsoft.azure.servicebus.primitives._messaging_entity_already_exists_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._messaging_entity_already_exists_exception.yml
+    name: MessagingEntityAlreadyExistsException
+    nameWithType: MessagingEntityAlreadyExistsException
+    fullName: com.microsoft.azure.servicebus.primitives.MessagingEntityAlreadyExistsException
+    type: Class
+    syntax:
+      content: public class MessagingEntityAlreadyExistsException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._messaging_entity_disabled_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._messaging_entity_disabled_exception.yml
+    name: MessagingEntityDisabledException
+    nameWithType: MessagingEntityDisabledException
+    fullName: com.microsoft.azure.servicebus.primitives.MessagingEntityDisabledException
+    type: Class
+    syntax:
+      content: public class MessagingEntityDisabledException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._messaging_entity_not_found_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._messaging_entity_not_found_exception.yml
+    name: MessagingEntityNotFoundException
+    nameWithType: MessagingEntityNotFoundException
+    fullName: com.microsoft.azure.servicebus.primitives.MessagingEntityNotFoundException
+    type: Class
+    syntax:
+      content: public class MessagingEntityNotFoundException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._messaging_factory
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._messaging_factory.yml
+    name: MessagingFactory
+    nameWithType: MessagingFactory
+    fullName: com.microsoft.azure.servicebus.primitives.MessagingFactory
+    type: Class
+    summary: <p>Abstrahiert alle Amqp bezogene details und macht AmqpConnection Objekt-Management-verbindungslebenszyklus </p>
+    syntax:
+      content: public class MessagingFactory extends ClientEntity
+  - uid: com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler.yml
+    name: MiscRequestResponseOperationHandler
+    nameWithType: MiscRequestResponseOperationHandler
+    fullName: com.microsoft.azure.servicebus.primitives.MiscRequestResponseOperationHandler
+    type: Class
+    syntax:
+      content: public class MiscRequestResponseOperationHandler extends ClientEntity
+  - uid: com.microsoft.azure.servicebus.primitives._operation_cancelled_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._operation_cancelled_exception.yml
+    name: OperationCancelledException
+    nameWithType: OperationCancelledException
+    fullName: com.microsoft.azure.servicebus.primitives.OperationCancelledException
+    type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn die zugrunde liegenden Amqp-Ebene treffen, einen nicht ordnungsgemäßen Link abbrechen oder Trennen der Verbindung auf unerwartete Weise. </p>'
+    syntax:
+      content: public class OperationCancelledException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._pair
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._pair.yml
+    name: 'Pair<T,V>'
+    nameWithType: 'Pair<T,V>'
+    fullName: 'com.microsoft.azure.servicebus.primitives.Pair<T,V>'
+    type: Class
+    syntax:
+      content: 'public class Pair<T,V>'
+      typeParameters:
+        - type: 8ce1ecb9
+        - type: 0a560652
+  - uid: com.microsoft.azure.servicebus.primitives._payload_size_exceeded_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._payload_size_exceeded_exception.yml
+    name: PayloadSizeExceededException
+    nameWithType: PayloadSizeExceededException
+    fullName: com.microsoft.azure.servicebus.primitives.PayloadSizeExceededException
+    type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn der Benutzer versucht, Daten oder vermittelte Nachrichten, die die zulässige Nutzlastgröße gemäß der Definition durch den Dienst Zustellversuchen senden. Beachten Sie, die in einem Batch Szenario den Grenzwert senden kann mögliche Batch Aufwand einschließen. </p>'
+    syntax:
+      content: public class PayloadSizeExceededException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._quota_exceeded_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._quota_exceeded_exception.yml
+    name: QuotaExceededException
+    nameWithType: QuotaExceededException
+    fullName: com.microsoft.azure.servicebus.primitives.QuotaExceededException
+    type: Class
+    syntax:
+      content: public class QuotaExceededException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._receiver_disconnected_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._receiver_disconnected_exception.yml
+    name: ReceiverDisconnectedException
+    nameWithType: ReceiverDisconnectedException
+    fullName: com.microsoft.azure.servicebus.primitives.ReceiverDisconnectedException
+    type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn eine EventHubReceiver aufgrund einer der folgenden Gründe getrennt wird:<itemizedlist><listitem><p>Benutzer versucht, einen Empfänger nicht Epoche an einen Event Hub-Partition verbinden, wenn es ein Empfänger Epoche ist verbunden, der der Partition. </p></listitem><listitem><p>Verwenden Sie einen Empfänger Epoche für eine bestimmte Partition jedoch ein anderer Epoche Empfänger mit einem höheren Wert für den Beginn der Epoche eine Verbindung mit derselben Partition her. </p></listitem></itemizedlist>Benutzer sollten entweder der gesamte Code nicht Epoche Empfänger verwenden, oder stellen Sie sicher, dass es ist nur eine Epoche Empfänger, die Verarbeitung einer bestimmten Partitions zu einem bestimmten Zeitpunkt zeitlich sicherstellen. </p>'
+    syntax:
+      content: public class ReceiverDisconnectedException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._receiver_error_context
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._receiver_error_context.yml
+    name: ReceiverErrorContext
+    nameWithType: ReceiverErrorContext
+    fullName: com.microsoft.azure.servicebus.primitives.ReceiverErrorContext
+    type: Class
+    syntax:
+      content: public class ReceiverErrorContext
+  - uid: com.microsoft.azure.servicebus.primitives._request_response_utils
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._request_response_utils.yml
+    name: RequestResponseUtils
+    nameWithType: RequestResponseUtils
+    fullName: com.microsoft.azure.servicebus.primitives.RequestResponseUtils
+    type: Class
+    syntax:
+      content: public class RequestResponseUtils
+  - uid: com.microsoft.azure.servicebus.primitives._request_response_work_item
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._request_response_work_item.yml
+    name: RequestResponseWorkItem
+    nameWithType: RequestResponseWorkItem
+    fullName: com.microsoft.azure.servicebus.primitives.RequestResponseWorkItem
+    type: Class
+    syntax:
+      content: public class RequestResponseWorkItem
+  - uid: com.microsoft.azure.servicebus.primitives._retry_exponential
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._retry_exponential.yml
+    name: RetryExponential
+    nameWithType: RetryExponential
+    fullName: com.microsoft.azure.servicebus.primitives.RetryExponential
+    type: Class
+    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\"></xref>die Implementierung, in denen die Verzögerung zwischen den Wiederholungsversuchen auf einer exponentiellen Weise anwächst. <xref href=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\"></xref>kann festgelegt werden, auf die Clientvorgänge mit <xref href=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\"></xref>. RetryIntervals wird mithilfe einer RetryFactor also eine Funktion der DeltaBackOff (MaximumBackoff - MinimumBackoff) berechnet werden und MaximumRetryCount </p>"
+    syntax:
+      content: public class RetryExponential extends RetryPolicy
+  - uid: com.microsoft.azure.servicebus.primitives._retry_policy
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
+    name: RetryPolicy
+    nameWithType: RetryPolicy
+    fullName: com.microsoft.azure.servicebus.primitives.RetryPolicy
+    type: Class
+    syntax:
+      content: public class RetryPolicy
+  - uid: com.microsoft.azure.servicebus.primitives._s_a_s_util
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._s_a_s_util.yml
+    name: SASUtil
+    nameWithType: SASUtil
+    fullName: com.microsoft.azure.servicebus.primitives.SASUtil
+    type: Class
+    syntax:
+      content: public class SASUtil
+  - uid: com.microsoft.azure.servicebus.primitives._sender_error_context
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._sender_error_context.yml
+    name: SenderErrorContext
+    nameWithType: SenderErrorContext
+    fullName: com.microsoft.azure.servicebus.primitives.SenderErrorContext
+    type: Class
+    syntax:
+      content: public class SenderErrorContext
+  - uid: com.microsoft.azure.servicebus.primitives._server_busy_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._server_busy_exception.yml
+    name: ServerBusyException
+    nameWithType: ServerBusyException
+    fullName: com.microsoft.azure.servicebus.primitives.ServerBusyException
+    type: Class
+    summary: '<p>Server ausgelastet Ausnahme wird ausgelöst, wenn die aktuelle Entität Aktivität übermäßigen Last auf dem Dienst eingefügt wurde. Wenn diese Ausnahme festgestellt Benutzer sollte über mindestens 4 Sekunden erneut keine Wiederholung-Runtime-Vorgänge für die genannten Entität warten. </p>'
+    syntax:
+      content: public class ServerBusyException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._service_bus_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._service_bus_exception.yml
+    name: ServiceBusException
+    nameWithType: ServiceBusException
+    fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
+    type: Class
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    syntax:
+      content: public class ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._session_cannot_be_locked_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._session_cannot_be_locked_exception.yml
+    name: SessionCannotBeLockedException
+    nameWithType: SessionCannotBeLockedException
+    fullName: com.microsoft.azure.servicebus.primitives.SessionCannotBeLockedException
+    type: Class
+    syntax:
+      content: public class SessionCannotBeLockedException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._session_lock_lost_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._session_lock_lost_exception.yml
+    name: SessionLockLostException
+    nameWithType: SessionLockLostException
+    fullName: com.microsoft.azure.servicebus.primitives.SessionLockLostException
+    type: Class
+    syntax:
+      content: public class SessionLockLostException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._settle_mode_pair
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._settle_mode_pair.yml
+    name: SettleModePair
+    nameWithType: SettleModePair
+    fullName: com.microsoft.azure.servicebus.primitives.SettleModePair
+    type: Class
+    syntax:
+      content: public class SettleModePair
+  - uid: com.microsoft.azure.servicebus.primitives._string_util
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._string_util.yml
+    name: StringUtil
+    nameWithType: StringUtil
+    fullName: com.microsoft.azure.servicebus.primitives.StringUtil
+    type: Class
+    syntax:
+      content: public class StringUtil
+  - uid: com.microsoft.azure.servicebus.primitives._timeout_exception
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._timeout_exception.yml
+    name: TimeoutException
+    nameWithType: TimeoutException
+    fullName: com.microsoft.azure.servicebus.primitives.TimeoutException
+    type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn der Vorgang der zuvor festgelegten Zeitlimit überschritten hat. Benutzer sollte überprüfen, dass die Konnektivität zwischen Clientprozess und Dienst fehlerfrei ist. </p>'
+    syntax:
+      content: public class TimeoutException extends ServiceBusException
+  - uid: com.microsoft.azure.servicebus.primitives._timeout_tracker
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._timeout_tracker.yml
+    name: TimeoutTracker
+    nameWithType: TimeoutTracker
+    fullName: com.microsoft.azure.servicebus.primitives.TimeoutTracker
+    type: Class
+    syntax:
+      content: public class TimeoutTracker
+  - uid: com.microsoft.azure.servicebus.primitives._timer
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._timer.yml
+    name: Timer
+    nameWithType: Timer
+    fullName: com.microsoft.azure.servicebus.primitives.Timer
+    type: Class
+    summary: '<p>Eine Abstraktion für einen Scheduler-Funktionen: die später von einem Thread leicht ersetzt werden können </p>'
+    syntax:
+      content: public class Timer
+  - uid: com.microsoft.azure.servicebus.primitives._timer_type
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._timer_type.yml
+    name: TimerType
+    nameWithType: TimerType
+    fullName: com.microsoft.azure.servicebus.primitives.TimerType
+    type: Enum
+    syntax:
+      content: public enum TimerType
+  - uid: com.microsoft.azure.servicebus.primitives._tracking_util
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._tracking_util.yml
+    name: TrackingUtil
+    nameWithType: TrackingUtil
+    fullName: com.microsoft.azure.servicebus.primitives.TrackingUtil
+    type: Class
+    syntax:
+      content: public class TrackingUtil
+  - uid: com.microsoft.azure.servicebus.primitives._util
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._util.yml
+    name: Util
+    nameWithType: Util
+    fullName: com.microsoft.azure.servicebus.primitives.Util
+    type: Class
+    syntax:
+      content: public class Util

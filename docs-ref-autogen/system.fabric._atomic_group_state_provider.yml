@@ -1,0 +1,127 @@
+### YamlMime:ManagedReference
+items:
+  - uid: system.fabric._atomic_group_state_provider
+    id: _atomic_group_state_provider
+    parent: system.fabric
+    href: system.fabric._atomic_group_state_provider.yml
+    langs:
+      - java
+    name: AtomicGroupStateProvider
+    nameWithType: AtomicGroupStateProvider
+    fullName: system.fabric.AtomicGroupStateProvider
+    type: Interface
+    source:
+      remote:
+        path: src/prod/src/java/system.fabric/src/system/fabric/AtomicGroupStateProvider.java
+        branch: master
+        repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
+      path: src/prod/src/java/system.fabric/src/system/fabric/AtomicGroupStateProvider.java
+      startLine: 7
+    package: system.fabric
+    syntax:
+      content: public interface AtomicGroupStateProvider extends StateProvider
+    inheritedMembers:
+      - system.fabric._state_provider.getCopyContext()
+      - 'system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+      - system.fabric._state_provider.getLastCommittedSequenceNumber()
+      - system.fabric._state_provider.onDataLossAsync(CancellationToken)
+      - 'system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+references:
+  - uid: system.fabric._state_provider.getCopyContext()
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: getCopyContext()
+    nameWithType: StateProvider.getCopyContext()
+    fullName: OperationDataStream system.fabric.StateProvider.getCopyContext()
+    type: Method
+    summary: "<p>Kontext auf einem sekundären Replikat erhält, nachdem es erstellt und geöffnet, um den Kontext mit dem primären Replikat zu senden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>das primäre Replikat analysiert den Kontext und zurücksendet Status über <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> . <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref>wird aufgerufen, auf neu erstellt werden, inaktive sekundäre Replikate und bietet einen Mechanismus zum asynchron eine bidirektionale Konversation mit dem primären Replikat hergestellt. Das sekundäre Replikat sendet <xref href=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\"></xref> Objekte, die mit dem das primäre Replikat den Status des Sammelns von Kontext auf dem sekundären Replikat bestimmen kann. Das primäre Replikat sendet seinerseits den erforderlichen Zustand zurück. Finden Sie unter <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> an das primäre Replikat für die andere Hälfte des Austausches. Für InMemory-Dienste die <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref> Methode wird nicht aufgerufen, da der Status der sekundären Replikate bekannt ist (sie sind leer und benötigen alle Status). </p>"
+    syntax:
+      content: public OperationDataStream getCopyContext()
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <xref href="system.fabric._operation_data_stream" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: 'system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: 'getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    nameWithType: 'StateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    fullName: 'OperationDataStream system.fabric.StateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    type: Method
+    summary: "<p>Ruft die Status für ein primäres Replikat, das erforderlich sind, um ein sekundäres Replikat zu erstellen.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>genauso <xref href=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\"></xref> ermöglicht das sekundäre Replikat das primäre Replikat über Kontext an ein <xref href=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\"></xref> ermöglicht das primäre Replikat antwortet ein <xref href=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\"></xref>. Der Datenstrom enthält Objekte, die an das sekundäre Replikat über übermittelt werden die <ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#getCopyStream()</ref> Methode der <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref> Klasse. Implementieren Sie die Objekte <xref href=\"system.fabric._operation\" data-throw-if-not-resolved=\"false\"></xref> und die angegebenen Daten enthalten. Wenn das primäre Replikat dieser Aufruf empfängt, sollte er erstellen und Zurückgeben einer anderen <xref href=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\"></xref> enthält <xref href=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\"></xref>. <xref href=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\"></xref>der datensynchronisierungsstatus darstellt, die das sekundäre Replikat </p>"
+    syntax:
+      content: 'public OperationDataStream getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+      parameters:
+        - id: upToSequenceNumber
+          type: system.fabric._sequence_number
+          description: '<p>Die maximale letzte Sequenznummer (LSN), die im Stream über Kopiervorgang platziert werden, sollten die <ref refid="" kindref="compound">system.fabric.StateReplicator#getCopyStream()</ref> Methode. LSNs, die größer als diese Zahl werden an das sekundäre Replikat als Teil der replikationsdatenstrom über übermittelt die <ref refid="" kindref="compound">system.fabric.StateReplicator#getReplicationStream()</ref> Methode. </p>'
+        - id: copyContext
+          type: system.fabric._operation_data_stream
+          description: '<p>Ein <xref href="system.fabric._operation_data_stream" data-throw-if-not-resolved="false"></xref> , enthält die <xref href="system.fabric._operation_data" data-throw-if-not-resolved="false"></xref> Objekte, die vom sekundären Replikat erstellt werden. erfordert die Stand </p>'
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <xref href="system.fabric._operation_data_stream" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: system.fabric._state_provider.getLastCommittedSequenceNumber()
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: getLastCommittedSequenceNumber()
+    nameWithType: StateProvider.getLastCommittedSequenceNumber()
+    fullName: long system.fabric.StateProvider.getLastCommittedSequenceNumber()
+    type: Method
+    summary: |-
+      <p>Ruft die letzte Sequenznummer, die der Dienst ein Commit ausgeführt wurde.</p>
+      <p></p>
+    syntax:
+      content: public long getLastCommittedSequenceNumber()
+      return:
+        type: 0364520f
+        description: <p>Long-Wert. </p>
+  - uid: system.fabric._state_provider.onDataLossAsync(CancellationToken)
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: onDataLossAsync(CancellationToken cancellationToken)
+    nameWithType: StateProvider.onDataLossAsync(CancellationToken cancellationToken)
+    fullName: CompletableFuture<Boolean> system.fabric.StateProvider.onDataLossAsync(CancellationToken cancellationToken)
+    type: Method
+    summary: "<p>Gibt an, dass ein schreibquorums Replikate in dieser Replikatsatz verloren gegangen ist und daher Datenverlust aufgetreten sind. Die Replikatgruppe besteht aus der Mehrheit der Replikate, die das primäre Replikat enthält.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>bei die Service Fabric-Laufzeit einen Fehler des ein Quorum der Replikate, der das primäre Replikat enthält berücksichtigt, wählt ein neues primäres Replikat und sofort ruft diese Methode auf dem neuen primären Replikat. Ein primäres Replikat, das eines möglichen Datenverlusts informiert ist die Möglichkeit, den Zustand aus einer externen Datenquelle wiederherstellen oder kann weiterhin mit dem Status ausgeführt wird, die derzeit. Wenn der Dienst mit seinem aktuellen Zustand ausgeführt werden weiterhin, sollte es \"false\" von dieser Methode zurückgeben, der gibt an, dass keine Änderung vorgenommen wurde. Wenn es wiederhergestellt oder geändert Datenbankzustands, z. B. unvollständige Arbeit ein Rollback sollte \"true\" zurückgeben. Wenn \"true\" zurückgegeben wird, muss der Status in den anderen Replikaten angenommen werden, falsch zu sein. Aus diesem Grund die Service Fabric-Laufzeit die anderen Replikaten in der Replikatgruppe entfernt und erneut erstellt werden. </p>"
+    syntax:
+      content: public CompletableFuture<Boolean> onDataLossAsync(CancellationToken cancellationToken)
+      parameters:
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 7e53ac82
+        description: '<p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref> des Typs <ref refid="" kindref="compound">java.lang.Boolean</ref>, Wert, der angibt, ob die State-Anbieter als Teil der Verarbeitung dieser benachrichtigungs seinen Status geändert wurde </p>'
+  - uid: 'system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)'
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: 'updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    nameWithType: 'StateProvider.updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<?> system.fabric.StateProvider.updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+    type: Method
+    summary: "<p>Ein Replikat zeigt an, dass die Konfiguration einer Replikatgruppe aufgrund einer Änderung der geändert oder ändern, mit dem primären Replikat versucht. Die Änderung tritt aufgrund eines Fehlers oder Lastenausgleich des vorherigen primären Replikats. <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref>Änderungen fungieren als einer Barrier-Klasse, indem Sie segmentieren Vorgänge in die genaue Konfiguration Zeiträume, in denen sie von einem bestimmten primären Replikat gesendet wurden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>die Informationen in der <xref href=\"system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> -Methode ermöglicht dem Dienst um einen Vektor Status aufrecht ist eine Liste der einzelnen Epoche, die das Replikat empfangen hat und die maximale LSN, die sie enthalten. Die Bearbeitung Vektordaten werden zusammen mit den aktuellen angewendeten maximale LSN eignet sich für ein sekundäres Replikat während des Kopiervorgangs zu senden, um den Status des Replikats zu beschreiben. Vergleichen von Fortschritt Vektoren, die während des Kopiervorgangs von sekundären Replikaten empfangen werden kann primäre Replikaten zu bestimmen, ob das sekundäre Replikat auf dem neuesten Stand ist, welchen Status an das sekundäre Replikat gesendet werden muss und gibt an, ob das sekundäre Replikat \"false\" Fortschritt erzielt hat. \"False\" Status bedeutet, dass ein sekundäres Replikat meldet wurde eine LSN in einer vorherigen Epoche größer als die LSN, die das primäre Replikat in seinen Fortschritt Vektor verfügt. </p>"
+    syntax:
+      content: 'public CompletableFuture<?> updateEpochAsync(Epoch epoch, SequenceNumber previousEpochLastSequenceNumber, CancellationToken cancellationToken)'
+      parameters:
+        - id: epoch
+          type: system.fabric._epoch
+          description: <p>Die neue <xref href="system.fabric._epoch" data-throw-if-not-resolved="false"></xref>. </p>
+        - id: previousEpochLastSequenceNumber
+          type: system.fabric._sequence_number
+          description: <p>Die maximale Sequenznummer (LSN) in der vorherigen Epoche. </p>
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+      return:
+        type: 16409f84
+        description: <p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref>. </p>
+  - uid: system.fabric._state_provider
+    parent: system.fabric
+    href: system.fabric._state_provider.yml
+    name: StateProvider
+    nameWithType: StateProvider
+    fullName: system.fabric.StateProvider
+    type: Interface
+    summary: '<p>Definiert das Verhalten, das ein Dienst implementieren muss, um die Interaktion mit der <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref>. </p>'
+    syntax:
+      content: public interface StateProvider
