@@ -104,7 +104,7 @@ Weitere Informationen zu Azure Redis Caches, Konfigurationseinstellungen und Pre
 [Azure Redis Cache]: https://azure.microsoft.com/services/cache/
 [Dokumentation zu Redis Cache]: /azure/redis-cache
 [Konfigurieren von Azure Redis Cache]: /azure/redis-cache/cache-configure
-[Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
+[Anleitung zur Azure-Anmeldung für das Azure-Toolkit für IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 
 <!-- IMG List -->
 

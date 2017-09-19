@@ -76,7 +76,7 @@ Die Version des Azure-Toolkits für IntelliJ vom April 2016 umfasst folgende Erw
 [Azure-Toolkit für Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 
 [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
-[Informationen zum Veröffentlichen einer Web-App als Docker-Container mit dem Azure Toolkit für IntelliJ]: ./azure-toolkit-for-intellij-publish-as-docker-container.md
+[Informationen zum Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ]: ./azure-toolkit-for-intellij-publish-as-docker-container.md
 [Verwalten von Speicherkonten mit dem Azure-Explorer für IntelliJ]: ./azure-toolkit-for-intellij-managing-storage-accounts-using-azure-explorer.md
 [Verwalten virtueller Computer mit dem Azure-Explorer für IntelliJ]: ./azure-toolkit-for-intellij-managing-virtual-machines-using-azure-explorer.md
 
