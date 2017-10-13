@@ -10,25 +10,25 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: c0d5c4b3702d3bee4e93de51cec36e72aeaf598f
-ms.sourcegitcommit: ae39830d5a54fedceac78d8df1718e77741e03fa
+ms.openlocfilehash: 015cb0615c28711ebb8feb5cea584a8a3779fa54
+ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="release-notes"></a>Versionsinformationen 
 
-## <a name="june-30-2017---110"></a>30. Juni 2017: 1.1.0 
+## <a name="october-5-2017---130"></a>5. Oktober 2017 – 1.3.0 
 
-V1.1 ist in den für die öffentliche Verwendung vorgesehenen APIs, die in V1.0 die (stabile) Phase der allgemeinen Verfügbarkeit erreicht haben, abwärtskompatibel mit V1.0.
+Version 1.3.0 ist abwärtskompatibel mit vorherigen Versionen zur Verwendung von Diensten und Features, die in vorherigen Releases die (stabile) Phase der allgemeinen Verfügbarkeit erreicht haben.
 
-Für APIs, die in V.0 mit der Anmerkung @Beta markiert waren, wurden einige wichtige Änderungen eingeführt.
+Für diese Dienste sind wichtige Änderungen aus Vorschauversionen mit der Anmerkung @Beta versehen.
 
-Wenn Sie Ihren Code zu 1.1.0 migrieren möchten, können Sie Ihren 1.0.0-Code anhand [dieser Hinweise](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.1.0.md) für 1.1.0 vorbereiten.
+Wenn Sie Ihren Code zu 1.3.0 migrieren möchten, können Sie Ihren vorhandenen Code anhand [dieser Hinweise](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.3.0.md) für die Version 1.3 vorbereiten.
 
-### <a name="generally-availabile-in-v11"></a>Allgemein verfügbar in V1.1
+### <a name="generally-availabile-in-v13"></a>Allgemein verfügbar in V1.3
 
-Einige der Beta-APIs aus V1.0 sind in V1.1 nun allgemein verfügbar. Hierzu zählen insbesondere folgende:
+Einige der Beta-APIs aus vorherigen Releases sind nun allgemein verfügbar. Hierzu zählen insbesondere folgende:
 
 - Asynchrone Methoden
 - Alle Methoden im CDN, die sich zuvor noch in der Betaphase befanden
@@ -36,14 +36,16 @@ Einige der Beta-APIs aus V1.0 sind in V1.1 nun allgemein verfügbar. Hierzu zäh
 
  Teile der Bibliothek befinden sich immer noch in der Vorschauphase. Die folgende Tabelle gibt Aufschluss über den aktuellen Status der Bibliotheken:
 
-Dienst oder Feature | Allgemein verfügbar | Als Vorschauversion verfügbar  | In Kürze verfügbar |
----------|---------|---------|---------|
-Compute  | Virtuelle Computer und VM-Erweiterungen, VM-Skalierungsgruppen, verwaltete Datenträger   | Azure Container Service, Azure Container Registry |    |
-Speicher   |  Speicherkonten       |         |   Verschlüsselung      |
-SQL-Datenbank  | Datenbanken, Firewalls, Pools für elastische Datenbanken        |         |   Weitere Features      |
-Netzwerk    |  Virtuelle Netzwerke, Netzwerkschnittstellen, IP-Adressen, Routingtabellen, Netzwerksicherheitsgruppen, DNS, Traffic Manager, Anwendungsgateways  |    Load Balancer     |   VPN, Network Watcher   |
-Weitere Dienste    |  Ressourcen-Manager, Key Vault, Redis, CDN, Batch       |  Web-Apps, Funkions-Apps, Service Bus, Graph RBAC, DocumentDB   | Überwachung, Planung, Funktionsverwaltung, Suche, weitere Graph RBAC-Features        |
-Grundlagen     |   Authentifizierung: Core, asynchrone Methoden       |      |         |
+Dienst oder Feature | Allgemein verfügbar | Als Vorschauversion verfügbar 
+---------|---------|---------|-
+Compute  | Virtuelle Computer und VM-Erweiterungen, VM-Skalierungsgruppen, verwaltete Datenträger   | Azure Container Service, Azure Container Registry 
+Speicher   |  Speicherkonten       |    Verschlüsselung     
+SQL-Datenbank  | Datenbanken, Firewalls, Pools für elastische Datenbanken              
+Netzwerk    |  Virtuelle Netzwerke, Netzwerkschnittstellen, IP-Adressen, Routingtabellen, Netzwerksicherheitsgruppen, DNS, Traffic Manager, Anwendungsgateways  |    Lastenausgleichsmodule, Netzwerkpeering, Gateway für virtuelle Netzwerke, Network Watcher 
+Weitere Dienste    |  Ressourcen-Manager, Key Vault, Redis, CDN, Batch       |  Web-Apps, Funktions-Apps, Service Bus, Graph (rollenbasierte Zugriffssteuerung), Cosmos DB, Search  
+Grundlagen     |   Authentifizierung: Core, asynchrone Methoden, verwaltete Dienstidentität      |      |
+
+> Vorschaufeatures sind in Bibliotheken auf Klassen-, Schnittstellen- oder Methodenebene mit dem Hinweis `@Beta` gekennzeichnet. Bei diesen Funktionen sind Änderungen vorbehalten. Sie können in Zukunft auf beliebige Weise geändert (oder sogar entfernt) werden.
 
 ### <a name="import-with-maven"></a>Importieren mit Maven
 
@@ -51,16 +53,12 @@ Grundlagen     |   Authentifizierung: Core, asynchrone Methoden       |      |  
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure</artifactId>
-    <version>1.2.1</version>
+    <version>1.3.0</version>
 </dependency>
 ```
 
 ### <a name="get-help-and-give-feedback"></a>Hilfe und Feedback
 
 Besuchen Sie die [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-java-sdk)-Community, um Hilfe bei der Verwendung der Bibliotheken in Ihrem eigenen Code zu erhalten. Fehler oder Verbesserungsvorschläge für die Bibliotheken können über [GitHub](https://github.com/Azure/azure-sdk-for-java/issues) gemeldet bzw. eingereicht werden.
-
-### <a name="migrate-from-previous-releases"></a>Migrieren von früheren Versionen
-
-[Migrieren von 1.0.0-beta5](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.0.0.md) [Migrieren von 1.1.0](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.1.0.md)
 
 
