@@ -12,18 +12,23 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 10/19/2017
 ms.author: robmcm;asirveda;martinsawicki
-ms.openlocfilehash: 861ceb148976faff1f40055094c463171bdfb4b0
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: 3e3d22cc5720346e31a096adfd935b2712aac4e9
+ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-intellij"></a>Neuerungen im Azure-Toolkit für IntelliJ
 
 ## <a name="azure-toolkit-for-intellij-releases"></a>Versionen des Azure-Toolkits für IntelliJ
 Dieser Artikel enthält Informationen zu den verschiedenen Versionen und den neuesten Updates des Azure-Toolkits für IntelliJ.
+
+> [!NOTE]
+> Aktuelle Informationen finden Sie auf der folgenden Webseite:
+> 
+> <https://github.com/Microsoft/azure-tools-for-java/releases>
 
 > [!NOTE]
 > Es gibt auch ein Azure-Toolkit für die Eclipse-IDE. Weitere Informationen finden Sie unter [Azure-Toolkit für Eclipse].

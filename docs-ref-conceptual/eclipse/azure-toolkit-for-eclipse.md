@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 10/19/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: cb504c28b1090d1948cc02344ec619bfb32f1d14
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: d3f91a7b501adfd9496991e955024298b637b90d
+ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Azure-Toolkit für Eclipse
 Das Azure-Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, mit denen Sie Azure-Anwendungen mithilfe der Eclipse-IDE-Entwicklungsumgebung (Integrated Development Environment; integrierte Entwicklungsumgebung) einfach erstellen, entwickeln, testen und bereitstellen können. Es handelt sich um ein Open Source-Projekt, dessen Quellcode unter der [MIT-Lizenz auf der Website des Projekts](https://github.com/microsoft/azure-tools-for-java) verfügbar ist.
@@ -31,9 +31,7 @@ Das Azure-Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, mit denen 
 ## <a name="get-started-with-the-azure-toolkit-for-eclipse"></a>Erste Schritte mit dem Azure-Toolkit für Eclipse
 Die folgenden Artikel helfen Ihnen beim Einstieg in die Verwendung des Azure-Toolkit für Eclipse:
 
-* [Neuerungen im Azure-Toolkit für Eclipse](azure-toolkit-for-eclipse-whats-new.md)
-
-* [Installation des Azure Toolkit für Eclipse](azure-toolkit-for-eclipse-installation.md)
+* [Installieren des Azure-Toolkits für Eclipse](azure-toolkit-for-eclipse-installation.md)
 
 * [Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse](azure-toolkit-for-eclipse-sign-in-instructions.md)
 
@@ -60,6 +58,12 @@ Die folgenden Artikel erklären, wie Sie mit dem Azure-Toolkit für Eclipse Ihre
 * [Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse](azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md)
 
 ## <a name="next-steps"></a>Nächste Schritte
+
+Auf den folgenden Seiten erhalten Sie weitere Informationen zum Azure-Toolkit für Eclipse:
+
+* [Azure Toolkit Release Notes](https://github.com/Microsoft/azure-tools-for-java/releases) (Versionshinweise zum Azure-Toolkit)
+
+* [Azure Toolkit for Eclipse in the Eclipse Marketplace](http://marketplace.eclipse.org/content/azure-toolkit-eclipse) (Azure-Toolkit für Eclipse in Eclipse Marketplace)
 
 Weitere Informationen zur Verwendung von Java mit Azure finden Sie im [Azure Java Developer Center](https://azure.microsoft.com/develop/java/) und in den [Java-Tools für Visual Studio Team Services](https://java.visualstudio.com/).
 

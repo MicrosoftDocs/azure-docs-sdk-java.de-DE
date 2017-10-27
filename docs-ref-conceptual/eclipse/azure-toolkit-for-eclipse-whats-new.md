@@ -14,16 +14,21 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 09/11/2017
 ms.author: robmcm;asirveda;martinsawicki
-ms.openlocfilehash: 31af7e6494f978f341e1f99a30117c57ef30a05b
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: ed21f4308b2f6e45f022608a2ba32fe7db6922d3
+ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Neuerungen im Azure-Toolkit für Eclipse
 
 ## <a name="azure-toolkit-for-eclipse-releases"></a>Versionen des Azure-Toolkits für Eclipse
 Dieser Artikel enthält Informationen zu den verschiedenen Versionen und den neuesten Updates des Azure-Toolkits für Eclipse.
+
+> [!NOTE]
+> Aktuelle Informationen finden Sie auf der folgenden Webseite:
+> 
+> <https://github.com/Microsoft/azure-tools-for-java/releases>
 
 > [!NOTE]
 > Es gibt auch ein Azure-Toolkit für die IntelliJ-IDE. Weitere Informationen finden Sie unter [Azure-Toolkit für IntelliJ].
@@ -280,12 +285,12 @@ Die CTP-Version des Azure-Plug-Ins für Eclipse vom Juni 2012 wird veröffentli
 * **Rolleneigenschaftenseite für die Serverkonfiguration:** Hier können Sie nach der Projekterstellung problemlos die Ihrer Bereitstellung zugeordneten JDKs, Java-Anwendungsserver und Anwendungen ändern. Weitere Informationen finden Sie unter [Eigenschaften für die Serverkonfiguration].
 * **&quot;Cloudveröffentlichungs-Assistent&quot;:** Ermöglicht die einfache Bereitstellung Ihres Projekts in Azure direkt über Eclipse und automatisiert das aufwendige manuelle Abrufen von Anmeldeinformationen, das Anmelden beim Azure-Verwaltungsportal, das Hochladen eines Pakets usw. Ein Beispiel für eine direkte Projektbereitstellung in Azure finden Sie unter [Erstellen einer Hello World-Anwendung für Azure in Eclipse].
 * **Azure-Symbolleiste:** In Eclipse steht jetzt eine Azure-Symbolleiste mit Schaltflächen für folgende Features zur Verfügung:
-  * ![][ic710879] **Ausführen in Azure-Emulator**: Führt Ihr Projekt im Emulator aus.
-  * ![][ic710880] **Azure-Emulator zurücksetzen**: Setzt den Emulator zurück.
-  * ![][ic710881] **Cloudpaket für Azure erstellen**: Kompiliert Ihr Paket für die Bereitstellung.
-  * ![][ic710876] **Neues Azure-Bereitstellungsprojekt**: Erstellt ein neues Azure-Bereitstellungsprojekt.
-  * ![][ic710882] **In Azure-Cloud veröffentlichen**: Veröffentlicht Ihr Projekt in Azure.
-  * ![][ic710883] **Veröffentlichung aufheben**: Löscht Ihre Bereitstellung.
+  * ![][ic710879]**Ausführen in Azure-Emulator**: Führt Ihr Projekt im Emulator aus.
+  * ![][ic710880]**Azure-Emulator zurücksetzen**: Setzt den Emulator zurück.
+  * ![][ic710881]**Cloudpaket für Azure erstellen**: Kompiliert Ihr Paket für die Bereitstellung.
+  * ![][ic710876]**Neues Azure-Bereitstellungsprojekt**: Erstellt ein neues Azure-Bereitstellungsprojekt.
+  * ![][ic710882]**In Azure-Cloud veröffentlichen**: Veröffentlicht Ihr Projekt in Azure.
+  * ![][ic710883]**Veröffentlichung aufheben**: Löscht Ihre Bereitstellung.
   * Viele dieser Azure-Symbolleistenschaltflächen werden in [Erstellen einer Hello World-Anwendung für Azure in Eclipse]verwendet.
 * **Azure-Bibliotheken für Java:** Jetzt verfügbar als Teil des Einzelpakets für Azure-Bibliotheken für die Java-Bibliothek in Eclipse. Ist bei der Plug-In-Installation dabei und enthält alle erforderlichen Abhängigkeiten. Nachdem Sie Ihrem Java-Projekt einen Verweis auf die Bibliothek hinzugefügt haben, müssen Sie nichts mehr separat herunterladen. Weitere Informationen finden Sie unter [Installation des Azure Toolkit für Eclipse].
 * **Microsoft JDBC Driver 4.0 für SQL Server bei der Plug-In-Installation verfügbar:** Im Rahmen der Installation des neuen Plug-Ins kann auch die neueste Version des Microsoft JDBC-Treibers für SQL Server installiert werden.
