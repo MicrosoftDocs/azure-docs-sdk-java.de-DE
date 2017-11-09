@@ -11,15 +11,15 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: iot-hub
-ms.openlocfilehash: b386612741e222fcaeb7b6c38753d0cb7d616239
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: c1af3dae0fe37eb4919db02da87beed193c547a7
+ms.sourcegitcommit: acc83bb537d77568b2a5427479d6354d6ae30885
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="azure-iot-libraries-for-java"></a>Azure IoT-Bibliotheken für Java
 
-Verbinden, überwachen und kontrollieren Sie IoT-Assets (Internet of Things, Internet der Dinge) mithilfe von [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-what-is-iot-hub).
+Verbinden, überwachen und kontrollieren Sie IoT-Assets (Internet of Things, Internet der Dinge) mithilfe von [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-what-is-iot-hub).
 
 Informationen zu den ersten Schritten mit Azure IoT Hub finden Sie unter [Herstellen einer Verbindung zwischen Ihrem Gerät und Ihrem IoT Hub mit Java](/azure/iot-hub/iot-hub-java-java-getstarted).
 
