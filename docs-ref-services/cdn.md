@@ -1,0 +1,71 @@
+---
+title: "Azure CDN-Bibliotheken für Java"
+description: "Referenzdokumentation für die Java-CDN-Bibliotheken"
+keywords: Azure, Java, SDK, API, Inhalt, Verteilung, Netzwerk, CDN
+author: rloutlaw
+ms.author: routlaw
+manager: douge
+ms.date: 07/11/2017
+ms.topic: reference
+ms.prod: azure
+ms.technology: azure
+ms.devlang: java
+ms.service: cdn
+ms.openlocfilehash: 91df958d2d78fb4fd959c228b28c6ae003716be6
+ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 10/09/2017
+---
+# <a name="azure-cdn-libraries-for-java"></a><span data-ttu-id="64bed-104">Azure CDN-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="64bed-104">Azure CDN libraries for Java</span></span>
+
+## <a name="overview"></a><span data-ttu-id="64bed-105">Übersicht</span><span class="sxs-lookup"><span data-stu-id="64bed-105">Overview</span></span>
+
+<span data-ttu-id="64bed-106">Speichern Sie mit [Azure Content Delivery Network (CDN)](/azure/cdn/cdn-overview) statische Webinhalte an strategisch platzierten Standorten zwischen, um für Benutzer einen maximalen Durchsatz zu ermöglichen</span><span class="sxs-lookup"><span data-stu-id="64bed-106">Cache static web content at strategically placed locations to provide maximum throughput for users with [Azure Content Delivery Network](/azure/cdn/cdn-overview) (CDN).</span></span>
+
+<span data-ttu-id="64bed-107">Informationen zu den ersten Schritten mit Azure CDN finden Sie unter [Erste Schritte mit Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span><span class="sxs-lookup"><span data-stu-id="64bed-107">To get started with Azure CDN, see [Getting started with Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span></span>
+
+## <a name="management-api"></a><span data-ttu-id="64bed-108">Verwaltungs-API</span><span class="sxs-lookup"><span data-stu-id="64bed-108">Management API</span></span>
+
+<span data-ttu-id="64bed-109">Mit der Verwaltungs-API können Sie CDN-Profile erstellen, Endpunkte definieren und dem CDN Inhalte hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="64bed-109">Create CDN profiles, define endpoints, and add content to the CDN using the management API.</span></span>
+
+<span data-ttu-id="64bed-110">Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Verwaltungs-API in Ihrem Projekt zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="64bed-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
+
+```XML
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>azure-mgmt-cdn</artifactId>
+    <version>1.3.0</version>
+</dependency>
+```   
+
+### <a name="example"></a><span data-ttu-id="64bed-111">Beispiel</span><span class="sxs-lookup"><span data-stu-id="64bed-111">Example</span></span>
+
+<span data-ttu-id="64bed-112">Erstellen Sie ein CDN-Profil, weisen Sie Endpunkte zu, und laden Sie Inhalte ins CDN:</span><span class="sxs-lookup"><span data-stu-id="64bed-112">Create a CDN profile, assign endpoints, and load content into the CDN.</span></span>
+
+```java
+CdnProfile profile = azure.cdnProfiles().define("testCDN")
+        .withRegion(Region.US_EAST)
+        .withNewResourceGroup()
+        .withStandardVerizonSku()
+        .withNewEndpoint("webAppHostname1")
+        .withNewEndpoint("webAppHostname2")
+        .create();
+
+List<String> contentList = new ArrayList<String>();
+contentList.add("/client.js");
+contentList.add("/media/fabrikam_logo.png");
+
+for (CdnEndpoint endpoint : profile.endpoints().values()) {
+    endpoint.loadContent(contentList);
+}
+```
+
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="64bed-113">Informationen zu den Verwaltungs-APIs</span><span class="sxs-lookup"><span data-stu-id="64bed-113">Explore the Management APIs</span></span>](/java/api/overview/azure/cdn/managementapi)
+
+## <a name="samples"></a><span data-ttu-id="64bed-114">Beispiele</span><span class="sxs-lookup"><span data-stu-id="64bed-114">Samples</span></span>
+
+[<span data-ttu-id="64bed-115">Verwalten von CDNs mit Java</span><span class="sxs-lookup"><span data-stu-id="64bed-115">Manage CDNs with Java</span></span>](https://github.com/Azure-Samples/cdn-java-manage-cdn)
+
+<span data-ttu-id="64bed-116">Sehen Sie sich weitere [Java-Codebeispiele für Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) an, die Sie in Ihren Apps verwenden können.</span><span class="sxs-lookup"><span data-stu-id="64bed-116">Explore more [sample Java code for Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) you can use in your apps.</span></span>
