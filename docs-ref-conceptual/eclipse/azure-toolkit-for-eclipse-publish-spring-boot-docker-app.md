@@ -12,210 +12,210 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: Java
 ms.topic: article
-ms.date: 09/11/2017
+ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 6894c319a74c3dba6972f2c78b597cd87b49cc66
-ms.sourcegitcommit: 256044d7cbce16dcb8dc4e195d0f63c10cb44d4e
+ms.openlocfilehash: a2aa6b0aa0689893143073be94539345e229e5f2
+ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 11/21/2017
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a><span data-ttu-id="40c5c-103">Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse</span><span class="sxs-lookup"><span data-stu-id="40c5c-103">Publish a Spring Boot app as a Docker container by using the Azure Toolkit for Eclipse</span></span>
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a><span data-ttu-id="f56ed-103">Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse</span><span class="sxs-lookup"><span data-stu-id="f56ed-103">Publish a Spring Boot app as a Docker container by using the Azure Toolkit for Eclipse</span></span>
 
-<span data-ttu-id="40c5c-104">[Spring Framework] ist eine Open Source-Lösung, die Java-Entwickler bei der Erstellung professioneller Anwendungen unterstützt.</span><span class="sxs-lookup"><span data-stu-id="40c5c-104">The [Spring Framework] is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="40c5c-105">Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="40c5c-105">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating standalone Java applications.</span></span>
+<span data-ttu-id="f56ed-104">[Spring Framework] ist eine Open Source-Lösung, die Java-Entwickler bei der Erstellung professioneller Anwendungen unterstützt.</span><span class="sxs-lookup"><span data-stu-id="f56ed-104">The [Spring Framework] is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="f56ed-105">Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="f56ed-105">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating standalone Java applications.</span></span>
 
-<span data-ttu-id="40c5c-106">[Docker] ist eine Open Source-Lösung, die Entwickler beim Automatisieren der Bereitstellung, Skalierung und Verwaltung ihrer in Containern ausgeführten Anwendungen unterstützt.</span><span class="sxs-lookup"><span data-stu-id="40c5c-106">[Docker] is an open-source solution that helps developers automate the deployment, scaling, and management of their applications that are running in containers.</span></span>
+<span data-ttu-id="f56ed-106">[Docker] ist eine Open Source-Lösung, die Entwickler beim Automatisieren der Bereitstellung, Skalierung und Verwaltung ihrer in Containern ausgeführten Anwendungen unterstützt.</span><span class="sxs-lookup"><span data-stu-id="f56ed-106">[Docker] is an open-source solution that helps developers automate the deployment, scaling, and management of their applications that are running in containers.</span></span>
 
-<span data-ttu-id="40c5c-107">In diesem Tutorial erfahren Sie, wie Sie mithilfe des Azure-Toolkits für Eclipse eine Spring Boot-Anwendung als Docker-Container in Microsoft Azure bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="40c5c-107">This tutorial walks you through the steps to deploy a Spring Boot application as a Docker container to Microsoft Azure by using the Azure Toolkit for Eclipse.</span></span>
+<span data-ttu-id="f56ed-107">In diesem Tutorial erfahren Sie, wie Sie mithilfe des Azure-Toolkits für Eclipse eine Spring Boot-Anwendung als Docker-Container in Microsoft Azure bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="f56ed-107">This tutorial walks you through the steps to deploy a Spring Boot application as a Docker container to Microsoft Azure by using the Azure Toolkit for Eclipse.</span></span>
 
 [!INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
 
-## <a name="clone-the-default-spring-boot-docker-repository"></a><span data-ttu-id="40c5c-108">Klonen des standardmäßigen Spring Boot-Docker-Repositorys</span><span class="sxs-lookup"><span data-stu-id="40c5c-108">Clone the default Spring Boot Docker repository</span></span>
+## <a name="clone-the-default-spring-boot-docker-repository"></a><span data-ttu-id="f56ed-108">Klonen des standardmäßigen Spring Boot-Docker-Repositorys</span><span class="sxs-lookup"><span data-stu-id="f56ed-108">Clone the default Spring Boot Docker repository</span></span>
 
-### <a name="import-the-public-repository"></a><span data-ttu-id="40c5c-109">Importieren des öffentlichen Repositorys</span><span class="sxs-lookup"><span data-stu-id="40c5c-109">Import the public repository</span></span>
+### <a name="import-the-public-repository"></a><span data-ttu-id="f56ed-109">Importieren des öffentlichen Repositorys</span><span class="sxs-lookup"><span data-stu-id="f56ed-109">Import the public repository</span></span>
 
-<span data-ttu-id="40c5c-110">Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem lokalen Computer mithilfe von IntelliJ geklont.</span><span class="sxs-lookup"><span data-stu-id="40c5c-110">The following steps walk you through cloning the Spring Boot Docker repository to your local computer by using IntelliJ.</span></span> <span data-ttu-id="40c5c-111">Informationen zur Verwendung einer Befehlszeile finden Sie unter [Deploy a Spring Boot application on Linux in the Azure Container Service][Deploy Spring Boot on Linux in ACS] (Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service).</span><span class="sxs-lookup"><span data-stu-id="40c5c-111">If you want to use a command line, see [Deploy a Spring Boot application on Linux in Azure Container Service][Deploy Spring Boot on Linux in ACS].</span></span>
+<span data-ttu-id="f56ed-110">Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem lokalen Computer mithilfe von IntelliJ geklont.</span><span class="sxs-lookup"><span data-stu-id="f56ed-110">The following steps walk you through cloning the Spring Boot Docker repository to your local computer by using IntelliJ.</span></span> <span data-ttu-id="f56ed-111">Informationen zur Verwendung einer Befehlszeile finden Sie unter [Deploy a Spring Boot application on Linux in the Azure Container Service][Deploy Spring Boot on Linux in AKS] (Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service).</span><span class="sxs-lookup"><span data-stu-id="f56ed-111">If you want to use a command line, see [Deploy a Spring Boot application on Linux in Azure Container Service][Deploy Spring Boot on Linux in AKS].</span></span>
 
-1. <span data-ttu-id="40c5c-112">Öffnen Sie Eclipse.</span><span class="sxs-lookup"><span data-stu-id="40c5c-112">Open Eclipse.</span></span>
+1. <span data-ttu-id="f56ed-112">Öffnen Sie Eclipse.</span><span class="sxs-lookup"><span data-stu-id="f56ed-112">Open Eclipse.</span></span>
 
-1. <span data-ttu-id="40c5c-113">Klicken Sie auf **Datei** > **Importieren**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-113">Click **File** > **Import**.</span></span>
+1. <span data-ttu-id="f56ed-113">Klicken Sie auf **Datei** > **Importieren**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-113">Click **File** > **Import**.</span></span>
 
    ![Menü „Datei importieren“][CL01]
 
-1. <span data-ttu-id="40c5c-115">Wenn das Dialogfeld **Importieren** geöffnet wird:</span><span class="sxs-lookup"><span data-stu-id="40c5c-115">When the **Import** dialog box opens:</span></span>
+1. <span data-ttu-id="f56ed-115">Wenn das Dialogfeld **Importieren** geöffnet wird:</span><span class="sxs-lookup"><span data-stu-id="f56ed-115">When the **Import** dialog box opens:</span></span>
 
-   <span data-ttu-id="40c5c-116">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-116">a.</span></span> <span data-ttu-id="40c5c-117">Erweitern Sie **Git**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-117">Expand **Git**.</span></span>
+   <span data-ttu-id="f56ed-116">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-116">a.</span></span> <span data-ttu-id="f56ed-117">Erweitern Sie **Git**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-117">Expand **Git**.</span></span>
 
-   <span data-ttu-id="40c5c-118">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-118">b.</span></span> <span data-ttu-id="40c5c-119">Wählen Sie **Projekte aus Git**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-119">Select **Projects from Git**.</span></span>
+   <span data-ttu-id="f56ed-118">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-118">b.</span></span> <span data-ttu-id="f56ed-119">Wählen Sie **Projekte aus Git**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-119">Select **Projects from Git**.</span></span>
    
-   <span data-ttu-id="40c5c-120">c.</span><span class="sxs-lookup"><span data-stu-id="40c5c-120">c.</span></span> <span data-ttu-id="40c5c-121">Klicken Sie auf **Weiter**.
-</span><span class="sxs-lookup"><span data-stu-id="40c5c-121">Click **Next**.</span></span>
+   <span data-ttu-id="f56ed-120">c.</span><span class="sxs-lookup"><span data-stu-id="f56ed-120">c.</span></span> <span data-ttu-id="f56ed-121">Klicken Sie auf **Weiter**.
+</span><span class="sxs-lookup"><span data-stu-id="f56ed-121">Click **Next**.</span></span>
 
    ![Dialogfeld „Importieren“][CL02]
 
-1. <span data-ttu-id="40c5c-123">Auf der Seite **Repositoryquelle auswählen**:</span><span class="sxs-lookup"><span data-stu-id="40c5c-123">On the **Select Repository Source** page:</span></span>
+1. <span data-ttu-id="f56ed-123">Auf der Seite **Repositoryquelle auswählen**:</span><span class="sxs-lookup"><span data-stu-id="f56ed-123">On the **Select Repository Source** page:</span></span>
 
-   <span data-ttu-id="40c5c-124">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-124">a.</span></span> <span data-ttu-id="40c5c-125">Wählen Sie **URI klonen** aus.</span><span class="sxs-lookup"><span data-stu-id="40c5c-125">Select **Clone URI**.</span></span>
+   <span data-ttu-id="f56ed-124">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-124">a.</span></span> <span data-ttu-id="f56ed-125">Wählen Sie **URI klonen** aus.</span><span class="sxs-lookup"><span data-stu-id="f56ed-125">Select **Clone URI**.</span></span>
    
-   <span data-ttu-id="40c5c-126">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-126">b.</span></span> <span data-ttu-id="40c5c-127">Klicken Sie auf **Weiter**.
-</span><span class="sxs-lookup"><span data-stu-id="40c5c-127">Click **Next**.</span></span>
+   <span data-ttu-id="f56ed-126">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-126">b.</span></span> <span data-ttu-id="f56ed-127">Klicken Sie auf **Weiter**.
+</span><span class="sxs-lookup"><span data-stu-id="f56ed-127">Click **Next**.</span></span>
 
    ![Seite „Repositoryquelle auswählen“][CL03]
 
-1. <span data-ttu-id="40c5c-129">Auf der Seite **Quelle Git-Repository**:</span><span class="sxs-lookup"><span data-stu-id="40c5c-129">On the **Source Git Repository** page:</span></span>
+1. <span data-ttu-id="f56ed-129">Auf der Seite **Quelle Git-Repository**:</span><span class="sxs-lookup"><span data-stu-id="f56ed-129">On the **Source Git Repository** page:</span></span>
 
-   <span data-ttu-id="40c5c-130">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-130">a.</span></span> <span data-ttu-id="40c5c-131">Geben Sie `https://github.com/spring-guides/gs-spring-boot-docker.git` für den **URI** ein.</span><span class="sxs-lookup"><span data-stu-id="40c5c-131">For **URI**, enter `https://github.com/spring-guides/gs-spring-boot-docker.git`.</span></span> <span data-ttu-id="40c5c-132">Dadurch sollten die Felder **Host** und **Repositorypfad** automatisch mit den korrekten Werten aufgefüllt werden.</span><span class="sxs-lookup"><span data-stu-id="40c5c-132">This step should automatically populate the **Host** and **Repository path** fields with the correct values.</span></span>
+   <span data-ttu-id="f56ed-130">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-130">a.</span></span> <span data-ttu-id="f56ed-131">Geben Sie `https://github.com/spring-guides/gs-spring-boot-docker.git` für den **URI** ein.</span><span class="sxs-lookup"><span data-stu-id="f56ed-131">For **URI**, enter `https://github.com/spring-guides/gs-spring-boot-docker.git`.</span></span> <span data-ttu-id="f56ed-132">Dadurch sollten die Felder **Host** und **Repositorypfad** automatisch mit den korrekten Werten aufgefüllt werden.</span><span class="sxs-lookup"><span data-stu-id="f56ed-132">This step should automatically populate the **Host** and **Repository path** fields with the correct values.</span></span>
    
-   <span data-ttu-id="40c5c-133">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-133">b.</span></span> <span data-ttu-id="40c5c-134">Da das Spring Boot-Repository öffentlich ist, müssen Sie nicht Ihren Git-Benutzernamen und das Kennwort eingeben.</span><span class="sxs-lookup"><span data-stu-id="40c5c-134">The Spring Boot repository is public, so you should not have to enter your Git username and password.</span></span>
+   <span data-ttu-id="f56ed-133">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-133">b.</span></span> <span data-ttu-id="f56ed-134">Da das Spring Boot-Repository öffentlich ist, müssen Sie nicht Ihren Git-Benutzernamen und das Kennwort eingeben.</span><span class="sxs-lookup"><span data-stu-id="f56ed-134">The Spring Boot repository is public, so you should not have to enter your Git username and password.</span></span>
    
-   <span data-ttu-id="40c5c-135">c.</span><span class="sxs-lookup"><span data-stu-id="40c5c-135">c.</span></span> <span data-ttu-id="40c5c-136">Klicken Sie auf **Weiter**.
-</span><span class="sxs-lookup"><span data-stu-id="40c5c-136">Click **Next**.</span></span>
+   <span data-ttu-id="f56ed-135">c.</span><span class="sxs-lookup"><span data-stu-id="f56ed-135">c.</span></span> <span data-ttu-id="f56ed-136">Klicken Sie auf **Weiter**.
+</span><span class="sxs-lookup"><span data-stu-id="f56ed-136">Click **Next**.</span></span>
 
    ![Seite „Quelle Git-Repository“][CL04]
 
-1. <span data-ttu-id="40c5c-138">Klicken Sie auf der Seite **Verzweigungsauswahl** auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-138">On the **Branch Selection** page, click **Next**.</span></span>
+1. <span data-ttu-id="f56ed-138">Klicken Sie auf der Seite **Verzweigungsauswahl** auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-138">On the **Branch Selection** page, click **Next**.</span></span>
 
    ![Seite „Verzweigungsauswahl“][CL05]
 
-1. <span data-ttu-id="40c5c-140">Auf der Seite **Lokales Ziel**:</span><span class="sxs-lookup"><span data-stu-id="40c5c-140">On the **Local Destination** page:</span></span>
+1. <span data-ttu-id="f56ed-140">Auf der Seite **Lokales Ziel**:</span><span class="sxs-lookup"><span data-stu-id="f56ed-140">On the **Local Destination** page:</span></span>
 
-   <span data-ttu-id="40c5c-141">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-141">a.</span></span> <span data-ttu-id="40c5c-142">Geben Sie den lokalen Ordner an, in dem Ihr lokales Repository angelegt werden soll.</span><span class="sxs-lookup"><span data-stu-id="40c5c-142">Specify the local folder where you want your local repo.</span></span>
+   <span data-ttu-id="f56ed-141">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-141">a.</span></span> <span data-ttu-id="f56ed-142">Geben Sie den lokalen Ordner an, in dem Ihr lokales Repository angelegt werden soll.</span><span class="sxs-lookup"><span data-stu-id="f56ed-142">Specify the local folder where you want your local repo.</span></span>
    
-   <span data-ttu-id="40c5c-143">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-143">b.</span></span> <span data-ttu-id="40c5c-144">Klicken Sie auf **Weiter**.
-</span><span class="sxs-lookup"><span data-stu-id="40c5c-144">Click **Next**.</span></span>
+   <span data-ttu-id="f56ed-143">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-143">b.</span></span> <span data-ttu-id="f56ed-144">Klicken Sie auf **Weiter**.
+</span><span class="sxs-lookup"><span data-stu-id="f56ed-144">Click **Next**.</span></span>
 
    ![Seite „Lokales Ziel“][CL06]
 
-1. <span data-ttu-id="40c5c-146">Auf der Seite **Assistent zum Importieren von Projekten auswählen**:</span><span class="sxs-lookup"><span data-stu-id="40c5c-146">On the **Select a wizard to use for importing projects** page:</span></span>
+1. <span data-ttu-id="f56ed-146">Auf der Seite **Assistent zum Importieren von Projekten auswählen**:</span><span class="sxs-lookup"><span data-stu-id="f56ed-146">On the **Select a wizard to use for importing projects** page:</span></span>
 
-   <span data-ttu-id="40c5c-147">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-147">a.</span></span> <span data-ttu-id="40c5c-148">Wählen Sie **Als allgemeines Projekt importieren** aus.</span><span class="sxs-lookup"><span data-stu-id="40c5c-148">Select **Import as a general project**.</span></span>
+   <span data-ttu-id="f56ed-147">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-147">a.</span></span> <span data-ttu-id="f56ed-148">Wählen Sie **Als allgemeines Projekt importieren** aus.</span><span class="sxs-lookup"><span data-stu-id="f56ed-148">Select **Import as a general project**.</span></span>
    
-   <span data-ttu-id="40c5c-149">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-149">b.</span></span> <span data-ttu-id="40c5c-150">Klicken Sie auf **Weiter**.
-</span><span class="sxs-lookup"><span data-stu-id="40c5c-150">Click **Next**.</span></span>
+   <span data-ttu-id="f56ed-149">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-149">b.</span></span> <span data-ttu-id="f56ed-150">Klicken Sie auf **Weiter**.
+</span><span class="sxs-lookup"><span data-stu-id="f56ed-150">Click **Next**.</span></span>
 
    ![Seite „Assistent zum Importieren von Projekten auswählen“][CL07]
 
-1. <span data-ttu-id="40c5c-152">Auf der Seite **Projekte importieren**:</span><span class="sxs-lookup"><span data-stu-id="40c5c-152">On the **Import Projects** page:</span></span>
+1. <span data-ttu-id="f56ed-152">Auf der Seite **Projekte importieren**:</span><span class="sxs-lookup"><span data-stu-id="f56ed-152">On the **Import Projects** page:</span></span>
 
-   <span data-ttu-id="40c5c-153">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-153">a.</span></span> <span data-ttu-id="40c5c-154">Geben Sie Ihren Projektnamen an.</span><span class="sxs-lookup"><span data-stu-id="40c5c-154">Specify your project name.</span></span>
+   <span data-ttu-id="f56ed-153">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-153">a.</span></span> <span data-ttu-id="f56ed-154">Geben Sie Ihren Projektnamen an.</span><span class="sxs-lookup"><span data-stu-id="f56ed-154">Specify your project name.</span></span>
    
-   <span data-ttu-id="40c5c-155">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-155">b.</span></span> <span data-ttu-id="40c5c-156">Klicken Sie auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-156">Click **Finish**.</span></span>
+   <span data-ttu-id="f56ed-155">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-155">b.</span></span> <span data-ttu-id="f56ed-156">Klicken Sie auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-156">Click **Finish**.</span></span>
 
    ![Seite „Projekte importieren“][CL08]
 
-1. <span data-ttu-id="40c5c-158">Nachdem das Repository erfolgreich geklont wurde, wird eine Liste aller Dateien in Eclipse angezeigt.</span><span class="sxs-lookup"><span data-stu-id="40c5c-158">When the repository is cloned successfully, you see all the files listed in Eclipse.</span></span>
+1. <span data-ttu-id="f56ed-158">Nachdem das Repository erfolgreich geklont wurde, wird eine Liste aller Dateien in Eclipse angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f56ed-158">When the repository is cloned successfully, you see all the files listed in Eclipse.</span></span>
 
    ![Lokales Repository][CL09]
 
-### <a name="create-a-maven-project-from-your-local-repository"></a><span data-ttu-id="40c5c-160">Erstellen eines Maven-Projekts aus dem lokalen Repository</span><span class="sxs-lookup"><span data-stu-id="40c5c-160">Create a Maven project from your local repository</span></span>
+### <a name="create-a-maven-project-from-your-local-repository"></a><span data-ttu-id="f56ed-160">Erstellen eines Maven-Projekts aus dem lokalen Repository</span><span class="sxs-lookup"><span data-stu-id="f56ed-160">Create a Maven project from your local repository</span></span>
 
-<span data-ttu-id="40c5c-161">Das Docker-Repository von Spring Boot enthält ein abgeschlossenes Maven-Projekt, das Sie für dieses Tutorial verwenden können.</span><span class="sxs-lookup"><span data-stu-id="40c5c-161">The Spring Boot Docker repository contains a completed Maven project, which you will use for this tutorial.</span></span> 
+<span data-ttu-id="f56ed-161">Das Docker-Repository von Spring Boot enthält ein abgeschlossenes Maven-Projekt, das Sie für dieses Tutorial verwenden können.</span><span class="sxs-lookup"><span data-stu-id="f56ed-161">The Spring Boot Docker repository contains a completed Maven project, which you will use for this tutorial.</span></span> 
 
-1. <span data-ttu-id="40c5c-162">Klicken Sie auf **Datei** > **Importieren**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-162">Click **File** > **Import**.</span></span>
+1. <span data-ttu-id="f56ed-162">Klicken Sie auf **Datei** > **Importieren**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-162">Click **File** > **Import**.</span></span>
 
    ![Befehl zum Importieren im Menü „Datei“][CL01]
 
-1. <span data-ttu-id="40c5c-164">Wenn das Dialogfeld **Importieren** geöffnet wird:</span><span class="sxs-lookup"><span data-stu-id="40c5c-164">When the **Import** dialog box opens:</span></span>
+1. <span data-ttu-id="f56ed-164">Wenn das Dialogfeld **Importieren** geöffnet wird:</span><span class="sxs-lookup"><span data-stu-id="f56ed-164">When the **Import** dialog box opens:</span></span>
 
-   <span data-ttu-id="40c5c-165">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-165">a.</span></span> <span data-ttu-id="40c5c-166">Erweitern Sie **Maven**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-166">Expand **Maven**.</span></span>
+   <span data-ttu-id="f56ed-165">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-165">a.</span></span> <span data-ttu-id="f56ed-166">Erweitern Sie **Maven**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-166">Expand **Maven**.</span></span>
    
-   <span data-ttu-id="40c5c-167">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-167">b.</span></span> <span data-ttu-id="40c5c-168">Wählen Sie **Vorhandene Maven-Projekte**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-168">Select **Existing Maven Projects**.</span></span>
+   <span data-ttu-id="f56ed-167">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-167">b.</span></span> <span data-ttu-id="f56ed-168">Wählen Sie **Vorhandene Maven-Projekte**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-168">Select **Existing Maven Projects**.</span></span>
    
-   <span data-ttu-id="40c5c-169">c.</span><span class="sxs-lookup"><span data-stu-id="40c5c-169">c.</span></span> <span data-ttu-id="40c5c-170">Klicken Sie auf **Weiter**.
-</span><span class="sxs-lookup"><span data-stu-id="40c5c-170">Click **Next**.</span></span>
+   <span data-ttu-id="f56ed-169">c.</span><span class="sxs-lookup"><span data-stu-id="f56ed-169">c.</span></span> <span data-ttu-id="f56ed-170">Klicken Sie auf **Weiter**.
+</span><span class="sxs-lookup"><span data-stu-id="f56ed-170">Click **Next**.</span></span>
 
    ![Dialogfeld „Importieren“][MV01]
 
-1. <span data-ttu-id="40c5c-172">Auf der Seite **Maven-Projekte**:</span><span class="sxs-lookup"><span data-stu-id="40c5c-172">On the **Maven Projects** page:</span></span>
+1. <span data-ttu-id="f56ed-172">Auf der Seite **Maven-Projekte**:</span><span class="sxs-lookup"><span data-stu-id="f56ed-172">On the **Maven Projects** page:</span></span>
 
-   <span data-ttu-id="40c5c-173">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-173">a.</span></span> <span data-ttu-id="40c5c-174">Geben Sie unter **Stammverzeichnis** den **vollständigen** Ordner in Ihrem lokalen Repository an.</span><span class="sxs-lookup"><span data-stu-id="40c5c-174">For **Root Directory**, specify the **complete** folder in your local repository.</span></span>
+   <span data-ttu-id="f56ed-173">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-173">a.</span></span> <span data-ttu-id="f56ed-174">Geben Sie unter **Stammverzeichnis** den **vollständigen** Ordner in Ihrem lokalen Repository an.</span><span class="sxs-lookup"><span data-stu-id="f56ed-174">For **Root Directory**, specify the **complete** folder in your local repository.</span></span>
    
-   <span data-ttu-id="40c5c-175">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-175">b.</span></span> <span data-ttu-id="40c5c-176">Erweitern Sie den Abschnitt **Erweitert**, und geben Sie einen benutzerdefinierten Namen für **Namensvorlage** ein.</span><span class="sxs-lookup"><span data-stu-id="40c5c-176">Expand the **Advanced** section, and enter a custom name for **Name template**.</span></span>
+   <span data-ttu-id="f56ed-175">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-175">b.</span></span> <span data-ttu-id="f56ed-176">Erweitern Sie den Abschnitt **Erweitert**, und geben Sie einen benutzerdefinierten Namen für **Namensvorlage** ein.</span><span class="sxs-lookup"><span data-stu-id="f56ed-176">Expand the **Advanced** section, and enter a custom name for **Name template**.</span></span>
    
-   <span data-ttu-id="40c5c-177">c.</span><span class="sxs-lookup"><span data-stu-id="40c5c-177">c.</span></span> <span data-ttu-id="40c5c-178">Aktivieren Sie das Kontrollkästchen für die Datei **pom.xml** im Projekt.</span><span class="sxs-lookup"><span data-stu-id="40c5c-178">Select the box for the **pom.xml** file in the project.</span></span>
+   <span data-ttu-id="f56ed-177">c.</span><span class="sxs-lookup"><span data-stu-id="f56ed-177">c.</span></span> <span data-ttu-id="f56ed-178">Aktivieren Sie das Kontrollkästchen für die Datei **pom.xml** im Projekt.</span><span class="sxs-lookup"><span data-stu-id="f56ed-178">Select the box for the **pom.xml** file in the project.</span></span>
    
-   <span data-ttu-id="40c5c-179">d.</span><span class="sxs-lookup"><span data-stu-id="40c5c-179">d.</span></span> <span data-ttu-id="40c5c-180">Klicken Sie auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-180">Click **Finish**.</span></span>
+   <span data-ttu-id="f56ed-179">d.</span><span class="sxs-lookup"><span data-stu-id="f56ed-179">d.</span></span> <span data-ttu-id="f56ed-180">Klicken Sie auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-180">Click **Finish**.</span></span>
 
    ![Seite „Maven-Projekte“][MV02]
 
-1. <span data-ttu-id="40c5c-182">Nachdem das Maven-Projekt erfolgreich geöffnet wurde, wird ein zweites Projekt in Eclipse aufgelistet.</span><span class="sxs-lookup"><span data-stu-id="40c5c-182">When the Maven project is opened successfully, you see a second project listed in Eclipse.</span></span>
+1. <span data-ttu-id="f56ed-182">Nachdem das Maven-Projekt erfolgreich geöffnet wurde, wird ein zweites Projekt in Eclipse aufgelistet.</span><span class="sxs-lookup"><span data-stu-id="f56ed-182">When the Maven project is opened successfully, you see a second project listed in Eclipse.</span></span>
 
    ![Lokales Maven-Projekt][MV03]
 
-## <a name="build-your-spring-boot-app-by-using-maven"></a><span data-ttu-id="40c5c-184">Erstellen der Spring Boot-App mithilfe von Maven</span><span class="sxs-lookup"><span data-stu-id="40c5c-184">Build your Spring Boot app by using Maven</span></span>
+## <a name="build-your-spring-boot-app-by-using-maven"></a><span data-ttu-id="f56ed-184">Erstellen der Spring Boot-App mithilfe von Maven</span><span class="sxs-lookup"><span data-stu-id="f56ed-184">Build your Spring Boot app by using Maven</span></span>
 
-1. <span data-ttu-id="40c5c-185">Wählen Sie im Projekt-Explorer von Eclipse das Maven-Projekt aus.</span><span class="sxs-lookup"><span data-stu-id="40c5c-185">In the Eclipse Project Explorer, select the Maven project.</span></span>
+1. <span data-ttu-id="f56ed-185">Wählen Sie im Projekt-Explorer von Eclipse das Maven-Projekt aus.</span><span class="sxs-lookup"><span data-stu-id="f56ed-185">In the Eclipse Project Explorer, select the Maven project.</span></span>
 
-1. <span data-ttu-id="40c5c-186">Klicken Sie auf **Ausführen** > **Ausführen als** > **Maven-Build**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-186">Click **Run** > **Run As** > **Maven build**.</span></span>
+1. <span data-ttu-id="f56ed-186">Klicken Sie auf **Ausführen** > **Ausführen als** > **Maven-Build**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-186">Click **Run** > **Run As** > **Maven build**.</span></span>
 
    ![Befehle zum Ausführen als Maven-Build][BU01]
 
-1. <span data-ttu-id="40c5c-188">Nachdem die Anwendung erfolgreich erstellt wurde, wird im Konsolenfenster der Status angezeigt.</span><span class="sxs-lookup"><span data-stu-id="40c5c-188">When your application is successfully built, the console window shows the status.</span></span>
+1. <span data-ttu-id="f56ed-188">Nachdem die Anwendung erfolgreich erstellt wurde, wird im Konsolenfenster der Status angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f56ed-188">When your application is successfully built, the console window shows the status.</span></span>
 
    ![Erfolgreicher Maven-Build][BU02]
 
-## <a name="publish-your-web-app-to-azure-by-using-a-docker-container"></a><span data-ttu-id="40c5c-190">Veröffentlichen Ihrer Web-App in Azure mithilfe eines Docker-Containers</span><span class="sxs-lookup"><span data-stu-id="40c5c-190">Publish your web app to Azure by using a Docker container</span></span>
+## <a name="publish-your-web-app-to-azure-by-using-a-docker-container"></a><span data-ttu-id="f56ed-190">Veröffentlichen Ihrer Web-App in Azure mithilfe eines Docker-Containers</span><span class="sxs-lookup"><span data-stu-id="f56ed-190">Publish your web app to Azure by using a Docker container</span></span>
 
-1. <span data-ttu-id="40c5c-191">Wählen Sie im Projekt-Explorer von Eclipse das Maven-Projekt aus.</span><span class="sxs-lookup"><span data-stu-id="40c5c-191">In the Eclipse Project Explorer, select the Maven project.</span></span>
+1. <span data-ttu-id="f56ed-191">Wählen Sie im Projekt-Explorer von Eclipse das Maven-Projekt aus.</span><span class="sxs-lookup"><span data-stu-id="f56ed-191">In the Eclipse Project Explorer, select the Maven project.</span></span>
 
-1. <span data-ttu-id="40c5c-192">Klicken Sie auf das Azure-Menü **Veröffentlichen** und anschließend auf **Publish as Docker Container** (Als Docker-Container veröffentlichen).</span><span class="sxs-lookup"><span data-stu-id="40c5c-192">Click the Azure **Publish** menu, and then click **Publish as Docker Container**.</span></span>
+1. <span data-ttu-id="f56ed-192">Klicken Sie auf das Azure-Menü **Veröffentlichen** und anschließend auf **Publish as Docker Container** (Als Docker-Container veröffentlichen).</span><span class="sxs-lookup"><span data-stu-id="f56ed-192">Click the Azure **Publish** menu, and then click **Publish as Docker Container**.</span></span>
 
    ![Befehl „Publish as Docker Container“ (Als Docker-Container veröffentlichen)][PU01]
 
-1. <span data-ttu-id="40c5c-194">Wenn das Dialogfeld **Deploying Docker Container on Azure** (Docker-Container wird in Azure bereitgestellt) angezeigt wird:</span><span class="sxs-lookup"><span data-stu-id="40c5c-194">When the **Deploying Docker Container on Azure** dialog box appears:</span></span>
+1. <span data-ttu-id="f56ed-194">Wenn das Dialogfeld **Deploying Docker Container on Azure** (Docker-Container wird in Azure bereitgestellt) angezeigt wird:</span><span class="sxs-lookup"><span data-stu-id="f56ed-194">When the **Deploying Docker Container on Azure** dialog box appears:</span></span>
 
-   <span data-ttu-id="40c5c-195">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-195">a.</span></span> <span data-ttu-id="40c5c-196">Geben Sie einen benutzerdefinierten Docker-Imagenamen ein.</span><span class="sxs-lookup"><span data-stu-id="40c5c-196">Enter a custom Docker image name.</span></span>
+   <span data-ttu-id="f56ed-195">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-195">a.</span></span> <span data-ttu-id="f56ed-196">Geben Sie einen benutzerdefinierten Docker-Imagenamen ein.</span><span class="sxs-lookup"><span data-stu-id="f56ed-196">Enter a custom Docker image name.</span></span>
    
-   <span data-ttu-id="40c5c-197">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-197">b.</span></span> <span data-ttu-id="40c5c-198">Geben Sie für **Artifact to deploy** (Bereitzustellendes Artefakt) den Pfad zur Datei **gs-spring-boot-docker-0.1.0.jar** an, die Sie soeben erstellt haben.</span><span class="sxs-lookup"><span data-stu-id="40c5c-198">For **Artifact to deploy**, specify the path to the **gs-spring-boot-docker-0.1.0.jar** file you just built.</span></span>
+   <span data-ttu-id="f56ed-197">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-197">b.</span></span> <span data-ttu-id="f56ed-198">Geben Sie für **Artifact to deploy** (Bereitzustellendes Artefakt) den Pfad zur Datei **gs-spring-boot-docker-0.1.0.jar** an, die Sie soeben erstellt haben.</span><span class="sxs-lookup"><span data-stu-id="f56ed-198">For **Artifact to deploy**, specify the path to the **gs-spring-boot-docker-0.1.0.jar** file you just built.</span></span>
 
    ![Angeben von Docker-Optionen][PU02]
 
-   <span data-ttu-id="40c5c-200">Alle vorhandenen Docker-Hosts werden angezeigt.</span><span class="sxs-lookup"><span data-stu-id="40c5c-200">Any existing Docker hosts are displayed.</span></span> 
+   <span data-ttu-id="f56ed-200">Alle vorhandenen Docker-Hosts werden angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f56ed-200">Any existing Docker hosts are displayed.</span></span> 
 
-1. <span data-ttu-id="40c5c-201">Fahren Sie für die Bereitstellung in einem vorhandenen Host mit Schritt 5 fort.</span><span class="sxs-lookup"><span data-stu-id="40c5c-201">If you choose to deploy to an existing host, you can skip to step 5.</span></span> <span data-ttu-id="40c5c-202">Führen Sie andernfalls die folgenden Schritte aus, um einen Host zu erstellen:</span><span class="sxs-lookup"><span data-stu-id="40c5c-202">Otherwise, use the following steps to create a host:</span></span>
+1. <span data-ttu-id="f56ed-201">Fahren Sie für die Bereitstellung in einem vorhandenen Host mit Schritt 5 fort.</span><span class="sxs-lookup"><span data-stu-id="f56ed-201">If you choose to deploy to an existing host, you can skip to step 5.</span></span> <span data-ttu-id="f56ed-202">Führen Sie andernfalls die folgenden Schritte aus, um einen Host zu erstellen:</span><span class="sxs-lookup"><span data-stu-id="f56ed-202">Otherwise, use the following steps to create a host:</span></span>
 
-   <span data-ttu-id="40c5c-203">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-203">a.</span></span> <span data-ttu-id="40c5c-204">Klicken Sie auf **Hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-204">Click **Add**.</span></span>
+   <span data-ttu-id="f56ed-203">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-203">a.</span></span> <span data-ttu-id="f56ed-204">Klicken Sie auf **Hinzufügen**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-204">Click **Add**.</span></span>
 
       ![Hinzufügen eines neuen Docker-Hosts][PU03]
 
-   <span data-ttu-id="40c5c-206">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-206">b.</span></span> <span data-ttu-id="40c5c-207">Wenn das Dialogfeld **Create Docker Host** (Docker-Host erstellen) angezeigt wird, können Sie wahlweise die Standardeinstellungen übernehmen oder beliebige benutzerdefinierte Einstellungen für den neuen Docker-Host angeben.</span><span class="sxs-lookup"><span data-stu-id="40c5c-207">When the **Create Docker Host** dialog box appears, you can choose to accept the defaults, or you can specify any custom settings for your new Docker host.</span></span> <span data-ttu-id="40c5c-208">(Ausführliche Beschreibungen der verschiedenen Einstellungen finden Sie unter [Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ][Publish Container with Azure Toolkit].) Klicken Sie auf **Weiter**, nachdem Sie die gewünschten Einstellungen eingegeben haben.</span><span class="sxs-lookup"><span data-stu-id="40c5c-208">(For detailed descriptions of the various settings, see [Publish a web app as a Docker container by using the Azure Toolkit for IntelliJ][Publish Container with Azure Toolkit].) Click **Next** when you have specified which settings to use.</span></span>
+   <span data-ttu-id="f56ed-206">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-206">b.</span></span> <span data-ttu-id="f56ed-207">Wenn das Dialogfeld **Create Docker Host** (Docker-Host erstellen) angezeigt wird, können Sie wahlweise die Standardeinstellungen übernehmen oder beliebige benutzerdefinierte Einstellungen für den neuen Docker-Host angeben.</span><span class="sxs-lookup"><span data-stu-id="f56ed-207">When the **Create Docker Host** dialog box appears, you can choose to accept the defaults, or you can specify any custom settings for your new Docker host.</span></span> <span data-ttu-id="f56ed-208">(Ausführliche Beschreibungen der verschiedenen Einstellungen finden Sie unter [Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ][Publish Container with Azure Toolkit].) Klicken Sie auf **Weiter**, nachdem Sie die gewünschten Einstellungen eingegeben haben.</span><span class="sxs-lookup"><span data-stu-id="f56ed-208">(For detailed descriptions of the various settings, see [Publish a web app as a Docker container by using the Azure Toolkit for IntelliJ][Publish Container with Azure Toolkit].) Click **Next** when you have specified which settings to use.</span></span>
 
       ![Angeben von Docker-Hostoptionen][PU04]
 
-   <span data-ttu-id="40c5c-210">c.</span><span class="sxs-lookup"><span data-stu-id="40c5c-210">c.</span></span> <span data-ttu-id="40c5c-211">Sie können wahlweise vorhandene Anmeldeinformationen aus einem Azure-Schlüsseltresor verwenden oder neue Docker-Anmeldeinformationen eingeben.</span><span class="sxs-lookup"><span data-stu-id="40c5c-211">You can choose to use existing login credentials from an Azure key vault, or you can choose to enter new Docker login credentials.</span></span> <span data-ttu-id="40c5c-212">Klicken Sie auf **Fertig stellen**, nachdem Sie Ihre Optionen angegeben haben.</span><span class="sxs-lookup"><span data-stu-id="40c5c-212">Click **Finish** when you have specified your options.</span></span>
+   <span data-ttu-id="f56ed-210">c.</span><span class="sxs-lookup"><span data-stu-id="f56ed-210">c.</span></span> <span data-ttu-id="f56ed-211">Sie können wahlweise vorhandene Anmeldeinformationen aus einem Azure-Schlüsseltresor verwenden oder neue Docker-Anmeldeinformationen eingeben.</span><span class="sxs-lookup"><span data-stu-id="f56ed-211">You can choose to use existing login credentials from an Azure key vault, or you can choose to enter new Docker login credentials.</span></span> <span data-ttu-id="f56ed-212">Klicken Sie auf **Fertig stellen**, nachdem Sie Ihre Optionen angegeben haben.</span><span class="sxs-lookup"><span data-stu-id="f56ed-212">Click **Finish** when you have specified your options.</span></span>
 
       ![Angeben von Docker-Hostanmeldeinformationen][PU05]
 
-1. <span data-ttu-id="40c5c-214">Wählen Sie Ihren Docker-Host aus, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-214">Select your Docker host, and then click **Next**.</span></span>
+1. <span data-ttu-id="f56ed-214">Wählen Sie Ihren Docker-Host aus, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-214">Select your Docker host, and then click **Next**.</span></span>
 
    ![Auswählen des Docker-Hosts, der verwendet werden soll][PU06]
 
-1. <span data-ttu-id="40c5c-216">Geben Sie auf der letzten Seite des Dialogfelds **Deploying Docker Container on Azure** (Docker-Container wird in Azure bereitgestellt) folgende Optionen an:</span><span class="sxs-lookup"><span data-stu-id="40c5c-216">On the last page of the **Deploying Docker Container on Azure** dialog box, specify the following options:</span></span>
+1. <span data-ttu-id="f56ed-216">Geben Sie auf der letzten Seite des Dialogfelds **Deploying Docker Container on Azure** (Docker-Container wird in Azure bereitgestellt) folgende Optionen an:</span><span class="sxs-lookup"><span data-stu-id="f56ed-216">On the last page of the **Deploying Docker Container on Azure** dialog box, specify the following options:</span></span>
 
-   <span data-ttu-id="40c5c-217">a.</span><span class="sxs-lookup"><span data-stu-id="40c5c-217">a.</span></span> <span data-ttu-id="40c5c-218">Sie können entweder einen benutzerdefinierten Namen für den Container angeben, der Ihren Docker-Container hostet, oder die Standardeinstellung übernehmen.</span><span class="sxs-lookup"><span data-stu-id="40c5c-218">You can choose to specify a custom name for the container that will host your Docker container, or you can accept the default.</span></span>
+   <span data-ttu-id="f56ed-217">a.</span><span class="sxs-lookup"><span data-stu-id="f56ed-217">a.</span></span> <span data-ttu-id="f56ed-218">Sie können entweder einen benutzerdefinierten Namen für den Container angeben, der Ihren Docker-Container hostet, oder die Standardeinstellung übernehmen.</span><span class="sxs-lookup"><span data-stu-id="f56ed-218">You can choose to specify a custom name for the container that will host your Docker container, or you can accept the default.</span></span>
 
-   <span data-ttu-id="40c5c-219">b.</span><span class="sxs-lookup"><span data-stu-id="40c5c-219">b.</span></span> <span data-ttu-id="40c5c-220">Geben Sie die TCP-Ports für Ihren Docker-Host mit folgender Syntax ein: *[externer Port]*:*[interner Port]*.</span><span class="sxs-lookup"><span data-stu-id="40c5c-220">Enter the TCP ports for your docker host by using the following syntax: *[external port]*:*[internal port]*.</span></span> <span data-ttu-id="40c5c-221">**80:8080** gibt beispielsweise den externen Port 80 und den internen Spring Boot-Standardport 8080 an.</span><span class="sxs-lookup"><span data-stu-id="40c5c-221">For example, **80:8080** specifies an external port of 80 and the default internal Spring Boot port of 8080.</span></span>
+   <span data-ttu-id="f56ed-219">b.</span><span class="sxs-lookup"><span data-stu-id="f56ed-219">b.</span></span> <span data-ttu-id="f56ed-220">Geben Sie die TCP-Ports für Ihren Docker-Host mit folgender Syntax ein: *[externer Port]*:*[interner Port]*.</span><span class="sxs-lookup"><span data-stu-id="f56ed-220">Enter the TCP ports for your docker host by using the following syntax: *[external port]*:*[internal port]*.</span></span> <span data-ttu-id="f56ed-221">**80:8080** gibt beispielsweise den externen Port 80 und den internen Spring Boot-Standardport 8080 an.</span><span class="sxs-lookup"><span data-stu-id="f56ed-221">For example, **80:8080** specifies an external port of 80 and the default internal Spring Boot port of 8080.</span></span>
    
-      <span data-ttu-id="40c5c-222">Wenn Sie den internen Port angepasst haben (beispielsweise durch Bearbeiten der Datei „application.yml“), müssen Sie diese Portnummer angeben, damit das Routing in Azure ordnungsgemäß funktioniert.</span><span class="sxs-lookup"><span data-stu-id="40c5c-222">If you have customized your internal port (for example, by editing the application.yml file), you need to specify the port number for the correct routing to occur in Azure.</span></span>
+      <span data-ttu-id="f56ed-222">Wenn Sie den internen Port angepasst haben (beispielsweise durch Bearbeiten der Datei „application.yml“), müssen Sie diese Portnummer angeben, damit das Routing in Azure ordnungsgemäß funktioniert.</span><span class="sxs-lookup"><span data-stu-id="f56ed-222">If you have customized your internal port (for example, by editing the application.yml file), you need to specify the port number for the correct routing to occur in Azure.</span></span>
 
-   <span data-ttu-id="40c5c-223">c.</span><span class="sxs-lookup"><span data-stu-id="40c5c-223">c.</span></span> <span data-ttu-id="40c5c-224">Klicken Sie nach dem Konfigurieren dieser Optionen auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="40c5c-224">After you configure these options, click **Finish**.</span></span>
+   <span data-ttu-id="f56ed-223">c.</span><span class="sxs-lookup"><span data-stu-id="f56ed-223">c.</span></span> <span data-ttu-id="f56ed-224">Klicken Sie nach dem Konfigurieren dieser Optionen auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="f56ed-224">After you configure these options, click **Finish**.</span></span>
 
    ![Bereitstellen eines Docker-Containers in Azure][PU07]
 
-1. <span data-ttu-id="40c5c-226">Nachdem die Veröffentlichung des Azure-Toolkits abgeschlossen ist, zeigt das Azure-Aktivitätsprotokoll den Status **Veröffentlicht** an.</span><span class="sxs-lookup"><span data-stu-id="40c5c-226">When the Azure Toolkit has finished publishing, the Azure Activity Log displays **Published** for the status.</span></span>
+1. <span data-ttu-id="f56ed-226">Nachdem die Veröffentlichung des Azure-Toolkits abgeschlossen ist, zeigt das Azure-Aktivitätsprotokoll den Status **Veröffentlicht** an.</span><span class="sxs-lookup"><span data-stu-id="f56ed-226">When the Azure Toolkit has finished publishing, the Azure Activity Log displays **Published** for the status.</span></span>
 
    ![Docker-Host erfolgreich bereitgestellt][PU08]
 
-## <a name="next-steps"></a><span data-ttu-id="40c5c-228">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="40c5c-228">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="f56ed-228">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="f56ed-228">Next steps</span></span>
 
-<span data-ttu-id="40c5c-229">Zusätzliche Ressourcen für Docker finden Sie auf der offiziellen [Docker-Website].</span><span class="sxs-lookup"><span data-stu-id="40c5c-229">For additional resources for Docker, see the official [Docker website].</span></span>
+<span data-ttu-id="f56ed-229">Zusätzliche Ressourcen für Docker finden Sie auf der offiziellen [Docker-Website].</span><span class="sxs-lookup"><span data-stu-id="f56ed-229">For additional resources for Docker, see the official [Docker website].</span></span>
 
-[!INCLUDE [azure-toolkit-additional-resources](../includes/azure-toolkit-additional-resources.md)]
+[!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
 <!-- URL List -->
 
 [Azure Management Portal]: http://go.microsoft.com/fwlink/?LinkID=512959
-[Deploy Spring Boot on Linux in ACS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux
+[Deploy Spring Boot on Linux in AKS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: azure-toolkit-for-eclipse-publish-as-docker-container.md
 [Spring Boot]: http://projects.spring.io/spring-boot/
