@@ -1,0 +1,1 @@
+Weitere Informationen zum Erstellen und Bereitstellen von Java-Apps in Azure finden Sie im [Java Developer Center](https://docs.microsoft.com/java/api).
