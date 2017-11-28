@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 10/11/2017
+ms.date: 11/01/2017
 ms.author: asirveda;robmcm
 ms.custom: mvc
-ms.openlocfilehash: 44c20e9084d53fa366137fc191726aaa4be177f2
-ms.sourcegitcommit: 7f8538e41c833deb69c300ad3431a431136a1f3e
+ms.openlocfilehash: 7f72a0eaeb932b400cd12a3ccc43706e890aebf6
+ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/18/2017
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-container-service"></a>Bereitstellen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service
 
@@ -28,7 +28,7 @@ Das **[Spring Framework]** ist ein gängiges Open-Source-Framework, mit dem Java
 
 **[Kubernetes]** und **[Docker]** sind Open-Source-Lösungen, mit denen Entwickler die Bereitstellung, Skalierung und Verwaltung ihrer in Containern ausgeführten Anwendungen automatisieren können.
 
-In diesem Tutorial wird die Kombination dieser beiden gängigen Open-Source-Technologien zum Entwickeln und Bereitstellen einer Spring Boot-Anwendung in Microsoft Azure erläutert. Genauer gesagt verwenden Sie *[Spring Boot]* für die Anwendungsentwicklung, *[Kubernetes]* für die Containerbereitstellung und [Azure Container Service (ACS)] zum Hosten der Anwendung.
+In diesem Tutorial wird die Kombination dieser beiden gängigen Open-Source-Technologien zum Entwickeln und Bereitstellen einer Spring Boot-Anwendung in Microsoft Azure erläutert. Genauer gesagt verwenden Sie *[Spring Boot]* für die Anwendungsentwicklung, *[Kubernetes]* für die Containerbereitstellung und [Azure Container Service (AKS)] zum Hosten der Anwendung.
 
 ### <a name="prerequisites"></a>Voraussetzungen
 
@@ -189,7 +189,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
 >
 > `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
 
-## <a name="create-a-kubernetes-cluster-on-acs-using-the-azure-cli"></a>Erstellen eines Kubernetes-Clusters in ACS über die Azure-Befehlszeilenschnittstelle
+## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Erstellen eines Kubernetes-Clusters in AKS über die Azure-Befehlszeilenschnittstelle
 
 1. Erstellen Sie einen Kubernetes-Cluster in Azure Container Service. Mit dem folgenden Befehl wird ein *Kubernetes*-Cluster in der Ressourcengruppe *wingtiptoys-kubernetes* mit *wingtiptoys-containerservice* als Clustername und *wingtiptoys-kubernetes* als DNS-Präfix erstellt:
    ```azurecli
@@ -326,7 +326,7 @@ Weitere Beispiele zur Verwendung benutzerdefinierter Docker-Images mit Azure fin
 <!-- URL List -->
 
 [Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
-[Azure Container Service (ACS)]: https://azure.microsoft.com/services/container-service/
+[Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
 [Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
