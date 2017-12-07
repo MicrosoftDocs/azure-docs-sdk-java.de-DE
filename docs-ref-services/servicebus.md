@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: f7c2b1fd35fbb9dbdc782577c3464b7a38977254
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 6fccbc76a3600e2bbe43e4332c6146d2be81b6c9
+ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="service-bus-libraries-for-java"></a>Service Bus-Bibliotheken für Java
 
@@ -29,7 +29,7 @@ Service Bus Premium bietet hochverfügbares und robustes Messaging sowie eine we
 
 Service Bus Premium ist ein vollständig verwaltetes Angebot mit dedizierter, für die einzelnen Mandanten reservierter Kapazität und zeichnet sich durch planbare Leistung sowie durch ein einfaches, kapazitätsorientiertes Preismodell und erheblich geringere Gesamtkosten aus als kommerzielle lokale Broker. Für viele Kunden kann Service Bus Premium schon heute dedizierte lokale Messagingcluster ersetzen – selbst wenn die damit verbundenen Workloads nicht in der Cloud ausgeführt werden. 
 
-Weitere Informationen zu Service Bus-Konzepten finden Sie in der [Service Bus-Messaging-Dokumentation](https://docs.microsoft.com/en-us/azure/service-bus-messaging/). 
+Weitere Informationen zu Service Bus-Konzepten finden Sie in der [Service Bus-Messaging-Dokumentation](https://docs.microsoft.com/azure/service-bus-messaging/). 
 
 Für Java-Entwickler bietet Service Bus eine von Microsoft unterstützte native API. Darüber hinaus kann Service Bus auch mit AMQP 1.0-kompatiblen Bibliotheken wie dem JMS-Anbieter von Apache Qpid Proton verwendet werden.
 

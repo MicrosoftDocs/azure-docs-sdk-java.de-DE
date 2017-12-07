@@ -14,11 +14,11 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm;asirveda;martinsawicki
-ms.openlocfilehash: 128995cfd9122bbd6e32f2a31c35f206b5108ad6
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 666401b88c937909dc01d74fe204bb0099ebf55c
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="whats-new-in-the-azure-toolkit-for-eclipse"></a>Neuerungen im Azure-Toolkit für Eclipse
 
@@ -110,7 +110,7 @@ Die Version des Azure-Toolkits für Eclipse vom Mai 2015 umfasst folgende Erwei
 * **Verbesserte Benutzeroberfläche für die Serverauswahl**. Diese Version vereinfacht die Verwendung des Toolkits unter Windows-fremden Betriebssystemen.
 * **Unterstützung von Maven-Projekten**. Diese Version unterstützt Maven-Projekte als Anwendungen, was die Bereitstellung in Azure und die Konfiguration von Application Insights durch das Toolkit ermöglicht.
 * **Version 2.6 des Azure-SDKs**. Dieses neueste Update für das Azure-SDK ist die neue erforderliche Komponente, wenn das Toolkit unter Windows installiert wird. (Für Windows-fremde Betriebssysteme nicht relevant.)
-* **Bereitstellungsupgrade statt Neuveröffentlichung**. Wenn Sie ein Bereitstellungsprojekt veröffentlichen, nachdem die vorherige Version bereits aktiv ist, verwendet das Toolkit nun die Bereitstellungsupgradefunktion von Azure, anstatt wie bisher die vorherige Bereitstellung herunterzufahren und von Grund auf neu zu veröffentlichen. Dies ermöglicht eine möglichst unterbrechungsfreie Ausführung des Clouddienst, sorgt auch während Updates für hohe Verfügbarkeit und beschleunigt die Neuveröffentlichung.
+* **Bereitstellungsupgrade statt Neuveröffentlichung**. Wenn Sie ein Bereitstellungsprojekt veröffentlichen, nachdem die vorherige Version bereits aktiv ist, verwendet das Toolkit nun die Bereitstellungsupgradefunktion von Azure, anstatt wie bisher die vorherige Bereitstellung herunterzufahren und von Grund auf neu zu veröffentlichen. Dies ermöglicht eine möglichst unterbrechungsfreie Ausführung des Clouddienst, sorgt auch während Updates für Hochverfügbarkeit und beschleunigt die Neuveröffentlichung.
 * **Unterstützung der neuesten Version von Zulu OpenJDK (v8, Update 40)**. Weitere Informationen finden Sie auf der [Azul Systems-Webseite zu Zulu OpenJDK].
 
 ### <a name="march-9-2015"></a>9. März 2015
@@ -328,7 +328,7 @@ Die CTP-Version des Azure-Plug-Ins für Eclipse vom Dezember 2011 wird veröffe
 [Verwalten von Speicherkonten mit dem Azure-Explorer für Eclipse]: ./azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md
 [Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse]: ./azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
 
-[Azure Java Developer Center]: https://docs.microsoft.com/java/azure
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure
 
 [Azul Systems-Webseite zu Zulu OpenJDK]: http://go.microsoft.com/fwlink/?LinkId=402457
 [Azure-Dienstendpunkte]: http://go.microsoft.com/fwlink/?LinkID=699526
