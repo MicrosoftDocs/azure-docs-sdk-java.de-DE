@@ -10,27 +10,13 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 4/10/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: ff3ea805daefb3c0a413b109e431d2235a5dc5b8
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 425d4c3a5a347e4706e9c37ebd7247cf0d8c9846
+ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="azure-tools-for-java-developers"></a>Azure-Tools für Java-Entwickler
-
-## <a name="client-and-management-libraries"></a>Client- und Verwaltungsbibliotheken
-
-Mit den Azure-Bibliotheken für Java können Sie über Ihre Anwendungen eine Verbindung mit Diensten herstellen und Azure-Ressourcen verwalten. Fügen Sie Ihrer Projektdatei *pom.xml* die folgende Abhängigkeit hinzu, um die Verwaltungsbibliotheken in Ihre Maven-Projekte zu importieren:
-
-```XML
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure</artifactId>
-    <version>1.3.0</version>
-</dependency>
-```
-
-Weitere Informationen finden Sie in der [vollständigen Bibliothekenliste](java-sdk-azure-install.md) und in den [ersten Schritten mit den Azure-Bibliotheken für Java](java-sdk-azure-get-started.md).
 
 ## <a name="eclipse-and-intellij-plugins"></a>Eclipse- und IntelliJ-Plug-Ins
 
@@ -39,6 +25,13 @@ Mit den Azure-Toolkits für [Eclipse](eclipse/azure-toolkit-for-eclipse.md) und 
 ![IntelliJ-Toolkit mit dem Azure-Explorer](media/intelliJ-azure-explorer.png)
 
 [Erste Schritte mit dem Azure-Toolkit für Eclipse](https://docs.microsoft.com/azure/app-service-web/app-service-web-eclipse-create-hello-world-web-app) | [Erste Schritte mit dem Azure-Toolkit für IntelliJ](https://docs.microsoft.com/azure/app-service-web/app-service-web-intellij-create-hello-world-web-app) 
+
+## <a name="visual-studio-code"></a>Visual Studio Code
+
+VS Code ist ein einfacher, aber leistungsstarker Code-Editor für MacOS, Windows und Linux. VS Code unterstützt über verschiedene Erweiterungen für Projektunterstützung, Codevervollständigung, Debugging, Linting und Navigation einen einfachen, modernen Java-Entwicklungsworkflow.
+
+[Erste Schritte mit VS Code und Java](https://code.visualstudio.com/docs/java)
+[Java-Erweiterungspaket für VS Code](https://code.visualstudio.com/docs/java/extensions)  
 
 ## <a name="azure-cli-20"></a>Azure CLI 2.0
 

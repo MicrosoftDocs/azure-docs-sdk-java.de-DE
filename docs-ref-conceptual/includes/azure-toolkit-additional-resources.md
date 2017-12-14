@@ -13,6 +13,6 @@ Weitere Informationen zu den Azure-Toolkits für Eclipse und IntelliJ-IDEs finde
 
 Weitere Informationen zur Verwendung von Java mit Azure finden Sie unter den folgenden Links: 
 
-* [Azure Java Developer Center](https://azure.microsoft.com/develop/java/) 
+* [Azure für Java-Entwickler](https://docs.microsoft.com/java/azure/) 
 * [Java-Tools für Visual Studio Team Services](https://java.visualstudio.com/) 
 <!-- TODO: Add URLs for Java in VSCode here --> 

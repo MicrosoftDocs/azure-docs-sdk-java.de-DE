@@ -6,31 +6,30 @@ documentationcenter: java
 author: rmcmurray
 manager: routlaw
 editor: 
-keywords: Spring, Spring Boot, Spring Framework, Maven
 ms.assetid: 
 ms.service: multiple
 ms.workload: web
 ms.tgt_pltfrm: multiple
 ms.devlang: java
 ms.topic: article
-ms.date: 11/01/2017
+ms.date: 12/01/2017
 ms.author: robmcm;kevinzha
-ms.openlocfilehash: 548c294bd576b00b62994c09d82ec21ad72f4dbd
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.openlocfilehash: 7fa375ca805ddd037173f9dbd26b6631021e60a3
+ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/06/2017
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Bereitstellen einer Spring Boot-App in Azure Container Registry in Azure App Service mithilfe des Maven-Plug-Ins für Azure-Web-Apps
 
-Das **[Spring Framework]** ist ein gängiges Open-Source-Framework, mit dem Java-Entwickler Webanwendungen, mobile Anwendungen und API-Anwendungen erstellen können. In diesem Tutorial wird eine Beispiel-App verwendet, die mithilfe von [Spring Boot] erstellt wurde, einer konventionsbasierten Methode zur Verwendung von Spring für den schnellen Einstieg.
-
-In diesem Artikel wird veranschaulicht, wie Sie eine Spring Boot-Beispielanwendung in Azure Container Registry und dann mithilfe des Maven-Plug-Ins für Azure-Web-Apps in Azure App Services bereitstellen.
+In diesem Artikel wird veranschaulicht, wie Sie eine [Spring Boot]-Beispielanwendung in Azure Container Registry und dann mithilfe des Maven-Plug-Ins für Azure-Web-Apps in Azure App Services bereitstellen.
 
 > [!NOTE]
->
+> 
+> Das Maven-Plug-In für Azure-Web-Apps für [Apache Maven](http://maven.apache.org/) ermöglicht die nahtlose Integration von Azure App Service in Maven-Projekte und optimiert für Entwickler den Bereitstellungsprozess für Web-Apps in Azure App Service.
+> 
 > Das Maven-Plug-In für Azure-Web-Apps ist derzeit als Vorschauversion verfügbar. Zur Zeit wird nur FTP-Veröffentlichung unterstützt. Für die Zukunft sind jedoch weitere Features geplant.
->
+> 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -94,7 +93,7 @@ In diesem Abschnitt klonen Sie eine containerbasierte Spring Boot-Anwendung und 
 
 > [!NOTE]
 >
-> Wenn Sie Docker lokal verwenden, wird unter Umständen ein Fehler mit dem Hinweis angezeigt, dass Sie keine Verbindung mit Localhost an Port 2375 herstellen können. In diesem Fall müssen Sie möglicherweise die lokale Verwendung von Docker ohne TLS aktivieren. Öffnen Sie dazu die Docker-Einstellungen, und aktivieren Sie die Option **Expose Docker Daemon on TCP://localhost:2375 without TLS** (Docker-Daemon unter TCP://localhost:2375 ohne TLS verfügbar machen).
+> Wenn Sie Docker lokal verwenden, wird unter Umständen ein Fehler mit dem Hinweis angezeigt, dass Sie keine Verbindung mit Localhost an Port 2375 herstellen können. In diesem Fall müssen Sie möglicherweise die lokale Verwendung von Docker ohne TLS aktivieren. Öffnen Sie dazu die Docker-Einstellungen, und aktivieren Sie die Option **Expose daemon on TCP://localhost:2375 without TLS** (Daemon unter TCP://localhost:2375 ohne TLS verfügbar machen).
 >
 > ![Docker-Daemon am lokalen TCP-Port 2375 verfügbar machen][TL01]
 
@@ -383,7 +382,7 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 
 [Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure-Portal]: https://portal.azure.com/
 [Maven-Plug-In für Azure-Web-Apps]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin (Maven-Plug-In für Azure-Web-Apps)
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal

@@ -1,39 +1,37 @@
 ---
-title: "Erste Schritte mit den Azure-Bibliotheken für Java"
-description: Hier finden Sie Informationen zum Erstellen von Azure-Cloudressourcen und erfahren, wie Sie sie verbinden und in Ihren Java-Anwendungen nutzen.
+title: "Erste Schritte mit Azure für Java mithilfe von Eclipse"
+description: "Machen Sie sich mit der grundlegenden Verwendung der Azure-Bibliotheken für Java mit Ihrem eigenen Azure-Abonnement vertraut."
 keywords: Azure, Java, SDK, API, authentifizieren, erste Schritte
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 04/16/2017
+author: roygara
+ms.author: v-rogara
+manager: timlt
+ms.date: 10/30/2017
 ms.topic: get-started-article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: multiple
-ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: 69c75984f6274b5423614bd51c40957d3d509802
-ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
+ms.openlocfilehash: 1c1ef7b8646824c5c8bfcbbf5e0507c95ac1ee79
+ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/01/2017
 ---
-# <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für Java
+# <a name="get-started-with-the-azure-libraries-using-eclipse"></a>Erste Schritte mit den Azure-Bibliotheken mithilfe von Eclipse
 
-In diesem Leitfaden werden die Schritte zum Einrichten einer Entwicklungsumgebung für die Azure-Entwicklung in Java erläutert. Sie erstellen Azure-Ressourcen und verbinden Sie, um einige allgemeine Aufgaben (etwa Hochladen einer Datei oder Bereitstellen einer Webanwendung) auszuführen. Wenn Sie fertig sind, können Sie Azure-Dienste in Ihren eigenen Java-Anwendungen verwenden.
+In diesem Leitfaden werden die Schritte zum Einrichten einer Entwicklungsumgebung und zum Verwenden der Azure-Bibliotheken für Java erläutert. Sie erstellen einen Dienstprinzipal für die Authentifizierung mit Azure und führen Beispielcode aus, der Azure-Ressourcen in Ihrem Abonnement erstellt und verwendet. Die Verwendung von Eclipse ist für die Java-Entwicklung mit Azure optional. Es kann jede IDE mit Maven-Integration verwendet werden. Alternativ können Sie Ihren Code mit Maven über die Befehlszeile ausführen, wenn Sie keine IDE verwenden möchten.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - Ein Azure-Konto. Falls Sie noch kein Konto haben, können Sie eine [kostenlose Testversion](https://azure.microsoft.com/free/) verwenden.
 - [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) oder [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2).
-- [Java 8](https://www.azul.com/downloads/zulu/) (enthalten in Azure Cloud Shell)
-- [Maven 3](http://maven.apache.org/download.cgi) (enthalten in Azure Cloud Shell)
+- Die letzte stabile Version von [Eclipse](http://www.eclipse.org/downloads/)
 
 ## <a name="set-up-authentication"></a>Einrichten der Authentifizierung
 
 Die Java-Anwendung benötigt Lese- und Schreibberechtigungen in Ihrem Azure-Abonnement, um den Beispielcode in diesem Tutorial ausführen zu können. Erstellen Sie einen Dienstprinzipal, und konfigurieren Sie Ihre Anwendung so, dass sie mit dessen Anmeldeinformationen ausgeführt wird. Dienstprinzipale ermöglichen die Erstellung eines nicht interaktiven, Ihrer Identität zugeordneten Kontos, dem Sie nur die Berechtigungen erteilen, die zum Ausführen Ihrer App erforderlich sind.
 
-[Erstellen Sie einen Dienstprinzipal mithilfe der Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli), und erfassen Sie die Ausgabe. Geben Sie im Kennwortargument anstelle von `MY_SECURE_PASSWORD` ein [sicheres Kennwort](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-policy) an. Ihr Kennwort muss 8 bis 16 Zeichen lang sein und mindestens drei der folgenden Merkmale aufweisen:
+[Erstellen Sie einen Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli), um dem Code Berechtigungen zum Erstellen und Aktualisieren von Ressourcen in Ihrem Abonnement ohne direkte Verwendung Ihrer Kontoanmeldeinformationen zu erteilen. Erfassen Sie unbedingt die Ausgabe. Geben Sie im Kennwortargument anstelle von `MY_SECURE_PASSWORD` ein [sicheres Kennwort](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-policy) an. Ihr Kennwort muss 8 bis 16 Zeichen lang sein und mindestens drei der folgenden Merkmale aufweisen:
 
 * Kleinbuchstaben
 * Großbuchstaben
@@ -80,7 +78,7 @@ Ersetzen Sie die ersten vier Werte durch Folgendes:
 
 Speichern Sie diese Datei an einem sicheren Ort in Ihrem System, an dem sie vom Code gelesen werden kann. Sie können diese Datei für künftigen Code verwenden. Daher wird empfohlen, sie außerhalb der Anwendung in diesem Artikel zu speichern.
 
-Legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Authentifizierungsdatei in Ihrer Shell fest.   
+Legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Authentifizierungsdatei in Ihrer Shell fest.
 
 ```bash
 export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
@@ -97,16 +95,13 @@ Wenn Sie eine Windows-Umgebung verwenden, fügen Sie die Variable zu Ihren Syste
 > [!NOTE]
 > Der Beispielcode in diesem Leitfaden wird mithilfe des Maven-Erstellungstools erstellt und ausgeführt. Die Azure-Bibliotheken für Java können aber auch mit anderen Erstellungstools (beispielsweise Gradle) verwendet werden. 
 
-Erstellen Sie über die Befehlszeile ein Maven-Projekt in einem neuen Verzeichnis auf Ihrem System:
+Öffnen Sie Eclipse, und klicken Sie auf **File** -> **New** („Datei“ > „Neu“). Öffnen Sie in dem daraufhin angezeigten Fenster den Maven-Ordner, und klicken Sie auf „Maven Project“ (Maven-Projekt). 
 
-```
-mkdir java-azure-test
-cd java-azure-test
-mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp  \ 
--DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-```
+Behalten Sie die Standardwerte auf dem nächsten Bildschirm bei, und klicken Sie auf **Next** (Weiter). Gehen Sie auf diesem Bildschirm für Archetypen genauso vor.
 
-Dadurch wird ein einfaches Maven-Projekt unter dem Ordner `testAzureApp` erstellt. Fügen Sie dem Projekt `pom.xml` die folgenden Einträge hinzu, um die Bibliotheken zu importieren, die im Beispielcode dieses Tutorials verwendet werden.
+Geben Sie auf dem Bildschirm mit entsprechender Eingabeaufforderung für „groupID“, „ArtifactID usw. Folgendes ein: Geben Sie „com.fabrikam“ für „groupID“ und „AzureApp“ für „artifactID“ ein.
+
+Öffnen Sie nun die Datei „pom.xml“. Fügen Sie im Tag `dependencies` den folgenden Code hinzu:
 
 ```XML
 <dependency>
@@ -126,25 +121,23 @@ Dadurch wird ein einfaches Maven-Projekt unter dem Ordner `testAzureApp` erstell
 </dependency>
 ```
 
-Fügen Sie unter dem Element `project` der obersten Ebene einen Eintrag vom Typ `build` hinzu, um die Beispiele mithilfe von [maven-exec-plugin](http://www.mojohaus.org/exec-maven-plugin/) auszuführen:
-
-```XML
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <configuration>
-                <mainClass>com.fabrikam.testAzureApp.AzureApp</mainClass>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
- ```
+Speichern Sie nun die Datei „pom.xml“. Dadurch wird Eclipse angewiesen, alle angegebenen Abhängigkeiten herunterzuladen. Dies kann einen Moment dauern.
    
+## <a name="install-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
+
+Das [Azure-Toolkit](azure-toolkit-for-eclipse.md) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Ausführliche Schritte finden Sie unter [Azure-Toolkit für Eclipse](azure-toolkit-for-eclipse.md).
+
+Klicken Sie auf das Menü **Help** (Hilfe) und dann auf **Install New Software** (Neue Software installieren).
+
+Geben Sie `http://dl.microsoft.com/eclipse` in das Feld **Work with:** (Arbeiten mit:) ein, und drücken Sie die EINGABETASTE.
+
+Aktivieren Sie anschließend das Kontrollkästchen neben **Azure toolkit for Java** (Azure-Toolkit für Java), und deaktivieren Sie das Kontrollkästchen **Contact all update sites during install to find required software** (Während der Installation alle Updatesites kontaktieren, um erforderliche Software zu finden). Klicken Sie anschließend auf „Next“ (Weiter).
+
 ## <a name="create-a-linux-virtual-machine"></a>Erstellen einer virtuellen Linux-Maschine
 
 Erstellen Sie im Projektverzeichnis `src/main/java` eine neue Datei namens `AzureApp.java`, und fügen Sie den folgenden Codeblock ein. Aktualisieren Sie die Variablen `userName` und `sshKey` mit echten Werten für Ihren Computer. Der Code erstellt einen neuen virtuellen Linux-Computer namens `testLinuxVM` in der Ressourcengruppe `sampleResourceGroup` in der Azure-Region „USA, Osten“.
+
+Öffnen Sie zum Erstellen eines `sshkey`-Elements Azure Cloud Shell, und geben Sie `ssh-keygen -t rsa -b 2048` ein. Geben Sie einen Namen für die Datei ein, und rufen Sie dann die PUBLIC-Datei auf, um den Schlüssel abzurufen, den Sie im folgenden Code verwenden. Kopieren Sie den Schlüssel, und fügen Sie ihn vollständig in die Variable `sshKey` ein.
 
 ```java
 package com.fabrikam.AzureApp;
@@ -153,6 +146,7 @@ import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.management.compute.VirtualMachine;
 import com.microsoft.azure.management.compute.KnownLinuxVirtualMachineImage;
 import com.microsoft.azure.management.compute.VirtualMachineSizeTypes;
+import com.microsoft.azure.management.appservice.PricingTier;
 import com.microsoft.azure.management.appservice.WebApp;
 import com.microsoft.azure.management.storage.StorageAccount;
 import com.microsoft.azure.management.storage.SkuName;
@@ -172,6 +166,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 public class AzureApp {
 
@@ -212,13 +207,8 @@ public class AzureApp {
 }
 ```
 
-Führen Sie das Beispiel über die Befehlszeile aus:
 
-```
-mvn compile exec:java
-```
-
-In der Konsole werden einige REST-Anforderungen und Antworten angezeigt, während das SDK die zugrunde liegenden Aufrufe an die REST-API ausführt, um den virtuellen Computer und die dazugehörigen Ressourcen zu konfigurieren. Überprüfen Sie den virtuellen Computer in Ihrem Abonnement nach Abschluss des Programms mithilfe der Azure CLI 2.0:
+In der Konsole werden einige REST-Anforderungen und Antworten angezeigt, während das SDK die zugrunde liegenden Aufrufe an die Azure-REST-API ausführt, um den virtuellen Computer und die dazugehörigen Ressourcen zu konfigurieren. Überprüfen Sie den virtuellen Computer in Ihrem Abonnement nach Abschluss des Programms mithilfe der Azure CLI 2.0:
 
 ```azurecli-interactive
 az vm list --resource-group sampleVmResourceGroup
@@ -266,16 +256,11 @@ Ersetzen Sie die main-Methode in `AzureApp.java` durch die im Anschluss angegebe
 
 Führen Sie den Code wie zuvor mit Maven aus:
 
-```
-mvn clean compile exec:java
-```
-
 Öffnen Sie die Anwendung über die Befehlszeilenschnittstelle in einem Browser:
 
 ```azurecli-interactive
 az appservice web browse --resource-group sampleWebResourceGroup --name YOUR_APP_NAME
 ```
-
 Entfernen Sie die Web-App und den Plan aus Ihrem Abonnement, nachdem Sie die Bereitstellung überprüft haben.
 
 ```azurecli-interactive
@@ -365,61 +350,57 @@ az group delete --name sampleSqlResourceGroup
 Ersetzen Sie die aktuelle main-Methode in `AzureApp.java` durch den im Anschluss angegebenen Code. Dieser Code erstellt ein [Azure-Speicherkonto](https://docs.microsoft.com/azure/storage/storage-introduction) und anschließend unter Verwendung von Azure Storage-Bibliotheken für Java eine neue Textdatei in der Cloud.
 
 ```java
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    try {
+        try {
 
-        // use the properties file with the service principal information to authenticate
-        // change the name of the environment variable if you used a different name in the previous step
-        final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
-        Azure azure = Azure.configure()
-                .withLogLevel(LogLevel.BASIC)
-                .authenticate(credFile)
-                .withDefaultSubscription();
+            // use the properties file with the service principal information to authenticate
+            // change the name of the environment variable if you used a different name in the previous step
+            final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
+            Azure azure = Azure.configure()
+                    .withLogLevel(LogLevel.BASIC)
+                    .authenticate(credFile)
+                    .withDefaultSubscription();
 
-        // create a new storage account
-        String storageAccountName = SdkContext.randomResourceName("st",8);
-        StorageAccount storage = azure.storageAccounts().define(storageAccountName)
-                    .withRegion(Region.US_WEST2)
-                    .withNewResourceGroup("sampleStorageResourceGroup")
-                    .create();
+            // create a new storage account
+            String storageAccountName = SdkContext.randomResourceName("st",8);
+            StorageAccount storage = azure.storageAccounts().define(storageAccountName)
+                        .withRegion(Region.US_WEST2)
+                        .withNewResourceGroup("sampleStorageResourceGroup")
+                        .create();
 
-        // create a storage container to hold the file
-        List<StorageAccountKey> keys = storage.getKeys();
-        final String storageConnection = "DefaultEndpointsProtocol=https;"
-                + "AccountName=" + storage.name()
-                + ";AccountKey=" + keys.get(0).value()
-                + ";EndpointSuffix=core.windows.net";
+            // create a storage container to hold the files
+            List<StorageAccountKey> keys = storage.getKeys();
+            final String storageConnection = "DefaultEndpointsProtocol=https;"
+                   + "AccountName=" + storage.name()
+                   + ";AccountKey=" + keys.get(0).value()
+                    + ";EndpointSuffix=core.windows.net";
 
-        CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
-        CloudBlobClient serviceClient = account.createCloudBlobClient();
+            CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
+            CloudBlobClient serviceClient = account.createCloudBlobClient();
 
-        // Container name must be lower case.
-        CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
-        container.createIfNotExists();
+            // Container name must be lower case.
+            CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
+            container.createIfNotExists();
 
-        // Make the container public
-        BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
-        containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
-        container.uploadPermissions(containerPermissions);
+            // Make the container public
+            BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
+            containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
+            container.uploadPermissions(containerPermissions);
 
-        // write a blob to the container
-        CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
-        blob.uploadText("hello Azure");
+            // write a blob to the container
+            CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
+            blob.uploadText("hello Azure");
 
-    } catch (Exception e) {
-        System.out.println(e.getMessage());
-        e.printStackTrace();
-    }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
 ```
 
 Führen Sie das Beispiel über die Befehlszeile aus:
-
-```
-mvn clean compile exec:java
-```
 
 Sie können über das Azure-Portal oder mit dem [Azure-Speicher-Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs) zur Datei `helloazure.txt` in Ihrem Speicherkonto navigieren.
 
@@ -431,7 +412,7 @@ az group delete --name sampleStorageResourceGroup
 
 ## <a name="explore-more-samples"></a>Erkunden weiterer Beispiele
 
-Weitere Informationen zur Ressourcenverwaltung und Aufgabenautomatisierung mit den Azure-Verwaltungsbibliotheken für Java finden Sie in unserem Beispielcode für [virtuelle Computer](java-sdk-azure-virtual-machine-samples.md), [Web-Apps](java-sdk-azure-web-apps-samples.md) und [SQL-Datenbank](java-sdk-azure-sql-database-samples.md).
+Weitere Informationen zur Ressourcenverwaltung und Aufgabenautomatisierung mit den Azure-Verwaltungsbibliotheken für Java finden Sie in unserem Beispielcode für [virtuelle Computer](../java-sdk-azure-virtual-machine-samples.md), [Web-Apps](../java-sdk-azure-web-apps-samples.md) und [SQL-Datenbank](../java-sdk-azure-sql-database-samples.md).
 
 ## <a name="reference-and-release-notes"></a>Referenz und Versionshinweise
 
