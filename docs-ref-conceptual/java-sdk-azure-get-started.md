@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: 69c75984f6274b5423614bd51c40957d3d509802
-ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
+ms.openlocfilehash: 2f40fa22244e5ffa3be76d4de579959dcb5591d6
+ms.sourcegitcommit: 0676cbb530207544090c1fd051a2f09760873cd8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für Java
 
@@ -135,7 +135,7 @@ Fügen Sie unter dem Element `project` der obersten Ebene einen Eintrag vom Typ 
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
             <configuration>
-                <mainClass>com.fabrikam.testAzureApp.AzureApp</mainClass>
+                <mainClass>com.fabrikam.AzureApp</mainClass>
             </configuration>
         </plugin>
     </plugins>
@@ -144,10 +144,10 @@ Fügen Sie unter dem Element `project` der obersten Ebene einen Eintrag vom Typ 
    
 ## <a name="create-a-linux-virtual-machine"></a>Erstellen einer virtuellen Linux-Maschine
 
-Erstellen Sie im Projektverzeichnis `src/main/java` eine neue Datei namens `AzureApp.java`, und fügen Sie den folgenden Codeblock ein. Aktualisieren Sie die Variablen `userName` und `sshKey` mit echten Werten für Ihren Computer. Der Code erstellt einen neuen virtuellen Linux-Computer namens `testLinuxVM` in der Ressourcengruppe `sampleResourceGroup` in der Azure-Region „USA, Osten“.
+Erstellen Sie im Projektverzeichnis `src/main/java/com/fabirkam` eine neue Datei namens `AzureApp.java`, und fügen Sie den folgenden Codeblock ein. Aktualisieren Sie die Variablen `userName` und `sshKey` mit echten Werten für Ihren Computer. Der Code erstellt einen neuen virtuellen Linux-Computer namens `testLinuxVM` in der Ressourcengruppe `sampleResourceGroup` in der Azure-Region „USA, Osten“.
 
 ```java
-package com.fabrikam.AzureApp;
+package com.fabrikam;
 
 import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.management.compute.VirtualMachine;
