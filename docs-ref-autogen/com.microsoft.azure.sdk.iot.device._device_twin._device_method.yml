@@ -19,7 +19,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-iot-sdk-java'
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/DeviceTwin/DeviceMethod.java
-      startLine: 8
+      startLine: 9
     package: com.microsoft.azure.sdk.iot.device._device_twin
     syntax:
       content: public class DeviceMethod
@@ -39,7 +39,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/DeviceTwin/DeviceMethod.java
-      startLine: 147
+      startLine: 151
     package: com.microsoft.azure.sdk.iot.device._device_twin
     summary: <p>Dieser Konstruktor erstellt eine Instanz der Methode Geräteklasse die erleichtert die Iteration für Gerät Methoden zwischen Benutzer und IotHub. </p>
     syntax:
@@ -47,16 +47,16 @@ items:
       parameters:
         - id: deviceIO
           type: com.microsoft.azure.sdk.iot.device._device_i_o
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.device._device_twin._device\" data-throw-if-not-resolved=\"false\"></xref>Clientobjekt für diese Verbindungsinstanz für das Gerät. Nicht mit<programlisting><codeline><highlight class=\"normal\">null<sp></sp></highlight></codeline></programlisting></p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.device._device_twin._device\" data-throw-if-not-resolved=\"false\">Gerät</xref> Clientobjekt, das für diese Verbindungsinstanz für das Gerät. Ist nicht möglich<code>null \r\n\r\n    </code></p>"
         - id: config
           type: com.microsoft.azure.sdk.iot.device._device_client_config
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.device._device_twin._device\" data-throw-if-not-resolved=\"false\"></xref>Client-Konfiguration nicht mit<programlisting><codeline><highlight class=\"normal\">null<sp></sp></highlight></codeline></programlisting></p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.device._device_twin._device\" data-throw-if-not-resolved=\"false\">Gerät</xref> Client-Konfiguration darf nicht sein.<code>null \r\n\r\n    </code></p>"
         - id: deviceMethodStatusCallback
           type: com.microsoft.azure.sdk.iot.device._iot_hub_event_callback
-          description: <p>Rückruf-Methode der Gerätestatus mit IotHub Status bereit. Nicht mit<programlisting><codeline><highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> . </p>
+          description: "<p>Rückruf-Methode der Gerätestatus mit IotHub Status bereit. Nicht mit<code>null \r\n\r\n    </code> . </p>"
         - id: deviceMethodStatusCallbackContext
           type: '79317049'
-          description: '<p>Der Kontext übergeben wird, wenn die Gerätestatus-Methode aufgerufen wird. Kann<programlisting><codeline><highlight class="normal">null<sp></sp></highlight></codeline></programlisting></p>'
+          description: "<p>Der Kontext übergeben wird, wenn die Gerätestatus-Methode aufgerufen wird. Werden können<code>null \r\n\r\n    </code></p>"
     exceptions:
       - type: 3c87bd19
         description: '<p>Diese Ausnahme wird ausgelöst, wenn DeviceIO oder Config oder DeviceMethodStatusCallback null sind. </p>'
@@ -74,7 +74,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/DeviceTwin/DeviceMethod.java
-      startLine: 185
+      startLine: 189
     package: com.microsoft.azure.sdk.iot.device._device_twin
     summary: '<p>Eine Methode, die abonniert Methodenaufruf für den Benutzer mit dem IotHub Gerät empfangen. </p>'
     syntax:
@@ -126,7 +126,7 @@ references:
     type: Interface
     summary: |-
       <p>Eine Schnittstelle für einen Ereignisrückruf IoT Hub.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false">IotHubEventCallback #Execute(IotHubStatusCode, Object)</xref> beim Empfang einer Antwort von einem IoT Hub. </p>
     syntax:
       content: public interface IotHubEventCallback
   - uid: com.microsoft.azure.sdk.iot.device._object_lock
@@ -192,7 +192,7 @@ references:
 
                   |               |    +---+---+----+---+   +----+----+----+----+  |                |
 
-      </verbatim>IotHubTransport |||||| +------<mdash></mdash>|------------<mdash></mdash>|---------<mdash></mdash>|-------------------<mdash></mdash>|---------<mdash></mdash>|-----<mdash></mdash>+ +-------------------------------------------<mdash></mdash>+ | \/ \/ \/ \/ \/ | | IoTHubTransportManager || +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ || +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ ||| AddMessage || Open || SendMessages || HandleMessage || Schließen |||| Open || Schließen || Senden von || Empfangen von || +---------<mdash></mdash>+ +---------<mdash></mdash>+ +-----------<mdash></mdash>+ +------------<mdash></mdash>+ +------<mdash></mdash>+ | | +---<mdash></mdash>+ +----<mdash></mdash>+ +---<mdash></mdash>+ +------<mdash></mdash>+ | +-------<mdash></mdash>+-----------------------------<mdash></mdash>+----------------------<mdash></mdash>+----------<mdash></mdash>+ +<mdash></mdash>+---------------------------------------<mdash></mdash>+ | | | | \/ \/ \/ \/ +----------------------<mdash></mdash>+ +----------------------<mdash></mdash>+ +---------------<mdash></mdash>+ +--------------------<mdash></mdash>+ | AmqpsTransport || MqttTransport || HttpsTransport || HttpsTransportManager | +----------------------<mdash></mdash>+ +----------------------<mdash></mdash>+ +------------------------------------------<mdash></mdash>+ | AmqpsIotHubConnection || MqttIotHubConnection || HttpsIotHubConnection | +----------------------<mdash></mdash>+ +----------------------<mdash></mdash>+ +------------------------------------------<mdash></mdash>+ </p>
+      </verbatim>IotHubTransport |||||| +------<mdash></mdash>|------------<mdash></mdash>|---------<mdash></mdash>|-------------------<mdash></mdash>|---------<mdash></mdash>|-----<mdash></mdash>+ +-------------------------------------------<mdash></mdash>+ | \/ \/ \/ \/ \/ | | IoTHubTransportManager || +---------<mdash></mdash>+ +---------<mdash></mdash>+ +-----------<mdash></mdash>+ +------------<mdash></mdash>+ +------<mdash></mdash> + | | +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ +---<mdash></mdash>+ ||| AddMessage || Open || SendMessages || HandleMessage || Schließen |||| Open || Schließen || Senden von || Empfangen von || +---------<mdash></mdash>+ +---------<mdash></mdash>+ +-----------<mdash></mdash>+ +------------<mdash></mdash>+ +------<mdash></mdash>+ | | +---<mdash></mdash>+ +----<mdash></mdash>+ +---<mdash></mdash>+ +------<mdash></mdash>+ | +-------<mdash></mdash>+-----------------------------<mdash></mdash>+----------------------<mdash></mdash>+----------<mdash></mdash>+ +<mdash></mdash> +---------------------------------------<mdash></mdash>+ | | | | \/ \/ \/ \/ +----------------------<mdash></mdash>+ +----------------------<mdash></mdash>+ +---------------<mdash> </mdash>+ +--------------------<mdash></mdash>+ | AmqpsTransport || MqttTransport || HttpsTransport || HttpsTransportManager | +----------------------<mdash></mdash>+ +----------------------<mdash></mdash>+ +------------------------------------------<mdash></mdash>+ | AmqpsIotHubConnection || MqttIotHubConnection || HttpsIotHubConnection | +----------------------<mdash></mdash>+ +----------------------<mdash></mdash>+ +------------------------------------------<mdash></mdash>+ </p>
     syntax:
       content: public class DeviceIO
   - uid: com.microsoft.azure.sdk.iot.device._device_client_config

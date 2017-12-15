@@ -4,15 +4,16 @@ items:
     id: _device
     parent: com.microsoft.azure.sdk.iot.service
     children:
-      - com.microsoft.azure.sdk.iot.service._device.cloudToDeviceMessageCount()
-      - com.microsoft.azure.sdk.iot.service._device.connectionState()
-      - com.microsoft.azure.sdk.iot.service._device.connectionStateUpdatedTime()
+      - com.microsoft.azure.sdk.iot.service._device.cloudToDeviceMessageCount
+      - com.microsoft.azure.sdk.iot.service._device.connectionState
+      - com.microsoft.azure.sdk.iot.service._device.connectionStateUpdatedTime
+      - 'com.microsoft.azure.sdk.iot.service._device.createDevice(String,AuthenticationType)'
       - 'com.microsoft.azure.sdk.iot.service._device.createFromId(String,DeviceStatus,SymmetricKey)'
       - 'com.microsoft.azure.sdk.iot.service._device.Device(String,DeviceStatus,SymmetricKey)'
-      - com.microsoft.azure.sdk.iot.service._device.deviceId()
-      - com.microsoft.azure.sdk.iot.service._device.encryptionMethod()
-      - com.microsoft.azure.sdk.iot.service._device.eTag()
-      - com.microsoft.azure.sdk.iot.service._device.generationId()
+      - com.microsoft.azure.sdk.iot.service._device.deviceId
+      - com.microsoft.azure.sdk.iot.service._device.eTag
+      - com.microsoft.azure.sdk.iot.service._device.generationId
+      - com.microsoft.azure.sdk.iot.service._device.getAuthenticationType()
       - com.microsoft.azure.sdk.iot.service._device.getCloudToDeviceMessageCount()
       - com.microsoft.azure.sdk.iot.service._device.getConnectionState()
       - com.microsoft.azure.sdk.iot.service._device.getConnectionStateUpdatedTime()
@@ -21,20 +22,23 @@ items:
       - com.microsoft.azure.sdk.iot.service._device.getGenerationId()
       - com.microsoft.azure.sdk.iot.service._device.getLastActivityTime()
       - com.microsoft.azure.sdk.iot.service._device.getPrimaryKey()
+      - com.microsoft.azure.sdk.iot.service._device.getPrimaryThumbprint()
       - com.microsoft.azure.sdk.iot.service._device.getSecondaryKey()
+      - com.microsoft.azure.sdk.iot.service._device.getSecondaryThumbprint()
       - com.microsoft.azure.sdk.iot.service._device.getStatus()
       - com.microsoft.azure.sdk.iot.service._device.getStatusReason()
       - com.microsoft.azure.sdk.iot.service._device.getStatusUpdatedTime()
       - com.microsoft.azure.sdk.iot.service._device.getSymmetricKey()
-      - com.microsoft.azure.sdk.iot.service._device.lastActivityTime()
+      - com.microsoft.azure.sdk.iot.service._device.lastActivityTime
+      - com.microsoft.azure.sdk.iot.service._device.OFFSET_TIME_DEFAULT
       - com.microsoft.azure.sdk.iot.service._device.setForceUpdate(Boolean)
       - com.microsoft.azure.sdk.iot.service._device.setStatus(DeviceStatus)
       - com.microsoft.azure.sdk.iot.service._device.setSymmetricKey(SymmetricKey)
-      - com.microsoft.azure.sdk.iot.service._device.status()
-      - com.microsoft.azure.sdk.iot.service._device.statusReason()
-      - com.microsoft.azure.sdk.iot.service._device.statusUpdatedTime()
-      - com.microsoft.azure.sdk.iot.service._device.symmetricKey()
-      - com.microsoft.azure.sdk.iot.service._device.utcTimeDefault()
+      - 'com.microsoft.azure.sdk.iot.service._device.setThumbprint(String,String)'
+      - com.microsoft.azure.sdk.iot.service._device.status
+      - com.microsoft.azure.sdk.iot.service._device.statusReason
+      - com.microsoft.azure.sdk.iot.service._device.statusUpdatedTime
+      - com.microsoft.azure.sdk.iot.service._device.UTC_TIME_DEFAULT
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
       - java
@@ -50,13 +54,13 @@ items:
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
       startLine: 18
     package: com.microsoft.azure.sdk.iot.service
-    summary: '<p>Die <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref> -Klasse erweitert die <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref> Klasse, Konstruktoren und Funktionen der Serialisierung implementiert. </p>'
+    summary: '<p>Die <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> -Klasse erweitert die <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Klasse, Konstruktoren und Funktionen der Serialisierung implementiert. </p>'
     syntax: &ref_1
       content: public class Device
     inheritance:
       - java.lang.Object
-  - uid: com.microsoft.azure.sdk.iot.service._device.cloudToDeviceMessageCount()
-    id: cloudToDeviceMessageCount()
+  - uid: com.microsoft.azure.sdk.iot.service._device.cloudToDeviceMessageCount
+    id: cloudToDeviceMessageCount
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -68,15 +72,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 304
+      startLine: 418
     package: com.microsoft.azure.sdk.iot.service
     summary: '<p>Anzahl der Nachrichten, die vom Gerät empfangen wurden </p>'
     syntax:
       content: protected long cloudToDeviceMessageCount
       return:
         type: 0364520f
-  - uid: com.microsoft.azure.sdk.iot.service._device.connectionState()
-    id: connectionState()
+  - uid: com.microsoft.azure.sdk.iot.service._device.connectionState
+    id: connectionState
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -88,15 +92,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 259
+      startLine: 373
     package: com.microsoft.azure.sdk.iot.service
     summary: '<p>Status des Geräts: {"verbunden" | "getrennt"} </p>'
     syntax:
       content: protected DeviceConnectionState connectionState
       return:
         type: com.microsoft.azure.sdk.iot.service._device_connection_state
-  - uid: com.microsoft.azure.sdk.iot.service._device.connectionStateUpdatedTime()
-    id: connectionStateUpdatedTime()
+  - uid: com.microsoft.azure.sdk.iot.service._device.connectionStateUpdatedTime
+    id: connectionStateUpdatedTime
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -108,13 +112,47 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 274
+      startLine: 388
     package: com.microsoft.azure.sdk.iot.service
     summary: <p>DateTime-Wert der letzten Ausführung des Verbindungsstatus aktualisiert wurde. </p>
     syntax:
       content: protected String connectionStateUpdatedTime
       return:
         type: '26831127'
+  - uid: 'com.microsoft.azure.sdk.iot.service._device.createDevice(String,AuthenticationType)'
+    id: 'createDevice(String,AuthenticationType)'
+    parent: com.microsoft.azure.sdk.iot.service._device
+    href: com.microsoft.azure.sdk.iot.service._device.yml
+    langs:
+      - java
+    name: 'createDevice(String deviceId, AuthenticationType authenticationType)'
+    nameWithType: 'Device.createDevice(String deviceId, AuthenticationType authenticationType)'
+    fullName: 'static Device com.microsoft.azure.sdk.iot.service.Device.createDevice(String deviceId, AuthenticationType authenticationType)'
+    overload: com.microsoft.azure.sdk.iot.service._device.createDevice*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
+      startLine: 59
+    package: com.microsoft.azure.sdk.iot.service
+    summary: |-
+      <p>Statische erstellen Geräteobjekt für Funktion erstellt mit dem angegebenen Namen, die von einer Zertifizierungsstelle signiertes Zertifikat zur Authentifizierung verwenden werden. Wenn Status Eingabegerät, das null ist, wird es automatisch generiert werden.</p>
+      <p></p>
+    syntax:
+      content: 'public static Device createDevice(String deviceId, AuthenticationType authenticationType)'
+      parameters:
+        - id: deviceId
+          type: '26831127'
+          description: <p>- Zeichenfolge mit dem Gerätenamen </p>
+        - id: authenticationType
+          type: com.microsoft.azure.sdk.iot.service.auth._authentication_type
+          description: '<p>- Der Typ der Authentifizierung, die von diesem Gerät verwendet werden soll. </p>'
+      return:
+        type: com.microsoft.azure.sdk.iot.service._device
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\">Gerät</xref> Objekt </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Diese Ausnahme wird ausgelöst, wenn<code>deviceId \r\n\r\n    </code> ist<code>null \r\n\r\n    </code> oder leer sein. </p>"
   - uid: 'com.microsoft.azure.sdk.iot.service._device.createFromId(String,DeviceStatus,SymmetricKey)'
     id: 'createFromId(String,DeviceStatus,SymmetricKey)'
     parent: com.microsoft.azure.sdk.iot.service._device
@@ -142,16 +180,16 @@ items:
           description: <p>- Zeichenfolge mit dem Gerätenamen </p>
         - id: status
           type: com.microsoft.azure.sdk.iot.service._device_status
-          description: '<p>- <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref>Status. Wenn der Parameter null ist, wird der Status auf Enabled festgelegt werden. </p>'
+          description: '<p>- <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Status. Wenn der Parameter null ist, wird der Status auf Enabled festgelegt werden. </p>'
         - id: symmetricKey
           type: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
-          description: '<p>- <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref>Schlüssel. Wenn der Parameter null ist, wird der Schlüssel automatisch generiert werden. </p>'
+          description: '<p>- <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Schlüssel. Wenn der Parameter null ist, wird der Schlüssel automatisch generiert werden. </p>'
       return:
         type: com.microsoft.azure.sdk.iot.service._device
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\"></xref>Objekt </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\">Gerät</xref> Objekt </p>"
     exceptions:
       - type: 3c87bd19
-        description: '<p>Diese Ausnahme wird ausgelöst, wenn<programlisting><codeline><highlight class="normal">"DeviceID"<sp> </sp> </highlight> </codeline> </programlisting> ist<programlisting><codeline><highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> oder leer sein. </p>'
+        description: "<p>Diese Ausnahme wird ausgelöst, wenn<code>deviceId \r\n\r\n    </code> ist<code>null \r\n\r\n    </code> oder leer sein. </p>"
       - type: 456eb9d1
         description: '<p>Diese Ausnahme wird ausgelöst, wenn die Verschlüsselungsmethode nicht von der KeyGenerator unterstützt wird </p>'
   - uid: 'com.microsoft.azure.sdk.iot.service._device.Device(String,DeviceStatus,SymmetricKey)'
@@ -168,10 +206,10 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 58
+      startLine: 84
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
-      <p>Erstellen Sie eine <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref> Instanz mithilfe des angegebenen Gerätenamens</p>
+      <p>Erstellen einer <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Instanz mithilfe des angegebenen Gerätenamens</p>
       <p></p>
     syntax:
       content: 'protected Device(String deviceId, DeviceStatus status, SymmetricKey symmetricKey)'
@@ -181,15 +219,15 @@ items:
           description: <p>Name des Sicherungsmediums (die als Geräte-Id verwendet wird) </p>
         - id: status
           type: com.microsoft.azure.sdk.iot.service._device_status
-          description: '<p>- <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref>Status. Wenn der Parameter null ist, wird der Status auf Enabled festgelegt werden. </p>'
+          description: '<p>- <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Status. Wenn der Parameter null ist, wird der Status auf Enabled festgelegt werden. </p>'
         - id: symmetricKey
           type: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
-          description: '<p>- <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref>Schlüssel. Wenn der Parameter null ist, wird der Schlüssel automatisch generiert werden. </p>'
+          description: '<p>- <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Schlüssel. Wenn der Parameter null ist, wird der Schlüssel automatisch generiert werden. </p>'
     exceptions:
       - type: 456eb9d1
         description: '<p>Diese Ausnahme wird ausgelöst, wenn die Verschlüsselungsmethode nicht von der KeyGenerator unterstützt wird </p>'
-  - uid: com.microsoft.azure.sdk.iot.service._device.deviceId()
-    id: deviceId()
+  - uid: com.microsoft.azure.sdk.iot.service._device.deviceId
+    id: deviceId
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -201,34 +239,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 107
+      startLine: 151
     package: com.microsoft.azure.sdk.iot.service
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\"></xref>Namenszeichenfolge ein Groß-/Kleinschreibung (bis zu 128 Zeichen lang) der alphanumerische ASCII-7-Bit-Zeichen<itemizedlist><listitem><p>{'-', ':', '.', '+', '', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. </p></listitem></itemizedlist></p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\">Gerät</xref> Namenszeichenfolge ein Groß-/Kleinschreibung (bis zu 128 Zeichen lang) der alphanumerische ASCII-7-Bit-Zeichen<itemizedlist><listitem><p>{'-', ':', '.', '+', '', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. </p></listitem></itemizedlist></p>"
     syntax:
       content: protected String deviceId
       return:
         type: '26831127'
-  - uid: com.microsoft.azure.sdk.iot.service._device.encryptionMethod()
-    id: encryptionMethod()
-    parent: com.microsoft.azure.sdk.iot.service._device
-    href: com.microsoft.azure.sdk.iot.service._device.yml
-    langs:
-      - java
-    name: encryptionMethod
-    nameWithType: Device.encryptionMethod
-    fullName: final String com.microsoft.azure.sdk.iot.service.Device.encryptionMethod
-    type: Field
-    source:
-      remote: *ref_0
-      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 20
-    package: com.microsoft.azure.sdk.iot.service
-    syntax:
-      content: protected final String encryptionMethod= "AES"
-      return:
-        type: 3d93591e
-  - uid: com.microsoft.azure.sdk.iot.service._device.eTag()
-    id: eTag()
+  - uid: com.microsoft.azure.sdk.iot.service._device.eTag
+    id: eTag
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -240,15 +259,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 186
+      startLine: 300
     package: com.microsoft.azure.sdk.iot.service
     summary: '<p>Eine Zeichenfolge, die eine schwache ETAG-Version dieser JSON-Beschreibung darstellt. Dies ist ein Hash. </p>'
     syntax:
       content: protected String eTag
       return:
         type: '26831127'
-  - uid: com.microsoft.azure.sdk.iot.service._device.generationId()
-    id: generationId()
+  - uid: com.microsoft.azure.sdk.iot.service._device.generationId
+    id: generationId
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -260,13 +279,35 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 122
+      startLine: 166
     package: com.microsoft.azure.sdk.iot.service
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\"></xref>Generation-Id </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service._device\" data-throw-if-not-resolved=\"false\">Gerät</xref> Generation-Id </p>"
     syntax:
       content: protected String generationId
       return:
         type: '26831127'
+  - uid: com.microsoft.azure.sdk.iot.service._device.getAuthenticationType()
+    id: getAuthenticationType()
+    parent: com.microsoft.azure.sdk.iot.service._device
+    href: com.microsoft.azure.sdk.iot.service._device.yml
+    langs:
+      - java
+    name: getAuthenticationType()
+    nameWithType: Device.getAuthenticationType()
+    fullName: AuthenticationType com.microsoft.azure.sdk.iot.service.Device.getAuthenticationType()
+    overload: com.microsoft.azure.sdk.iot.service._device.getAuthenticationType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
+      startLine: 460
+    package: com.microsoft.azure.sdk.iot.service
+    summary: <p>Getter-Methode für den Authentifizierungstyp dieses Geräts </p>
+    syntax:
+      content: public AuthenticationType getAuthenticationType()
+      return:
+        type: com.microsoft.azure.sdk.iot.service.auth._authentication_type
+        description: <p>Der Authentifizierungstyp </p>
   - uid: com.microsoft.azure.sdk.iot.service._device.getCloudToDeviceMessageCount()
     id: getCloudToDeviceMessageCount()
     parent: com.microsoft.azure.sdk.iot.service._device
@@ -281,7 +322,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 311
+      startLine: 425
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für Cloud Gerät Nachrichtenanzahl</p>
@@ -305,7 +346,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 266
+      startLine: 380
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für Verbindungsstatus</p>
@@ -329,7 +370,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 281
+      startLine: 395
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für Verbindungsstatus aktualisiert Mal.</p>
@@ -353,7 +394,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 114
+      startLine: 158
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für Gerätenamen</p>
@@ -377,7 +418,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 193
+      startLine: 307
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für eTag</p>
@@ -401,11 +442,9 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 129
+      startLine: 172
     package: com.microsoft.azure.sdk.iot.service
-    summary: |-
-      <p>Getter für Generations-ID</p>
-      <p></p>
+    summary: <p>Getter für Generations-ID </p>
     syntax:
       content: public String getGenerationId()
       return:
@@ -425,7 +464,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 296
+      startLine: 410
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter-Methode für die Zeit der letzten Aktivität</p>
@@ -449,7 +488,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 166
+      startLine: 219
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für PrimaryKey-Teil der SymmetricKey</p>
@@ -459,6 +498,30 @@ items:
       return:
         type: '26831127'
         description: <p>Die PrimaryKey-Zeichenfolge </p>
+  - uid: com.microsoft.azure.sdk.iot.service._device.getPrimaryThumbprint()
+    id: getPrimaryThumbprint()
+    parent: com.microsoft.azure.sdk.iot.service._device
+    href: com.microsoft.azure.sdk.iot.service._device.yml
+    langs:
+      - java
+    name: getPrimaryThumbprint()
+    nameWithType: Device.getPrimaryThumbprint()
+    fullName: String com.microsoft.azure.sdk.iot.service.Device.getPrimaryThumbprint()
+    overload: com.microsoft.azure.sdk.iot.service._device.getPrimaryThumbprint*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
+      startLine: 271
+    package: com.microsoft.azure.sdk.iot.service
+    summary: |-
+      <p>Getter für primäre Fingerabdruck Teil der gesamten Fingerabdruck</p>
+      <p></p>
+    syntax:
+      content: public String getPrimaryThumbprint()
+      return:
+        type: '26831127'
+        description: <p>Die primäre Fingerabdruck-Zeichenfolge </p>
   - uid: com.microsoft.azure.sdk.iot.service._device.getSecondaryKey()
     id: getSecondaryKey()
     parent: com.microsoft.azure.sdk.iot.service._device
@@ -473,7 +536,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 176
+      startLine: 234
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für SecondaryKey Teil der SymmetricKey</p>
@@ -483,6 +546,30 @@ items:
       return:
         type: '26831127'
         description: <p>Die Zeichenfolge secondaryKey </p>
+  - uid: com.microsoft.azure.sdk.iot.service._device.getSecondaryThumbprint()
+    id: getSecondaryThumbprint()
+    parent: com.microsoft.azure.sdk.iot.service._device
+    href: com.microsoft.azure.sdk.iot.service._device.yml
+    langs:
+      - java
+    name: getSecondaryThumbprint()
+    nameWithType: Device.getSecondaryThumbprint()
+    fullName: String com.microsoft.azure.sdk.iot.service.Device.getSecondaryThumbprint()
+    overload: com.microsoft.azure.sdk.iot.service._device.getSecondaryThumbprint*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
+      startLine: 286
+    package: com.microsoft.azure.sdk.iot.service
+    summary: |-
+      <p>Getter für sekundäre Fingerabdruck Teil der gesamten Fingerabdruck</p>
+      <p></p>
+    syntax:
+      content: public String getSecondaryThumbprint()
+      return:
+        type: '26831127'
+        description: <p>Die sekundären Fingerabdruck-Zeichenfolge </p>
   - uid: com.microsoft.azure.sdk.iot.service._device.getStatus()
     id: getStatus()
     parent: com.microsoft.azure.sdk.iot.service._device
@@ -497,9 +584,9 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 209
+      startLine: 323
     package: com.microsoft.azure.sdk.iot.service
-    summary: <p>Getter für <xref href="com.microsoft.azure.sdk.iot.service._device_status" data-throw-if-not-resolved="false"></xref> Objekt </p>
+    summary: <p>Getter für <xref uid="com.microsoft.azure.sdk.iot.service._device_status" data-throw-if-not-resolved="false">DeviceStatus</xref> Objekt </p>
     syntax:
       content: public DeviceStatus getStatus()
       return:
@@ -519,7 +606,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 235
+      startLine: 349
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter Status Grund</p>
@@ -543,7 +630,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 250
+      startLine: 364
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Getter für Status aktualisiert Zeitzeichenfolge</p>
@@ -567,18 +654,16 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 146
+      startLine: 181
     package: com.microsoft.azure.sdk.iot.service
-    summary: |-
-      <p>Getter für SymmetricKey-Objekts</p>
-      <p></p>
+    summary: <p>Getter für SymmetricKey-Objekts </p>
     syntax:
       content: public SymmetricKey getSymmetricKey()
       return:
         type: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
         description: <p>Das Objekt für symmetricKey </p>
-  - uid: com.microsoft.azure.sdk.iot.service._device.lastActivityTime()
-    id: lastActivityTime()
+  - uid: com.microsoft.azure.sdk.iot.service._device.lastActivityTime
+    id: lastActivityTime
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -590,13 +675,32 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 289
+      startLine: 403
     package: com.microsoft.azure.sdk.iot.service
     summary: '<p>"DateTime", der letzten Ausführung des Geräts authentifiziert, empfangen oder hat eine Nachricht gesendet. </p>'
     syntax:
       content: protected String lastActivityTime
       return:
         type: '26831127'
+  - uid: com.microsoft.azure.sdk.iot.service._device.OFFSET_TIME_DEFAULT
+    id: OFFSET_TIME_DEFAULT
+    parent: com.microsoft.azure.sdk.iot.service._device
+    href: com.microsoft.azure.sdk.iot.service._device.yml
+    langs:
+      - java
+    name: OFFSET_TIME_DEFAULT
+    nameWithType: Device.OFFSET_TIME_DEFAULT
+    fullName: final String com.microsoft.azure.sdk.iot.service.Device.OFFSET_TIME_DEFAULT
+    type: Field
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
+      startLine: 21
+    package: com.microsoft.azure.sdk.iot.service
+    syntax:
+      content: 'protected final String OFFSET_TIME_DEFAULT= "0001-01-01T00:00:00-00:00"'
+      return:
+        type: 3d93591e
   - uid: com.microsoft.azure.sdk.iot.service._device.setForceUpdate(Boolean)
     id: setForceUpdate(Boolean)
     parent: com.microsoft.azure.sdk.iot.service._device
@@ -611,7 +715,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 326
+      startLine: 441
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Setter für Force aktualisieren boolescher Wert</p>
@@ -622,6 +726,9 @@ items:
         - id: forceUpdate
           type: 866c2227
           description: '<p>- Boolesche gesteuert wird, ob das Update erzwungen werden soll </p>'
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn das angegebene Argument null ist. </p>
   - uid: com.microsoft.azure.sdk.iot.service._device.setStatus(DeviceStatus)
     id: setStatus(DeviceStatus)
     parent: com.microsoft.azure.sdk.iot.service._device
@@ -636,10 +743,10 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 219
+      startLine: 333
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
-      <p>Setter für <xref href="com.microsoft.azure.sdk.iot.service._device_status" data-throw-if-not-resolved="false"></xref> Objekt</p>
+      <p>Setter für <xref uid="com.microsoft.azure.sdk.iot.service._device_status" data-throw-if-not-resolved="false">DeviceStatus</xref> Objekt</p>
       <p></p>
     syntax:
       content: public void setStatus(DeviceStatus status)
@@ -661,7 +768,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 156
+      startLine: 197
     package: com.microsoft.azure.sdk.iot.service
     summary: |-
       <p>Setter für SymmetricKey-Objekts</p>
@@ -672,8 +779,40 @@ items:
         - id: symmetricKey
           type: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
           description: <p>SymmetricKey festgelegt werden </p>
-  - uid: com.microsoft.azure.sdk.iot.service._device.status()
-    id: status()
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn der angegebene symmetrische Schlüssel null ist. </p>
+  - uid: 'com.microsoft.azure.sdk.iot.service._device.setThumbprint(String,String)'
+    id: 'setThumbprint(String,String)'
+    parent: com.microsoft.azure.sdk.iot.service._device
+    href: com.microsoft.azure.sdk.iot.service._device.yml
+    langs:
+      - java
+    name: 'setThumbprint(String primaryThumbprint, String secondaryThumbprint)'
+    nameWithType: 'Device.setThumbprint(String primaryThumbprint, String secondaryThumbprint)'
+    fullName: 'void com.microsoft.azure.sdk.iot.service.Device.setThumbprint(String primaryThumbprint, String secondaryThumbprint)'
+    overload: com.microsoft.azure.sdk.iot.service._device.setThumbprint*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
+      startLine: 250
+    package: com.microsoft.azure.sdk.iot.service
+    summary: <p>Setter für X509 Fingerabdruck </p>
+    syntax:
+      content: 'public void setThumbprint(String primaryThumbprint, String secondaryThumbprint)'
+      parameters:
+        - id: primaryThumbprint
+          type: '26831127'
+          description: <p>der primäre Fingerabdruck festlegen </p>
+        - id: secondaryThumbprint
+          type: '26831127'
+          description: <p>der sekundäre Fingerabdruck festlegen </p>
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn PrimaryThumbprint oder SecondaryThumbprint null oder leer ist </p>
+  - uid: com.microsoft.azure.sdk.iot.service._device.status
+    id: status
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -685,15 +824,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 203
+      startLine: 317
     package: com.microsoft.azure.sdk.iot.service
     summary: '<p>"Enabled", "Disabled". Wenn "Enabled", ist dieses Gerät autorisiert, eine Verbindung herstellen. Wenn Sie dieses Gerät kann nicht empfangen oder Senden von Nachrichten und StatusReason "Disabled" festgelegt werden müssen. </p>'
     syntax:
       content: protected DeviceStatus status
       return:
         type: com.microsoft.azure.sdk.iot.service._device_status
-  - uid: com.microsoft.azure.sdk.iot.service._device.statusReason()
-    id: statusReason()
+  - uid: com.microsoft.azure.sdk.iot.service._device.statusReason
+    id: statusReason
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -705,15 +844,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 228
+      startLine: 342
     package: com.microsoft.azure.sdk.iot.service
     summary: '<p>Eine lange 128 Char Zeichenfolge, die die Ursache für die Unterbrechung speichern. (alle UTF-8-Zeichen zulässig). </p>'
     syntax:
       content: protected String statusReason
       return:
         type: '26831127'
-  - uid: com.microsoft.azure.sdk.iot.service._device.statusUpdatedTime()
-    id: statusUpdatedTime()
+  - uid: com.microsoft.azure.sdk.iot.service._device.statusUpdatedTime
+    id: statusUpdatedTime
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
@@ -725,50 +864,30 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 243
+      startLine: 357
     package: com.microsoft.azure.sdk.iot.service
     summary: <p>DateTime-Wert der letzten Ausführung der Status aktualisiert wurde. </p>
     syntax:
       content: protected String statusUpdatedTime
       return:
         type: '26831127'
-  - uid: com.microsoft.azure.sdk.iot.service._device.symmetricKey()
-    id: symmetricKey()
+  - uid: com.microsoft.azure.sdk.iot.service._device.UTC_TIME_DEFAULT
+    id: UTC_TIME_DEFAULT
     parent: com.microsoft.azure.sdk.iot.service._device
     href: com.microsoft.azure.sdk.iot.service._device.yml
     langs:
       - java
-    name: symmetricKey
-    nameWithType: Device.symmetricKey
-    fullName: transient SymmetricKey com.microsoft.azure.sdk.iot.service.Device.symmetricKey
+    name: UTC_TIME_DEFAULT
+    nameWithType: Device.UTC_TIME_DEFAULT
+    fullName: final String com.microsoft.azure.sdk.iot.service.Device.UTC_TIME_DEFAULT
     type: Field
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 139
-    package: com.microsoft.azure.sdk.iot.service
-    summary: '<p>Symmetrische Schlüssel verwendet werden, um dieses Gerät zu autorisieren. Dies kann auch ein Array (max. 2) von Schlüsseln zu für Rollover Schlüssel sein. Format (identisch mit dem Geräte-Id). </p>'
-    syntax:
-      content: protected transient SymmetricKey symmetricKey
-      return:
-        type: 1e96ff01com.microsoft.azure.sdk.iot.service.auth._symmetric_key
-  - uid: com.microsoft.azure.sdk.iot.service._device.utcTimeDefault()
-    id: utcTimeDefault()
-    parent: com.microsoft.azure.sdk.iot.service._device
-    href: com.microsoft.azure.sdk.iot.service._device.yml
-    langs:
-      - java
-    name: utcTimeDefault
-    nameWithType: Device.utcTimeDefault
-    fullName: final String com.microsoft.azure.sdk.iot.service.Device.utcTimeDefault
-    type: Field
-    source:
-      remote: *ref_0
-      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Device.java
-      startLine: 21
+      startLine: 20
     package: com.microsoft.azure.sdk.iot.service
     syntax:
-      content: 'protected final String utcTimeDefault= "0001-01-01T00:00:00"'
+      content: 'protected final String UTC_TIME_DEFAULT= "0001-01-01T00:00:00"'
       return:
         type: 3d93591e
 references:
@@ -780,14 +899,6 @@ references:
     spec.java:
       - name: String
         fullName: String
-  - uid: 1e96ff01com.microsoft.azure.sdk.iot.service.auth._symmetric_key
-    spec.java:
-      - name: 'transient '
-        fullName: 'transient '
-      - uid: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
-        name: SymmetricKey
-        fullName: com.microsoft.azure.sdk.iot.service.auth.SymmetricKey
-        href: com.microsoft.azure.sdk.iot.service.auth._symmetric_key.yml
   - uid: 0364520f
     spec.java:
       - name: long
@@ -804,6 +915,11 @@ references:
     name: createFromId
     nameWithType: Device.createFromId
     fullName: static Device com.microsoft.azure.sdk.iot.service.Device.createFromId
+    package: com.microsoft.azure.sdk.iot.service
+  - uid: com.microsoft.azure.sdk.iot.service._device.createDevice*
+    name: createDevice
+    nameWithType: Device.createDevice
+    fullName: static Device com.microsoft.azure.sdk.iot.service.Device.createDevice
     package: com.microsoft.azure.sdk.iot.service
   - uid: com.microsoft.azure.sdk.iot.service._device.Device*
     name: Device
@@ -839,6 +955,21 @@ references:
     name: getSecondaryKey
     nameWithType: Device.getSecondaryKey
     fullName: String com.microsoft.azure.sdk.iot.service.Device.getSecondaryKey
+    package: com.microsoft.azure.sdk.iot.service
+  - uid: com.microsoft.azure.sdk.iot.service._device.setThumbprint*
+    name: setThumbprint
+    nameWithType: Device.setThumbprint
+    fullName: void com.microsoft.azure.sdk.iot.service.Device.setThumbprint
+    package: com.microsoft.azure.sdk.iot.service
+  - uid: com.microsoft.azure.sdk.iot.service._device.getPrimaryThumbprint*
+    name: getPrimaryThumbprint
+    nameWithType: Device.getPrimaryThumbprint
+    fullName: String com.microsoft.azure.sdk.iot.service.Device.getPrimaryThumbprint
+    package: com.microsoft.azure.sdk.iot.service
+  - uid: com.microsoft.azure.sdk.iot.service._device.getSecondaryThumbprint*
+    name: getSecondaryThumbprint
+    nameWithType: Device.getSecondaryThumbprint
+    fullName: String com.microsoft.azure.sdk.iot.service.Device.getSecondaryThumbprint
     package: com.microsoft.azure.sdk.iot.service
   - uid: com.microsoft.azure.sdk.iot.service._device.geteTag*
     name: geteTag
@@ -894,6 +1025,11 @@ references:
     nameWithType: Device.setForceUpdate
     fullName: void com.microsoft.azure.sdk.iot.service.Device.setForceUpdate
     package: com.microsoft.azure.sdk.iot.service
+  - uid: com.microsoft.azure.sdk.iot.service._device.getAuthenticationType*
+    name: getAuthenticationType
+    nameWithType: Device.getAuthenticationType
+    fullName: AuthenticationType com.microsoft.azure.sdk.iot.service.Device.getAuthenticationType
+    package: com.microsoft.azure.sdk.iot.service
   - uid: com.microsoft.azure.sdk.iot.service._device
     parent: com.microsoft.azure.sdk.iot.service
     href: com.microsoft.azure.sdk.iot.service._device.yml
@@ -901,18 +1037,8 @@ references:
     nameWithType: Device
     fullName: com.microsoft.azure.sdk.iot.service.Device
     type: Class
-    summary: '<p>Die <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref> -Klasse erweitert die <xref href="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false"></xref> Klasse, Konstruktoren und Funktionen der Serialisierung implementiert. </p>'
+    summary: '<p>Die <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> -Klasse erweitert die <xref uid="com.microsoft.azure.sdk.iot.service._device" data-throw-if-not-resolved="false">Gerät</xref> Klasse, Konstruktoren und Funktionen der Serialisierung implementiert. </p>'
     syntax: *ref_1
-  - uid: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
-    parent: com.microsoft.azure.sdk.iot.service.auth
-    href: com.microsoft.azure.sdk.iot.service.auth._symmetric_key.yml
-    name: SymmetricKey
-    nameWithType: SymmetricKey
-    fullName: com.microsoft.azure.sdk.iot.service.auth.SymmetricKey
-    type: Class
-    summary: <p>Speichern Sie die primäre und sekundäre Schlüssel geben-Funktion für die Länge des Schlüssels der Validierung </p>
-    syntax:
-      content: public class SymmetricKey
   - uid: com.microsoft.azure.sdk.iot.service._device_status
     parent: com.microsoft.azure.sdk.iot.service
     href: com.microsoft.azure.sdk.iot.service._device_status.yml
@@ -933,3 +1059,42 @@ references:
     summary: <p>Enumeration für Geräteverbindungsstatus </p>
     syntax:
       content: public enum DeviceConnectionState
+  - uid: com.microsoft.azure.sdk.iot.service.auth._authentication_mechanism
+    parent: com.microsoft.azure.sdk.iot.service.auth
+    href: com.microsoft.azure.sdk.iot.service.auth._authentication_mechanism.yml
+    name: AuthenticationMechanism
+    nameWithType: AuthenticationMechanism
+    fullName: com.microsoft.azure.sdk.iot.service.auth.AuthenticationMechanism
+    type: Class
+    summary: '<p>Authentifizierungsmechanismus verwendet, um den symmetrischen Schlüssel des Geräts zu speichern. </p>'
+    syntax:
+      content: public class AuthenticationMechanism
+  - uid: com.microsoft.azure.sdk.iot.service.auth._symmetric_key
+    parent: com.microsoft.azure.sdk.iot.service.auth
+    href: com.microsoft.azure.sdk.iot.service.auth._symmetric_key.yml
+    name: SymmetricKey
+    nameWithType: SymmetricKey
+    fullName: com.microsoft.azure.sdk.iot.service.auth.SymmetricKey
+    type: Class
+    summary: <p>Speichern Sie die primäre und sekundäre Schlüssel geben-Funktion für die Länge des Schlüssels der Validierung </p>
+    syntax:
+      content: public class SymmetricKey
+  - uid: com.microsoft.azure.sdk.iot.service.auth._authentication_type
+    parent: com.microsoft.azure.sdk.iot.service.auth
+    href: com.microsoft.azure.sdk.iot.service.auth._authentication_type.yml
+    name: AuthenticationType
+    nameWithType: AuthenticationType
+    fullName: com.microsoft.azure.sdk.iot.service.auth.AuthenticationType
+    type: Enum
+    summary: <p>Die Enumeration für den Typ der Authentifizierung verwendet. SAS - freigegebene zugriffssignatur SELF_SIGNED - selbstsigniertes Zertifikat CERTIFICATE_AUTHORITY - Zertifikat signiertes Zertifikat </p>
+    syntax:
+      content: public enum AuthenticationType
+  - uid: com.microsoft.azure.sdk.iot.deps.serializer._device_parser
+    parent: com.microsoft.azure.sdk.iot.deps.serializer
+    href: com.microsoft.azure.sdk.iot.deps.serializer._device_parser.yml
+    name: DeviceParser
+    nameWithType: DeviceParser
+    fullName: com.microsoft.azure.sdk.iot.deps.serializer.DeviceParser
+    type: Class
+    syntax:
+      content: public class DeviceParser

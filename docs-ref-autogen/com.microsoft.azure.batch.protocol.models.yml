@@ -84,6 +84,9 @@ items:
       - com.microsoft.azure.batch.protocol.models._compute_node_update_user_headers
       - com.microsoft.azure.batch.protocol.models._compute_node_update_user_options
       - com.microsoft.azure.batch.protocol.models._compute_node_user
+      - com.microsoft.azure.batch.protocol.models._container_configuration
+      - com.microsoft.azure.batch.protocol.models._container_registry
+      - com.microsoft.azure.batch.protocol.models._data_disk
       - com.microsoft.azure.batch.protocol.models._delete_certificate_error
       - com.microsoft.azure.batch.protocol.models._dependency_action
       - com.microsoft.azure.batch.protocol.models._disable_compute_node_scheduling_option
@@ -276,6 +279,7 @@ items:
       - com.microsoft.azure.batch.protocol.models._start_task
       - com.microsoft.azure.batch.protocol.models._start_task_information
       - com.microsoft.azure.batch.protocol.models._start_task_state
+      - com.microsoft.azure.batch.protocol.models._storage_account_type
       - com.microsoft.azure.batch.protocol.models._subtask_information
       - com.microsoft.azure.batch.protocol.models._subtask_state
       - com.microsoft.azure.batch.protocol.models._task_add_collection_headers
@@ -288,6 +292,8 @@ items:
       - com.microsoft.azure.batch.protocol.models._task_add_result
       - com.microsoft.azure.batch.protocol.models._task_add_status
       - com.microsoft.azure.batch.protocol.models._task_constraints
+      - com.microsoft.azure.batch.protocol.models._task_container_execution_information
+      - com.microsoft.azure.batch.protocol.models._task_container_settings
       - com.microsoft.azure.batch.protocol.models._task_count_validation_status
       - com.microsoft.azure.batch.protocol.models._task_counts
       - com.microsoft.azure.batch.protocol.models._task_delete_headers
@@ -334,7 +340,7 @@ items:
         repo: 'https://github.com/Azure/azure-batch-sdk-for-java'
       path: src/main/java/com/microsoft/azure/batch/protocol/models/AccessScope.java
       startLine: 8
-    summary: <p>Dieses Paket enthält die Klassen Modelle für <xref href="com.microsoft.azure.batch.protocol._batch_service_client" data-throw-if-not-resolved="false"></xref>. Ein Client für das Ausstellen von REST-Anforderungen an den Azure Batch-Dienst. </p>
+    summary: <p>Dieses Paket enthält die Klassen Modelle für <xref uid="com.microsoft.azure.batch.protocol._batch_service_client" data-throw-if-not-resolved="false">BatchServiceClient</xref>. Ein Client für das Ausstellen von REST-Anforderungen an den Azure Batch-Dienst. </p>
     syntax:
       content: package com.microsoft.azure.batch.protocol.models
 references:
@@ -345,7 +351,7 @@ references:
     nameWithType: BatchServiceClient
     fullName: com.microsoft.azure.batch.protocol.BatchServiceClient
     type: Interface
-    summary: <p>Die Schnittstelle für <xref href="com.microsoft.azure.batch.protocol._batch_service_client" data-throw-if-not-resolved="false"></xref> Klasse. </p>
+    summary: <p>Die Schnittstelle für <xref uid="com.microsoft.azure.batch.protocol._batch_service_client" data-throw-if-not-resolved="false">BatchServiceClient</xref> Klasse. </p>
     syntax:
       content: public interface BatchServiceClient
   - uid: com.microsoft.azure.batch.protocol.models._access_scope
@@ -355,7 +361,7 @@ references:
     nameWithType: AccessScope
     fullName: com.microsoft.azure.batch.protocol.models.AccessScope
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._access_scope" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._access_scope" data-throw-if-not-resolved="false">AccessScope</xref>. </p>
     syntax:
       content: public enum AccessScope
   - uid: com.microsoft.azure.batch.protocol.models._account_list_node_agent_skus_headers
@@ -405,7 +411,7 @@ references:
     nameWithType: AllocationState
     fullName: com.microsoft.azure.batch.protocol.models.AllocationState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._allocation_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._allocation_state" data-throw-if-not-resolved="false">AllocationState</xref>. </p>
     syntax:
       content: public enum AllocationState
   - uid: com.microsoft.azure.batch.protocol.models._application_get_headers
@@ -525,7 +531,7 @@ references:
     nameWithType: AutoUserScope
     fullName: com.microsoft.azure.batch.protocol.models.AutoUserScope
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._auto_user_scope" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._auto_user_scope" data-throw-if-not-resolved="false">AutoUserScope</xref>. </p>
     syntax:
       content: public enum AutoUserScope
   - uid: com.microsoft.azure.batch.protocol.models._auto_user_specification
@@ -565,7 +571,7 @@ references:
     nameWithType: BatchErrorException
     fullName: com.microsoft.azure.batch.protocol.models.BatchErrorException
     type: Class
-    summary: <p>Ausgelöste Ausnahme für eine ungültige Antwort mit <xref href="com.microsoft.azure.batch.protocol.models._batch_error" data-throw-if-not-resolved="false"></xref> Informationen. </p>
+    summary: <p>Ausgelöste Ausnahme für eine ungültige Antwort mit <xref uid="com.microsoft.azure.batch.protocol.models._batch_error" data-throw-if-not-resolved="false">BatchError</xref> Informationen. </p>
     syntax:
       content: public class BatchErrorException
   - uid: com.microsoft.azure.batch.protocol.models._caching_type
@@ -575,7 +581,7 @@ references:
     nameWithType: CachingType
     fullName: com.microsoft.azure.batch.protocol.models.CachingType
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._caching_type" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._caching_type" data-throw-if-not-resolved="false">CachingType</xref>. </p>
     syntax:
       content: public enum CachingType
   - uid: com.microsoft.azure.batch.protocol.models._certificate
@@ -665,7 +671,7 @@ references:
     nameWithType: CertificateFormat
     fullName: com.microsoft.azure.batch.protocol.models.CertificateFormat
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._certificate_format" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._certificate_format" data-throw-if-not-resolved="false">CertificateFormat</xref>. </p>
     syntax:
       content: public enum CertificateFormat
   - uid: com.microsoft.azure.batch.protocol.models._certificate_get_headers
@@ -735,7 +741,7 @@ references:
     nameWithType: CertificateState
     fullName: com.microsoft.azure.batch.protocol.models.CertificateState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._certificate_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._certificate_state" data-throw-if-not-resolved="false">CertificateState</xref>. </p>
     syntax:
       content: public enum CertificateState
   - uid: com.microsoft.azure.batch.protocol.models._certificate_store_location
@@ -745,7 +751,7 @@ references:
     nameWithType: CertificateStoreLocation
     fullName: com.microsoft.azure.batch.protocol.models.CertificateStoreLocation
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._certificate_store_location" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._certificate_store_location" data-throw-if-not-resolved="false">CertificateStoreLocation</xref>. </p>
     syntax:
       content: public enum CertificateStoreLocation
   - uid: com.microsoft.azure.batch.protocol.models._certificate_visibility
@@ -755,7 +761,7 @@ references:
     nameWithType: CertificateVisibility
     fullName: com.microsoft.azure.batch.protocol.models.CertificateVisibility
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._certificate_visibility" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._certificate_visibility" data-throw-if-not-resolved="false">CertificateVisibility</xref>. </p>
     syntax:
       content: public enum CertificateVisibility
   - uid: com.microsoft.azure.batch.protocol.models._cloud_job
@@ -855,7 +861,7 @@ references:
     nameWithType: ComputeNodeDeallocationOption
     fullName: com.microsoft.azure.batch.protocol.models.ComputeNodeDeallocationOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._compute_node_deallocation_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._compute_node_deallocation_option" data-throw-if-not-resolved="false">ComputeNodeDeallocationOption</xref>. </p>
     syntax:
       content: public enum ComputeNodeDeallocationOption
   - uid: com.microsoft.azure.batch.protocol.models._compute_node_delete_user_headers
@@ -945,7 +951,7 @@ references:
     nameWithType: ComputeNodeFillType
     fullName: com.microsoft.azure.batch.protocol.models.ComputeNodeFillType
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._compute_node_fill_type" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._compute_node_fill_type" data-throw-if-not-resolved="false">ComputeNodeFillType</xref>. </p>
     syntax:
       content: public enum ComputeNodeFillType
   - uid: com.microsoft.azure.batch.protocol.models._compute_node_get_headers
@@ -1075,7 +1081,7 @@ references:
     nameWithType: ComputeNodeRebootOption
     fullName: com.microsoft.azure.batch.protocol.models.ComputeNodeRebootOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._compute_node_reboot_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._compute_node_reboot_option" data-throw-if-not-resolved="false">ComputeNodeRebootOption</xref>. </p>
     syntax:
       content: public enum ComputeNodeRebootOption
   - uid: com.microsoft.azure.batch.protocol.models._compute_node_reboot_options
@@ -1105,7 +1111,7 @@ references:
     nameWithType: ComputeNodeReimageOption
     fullName: com.microsoft.azure.batch.protocol.models.ComputeNodeReimageOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._compute_node_reimage_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._compute_node_reimage_option" data-throw-if-not-resolved="false">ComputeNodeReimageOption</xref>. </p>
     syntax:
       content: public enum ComputeNodeReimageOption
   - uid: com.microsoft.azure.batch.protocol.models._compute_node_reimage_options
@@ -1125,7 +1131,7 @@ references:
     nameWithType: ComputeNodeState
     fullName: com.microsoft.azure.batch.protocol.models.ComputeNodeState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._compute_node_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._compute_node_state" data-throw-if-not-resolved="false">ComputeNodeState</xref>. </p>
     syntax:
       content: public enum ComputeNodeState
   - uid: com.microsoft.azure.batch.protocol.models._compute_node_update_user_headers
@@ -1158,6 +1164,36 @@ references:
     summary: <p>Ein Benutzerkonto für RDP oder SSH-Zugriff auf einen Serverknoten. </p>
     syntax:
       content: public class ComputeNodeUser
+  - uid: com.microsoft.azure.batch.protocol.models._container_configuration
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._container_configuration.yml
+    name: ContainerConfiguration
+    nameWithType: ContainerConfiguration
+    fullName: com.microsoft.azure.batch.protocol.models.ContainerConfiguration
+    type: Class
+    summary: <p>Die Konfiguration für Anwendungspools Container aktiviert werden soll. </p>
+    syntax:
+      content: public class ContainerConfiguration
+  - uid: com.microsoft.azure.batch.protocol.models._container_registry
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._container_registry.yml
+    name: ContainerRegistry
+    nameWithType: ContainerRegistry
+    fullName: com.microsoft.azure.batch.protocol.models.ContainerRegistry
+    type: Class
+    summary: <p>Eine private containerregistrierung. </p>
+    syntax:
+      content: public class ContainerRegistry
+  - uid: com.microsoft.azure.batch.protocol.models._data_disk
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._data_disk.yml
+    name: DataDisk
+    nameWithType: DataDisk
+    fullName: com.microsoft.azure.batch.protocol.models.DataDisk
+    type: Class
+    summary: '<p>Einstellungen auf, die von den Datenträgern zugeordnet, um die Serverknoten im Pool verwendet werden. </p>'
+    syntax:
+      content: public class DataDisk
   - uid: com.microsoft.azure.batch.protocol.models._delete_certificate_error
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._delete_certificate_error.yml
@@ -1175,7 +1211,7 @@ references:
     nameWithType: DependencyAction
     fullName: com.microsoft.azure.batch.protocol.models.DependencyAction
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._dependency_action" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._dependency_action" data-throw-if-not-resolved="false">Aktion Abhängigkeit</xref>. </p>
     syntax:
       content: public enum DependencyAction
   - uid: com.microsoft.azure.batch.protocol.models._disable_compute_node_scheduling_option
@@ -1185,7 +1221,7 @@ references:
     nameWithType: DisableComputeNodeSchedulingOption
     fullName: com.microsoft.azure.batch.protocol.models.DisableComputeNodeSchedulingOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._disable_compute_node_scheduling_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._disable_compute_node_scheduling_option" data-throw-if-not-resolved="false">DisableComputeNodeSchedulingOption</xref>. </p>
     syntax:
       content: public enum DisableComputeNodeSchedulingOption
   - uid: com.microsoft.azure.batch.protocol.models._disable_job_option
@@ -1195,7 +1231,7 @@ references:
     nameWithType: DisableJobOption
     fullName: com.microsoft.azure.batch.protocol.models.DisableJobOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._disable_job_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._disable_job_option" data-throw-if-not-resolved="false">DisableJobOption</xref>. </p>
     syntax:
       content: public enum DisableJobOption
   - uid: com.microsoft.azure.batch.protocol.models._elevation_level
@@ -1205,7 +1241,7 @@ references:
     nameWithType: ElevationLevel
     fullName: com.microsoft.azure.batch.protocol.models.ElevationLevel
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._elevation_level" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._elevation_level" data-throw-if-not-resolved="false">ElevationLevel</xref>. </p>
     syntax:
       content: public enum ElevationLevel
   - uid: com.microsoft.azure.batch.protocol.models._environment_setting
@@ -1225,7 +1261,7 @@ references:
     nameWithType: ErrorCategory
     fullName: com.microsoft.azure.batch.protocol.models.ErrorCategory
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._error_category" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._error_category" data-throw-if-not-resolved="false">ErrorCategory</xref>. </p>
     syntax:
       content: public enum ErrorCategory
   - uid: com.microsoft.azure.batch.protocol.models._error_message
@@ -1475,7 +1511,7 @@ references:
     nameWithType: ImageReference
     fullName: com.microsoft.azure.batch.protocol.models.ImageReference
     type: Class
-    summary: '<p>Ein Verweis auf ein Azure-virtuelle Computer-Marketplace-Image. Um die Liste der alle von Azure Batch überprüft ImageReferences zu erhalten, finden Sie unter den Vorgang "Liste unterstützter Knoten Agent SKUs". </p>'
+    summary: '<p>Ein Verweis auf ein Azure-virtuelle Computer-Marketplace-Image oder ein benutzerdefiniertes Image des virtuellen Azure-Computer. Zum Abrufen aller Azure Marketplace-Image-Verweise, die vom Azure Batch überprüft wurden, finden Sie unter "Liste Knoten Agent-SKUs" Vorgang. </p>'
     syntax:
       content: public class ImageReference
   - uid: com.microsoft.azure.batch.protocol.models._inbound_endpoint
@@ -1495,7 +1531,7 @@ references:
     nameWithType: InboundEndpointProtocol
     fullName: com.microsoft.azure.batch.protocol.models.InboundEndpointProtocol
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._inbound_endpoint_protocol" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._inbound_endpoint_protocol" data-throw-if-not-resolved="false">InboundEndpointProtocol</xref>. </p>
     syntax:
       content: public enum InboundEndpointProtocol
   - uid: com.microsoft.azure.batch.protocol.models._inbound_n_a_t_pool
@@ -1515,7 +1551,7 @@ references:
     nameWithType: JobAction
     fullName: com.microsoft.azure.batch.protocol.models.JobAction
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._job_action" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._job_action" data-throw-if-not-resolved="false">JobAction</xref>. </p>
     syntax:
       content: public enum JobAction
   - uid: com.microsoft.azure.batch.protocol.models._job_add_headers
@@ -1795,7 +1831,7 @@ references:
     nameWithType: JobManagerTask
     fullName: com.microsoft.azure.batch.protocol.models.JobManagerTask
     type: Class
-    summary: <p>Gibt Details einer Auftrags-Manager-Aufgabe an. </p>
+    summary: '<p>Gibt Details einer Auftrags-Manager-Aufgabe an. Die Auftrags-Manager-Aufgabe wird automatisch gestartet, wenn der Auftrag erstellt wird. Der Batch-Dienst versucht, die Auftrags-Manager-Aufgabe vor alle anderen Aufgaben im Auftrag zu planen. Wenn ein Pool verkleinert wird, versucht der Batch-Dienst Serverknoten beizubehalten, Auftrags-Manager-Aufgaben ausgeführt werden, so lange als möglich (d. h. Knoten ausgeführten ''normale'' Aufgaben vor dem Knoten ausgeführten Auftrags-Manager-Tasks entfernt werden). Wenn eine Auftrags-Manager-Aufgabe fehlschlägt und neu gestartet werden muss, versucht das System mit der höchsten Priorität zu planen. Wenn keine im Leerlauf Knoten vorhanden sind, kann das System Beenden eines aktiven Aufgaben im Pool und an die Warteschlange zurückgegeben werden, um Platz für die Auftrags-Manager-Aufgabe, neu zu starten. Beachten Sie, dass eine Auftrags-Manager-Aufgabe in einem Auftrag keine Priorität über Aufgaben in anderen Aufträgen verfügt. Über Aufträge hinweg werden nur Prioritäten auf Auftragsebene berücksichtigt. Z. B. wenn ein Auftrags-Manager in einem Auftrag Priorität 0 neu gestartet werden muss, wird es nicht Aufgaben eines Auftrags Priorität 1 versetzen. </p>'
     syntax:
       content: public class JobManagerTask
   - uid: com.microsoft.azure.batch.protocol.models._job_patch_headers
@@ -1845,7 +1881,7 @@ references:
     nameWithType: JobPreparationTask
     fullName: com.microsoft.azure.batch.protocol.models.JobPreparationTask
     type: Class
-    summary: '<p>Ein Auftrag zur Vorbereitung Task ausführen, bevor alle Aufgaben des Auftrags auf einem gegebenen Knoten zu berechnen. </p>'
+    summary: '<p>Ein Auftrag zur Vorbereitung Task ausführen, bevor alle Aufgaben des Auftrags auf einem gegebenen Knoten zu berechnen. Auftrag zur Vorbereitung können Sie einen Serverknoten zum Ausführen von Aufgaben für den Auftrag vorbereiten. Auftrag zur Vorbereitung häufig ausgeführte Aktivitäten umfassen: Herunterladen von allgemeinen Ressourcendateien aller Aufgaben im Auftrag verwendet. Der Task Auftrag zur Vorbereitung kann diese allgemeine Ressourcendateien in den freigegebenen Speicherort auf den Computeknoten herunterladen. (AZ_BATCH_NODE_ROOT_DIR), oder starten Sie einen lokalen Dienst auf den Serverknoten, damit alle Aufgaben dieses Auftrags mit ihm kommunizieren können. Wenn der Auftrag Vorbereitung task ein Fehler auftritt (d. h. der Wiederholungsversuche vor dem Beenden mit Exitcode 0 zählen seitliches), wird der Batch nicht Aufgaben des Auftrags auf den Computeknoten ausgeführt. Der Knoten bleibt zum Ausführen von Aufgaben des Auftrags, bis ein reimaging ausgeführt wird. Der Knoten aktiv bleibt und für andere Aufträge verwendet werden kann. Der Auftrag zur Vorbereitung-Task kann mehrere Male auf dem gleichen Computeknoten ausgeführt werden. Aus diesem Grund sollten Sie den Auftrag zur Vorbereitung-Task, um die erneute Ausführung behandeln schreiben. Wenn der Computeknoten neu gestartet wird, wird der Auftrag zur Vorbereitung Task erneut ausgeführt auf dem Knoten vor allen anderen Aufgaben des Auftrags, Planung, wenn RerunOnNodeRebootAfterSuccess auf "true" festgelegt ist oder wenn der Auftrag zur Vorbereitung Task zuvor nicht abgeschlossen wurde. Wenn der Computeknoten ein reimaging ausgeführt wird, wird der Auftrag zur Vorbereitung Task ausgeführt, erneut ausführen, bevor jede Aufgabe des Auftrags planen. </p>'
     syntax:
       content: public class JobPreparationTask
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task_execution_information
@@ -1865,7 +1901,7 @@ references:
     nameWithType: JobPreparationTaskState
     fullName: com.microsoft.azure.batch.protocol.models.JobPreparationTaskState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task_state" data-throw-if-not-resolved="false">JobPreparationTaskState</xref>. </p>
     syntax:
       content: public enum JobPreparationTaskState
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -1875,7 +1911,7 @@ references:
     nameWithType: JobReleaseTask
     fullName: com.microsoft.azure.batch.protocol.models.JobReleaseTask
     type: Class
-    summary: '<p>Ein Auftrag Version der auszuführende Task nach Auftragsabschluss auf einem beliebigen Computeknoten, in dem der Auftrag ausgeführt wurde. </p>'
+    summary: '<p>Ein Auftrag Version der auszuführende Task nach Auftragsabschluss auf einem beliebigen Computeknoten, in dem der Auftrag ausgeführt wurde. Der Auftrag Release-Task ausgeführt wird, wenn der Auftrag beendet wird, aufgrund eines der folgenden: der Benutzer ruft API Auftrag beendet oder der Auftrags-API löschen, während der Auftrag noch aktiv ist, den Auftrag maximale Wand Uhr zeitbeschränkung erreicht ist und der Auftrag immer noch aktiv ist , oder der Auftrags-Auftrags-Manager-Aufgabe abgeschlossen und der Auftrag wird so konfiguriert, dass um nach Abschluss der Auftrags-Manager zu beenden. Der Auftrag Version Taskausführung auf jedem Computeknoten, in dem Aufgaben des Auftrags ausgeführt wurden und der Auftrag zur Vorbereitung Task ausgeführt und abgeschlossen werden. Wenn Sie ein reimaging, einen Serverknoten durchführen, nachdem sie den Auftrag zur Vorbereitung Task ausgeführt wurde, sodass der Auftrag beendet, ohne weitere Aufgaben des Auftrags auf, mit denen Knoten berechnet (und daher die Vorbereitung des Auftrags Aufgabe wird nicht erneut ausgeführt), wird die Auftrag Version Aufgabe nicht auf diesem Knoten ausgeführt. Wenn Compute-Knoten neu gestartet, während die Aufgabe Auftrag Version noch ausgeführt wird, wird der Task Auftrag Version beim Start des Compute-Knotens erneut ausgeführt. Der Auftrag ist nicht als abgeschlossen gekennzeichnet, bis alle Aufgaben der Version des Auftrags abgeschlossen ist. Der Task Auftrag freigeben, die im Hintergrund ausgeführt werden. Sie beansprucht keinen Planung Slot; d. h. es nicht für den MaxTasksPerNode-Grenzwert für den Pool angegeben gezählt. </p>'
     syntax:
       content: public class JobReleaseTask
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task_execution_information
@@ -1895,7 +1931,7 @@ references:
     nameWithType: JobReleaseTaskState
     fullName: com.microsoft.azure.batch.protocol.models.JobReleaseTaskState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._job_release_task_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task_state" data-throw-if-not-resolved="false">JobReleaseTaskState</xref>. </p>
     syntax:
       content: public enum JobReleaseTaskState
   - uid: com.microsoft.azure.batch.protocol.models._job_schedule_add_headers
@@ -2105,7 +2141,7 @@ references:
     nameWithType: JobScheduleState
     fullName: com.microsoft.azure.batch.protocol.models.JobScheduleState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._job_schedule_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._job_schedule_state" data-throw-if-not-resolved="false">JobScheduleState</xref>. </p>
     syntax:
       content: public enum JobScheduleState
   - uid: com.microsoft.azure.batch.protocol.models._job_schedule_statistics
@@ -2195,7 +2231,7 @@ references:
     nameWithType: JobState
     fullName: com.microsoft.azure.batch.protocol.models.JobState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._job_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._job_state" data-throw-if-not-resolved="false">JobState</xref>. </p>
     syntax:
       content: public enum JobState
   - uid: com.microsoft.azure.batch.protocol.models._job_statistics
@@ -2335,7 +2371,7 @@ references:
     nameWithType: NetworkSecurityGroupRuleAccess
     fullName: com.microsoft.azure.batch.protocol.models.NetworkSecurityGroupRuleAccess
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._network_security_group_rule_access" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._network_security_group_rule_access" data-throw-if-not-resolved="false">NetworkSecurityGroupRuleAccess</xref>. </p>
     syntax:
       content: public enum NetworkSecurityGroupRuleAccess
   - uid: com.microsoft.azure.batch.protocol.models._node_agent_sku
@@ -2415,7 +2451,7 @@ references:
     nameWithType: OnAllTasksComplete
     fullName: com.microsoft.azure.batch.protocol.models.OnAllTasksComplete
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._on_all_tasks_complete" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._on_all_tasks_complete" data-throw-if-not-resolved="false">OnAllTasksComplete</xref>. </p>
     syntax:
       content: public enum OnAllTasksComplete
   - uid: com.microsoft.azure.batch.protocol.models._on_task_failure
@@ -2425,7 +2461,7 @@ references:
     nameWithType: OnTaskFailure
     fullName: com.microsoft.azure.batch.protocol.models.OnTaskFailure
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._on_task_failure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._on_task_failure" data-throw-if-not-resolved="false">OnTaskFailure</xref>. </p>
     syntax:
       content: public enum OnTaskFailure
   - uid: com.microsoft.azure.batch.protocol.models._o_s_disk
@@ -2435,7 +2471,7 @@ references:
     nameWithType: OSDisk
     fullName: com.microsoft.azure.batch.protocol.models.OSDisk
     type: Class
-    summary: <p>Ein Verweis auf ein Betriebssystem-Datenträger-Image. </p>
+    summary: <p>Einstellungen für den Betriebssystemdatenträger des virtuellen Computers. </p>
     syntax:
       content: public class OSDisk
   - uid: com.microsoft.azure.batch.protocol.models._o_s_type
@@ -2445,7 +2481,7 @@ references:
     nameWithType: OSType
     fullName: com.microsoft.azure.batch.protocol.models.OSType
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._o_s_type" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._o_s_type" data-throw-if-not-resolved="false">OSType</xref>. </p>
     syntax:
       content: public enum OSType
   - uid: com.microsoft.azure.batch.protocol.models._output_file
@@ -2485,7 +2521,7 @@ references:
     nameWithType: OutputFileUploadCondition
     fullName: com.microsoft.azure.batch.protocol.models.OutputFileUploadCondition
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._output_file_upload_condition" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._output_file_upload_condition" data-throw-if-not-resolved="false">OutputFileUploadCondition</xref>. </p>
     syntax:
       content: public enum OutputFileUploadCondition
   - uid: com.microsoft.azure.batch.protocol.models._output_file_upload_options
@@ -2730,7 +2766,7 @@ references:
     nameWithType: PoolLifetimeOption
     fullName: com.microsoft.azure.batch.protocol.models.PoolLifetimeOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._pool_lifetime_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._pool_lifetime_option" data-throw-if-not-resolved="false">PoolLifetimeOption</xref>. </p>
     syntax:
       content: public enum PoolLifetimeOption
   - uid: com.microsoft.azure.batch.protocol.models._pool_list_headers
@@ -2890,7 +2926,7 @@ references:
     nameWithType: PoolState
     fullName: com.microsoft.azure.batch.protocol.models.PoolState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._pool_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._pool_state" data-throw-if-not-resolved="false">PoolState</xref>. </p>
     syntax:
       content: public enum PoolState
   - uid: com.microsoft.azure.batch.protocol.models._pool_statistics
@@ -3050,7 +3086,7 @@ references:
     nameWithType: SchedulingState
     fullName: com.microsoft.azure.batch.protocol.models.SchedulingState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._scheduling_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._scheduling_state" data-throw-if-not-resolved="false">SchedulingState</xref>. </p>
     syntax:
       content: public enum SchedulingState
   - uid: com.microsoft.azure.batch.protocol.models._start_task
@@ -3080,9 +3116,19 @@ references:
     nameWithType: StartTaskState
     fullName: com.microsoft.azure.batch.protocol.models.StartTaskState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._start_task_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._start_task_state" data-throw-if-not-resolved="false">StartTaskState</xref>. </p>
     syntax:
       content: public enum StartTaskState
+  - uid: com.microsoft.azure.batch.protocol.models._storage_account_type
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._storage_account_type.yml
+    name: StorageAccountType
+    nameWithType: StorageAccountType
+    fullName: com.microsoft.azure.batch.protocol.models.StorageAccountType
+    type: Enum
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._storage_account_type" data-throw-if-not-resolved="false">StorageAccountType</xref>. </p>
+    syntax:
+      content: public enum StorageAccountType
   - uid: com.microsoft.azure.batch.protocol.models._subtask_information
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._subtask_information.yml
@@ -3100,7 +3146,7 @@ references:
     nameWithType: SubtaskState
     fullName: com.microsoft.azure.batch.protocol.models.SubtaskState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._subtask_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._subtask_state" data-throw-if-not-resolved="false">SubtaskState</xref>. </p>
     syntax:
       content: public enum SubtaskState
   - uid: com.microsoft.azure.batch.protocol.models._task_add_collection_headers
@@ -3190,7 +3236,7 @@ references:
     nameWithType: TaskAddStatus
     fullName: com.microsoft.azure.batch.protocol.models.TaskAddStatus
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._task_add_status" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._task_add_status" data-throw-if-not-resolved="false">TaskAddStatus</xref>. </p>
     syntax:
       content: public enum TaskAddStatus
   - uid: com.microsoft.azure.batch.protocol.models._task_constraints
@@ -3203,6 +3249,26 @@ references:
     summary: <p>Ausführungseinschränkungen eine Aufgabe zuweisen. </p>
     syntax:
       content: public class TaskConstraints
+  - uid: com.microsoft.azure.batch.protocol.models._task_container_execution_information
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._task_container_execution_information.yml
+    name: TaskContainerExecutionInformation
+    nameWithType: TaskContainerExecutionInformation
+    fullName: com.microsoft.azure.batch.protocol.models.TaskContainerExecutionInformation
+    type: Class
+    summary: '<p>Enthält Informationen über den Container, die eine Aufgabe ausgeführt wird. </p>'
+    syntax:
+      content: public class TaskContainerExecutionInformation
+  - uid: com.microsoft.azure.batch.protocol.models._task_container_settings
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._task_container_settings.yml
+    name: TaskContainerSettings
+    nameWithType: TaskContainerSettings
+    fullName: com.microsoft.azure.batch.protocol.models.TaskContainerSettings
+    type: Class
+    summary: <p>Die Container-Einstellungen für eine Aufgabe. </p>
+    syntax:
+      content: public class TaskContainerSettings
   - uid: com.microsoft.azure.batch.protocol.models._task_counts
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._task_counts.yml
@@ -3220,7 +3286,7 @@ references:
     nameWithType: TaskCountValidationStatus
     fullName: com.microsoft.azure.batch.protocol.models.TaskCountValidationStatus
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._task_count_validation_status" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._task_count_validation_status" data-throw-if-not-resolved="false">TaskCountValidationStatus</xref>. </p>
     syntax:
       content: public enum TaskCountValidationStatus
   - uid: com.microsoft.azure.batch.protocol.models._task_delete_headers
@@ -3270,7 +3336,7 @@ references:
     nameWithType: TaskExecutionResult
     fullName: com.microsoft.azure.batch.protocol.models.TaskExecutionResult
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._task_execution_result" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._task_execution_result" data-throw-if-not-resolved="false">TaskExecutionResult</xref>. </p>
     syntax:
       content: public enum TaskExecutionResult
   - uid: com.microsoft.azure.batch.protocol.models._task_failure_information
@@ -3410,7 +3476,7 @@ references:
     nameWithType: TaskState
     fullName: com.microsoft.azure.batch.protocol.models.TaskState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.batch.protocol.models._task_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.batch.protocol.models._task_state" data-throw-if-not-resolved="false">TaskState</xref>. </p>
     syntax:
       content: public enum TaskState
   - uid: com.microsoft.azure.batch.protocol.models._task_statistics

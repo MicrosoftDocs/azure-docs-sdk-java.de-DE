@@ -16,10 +16,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 221
+      startLine: 223
     package: com.microsoft.azure.management.network
     summary: <p>Die Stufe der netzwerkschnittstellendefinition ermöglicht eine Netzwerksicherheitsgruppe zugeordnet. </p>
     syntax:
@@ -38,7 +38,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 236
+      startLine: 238
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Ordnet eine vorhandene Netzwerksicherheitsgruppe der Netzwerkschnittstelle.</p>
@@ -66,7 +66,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 228
+      startLine: 230
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Erstellen Sie eine neue Netzwerksicherheitsgruppe Netzwerkschnittstelle, die auf Grundlage der bereitgestellten Definition zugeordnet werden soll.</p>
@@ -112,9 +112,9 @@ references:
     nameWithType: NetworkInterface.DefinitionStages.WithCreate
     fullName: com.microsoft.azure.management.network.NetworkInterface.DefinitionStages.WithCreate
     type: Interface
-    summary: '<p>Die Phase der netzwerkschnittstellendefinition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
+    summary: '<p>Die Phase der netzwerkschnittstellendefinition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden, sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
     syntax:
-      content: 'public interface WithCreate extends Creatable<NetworkInterface>,Resource.DefinitionWithTags<WithCreate>,NetworkInterface.DefinitionStages.WithPrimaryPublicIPAddress,NetworkInterface.DefinitionStages.WithNetworkSecurityGroup,NetworkInterface.DefinitionStages.WithSecondaryIPConfiguration,NetworkInterface.DefinitionStages.WithLoadBalancer'
+      content: 'public interface WithCreate extends Creatable<NetworkInterface>,Resource.DefinitionWithTags<WithCreate>,NetworkInterface.DefinitionStages.WithPrimaryPublicIPAddress,NetworkInterface.DefinitionStages.WithNetworkSecurityGroup,NetworkInterface.DefinitionStages.WithSecondaryIPConfiguration,NetworkInterface.DefinitionStages.WithAcceleratedNetworking,NetworkInterface.DefinitionStages.WithLoadBalancer'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._creatable
     parent: com.microsoft.azure.management.resources.fluentcore.model
     href: com.microsoft.azure.management.resources.fluentcore.model._creatable.yml
@@ -123,7 +123,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.model.Creatable<T>
     type: Interface
     summary: |-
-      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">eine Signatures-Auflistung</xref>.</p>
       <p></p>
     syntax:
       content: 'public interface Creatable<T> extends Indexable,HasName'
@@ -137,6 +137,6 @@ references:
     nameWithType: NetworkSecurityGroup
     fullName: com.microsoft.azure.management.network.NetworkSecurityGroup
     type: Interface
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.management.network._network\" data-throw-if-not-resolved=\"false\"></xref>Sicherheitsgruppe \"-\". </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.management.network._network\" data-throw-if-not-resolved=\"false\">Netzwerk</xref> Sicherheitsgruppe. </p>"
     syntax:
       content: 'public interface NetworkSecurityGroup extends GroupableResource<NetworkManager, NetworkSecurityGroupInner>,Refreshable<NetworkSecurityGroup>,Updatable<NetworkSecurityGroup.Update>,HasAssociatedSubnets'

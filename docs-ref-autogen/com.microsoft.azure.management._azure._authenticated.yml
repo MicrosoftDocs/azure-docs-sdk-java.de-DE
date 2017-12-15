@@ -19,14 +19,14 @@ items:
     source:
       remote: &ref_0
         path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 232
+      startLine: 242
     package: com.microsoft.azure.management
     summary: |-
-      <p>Authentifizierter Zugriff auf eine Teilmenge der <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> APIs, die nicht über ein bestimmtes Abonnement benötigen. </p>
-      <p>Verwenden Sie die abonnementspezifischen-APIs für den Zugriff auf <xref href="com.microsoft.azure.management._azure._authenticated.withSubscription(String)" data-throw-if-not-resolved="false"></xref>, oder <xref href="com.microsoft.azure.management._azure._authenticated.withDefaultSubscription()" data-throw-if-not-resolved="false"></xref> , wenn ein Standardabonnement bereits zuvor (z. B. in einer zuvor angegebenen Authentifizierungsdatei) angegeben wurde. </p>
+      <p>Authentifizierter Zugriff auf eine Teilmenge der <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> APIs, die nicht über ein bestimmtes Abonnement benötigen. </p>
+      <p>Verwenden Sie die abonnementspezifischen-APIs für den Zugriff auf <xref uid="com.microsoft.azure.management._azure._authenticated.withSubscription(String)" data-throw-if-not-resolved="false">Authenticated#withSubscription(String)</xref>, oder <xref uid="com.microsoft.azure.management._azure._authenticated.withDefaultSubscription()" data-throw-if-not-resolved="false">withDefaultSubscription()</xref> Wenn ein Standardabonnement (für bereits zuvor angegeben wurde z. B. in einem zuvor angegebenen Authentifizierungsdatei). </p>
     syntax:
       content: public interface Authenticated extends AccessManagement
     inheritedMembers:
@@ -50,7 +50,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 243
+      startLine: 253
     package: com.microsoft.azure.management
     summary: |-
       <p>Einstiegspunkt zu Abonnement Verwaltungs-APIs.</p>
@@ -74,7 +74,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 236
+      startLine: 246
     package: com.microsoft.azure.management
     syntax:
       content: public String tenantId()
@@ -95,7 +95,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 250
+      startLine: 260
     package: com.microsoft.azure.management
     summary: |-
       <p>Der Einstiegspunkt zu Verwaltungs-APIs des Mandanten.</p>
@@ -119,19 +119,19 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 271
+      startLine: 281
     package: com.microsoft.azure.management
     summary: |-
       <p>Wählt das standardmäßige Abonnement wie das Abonnement für die APIs zur Bearbeitung aus. </p>
-      <p>Das standardmäßige Abonnement kann angegeben werden, in die Authentifizierung mit <xref href="com.microsoft.azure.management._azure.authenticate(File)" data-throw-if-not-resolved="false"></xref>. Wenn kein Standardabonnement wurde zuvor angegeben, das erste Abonnement wie zurückgegebene <xref href="com.microsoft.azure.management._azure._authenticated.subscriptions()" data-throw-if-not-resolved="false"></xref> ausgewählt werden. </p>
+      <p>Das standardmäßige Abonnement kann angegeben werden, in die Authentifizierung mit <xref uid="com.microsoft.azure.management._azure.authenticate(File)" data-throw-if-not-resolved="false">Azure#authenticate(File)</xref>. Wenn kein Standardabonnement wurde zuvor angegeben, das erste Abonnement wie zurückgegebene <xref uid="com.microsoft.azure.management._azure._authenticated.subscriptions()" data-throw-if-not-resolved="false">Authenticated#subscriptions()</xref> ausgewählt werden. </p>
     syntax: &ref_3
       content: public Azure withDefaultSubscription()
       return:
         type: com.microsoft.azure.management._azure
-        description: '<p>eine authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client so konfiguriert, dass die Arbeit mit dem Standardabonnement </p>'
+        description: '<p>eine authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client so konfiguriert, dass die Arbeit mit dem Standardabonnement </p>'
     exceptions:
       - type: dc385fd4
-        description: <p>die Ausnahme aus<xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref></p>
+        description: <p>Ausnahme von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref></p>
       - type: cbf33bbe
         description: <p>von der Serialisierung/Deserialisierung ausgelöste Ausnahme </p>
   - uid: com.microsoft.azure.management._azure._authenticated.withSubscription(String)
@@ -148,20 +148,20 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 259
+      startLine: 269
     package: com.microsoft.azure.management
     summary: |-
       <p>Wählt ein bestimmtes Abonnement für die APIs zur Bearbeitung an. </p>
-      <p>Die meisten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> APIs erfordern ein bestimmtes Abonnement ausgewählt werden. </p>
+      <p>Die meisten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> APIs erfordern ein bestimmtes Abonnement ausgewählt werden. </p>
     syntax: &ref_2
       content: public Azure withSubscription(String subscriptionId)
       parameters:
         - id: subscriptionId
           type: '26831127'
-          description: <p>die ID des Abonnements </p>
+          description: <p>Die ID des Abonnements </p>
       return:
         type: com.microsoft.azure.management._azure
-        description: '<p>eine authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client so konfiguriert, dass die Arbeit mit dem angegebenen Abonnement </p>'
+        description: '<p>eine authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client so konfiguriert, dass die Arbeit mit dem angegebenen Abonnement </p>'
 references:
   - uid: '26831127'
     spec.java:
@@ -297,7 +297,7 @@ references:
     nameWithType: AccessManagement
     fullName: com.microsoft.azure.management.AccessManagement
     type: Interface
-    summary: '<p>Macht Methoden, die im Zusammenhang mit der Verwaltung von Zugriffsberechtigungen im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Macht Methoden, die im Zusammenhang mit der Verwaltung von Zugriffsberechtigungen im <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>'
     syntax:
       content: public interface AccessManagement
   - uid: com.microsoft.azure.management.resources._subscriptions
@@ -327,7 +327,7 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure
   - uid: com.microsoft.azure.management._azure.authenticate(File)
@@ -346,7 +346,7 @@ references:
           description: '<p>die Datei mit den Anmeldeinformationen in der Java-Standardeigenschaften Dateiformat mit den folgenden Schlüsseln:</p>'
       return:
         type: com.microsoft.azure.management._azure._authenticated
-        description: <p>authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client </p>
+        description: <p>authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client </p>
   - uid: com.microsoft.azure.management._azure._authenticated.subscriptions()
     parent: com.microsoft.azure.management._azure._authenticated
     href: com.microsoft.azure.management._azure._authenticated.yml
@@ -367,7 +367,7 @@ references:
     type: Method
     summary: |-
       <p>Wählt ein bestimmtes Abonnement für die APIs zur Bearbeitung an. </p>
-      <p>Die meisten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> APIs erfordern ein bestimmtes Abonnement ausgewählt werden. </p>
+      <p>Die meisten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> APIs erfordern ein bestimmtes Abonnement ausgewählt werden. </p>
     syntax: *ref_2
   - uid: com.microsoft.azure.management._azure._authenticated.withDefaultSubscription()
     parent: com.microsoft.azure.management._azure._authenticated
@@ -378,5 +378,5 @@ references:
     type: Method
     summary: |-
       <p>Wählt das standardmäßige Abonnement wie das Abonnement für die APIs zur Bearbeitung aus. </p>
-      <p>Das standardmäßige Abonnement kann angegeben werden, in die Authentifizierung mit <xref href="com.microsoft.azure.management._azure.authenticate(File)" data-throw-if-not-resolved="false"></xref>. Wenn kein Standardabonnement wurde zuvor angegeben, das erste Abonnement wie zurückgegebene <xref href="com.microsoft.azure.management._azure._authenticated.subscriptions()" data-throw-if-not-resolved="false"></xref> ausgewählt werden. </p>
+      <p>Das standardmäßige Abonnement kann angegeben werden, in die Authentifizierung mit <xref uid="com.microsoft.azure.management._azure.authenticate(File)" data-throw-if-not-resolved="false">Azure#authenticate(File)</xref>. Wenn kein Standardabonnement wurde zuvor angegeben, das erste Abonnement wie zurückgegebene <xref uid="com.microsoft.azure.management._azure._authenticated.subscriptions()" data-throw-if-not-resolved="false">Authenticated#subscriptions()</xref> ausgewählt werden. </p>
     syntax: *ref_3

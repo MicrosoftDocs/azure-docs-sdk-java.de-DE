@@ -21,18 +21,19 @@ items:
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/ResponseMessage.java
       startLine: 8
     package: com.microsoft.azure.sdk.iot.device
-    summary: <p>Erweitern <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> zur Unterstützung von Statusantwort </p>
+    summary: <p>Erweitern <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> zur Unterstützung von Statusantwort </p>
     syntax:
       content: public class ResponseMessage extends Message
     inheritance:
       - java.lang.Object
       - com.microsoft.azure.sdk.iot.device._message
     inheritedMembers:
-      - com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET()
+      - com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET
       - com.microsoft.azure.sdk.iot.device._message.getBodyStream()
       - com.microsoft.azure.sdk.iot.device._message.getBytes()
       - com.microsoft.azure.sdk.iot.device._message.getCorrelationId()
       - com.microsoft.azure.sdk.iot.device._message.getDeliveryAcknowledgement()
+      - com.microsoft.azure.sdk.iot.device._message.getIotHubConnectionString()
       - com.microsoft.azure.sdk.iot.device._message.getMessageId()
       - com.microsoft.azure.sdk.iot.device._message.getMessageType()
       - com.microsoft.azure.sdk.iot.device._message.getProperties()
@@ -47,6 +48,7 @@ items:
       - com.microsoft.azure.sdk.iot.device._message.setAbsoluteExpiryTime(long)
       - com.microsoft.azure.sdk.iot.device._message.setCorrelationId(String)
       - com.microsoft.azure.sdk.iot.device._message.setExpiryTime(long)
+      - com.microsoft.azure.sdk.iot.device._message.setIotHubConnectionString(IotHubConnectionString)
       - com.microsoft.azure.sdk.iot.device._message.setMessageId(String)
       - com.microsoft.azure.sdk.iot.device._message.setMessageType(MessageType)
       - 'com.microsoft.azure.sdk.iot.device._message.setProperty(String,String)'
@@ -117,7 +119,7 @@ references:
     nameWithType: ResponseMessage.getStatus
     fullName: IotHubStatusCode com.microsoft.azure.sdk.iot.device.ResponseMessage.getStatus
     package: com.microsoft.azure.sdk.iot.device
-  - uid: com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET()
+  - uid: com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
     name: DEFAULT_IOTHUB_MESSAGE_CHARSET
@@ -152,7 +154,7 @@ references:
       content: 'public byte [] getBytes()'
       return:
         type: ccd9418d
-        description: '<p>Eine Kopie dieser <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Text, als ein Bytearray. </p>'
+        description: '<p>Eine Kopie dieser <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Text, als ein Bytearray. </p>'
   - uid: com.microsoft.azure.sdk.iot.device._message.getCorrelationId()
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -179,6 +181,19 @@ references:
       return:
         type: '26831127'
         description: <p>der Wert der Übermittlung-Bestätigung </p>
+  - uid: com.microsoft.azure.sdk.iot.device._message.getIotHubConnectionString()
+    parent: com.microsoft.azure.sdk.iot.device._message
+    href: com.microsoft.azure.sdk.iot.device._message.yml
+    name: getIotHubConnectionString()
+    nameWithType: Message.getIotHubConnectionString()
+    fullName: IotHubConnectionString com.microsoft.azure.sdk.iot.device.Message.getIotHubConnectionString()
+    type: Method
+    summary: <p>Getter-Methode für die IotHubConnectionString-Eigenschaft </p>
+    syntax:
+      content: public IotHubConnectionString getIotHubConnectionString()
+      return:
+        type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string
+        description: <p>der Wert iotHubConnectionString </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.getMessageId()
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -199,12 +214,12 @@ references:
     nameWithType: Message.getMessageType()
     fullName: MessageType com.microsoft.azure.sdk.iot.device.Message.getMessageType()
     type: Method
-    summary: <p>Get-Accessor für die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typ </p>
+    summary: <p>Get-Accessor für die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typ </p>
     syntax:
       content: public MessageType getMessageType()
       return:
         type: com.microsoft.azure.sdk.iot.device._message_type
-        description: <p>die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typwert </p>
+        description: <p>die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typwert </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.getProperties()
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -227,7 +242,7 @@ references:
     nameWithType: Message.getProperty(String name)
     fullName: String com.microsoft.azure.sdk.iot.device.Message.getProperty(String name)
     type: Method
-    summary: <p>Ruft die Werte der Eigenschaften dieses benutzerdefinierten <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Ruft die Werte der Eigenschaften dieses benutzerdefinierten <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>
     syntax:
       content: public String getProperty(String name)
       parameters:
@@ -299,7 +314,7 @@ references:
       parameters:
         - id: stream
           type: f03846a9
-          description: '<p>Ein Datenstrom, geben Sie den Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. </p>'
+          description: '<p>Ein Datenstrom, geben Sie den Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. </p>'
   - uid: 'com.microsoft.azure.sdk.iot.device._message.Message(byte [])'
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -313,7 +328,7 @@ references:
       parameters:
         - id: body
           type: ccd9418d
-          description: <p>Der Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. </p>
+          description: <p>Der Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.Message(String)
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -327,7 +342,7 @@ references:
       parameters:
         - id: body
           type: '26831127'
-          description: <p>Der Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. Intern wird es in ein Bytearray mit UTF-8-Codierung serialisiert. </p>
+          description: <p>Der Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. Intern wird es in ein Bytearray mit UTF-8-Codierung serialisiert. </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.setAbsoluteExpiryTime(long)
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -370,6 +385,20 @@ references:
         - id: timeOut
           type: 0364520f
           description: '<p>Der Timeout für die Nachricht, in Millisekunden, nach der aktuellen Uhrzeit. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device._message.setIotHubConnectionString(IotHubConnectionString)
+    parent: com.microsoft.azure.sdk.iot.device._message
+    href: com.microsoft.azure.sdk.iot.device._message.yml
+    name: setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+    nameWithType: Message.setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+    fullName: void com.microsoft.azure.sdk.iot.device.Message.setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+    type: Method
+    summary: <p>Setter-Methode für den IotHubConnectionString-Typ </p>
+    syntax:
+      content: public void setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+      parameters:
+        - id: iotHubConnectionString
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string
+          description: <p>Der festzulegende Wert iotHubConnectionString </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.setMessageId(String)
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -391,13 +420,13 @@ references:
     nameWithType: Message.setMessageType(MessageType type)
     fullName: void com.microsoft.azure.sdk.iot.device.Message.setMessageType(MessageType type)
     type: Method
-    summary: <p>Setter für die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typ </p>
+    summary: <p>Setter für die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typ </p>
     syntax:
       content: public void setMessageType(MessageType type)
       parameters:
         - id: type
           type: com.microsoft.azure.sdk.iot.device._message_type
-          description: <p>Die Enumeration mit den <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typwert </p>
+          description: <p>Die Enumeration mit den <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typwert </p>
   - uid: 'com.microsoft.azure.sdk.iot.device._message.setProperty(String,String)'
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -405,7 +434,7 @@ references:
     nameWithType: 'Message.setProperty(String name, String value)'
     fullName: 'void com.microsoft.azure.sdk.iot.device.Message.setProperty(String name, String value)'
     type: Method
-    summary: '<p>Fügt ein, oder legt ihn fest benutzerdefinierten Eigenschaften dieses <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Fügt ein, oder legt ihn fest benutzerdefinierten Eigenschaften dieses <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>'
     syntax:
       content: 'public void setProperty(String name, String value)'
       parameters:

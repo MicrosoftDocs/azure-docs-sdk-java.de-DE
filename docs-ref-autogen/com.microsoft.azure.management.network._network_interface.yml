@@ -16,12 +16,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 23
+      startLine: 25
     package: com.microsoft.azure.management.network
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.management.network._network\" data-throw-if-not-resolved=\"false\"></xref>-Schnittstelle. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.management.network._network\" data-throw-if-not-resolved=\"false\">Netzwerk</xref> Schnittstelle. </p>"
     syntax:
       content: 'public interface NetworkInterface extends NetworkInterfaceBase,GroupableResource<NetworkManager, NetworkInterfaceInner>,Refreshable<NetworkInterface>,Updatable<NetworkInterface.Update>'
     inheritedMembers:
@@ -33,6 +33,7 @@ items:
       - com.microsoft.azure.management.network._network_interface_base.internalDnsNameLabel()
       - com.microsoft.azure.management.network._network_interface_base.internalDomainNameSuffix()
       - com.microsoft.azure.management.network._network_interface_base.internalFqdn()
+      - com.microsoft.azure.management.network._network_interface_base.isAcceleratedNetworkingEnabled()
       - com.microsoft.azure.management.network._network_interface_base.isIPForwardingEnabled()
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.network._network_interface_base.macAddress()
@@ -64,13 +65,13 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 31
+      startLine: 33
     package: com.microsoft.azure.management.network
     syntax:
       content: 'public Map<String, NicIPConfiguration> ipConfigurations()'
       return:
         type: 2108f1f4com.microsoft.azure.management.network._nic_i_p_configurationa08ddfce
-        description: '<p>diese Netzwerkschnittstelle, die durch ihre Namen indiziert die IP-Konfiguration </p>'
+        description: '<p>die IP-Konfigurationen von Netzwerk-Schnittstelle, durch deren Namen indiziert. </p>'
   - uid: com.microsoft.azure.management.network._network_interface.primaryIPConfiguration()
     id: primaryIPConfiguration()
     parent: com.microsoft.azure.management.network._network_interface
@@ -85,7 +86,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 36
+      startLine: 38
     package: com.microsoft.azure.management.network
     syntax:
       content: public NicIPConfiguration primaryIPConfiguration()
@@ -146,7 +147,7 @@ references:
     type: Method
     summary: |-
       <p>Ruft das Netzwerk zugeordnete Netzwerksicherheitsgruppe diese Netzwerkschnittstelle. </p>
-      <p>Bei dieser Methode ist einen Rest-API-Aufruf zum Abrufen der <xref href="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false"></xref> Security-Group-Ressource.</p>
+      <p>Bei dieser Methode ist einen Rest-API-Aufruf zum Abrufen der <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Security-Group-Ressource.</p>
       <p></p>
     syntax:
       content: public NetworkSecurityGroup getNetworkSecurityGroup()
@@ -176,7 +177,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.network._network_interface_base.internalDnsNameLabel()
     parent: com.microsoft.azure.management.network._network_interface_base
     href: com.microsoft.azure.management.network._network_interface_base.yml
@@ -217,6 +218,18 @@ references:
       return:
         type: '26831127'
         description: <p>Der qualifizierte Domänenname </p>
+  - uid: com.microsoft.azure.management.network._network_interface_base.isAcceleratedNetworkingEnabled()
+    parent: com.microsoft.azure.management.network._network_interface_base
+    href: com.microsoft.azure.management.network._network_interface_base.yml
+    name: isAcceleratedNetworkingEnabled()
+    nameWithType: NetworkInterfaceBase.isAcceleratedNetworkingEnabled()
+    fullName: boolean com.microsoft.azure.management.network.NetworkInterfaceBase.isAcceleratedNetworkingEnabled()
+    type: Method
+    syntax:
+      content: public boolean isAcceleratedNetworkingEnabled()
+      return:
+        type: 4fc6e284
+        description: '<p>True, wenn accelerated Medienadapter ist für diese Netzwerkschnittstelle aktiviert </p>'
   - uid: com.microsoft.azure.management.network._network_interface_base.isIPForwardingEnabled()
     parent: com.microsoft.azure.management.network._network_interface_base
     href: com.microsoft.azure.management.network._network_interface_base.yml
@@ -228,7 +241,7 @@ references:
       content: public boolean isIPForwardingEnabled()
       return:
         type: 4fc6e284
-        description: "<p>\r\n\r\n  <code>true</code>Wenn die IP-Weiterleitung in dieser Netzwerkschnittstelle aktiviert ist </p>"
+        description: '<p>"true", wenn die IP-Weiterleitung in dieser Netzwerkschnittstelle aktiviert ist </p>'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -325,7 +338,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -340,7 +353,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -416,7 +429,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -507,6 +520,6 @@ references:
     nameWithType: Network
     fullName: com.microsoft.azure.management.network.Network
     type: Interface
-    summary: <p>Einstiegspunkt für virtuelle <xref href="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false"></xref> Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für virtuelle <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Network extends GroupableResource<NetworkManager, VirtualNetworkInner>,Refreshable<Network>,Updatable<Network.Update>'

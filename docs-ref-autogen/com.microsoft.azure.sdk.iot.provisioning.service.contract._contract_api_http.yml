@@ -1,0 +1,431 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http
+    id: _contract_api_http
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.contract
+    children:
+      - com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.createFromConnectionString(ProvisioningConnectionString)
+      - 'com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.request(HttpMethod,String,Map<String, String>,String)'
+    href: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.yml
+    langs:
+      - java
+    name: ContractApiHttp
+    nameWithType: ContractApiHttp
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.contract.ContractApiHttp
+    type: Class
+    source:
+      remote: &ref_0
+        path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/contract/ContractApiHttp.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-iot-sdk-java'
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/contract/ContractApiHttp.java
+      startLine: 57
+    package: com.microsoft.azure.sdk.iot.provisioning.service.contract
+    summary: |-
+      <p>Dieser Client verarbeitet die Gerät Bereitstellung auf HTTP-Kommunikation.</p>
+      <p>Diese Klasse implementiert die HTTPS-Vertrag zwischen den Dienstclient Bereitstellung und der Bereitstellung Device Registration Service. Sie wird von den Managern aufgerufen, die der Dienstclient Bereitstellung öffentlichen APIs implementieren. Für den Zugriff auf die öffentliche API, finden Sie unter der <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client" data-throw-if-not-resolved="false">ProvisioningServiceClient</xref>.</p>
+      <p>Im folgenden Diagramm wird die Beziehung zwischen diesen 3 Ebenen des Service-Clients beschrieben:</p>
+      <p>
+
+        <pre>
+
+          <code>          +-------------------------------------------------------------------+           +------------+
+
+                    |                        ProvisioningServiceClient                  |           |    Query   |
+
+                    +-----+----------------------------+--------------------------+-----+           +--+---+-----+
+
+                         /                             |                           \                   |   |
+
+                        /                              |                            \                  |   |
+
+          +------------+----------------+  +-----------+------------+  +-------------+-------------+   |   |
+
+          | IndividualEnrollmentManager |  | EnrollmentGroupManager |  | RegistrationStatusManager |   |   |
+
+          +------------+--------+-------+  +-----------+------+-----+  +-------------+-------+-----+   |   |
+
+                       |         \                     |       \                     |        \        |   |
+
+                       |          +-----------------------------+------------------------------+-------+   |
+
+                       |                               |                             |                     |
+
+          +------------+-------------------------------+-----------------------------+---------------------+---+
+
+          |                                       ContractApiHttp                                              |
+
+          +------------------------------------------------+---------------------------------------------------+
+
+                                                           |
+
+                                                           |
+
+                     +-------------------------------------+------------------------------------------+
+
+                     |                 com.microsoft.azure.sdk.iot.deps.transport.http                |
+
+                     +--------------------------------------------------------------------------------+
+
+          </code>
+
+        </pre>
+
+      </p>
+    syntax: &ref_1
+      content: public class ContractApiHttp
+    inheritance:
+      - java.lang.Object
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.createFromConnectionString(ProvisioningConnectionString)
+    id: createFromConnectionString(ProvisioningConnectionString)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http
+    href: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.yml
+    langs:
+      - java
+    name: createFromConnectionString(ProvisioningConnectionString provisioningConnectionString)
+    nameWithType: ContractApiHttp.createFromConnectionString(ProvisioningConnectionString provisioningConnectionString)
+    fullName: static ContractApiHttp com.microsoft.azure.sdk.iot.provisioning.service.contract.ContractApiHttp.createFromConnectionString(ProvisioningConnectionString provisioningConnectionString)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.createFromConnectionString*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/contract/ContractApiHttp.java
+      startLine: 104
+    package: com.microsoft.azure.sdk.iot.provisioning.service.contract
+    summary: |-
+      <p>Erstellen Sie eine neue Instanz der dem <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http" data-throw-if-not-resolved="false">ContractApiHttp</xref>.</p>
+      <p></p>
+    syntax:
+      content: public static ContractApiHttp createFromConnectionString(ProvisioningConnectionString provisioningConnectionString)
+      parameters:
+        - id: provisioningConnectionString
+          type: com.microsoft.azure.sdk.iot.provisioning.service.auth._provisioning_connection_string
+          description: <p>ist die Bereitstellung Registrierungsdienst Service-Verbindungszeichenfolge. </p>
+      return:
+        type: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http
+        description: "<p>eine Instanz von<code>ContractApiHttp \r\n\r\n    </code> . </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn es ein Problem mit der angegebenen Verbindungszeichenfolge liegt. </p>
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.request(HttpMethod,String,Map<String, String>,String)'
+    id: 'request(HttpMethod,String,Map<String, String>,String)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http
+    href: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.yml
+    langs:
+      - java
+    name: 'request(HttpMethod httpMethod, String path, Map<String, String> headerParameters, String payload)'
+    nameWithType: 'ContractApiHttp.request(HttpMethod httpMethod, String path, Map<String, String> headerParameters, String payload)'
+    fullName: 'synchronized HttpResponse com.microsoft.azure.sdk.iot.provisioning.service.contract.ContractApiHttp.request(HttpMethod httpMethod, String path, Map<String, String> headerParameters, String payload)'
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.request*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/contract/ContractApiHttp.java
+      startLine: 130
+    package: com.microsoft.azure.sdk.iot.provisioning.service.contract
+    summary: |-
+      <p>Diese Funktion sendet eine unformatierte Informationen an den Registrierungsdienst für Bereitstellung-Dienst über HTTP-Protokoll. </p>
+      <p>Der Zweck dieser Funktion ist die Basis Kommunikation zwischen dem Controller und dem Dienst werden und sollte nur bei vollständigen Überblick über die Bereitstellung Registrierungsdienst-Rest-APIs verwendet werden. Sollten Sie die APis unter verwendet <b> <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client" data-throw-if-not-resolved="false">ProvisioningServiceClient</xref> </b> anstelle des direkten Zugriff auf die Rest-API, die mit dieser Klasse. </p>
+      <p></p>
+    syntax:
+      content: 'public synchronized HttpResponse request(HttpMethod httpMethod, String path, Map<String, String> headerParameters, String payload)'
+      parameters:
+        - id: httpMethod
+          type: com.microsoft.azure.sdk.iot.deps.transport.http._http_method
+          description: '<p>ist das HTTP-Verb in der Anforderung (GET, POST, PUT, DELETE, Update). </p>'
+        - id: path
+          type: '26831127'
+          description: '<p>ist der Pfad der Ressource in dem Dienst, der die URL erstellen. </p>'
+        - id: headerParameters
+          type: 689c8cb5
+          description: '<p>ist eine Liste von Paaren Schlüsselwerte, die optionale Parameter in der HTTP-Header enthält. </p>'
+        - id: payload
+          type: '26831127'
+          description: <p>ist der Text der Nachricht. </p>
+      return:
+        type: cffad4f2com.microsoft.azure.sdk.iot.deps.transport.http._http_response
+        description: "<p>die<code>HttpResponse \r\n\r\n    </code> , enthält die Antwort der Anforderung. </p>"
+    exceptions:
+      - type: 637b6540
+        description: <p>Wenn der Dienst für den Austausch von HTTP-Nachrichten mit dem Dienst bereitstellen konnte. </p>
+      - type: 407b0ee3
+        description: <p>Wenn die Bereitstellung Dienstantwort eine Fehlermeldung enthält. </p>
+      - type: 3c87bd19
+        description: <p>Wenn die bereitgestellten Parameter nicht richtig sind. </p>
+references:
+  - uid: 3c87bd19
+    spec.java:
+      - name: IllegalArgumentException
+        fullName: IllegalArgumentException
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.createFromConnectionString*
+    name: createFromConnectionString
+    nameWithType: ContractApiHttp.createFromConnectionString
+    fullName: static ContractApiHttp com.microsoft.azure.sdk.iot.provisioning.service.contract.ContractApiHttp.createFromConnectionString
+    package: com.microsoft.azure.sdk.iot.provisioning.service.contract
+  - uid: 637b6540
+    spec.java:
+      - name: ProvisioningServiceClientTransportException
+        fullName: ProvisioningServiceClientTransportException
+  - uid: 407b0ee3
+    spec.java:
+      - name: ProvisioningServiceClientException
+        fullName: ProvisioningServiceClientException
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: 689c8cb5
+    spec.java:
+      - name: 'Map<String, String>'
+        fullName: 'Map<String, String>'
+  - uid: cffad4f2com.microsoft.azure.sdk.iot.deps.transport.http._http_response
+    spec.java:
+      - name: 'synchronized '
+        fullName: 'synchronized '
+      - uid: com.microsoft.azure.sdk.iot.deps.transport.http._http_response
+        name: HttpResponse
+        fullName: com.microsoft.azure.sdk.iot.deps.transport.http.HttpResponse
+        href: com.microsoft.azure.sdk.iot.deps.transport.http._http_response.yml
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.request*
+    name: request
+    nameWithType: ContractApiHttp.request
+    fullName: synchronized HttpResponse com.microsoft.azure.sdk.iot.provisioning.service.contract.ContractApiHttp.request
+    package: com.microsoft.azure.sdk.iot.provisioning.service.contract
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.auth._provisioning_connection_string
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.auth
+    href: com.microsoft.azure.sdk.iot.provisioning.service.auth._provisioning_connection_string.yml
+    name: ProvisioningConnectionString
+    nameWithType: ProvisioningConnectionString
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.auth.ProvisioningConnectionString
+    type: Class
+    summary: '<p>Alle Verbindungen Zeichenfolgeneigenschaften und Methoden für Benutzer, Gerät und Verbindung Zeichenfolgenserialisierung verfügbar zu machen. </p>'
+    syntax:
+      content: public class ProvisioningConnectionString
+  - uid: com.microsoft.azure.sdk.iot.deps.transport.http._http_request
+    parent: com.microsoft.azure.sdk.iot.deps.transport.http
+    href: com.microsoft.azure.sdk.iot.deps.transport.http._http_request.yml
+    name: HttpRequest
+    nameWithType: HttpRequest
+    fullName: com.microsoft.azure.sdk.iot.deps.transport.http.HttpRequest
+    type: Class
+    syntax:
+      content: public class HttpRequest
+  - uid: com.microsoft.azure.sdk.iot.deps.transport.http._http_method
+    parent: com.microsoft.azure.sdk.iot.deps.transport.http
+    href: com.microsoft.azure.sdk.iot.deps.transport.http._http_method.yml
+    name: HttpMethod
+    nameWithType: HttpMethod
+    fullName: com.microsoft.azure.sdk.iot.deps.transport.http.HttpMethod
+    type: Enum
+    summary: <p>Die HTTPS-Anforderungsmethode (d. h. GET). </p>
+    syntax:
+      content: public enum HttpMethod
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.exceptions._provis44df38cec06277955900d3713d9e20cc
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.exceptions
+    href: com.microsoft.azure.sdk.iot.provisioning.service.exceptions._provis44df38cec06277955900d3713d9e20cc.yml
+    name: ProvisioningServiceClientTransportException
+    nameWithType: ProvisioningServiceClientTransportException
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.exceptions.ProvisioningServiceClientTransportException
+    type: Class
+    summary: <p>Erstellen Sie die Transport-Ausnahme </p>
+    syntax:
+      content: public class ProvisioningServiceClientTransportException
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.contract
+    href: com.microsoft.azure.sdk.iot.provisioning.service.contract._contract_api_http.yml
+    name: ContractApiHttp
+    nameWithType: ContractApiHttp
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.contract.ContractApiHttp
+    type: Class
+    summary: |-
+      <p>Dieser Client verarbeitet die Gerät Bereitstellung auf HTTP-Kommunikation.</p>
+      <p>Diese Klasse implementiert die HTTPS-Vertrag zwischen den Dienstclient Bereitstellung und der Bereitstellung Device Registration Service. Sie wird von den Managern aufgerufen, die der Dienstclient Bereitstellung öffentlichen APIs implementieren. Für den Zugriff auf die öffentliche API, finden Sie unter der <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client" data-throw-if-not-resolved="false">ProvisioningServiceClient</xref>.</p>
+      <p>Im folgenden Diagramm wird die Beziehung zwischen diesen 3 Ebenen des Service-Clients beschrieben:</p>
+      <p>
+
+        <pre>
+
+          <code>          +-------------------------------------------------------------------+           +------------+
+
+                    |                        ProvisioningServiceClient                  |           |    Query   |
+
+                    +-----+----------------------------+--------------------------+-----+           +--+---+-----+
+
+                         /                             |                           \                   |   |
+
+                        /                              |                            \                  |   |
+
+          +------------+----------------+  +-----------+------------+  +-------------+-------------+   |   |
+
+          | IndividualEnrollmentManager |  | EnrollmentGroupManager |  | RegistrationStatusManager |   |   |
+
+          +------------+--------+-------+  +-----------+------+-----+  +-------------+-------+-----+   |   |
+
+                       |         \                     |       \                     |        \        |   |
+
+                       |          +-----------------------------+------------------------------+-------+   |
+
+                       |                               |                             |                     |
+
+          +------------+-------------------------------+-----------------------------+---------------------+---+
+
+          |                                       ContractApiHttp                                              |
+
+          +------------------------------------------------+---------------------------------------------------+
+
+                                                           |
+
+                                                           |
+
+                     +-------------------------------------+------------------------------------------+
+
+                     |                 com.microsoft.azure.sdk.iot.deps.transport.http                |
+
+                     +--------------------------------------------------------------------------------+
+
+          </code>
+
+        </pre>
+
+      </p>
+    syntax: *ref_1
+  - uid: com.microsoft.azure.sdk.iot.deps.transport.http._http_response
+    parent: com.microsoft.azure.sdk.iot.deps.transport.http
+    href: com.microsoft.azure.sdk.iot.deps.transport.http._http_response.yml
+    name: HttpResponse
+    nameWithType: HttpResponse
+    fullName: com.microsoft.azure.sdk.iot.deps.transport.http.HttpResponse
+    type: Class
+    summary: '<p>Eine HTTPS-Antwort. Enthält den Statuscode "", Text, Headerfelder und Fehlerursache, (sofern vorhanden). </p>'
+    syntax:
+      content: public class HttpResponse
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.exceptions._provisioning_service_client_exception
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.exceptions
+    href: com.microsoft.azure.sdk.iot.provisioning.service.exceptions._provisioning_service_client_exception.yml
+    name: ProvisioningServiceClientException
+    nameWithType: ProvisioningServiceClientException
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.exceptions.ProvisioningServiceClientException
+    type: Class
+    summary: |-
+      <p>Übergeordnete Klasse für die Bereitstellung Registrierungsdienst Ausnahmen auf dem Client-Dienst.</p>
+      <p>
+
+        <pre>
+
+          <code>ProvisioningServiceClientException
+
+              |
+
+              +--&gt;ProvisioningServiceClientTransportException [any transport layer exception]
+
+              |
+
+              +--&gt;ProvisioningServiceClientServiceException [any exception reported in the http response]
+
+                      |
+
+                      |
+
+                      +--&gt;ProvisioningServiceClientBadUsageException [any http response 4xx]
+
+                      |        |
+
+                      |        +--&gt;ProvisioningServiceClientBadFormatException [400]
+
+                      |        +--&gt;ProvisioningServiceClientUnathorizedException [401]
+
+                      |        +--&gt;ProvisioningServiceClientNotFoundException [404]
+
+                      |        +--&gt;ProvisioningServiceClientPreconditionFailedException [412]
+
+                      |        +--&gt;ProvisioningServiceClientTooManyRequestsException [429]
+
+                      |
+
+                      +--&gt;ProvisioningServiceClientTransientException [any http response 5xx]
+
+                      |        |
+
+                      |        +--&gt;ProvisioningServiceClientInternalServerErrorException [500]
+
+                      |
+
+                      +--&gt;ProvisioningServiceClientUnknownException [any other http response &gt;300, but not 4xx or 5xx]
+
+          </code>
+
+        </pre>
+
+      </p>
+    syntax:
+      content: public class ProvisioningServiceClientException
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client
+    parent: com.microsoft.azure.sdk.iot.provisioning.service
+    href: com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.yml
+    name: ProvisioningServiceClient
+    nameWithType: ProvisioningServiceClient
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.ProvisioningServiceClient
+    type: Class
+    summary: |-
+      <p>Gerät bei der Bereitstellung der Dienstclient.</p>
+      <p>Der IoT Hub Bereitstellung Device Registration Service ist eine Hilfsdienst für IoT Hub, die automatische-Gerät mit einem angegebenen IoT Hub-Bereitstellung ohne Benutzereingriff aktiviert. Sie können der Bereitstellung Device Registration Service bereitgestellt Millionen von Geräten in einer sicheren und skalierbaren Weise verwenden.</p>
+      <p>Diese Java SDK stellt eine API zum Entwickler beim Erstellen und verwalten Bereitstellungen auf Bereitstellung IoT Hub Gerät-Dienst unterstützen, es übersetzt die Rest-API in Java-Objekte und Methoden.</p>
+      <p>Mit diesem SDK, müssen Sie das folgende Paket auf Ihre Anwendung einschließen. <pre><code>// Include the following imports to use the Device Provisioning Service APIs.
+
+          import com.microsoft.azure.sdk.iot.provisioning.service.*;
+
+          </code></pre></p>
+
+      <p>Die Haupt-APIs verfügbar gemacht werden die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client" data-throw-if-not-resolved="false">ProvisioningServiceClient</xref>, es enthält die öffentlichen Methoden, die die Anwendung erstellen und Verwalten der Registrierung aufrufen muss. Die Objekte in der <b>Konfigurationen</b> Paket sein aufgefüllt und als Parameter der öffentlichen API übergeben, z. B. um eine neue Anmeldung erstellen, die Anwendung so erstellen Sie das Objekt <xref uid="" data-throw-if-not-resolved="false">IndividualEnrollment</xref> mit der entsprechenden registrierungskonfigurationen, und rufen die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createOrUpdateIndividualEnrollment(IndividualEnrollment)" data-throw-if-not-resolved="false">createOrUpdateIndividualEnrollment(IndividualEnrollment)</xref>.</p>
+      <p>Der IoT Hub Bereitstellung Device Registration Service unterstützt SQL-Abfragen zu. Die Anwendung kann eine neue Abfrage mit einem von den Factorys Abfragen für die Instanz erstellen <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createIndividualEnrollmentQuery(QuerySpecification)" data-throw-if-not-resolved="false">createIndividualEnrollmentQuery(QuerySpecification)</xref>, und übergeben Sie die <xref uid="" data-throw-if-not-resolved="false">QuerySpecification</xref>, mit der SQL-Abfrage . Diese Factory gibt eine <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._query" data-throw-if-not-resolved="false">Abfrage</xref> -Objekt, das ein Iterator aktiv ist.</p>
+      <p>Diese Java SDK im folgenden Diagramm dargestellt werden kann, sind die erste Ebene der öffentlichen APIs die Ihrer Anwendung verwenden:</p>
+      <p>
+
+        <pre>
+
+          <code>+===============+       +==========================================+                           +============+   +===+
+
+          |    configs    |------&gt;|         ProvisioningServiceClient        |                        +-&gt;|    Query   |   |   |
+
+          +===============+       +==+=================+==================+==+                        |  +======+=====+   | e |
+
+                                    /                  |                   \                          |         |         | x |
+
+                                   /                   |                    \                         |         |         | c |
+
+          +-----------------------+-----+  +-----------+------------+  +-----+---------------------+  |         |         | e |
+
+          | IndividualEnrollmentManager |  | EnrollmentGroupManager |  | RegistrationStatusManager |  |         |         | p |
+
+          +---------------+------+------+  +-----------+------+-----+  +-------------+-------+-----+  |         |         | t |
+
+                           \      \                    |       \                     |        \       |         |         | i |
+
+                            \      +----------------------------+------------------------------+------+         |         | o |
+
+                             \                         |                             |                          |         | n |
+
+           +--------+      +--+------------------------+-----------------------------+--------------------------+-----+   | s |
+
+           |  auth  |-----&gt;|                                     ContractApiHttp                                      |   |   |
+
+           +--------+      +-------------------------------------------+----------------------------------------------+   +===+
+
+                                                                       |
+
+                                                                       |
+
+                                 +-------------------------------------+------------------------------------------+
+
+                                 |                 com.microsoft.azure.sdk.iot.deps.transport.http                |
+
+                                 +--------------------------------------------------------------------------------+
+
+          </code>
+
+        </pre>
+
+      </p>
+      <p></p>
+    syntax:
+      content: public class ProvisioningServiceClient

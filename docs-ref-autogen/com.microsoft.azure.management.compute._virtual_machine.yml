@@ -5,10 +5,16 @@ items:
     parent: com.microsoft.azure.management.compute
     children:
       - com.microsoft.azure.management.compute._virtual_machine.availabilitySetId()
+      - com.microsoft.azure.management.compute._virtual_machine.availabilityZones()
       - com.microsoft.azure.management.compute._virtual_machine.availableSizes()
+      - com.microsoft.azure.management.compute._virtual_machine.bootDiagnosticsStorageUri()
       - 'com.microsoft.azure.management.compute._virtual_machine.capture(String,String,boolean)'
+      - 'com.microsoft.azure.management.compute._virtual_machine.captureAsync(String,String,boolean)'
+      - 'com.microsoft.azure.management.compute._virtual_machine.captureAsync(String,String,boolean,ServiceCallback<String>)'
       - com.microsoft.azure.management.compute._virtual_machine.computerName()
       - com.microsoft.azure.management.compute._virtual_machine.convertToManaged()
+      - com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync()
+      - com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync(ServiceCallback<Void>)
       - com.microsoft.azure.management.compute._virtual_machine.dataDisks()
       - com.microsoft.azure.management.compute._virtual_machine.deallocate()
       - com.microsoft.azure.management.compute._virtual_machine.deallocateAsync()
@@ -21,10 +27,14 @@ items:
       - com.microsoft.azure.management.compute._virtual_machine.getPrimaryPublicIPAddress()
       - com.microsoft.azure.management.compute._virtual_machine.getPrimaryPublicIPAddressId()
       - com.microsoft.azure.management.compute._virtual_machine.instanceView()
+      - com.microsoft.azure.management.compute._virtual_machine.isBootDiagnosticsEnabled()
       - com.microsoft.azure.management.compute._virtual_machine.isManagedDiskEnabled()
+      - com.microsoft.azure.management.compute._virtual_machine.isManagedServiceIdentityEnabled()
       - com.microsoft.azure.management.compute._virtual_machine.licenseType()
       - com.microsoft.azure.management.compute._virtual_machine.listExtensions()
       - com.microsoft.azure.management.compute._virtual_machine.listExtensionsAsync()
+      - com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityPrincipalId()
+      - com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityTenantId()
       - com.microsoft.azure.management.compute._virtual_machine.osDiskCachingType()
       - com.microsoft.azure.management.compute._virtual_machine.osDiskId()
       - com.microsoft.azure.management.compute._virtual_machine.osDiskSize()
@@ -63,12 +73,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 35
+      startLine: 39
     package: com.microsoft.azure.management.compute
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> virtuellen Computer. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> virtuellen Computer. </p>
     syntax:
       content: 'public interface VirtualMachine extends GroupableResource<ComputeManager, VirtualMachineInner>,Refreshable<VirtualMachine>,Updatable<VirtualMachine.Update>,HasNetworkInterfaces'
     inheritedMembers:
@@ -102,13 +112,34 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 282
+      startLine: 326
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String availabilitySetId()
       return:
         type: '26831127'
         description: <p>die Ressourcen-ID der verfügbarkeitsgruppe dieses virtuellen Computers zugeordnet </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine.availabilityZones()
+    id: availabilityZones()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: availabilityZones()
+    nameWithType: VirtualMachine.availabilityZones()
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.compute.VirtualMachine.availabilityZones()
+    overload: com.microsoft.azure.management.compute._virtual_machine.availabilityZones*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 393
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public Set<AvailabilityZoneId> availabilityZones()
+      return:
+        type: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+        description: '<p>die Verfügbarkeit Zonen zugewiesen, mit dem virtuellen Computer </p>'
   - uid: com.microsoft.azure.management.compute._virtual_machine.availableSizes()
     id: availableSizes()
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -123,7 +154,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 177
+      startLine: 198
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Listet alle verfügbaren Größen virtueller Computer, die diese virtuelle Maschine kann angepasst.</p>
@@ -133,6 +164,27 @@ items:
       return:
         type: 36b27be0com.microsoft.azure.management.compute._virtual_machine_sizea08ddfce
         description: <p>die Größe des virtuellen Computers </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine.bootDiagnosticsStorageUri()
+    id: bootDiagnosticsStorageUri()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: bootDiagnosticsStorageUri()
+    nameWithType: VirtualMachine.bootDiagnosticsStorageUri()
+    fullName: String com.microsoft.azure.management.compute.VirtualMachine.bootDiagnosticsStorageUri()
+    overload: com.microsoft.azure.management.compute._virtual_machine.bootDiagnosticsStorageUri*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 405
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public String bootDiagnosticsStorageUri()
+      return:
+        type: '26831127'
+        description: <p>der Speicher-Blob-Endpunkt-Uri startdiagnoseeinstellungen für den virtuellen Computer aktiviert ist </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machine.capture(String,String,boolean)'
     id: 'capture(String,String,boolean)'
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -147,7 +199,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 187
+      startLine: 208
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Erfasst die virtuelle Maschine durch Kopieren virtueller Festplatten des virtuellen Computers an.</p>
@@ -167,6 +219,77 @@ items:
       return:
         type: '26831127'
         description: <p>die JSON-Vorlage zum Erstellen von mehr solcher virtueller Maschinen </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine.captureAsync(String,String,boolean)'
+    id: 'captureAsync(String,String,boolean)'
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: 'captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd)'
+    nameWithType: 'VirtualMachine.captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd)'
+    fullName: 'Observable<String> com.microsoft.azure.management.compute.VirtualMachine.captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd)'
+    overload: com.microsoft.azure.management.compute._virtual_machine.captureAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 219
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Erfasst die virtuelle Maschine durch Kopieren von virtuellen Festplatten des virtuellen Computers asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public Observable<String> captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd)'
+      parameters:
+        - id: containerName
+          type: '26831127'
+          description: <p>Ziel-Containername zum Speichern von aufgezeichneten VHD </p>
+        - id: vhdPrefix
+          type: '26831127'
+          description: <p>Das Präfix für die virtuelle Festplatte halten erfasstes Abbild </p>
+        - id: overwriteVhd
+          type: 4fc6e284
+          description: '<p>ob zum Ziel VHD überschreibt, sofern vorhanden </p>'
+      return:
+        type: c4e15b74
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine.captureAsync(String,String,boolean,ServiceCallback<String>)'
+    id: 'captureAsync(String,String,boolean,ServiceCallback<String>)'
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: 'captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+    nameWithType: 'VirtualMachine.captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+    fullName: 'ServiceFuture<String> com.microsoft.azure.management.compute.VirtualMachine.captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machine.captureAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 231
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Erfasst die virtuelle Maschine durch Kopieren von virtuellen Festplatten des virtuellen Computers asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<String> captureAsync(String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+      parameters:
+        - id: containerName
+          type: '26831127'
+          description: <p>Ziel-Containername zum Speichern von aufgezeichneten VHD </p>
+        - id: vhdPrefix
+          type: '26831127'
+          description: <p>Das Präfix für die virtuelle Festplatte halten erfasstes Abbild </p>
+        - id: overwriteVhd
+          type: 4fc6e284
+          description: '<p>ob zum Ziel VHD überschreibt, sofern vorhanden </p>'
+        - id: callback
+          type: c68ef411
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: 3038ebf6
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.computerName()
     id: computerName()
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -181,7 +304,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 218
+      startLine: 262
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String computerName()
@@ -202,11 +325,63 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 169
+      startLine: 173
     package: com.microsoft.azure.management.compute
     summary: '<p>Konvertiert (migriert) der virtuelle Computer mit nicht verwalteten Datenträger, verwalteten Datenträger zu verwenden. </p>'
     syntax:
       content: public void convertToManaged()
+  - uid: com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync()
+    id: convertToManagedAsync()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: convertToManagedAsync()
+    nameWithType: VirtualMachine.convertToManagedAsync()
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachine.convertToManagedAsync()
+    overload: com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 181
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Konvertiert (migriert) der virtuelle Computer mit nicht verwalteten Datenträger, asynchron verwalteten Datenträger zu verwenden.</p>
+      <p></p>
+    syntax:
+      content: public Completable convertToManagedAsync()
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync(ServiceCallback<Void>)
+    id: convertToManagedAsync(ServiceCallback<Void>)
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: convertToManagedAsync(ServiceCallback<Void> callback)
+    nameWithType: VirtualMachine.convertToManagedAsync(ServiceCallback<Void> callback)
+    fullName: ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachine.convertToManagedAsync(ServiceCallback<Void> callback)
+    overload: com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 190
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Konvertiert (migriert) der virtuelle Computer mit nicht verwalteten Datenträger, asynchron verwalteten Datenträger zu verwenden.</p>
+      <p></p>
+    syntax:
+      content: public ServiceFuture<Void> convertToManagedAsync(ServiceCallback<Void> callback)
+      parameters:
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.dataDisks()
     id: dataDisks()
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -221,7 +396,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 263
+      startLine: 307
     package: com.microsoft.azure.management.compute
     syntax:
       content: 'public Map<Integer, VirtualMachineDataDisk> dataDisks()'
@@ -242,7 +417,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 44
+      startLine: 48
     package: com.microsoft.azure.management.compute
     summary: '<p>Der virtuelle Computer heruntergefahren, und die Serverressourcen freigegeben. </p>'
     syntax:
@@ -261,7 +436,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 51
+      startLine: 55
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Der virtuelle Computer heruntergefahren und asynchron die Serverressourcen freigegeben.</p>
@@ -269,7 +444,7 @@ items:
     syntax:
       content: public Completable deallocateAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.deallocateAsync(ServiceCallback<Void>)
     id: deallocateAsync(ServiceCallback<Void>)
@@ -285,7 +460,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 59
+      startLine: 63
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Der virtuelle Computer heruntergefahren und asynchron die Serverressourcen freigegeben.</p>
@@ -313,7 +488,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 324
+      startLine: 368
     package: com.microsoft.azure.management.compute
     syntax:
       content: public DiagnosticsProfile diagnosticsProfile()
@@ -334,7 +509,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 164
+      startLine: 168
     package: com.microsoft.azure.management.compute
     syntax:
       content: public VirtualMachineEncryption diskEncryption()
@@ -355,7 +530,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 64
+      startLine: 68
     package: com.microsoft.azure.management.compute
     summary: <p>Generalisiert den virtuellen Computer an. </p>
     syntax:
@@ -374,7 +549,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 71
+      startLine: 75
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Die virtuelle Maschine asynchron generalisiert.</p>
@@ -382,7 +557,7 @@ items:
     syntax:
       content: public Completable generalizeAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.generalizeAsync(ServiceCallback<Void>)
     id: generalizeAsync(ServiceCallback<Void>)
@@ -398,7 +573,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 79
+      startLine: 83
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Die virtuelle Maschine asynchron generalisiert.</p>
@@ -426,7 +601,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 272
+      startLine: 316
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Ruft die öffentliche IP-Adresse des virtuellen Computers primären Netzwerkschnittstelle zugeordnet. </p>
@@ -451,7 +626,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 277
+      startLine: 321
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String getPrimaryPublicIPAddressId()
@@ -472,7 +647,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 343
+      startLine: 387
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Abrufen der virtuellen Maschine Instanzansicht. </p>
@@ -483,6 +658,27 @@ items:
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_instance_view
         description: <p>Instanzansicht des virtuellen Computers </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine.isBootDiagnosticsEnabled()
+    id: isBootDiagnosticsEnabled()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: isBootDiagnosticsEnabled()
+    nameWithType: VirtualMachine.isBootDiagnosticsEnabled()
+    fullName: boolean com.microsoft.azure.management.compute.VirtualMachine.isBootDiagnosticsEnabled()
+    overload: com.microsoft.azure.management.compute._virtual_machine.isBootDiagnosticsEnabled*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 399
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public boolean isBootDiagnosticsEnabled()
+      return:
+        type: 4fc6e284
+        description: '<p>"true", wenn die startdiagnoseeinstellungen für den virtuellen Computer aktiviert ist </p>'
   - uid: com.microsoft.azure.management.compute._virtual_machine.isManagedDiskEnabled()
     id: isManagedDiskEnabled()
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -497,13 +693,34 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 213
+      startLine: 257
     package: com.microsoft.azure.management.compute
     syntax:
       content: public boolean isManagedDiskEnabled()
       return:
         type: 4fc6e284
         description: '<p>"true", wenn verwaltete Datenträger, für die virtuelle Maschine Datenträger (BS, Daten verwendet werden) </p>'
+  - uid: com.microsoft.azure.management.compute._virtual_machine.isManagedServiceIdentityEnabled()
+    id: isManagedServiceIdentityEnabled()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: isManagedServiceIdentityEnabled()
+    nameWithType: VirtualMachine.isManagedServiceIdentityEnabled()
+    fullName: boolean com.microsoft.azure.management.compute.VirtualMachine.isManagedServiceIdentityEnabled()
+    overload: com.microsoft.azure.management.compute._virtual_machine.isManagedServiceIdentityEnabled*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 411
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public boolean isManagedServiceIdentityEnabled()
+      return:
+        type: 4fc6e284
+        description: '<p>"true", wenn verwaltete Dienstidentität für den virtuellen Computer aktiviert ist </p>'
   - uid: com.microsoft.azure.management.compute._virtual_machine.licenseType()
     id: licenseType()
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -518,7 +735,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 292
+      startLine: 336
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String licenseType()
@@ -539,7 +756,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 302
+      startLine: 346
     package: com.microsoft.azure.management.compute
     syntax:
       content: 'public Map<String, VirtualMachineExtension> listExtensions()'
@@ -560,13 +777,55 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 297
+      startLine: 341
     package: com.microsoft.azure.management.compute
     syntax:
       content: public Observable<VirtualMachineExtension> listExtensionsAsync()
       return:
         type: c2d0e8c6com.microsoft.azure.management.compute._virtual_machine_extensiona08ddfce
         description: '<p>eine Darstellung der verzögerten Berechnung dieses Aufrufs, Zurückgeben von Erweiterungen, die mit dem virtuellen Computer angefügt </p>'
+  - uid: com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityPrincipalId()
+    id: managedServiceIdentityPrincipalId()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: managedServiceIdentityPrincipalId()
+    nameWithType: VirtualMachine.managedServiceIdentityPrincipalId()
+    fullName: String com.microsoft.azure.management.compute.VirtualMachine.managedServiceIdentityPrincipalId()
+    overload: com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityPrincipalId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 425
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public String managedServiceIdentityPrincipalId()
+      return:
+        type: '26831127'
+        description: <p>Die Dienstidentität verwaltet bestimmte Active Directory-Dienst Prinzipal-ID der virtuellen Maschine zugewiesen. </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityTenantId()
+    id: managedServiceIdentityTenantId()
+    parent: com.microsoft.azure.management.compute._virtual_machine
+    href: com.microsoft.azure.management.compute._virtual_machine.yml
+    langs:
+      - java
+    name: managedServiceIdentityTenantId()
+    nameWithType: VirtualMachine.managedServiceIdentityTenantId()
+    fullName: String com.microsoft.azure.management.compute.VirtualMachine.managedServiceIdentityTenantId()
+    overload: com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityTenantId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
+      startLine: 418
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public String managedServiceIdentityTenantId()
+      return:
+        type: '26831127'
+        description: <p>Die Dienstidentität verwaltet bestimmte Active Directory Mandanten-ID der virtuellen Maschine zugewiesen. </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.osDiskCachingType()
     id: osDiskCachingType()
     parent: com.microsoft.azure.management.compute._virtual_machine
@@ -581,7 +840,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 238
+      startLine: 282
     package: com.microsoft.azure.management.compute
     syntax:
       content: public CachingTypes osDiskCachingType()
@@ -602,7 +861,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 253
+      startLine: 297
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String osDiskId()
@@ -623,7 +882,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 243
+      startLine: 287
     package: com.microsoft.azure.management.compute
     syntax:
       content: public int osDiskSize()
@@ -644,7 +903,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 248
+      startLine: 292
     package: com.microsoft.azure.management.compute
     syntax:
       content: public StorageAccountTypes osDiskStorageAccountType()
@@ -665,7 +924,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 319
+      startLine: 363
     package: com.microsoft.azure.management.compute
     syntax:
       content: public OSProfile osProfile()
@@ -686,7 +945,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 228
+      startLine: 272
     package: com.microsoft.azure.management.compute
     syntax:
       content: public OperatingSystemTypes osType()
@@ -707,7 +966,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 233
+      startLine: 277
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String osUnmanagedDiskVhdUri()
@@ -728,7 +987,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 307
+      startLine: 351
     package: com.microsoft.azure.management.compute
     syntax:
       content: public Plan plan()
@@ -749,7 +1008,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 84
+      startLine: 88
     package: com.microsoft.azure.management.compute
     summary: <p>Schaltet (beendet) der virtuellen Maschine. </p>
     syntax:
@@ -768,7 +1027,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 91
+      startLine: 95
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Schaltet (beendet) der virtuellen Maschine asynchron.</p>
@@ -776,7 +1035,7 @@ items:
     syntax:
       content: public Completable powerOffAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.powerOffAsync(ServiceCallback<Void>)
     id: powerOffAsync(ServiceCallback<Void>)
@@ -792,7 +1051,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 99
+      startLine: 103
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Schaltet (anhalten) der virtuellen Maschine asynchron.</p>
@@ -820,7 +1079,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 334
+      startLine: 378
     package: com.microsoft.azure.management.compute
     syntax:
       content: public PowerState powerState()
@@ -841,7 +1100,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 287
+      startLine: 331
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String provisioningState()
@@ -862,7 +1121,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 144
+      startLine: 148
     package: com.microsoft.azure.management.compute
     summary: <p>Stellt den virtuellen Computer erneut bereit. </p>
     syntax:
@@ -881,7 +1140,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 151
+      startLine: 155
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Stellt die virtuelle Maschine asynchron an.</p>
@@ -889,7 +1148,7 @@ items:
     syntax:
       content: public Completable redeployAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.redeployAsync(ServiceCallback<Void>)
     id: redeployAsync(ServiceCallback<Void>)
@@ -905,7 +1164,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 159
+      startLine: 163
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Stellt die virtuelle Maschine asynchron an.</p>
@@ -933,10 +1192,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 197
+      startLine: 241
     package: com.microsoft.azure.management.compute
     summary: |-
-      <p>Aktualisiert die virtuelle Maschine Instanzansicht zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Aktualisiert die virtuelle Maschine Instanzansicht zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
       <p>Die Instanzansicht wird für die Verwendung von späteren Abruf zwischengespeichert werden.</p>
       <p></p>
     syntax:
@@ -958,10 +1217,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 205
+      startLine: 249
     package: com.microsoft.azure.management.compute
     summary: |-
-      <p>Aktualisiert die virtuelle Maschine Instanzansicht zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die virtuelle Maschine Instanzansicht zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<VirtualMachineInstanceView> refreshInstanceViewAsync()
@@ -982,7 +1241,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 104
+      startLine: 108
     package: com.microsoft.azure.management.compute
     summary: <p>Startet den virtuellen Computer neu. </p>
     syntax:
@@ -1001,7 +1260,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 111
+      startLine: 115
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Neustart der virtuellen Maschine asynchron an.</p>
@@ -1009,7 +1268,7 @@ items:
     syntax:
       content: public Completable restartAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.restartAsync(ServiceCallback<Void>)
     id: restartAsync(ServiceCallback<Void>)
@@ -1025,7 +1284,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 119
+      startLine: 123
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Neustart der virtuellen Maschine asynchron an.</p>
@@ -1053,7 +1312,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 223
+      startLine: 267
     package: com.microsoft.azure.management.compute
     syntax:
       content: public VirtualMachineSizeTypes size()
@@ -1074,7 +1333,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 124
+      startLine: 128
     package: com.microsoft.azure.management.compute
     summary: <p>Startet den virtuellen Computer an. </p>
     syntax:
@@ -1093,7 +1352,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 131
+      startLine: 135
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Startet die virtuelle Maschine asynchron aus.</p>
@@ -1101,7 +1360,7 @@ items:
     syntax:
       content: public Completable startAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine.startAsync(ServiceCallback<Void>)
     id: startAsync(ServiceCallback<Void>)
@@ -1117,7 +1376,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 139
+      startLine: 143
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Startet die virtuelle Maschine asynchron aus.</p>
@@ -1145,10 +1404,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 314
+      startLine: 358
     package: com.microsoft.azure.management.compute
     summary: |-
-      <p>Gibt das Speicherprofil des ein <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> virtuellen Computer.</p>
+      <p>Gibt das Speicherprofil des ein <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> virtuellen Computer.</p>
       <p></p>
     syntax:
       content: public StorageProfile storageProfile()
@@ -1169,7 +1428,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 258
+      startLine: 302
     package: com.microsoft.azure.management.compute
     syntax:
       content: 'public Map<Integer, VirtualMachineUnmanagedDataDisk> unmanagedDataDisks()'
@@ -1190,7 +1449,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 329
+      startLine: 373
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String vmId()
@@ -1203,7 +1462,7 @@ references:
     nameWithType: VirtualMachine.deallocate
     fullName: void com.microsoft.azure.management.compute.VirtualMachine.deallocate
     package: com.microsoft.azure.management.compute
-  - uid: 56537e90
+  - uid: '56537e90'
     spec.java:
       - name: Completable
         fullName: Completable
@@ -1280,6 +1539,11 @@ references:
     nameWithType: VirtualMachine.convertToManaged
     fullName: void com.microsoft.azure.management.compute.VirtualMachine.convertToManaged
     package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine.convertToManagedAsync*
+    name: convertToManagedAsync
+    nameWithType: VirtualMachine.convertToManagedAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachine.convertToManagedAsync
+    package: com.microsoft.azure.management.compute
   - uid: 36b27be0com.microsoft.azure.management.compute._virtual_machine_sizea08ddfce
     spec.java:
       - name: PagedList<
@@ -1308,6 +1572,23 @@ references:
     nameWithType: VirtualMachine.capture
     fullName: String com.microsoft.azure.management.compute.VirtualMachine.capture
     package: com.microsoft.azure.management.compute
+  - uid: c4e15b74
+    spec.java:
+      - name: Observable<String>
+        fullName: Observable<String>
+  - uid: com.microsoft.azure.management.compute._virtual_machine.captureAsync*
+    name: captureAsync
+    nameWithType: VirtualMachine.captureAsync
+    fullName: Observable<String> com.microsoft.azure.management.compute.VirtualMachine.captureAsync
+    package: com.microsoft.azure.management.compute
+  - uid: c68ef411
+    spec.java:
+      - name: ServiceCallback<String>
+        fullName: ServiceCallback<String>
+  - uid: 3038ebf6
+    spec.java:
+      - name: ServiceFuture<String>
+        fullName: ServiceFuture<String>
   - uid: com.microsoft.azure.management.compute._virtual_machine.refreshInstanceView*
     name: refreshInstanceView
     nameWithType: VirtualMachine.refreshInstanceView
@@ -1497,6 +1778,46 @@ references:
     nameWithType: VirtualMachine.instanceView
     fullName: VirtualMachineInstanceView com.microsoft.azure.management.compute.VirtualMachine.instanceView
     package: com.microsoft.azure.management.compute
+  - uid: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+    spec.java:
+      - name: Set<
+        fullName: Set<
+      - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+        name: AvailabilityZoneId
+        fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+        href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.compute._virtual_machine.availabilityZones*
+    name: availabilityZones
+    nameWithType: VirtualMachine.availabilityZones
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.compute.VirtualMachine.availabilityZones
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine.isBootDiagnosticsEnabled*
+    name: isBootDiagnosticsEnabled
+    nameWithType: VirtualMachine.isBootDiagnosticsEnabled
+    fullName: boolean com.microsoft.azure.management.compute.VirtualMachine.isBootDiagnosticsEnabled
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine.bootDiagnosticsStorageUri*
+    name: bootDiagnosticsStorageUri
+    nameWithType: VirtualMachine.bootDiagnosticsStorageUri
+    fullName: String com.microsoft.azure.management.compute.VirtualMachine.bootDiagnosticsStorageUri
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine.isManagedServiceIdentityEnabled*
+    name: isManagedServiceIdentityEnabled
+    nameWithType: VirtualMachine.isManagedServiceIdentityEnabled
+    fullName: boolean com.microsoft.azure.management.compute.VirtualMachine.isManagedServiceIdentityEnabled
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityTenantId*
+    name: managedServiceIdentityTenantId
+    nameWithType: VirtualMachine.managedServiceIdentityTenantId
+    fullName: String com.microsoft.azure.management.compute.VirtualMachine.managedServiceIdentityTenantId
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine.managedServiceIdentityPrincipalId*
+    name: managedServiceIdentityPrincipalId
+    nameWithType: VirtualMachine.managedServiceIdentityPrincipalId
+    fullName: String com.microsoft.azure.management.compute.VirtualMachine.managedServiceIdentityPrincipalId
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.network.model._has_network_interfaces.getPrimaryNetworkInterface()
     parent: com.microsoft.azure.management.network.model._has_network_interfaces
     href: com.microsoft.azure.management.network.model._has_network_interfaces.yml
@@ -1536,7 +1857,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -1605,7 +1926,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -1620,7 +1941,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -1696,7 +2017,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -1757,7 +2078,7 @@ references:
     type: Interface
     summary: <p>Eine Schnittstelle verfügbar machen eine Liste der Netzwerkschnittstellen. </p>
     syntax:
-      content: public interface HasNetworkInterfaces
+      content: public interface HasNetworkInterfaces extends HasId
   - uid: com.microsoft.azure.management.compute._virtual_machine_encryption
     parent: com.microsoft.azure.management.compute
     href: com.microsoft.azure.management.compute._virtual_machine_encryption.yml
@@ -1795,7 +2116,7 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure
   - uid: com.microsoft.azure.management.compute._virtual_machine_size_types
@@ -1805,7 +2126,7 @@ references:
     nameWithType: VirtualMachineSizeTypes
     fullName: com.microsoft.azure.management.compute.VirtualMachineSizeTypes
     type: Class
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._virtual_machine_size_types" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._virtual_machine_size_types" data-throw-if-not-resolved="false">VirtualMachineSizeTypes</xref>. </p>
     syntax:
       content: public class VirtualMachineSizeTypes
   - uid: com.microsoft.azure.management.compute._operating_system_types
@@ -1815,7 +2136,7 @@ references:
     nameWithType: OperatingSystemTypes
     fullName: com.microsoft.azure.management.compute.OperatingSystemTypes
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._operating_system_types" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._operating_system_types" data-throw-if-not-resolved="false">OperatingSystemTypes</xref>. </p>
     syntax:
       content: public enum OperatingSystemTypes
   - uid: com.microsoft.azure.management.compute._caching_types
@@ -1825,7 +2146,7 @@ references:
     nameWithType: CachingTypes
     fullName: com.microsoft.azure.management.compute.CachingTypes
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._caching_types" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._caching_types" data-throw-if-not-resolved="false">CachingTypes</xref>. </p>
     syntax:
       content: public enum CachingTypes
   - uid: com.microsoft.azure.management.compute._storage_account_types
@@ -1835,7 +2156,7 @@ references:
     nameWithType: StorageAccountTypes
     fullName: com.microsoft.azure.management.compute.StorageAccountTypes
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._storage_account_types" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._storage_account_types" data-throw-if-not-resolved="false">StorageAccountTypes</xref>. </p>
     syntax:
       content: public enum StorageAccountTypes
   - uid: com.microsoft.azure.management.compute._virtual_machine_unmanaged_data_disk
@@ -1875,7 +2196,7 @@ references:
     nameWithType: VirtualMachineExtension
     fullName: com.microsoft.azure.management.compute.VirtualMachineExtension
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Erweiterung des virtuellen Computers. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Erweiterung des virtuellen Computers. </p>
     syntax:
       content: public interface VirtualMachineExtension
   - uid: com.microsoft.azure.management.compute._plan
@@ -1885,7 +2206,7 @@ references:
     nameWithType: Plan
     fullName: com.microsoft.azure.management.compute.Plan
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.management.compute._plan\" data-throw-if-not-resolved=\"false\"></xref>für die Ressource. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.management.compute._plan\" data-throw-if-not-resolved=\"false\">Planen der</xref> für die Ressource. </p>"
     syntax:
       content: public class Plan
   - uid: com.microsoft.azure.management.compute._storage_profile
@@ -1928,3 +2249,13 @@ references:
     summary: <p>Möglichen Energiezustände eines virtuellen Computers. </p>
     syntax:
       content: public class PowerState extends ExpandableStringEnum<PowerState>
+  - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+    parent: com.microsoft.azure.management.resources.fluentcore.arm
+    href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+    name: AvailabilityZoneId
+    nameWithType: AvailabilityZoneId
+    fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+    type: Class
+    summary: <p>Verfügbarkeit Zeitzonenbezeichnern. </p>
+    syntax:
+      content: public class AvailabilityZoneId extends ExpandableStringEnum<AvailabilityZoneId>

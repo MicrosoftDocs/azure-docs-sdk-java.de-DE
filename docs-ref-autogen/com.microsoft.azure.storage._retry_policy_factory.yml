@@ -20,7 +20,7 @@ items:
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/RetryPolicyFactory.java
       startLine: 19
     package: com.microsoft.azure.storage
-    summary: '<p>Stellt eine Wiederholung Richtlinie-Factory, die eine neue erstellt <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt pro Transaktion. </p>'
+    summary: '<p>Stellt eine Wiederholung Richtlinie-Factory, die eine neue erstellt <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt pro Transaktion. </p>'
     syntax:
       content: public interface RetryPolicyFactory
   - uid: com.microsoft.azure.storage._retry_policy_factory.createInstance(OperationContext)
@@ -40,17 +40,17 @@ items:
       startLine: 31
     package: com.microsoft.azure.storage
     summary: |-
-      <p>Erstellt ein neues <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Objekt für den aktuellen Anforderungsversuch.</p>
+      <p>Erstellt ein neues <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt für den aktuellen Anforderungsversuch.</p>
       <p></p>
     syntax:
       content: public RetryPolicy createInstance(OperationContext opContext)
       parameters:
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._retry_policy
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die neue wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt, das die neue wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
 references:
   - uid: com.microsoft.azure.storage._retry_policy_factory.createInstance*
     name: createInstance
@@ -66,7 +66,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt eine wiederholungsrichtlinie auf, die eine angegebene Anzahl an Wiederholungen unter Verwendung einer zufälligen exponentiellen Backoff-Schema bestimmt das Intervall zwischen Wiederholungsversuchen ausführt.</p>
-      <p>Diese Klasse erweitert die <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Klasse und implementiert die <xref href="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false"></xref> Schnittstelle. </p>
+      <p>Diese Klasse erweitert die <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">com.microsoft.azure.storage.RetryPolicy</xref> -Klasse und implementiert die <xref uid="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false">com.microsoft.azure.storage.RetryPolicyFactory</xref> Schnittstelle. </p>
     syntax:
       content: public class RetryExponentialRetry extends RetryPolicy implements RetryPolicyFactory
   - uid: com.microsoft.azure.storage._retry_linear_retry
@@ -78,7 +78,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt eine wiederholungsrichtlinie auf, die eine angegebene Anzahl an Wiederholungen unter Verwendung eines angegebenen festen Zeitintervalls zwischen den Wiederholungsversuchen ausführt.</p>
-      <p>Diese Klasse erweitert die <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Klasse und implementiert die <xref href="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false"></xref> Schnittstelle. </p>
+      <p>Diese Klasse erweitert die <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> -Klasse und implementiert die <xref uid="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false">RetryPolicyFactory</xref> Schnittstelle. </p>
     syntax:
       content: public class RetryLinearRetry extends RetryPolicy implements RetryPolicyFactory
   - uid: com.microsoft.azure.storage._retry_no_retry
@@ -90,7 +90,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt eine wiederholungsrichtlinie auf, die keine Wiederholungen ausgeführt.</p>
-      <p>Diese Klasse erweitert die <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Klasse und implementiert die <xref href="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false"></xref> Schnittstelle. </p>
+      <p>Diese Klasse erweitert die <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">com.microsoft.azure.storage.RetryPolicy</xref> -Klasse und implementiert die <xref uid="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false">com.microsoft.azure.storage.RetryPolicyFactory</xref> Schnittstelle. </p>
     syntax:
       content: public class RetryNoRetry extends RetryPolicy implements RetryPolicyFactory
   - uid: com.microsoft.azure.storage._retry_policy
@@ -118,10 +118,10 @@ references:
       parameters:
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._retry_policy
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
   - uid: com.microsoft.azure.storage._retry_linear_retry.createInstance(final OperationContext)
     parent: com.microsoft.azure.storage._retry_linear_retry
     href: com.microsoft.azure.storage._retry_linear_retry.yml
@@ -137,10 +137,10 @@ references:
       parameters:
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._retry_policy
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
   - uid: com.microsoft.azure.storage._retry_exponential_retry.createInstance(final OperationContext)
     parent: com.microsoft.azure.storage._retry_exponential_retry
     href: com.microsoft.azure.storage._retry_exponential_retry.yml
@@ -156,10 +156,10 @@ references:
       parameters:
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._retry_policy
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
   - uid: com.microsoft.azure.storage._operation_context
     parent: com.microsoft.azure.storage
     href: com.microsoft.azure.storage._operation_context.yml

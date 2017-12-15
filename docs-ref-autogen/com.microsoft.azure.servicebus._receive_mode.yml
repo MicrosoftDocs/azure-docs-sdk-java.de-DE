@@ -4,8 +4,8 @@ items:
     id: _receive_mode
     parent: com.microsoft.azure.servicebus
     children:
-      - com.microsoft.azure.servicebus._receive_mode.PeekLock()
-      - com.microsoft.azure.servicebus._receive_mode.ReceiveAndDelete()
+      - com.microsoft.azure.servicebus._receive_mode.PEEKLOCK
+      - com.microsoft.azure.servicebus._receive_mode.RECEIVEANDDELETE
     href: com.microsoft.azure.servicebus._receive_mode.yml
     langs:
       - java
@@ -19,45 +19,50 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ReceiveMode.java
-      startLine: 2
+      startLine: 10
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</p>
+      <p></p>
     syntax:
       content: public enum ReceiveMode
     inheritance:
       - java.lang.Object
       - java.lang.Enum<ReceiveMode>
-  - uid: com.microsoft.azure.servicebus._receive_mode.PeekLock()
-    id: PeekLock()
+  - uid: com.microsoft.azure.servicebus._receive_mode.PEEKLOCK
+    id: PEEKLOCK
     parent: com.microsoft.azure.servicebus._receive_mode
     href: com.microsoft.azure.servicebus._receive_mode.yml
     langs:
       - java
-    name: PeekLock
-    nameWithType: ReceiveMode.PeekLock
-    fullName: com.microsoft.azure.servicebus.ReceiveMode.PeekLock
+    name: PEEKLOCK
+    nameWithType: ReceiveMode.PEEKLOCK
+    fullName: com.microsoft.azure.servicebus.ReceiveMode.PEEKLOCK
     type: Field
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ReceiveMode.java
-      startLine: 3
+      startLine: 21
     package: com.microsoft.azure.servicebus
+    summary: '<p>In diesem Modus empfangene Nachricht wird nicht aus der Warteschlange oder einem Abonnement gelöscht, es wird stattdessen an den Empfänger, die für andere Empfänger unsichtbar machen vorübergehend gesperrt. Dann wartet der Dienst für eines der drei Ereignisse<itemizedlist><listitem><p>Wenn der Empfänger die Nachricht erfolgreich verarbeitet, aufruft und die Nachricht gelöscht werden. </p></listitem><listitem><p>Wenn der Empfänger entscheidet, dass er die Nachricht nicht erfolgreich verarbeiten kann, aufruft und die Nachricht wird entsperrt und für andere Empfänger verfügbar gemacht werden. </p></listitem><listitem><p>Wenn möchte, dass der Empfänger die Verarbeitung der Nachricht zu einem späteren Zeitpunkt zeitlich verzögern, aufruft und die Nachricht wird verzögert werden. Eine verzögerte kann nur durch seine Sequenznummer empfangen werden. </p></listitem><listitem><p>Wenn der Empfänger unzustellbare Nachricht möchte, aufruft und die Nachricht wird an eine spezielle untergeordnete Warteschlange Warteschlange für unzustellbare Nachrichten verschoben werden. </p></listitem><listitem><p>Der Empfänger keine dieser Methoden in einem konfigurierbaren Zeitraum (standardmäßig 60 Sekunden) aufgerufen wird, geht davon aus der Dienst, dass der Empfänger ein Fehler aufgetreten ist. In diesem Fall verhält, als ob der Empfänger und die Nachricht für andere Empfänger zur Verfügung aufgerufen haben, </p></listitem></itemizedlist></p>'
     syntax:
-      content: public PeekLock
-  - uid: com.microsoft.azure.servicebus._receive_mode.ReceiveAndDelete()
-    id: ReceiveAndDelete()
+      content: public PEEKLOCK
+  - uid: com.microsoft.azure.servicebus._receive_mode.RECEIVEANDDELETE
+    id: RECEIVEANDDELETE
     parent: com.microsoft.azure.servicebus._receive_mode
     href: com.microsoft.azure.servicebus._receive_mode.yml
     langs:
       - java
-    name: ReceiveAndDelete
-    nameWithType: ReceiveMode.ReceiveAndDelete
-    fullName: com.microsoft.azure.servicebus.ReceiveMode.ReceiveAndDelete
+    name: RECEIVEANDDELETE
+    nameWithType: ReceiveMode.RECEIVEANDDELETE
+    fullName: com.microsoft.azure.servicebus.ReceiveMode.RECEIVEANDDELETE
     type: Field
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ReceiveMode.java
-      startLine: 4
+      startLine: 26
     package: com.microsoft.azure.servicebus
+    summary: '<p>In diesem Modus wird empfangene Nachricht aus der Warteschlange oder einem Abonnement entfernt, und sofort gelöscht. Diese Option ist unkompliziert, aber wenn der Empfänger ausfällt, bevor die Verarbeitung der Nachricht abgeschlossen ist, geht die Nachricht verloren. Da die Nachricht dann aus der Warteschlange entfernt worden ist, kann kein anderer Empfänger auf sie zugreifen. </p>'
     syntax:
-      content: public ReceiveAndDelete
+      content: public RECEIVEANDDELETE
 references: []

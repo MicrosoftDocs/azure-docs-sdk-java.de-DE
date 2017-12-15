@@ -46,7 +46,7 @@ items:
       startLine: 45
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
-      <p>Erstellt eine Instanz aus der angegebenen <xref href="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p>Erstellt eine Instanz aus der angegebenen <xref uid="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false">DeviceClientConfig</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public HttpsIotHubConnection(DeviceClientConfig config)
@@ -68,7 +68,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsIotHubConnection.java
-      startLine: 180
+      startLine: 216
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Eine Nachricht empfängt, falls vorhanden.</p>
@@ -108,7 +108,7 @@ items:
           description: <p>die ereignismeldung.</p>
       return:
         type: com.microsoft.azure.sdk.iot.device._response_message
-        description: <p>die <xref href="com.microsoft.azure.sdk.iot.device._response_message" data-throw-if-not-resolved="false"></xref> einschließlich Statuscode und die Nutzlast sendet die ereignismeldung.</p>
+        description: <p>die <xref uid="com.microsoft.azure.sdk.iot.device._response_message" data-throw-if-not-resolved="false">ResponseMessage</xref> einschließlich Statuscode und die Nutzlast sendet die ereignismeldung.</p>
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn die IoT Hub nicht erreicht werden konnte. </p>
@@ -126,7 +126,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsIotHubConnection.java
-      startLine: 127
+      startLine: 145
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Eine generische Https-Nachricht gesendet.</p>
@@ -145,7 +145,7 @@ items:
           description: '<p>der Pfad, die am Ende des URIS mit hinzugefügt werden <code>/</code>.</p>'
       return:
         type: com.microsoft.azure.sdk.iot.device._response_message
-        description: <p>die <xref href="com.microsoft.azure.sdk.iot.device._response_message" data-throw-if-not-resolved="false"></xref> einschließlich Statuscode und die Nutzlast sendet die Nachricht.</p>
+        description: <p>die <xref uid="com.microsoft.azure.sdk.iot.device._response_message" data-throw-if-not-resolved="false">ResponseMessage</xref> einschließlich Statuscode und die Nutzlast sendet die Nachricht.</p>
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn die IoT Hub nicht erreicht werden konnte. </p>
@@ -163,7 +163,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsIotHubConnection.java
-      startLine: 244
+      startLine: 297
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Sendet das Ergebnis der Nachricht für die zuvor empfangenen Nachricht.</p>
@@ -173,12 +173,14 @@ items:
       parameters:
         - id: result
           type: com.microsoft.azure.sdk.iot.device._iot_hub_message_result
-          description: '<p>Das Ergebnis der Nachricht (eine der <ref refid="" kindref="compound">IotHubMessageResult #COMPLETE</ref>, <ref refid="" kindref="compound">IotHubMessageResult #ABANDON</ref>, oder <ref refid="" kindref="compound">IotHubMessageResult #REJECT</ref>).</p>'
+          description: '<p>Das Ergebnis der Nachricht (eine der <xref uid="" data-throw-if-not-resolved="false">IotHubMessageResult #COMPLETE</xref>, <xref uid="" data-throw-if-not-resolved="false">IotHubMessageResult #ABANDON</xref>, oder <xref uid="" data-throw-if-not-resolved="false">IotHubMessageResult #REJECT</xref>).</p>'
     exceptions:
       - type: 12fe80de
-        description: '<p>Wenn<programlisting><codeline><highlight class="normal">SendMessageResult<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, bevor <xref href="com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection.receiveMessage()" data-throw-if-not-resolved="false"></xref> aufgerufen wird. </p>'
+        description: "<p>Wenn<code>sendMessageResult \r\n\r\n    </code> wird aufgerufen, bevor <xref uid=\"com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection.receiveMessage()\" data-throw-if-not-resolved=\"false\">receiveMessage()</xref> aufgerufen wird. </p>"
       - type: cbf33bbe
         description: <p>Wenn die IoT Hub nicht erreicht werden konnte. </p>
+      - type: 836e31af
+        description: <p>Wenn die SAS-Token in der Konfigurationsdatei gespeichert abgelaufen ist und kann nicht erneuert werden </p>
 references:
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection.HttpsIotHubConnection*
     name: HttpsIotHubConnection
@@ -212,6 +214,10 @@ references:
     spec.java:
       - name: IllegalStateException
         fullName: IllegalStateException
+  - uid: 836e31af
+    spec.java:
+      - name: SecurityException
+        fullName: SecurityException
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection.sendMessageResult*
     name: sendMessageResult
     nameWithType: HttpsIotHubConnection.sendMessageResult
@@ -234,7 +240,7 @@ references:
     nameWithType: ResponseMessage
     fullName: com.microsoft.azure.sdk.iot.device.ResponseMessage
     type: Class
-    summary: <p>Erweitern <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> zur Unterstützung von Statusantwort </p>
+    summary: <p>Erweitern <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> zur Unterstützung von Statusantwort </p>
     syntax:
       content: public class ResponseMessage
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_message

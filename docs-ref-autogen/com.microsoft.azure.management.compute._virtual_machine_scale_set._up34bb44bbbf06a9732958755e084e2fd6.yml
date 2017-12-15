@@ -15,10 +15,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-      startLine: 1364
+      startLine: 1486
     package: com.microsoft.azure.management.compute
     summary: '<p>Festlegen des Status der VM-Skalierungsgruppe, Update zuzuordnende Back-End-Adresspools ermöglichen und/oder eingehenden NAT-Pools mit den ausgewählten internen Lastenausgleich mit der primären Netzwerkschnittstelle der Skala festlegen, virtuelle Computer. </p>'
     syntax:
@@ -30,7 +30,10 @@ items:
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_extension.defineNewExtension(String)
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_extension.updateExtension(String)
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._up61cbe2c19e8f2ef8e189598356294659.withAvailabilityZone(AvailabilityZoneId)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_capacity.withCapacity(int)
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0.withManagedServiceIdentity()
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0.withManagedServiceIdentity(int)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._upb25af82c2a1e6ada70476a6c01d3a62c.withNewDataDisk(int)
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._upb25af82c2a1e6ada70476a6c01d3a62c.withNewDataDisk(int,int,CachingTypes)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._upb25af82c2a1e6ada70476a6c01d3a62c.withNewDataDisk(int,int,CachingTypes,StorageAccountTypes)'
@@ -62,7 +65,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-      startLine: 1372
+      startLine: 1494
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Ordnet den angegebenen internen Load Balancer-Back-Ends primäre Netzwerkschnittstelle der virtuellen Computer in der Menge der Skala.</p>
@@ -185,6 +188,25 @@ references:
       return:
         type: 2759409c
         description: <p>die erste Phase des Updates Verweis Erweiterung </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._up61cbe2c19e8f2ef8e189598356294659.withAvailabilityZone(AvailabilityZoneId)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._up61cbe2c19e8f2ef8e189598356294659
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._up61cbe2c19e8f2ef8e189598356294659.yml
+    name: withAvailabilityZone(AvailabilityZoneId zoneId)
+    nameWithType: VirtualMachineScaleSet.UpdateStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    fullName: WithApply com.microsoft.azure.management.compute.VirtualMachineScaleSet.UpdateStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    type: Method
+    summary: |-
+      <p>Gibt die Verfügbarkeit-Zone für die VM-Skalierungsgruppe an.</p>
+      <p></p>
+    syntax:
+      content: public WithApply withAvailabilityZone(AvailabilityZoneId zoneId)
+      parameters:
+        - id: zoneId
+          type: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+          description: <p>Der Zonenbezeichner. </p>
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_apply
+        description: <p>die nächste Phase des Updates </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_capacity.withCapacity(int)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_capacity
     href: com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_capacity.yml
@@ -203,6 +225,40 @@ references:
           description: <p>Legen Sie die Kapazität der virtuellen Maschine der Skala </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._update_stages._with_apply
+        description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0.withManagedServiceIdentity()
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0.yml
+    name: withManagedServiceIdentity()
+    nameWithType: VirtualMachineScaleSet.UpdateStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    fullName: WithRoleAndScopeOrApply com.microsoft.azure.management.compute.VirtualMachineScaleSet.UpdateStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrApply withManagedServiceIdentity()
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._upe60c755966e485eaf76d916f4f8aac30
+        description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0.withManagedServiceIdentity(int)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._up023af698501ef5d98fbfc234ffa4ecd0.yml
+    name: withManagedServiceIdentity(int tokenPort)
+    nameWithType: VirtualMachineScaleSet.UpdateStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    fullName: WithRoleAndScopeOrApply com.microsoft.azure.management.compute.VirtualMachineScaleSet.UpdateStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrApply withManagedServiceIdentity(int tokenPort)
+      parameters:
+        - id: tokenPort
+          type: f75371fa
+          description: '<p>der Port auf der VM-Skalierungsgruppe sammlungssatzinstanz, in dem Zugriffstoken verfügbar ist. </p>'
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._upe60c755966e485eaf76d916f4f8aac30
         description: <p>die nächste Phase des Updates </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._upb25af82c2a1e6ada70476a6c01d3a62c.withNewDataDisk(int)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._upb25af82c2a1e6ada70476a6c01d3a62c
@@ -523,13 +579,13 @@ references:
     nameWithType: 'Resource.UpdateWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.UpdateWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase des Ressource-Updates </p>

@@ -15,13 +15,13 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/collection/InnerSupportsDelete.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/collection/InnerSupportsDelete.java
       startLine: 18
     package: com.microsoft.azure.management.resources.fluentcore.collection
     summary: |-
-      <p>Ermöglicht den Zugriff auf Löschen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
+      <p>Ermöglicht den Zugriff auf Löschen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist)</p>
       <p></p>
     syntax:
@@ -59,7 +59,7 @@ items:
           description: <p>Der Name der Ressource innerhalb der angegebenen Ressourcengruppe. </p>
       return:
         type: 058422cb
-        description: '<p>die <ref refid="" kindref="compound">ServiceResponse</ref> -Objekt, wenn erfolgreich. </p>'
+        description: '<p>die <xref uid="" data-throw-if-not-resolved="false">ServiceResponse</xref> -Objekt, wenn erfolgreich. </p>'
 references:
   - uid: 5a5d7d33
     spec.java:
@@ -78,70 +78,6 @@ references:
     nameWithType: InnerSupportsDelete<ResponseT>.deleteAsync
     fullName: Observable<ResponseT> com.microsoft.azure.management.resources.fluentcore.collection.InnerSupportsDelete<ResponseT>.deleteAsync
     package: com.microsoft.azure.management.resources.fluentcore.collection
-  - uid: com.microsoft.azure.management.resources.implementation._deployments_inner
-    parent: com.microsoft.azure.management.resources.implementation
-    href: com.microsoft.azure.management.resources.implementation._deployments_inner.yml
-    name: DeploymentsInner
-    nameWithType: DeploymentsInner
-    fullName: com.microsoft.azure.management.resources.implementation.DeploymentsInner
-    type: Class
-    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref href="com.microsoft.azure.management.resources._deployments" data-throw-if-not-resolved="false"></xref>. </p>'
-    syntax:
-      content: 'public class DeploymentsInner implements InnerSupportsGet<DeploymentExtendedInner>,InnerSupportsDelete<Void>'
-  - uid: com.microsoft.azure.management.resources.implementation._policy_assignments_inner
-    parent: com.microsoft.azure.management.resources.implementation
-    href: com.microsoft.azure.management.resources.implementation._policy_assignments_inner.yml
-    name: PolicyAssignmentsInner
-    nameWithType: PolicyAssignmentsInner
-    fullName: com.microsoft.azure.management.resources.implementation.PolicyAssignmentsInner
-    type: Class
-    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref href="com.microsoft.azure.management.resources._policy_assignments" data-throw-if-not-resolved="false"></xref>. </p>'
-    syntax:
-      content: public class PolicyAssignmentsInner
-  - uid: 'com.microsoft.azure.management.resources.implementation._policy_assignments_inner.deleteAsync(String,String)'
-    parent: com.microsoft.azure.management.resources.implementation._policy_assignments_inner
-    href: com.microsoft.azure.management.resources.implementation._policy_assignments_inner.yml
-    name: 'deleteAsync(String scope, String policyAssignmentName)'
-    nameWithType: 'PolicyAssignmentsInner.deleteAsync(String scope, String policyAssignmentName)'
-    fullName: 'Observable<PolicyAssignmentInner> com.microsoft.azure.management.resources.implementation.PolicyAssignmentsInner.deleteAsync(String scope, String policyAssignmentName)'
-    type: Method
-    summary: |-
-      <p>Löscht eine richtlinienzuweisung an.</p>
-      <p></p>
-    syntax:
-      content: 'public Observable<PolicyAssignmentInner> deleteAsync(String scope, String policyAssignmentName)'
-      parameters:
-        - id: scope
-          type: '26831127'
-          description: <p>Der Bereich der für richtlinienzuweisung. </p>
-        - id: policyAssignmentName
-          type: '26831127'
-          description: <p>Der Name der richtlinienzuweisung zu löschen. </p>
-      return:
-        type: c2d0e8c6com.microsoft.azure.management.resources.implementation._policy_assignment_innera08ddfce
-        description: <p>die Observable-Objekt für die <xref href="com.microsoft.azure.management.resources.implementation._policy_assignment_inner" data-throw-if-not-resolved="false"></xref> Objekt </p>
-  - uid: 'com.microsoft.azure.management.resources.implementation._deployments_inner.deleteAsync(String,String)'
-    parent: com.microsoft.azure.management.resources.implementation._deployments_inner
-    href: com.microsoft.azure.management.resources.implementation._deployments_inner.yml
-    name: 'deleteAsync(String resourceGroupName, String deploymentName)'
-    nameWithType: 'DeploymentsInner.deleteAsync(String resourceGroupName, String deploymentName)'
-    fullName: 'Observable<Void> com.microsoft.azure.management.resources.implementation.DeploymentsInner.deleteAsync(String resourceGroupName, String deploymentName)'
-    type: Method
-    summary: |-
-      <p>Löscht eine Bereitstellung aus dem Bereitstellungsverlauf an. Eine vorlagenbereitstellung, die zurzeit ausgeführt wird, kann nicht gelöscht werden. Das Löschen einer vorlagenbereitstellung werden die zugehörigen Bereitstellungsvorgänge entfernt. Das Löschen einer vorlagenbereitstellung wirkt sich nicht auf den Status der Ressourcengruppe aus. Dies ist ein asynchroner Vorgang, der den Status 202 zurückgibt, bis die vorlagenbereitstellung erfolgreich gelöscht wurde. Die <xref href="com.microsoft.azure.management.resources._location" data-throw-if-not-resolved="false"></xref> Antwortheader enthält den URI ab, das den Status des Prozesses zu erhalten. Während der Prozess ausgeführt wird, einen Aufruf an den URI in die <xref href="com.microsoft.azure.management.resources._location" data-throw-if-not-resolved="false"></xref> -Header den Status 202 zurück. Wenn der Prozess abgeschlossen wurde, den URI in die <xref href="com.microsoft.azure.management.resources._location" data-throw-if-not-resolved="false"></xref> -Header den Status der 204 bei Erfolg zurück. Wenn die asynchrone Anforderung fehlgeschlagen ist, den URI in die <xref href="com.microsoft.azure.management.resources._location" data-throw-if-not-resolved="false"></xref> Header gibt einen Fehlerstufen-Statuscode zurück.</p>
-      <p></p>
-    syntax:
-      content: 'public Observable<Void> deleteAsync(String resourceGroupName, String deploymentName)'
-      parameters:
-        - id: resourceGroupName
-          type: '26831127'
-          description: <p>Der Name der Ressourcengruppe mit der Bereitstellung gelöscht. Der Name wird Groß-/Kleinschreibung nicht beachtet. </p>
-        - id: deploymentName
-          type: '26831127'
-          description: <p>Der Name der Bereitstellung gelöscht. </p>
-      return:
-        type: dcd884b2
-        description: <p>die Observable-Objekt für die Anforderung </p>
   - uid: com.microsoft.azure.management._azure
     parent: com.microsoft.azure.management
     href: com.microsoft.azure.management._azure.yml
@@ -149,6 +85,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

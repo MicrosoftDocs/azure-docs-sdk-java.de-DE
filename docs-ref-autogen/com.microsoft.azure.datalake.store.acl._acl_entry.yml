@@ -8,15 +8,15 @@ items:
       - 'com.microsoft.azure.datalake.store.acl._acl_entry.AclEntry(AclScope,AclType,String,AclAction)'
       - com.microsoft.azure.datalake.store.acl._acl_entry.aclListToString(List<AclEntry>)
       - 'com.microsoft.azure.datalake.store.acl._acl_entry.aclListToString(List<AclEntry>,boolean)'
-      - com.microsoft.azure.datalake.store.acl._acl_entry.action()
-      - com.microsoft.azure.datalake.store.acl._acl_entry.name()
+      - com.microsoft.azure.datalake.store.acl._acl_entry.action
+      - com.microsoft.azure.datalake.store.acl._acl_entry.name
       - com.microsoft.azure.datalake.store.acl._acl_entry.parseAclEntry(String)
       - 'com.microsoft.azure.datalake.store.acl._acl_entry.parseAclEntry(String,boolean)'
       - com.microsoft.azure.datalake.store.acl._acl_entry.parseAclSpec(String)
-      - com.microsoft.azure.datalake.store.acl._acl_entry.scope()
+      - com.microsoft.azure.datalake.store.acl._acl_entry.scope
       - com.microsoft.azure.datalake.store.acl._acl_entry.toString()
       - com.microsoft.azure.datalake.store.acl._acl_entry.toString(boolean)
-      - com.microsoft.azure.datalake.store.acl._acl_entry.type()
+      - com.microsoft.azure.datalake.store.acl._acl_entry.type
     href: com.microsoft.azure.datalake.store.acl._acl_entry.yml
     langs:
       - java
@@ -32,10 +32,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 25
     package: com.microsoft.azure.datalake.store.acl
-    summary: |-
-      <p>Einen ACL-Eintrag enthält. Ein ACL-Eintrag besteht aus einem Bereich (Zugriff oder Standard), den Typ der ACL (Benutzer, Gruppe, die andere oder Maskieren), den Namen des Benutzers oder der Gruppe diese ACL zugeordnet (kann leer sein, um die Standardberechtigungen für Benutzer und Gruppen angeben, und muss für die Maske Einträge leer sein), und die Aktion, die durch diese ACL-Eintrag zulässig. </p>
-      <p>Eine ACL für ein Objekt besteht aus einem<programlisting><codeline><highlight class="normal">Liste<sp> </sp> </highlight> </codeline> </programlisting> des Acl-Einträge. </p>
-      <p>Diese Klasse bietet auch eine Anzahl von Hilfsmethoden zum Konvertieren von ACL-Einträge und ACLs in und aus Zeichenfolgen zurück. </p>
+    summary: "<p>Einen ACL-Eintrag enthält. Ein ACL-Eintrag besteht aus einem Bereich (Zugriff oder Standard), den Typ der ACL (Benutzer, Gruppe, die andere oder Maskieren), den Namen des Benutzers oder der Gruppe diese ACL zugeordnet (kann leer sein, um die Standardberechtigungen für Benutzer und Gruppen angeben, und muss für die Maske Einträge leer sein), und die Aktion, die durch diese ACL-Eintrag zulässig. </p>\n<p>Eine ACL für ein Objekt besteht aus einem<code>List \r\n\r\n    </code> des Acl-Einträge. </p>\n\n<p>Diese Klasse bietet auch eine Anzahl von Hilfsmethoden zum Konvertieren von ACL-Einträge und ACLs in und aus Zeichenfolgen zurück. </p>"
     syntax: &ref_1
       content: public class AclEntry
     inheritance:
@@ -80,16 +77,16 @@ items:
       parameters:
         - id: scope
           type: com.microsoft.azure.datalake.store.acl._acl_scope
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_scope\" data-throw-if-not-resolved=\"false\"></xref>der Acl-Eintrag (Zugriff oder Standard-) Bereich angeben </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_scope\" data-throw-if-not-resolved=\"false\">AclScope</xref> der Acl-Eintrag (Zugriff oder Standard-) Bereich angeben </p>"
         - id: type
           type: com.microsoft.azure.datalake.store.acl._acl_type
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_type\" data-throw-if-not-resolved=\"false\"></xref>Der Typ der Acl-Eintrag (Benutzer, Gruppe, die andere oder Maskieren) </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_type\" data-throw-if-not-resolved=\"false\">AclType</xref> Angabe des Typs der Acl-Eintrag (Benutzer, Gruppe, die andere oder Maskieren) </p>"
         - id: name
           type: '26831127'
           description: '<p>Zeichenfolge, die den Namen des Benutzers oder der Gruppe diese Acl-Eintrag zugeordneten angibt. </p>'
         - id: action
           type: com.microsoft.azure.datalake.store.acl._acl_action
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_action\" data-throw-if-not-resolved=\"false\"></xref>Durch diese Acl-Eintrag darf angegeben werden, die Aktion </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_action\" data-throw-if-not-resolved=\"false\">AclAction</xref> darf angegeben werden, die Aktion, durch diese Acl-Eintrag </p>"
   - uid: com.microsoft.azure.datalake.store.acl._acl_entry.aclListToString(List<AclEntry>)
     id: aclListToString(List<AclEntry>)
     parent: com.microsoft.azure.datalake.store.acl._acl_entry
@@ -106,13 +103,13 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 227
     package: com.microsoft.azure.datalake.store.acl
-    summary: <p>Konvertiert eine <ref refid="" kindref="compound">Liste</ref><programlisting><codeline><highlight class="normal">&lt;AclEntry&gt; <sp> </sp> </highlight> </codeline> </programlisting> auf der Posix Aclspec in Form einer Zeichenfolge </p>
+    summary: "<p>Konvertiert eine <xref uid=\"\" data-throw-if-not-resolved=\"false\">Liste</xref> <code>&lt;AclEntry&gt; \r\n\r\n    </code> auf der Posix Aclspec in Form einer Zeichenfolge </p>"
     syntax:
       content: public static String aclListToString(List<AclEntry> list)
       parameters:
         - id: list
           type: 5618da2dcom.microsoft.azure.datalake.store.acl._acl_entrya08ddfce
-          description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">Liste</ref>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">&lt;AclEntry&gt; <sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> konvertiert werden, in eine Zeichenfolge</p>"
+          description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">Liste</xref> \r\n\r\n  <code>&lt;AclEntry&gt; \r\n\r\n    </code> konvertiert werden, in eine Zeichenfolge</p>"
       return:
         type: '26831127'
         description: <p>POSIX Acl-Spec-Zeichenfolge </p>
@@ -132,24 +129,21 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 244
     package: com.microsoft.azure.datalake.store.acl
-    summary: |-
-      <p>Konvertiert eine <ref refid="" kindref="compound">Liste</ref><programlisting><codeline><highlight class="normal">&lt;AclEntry&gt; <sp> </sp> </highlight> </codeline> </programlisting> auf der Posix Aclspec in Form einer Zeichenfolge. </p>
-      <p>Wenn die Zeichenfolge Aclspec So entfernen Sie eine vorhandene Acl aus einer Datei oder Ordner verwendet wird, klicken Sie dann muss die Berechtigungsstufe nicht angegeben werden. True, übergeben die<programlisting><codeline><highlight class="normal">RemoveAcl<sp> </sp> </highlight> </codeline> </programlisting> Argument wurde ausgelassen, die Berechtigungsstufe in der Ausgabezeichenfolge. </p>
-      <p></p>
+    summary: "<p>Konvertiert eine <xref uid=\"\" data-throw-if-not-resolved=\"false\">Liste</xref> <code>&lt;AclEntry&gt; \r\n\r\n    </code> auf der Posix Aclspec in Form einer Zeichenfolge. </p>\n\n<p>Wenn die Zeichenfolge Aclspec So entfernen Sie eine vorhandene Acl aus einer Datei oder Ordner verwendet wird, klicken Sie dann muss die Berechtigungsstufe nicht angegeben werden. True, übergeben die<code>removeAcl \r\n\r\n    </code> Argument wurde ausgelassen, die Berechtigungsstufe in der Ausgabezeichenfolge. </p>\n\n<p></p>"
     syntax:
       content: 'public static String aclListToString(List<AclEntry> list, boolean removeAcl)'
       parameters:
         - id: list
           type: 5618da2dcom.microsoft.azure.datalake.store.acl._acl_entrya08ddfce
-          description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">Liste</ref>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">&lt;AclEntry&gt; <sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> konvertiert werden, in eine Zeichenfolge </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">Liste</xref> \r\n\r\n  <code>&lt;AclEntry&gt; \r\n\r\n    </code> konvertiert werden, in eine Zeichenfolge </p>"
         - id: removeAcl
           type: 4fc6e284
           description: <p>RemoveAcl übergeben "true" wird in einer Aclspec keine Berechtigung angegeben zu folgendem Ergebnis führen</p>
       return:
         type: '26831127'
         description: <p>POSIX Acl-Spec-Zeichenfolge </p>
-  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.action()
-    id: action()
+  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.action
+    id: action
     parent: com.microsoft.azure.datalake.store.acl._acl_entry
     href: com.microsoft.azure.datalake.store.acl._acl_entry.yml
     langs:
@@ -163,13 +157,13 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 50
     package: com.microsoft.azure.datalake.store.acl
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_action\" data-throw-if-not-resolved=\"false\"></xref>Enumeration, die die Aktion, die von dieser Acl-Eintrag zugelassenen angeben. Hilfsmethoden Wert aus einer Berechtigungszeichenfolge für Unix-Format erstellt wurde (z. B. <programlisting> <codeline> <highlight class=\"normal\">AclAction.fromRwx(\"rw-\")<sp> </sp> </highlight> </codeline> </programlisting> ), oder auf Unix oktale Berechtigung (z. B. <programlisting> <codeline> <highlight class=\"normal\">AclAction.fromOctal(6)<sp> </sp> </highlight> </codeline> </programlisting> ). </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_action\" data-throw-if-not-resolved=\"false\">AclAction</xref> Enum-Aktion, die von dieser Acl-Eintrag zugelassen werden. Hilfsmethoden Wert aus einer Berechtigungszeichenfolge für Unix-Format erstellt wurde (z. B. <code>AclAction.fromRwx(\"rw-\") \r\n\r\n    </code> ), oder auf Unix oktale Berechtigung (z. B. <code>AclAction.fromOctal(6) \r\n\r\n    </code> ). </p>"
     syntax:
       content: public AclAction action
       return:
         type: com.microsoft.azure.datalake.store.acl._acl_action
-  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.name()
-    id: name()
+  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.name
+    id: name
     parent: com.microsoft.azure.datalake.store.acl._acl_entry
     href: com.microsoft.azure.datalake.store.acl._acl_entry.yml
     langs:
@@ -204,7 +198,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 85
     package: com.microsoft.azure.datalake.store.acl
-    summary: '<p>Analysiert einen Acl-Eintrag aus seiner Posix in Form einer Zeichenfolge. Zum Beispiel:<programlisting><codeline><highlight class="normal">"Standard: Benutzer: Bob: R-X"<sp></sp></highlight></codeline></programlisting></p>'
+    summary: "<p>Analysiert einen Acl-Eintrag aus seiner Posix in Form einer Zeichenfolge. Zum Beispiel:<code>\"default:user:bob:r-x\" \r\n\r\n    </code></p>"
     syntax:
       content: public static AclEntry parseAclEntry(String entryString)
       parameters:
@@ -213,7 +207,7 @@ items:
           description: <p>ACL-Eintrag zu analysierende Zeichenfolge</p>
       return:
         type: com.microsoft.azure.datalake.store.acl._acl_entry
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_entry\" data-throw-if-not-resolved=\"false\"></xref>in der Zeichenfolge analysiert</p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_entry\" data-throw-if-not-resolved=\"false\">AclEntry</xref> in der Zeichenfolge analysiert</p>"
     exceptions:
       - type: 3c87bd19
         description: <p>Wenn die Zeichenfolge ungültig ist. </p>
@@ -233,10 +227,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 104
     package: com.microsoft.azure.datalake.store.acl
-    summary: |-
-      <p>Analysiert einen einzelnen Acl-Eintrag aus der Posix in Form einer Zeichenfolge. Zum Beispiel:<programlisting><codeline><highlight class="normal">"Standard: Benutzer: Bob: R-X"<sp> </sp> </highlight> </codeline> </programlisting> . </p>
-      <p>Wenn die Acl-Zeichenfolge verwendet, um eine vorhandene Acl aus einer Datei oder Ordner zu entfernen, klicken Sie dann muss die Berechtigungsstufe nicht angegeben werden. Übergeben false, wenn die<programlisting><codeline><highlight class="normal">RemoveAcl<sp> </sp> </highlight> </codeline> </programlisting> -Argument teilt den Parser diese Zeichenfolgen akzeptieren. </p>
-      <p></p>
+    summary: "<p>Analysiert einen einzelnen Acl-Eintrag aus der Posix in Form einer Zeichenfolge. Zum Beispiel:<code>\"default:user:bob:r-x\" \r\n\r\n    </code> . </p>\n\n<p>Wenn die Acl-Zeichenfolge verwendet, um eine vorhandene Acl aus einer Datei oder Ordner zu entfernen, klicken Sie dann muss die Berechtigungsstufe nicht angegeben werden. Übergeben false, wenn die<code>removeAcl \r\n\r\n    </code> -Argument teilt den Parser diese Zeichenfolgen akzeptieren. </p>\n\n<p></p>"
     syntax:
       content: 'public static AclEntry parseAclEntry(String entryString, boolean removeAcl)'
       parameters:
@@ -248,7 +239,7 @@ items:
           description: '<p>boolescher Wert gibt an, ob diese Zeichenfolge zu analysieren, wie z. B. eine Entfernung Acl (d. h. mit der Berechtigung, die optional)</p>'
       return:
         type: com.microsoft.azure.datalake.store.acl._acl_entry
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_entry\" data-throw-if-not-resolved=\"false\"></xref>in der Zeichenfolge analysiert</p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_entry\" data-throw-if-not-resolved=\"false\">AclEntry</xref> in der Zeichenfolge analysiert</p>"
     exceptions:
       - type: 3c87bd19
         description: <p>Wenn die Zeichenfolge ungültig ist. </p>
@@ -268,7 +259,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 200
     package: com.microsoft.azure.datalake.store.acl
-    summary: <p>analysiert eine Spec Posix Acl-Zeichenfolge in eine <ref refid="" kindref="compound">Liste</ref> von<programlisting><codeline><highlight class="normal">AclEntry<sp> </sp> </highlight> </codeline> </programlisting> s. </p>
+    summary: "<p>analysiert eine Spec Posix Acl-Zeichenfolge in eine <xref uid=\"\" data-throw-if-not-resolved=\"false\">Liste</xref> von<code>AclEntry \r\n\r\n    </code> s. </p>"
     syntax:
       content: public static List<AclEntry> parseAclSpec(String aclString)
       parameters:
@@ -277,9 +268,9 @@ items:
           description: <p>die Acl gemäß der Spezifikation Zeichenfolge Tp-Analyse</p>
       return:
         type: 5618da2dcom.microsoft.azure.datalake.store.acl._acl_entrya08ddfce
-        description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">Liste</ref>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">&lt;AclEntry&gt; <sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> durch die Acl-Spec-Zeichenfolge dargestellt wird. </p>"
-  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.scope()
-    id: scope()
+        description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">Liste</xref> \r\n\r\n  <code>&lt;AclEntry&gt; \r\n\r\n    </code> durch die Acl-Spec-Zeichenfolge dargestellt wird. </p>"
+  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.scope
+    id: scope
     parent: com.microsoft.azure.datalake.store.acl._acl_entry
     href: com.microsoft.azure.datalake.store.acl._acl_entry.yml
     langs:
@@ -293,7 +284,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 29
     package: com.microsoft.azure.datalake.store.acl
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_scope\" data-throw-if-not-resolved=\"false\"></xref>der Acl-Eintrag (Zugriff oder Standard-) Bereich angeben </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_scope\" data-throw-if-not-resolved=\"false\">AclScope</xref> der Acl-Eintrag (Zugriff oder Standard-) Bereich angeben </p>"
     syntax:
       content: public AclScope scope
       return:
@@ -314,9 +305,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 158
     package: com.microsoft.azure.datalake.store.acl
-    summary: |-
-      <p>Gibt die Form einer Zeichenfolge Posix dieser Acl-Eintrag zurück. Zum Beispiel:<programlisting><codeline><highlight class="normal">"Standard: Benutzer: Bob: R-X"<sp> </sp> </highlight> </codeline> </programlisting> .</p>
-      <p></p>
+    summary: "<p>Gibt die Form einer Zeichenfolge Posix dieser Acl-Eintrag zurück. Zum Beispiel:<code>\"default:user:bob:r-x\" \r\n\r\n    </code> .</p>\n\n<p></p>"
     syntax:
       content: public String toString()
       return:
@@ -338,10 +327,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 174
     package: com.microsoft.azure.datalake.store.acl
-    summary: |-
-      <p>Gibt die Form einer Zeichenfolge Posix dieser Acl-Eintrag zurück. Zum Beispiel:<programlisting><codeline><highlight class="normal">"Standard: Benutzer: Bob: R-X"<sp> </sp> </highlight> </codeline> </programlisting> . </p>
-      <p>Wenn die Acl-Zeichenfolge verwendet, um eine vorhandene Acl aus einer Datei oder Ordner zu entfernen, klicken Sie dann muss die Berechtigungsstufe nicht angegeben werden. True, übergeben die<programlisting><codeline><highlight class="normal">RemoveAcl<sp> </sp> </highlight> </codeline> </programlisting> Argument wurde ausgelassen, die Berechtigungsstufe in der Ausgabezeichenfolge. </p>
-      <p></p>
+    summary: "<p>Gibt die Form einer Zeichenfolge Posix dieser Acl-Eintrag zurück. Zum Beispiel:<code>\"default:user:bob:r-x\" \r\n\r\n    </code> . </p>\n\n<p>Wenn die Acl-Zeichenfolge verwendet, um eine vorhandene Acl aus einer Datei oder Ordner zu entfernen, klicken Sie dann muss die Berechtigungsstufe nicht angegeben werden. True, übergeben die<code>removeAcl \r\n\r\n    </code> Argument wurde ausgelassen, die Berechtigungsstufe in der Ausgabezeichenfolge. </p>\n\n<p></p>"
     syntax:
       content: public String toString(boolean removeAcl)
       parameters:
@@ -350,9 +336,9 @@ items:
           description: <p>übergeben "true" wird in einer Acl-Eintrag-Zeichenfolge keine Berechtigung angegeben zu folgendem Ergebnis führen</p>
       return:
         type: '26831127'
-        description: <p>die Form einer Zeichenfolge der<programlisting><codeline><highlight class="normal">AclEntry<sp></sp></highlight></codeline></programlisting></p>
-  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.type()
-    id: type()
+        description: "<p>die Form einer Zeichenfolge der<code>AclEntry \r\n\r\n    </code></p>"
+  - uid: com.microsoft.azure.datalake.store.acl._acl_entry.type
+    id: type
     parent: com.microsoft.azure.datalake.store.acl._acl_entry
     href: com.microsoft.azure.datalake.store.acl._acl_entry.yml
     langs:
@@ -366,7 +352,7 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclEntry.java
       startLine: 34
     package: com.microsoft.azure.datalake.store.acl
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.acl._acl_type\" data-throw-if-not-resolved=\"false\"></xref>Der Typ der Acl-Eintrag (Benutzer, Gruppe, die andere oder Maskieren) </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.acl._acl_type\" data-throw-if-not-resolved=\"false\">AclType</xref> Angabe des Typs der Acl-Eintrag (Benutzer, Gruppe, die andere oder Maskieren) </p>"
     syntax:
       content: public AclType type
       return:
@@ -456,8 +442,5 @@ references:
     nameWithType: AclEntry
     fullName: com.microsoft.azure.datalake.store.acl.AclEntry
     type: Class
-    summary: |-
-      <p>Einen ACL-Eintrag enthält. Ein ACL-Eintrag besteht aus einem Bereich (Zugriff oder Standard), den Typ der ACL (Benutzer, Gruppe, die andere oder Maskieren), den Namen des Benutzers oder der Gruppe diese ACL zugeordnet (kann leer sein, um die Standardberechtigungen für Benutzer und Gruppen angeben, und muss für die Maske Einträge leer sein), und die Aktion, die durch diese ACL-Eintrag zulässig. </p>
-      <p>Eine ACL für ein Objekt besteht aus einem<programlisting><codeline><highlight class="normal">Liste<sp> </sp> </highlight> </codeline> </programlisting> des Acl-Einträge. </p>
-      <p>Diese Klasse bietet auch eine Anzahl von Hilfsmethoden zum Konvertieren von ACL-Einträge und ACLs in und aus Zeichenfolgen zurück. </p>
+    summary: "<p>Einen ACL-Eintrag enthält. Ein ACL-Eintrag besteht aus einem Bereich (Zugriff oder Standard), den Typ der ACL (Benutzer, Gruppe, die andere oder Maskieren), den Namen des Benutzers oder der Gruppe diese ACL zugeordnet (kann leer sein, um die Standardberechtigungen für Benutzer und Gruppen angeben, und muss für die Maske Einträge leer sein), und die Aktion, die durch diese ACL-Eintrag zulässig. </p>\n<p>Eine ACL für ein Objekt besteht aus einem<code>List \r\n\r\n    </code> des Acl-Einträge. </p>\n\n<p>Diese Klasse bietet auch eine Anzahl von Hilfsmethoden zum Konvertieren von ACL-Einträge und ACLs in und aus Zeichenfolgen zurück. </p>"
     syntax: *ref_1

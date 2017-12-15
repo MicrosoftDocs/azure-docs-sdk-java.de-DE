@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Subnet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Subnet.java
-      startLine: 218
+      startLine: 244
     package: com.microsoft.azure.management.network
     summary: <p>Die gesamte ein Subnetz-Update als Teil einer Netzwerk-Updates. </p>
     syntax:
@@ -28,6 +28,7 @@ items:
       - com.microsoft.azure.management.network._subnet._update_stages._with_network_security_group.withExistingNetworkSecurityGroup(NetworkSecurityGroup)
       - com.microsoft.azure.management.network._subnet._update_stages._with_route_table.withExistingRouteTable(RouteTable)
       - com.microsoft.azure.management.network._subnet._update_stages._with_route_table.withExistingRouteTable(String)
+      - com.microsoft.azure.management.network._subnet._update_stages._with_network_security_group.withoutNetworkSecurityGroup()
       - com.microsoft.azure.management.network._subnet._update_stages._with_route_table.withoutRouteTable()
 references:
   - uid: com.microsoft.azure.management.resources.fluentcore.model._settable.parent()
@@ -39,7 +40,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine untergeordnete Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, mit dem untergeordneten Ressourcen aktualisieren Sie die letzte Methode, die Durchführung des Updates und weiterhin die tatsächliche übergeordnete Ressource Updatevorgang in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators Muster, mit dem untergeordneten Ressourcen aktualisieren Sie die letzte Methode, die Durchführung des Updates und weiterhin die tatsächliche übergeordnete Ressource Updatevorgang in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false">Settable#parent()</xref> .</p>
       <p></p>
     syntax:
       content: public ParentT parent()
@@ -131,6 +132,19 @@ references:
       return:
         type: com.microsoft.azure.management.network._subnet._update
         description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.network._subnet._update_stages._with_network_security_group.withoutNetworkSecurityGroup()
+    parent: com.microsoft.azure.management.network._subnet._update_stages._with_network_security_group
+    href: com.microsoft.azure.management.network._subnet._update_stages._with_network_security_group.yml
+    name: withoutNetworkSecurityGroup()
+    nameWithType: Subnet.UpdateStages.WithNetworkSecurityGroup.withoutNetworkSecurityGroup()
+    fullName: Update com.microsoft.azure.management.network.Subnet.UpdateStages.WithNetworkSecurityGroup.withoutNetworkSecurityGroup()
+    type: Method
+    summary: <p>Entfernt die Zuordnung für dieses Subnetz mit der Netzwerksicherheitsgruppe. </p>
+    syntax:
+      content: public Update withoutNetworkSecurityGroup()
+      return:
+        type: com.microsoft.azure.management.network._subnet._update
+        description: <p>die nächste Phase des Updates </p>
   - uid: com.microsoft.azure.management.network._subnet._update_stages._with_route_table.withoutRouteTable()
     parent: com.microsoft.azure.management.network._subnet._update_stages._with_route_table
     href: com.microsoft.azure.management.network._subnet._update_stages._with_route_table.yml
@@ -188,4 +202,4 @@ references:
       content: public interface Settable<ParentT>
       typeParameters:
         - type: 18a275b1
-          description: '<p>die Definition des übergeordneten <xref href="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false"></xref> gibt, </p>'
+          description: '<p>die Definition des übergeordneten <xref uid="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false">Settable#parent()</xref> gibt, </p>'

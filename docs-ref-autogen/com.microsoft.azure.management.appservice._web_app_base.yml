@@ -18,6 +18,7 @@ items:
       - com.microsoft.azure.management.appservice._web_app_base.containerSize()
       - com.microsoft.azure.management.appservice._web_app_base.defaultDocuments()
       - com.microsoft.azure.management.appservice._web_app_base.defaultHostName()
+      - com.microsoft.azure.management.appservice._web_app_base.deploy()
       - com.microsoft.azure.management.appservice._web_app_base.enabled()
       - com.microsoft.azure.management.appservice._web_app_base.enabledHostNames()
       - com.microsoft.azure.management.appservice._web_app_base.gatewaySiteName()
@@ -77,12 +78,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
       startLine: 30
     package: com.microsoft.azure.management.appservice
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Bereitstellung oder Web-App-Slot. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Bereitstellung oder Web-App-Slot. </p>
     syntax:
       content: 'public interface WebAppBase extends HasName,GroupableResource<AppServiceManager, SiteInner>'
     inheritedMembers:
@@ -131,7 +132,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 370
+      startLine: 377
     package: com.microsoft.azure.management.appservice
     summary: <p>Anwenden des Slots (oder persistente) Konfigurationen aus dem angegebenen Slot auf der aktuellen Aktivität. Dies ist nützlich für "Swap-Preview". </p>
     syntax:
@@ -154,7 +155,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 378
+      startLine: 385
     package: com.microsoft.azure.management.appservice
     summary: <p>Anwenden des Slots (oder persistente) Konfigurationen aus dem angegebenen Slot auf der aktuellen Aktivität. Dies ist nützlich für "Swap-Preview". </p>
     syntax:
@@ -164,7 +165,7 @@ items:
           type: '26831127'
           description: <p>die zielslot zum Anwenden von Konfigurationen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.appServicePlanId()
     id: appServicePlanId()
@@ -397,6 +398,28 @@ items:
       return:
         type: '26831127'
         description: <p>Standard-Hostname der Web-app </p>
+  - uid: com.microsoft.azure.management.appservice._web_app_base.deploy()
+    id: deploy()
+    parent: com.microsoft.azure.management.appservice._web_app_base
+    href: com.microsoft.azure.management.appservice._web_app_base.yml
+    langs:
+      - java
+    name: deploy()
+    nameWithType: WebAppBase.deploy()
+    fullName: WebDeployment.DefinitionStages.WithPackageUri com.microsoft.azure.management.appservice.WebAppBase.deploy()
+    overload: com.microsoft.azure.management.appservice._web_app_base.deploy*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
+      startLine: 297
+    package: com.microsoft.azure.management.appservice
+    summary: '<p>Erste Schritt geben Sie die Parameter, um eine webbereitstellung (MS-Deploy) für die Web-app zu machen. </p>'
+    syntax:
+      content: public WebDeployment.DefinitionStages.WithPackageUri deploy()
+      return:
+        type: c3bed9d0
+        description: '<p>eine Phase, um die webbereitstellung erstellen </p>'
   - uid: com.microsoft.azure.management.appservice._web_app_base.enabled()
     id: enabled()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -1062,7 +1085,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 384
+      startLine: 391
     package: com.microsoft.azure.management.appservice
     summary: <p>Der Slot auf seiner ursprünglichen Konfigurationen zurückgesetzt. </p>
     syntax:
@@ -1081,13 +1104,13 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 391
+      startLine: 398
     package: com.microsoft.azure.management.appservice
     summary: <p>Der Slot auf seiner ursprünglichen Konfigurationen zurückgesetzt. </p>
     syntax:
       content: public Completable resetSlotConfigurationsAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.restart()
     id: restart()
@@ -1103,7 +1126,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 339
+      startLine: 346
     package: com.microsoft.azure.management.appservice
     summary: <p>Neustart der Web-app oder Bereitstellung-Slot. </p>
     syntax:
@@ -1122,13 +1145,13 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 346
+      startLine: 353
     package: com.microsoft.azure.management.appservice
     summary: <p>Neustart der Web-app oder Bereitstellung-Slot. </p>
     syntax:
       content: public Completable restartAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.scmSiteAlsoStopped()
     id: scmSiteAlsoStopped()
@@ -1165,7 +1188,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 313
+      startLine: 320
     package: com.microsoft.azure.management.appservice
     summary: <p>Startet die Web-app oder Bereitstellung-Slot. </p>
     syntax:
@@ -1184,13 +1207,13 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 320
+      startLine: 327
     package: com.microsoft.azure.management.appservice
     summary: <p>Startet die Web-app oder Bereitstellung-Slot. </p>
     syntax:
       content: public Completable startAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.state()
     id: state()
@@ -1227,7 +1250,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 326
+      startLine: 333
     package: com.microsoft.azure.management.appservice
     summary: <p>Beendet die Web-app oder Bereitstellung-Slot. </p>
     syntax:
@@ -1246,13 +1269,13 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 333
+      startLine: 340
     package: com.microsoft.azure.management.appservice
     summary: <p>Beendet die Web-app oder Bereitstellung-Slot. </p>
     syntax:
       content: public Completable stopAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.swap(String)
     id: swap(String)
@@ -1268,7 +1291,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 354
+      startLine: 361
     package: com.microsoft.azure.management.appservice
     summary: '<p>Vertauscht die app, die in der aktuellen web-app / slot mit der app, die im angegebenen Slot ausgeführt. </p>'
     syntax:
@@ -1291,7 +1314,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 363
+      startLine: 370
     package: com.microsoft.azure.management.appservice
     summary: '<p>Vertauscht die app, die in der aktuellen web-app / slot mit der app, die im angegebenen Slot ausgeführt. </p>'
     syntax:
@@ -1301,7 +1324,7 @@ items:
           type: '26831127'
           description: <p>der zielslot für den Tauschvorgang. Verwenden Sie "Produktion" für den produktionsslot zu übergeben. </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.targetSwapSlot()
     id: targetSwapSlot()
@@ -1344,7 +1367,7 @@ items:
       content: public Set<String> trafficManagerHostNames()
       return:
         type: df32358c
-        description: <p>Liste der <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Traffic Manager Hostnamen zugeordnet Web-app </p>
+        description: <p>Liste der <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Traffic Manager Hostnamen zugeordnet Web-app </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.usageState()
     id: usageState()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -1380,7 +1403,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 298
+      startLine: 305
     package: com.microsoft.azure.management.appservice
     summary: '<p>Stellt sicher, dass der Besitz der Domäne für eine Bestellung Zertifikat, indem Sie einen Hostnamen, der Domäne überprüfen diese Web-app gebunden ist. </p>'
     syntax:
@@ -1406,7 +1429,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/WebAppBase.java
-      startLine: 307
+      startLine: 314
     package: com.microsoft.azure.management.appservice
     summary: '<p>Stellt sicher, dass der Besitz der Domäne für eine Bestellung Zertifikat, indem Sie einen Hostnamen, der Domäne überprüfen diese Web-app gebunden ist. </p>'
     syntax:
@@ -1419,7 +1442,7 @@ items:
           type: '26831127'
           description: <p>Das Überprüfungstoken Domäne für die zertifikatreihenfolge </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.webSocketsEnabled()
     id: webSocketsEnabled()
@@ -1782,12 +1805,21 @@ references:
     nameWithType: WebAppBase.getSourceControlAsync
     fullName: Observable<WebAppSourceControl> com.microsoft.azure.management.appservice.WebAppBase.getSourceControlAsync
     package: com.microsoft.azure.management.appservice
+  - uid: c3bed9d0
+    spec.java:
+      - name: WebDeployment.DefinitionStages.WithPackageUri
+        fullName: WebDeployment.DefinitionStages.WithPackageUri
+  - uid: com.microsoft.azure.management.appservice._web_app_base.deploy*
+    name: deploy
+    nameWithType: WebAppBase.deploy
+    fullName: WebDeployment.DefinitionStages.WithPackageUri com.microsoft.azure.management.appservice.WebAppBase.deploy
+    package: com.microsoft.azure.management.appservice
   - uid: com.microsoft.azure.management.appservice._web_app_base.verifyDomainOwnership*
     name: verifyDomainOwnership
     nameWithType: WebAppBase.verifyDomainOwnership
     fullName: void com.microsoft.azure.management.appservice.WebAppBase.verifyDomainOwnership
     package: com.microsoft.azure.management.appservice
-  - uid: 56537e90
+  - uid: '56537e90'
     spec.java:
       - name: Completable
         fullName: Completable
@@ -1879,7 +1911,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -2008,7 +2040,7 @@ references:
     nameWithType: DeploymentSlot
     fullName: com.microsoft.azure.management.appservice.DeploymentSlot
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> bereitstellungsslots der Web-App. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> bereitstellungsslots der Web-App. </p>
     syntax:
       content: 'public interface DeploymentSlot extends IndependentChildResource<AppServiceManager, SiteInner>,WebAppBase,Refreshable<DeploymentSlot>,Updatable<DeploymentSlot.Update>,HasParent<WebApp>'
   - uid: com.microsoft.azure.management.appservice._function_app
@@ -2018,9 +2050,19 @@ references:
     nameWithType: FunctionApp
     fullName: com.microsoft.azure.management.appservice.FunctionApp
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> App-Funktion. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> App-Funktion. </p>
     syntax:
       content: 'public interface FunctionApp extends WebAppBase,Refreshable<FunctionApp>,Updatable<FunctionApp.Update>'
+  - uid: com.microsoft.azure.management.appservice._function_deployment_slot
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._function_deployment_slot.yml
+    name: FunctionDeploymentSlot
+    nameWithType: FunctionDeploymentSlot
+    fullName: com.microsoft.azure.management.appservice.FunctionDeploymentSlot
+    type: Interface
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Bereitstellung-Funktion von App-Slot. </p>
+    syntax:
+      content: 'public interface FunctionDeploymentSlot extends IndependentChildResource<AppServiceManager, SiteInner>,WebAppBase,Refreshable<FunctionDeploymentSlot>,Updatable<FunctionDeploymentSlot.Update>,HasParent<FunctionApp>'
   - uid: com.microsoft.azure.management.appservice._web_app
     parent: com.microsoft.azure.management.appservice
     href: com.microsoft.azure.management.appservice._web_app.yml
@@ -2028,7 +2070,7 @@ references:
     nameWithType: WebApp
     fullName: com.microsoft.azure.management.appservice.WebApp
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Web-App. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Web-App. </p>
     syntax:
       content: 'public interface WebApp extends WebAppBase,Refreshable<WebApp>,Updatable<WebApp.Update>'
   - uid: com.microsoft.azure.management.appservice._usage_state
@@ -2038,7 +2080,7 @@ references:
     nameWithType: UsageState
     fullName: com.microsoft.azure.management.appservice.UsageState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.appservice._usage_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.appservice._usage_state" data-throw-if-not-resolved="false">UsageState</xref>. </p>
     syntax:
       content: public enum UsageState
   - uid: com.microsoft.azure.management.appservice._site_availability_state
@@ -2048,7 +2090,7 @@ references:
     nameWithType: SiteAvailabilityState
     fullName: com.microsoft.azure.management.appservice.SiteAvailabilityState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.appservice._site_availability_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.appservice._site_availability_state" data-throw-if-not-resolved="false">SiteAvailabilityState</xref>. </p>
     syntax:
       content: public enum SiteAvailabilityState
   - uid: com.microsoft.azure.management.appservice._host_name_ssl_state
@@ -2068,7 +2110,7 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure
   - uid: com.microsoft.azure.management.appservice._cloning_info
@@ -2138,7 +2180,7 @@ references:
     nameWithType: ManagedPipelineMode
     fullName: com.microsoft.azure.management.appservice.ManagedPipelineMode
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.appservice._managed_pipeline_mode" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.appservice._managed_pipeline_mode" data-throw-if-not-resolved="false">ManagedPipelineMode</xref>. </p>
     syntax:
       content: public enum ManagedPipelineMode
   - uid: com.microsoft.azure.management.appservice._app_setting

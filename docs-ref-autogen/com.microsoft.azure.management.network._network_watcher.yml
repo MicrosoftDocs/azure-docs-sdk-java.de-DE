@@ -4,6 +4,7 @@ items:
     id: _network_watcher
     parent: com.microsoft.azure.management.network
     children:
+      - com.microsoft.azure.management.network._network_watcher.checkConnectivity()
       - com.microsoft.azure.management.network._network_watcher.getFlowLogSettings(String)
       - com.microsoft.azure.management.network._network_watcher.getFlowLogSettingsAsync(String)
       - com.microsoft.azure.management.network._network_watcher.getSecurityGroupView(String)
@@ -23,12 +24,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 24
+      startLine: 25
     package: com.microsoft.azure.management.network
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false"></xref> Watcher-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Watcher-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface NetworkWatcher extends GroupableResource<NetworkManager, NetworkWatcherInner>,Refreshable<NetworkWatcher>,Updatable<NetworkWatcher.Update>'
     inheritedMembers:
@@ -45,6 +46,28 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.arm.models._resource.tags()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._resource.type()
       - com.microsoft.azure.management.resources.fluentcore.model._updatable.update()
+  - uid: com.microsoft.azure.management.network._network_watcher.checkConnectivity()
+    id: checkConnectivity()
+    parent: com.microsoft.azure.management.network._network_watcher
+    href: com.microsoft.azure.management.network._network_watcher.yml
+    langs:
+      - java
+    name: checkConnectivity()
+    nameWithType: NetworkWatcher.checkConnectivity()
+    fullName: ConnectivityCheck.DefinitionStages.ToDestination com.microsoft.azure.management.network.NetworkWatcher.checkConnectivity()
+    overload: com.microsoft.azure.management.network._network_watcher.checkConnectivity*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
+      startLine: 97
+    package: com.microsoft.azure.management.network
+    summary: '<p>Überprüft die Möglichkeit, eine direkte TCP-Verbindung von einem virtuellen Computer für einen gegebenen Endpunkt, z. B. einem anderen virtuellen Computer oder einen beliebigen Remoteserver herstellen. </p>'
+    syntax:
+      content: public ConnectivityCheck.DefinitionStages.ToDestination checkConnectivity()
+      return:
+        type: 028a491a
+        description: <p>eine Phase Parameter für Konnektivitätsprüfung angeben </p>
   - uid: com.microsoft.azure.management.network._network_watcher.getFlowLogSettings(String)
     id: getFlowLogSettings(String)
     parent: com.microsoft.azure.management.network._network_watcher
@@ -59,7 +82,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 67
+      startLine: 68
     package: com.microsoft.azure.management.network
     summary: <p>Ruft die Informationen auf der Konfiguration des Datenfluss-Protokolls ab. </p>
     syntax:
@@ -85,7 +108,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 74
+      startLine: 75
     package: com.microsoft.azure.management.network
     summary: <p>Ruft die Informationen über die Konfiguration des Protokolls für Datenfluss asynchron ab. </p>
     syntax:
@@ -111,7 +134,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 53
+      startLine: 54
     package: com.microsoft.azure.management.network
     summary: <p>Ruft die Sicherheit konfiguriert und effektive Gruppenregeln auf den angegebenen virtuellen Computer ab. </p>
     syntax:
@@ -137,7 +160,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 60
+      startLine: 61
     package: com.microsoft.azure.management.network
     summary: <p>Ruft die Sicherheit konfiguriert und effektive Gruppenregeln auf den angegebenen virtuellen Computer asynchron. </p>
     syntax:
@@ -163,7 +186,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 39
+      startLine: 40
     package: com.microsoft.azure.management.network
     summary: <p>Ruft die Netzwerktopologie einer bestimmten Ressourcengruppe ab. </p>
     syntax:
@@ -189,7 +212,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 46
+      startLine: 47
     package: com.microsoft.azure.management.network
     summary: <p>Ruft die Netzwerktopologie einer bestimmten Ressourcengruppe asynchron ab. </p>
     syntax:
@@ -215,14 +238,14 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 80
+      startLine: 82
     package: com.microsoft.azure.management.network
     summary: <p>Erste Schritt geben Sie die Parameter zum Abrufen des nächsten Hops für den virtuellen Computer. </p>
     syntax:
       content: public NextHop.DefinitionStages.WithTargetResource nextHop()
       return:
         type: 48074ff4
-        description: <p>eine Phase an die Ziel-vm </p>
+        description: '<p>eine Phase, um die Parameter für den nächsten Hop angeben </p>'
   - uid: com.microsoft.azure.management.network._network_watcher.packetCaptures()
     id: packetCaptures()
     parent: com.microsoft.azure.management.network._network_watcher
@@ -237,7 +260,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 32
+      startLine: 33
     package: com.microsoft.azure.management.network
     syntax:
       content: public PacketCaptures packetCaptures()
@@ -258,14 +281,14 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkWatcher.java
-      startLine: 86
+      startLine: 89
     package: com.microsoft.azure.management.network
     summary: '<p>Überprüfen Sie die IP-Datenfluss von den angegebenen virtuellen Computer an einem Speicherort, die zurzeit konfigurierten NSG-Regeln angegeben. </p>'
     syntax:
       content: public VerificationIPFlow.DefinitionStages.WithTargetResource verifyIPFlow()
       return:
         type: e9238cf7
-        description: <p>eine Phase an die Ziel-vm </p>
+        description: '<p>eine Phase, um die Parameter für die IP-Fluss Überprüfung angeben </p>'
 references:
   - uid: com.microsoft.azure.management.network._network_watcher.packetCaptures*
     name: packetCaptures
@@ -354,6 +377,15 @@ references:
     nameWithType: NetworkWatcher.verifyIPFlow
     fullName: VerificationIPFlow.DefinitionStages.WithTargetResource com.microsoft.azure.management.network.NetworkWatcher.verifyIPFlow
     package: com.microsoft.azure.management.network
+  - uid: 028a491a
+    spec.java:
+      - name: ConnectivityCheck.DefinitionStages.ToDestination
+        fullName: ConnectivityCheck.DefinitionStages.ToDestination
+  - uid: com.microsoft.azure.management.network._network_watcher.checkConnectivity*
+    name: checkConnectivity
+    nameWithType: NetworkWatcher.checkConnectivity
+    fullName: ConnectivityCheck.DefinitionStages.ToDestination com.microsoft.azure.management.network.NetworkWatcher.checkConnectivity
+    package: com.microsoft.azure.management.network
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.id()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.yml
@@ -377,7 +409,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -422,7 +454,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -437,7 +469,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -513,7 +545,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -572,7 +604,7 @@ references:
     nameWithType: PacketCaptures
     fullName: com.microsoft.azure.management.network.PacketCaptures
     type: Interface
-    summary: <p>Einstiegspunkt für Paket erfasst Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Paket erfasst Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface PacketCaptures
   - uid: com.microsoft.azure.management.network._topology
@@ -582,7 +614,7 @@ references:
     nameWithType: Topology
     fullName: com.microsoft.azure.management.network.Topology
     type: Interface
-    summary: '<p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> <xref href="com.microsoft.azure.management.network._topology" data-throw-if-not-resolved="false"></xref> infoobjekt, für die netzwerküberwachung zugeordnet. </p>'
+    summary: '<p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref><xref uid="com.microsoft.azure.management.network._topology" data-throw-if-not-resolved="false">Topologie</xref> infoobjekt, für die netzwerküberwachung zugeordnet. </p>'
     syntax:
       content: public interface Topology
   - uid: com.microsoft.azure.management.network._security_group_view
@@ -602,7 +634,7 @@ references:
     nameWithType: FlowLogSettings
     fullName: com.microsoft.azure.management.network.FlowLogSettings
     type: Interface
-    summary: '<p>Die clientseitige Darstellung der Konfiguration des Protokolls für Datenfluss, netzwerküberwachung zugeordnet und eine <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource. </p>'
+    summary: '<p>Die clientseitige Darstellung der Konfiguration des Protokolls für Datenfluss, netzwerküberwachung zugeordnet und eine <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource. </p>'
     syntax:
       content: 'public interface FlowLogSettings extends HasParent<NetworkWatcher>,HasInner<FlowLogInformationInner>,Updatable<FlowLogSettings.Update>,Refreshable<FlowLogSettings>'
   - uid: com.microsoft.azure.management.network._network
@@ -612,7 +644,7 @@ references:
     nameWithType: Network
     fullName: com.microsoft.azure.management.network.Network
     type: Interface
-    summary: <p>Einstiegspunkt für virtuelle <xref href="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false"></xref> Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für virtuelle <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Network extends GroupableResource<NetworkManager, VirtualNetworkInner>,Refreshable<Network>,Updatable<Network.Update>'
   - uid: com.microsoft.azure.management._azure
@@ -622,6 +654,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

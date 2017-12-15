@@ -18,13 +18,13 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/TaskGroup.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/dag/TaskGroup.java
       startLine: 23
     package: com.microsoft.azure.management.resources.fluentcore.dag
     summary: |-
-      <p>Geben Sie eine Gruppe von Task-Einträge darstellt, enthält jeder Eintrag einen <xref href="com.microsoft.azure.management.resources.fluentcore.dag._task_item" data-throw-if-not-resolved="false"></xref> und die zugehörigen Informationen zu den Abhängigkeiten.</p>
+      <p>Geben Sie eine Gruppe von Task-Einträge darstellt, enthält jeder Eintrag einen <xref uid="com.microsoft.azure.management.resources.fluentcore.dag._task_item" data-throw-if-not-resolved="false">TaskItem</xref> und die zugehörigen Informationen zu den Abhängigkeiten.</p>
       <p></p>
     syntax: &ref_1
       content: 'public class TaskGroup<ResultT,TaskT extends TaskItem<ResultT>> extends DAGraph<TaskT, TaskGroupEntry<ResultT, TaskT>>'
@@ -114,7 +114,7 @@ items:
       startLine: 62
     package: com.microsoft.azure.management.resources.fluentcore.dag
     summary: |-
-      <p>Erstellt <xref href="com.microsoft.azure.management.resources.fluentcore.dag._task_group" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Erstellt <xref uid="com.microsoft.azure.management.resources.fluentcore.dag._task_group" data-throw-if-not-resolved="false">Projektgruppe beschäftigt</xref>.</p>
       <p></p>
     syntax:
       content: 'public TaskGroup(String rootTaskItemId, TaskT rootTaskItem, TaskGroupTerminateOnErrorStrategy taskGroupTerminateOnErrorStrategy)'
@@ -288,7 +288,7 @@ references:
       parameters:
         - id: node
           type: 3166dcd3
-          description: <p>der Knoten <xref href="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false"></xref> überprüft werden soll </p>
+          description: <p>der Knoten <xref uid="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false">DAGNode</xref> überprüft werden soll </p>
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn der angegebene Knoten Stammknoten ist. </p>"
@@ -382,7 +382,7 @@ references:
     type: Class
     summary: |-
       <p>Der Typ eine DAG (gerichtetes azyklisches Diagramm) darstellt. </p>
-      <p>Jeder Knoten in einer DAG, wird durch dargestellt.<xref href="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false"></xref></p>
+      <p>Jeder Knoten in einer DAG dargestellte <xref uid="com.microsoft.azure.management.resources.fluentcore.dag._d_a_g_node" data-throw-if-not-resolved="false">DAGNode</xref></p>
       <p></p>
     syntax:
       content: 'public class DAGraph<DataT,NodeT extends DAGNode<DataT,NodeT>> extends Graph<DataT, NodeT>'
@@ -401,7 +401,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.dag.TaskItem<T>
     type: Interface
     summary: |-
-      <p>Typ, der eine Aufgabe in einer Aufgabengruppe darstellt <xref href="com.microsoft.azure.management.resources.fluentcore.dag._task_group" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Typ, der eine Aufgabe in einer Aufgabengruppe darstellt <xref uid="com.microsoft.azure.management.resources.fluentcore.dag._task_group" data-throw-if-not-resolved="false">Projektgruppe beschäftigt</xref>.</p>
       <p></p>
     syntax:
       content: public interface TaskItem<T>
@@ -418,14 +418,14 @@ references:
     summary: <p>Definiert die Beendigung der Aufgabe-Gruppe Strategien zur werden einmal verwendet eine Aufgabe Fehler aufgenommen. </p>
     syntax:
       content: public enum TaskGroupTerminateOnErrorStrategy
-  - uid: com.microsoft.azure.management.resources.fluentcore.dag._task_group_terminate_on_error_strategy.TERMINATE_ON_INPROGRESS_TASKS_COMPLETION()
+  - uid: com.microsoft.azure.management.resources.fluentcore.dag._task_group_terminate_on_error_strategy.TERMINATE_ON_INPROGRESS_TASKS_COMPLETION
     parent: com.microsoft.azure.management.resources.fluentcore.dag._task_group_terminate_on_error_strategy
     href: com.microsoft.azure.management.resources.fluentcore.dag._task_group_terminate_on_error_strategy.yml
     name: TERMINATE_ON_INPROGRESS_TASKS_COMPLETION
     nameWithType: TaskGroupTerminateOnErrorStrategy.TERMINATE_ON_INPROGRESS_TASKS_COMPLETION
     fullName: com.microsoft.azure.management.resources.fluentcore.dag.TaskGroupTerminateOnErrorStrategy.TERMINATE_ON_INPROGRESS_TASKS_COMPLETION
     type: Field
-    summary: '<p>Um anzugeben, dass die Aufgabe Fehler, ermöglicht alle derzeit ausgeführter Aufgaben, beenden und ausgeben terminal OnError-Ereignis mit <ref refid="" kindref="compound">rx.exceptions.CompositeException</ref>. </p>'
+    summary: '<p>Um anzugeben, dass die Aufgabe Fehler, ermöglicht alle derzeit ausgeführter Aufgaben, beenden und ausgeben terminal OnError-Ereignis mit <xref uid="" data-throw-if-not-resolved="false">rx.exceptions.CompositeException</xref>. </p>'
     syntax:
       content: public TERMINATE_ON_INPROGRESS_TASKS_COMPLETION
   - uid: com.microsoft.azure.management.resources.fluentcore.dag._task_group
@@ -436,6 +436,6 @@ references:
     fullName: 'com.microsoft.azure.management.resources.fluentcore.dag.TaskGroup<ResultT,TaskT>'
     type: Class
     summary: |-
-      <p>Geben Sie eine Gruppe von Task-Einträge darstellt, enthält jeder Eintrag einen <xref href="com.microsoft.azure.management.resources.fluentcore.dag._task_item" data-throw-if-not-resolved="false"></xref> und die zugehörigen Informationen zu den Abhängigkeiten.</p>
+      <p>Geben Sie eine Gruppe von Task-Einträge darstellt, enthält jeder Eintrag einen <xref uid="com.microsoft.azure.management.resources.fluentcore.dag._task_item" data-throw-if-not-resolved="false">TaskItem</xref> und die zugehörigen Informationen zu den Abhängigkeiten.</p>
       <p></p>
     syntax: *ref_1

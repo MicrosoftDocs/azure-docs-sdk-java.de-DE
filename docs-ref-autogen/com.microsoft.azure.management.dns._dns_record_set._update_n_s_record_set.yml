@@ -13,16 +13,18 @@ items:
     source:
       remote:
         path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsRecordSet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsRecordSet.java
-      startLine: 708
+      startLine: 827
     package: com.microsoft.azure.management.dns
     summary: <p>Vollständig ein Namenservereintrag Festlegung Update als Teil der übergeordneten DNS-Zone aktualisieren. </p>
     syntax:
       content: 'public interface UpdateNSRecordSet extends DnsRecordSet.UpdateStages.WithNSRecordNameServer,DnsRecordSet.Update'
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.model._settable.parent()
+      - com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check.withETagCheck()
+      - com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check.withETagCheck(String)
       - 'com.microsoft.azure.management.dns._dns_record_set._update_stages._with_metadata.withMetadata(String,String)'
       - com.microsoft.azure.management.dns._dns_record_set._update_stages._with_n_s_record_name_server.withNameServer(String)
       - com.microsoft.azure.management.dns._dns_record_set._update_stages._with_metadata.withoutMetadata(String)
@@ -38,13 +40,47 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine untergeordnete Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, mit dem untergeordneten Ressourcen aktualisieren Sie die letzte Methode, die Durchführung des Updates und weiterhin die tatsächliche übergeordnete Ressource Updatevorgang in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators Muster, mit dem untergeordneten Ressourcen aktualisieren Sie die letzte Methode, die Durchführung des Updates und weiterhin die tatsächliche übergeordnete Ressource Updatevorgang in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false">Settable#parent()</xref> .</p>
       <p></p>
     syntax:
       content: public ParentT parent()
       return:
         type: 18a275b1
         description: <p>die Phase der übergeordneten Ressource aktualisieren </p>
+  - uid: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check.withETagCheck()
+    parent: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check
+    href: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check.yml
+    name: withETagCheck()
+    nameWithType: DnsRecordSet.UpdateStages.WithETagCheck.withETagCheck()
+    fullName: Update com.microsoft.azure.management.dns.DnsRecordSet.UpdateStages.WithETagCheck.withETagCheck()
+    type: Method
+    summary: |-
+      <p>Gibt an, dass die If-Match-Header muss auf den aktuellen eTag-Wert zugeordnet Ressourceneintragssatz festgelegt.</p>
+      <p></p>
+    syntax:
+      content: public Update withETagCheck()
+      return:
+        type: com.microsoft.azure.management.dns._dns_record_set._update
+        description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check.withETagCheck(String)
+    parent: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check
+    href: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_e_tag_check.yml
+    name: withETagCheck(String eTagValue)
+    nameWithType: DnsRecordSet.UpdateStages.WithETagCheck.withETagCheck(String eTagValue)
+    fullName: Update com.microsoft.azure.management.dns.DnsRecordSet.UpdateStages.WithETagCheck.withETagCheck(String eTagValue)
+    type: Method
+    summary: |-
+      <p>Gibt an, dass diese If-Match-Header muss auf dem angegebenen eTag-Wert festgelegt.</p>
+      <p></p>
+    syntax:
+      content: public Update withETagCheck(String eTagValue)
+      parameters:
+        - id: eTagValue
+          type: '26831127'
+          description: <p>der eTag-Wert </p>
+      return:
+        type: com.microsoft.azure.management.dns._dns_record_set._update
+        description: <p>die nächste Phase des Updates </p>
   - uid: 'com.microsoft.azure.management.dns._dns_record_set._update_stages._with_metadata.withMetadata(String,String)'
     parent: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_metadata
     href: com.microsoft.azure.management.dns._dns_record_set._update_stages._with_metadata.yml
@@ -160,9 +196,9 @@ references:
     nameWithType: DnsRecordSet.Update
     fullName: com.microsoft.azure.management.dns.DnsRecordSet.Update
     type: Interface
-    summary: '<p>der Satz von Konfigurationen, die für DNS-Datensatzgruppe unabhängig von ihrem Typ aktualisiert werden können <xref href="com.microsoft.azure.management.dns._record_type" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>der Satz von Konfigurationen, die für DNS-Datensatzgruppe unabhängig von ihrem Typ aktualisiert werden können, <xref uid="com.microsoft.azure.management.dns._record_type" data-throw-if-not-resolved="false">RecordType</xref>. </p>'
     syntax:
-      content: 'public interface Update extends Settable<DnsZone.Update>,DnsRecordSet.UpdateStages.WithMetadata,DnsRecordSet.UpdateStages.WithTtl'
+      content: 'public interface Update extends Settable<DnsZone.Update>,DnsRecordSet.UpdateStages.WithTtl,DnsRecordSet.UpdateStages.WithMetadata,DnsRecordSet.UpdateStages.WithETagCheck'
   - uid: com.microsoft.azure.management.dns._dns_record_set._update_combined
     parent: com.microsoft.azure.management.dns
     href: com.microsoft.azure.management.dns._dns_record_set._update_combined.yml
@@ -172,4 +208,4 @@ references:
     type: Interface
     summary: <p>Die gesamte eines Datensatzes legt Update als Teil der übergeordneten DNS-Zone Updates fest. </p>
     syntax:
-      content: 'public interface UpdateCombined extends DnsRecordSet.UpdateARecordSet,DnsRecordSet.UpdateAaaaRecordSet,DnsRecordSet.UpdatePtrRecordSet,DnsRecordSet.UpdateMXRecordSet,DnsRecordSet.UpdateNSRecordSet,DnsRecordSet.UpdateSrvRecordSet,DnsRecordSet.UpdateTxtRecordSet,DnsRecordSet.UpdateSoaRecord,DnsRecordSet.Update'
+      content: 'public interface UpdateCombined extends DnsRecordSet.UpdateARecordSet,DnsRecordSet.UpdateAaaaRecordSet,DnsRecordSet.UpdateCNameRecordSet,DnsRecordSet.UpdateMXRecordSet,DnsRecordSet.UpdatePtrRecordSet,DnsRecordSet.UpdateNSRecordSet,DnsRecordSet.UpdateSrvRecordSet,DnsRecordSet.UpdateTxtRecordSet,DnsRecordSet.UpdateSoaRecord,DnsRecordSet.Update'

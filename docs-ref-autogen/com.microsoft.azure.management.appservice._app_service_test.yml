@@ -4,14 +4,14 @@ items:
     id: _app_service_test
     parent: com.microsoft.azure.management.appservice
     children:
-      - com.microsoft.azure.management.appservice._app_service_test.appServiceManager()
-      - com.microsoft.azure.management.appservice._app_service_test.certificateOrder()
+      - com.microsoft.azure.management.appservice._app_service_test.appServiceManager
+      - com.microsoft.azure.management.appservice._app_service_test.certificateOrder
       - com.microsoft.azure.management.appservice._app_service_test.cleanUpResources()
-      - com.microsoft.azure.management.appservice._app_service_test.domain()
+      - com.microsoft.azure.management.appservice._app_service_test.domain
       - 'com.microsoft.azure.management.appservice._app_service_test.initializeClients(RestClient,String,String)'
-      - com.microsoft.azure.management.appservice._app_service_test.keyVaultManager()
-      - com.microsoft.azure.management.appservice._app_service_test.resourceManager()
-      - com.microsoft.azure.management.appservice._app_service_test.RG_NAME()
+      - com.microsoft.azure.management.appservice._app_service_test.keyVaultManager
+      - com.microsoft.azure.management.appservice._app_service_test.resourceManager
+      - com.microsoft.azure.management.appservice._app_service_test.RG_NAME
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
       - java
@@ -22,7 +22,7 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-appservice/src/test/java/com/microsoft/azure/management/appservice/AppServiceTest.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-appservice/src/test/java/com/microsoft/azure/management/appservice/AppServiceTest.java
       startLine: 20
@@ -33,8 +33,8 @@ items:
     inheritance:
       - java.lang.Object
       - TestBase
-  - uid: com.microsoft.azure.management.appservice._app_service_test.appServiceManager()
-    id: appServiceManager()
+  - uid: com.microsoft.azure.management.appservice._app_service_test.appServiceManager
+    id: appServiceManager
     parent: com.microsoft.azure.management.appservice._app_service_test
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
@@ -52,8 +52,8 @@ items:
       content: protected static AppServiceManager appServiceManager
       return:
         type: c947543b
-  - uid: com.microsoft.azure.management.appservice._app_service_test.certificateOrder()
-    id: certificateOrder()
+  - uid: com.microsoft.azure.management.appservice._app_service_test.certificateOrder
+    id: certificateOrder
     parent: com.microsoft.azure.management.appservice._app_service_test
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
@@ -89,8 +89,8 @@ items:
     package: com.microsoft.azure.management.appservice
     syntax:
       content: protected void cleanUpResources()
-  - uid: com.microsoft.azure.management.appservice._app_service_test.domain()
-    id: domain()
+  - uid: com.microsoft.azure.management.appservice._app_service_test.domain
+    id: domain
     parent: com.microsoft.azure.management.appservice._app_service_test
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
@@ -133,8 +133,8 @@ items:
           type: '26831127'
         - id: domain
           type: '26831127'
-  - uid: com.microsoft.azure.management.appservice._app_service_test.keyVaultManager()
-    id: keyVaultManager()
+  - uid: com.microsoft.azure.management.appservice._app_service_test.keyVaultManager
+    id: keyVaultManager
     parent: com.microsoft.azure.management.appservice._app_service_test
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
@@ -152,8 +152,8 @@ items:
       content: protected static KeyVaultManager keyVaultManager
       return:
         type: a1e08052
-  - uid: com.microsoft.azure.management.appservice._app_service_test.resourceManager()
-    id: resourceManager()
+  - uid: com.microsoft.azure.management.appservice._app_service_test.resourceManager
+    id: resourceManager
     parent: com.microsoft.azure.management.appservice._app_service_test
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
@@ -170,9 +170,9 @@ items:
     syntax:
       content: protected static ResourceManager resourceManager
       return:
-        type: com.microsoft.azure.management.resources.implementation._resource_manager
-  - uid: com.microsoft.azure.management.appservice._app_service_test.RG_NAME()
-    id: RG_NAME()
+        type: 010e76ed
+  - uid: com.microsoft.azure.management.appservice._app_service_test.RG_NAME
+    id: RG_NAME
     parent: com.microsoft.azure.management.appservice._app_service_test
     href: com.microsoft.azure.management.appservice._app_service_test.yml
     langs:
@@ -191,6 +191,10 @@ items:
       return:
         type: '26831127'
 references:
+  - uid: 010e76ed
+    spec.java:
+      - name: ResourceManager
+        fullName: ResourceManager
   - uid: a1e08052
     spec.java:
       - name: KeyVaultManager
@@ -280,6 +284,15 @@ references:
     type: Class
     syntax:
       content: public class FunctionAppsTests
+  - uid: com.microsoft.azure.management.appservice._function_deployment_slots_tests
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._function_deployment_slots_tests.yml
+    name: FunctionDeploymentSlotsTests
+    nameWithType: FunctionDeploymentSlotsTests
+    fullName: com.microsoft.azure.management.appservice.FunctionDeploymentSlotsTests
+    type: Class
+    syntax:
+      content: public class FunctionDeploymentSlotsTests
   - uid: com.microsoft.azure.management.appservice._hostname_ssl_tests
     parent: com.microsoft.azure.management.appservice
     href: com.microsoft.azure.management.appservice._hostname_ssl_tests.yml
@@ -325,16 +338,15 @@ references:
     type: Class
     syntax:
       content: public class WebAppsTests
-  - uid: com.microsoft.azure.management.resources.implementation._resource_manager
-    parent: com.microsoft.azure.management.resources.implementation
-    href: com.microsoft.azure.management.resources.implementation._resource_manager.yml
-    name: ResourceManager
-    nameWithType: ResourceManager
-    fullName: com.microsoft.azure.management.resources.implementation.ResourceManager
+  - uid: com.microsoft.azure.management.appservice._web_apps_web_deploy_tests
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._web_apps_web_deploy_tests.yml
+    name: WebAppsWebDeployTests
+    nameWithType: WebAppsWebDeployTests
+    fullName: com.microsoft.azure.management.appservice.WebAppsWebDeployTests
     type: Class
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ressourcenverwaltung. </p>
     syntax:
-      content: public class ResourceManager
+      content: public class WebAppsWebDeployTests
   - uid: com.microsoft.azure.management.appservice._app_service_domain
     parent: com.microsoft.azure.management.appservice
     href: com.microsoft.azure.management.appservice._app_service_domain.yml
@@ -344,7 +356,7 @@ references:
     type: Interface
     summary: |-
       <p>Eine unveränderliche clientseitige Darstellung einer Domäne.</p>
-      <p>Domänen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> aus 3rd Party Domain-Anbieter erworben werden. Durch Aufrufen von <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> oder <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync()" data-throw-if-not-resolved="false"></xref> stimmen Sie die Verträge in aufgeführten <xref href="com.microsoft.azure.management.appservice._app_service_domains.listAgreements(String)" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Domänen in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> aus 3rd Party Domain-Anbieter erworben werden. Durch Aufrufen von <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> oder <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync()" data-throw-if-not-resolved="false">Creatable#createAsync()</xref> stimmen Sie die Verträge in aufgeführten <xref uid="com.microsoft.azure.management.appservice._app_service_domains.listAgreements(String)" data-throw-if-not-resolved="false">AppServiceDomains#listAgreements(String)</xref>. </p>
     syntax:
       content: 'public interface AppServiceDomain extends GroupableResource<AppServiceManager, DomainInner>,HasName,Refreshable<AppServiceDomain>,Updatable<AppServiceDomain.Update>'
   - uid: com.microsoft.azure.management.appservice._app_service_certificate_order
@@ -354,6 +366,6 @@ references:
     nameWithType: AppServiceCertificateOrder
     fullName: com.microsoft.azure.management.appservice.AppServiceCertificateOrder
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Reihenfolge der App Service-Zertifikat. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Reihenfolge der App Service-Zertifikat. </p>
     syntax:
       content: 'public interface AppServiceCertificateOrder extends GroupableResource<AppServiceManager, AppServiceCertificateOrderInner>,Refreshable<AppServiceCertificateOrder>,Updatable<AppServiceCertificateOrder.Update>'

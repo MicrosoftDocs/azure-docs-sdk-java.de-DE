@@ -16,14 +16,14 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Network.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Network.java
-      startLine: 121
+      startLine: 141
     package: com.microsoft.azure.management.network
     summary: |-
-      <p>Die Phase des virtuellen Netzwerks-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden, mit Ausnahme von Subnetze hinzufügen,. </p>
-      <p>Subnetze können nur über die Berechtigung hinzugefügt, nachdem der Adressraum explizit angegeben wird (siehe <xref href="com.microsoft.azure.management.network._network._definition_stages._with_create.withAddressSpace(String)" data-throw-if-not-resolved="false"></xref>). </p>
+      <p>Die Phase des virtuellen Netzwerks-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden, sondern auch für andere optionalen Einstellungen angegeben werden, mit Ausnahme von Subnetze hinzufügen,. </p>
+      <p>Subnetze können nur über die Berechtigung hinzugefügt werden, nachdem der Adressraum explizit angegeben wird. </p>
     syntax: &ref_1
       content: 'public interface WithCreate extends Creatable<Network>,Resource.DefinitionWithTags<WithCreate>'
     inheritedMembers:
@@ -48,13 +48,13 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Network.java
-      startLine: 147
+      startLine: 167
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Explizit Fügt einen Adressraum im virtuellen Netzwerk. </p>
       <p>Wenn keine Adressräume explizit angegeben werden, wird ein Standard-Adressraum mit der CIDR "10.0.0.0/16" im virtuellen Netzwerk zugewiesen werden. </p>
       <p>Beachten Sie, dass diese Methode Auswirkungen kumulativ, d. h. jedes Mal, die es verwendet wird, ein neuen Adressraum ist zum Netzwerk hinzugefügt. Diese Methode überprüft nicht auf Konflikte wenig oder überschneidet sich mit anderen Adressräume. Ein Konflikt vorliegt, kann eine Cloud-Ausnahme zum Zeitpunkt ausgelöst werden, wenn das Netzwerk erstellt wird. </p>
-    syntax: &ref_2
+    syntax:
       content: public WithCreateAndSubnet withAddressSpace(String cidr)
       parameters:
         - id: cidr
@@ -77,7 +77,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Network.java
-      startLine: 133
+      startLine: 153
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Gibt die IP-Adresse eines vorhandenen DNS-Servers im virtuellen Netzwerk zugeordnet werden soll. </p>
@@ -206,13 +206,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -224,7 +224,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.model.Creatable<T>
     type: Interface
     summary: |-
-      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">eine Signatures-Auflistung</xref>.</p>
       <p></p>
     syntax:
       content: 'public interface Creatable<T> extends Indexable,HasName'
@@ -263,7 +263,7 @@ references:
     nameWithType: Network.DefinitionStages.WithCreateAndSubnet
     fullName: com.microsoft.azure.management.network.Network.DefinitionStages.WithCreateAndSubnet
     type: Interface
-    summary: '<p>Die Phase der öffentlichen IP-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden, einschließlich des Hinzufügens von Subnetzen. </p>'
+    summary: '<p>Die Phase der öffentlichen IP-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">WithCreate#create()</xref>), sondern auch für andere optionalen Einstellungen angegeben werden, einschließlich des Hinzufügens von Subnetzen . </p>'
     syntax:
       content: public interface WithCreateAndSubnet
   - uid: com.microsoft.azure.management.network._network._definition_stages._with_create
@@ -274,18 +274,6 @@ references:
     fullName: com.microsoft.azure.management.network.Network.DefinitionStages.WithCreate
     type: Interface
     summary: |-
-      <p>Die Phase des virtuellen Netzwerks-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden, mit Ausnahme von Subnetze hinzufügen,. </p>
-      <p>Subnetze können nur über die Berechtigung hinzugefügt, nachdem der Adressraum explizit angegeben wird (siehe <xref href="com.microsoft.azure.management.network._network._definition_stages._with_create.withAddressSpace(String)" data-throw-if-not-resolved="false"></xref>). </p>
+      <p>Die Phase des virtuellen Netzwerks-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden, sondern auch für andere optionalen Einstellungen angegeben werden, mit Ausnahme von Subnetze hinzufügen,. </p>
+      <p>Subnetze können nur über die Berechtigung hinzugefügt werden, nachdem der Adressraum explizit angegeben wird. </p>
     syntax: *ref_1
-  - uid: com.microsoft.azure.management.network._network._definition_stages._with_create.withAddressSpace(String)
-    parent: com.microsoft.azure.management.network._network._definition_stages._with_create
-    href: com.microsoft.azure.management.network._network._definition_stages._with_create.yml
-    name: withAddressSpace(String cidr)
-    nameWithType: Network.DefinitionStages.WithCreate.withAddressSpace(String cidr)
-    fullName: WithCreateAndSubnet com.microsoft.azure.management.network.Network.DefinitionStages.WithCreate.withAddressSpace(String cidr)
-    type: Method
-    summary: |-
-      <p>Explizit Fügt einen Adressraum im virtuellen Netzwerk. </p>
-      <p>Wenn keine Adressräume explizit angegeben werden, wird ein Standard-Adressraum mit der CIDR "10.0.0.0/16" im virtuellen Netzwerk zugewiesen werden. </p>
-      <p>Beachten Sie, dass diese Methode Auswirkungen kumulativ, d. h. jedes Mal, die es verwendet wird, ein neuen Adressraum ist zum Netzwerk hinzugefügt. Diese Methode überprüft nicht auf Konflikte wenig oder überschneidet sich mit anderen Adressräume. Ein Konflikt vorliegt, kann eine Cloud-Ausnahme zum Zeitpunkt ausgelöst werden, wenn das Netzwerk erstellt wird. </p>
-    syntax: *ref_2

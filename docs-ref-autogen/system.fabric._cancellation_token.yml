@@ -5,10 +5,14 @@ items:
     parent: system.fabric
     children:
       - system.fabric._cancellation_token.canBeCancelled()
+      - system.fabric._cancellation_token.close()
       - system.fabric._cancellation_token.getDefault()
       - system.fabric._cancellation_token.isCancelled()
       - system.fabric._cancellation_token.registerCancellationCallback(Runnable)
+      - 'system.fabric._cancellation_token.registerCancellationCallback(String,Runnable)'
       - system.fabric._cancellation_token.throwIfCancellationRequested()
+      - system.fabric._cancellation_token.unregisterCancellationCallback(Runnable)
+      - 'system.fabric._cancellation_token.unregisterCancellationCallback(String,Runnable)'
     href: system.fabric._cancellation_token.yml
     langs:
       - java
@@ -22,13 +26,14 @@ items:
         branch: master
         repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
       path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
-      startLine: 15
+      startLine: 18
     package: system.fabric
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax: &ref_2
       content: public class CancellationToken
     inheritance:
       - java.lang.Object
+      - AutoCloseable
   - uid: system.fabric._cancellation_token.canBeCancelled()
     id: canBeCancelled()
     parent: system.fabric._cancellation_token
@@ -43,14 +48,32 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
-      startLine: 30
+      startLine: 34
     package: system.fabric
-    summary: '<p>Gibt an, ob das Abbruchtoken, das abgebrochen werden kann. Wenn die <ref refid="" kindref="compound">system.fabric.CancellationToken</ref> erstellt, wobei <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref>, und klicken Sie dann das Token kann abgebrochen mit <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref> Methode. Wenn die <ref refid="" kindref="compound">system.fabric.CancellationToken</ref> erstellt, wobei <xref href="system.fabric._cancellation_token.getDefault()" data-throw-if-not-resolved="false"></xref>, und klicken Sie dann nicht abgebrochen werden kann. Es dient lediglich als eine dummy-Token. </p>'
+    summary: '<p>Gibt an, ob das Abbruchtoken, das abgebrochen werden kann. Wenn die <xref uid="" data-throw-if-not-resolved="false">system.fabric.CancellationToken</xref> erstellt, wobei <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken()</xref>, und klicken Sie dann das Token kann abgebrochen mit <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"> system.fabric.CancellationTokenSource#cancel()</xref> Methode. Wenn die <xref uid="" data-throw-if-not-resolved="false">system.fabric.CancellationToken</xref> erstellt, wobei <xref uid="system.fabric._cancellation_token.getDefault()" data-throw-if-not-resolved="false">system.fabric.CancellationToken#getDefault()</xref>, und klicken Sie dann nicht abgebrochen werden kann. Es dient lediglich als eine dummy-Token. </p>'
     syntax:
       content: public boolean canBeCancelled()
       return:
         type: 4fc6e284
         description: '<p>Gibt "true" zurück, wenn das Token abgebrochen, andernfalls "false" werden kann. </p>'
+  - uid: system.fabric._cancellation_token.close()
+    id: close()
+    parent: system.fabric._cancellation_token
+    href: system.fabric._cancellation_token.yml
+    langs:
+      - java
+    name: close()
+    nameWithType: CancellationToken.close()
+    fullName: void system.fabric.CancellationToken.close()
+    overload: system.fabric._cancellation_token.close*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
+      startLine: 105
+    package: system.fabric
+    syntax:
+      content: public void close()
   - uid: system.fabric._cancellation_token.getDefault()
     id: getDefault()
     parent: system.fabric._cancellation_token
@@ -65,21 +88,16 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
-      startLine: 58
+      startLine: 61
     package: system.fabric
     summary: |-
-      <p>Erstellt und gibt ein token Abbruch-Objekt. Diese Methode sollte verwendet werden, wenn die <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> Abbruch nicht unterstützt. Nur über erstellt Abbruchtoken <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Abbrüche unterstützt.</p>
+      <p>Erstellt und gibt ein token Abbruch-Objekt. Diese Methode sollte verwendet werden, wenn die <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> Abbruch nicht unterstützt. Nur über erstellt Abbruchtoken <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">CancellationTokenSource#getToken()</xref> Abbrüche unterstützt.</p>
       <p></p>
     syntax: &ref_1
       content: public static CancellationToken getDefault()
       return:
         type: system.fabric._cancellation_token
-        description: |-
-          <p>
-
-            <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref>
-
-          </p>
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">CancellationToken</xref>\r\n\r\n</p>"
   - uid: system.fabric._cancellation_token.isCancelled()
     id: isCancelled()
     parent: system.fabric._cancellation_token
@@ -94,7 +112,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
-      startLine: 47
+      startLine: 50
     package: system.fabric
     summary: |-
       <p>Ruft ab, ob für dieses Token ein Abbruch angefordert wurde.</p>
@@ -118,15 +136,38 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
-      startLine: 73
+      startLine: 76
     package: system.fabric
-    summary: '<p>Registriert einen Rückruf, die ausgeführt wird, wenn dies <ref refid="" kindref="compound">system.fabric.CancellationToken</ref> Objekt wird abgebrochen. </p>'
+    summary: '<p>Registriert einen Rückruf, die ausgeführt wird, wenn dies <xref uid="" data-throw-if-not-resolved="false">system.fabric.CancellationToken</xref> Objekt wird abgebrochen. </p>'
     syntax:
       content: public void registerCancellationCallback(Runnable callback)
       parameters:
         - id: callback
           type: 2b8852ea
-          description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">java.lang.Runnable</ref> , wenn Sie sich auf token Abbruchereignis ausgeführt werden. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.lang.Runnable</xref> , wenn Sie sich auf token Abbruchereignis ausgeführt werden. </p>"
+  - uid: 'system.fabric._cancellation_token.registerCancellationCallback(String,Runnable)'
+    id: 'registerCancellationCallback(String,Runnable)'
+    parent: system.fabric._cancellation_token
+    href: system.fabric._cancellation_token.yml
+    langs:
+      - java
+    name: 'registerCancellationCallback(String name, Runnable callback)'
+    nameWithType: 'CancellationToken.registerCancellationCallback(String name, Runnable callback)'
+    fullName: 'void system.fabric.CancellationToken.registerCancellationCallback(String name, Runnable callback)'
+    overload: system.fabric._cancellation_token.registerCancellationCallback*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
+      startLine: 80
+    package: system.fabric
+    syntax:
+      content: 'public void registerCancellationCallback(String name, Runnable callback)'
+      parameters:
+        - id: name
+          type: '26831127'
+        - id: callback
+          type: 2b8852ea
   - uid: system.fabric._cancellation_token.throwIfCancellationRequested()
     id: throwIfCancellationRequested()
     parent: system.fabric._cancellation_token
@@ -141,11 +182,55 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
-      startLine: 65
+      startLine: 68
     package: system.fabric
     summary: '<p>Löst eine CancellationException aus, wenn dieses Token ein Abbruch angefordert wurde. </p>'
     syntax:
       content: public void throwIfCancellationRequested()
+  - uid: system.fabric._cancellation_token.unregisterCancellationCallback(Runnable)
+    id: unregisterCancellationCallback(Runnable)
+    parent: system.fabric._cancellation_token
+    href: system.fabric._cancellation_token.yml
+    langs:
+      - java
+    name: unregisterCancellationCallback(Runnable callback)
+    nameWithType: CancellationToken.unregisterCancellationCallback(Runnable callback)
+    fullName: void system.fabric.CancellationToken.unregisterCancellationCallback(Runnable callback)
+    overload: system.fabric._cancellation_token.unregisterCancellationCallback*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
+      startLine: 84
+    package: system.fabric
+    syntax:
+      content: public void unregisterCancellationCallback(Runnable callback)
+      parameters:
+        - id: callback
+          type: 2b8852ea
+  - uid: 'system.fabric._cancellation_token.unregisterCancellationCallback(String,Runnable)'
+    id: 'unregisterCancellationCallback(String,Runnable)'
+    parent: system.fabric._cancellation_token
+    href: system.fabric._cancellation_token.yml
+    langs:
+      - java
+    name: 'unregisterCancellationCallback(String name, Runnable callback)'
+    nameWithType: 'CancellationToken.unregisterCancellationCallback(String name, Runnable callback)'
+    fullName: 'void system.fabric.CancellationToken.unregisterCancellationCallback(String name, Runnable callback)'
+    overload: system.fabric._cancellation_token.unregisterCancellationCallback*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/CancellationToken.java
+      startLine: 88
+    package: system.fabric
+    syntax:
+      content: 'public void unregisterCancellationCallback(String name, Runnable callback)'
+      parameters:
+        - id: name
+          type: '26831127'
+        - id: callback
+          type: 2b8852ea
 references:
   - uid: 4fc6e284
     spec.java:
@@ -175,6 +260,20 @@ references:
     nameWithType: CancellationToken.registerCancellationCallback
     fullName: void system.fabric.CancellationToken.registerCancellationCallback
     package: system.fabric
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: system.fabric._cancellation_token.unregisterCancellationCallback*
+    name: unregisterCancellationCallback
+    nameWithType: CancellationToken.unregisterCancellationCallback
+    fullName: void system.fabric.CancellationToken.unregisterCancellationCallback
+    package: system.fabric
+  - uid: system.fabric._cancellation_token.close*
+    name: close
+    nameWithType: CancellationToken.close
+    fullName: void system.fabric.CancellationToken.close
+    package: system.fabric
   - uid: system.fabric._cancellation_token.getDefault*
     name: getDefault
     nameWithType: CancellationToken.getDefault
@@ -188,18 +287,13 @@ references:
     fullName: CancellationToken system.fabric.CancellationTokenSource.getToken()
     type: Method
     summary: |-
-      <p>Gibt das Abbruchtoken, das von diesem wird <ref refid="" kindref="compound">system.fabric.CancellationTokenSource</ref> Objekt.</p>
+      <p>Gibt das Abbruchtoken, das von diesem wird <xref uid="" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public CancellationToken getToken()
       return:
         type: system.fabric._cancellation_token
-        description: |-
-          <p>
-
-            <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref>
-
-          </p>
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref>\r\n\r\n</p>"
   - uid: system.fabric._cancellation_token_source.cancel()
     parent: system.fabric._cancellation_token_source
     href: system.fabric._cancellation_token_source.yml
@@ -207,7 +301,7 @@ references:
     nameWithType: CancellationTokenSource.cancel()
     fullName: void system.fabric.CancellationTokenSource.cancel()
     type: Method
-    summary: '<p>Anforderungen auf "Abbrechen", auf die <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> von diesem Objekt verwaltet wird. </p>'
+    summary: '<p>Anforderungen auf "Abbrechen", auf die <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">system.fabric.CancellationToken</xref> von diesem Objekt verwaltet wird. </p>'
     syntax:
       content: public void cancel()
   - uid: system.fabric._cancellation_token.getDefault()
@@ -218,7 +312,7 @@ references:
     fullName: static CancellationToken system.fabric.CancellationToken.getDefault()
     type: Method
     summary: |-
-      <p>Erstellt und gibt ein token Abbruch-Objekt. Diese Methode sollte verwendet werden, wenn die <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> Abbruch nicht unterstützt. Nur über erstellt Abbruchtoken <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Abbrüche unterstützt.</p>
+      <p>Erstellt und gibt ein token Abbruch-Objekt. Diese Methode sollte verwendet werden, wenn die <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> Abbruch nicht unterstützt. Nur über erstellt Abbruchtoken <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">CancellationTokenSource#getToken()</xref> Abbrüche unterstützt.</p>
       <p></p>
     syntax: *ref_1
   - uid: system.fabric._cancellation_token
@@ -228,7 +322,7 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax: *ref_2
   - uid: system.fabric._cancellation_token_source
     parent: system.fabric
@@ -237,6 +331,6 @@ references:
     nameWithType: CancellationTokenSource
     fullName: system.fabric.CancellationTokenSource
     type: Class
-    summary: <p>Ein <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> dient zum Erstellen <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> Objekt und verwaltet werden. </p>
+    summary: <p>Ein <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">CancellationTokenSource</xref> dient zum Erstellen <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">system.fabric.CancellationToken</xref> Objekt und verwaltet werden. </p>
     syntax:
       content: public class CancellationTokenSource

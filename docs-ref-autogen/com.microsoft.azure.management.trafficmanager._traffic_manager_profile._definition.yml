@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-      startLine: 89
+      startLine: 90
     package: com.microsoft.azure.management.trafficmanager
     summary: <p>Die Traffic Manager-Profildefinition vollständig. </p>
     syntax:
@@ -30,6 +30,7 @@ items:
       - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_12d7929fa86a4f74630986ea330df77e4.defineNestedTargetEndpoint(String)
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
+      - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withGeographicBasedRouting()
       - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1546d50ab4f67d6acc94f5fe03e6c5580.withHttpMonitoring()
       - 'com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1546d50ab4f67d6acc94f5fe03e6c5580.withHttpMonitoring(int,String)'
       - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1546d50ab4f67d6acc94f5fe03e6c5580.withHttpsMonitoring()
@@ -101,7 +102,7 @@ references:
     fullName: TrafficManagerEndpoint.DefinitionStages.AzureTargetEndpointBlank<WithCreate> com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithEndpoint.defineAzureTargetEndpoint(String name)
     type: Method
     summary: |-
-      <p>Gibt die Definition einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Endpunkt an die Traffic Manager-Profil angefügt werden.</p>
+      <p>Gibt die Definition einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Endpunkt an die Traffic Manager-Profil angefügt werden.</p>
       <p></p>
     syntax:
       content: public TrafficManagerEndpoint.DefinitionStages.AzureTargetEndpointBlank<WithCreate> defineAzureTargetEndpoint(String name)
@@ -174,6 +175,21 @@ references:
       return:
         type: '26831127'
         description: <p>Der Name der Ressource </p>
+  - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withGeographicBasedRouting()
+    parent: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1
+    href: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.yml
+    name: withGeographicBasedRouting()
+    nameWithType: TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withGeographicBasedRouting()
+    fullName: WithEndpoint com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withGeographicBasedRouting()
+    type: Method
+    summary: |-
+      <p>Gibt an, dass Endbenutzer-Datenverkehrs an den Endpunkt weitergeleitet werden soll, die bei der geografischen Region Benutzer bedienen.</p>
+      <p></p>
+    syntax:
+      content: public WithEndpoint withGeographicBasedRouting()
+      return:
+        type: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_12d7929fa86a4f74630986ea330df77e4
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1546d50ab4f67d6acc94f5fe03e6c5580.withHttpMonitoring()
     parent: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1546d50ab4f67d6acc94f5fe03e6c5580
     href: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1546d50ab4f67d6acc94f5fe03e6c5580.yml
@@ -276,7 +292,7 @@ references:
     fullName: WithEndpoint com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withPerformanceBasedRouting()
     type: Method
     summary: |-
-      <p>Gibt an, dass Endbenutzer-Datenverkehrs basierend auf dem geografischen Standort des Endpunkts in der Nähe Benutzer weitergeleitet werden soll.</p>
+      <p>Gibt an, dass Endbenutzer-Datenverkehrs basierend auf den nächsten verfügbaren Endpunkt im Hinblick auf die niedrigste Netzwerklatenz weitergeleitet werden soll.</p>
       <p></p>
     syntax:
       content: public WithEndpoint withPerformanceBasedRouting()
@@ -291,7 +307,7 @@ references:
     fullName: WithEndpoint com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withPriorityBasedRouting()
     type: Method
     summary: |-
-      <p>Gibt an, dass Endbenutzer-Datenverkehrs an den Endpunkt, d. h. basierend auf seiner Priorität weitergeleitet werden soll Verwenden Sie den Endpunkt mit der höchsten Priorität und ist er nicht verfügbaren Fallback auf den Endpunkt mit höchster Priorität weiter.</p>
+      <p>Gibt an, dass Endbenutzer Datenverkehr sollen, an den Endpunkt weitergeleitet werden, d. h. basierend auf seiner Priorität verwenden Sie den Endpunkt mit der höchsten Priorität und ist er nicht verfügbaren Fallback auf den Endpunkt mit höchster Priorität weiter.</p>
       <p></p>
     syntax:
       content: public WithEndpoint withPriorityBasedRouting()
@@ -341,13 +357,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -441,6 +457,6 @@ references:
     nameWithType: TrafficManagerProfile.DefinitionStages.WithCreate
     fullName: com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithCreate
     type: Interface
-    summary: '<p>Die Phase der Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
+    summary: '<p>Die Phase der Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">WithCreate#create()</xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
     syntax:
       content: public interface WithCreate

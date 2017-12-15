@@ -19,9 +19,12 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/SqlRuleAction.java
-      startLine: 2
+      startLine: 10
     package: com.microsoft.azure.servicebus.rules
-    syntax:
+    summary: |-
+      <p>Stellt einen SQL-Sprache basierende Transformation-Ausdruck, der für eine Nachricht ausgeführt wird.</p>
+      <p></p>
+    syntax: &ref_1
       content: public class SqlRuleAction extends RuleAction
     inheritance:
       - java.lang.Object
@@ -40,12 +43,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/SqlRuleAction.java
-      startLine: 11
+      startLine: 27
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Ruft den Ausdruck Transformation dieser Regel Aktion ab.</p>
+      <p></p>
     syntax:
       content: public String getSqlExpression()
       return:
         type: '26831127'
+        description: <p>SQL-Sprache basierende Transformation-Ausdruck </p>
   - uid: com.microsoft.azure.servicebus.rules._sql_rule_action.SqlRuleAction(String)
     id: SqlRuleAction(String)
     parent: com.microsoft.azure.servicebus.rules._sql_rule_action
@@ -60,13 +67,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/SqlRuleAction.java
-      startLine: 6
+      startLine: 18
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Erstellt eine Instanz des mit dem angegebenen Transformation-Ausdruck.</p>
+      <p></p>
     syntax:
       content: public SqlRuleAction(String sqlExpression)
       parameters:
         - id: sqlExpression
           type: '26831127'
+          description: <p>SQL-Sprache basierende Transformation-Ausdruck </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -89,5 +100,19 @@ references:
     nameWithType: RuleAction
     fullName: com.microsoft.azure.servicebus.rules.RuleAction
     type: Class
+    summary: |-
+      <p>Stellt eine Aktion, die eine Nachricht abgeglichen, die durch einen Filter transformiert. Diese Clientbibliothek bietet Unterstützung für nur eingeschränkte Typen von Regelaktionen erstellen. Dies ist eine leere Schnittstelle als Root-Schnittstelle für alle unterstützten Regelaktionen dienen.</p>
+      <p></p>
     syntax:
       content: public class RuleAction
+  - uid: com.microsoft.azure.servicebus.rules._sql_rule_action
+    parent: com.microsoft.azure.servicebus.rules
+    href: com.microsoft.azure.servicebus.rules._sql_rule_action.yml
+    name: SqlRuleAction
+    nameWithType: SqlRuleAction
+    fullName: com.microsoft.azure.servicebus.rules.SqlRuleAction
+    type: Class
+    summary: |-
+      <p>Stellt einen SQL-Sprache basierende Transformation-Ausdruck, der für eine Nachricht ausgeführt wird.</p>
+      <p></p>
+    syntax: *ref_1

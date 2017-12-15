@@ -28,7 +28,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ApplicationMetricDescription.java
       startLine: 8
     package: system.fabric
-    summary: <p>Gibt die Anwendungskapazität für eine Metrik an. <xref href="system.fabric._application_description" data-throw-if-not-resolved="false"></xref><xref href="system.fabric._application_update_description" data-throw-if-not-resolved="false"></xref></p>
+    summary: <p>Gibt die Anwendungskapazität für eine Metrik an. <xref uid="system.fabric._application_description" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription</xref><xref uid="system.fabric._application_update_description" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription</xref></p>
     syntax: &ref_1
       content: public class ApplicationMetricDescription
     inheritance:
@@ -70,8 +70,8 @@ items:
     summary: |-
       <p>Ruft die maximale Knotenkapazität für Service Fabric-Anwendung ab.</p>
       <p>
-      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und dieser Wert muss immer kleiner als oder gleich <xref href="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beim Aktualisieren der vorhandenen Anwendung mit Anwendungskapazität, das Produkt der <xref href="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und dieser Wert muss immer kleiner als oder gleich <xref href="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"></xref>. </p>
+      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> und dieser Wert muss immer kleiner als oder gleich <xref uid="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"> system.fabric.ApplicationMetricDescription#getTotalApplicationCapacity()</xref>. </p>
+      <p>Beim Aktualisieren der vorhandenen Anwendung mit Anwendungskapazität, das Produkt der <xref uid="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription#getMaximumNodes()</xref> und dieser Wert muss immer kleiner als oder gleich <xref uid="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"> system.fabric.ApplicationMetricDescription#getTotalApplicationCapacity()</xref>. </p>
     syntax: &ref_2
       content: public long getMaximumNodeCapacity()
       return:
@@ -120,12 +120,12 @@ items:
     summary: |-
       <p>Ruft die Reservierung Knotenkapazität für Service Fabric-Anwendung ab.</p>
       <p>
-      Beim Festlegen der Anwendungskapazität (<xref href="system.fabric._application_description" data-throw-if-not-resolved="false"></xref>) oder beim Aktualisieren der Anwendungskapazität (( <xref href="system.fabric._application_update_description" data-throw-if-not-resolved="false"></xref>) dieser Wert muss kleiner als oder gleich sein <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> für jede Metrik. </p>
+      Beim Festlegen der Anwendungskapazität (<xref uid="system.fabric._application_description" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription</xref>) oder beim Aktualisieren der Anwendungskapazität (( <xref uid="system.fabric._application_update_description" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription</xref>) dieser Wert muss kleiner sein. als oder gleich <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription#getMaximumNodeCapacity()</xref> für jede Metrik. </p>
     syntax:
       content: public long getNodeReservationCapacity()
       return:
         type: 0364520f
-        description: '<p>Gibt die Menge der Metrik laden, wodurch die reserviert ist in Knoten, die Instanzen dieser Anwendung verfügen. Wenn <xref href="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false"></xref> angegeben wird, wird das Produkt dieser Werte die Kapazität für die Anwendung im Cluster reserviert wird. Wenn auf NULL gesetzt, keine Kapazität für die Metrik reserviert ist. </p>'
+        description: '<p>Gibt die Menge der Metrik laden, wodurch die reserviert ist in Knoten, die Instanzen dieser Anwendung verfügen. Wenn <xref uid="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMinimumNodes()</xref> angegeben wird, wird das Produkt dieser Werte die Kapazität für die Anwendung im Cluster reserviert wird. Wenn auf NULL gesetzt, keine Kapazität für die Metrik reserviert ist. </p>'
   - uid: system.fabric._application_metric_description.getTotalApplicationCapacity()
     id: getTotalApplicationCapacity()
     parent: system.fabric._application_metric_description
@@ -145,8 +145,8 @@ items:
     summary: |-
       <p>Ruft die Metrik Gesamtkapazität für Service Fabric-Anwendung ab.</p>
       <p>
-      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> muss immer kleiner oder gleich diesem Wert sein. </p>
-      <p>Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> muss immer kleiner oder gleich diesem Wert sein. </p>
+      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> und <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription# getMaximumNodeCapacity()</xref> muss immer kleiner oder gleich diesem Wert sein. </p>
+      <p>Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription#getMaximumNodes()</xref> und <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription# getMaximumNodeCapacity()</xref> muss immer kleiner oder gleich diesem Wert sein. </p>
     syntax: &ref_3
       content: public long getTotalApplicationCapacity()
       return:
@@ -171,8 +171,8 @@ items:
     summary: |-
       <p>Legt die maximale Knotenkapazität für Service Fabric-Anwendung fest.</p>
       <p>
-      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und dieser Wert muss immer kleiner als oder gleich <xref href="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beim Aktualisieren der vorhandenen Anwendung mit Anwendungskapazität, das Produkt der <xref href="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und dieser Wert muss immer kleiner als oder gleich <xref href="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"></xref>. </p>
+      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> und dieser Wert muss immer kleiner als oder gleich <xref uid="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"> system.fabric.ApplicationMetricDescription#getTotalApplicationCapacity()</xref>. </p>
+      <p>Beim Aktualisieren der vorhandenen Anwendung mit Anwendungskapazität, das Produkt der <xref uid="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription#getMaximumNodes()</xref> und dieser Wert muss immer kleiner als oder gleich <xref uid="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"> system.fabric.ApplicationMetricDescription#getTotalApplicationCapacity()</xref>. </p>
     syntax:
       content: public void setMaximumNodeCapacity(long maximumNodeCapacity)
       parameters:
@@ -223,13 +223,13 @@ items:
     summary: |-
       <p>Ruft die Reservierung Knotenkapazität für Service Fabric-Anwendung ab.</p>
       <p>
-      Beim Festlegen der Anwendungskapazität (<xref href="system.fabric._application_description" data-throw-if-not-resolved="false"></xref>) oder beim Aktualisieren der Anwendungskapazität (( <xref href="system.fabric._application_update_description" data-throw-if-not-resolved="false"></xref>) dieser Wert muss kleiner als oder gleich sein <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> für jede Metrik. </p>
+      Beim Festlegen der Anwendungskapazität (<xref uid="system.fabric._application_description" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription</xref>) oder beim Aktualisieren der Anwendungskapazität (( <xref uid="system.fabric._application_update_description" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription</xref>) dieser Wert muss kleiner sein. als oder gleich <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription#getMaximumNodeCapacity()</xref> für jede Metrik. </p>
     syntax:
       content: public void setNodeReservationCapacity(long nodeReservationCapacity)
       parameters:
         - id: nodeReservationCapacity
           type: 0364520f
-          description: '<p>Gibt die Menge der Metrik laden, wodurch die reserviert ist in Knoten, die Instanzen dieser Anwendung verfügen. Wenn <xref href="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false"></xref> angegeben wird, wird das Produkt dieser Werte die Kapazität für die Anwendung im Cluster reserviert wird. Wenn auf NULL gesetzt, keine Kapazität für die Metrik reserviert ist. </p>'
+          description: '<p>Gibt die Menge der Metrik laden, wodurch die reserviert ist in Knoten, die Instanzen dieser Anwendung verfügen. Wenn <xref uid="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMinimumNodes()</xref> angegeben wird, wird das Produkt dieser Werte die Kapazität für die Anwendung im Cluster reserviert wird. Wenn auf NULL gesetzt, keine Kapazität für die Metrik reserviert ist. </p>'
   - uid: system.fabric._application_metric_description.setTotalApplicationCapacity(long)
     id: setTotalApplicationCapacity(long)
     parent: system.fabric._application_metric_description
@@ -249,8 +249,8 @@ items:
     summary: |-
       <p>Legt die Gesamtkapazität metrische für Service Fabric-Anwendung fest.</p>
       <p>
-      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> muss immer kleiner oder gleich diesem Wert sein. </p>
-      <p>Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> muss immer kleiner oder gleich diesem Wert sein. </p>
+      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> und <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription# getMaximumNodeCapacity()</xref> muss immer kleiner oder gleich diesem Wert sein. </p>
+      <p>Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription#getMaximumNodes()</xref> und <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription# getMaximumNodeCapacity()</xref> muss immer kleiner oder gleich diesem Wert sein. </p>
     syntax:
       content: public void setTotalApplicationCapacity(long totalApplicationCapacity)
       parameters:
@@ -318,7 +318,7 @@ references:
     nameWithType: ApplicationMetricDescription
     fullName: system.fabric.ApplicationMetricDescription
     type: Class
-    summary: <p>Gibt die Anwendungskapazität für eine Metrik an. <xref href="system.fabric._application_description" data-throw-if-not-resolved="false"></xref><xref href="system.fabric._application_update_description" data-throw-if-not-resolved="false"></xref></p>
+    summary: <p>Gibt die Anwendungskapazität für eine Metrik an. <xref uid="system.fabric._application_description" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription</xref><xref uid="system.fabric._application_update_description" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription</xref></p>
     syntax: *ref_1
   - uid: system.fabric._application_description.getMinimumNodes()
     parent: system.fabric._application_description
@@ -334,7 +334,7 @@ references:
       content: public long getMinimumNodes()
       return:
         type: 0364520f
-        description: '<p>Anzahl der Knoten, auf dem Service Fabric Kapazität im Cluster für diese Anwendung platziert werden reservieren. Beachten Sie, dass dies nicht bedeutet, dass die Anwendung unbedingt Replikate für alle diese Knoten verfügen. Wenn dieser Parameter auf NULL gesetzt wird, wird keine Kapazität reserviert werden. Wenn dieser Parameter ist größer als <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> ein <ref refid="" kindref="compound">java.lang.IllegalArgumentException</ref> ausgelöst, wenn <xref href="system.fabric._application_management_client.createApplicationAsync(ApplicationDescription)" data-throw-if-not-resolved="false"></xref> aufgerufen wird. </p>'
+        description: '<p>Anzahl der Knoten, auf dem Service Fabric Kapazität im Cluster für diese Anwendung platziert werden reservieren. Beachten Sie, dass dies nicht bedeutet, dass die Anwendung unbedingt Replikate für alle diese Knoten verfügen. Wenn dieser Parameter auf NULL gesetzt wird, wird keine Kapazität reserviert werden. Wenn dieser Parameter ist größer als <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> ein <xref uid="" data-throw-if-not-resolved="false">java.lang.IllegalArgumentException</xref> ausgelöst, wenn <xref uid="system.fabric._application_management_client.createApplicationAsync(ApplicationDescription)" data-throw-if-not-resolved="false"> system.fabric.ApplicationManagementClient#createApplicationAsync(ApplicationDescription)</xref> aufgerufen wird. </p>'
   - uid: system.fabric._application_description
     parent: system.fabric
     href: system.fabric._application_description.yml
@@ -342,7 +342,7 @@ references:
     nameWithType: ApplicationDescription
     fullName: system.fabric.ApplicationDescription
     type: Class
-    summary: <p>Beschreibt eine Anwendung erstellt werden<xref href="system.fabric._application_management_client.createApplicationAsync(ApplicationDescription)" data-throw-if-not-resolved="false"></xref></p>
+    summary: '<p>Beschreibt eine Anwendung mit <xref uid="system.fabric._application_management_client.createApplicationAsync(ApplicationDescription)" data-throw-if-not-resolved="false">system.fabric.ApplicationManagementClient#createApplicationAsync(system.fabric.ApplicationDescription)</xref></p>'
     syntax:
       content: public class ApplicationDescription
   - uid: system.fabric._application_update_description
@@ -352,7 +352,7 @@ references:
     nameWithType: ApplicationUpdateDescription
     fullName: system.fabric.ApplicationUpdateDescription
     type: Class
-    summary: '<p>Beschreibt ein Update der Anwendungskapazität, die aktualisiert werden<xref href="system.fabric._application_management_client.updateApplicationAsync(ApplicationUpdateDescription)" data-throw-if-not-resolved="false"></xref></p>'
+    summary: '<p>Beschreibt ein Update der Anwendungskapazität, die aktualisiert werden <xref uid="system.fabric._application_management_client.updateApplicationAsync(ApplicationUpdateDescription)" data-throw-if-not-resolved="false">system.fabric.ApplicationManagementClient#updateApplicationAsync(ApplicationUpdateDescription)</xref></p>'
     syntax:
       content: public class ApplicationUpdateDescription
   - uid: system.fabric._application_metric_description.getMaximumNodeCapacity()
@@ -365,8 +365,8 @@ references:
     summary: |-
       <p>Ruft die maximale Knotenkapazität für Service Fabric-Anwendung ab.</p>
       <p>
-      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und dieser Wert muss immer kleiner als oder gleich <xref href="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beim Aktualisieren der vorhandenen Anwendung mit Anwendungskapazität, das Produkt der <xref href="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und dieser Wert muss immer kleiner als oder gleich <xref href="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"></xref>. </p>
+      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> und dieser Wert muss immer kleiner als oder gleich <xref uid="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"> system.fabric.ApplicationMetricDescription#getTotalApplicationCapacity()</xref>. </p>
+      <p>Beim Aktualisieren der vorhandenen Anwendung mit Anwendungskapazität, das Produkt der <xref uid="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription#getMaximumNodes()</xref> und dieser Wert muss immer kleiner als oder gleich <xref uid="system.fabric._application_metric_description.getTotalApplicationCapacity()" data-throw-if-not-resolved="false"> system.fabric.ApplicationMetricDescription#getTotalApplicationCapacity()</xref>. </p>
     syntax: *ref_2
   - uid: system.fabric._application_description.getMaximumNodes()
     parent: system.fabric._application_description
@@ -382,7 +382,7 @@ references:
       content: public long getMaximumNodes()
       return:
         type: 0364520f
-        description: '<p>Anzahl der Knoten, die diese Anwendung zulässig ist, umfassen. Der Standardwert lautet null. Ist er 0 (null), kann die Anwendung eine beliebige Anzahl von Knoten im Cluster umfassen. Wenn dieser Parameter kleiner als <xref href="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false"></xref> ein <ref refid="" kindref="compound">java.lang.IllegalArgumentException</ref> ausgelöst, wenn <xref href="system.fabric._application_management_client.createApplicationAsync(ApplicationDescription)" data-throw-if-not-resolved="false"></xref> aufgerufen wird. </p>'
+        description: '<p>Anzahl der Knoten, die diese Anwendung zulässig ist, umfassen. Der Standardwert lautet null. Ist er 0 (null), kann die Anwendung eine beliebige Anzahl von Knoten im Cluster umfassen. Wenn dieser Parameter kleiner als <xref uid="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMinimumNodes()</xref> ein <xref uid="" data-throw-if-not-resolved="false">java.lang.IllegalArgumentException</xref> ausgelöst, wenn <xref uid="system.fabric._application_management_client.createApplicationAsync(ApplicationDescription)" data-throw-if-not-resolved="false"> system.fabric.ApplicationManagementClient#createApplicationAsync(ApplicationDescription)</xref> aufgerufen wird. </p>'
   - uid: system.fabric._application_metric_description.getTotalApplicationCapacity()
     parent: system.fabric._application_metric_description
     href: system.fabric._application_metric_description.yml
@@ -393,8 +393,8 @@ references:
     summary: |-
       <p>Ruft die Metrik Gesamtkapazität für Service Fabric-Anwendung ab.</p>
       <p>
-      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> muss immer kleiner oder gleich diesem Wert sein. </p>
-      <p>Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref href="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false"></xref> und <xref href="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false"></xref> muss immer kleiner oder gleich diesem Wert sein. </p>
+      Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMaximumNodes()</xref> und <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription# getMaximumNodeCapacity()</xref> muss immer kleiner oder gleich diesem Wert sein. </p>
+      <p>Beim Erstellen einer neuen Anwendung mit der Anwendungskapazität definiert, des Produkts der <xref uid="system.fabric._application_update_description.getMaximumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationUpdateDescription#getMaximumNodes()</xref> und <xref uid="system.fabric._application_metric_description.getMaximumNodeCapacity()" data-throw-if-not-resolved="false">system.fabric.ApplicationMetricDescription# getMaximumNodeCapacity()</xref> muss immer kleiner oder gleich diesem Wert sein. </p>
     syntax: *ref_3
   - uid: system.fabric._application_update_description.getMaximumNodes()
     parent: system.fabric._application_update_description
@@ -408,7 +408,7 @@ references:
       <p>
       Ist er 0 (null), kann die Anwendung auf eine beliebige Anzahl von Knoten im Cluster befinden. </p>
       <p>Wenn dieser Parameter nicht angegeben wird, wenn eine Anwendung zu aktualisieren, bleibt die maximale Anzahl von Knoten unverändert. </p>
-      <p>Wenn dieser Parameter kleiner als <xref href="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false"></xref> ein <ref refid="" kindref="compound">java.lang.IllegalArgumentException</ref> ausgelöst, wenn <xref href="system.fabric._application_management_client.updateApplicationAsync(ApplicationUpdateDescription)" data-throw-if-not-resolved="false"></xref> aufgerufen wird. </p>
+      <p>Wenn dieser Parameter kleiner als <xref uid="system.fabric._application_description.getMinimumNodes()" data-throw-if-not-resolved="false">system.fabric.ApplicationDescription#getMinimumNodes()</xref> ein <xref uid="" data-throw-if-not-resolved="false">java.lang.IllegalArgumentException</xref> ausgelöst, wenn <xref uid="system.fabric._application_management_client.updateApplicationAsync(ApplicationUpdateDescription)" data-throw-if-not-resolved="false"> system.fabric.ApplicationManagementClient#updateApplicationAsync(ApplicationUpdateDescription)</xref> aufgerufen wird. </p>
     syntax:
       content: public Long getMaximumNodes()
       return:

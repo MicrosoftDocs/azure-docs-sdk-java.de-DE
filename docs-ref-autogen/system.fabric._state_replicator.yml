@@ -21,8 +21,9 @@ items:
         branch: master
         repo: 'https://msazure.visualstudio.com/One/_git/sf-java'
       path: src/prod/src/java/system.fabric/src/system/fabric/StateReplicator.java
-      startLine: 11
+      startLine: 7
     package: system.fabric
+    summary: '<p>Macht replikationsbezogener-Funktionen von der <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">FabricReplicator</xref> Klasse, mit denen <xref uid="system.fabric._state_provider" data-throw-if-not-resolved="false">StateProvider</xref> zum Replizieren von Zustand, um hohe Verfügbarkeit sicherzustellen. </p>'
     syntax:
       content: public interface StateReplicator
   - uid: system.fabric._state_replicator.getCopyStream()
@@ -39,12 +40,14 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/StateReplicator.java
-      startLine: 18
+      startLine: 27
     package: system.fabric
+    summary: <p>Ruft kopieren stream </p>
     syntax:
       content: public OperationStream getCopyStream()
       return:
         type: system.fabric._operation_stream
+        description: '<p>Enthält die zurückgegebene CopyStream <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">OperationData</xref> Objekten implementiert, <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref>. Die <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">OperationData</xref> -Objekte werden abgerufen, von der CopyState <xref uid="system.fabric._operation_data_stream" data-throw-if-not-resolved="false">OperationDataStream</xref> , die das primäre Replikat zurückgibt <xref uid="system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)" data-throw-if-not-resolved="false">StateProvider #GetCopyState(SequenceNumber, OperationDataStream)</xref>. Wenn ein Replikat erstellt und auf den aktuellen Stand ist, erhalten die CopyStream und sollte beginnen zu senden, anwenden und bestätigen das Kopieren von Objekten, die implementieren <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref>. Parallel, reagiert das Replikat auf den entsprechenden <xref uid="system.fabric._state_provider.getCopyContext()" data-throw-if-not-resolved="false">StateProvider#getCopyContext()</xref> und <xref uid="" data-throw-if-not-resolved="false">OperationDataStream#getNextAsync(CancellationToken)</xref>aufrufen. Der Datenstrom ist leer, wenn das zurückgegebene <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref> Methode ist null. </p>'
   - uid: system.fabric._state_replicator.getReplicationStream()
     id: getReplicationStream()
     parent: system.fabric._state_replicator
@@ -59,12 +62,14 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/StateReplicator.java
-      startLine: 20
+      startLine: 34
     package: system.fabric
+    summary: <p>Ruft die replikationsdatenstrom ab. </p>
     syntax:
       content: public OperationStream getReplicationStream()
       return:
         type: system.fabric._operation_stream
+        description: '<p>Implementiert die ReplicationStream <xref uid="system.fabric._operation_stream" data-throw-if-not-resolved="false">OperationStream</xref>. Enthält die ReplicationStream <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">OperationData</xref> Objekten implementiert, <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref>. Die Objekte werden vom primären Replikat über bereitgestellt <xref uid="system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)" data-throw-if-not-resolved="false">StateReplicator #ReplicateAsync(OperationData, SequenceNumber, CancellationToken)</xref>. Im Allgemeinen sollte ein sekundäres Replikat senden <xref uid="" data-throw-if-not-resolved="false">OperationStream#getOperationAsync(CancellationToken)</xref>. Service Fabric Services dazu nicht notwendig, in der Regel Dienste sollten alle übertragen <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">OperationData</xref> Objekten aus der Kopie zuerst zu streamen, übertragen und dann Vorgänge aus dem replikationsdatenstrom. Die Übertragung von beide Kopien parallel wird unterstützt, aber erhöht die Komplexität des Anwendens der Zustand ordnungsgemäß aktualisiert und wird nur für erweiterte Dienste empfohlen. Der Datenstrom ist leer, wenn das zurückgegebene <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref> Methode ist null. </p>'
   - uid: 'system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)'
     id: 'replicateAsync(OperationData,SequenceNumber,CancellationToken)'
     parent: system.fabric._state_replicator
@@ -79,19 +84,24 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/StateReplicator.java
-      startLine: 13
+      startLine: 16
     package: system.fabric
-    syntax:
+    summary: '<p>Zustandsänderungen aus dem primären Replikat an die sekundären Replikate repliziert und empfängt eine Quorum-Bestätigung, dass diese Änderungen angewendet wurden. </p>'
+    syntax: &ref_1
       content: 'public CompletableFuture<SequenceNumber> replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
       parameters:
         - id: operationData
           type: system.fabric._operation_data
+          description: '<p>Stellt die Änderung des Zustands, die das primäre Replikat repliziert werden sollen. </p>'
         - id: sequenceNumber
           type: system.fabric._sequence_number
+          description: '<p>Lange, die LSN des Vorgangs. Beachten Sie, dass dies der gleiche Wert zurückgegeben, von der Aufgabe. Bereitstellen als Out-Parameter ist nützlich für Dienste, die vorzubereitenden lokalen Schreibzugriffs auf übertragen, wenn die Aufgabe abgeschlossen ist. </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
+          description: '<p>Ein Schreibvorgang Quorum der Replikate, die verloren gegangen sein. Es kann verwendet werden, um eine Benachrichtigung zu senden, dass der Vorgang abgebrochen werden soll. Beachten Sie, dass der Abbruch advisory ist und weiterhin der Vorgang abgeschlossen werden kann, selbst wenn er abgebrochen wird. </p>'
       return:
         type: 9cdf14d0system.fabric._sequence_numbera08ddfce
+        description: '<p>Gibt die completable Zukunft vom Typ long, die LSN des Vorgangs zurück. </p>'
   - uid: system.fabric._state_replicator.updateReplicatorSettings(ReplicatorSettings)
     id: updateReplicatorSettings(ReplicatorSettings)
     parent: system.fabric._state_replicator
@@ -106,13 +116,15 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/StateReplicator.java
-      startLine: 22
+      startLine: 40
     package: system.fabric
+    summary: '<p>Ermöglicht die Änderung der Replikator Einstellungen während der Laufzeit. Die einzige Einstellung, die geändert werden kann, ist die Sicherheitsanmeldeinformationen. </p>'
     syntax:
       content: public void updateReplicatorSettings(ReplicatorSettings settings)
       parameters:
         - id: settings
           type: system.fabric._replicator_settings
+          description: <p>Die neue <xref uid="system.fabric._replicator_settings" data-throw-if-not-resolved="false">ReplicatorSettings</xref> mit Anmeldeinformationen aktualisiert. </p>
 references:
   - uid: 9cdf14d0system.fabric._sequence_numbera08ddfce
     spec.java:
@@ -151,7 +163,7 @@ references:
     nameWithType: StateReplicator2
     fullName: system.fabric.StateReplicator2
     type: Interface
-    summary: '<p>Macht Funktionen im Zusammenhang mit Replikation, von der <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref> Klasse, mit denen <xref href="system.fabric._state_provider" data-throw-if-not-resolved="false"></xref> zum Replizieren von Zustand, um hohe Verfügbarkeit sicherzustellen. </p>'
+    summary: '<p>Macht Funktionen im Zusammenhang mit Replikation, von der <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">system.fabric.FabricReplicator</xref> Klasse, mit denen <xref uid="system.fabric._state_provider" data-throw-if-not-resolved="false">system.fabric.StateProvider</xref> zum Replizieren von Zustand, um hohe Verfügbarkeit sicherzustellen. </p>'
     syntax:
       content: public interface StateReplicator2
   - uid: system.fabric._sequence_number
@@ -179,18 +191,9 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax:
       content: public class CancellationToken
-  - uid: system.fabric.exception._fabric_exception
-    parent: system.fabric.exception
-    href: system.fabric.exception._fabric_exception.yml
-    name: FabricException
-    nameWithType: FabricException
-    fullName: system.fabric.exception.FabricException
-    type: Class
-    syntax:
-      content: public class FabricException
   - uid: system.fabric._operation_stream
     parent: system.fabric
     href: system.fabric._operation_stream.yml
@@ -200,6 +203,67 @@ references:
     type: Interface
     syntax:
       content: public interface OperationStream
+  - uid: system.fabric._operation
+    parent: system.fabric
+    href: system.fabric._operation.yml
+    name: Operation
+    nameWithType: Operation
+    fullName: system.fabric.Operation
+    type: Interface
+    summary: "<p>\r\n\r\n  <b>Hinweise:</b>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.Operation</xref> ist die Basisschnittstelle, die Änderungen beschreibt, die an ein sekundäres Replikat übermittelt werden. Sie enthalten die <xref uid=\"system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</xref> und identifizieren Sie die Sequenznummer und andere Informationen. </p>"
+    syntax:
+      content: public interface Operation
+  - uid: system.fabric._operation_data_stream
+    parent: system.fabric
+    href: system.fabric._operation_data_stream.yml
+    name: OperationDataStream
+    nameWithType: OperationDataStream
+    fullName: system.fabric.OperationDataStream
+    type: Interface
+    syntax:
+      content: public interface OperationDataStream
+  - uid: 'system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)'
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: 'getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    nameWithType: 'StateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    fullName: 'OperationDataStream system.fabric.StateProvider.getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+    type: Method
+    summary: "<p>Ruft die Status für ein primäres Replikat, das erforderlich sind, um ein sekundäres Replikat zu erstellen.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>genauso <xref uid=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#getCopyContext()</xref> ermöglicht das sekundäre Replikat das primäre Replikat über Kontext an ein <xref uid=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\">system.fabric.OperationDataStream</xref>, <xref uid=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#getCopyState (SequenceNumber, OperationDataStream)</xref> ermöglicht das primäre Replikat antwortet ein <xref uid=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\">system.fabric.OperationDataStream</xref>. Der Datenstrom enthält Objekte, die an das sekundäre Replikat über übermittelt werden die <xref uid=\"system.fabric._state_replicator.getCopyStream()\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator#getCopyStream()</xref> Methode der <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> Klasse. Implementieren Sie die Objekte <xref uid=\"system.fabric._operation\" data-throw-if-not-resolved=\"false\">system.fabric.Operation</xref> und die angegebenen Daten enthalten. Wenn das primäre Replikat dieser Aufruf empfängt, sollte er erstellen und Zurückgeben einer anderen <xref uid=\"system.fabric._operation_data_stream\" data-throw-if-not-resolved=\"false\">system.fabric.OperationDataStream</xref> enthält <xref uid=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\">system.fabric.OperationData</xref>. <xref uid=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\">system.fabric.OperationData</xref> des datensynchronisierungsstatus darstellt, die das sekundäre Replikat </p>"
+    syntax:
+      content: 'public OperationDataStream getCopyState(SequenceNumber upToSequenceNumber, OperationDataStream copyContext)'
+      parameters:
+        - id: upToSequenceNumber
+          type: system.fabric._sequence_number
+          description: '<p>Die maximale letzte Sequenznummer (LSN), die im Stream über Kopiervorgang platziert werden, sollten die <xref uid="system.fabric._state_replicator.getCopyStream()" data-throw-if-not-resolved="false">system.fabric.StateReplicator#getCopyStream()</xref> Methode. LSNs, die größer als diese Zahl werden an das sekundäre Replikat als Teil der replikationsdatenstrom über übermittelt die <xref uid="system.fabric._state_replicator.getReplicationStream()" data-throw-if-not-resolved="false">system.fabric.StateReplicator#getReplicationStream()</xref> Methode. </p>'
+        - id: copyContext
+          type: system.fabric._operation_data_stream
+          description: '<p>Ein <xref uid="system.fabric._operation_data_stream" data-throw-if-not-resolved="false">system.fabric.OperationDataStream</xref> , enthält die <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">system.fabric.OperationData</xref> Objekte, die vom sekundären Replikat erstellt werden. erfordert die Stand </p>'
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <xref uid="system.fabric._operation_data_stream" data-throw-if-not-resolved="false">system.fabric.OperationDataStream</xref>. </p>
+  - uid: system.fabric._state_provider.getCopyContext()
+    parent: system.fabric._state_provider
+    href: system.fabric._state_provider.yml
+    name: getCopyContext()
+    nameWithType: StateProvider.getCopyContext()
+    fullName: OperationDataStream system.fabric.StateProvider.getCopyContext()
+    type: Method
+    summary: "<p>Kontext auf einem sekundären Replikat erhält, nachdem es erstellt und geöffnet, um den Kontext mit dem primären Replikat zu senden.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>das primäre Replikat analysiert den Kontext und zurücksendet Status über <xref uid=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#getCopyState (SequenceNumber, OperationDataStream)</xref> . <xref uid=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#getCopyContext()</xref> für neu erstellte im Leerlauf sekundären Replikate aufgerufen wird, und bietet einen Mechanismus zum asynchron eine bidirektionale Konversation mit dem primären Replikat hergestellt. Das sekundäre Replikat sendet <xref uid=\"system.fabric._operation_data\" data-throw-if-not-resolved=\"false\">system.fabric.OperationData</xref> Objekte, die mit dem das primäre Replikat den Status des Sammelns von Kontext auf dem sekundären Replikat bestimmen kann. Das primäre Replikat sendet seinerseits den erforderlichen Zustand zurück. Finden Sie unter <xref uid=\"system.fabric._state_provider.getCopyState(SequenceNumber,OperationDataStream)\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#getCopyState (SequenceNumber, OperationDataStream)</xref> an das primäre Replikat für die andere Hälfte des Austausches. Für InMemory-Dienste die <xref uid=\"system.fabric._state_provider.getCopyContext()\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#getCopyContext()</xref> Methode wird nicht aufgerufen, da der Status der sekundären Replikate bekannt ist (sie sind leer und benötigen alle Status). </p>"
+    syntax:
+      content: public OperationDataStream getCopyContext()
+      return:
+        type: system.fabric._operation_data_stream
+        description: <p>Gibt <xref uid="system.fabric._operation_data_stream" data-throw-if-not-resolved="false">system.fabric.OperationDataStream</xref>. </p>
+  - uid: 'system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)'
+    parent: system.fabric._state_replicator
+    href: system.fabric._state_replicator.yml
+    name: 'replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+    nameWithType: 'StateReplicator.replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<SequenceNumber> system.fabric.StateReplicator.replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+    type: Method
+    summary: '<p>Zustandsänderungen aus dem primären Replikat an die sekundären Replikate repliziert und empfängt eine Quorum-Bestätigung, dass diese Änderungen angewendet wurden. </p>'
+    syntax: *ref_1
   - uid: system.fabric._replicator_settings
     parent: system.fabric
     href: system.fabric._replicator_settings.yml
@@ -209,3 +273,23 @@ references:
     type: Class
     syntax:
       content: public class ReplicatorSettings
+  - uid: system.fabric._fabric_replicator
+    parent: system.fabric
+    href: system.fabric._fabric_replicator.yml
+    name: FabricReplicator
+    nameWithType: FabricReplicator
+    fullName: system.fabric.FabricReplicator
+    type: Class
+    summary: "<p>Repliziert den Status für hohe Verfügbarkeit und Zuverlässigkeit. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>stellt die Standardimplementierung von der <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref>, <xref uid=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\">system.fabric.Replicator</xref>, und <xref uid=\"system.fabric._primary_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.PrimaryReplicator </xref> Schnittstellen, die Benutzerdienste werden, zusammen mit ihrer Implementierung von verwendet können der <xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref> Schnittstelle. Eine Instanz von der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> Klasse abgerufen wird, über die <xref uid=\"system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServicePartition#createReplicator (system.fabric.StateProvider, system.fabric.ReplicatorSettings) </xref> -Methode, die in umgewandelt werden kann <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> für die Verwendung. </p>"
+    syntax:
+      content: public class FabricReplicator implements Replicator
+  - uid: system.fabric._state_provider
+    parent: system.fabric
+    href: system.fabric._state_provider.yml
+    name: StateProvider
+    nameWithType: StateProvider
+    fullName: system.fabric.StateProvider
+    type: Interface
+    summary: '<p>Definiert das Verhalten, das ein Dienst implementieren muss, um die Interaktion mit der <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">FabricReplicator</xref>. </p>'
+    syntax:
+      content: public interface StateProvider

@@ -20,8 +20,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISessionHandler.java
-      startLine: 4
+      startLine: 10
     package: com.microsoft.azure.servicebus
+    summary: '<p>Definiert den Vertrag für die Registrierung des Rückrufs Nachrichtenverarbeitung Sitzung <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerSessionHandler(ISessionHandler)</xref> oder <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerSessionHandler(ISessionHandler)</xref> für <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> und <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>. </p>'
     syntax:
       content: public interface ISessionHandler
   - uid: 'com.microsoft.azure.servicebus._i_session_handler.notifyException(Throwable,ExceptionPhase)'
@@ -38,15 +39,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISessionHandler.java
-      startLine: 15
+      startLine: 35
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfangen die Ausnahmen, die übergeben von Datapump während der Verarbeitung von Nachrichten.</p>
+      <p></p>
     syntax:
       content: 'public void notifyException(Throwable exception, ExceptionPhase phase)'
       parameters:
         - id: exception
           type: a04fafd7
+          description: <p>Diese Ausnahme in Datapump empfangen wurde. </p>
         - id: phase
           type: com.microsoft.azure.servicebus._exception_phase
+          description: <p>Phase der Ausnahme. </p>
   - uid: com.microsoft.azure.servicebus._i_session_handler.OnCloseSessionAsync(IMessageSession)
     id: OnCloseSessionAsync(IMessageSession)
     parent: com.microsoft.azure.servicebus._i_session_handler
@@ -61,16 +67,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISessionHandler.java
-      startLine: 13
+      startLine: 27
     package: com.microsoft.azure.servicebus
-    summary: '<p>Wird aufgerufen, kurz bevor eine Sitzung durch die Datapump Sitzung geschlossen wird </p>'
+    summary: |-
+      <p>Wird aufgerufen, kurz bevor eine Sitzung durch die Datapump Sitzung geschlossen wird</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> OnCloseSessionAsync(IMessageSession session)
       parameters:
         - id: session
           type: com.microsoft.azure.servicebus._i_message_session
+          description: <p>Sitzung geschlossen wird </p>
       return:
         type: db03ee24
+        description: '<p>ein Future, die die Aktion ausgeführt wird. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_session_handler.onMessageAsync(IMessageSession,IMessage)'
     id: 'onMessageAsync(IMessageSession,IMessage)'
     parent: com.microsoft.azure.servicebus._i_session_handler
@@ -85,17 +95,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISessionHandler.java
-      startLine: 6
+      startLine: 19
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Der Rückruf für Nachrichtensystem Übergabe empfangenen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>s.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> onMessageAsync(IMessageSession session, IMessage message)'
       parameters:
         - id: session
           type: com.microsoft.azure.servicebus._i_message_session
+          description: <p>Die <xref uid="com.microsoft.azure.servicebus._message_session" data-throw-if-not-resolved="false">MessageSession</xref> der Nachricht. </p>
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>
       return:
         type: db03ee24
+        description: <p>CompletableFuture für die Message-Handler. </p>
 references:
   - uid: db03ee24
     spec.java:
@@ -127,6 +143,11 @@ references:
     nameWithType: IMessageSession
     fullName: com.microsoft.azure.servicebus.IMessageSession
     type: Interface
+    summary: |-
+      <p>Beschreibt ein Sitzungsobjekt. <xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden. </p>
+      <p>Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten. Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung. </p>
+      <p>Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner. Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet. </p>
+      <p>Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist. Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt. </p>
     syntax:
       content: public interface IMessageSession extends IMessageReceiver
   - uid: com.microsoft.azure.servicebus._i_message
@@ -136,8 +157,29 @@ references:
     nameWithType: IMessage
     fullName: com.microsoft.azure.servicebus.IMessage
     type: Interface
+    summary: |-
+      <p>Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</p>
+      <p></p>
     syntax:
       content: public interface IMessage
+  - uid: com.microsoft.azure.servicebus._message
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._message.yml
+    name: Message
+    nameWithType: Message
+    fullName: com.microsoft.azure.servicebus.Message
+    type: Class
+    syntax:
+      content: public class Message
+  - uid: com.microsoft.azure.servicebus._message_session
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._message_session.yml
+    name: MessageSession
+    nameWithType: MessageSession
+    fullName: com.microsoft.azure.servicebus.MessageSession
+    type: Class
+    syntax:
+      content: public class MessageSession
   - uid: com.microsoft.azure.servicebus._exception_phase
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._exception_phase.yml
@@ -145,5 +187,26 @@ references:
     nameWithType: ExceptionPhase
     fullName: com.microsoft.azure.servicebus.ExceptionPhase
     type: Enum
+    summary: |-
+      <p>Die Enumeration zur Darstellung der Phase in einer Nachrichtensystem oder Sitzung Datapump an dem eine Ausnahme aufgetreten ist.</p>
+      <p></p>
     syntax:
       content: public enum ExceptionPhase
+  - uid: com.microsoft.azure.servicebus._queue_client
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._queue_client.yml
+    name: QueueClient
+    nameWithType: QueueClient
+    fullName: com.microsoft.azure.servicebus.QueueClient
+    type: Class
+    syntax:
+      content: public class QueueClient
+  - uid: com.microsoft.azure.servicebus._subscription_client
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._subscription_client.yml
+    name: SubscriptionClient
+    nameWithType: SubscriptionClient
+    fullName: com.microsoft.azure.servicebus.SubscriptionClient
+    type: Class
+    syntax:
+      content: public class SubscriptionClient

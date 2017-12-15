@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 151
+      startLine: 164
     package: com.microsoft.azure.management.storage
     summary: '<p>Containerschnittstelle für alle Definitionen, die implementiert werden müssen. </p>'
     syntax:
@@ -33,6 +33,7 @@ items:
       - com.microsoft.azure.management.storage._storage_account._definition_stages._with_custom_domain.withCustomDomain(String)
       - 'com.microsoft.azure.management.storage._storage_account._definition_stages._with_custom_domain.withCustomDomain(String,boolean)'
       - com.microsoft.azure.management.storage._storage_account._definition_stages._with_encryption.withEncryption(Encryption)
+      - com.microsoft.azure.management.storage._storage_account._definition_stages._with_encryption.withEncryption()
       - com.microsoft.azure.management.storage._storage_account._definition_s94c180d27e5621e165c3464e9c5a649c.withGeneralPurposeAccountKind()
       - com.microsoft.azure.management.resources.fluentcore.arm.models.f2161385b1a9b0a59b0e528834b2f06f.withRegion(String)
       - com.microsoft.azure.management.resources.fluentcore.arm.models.f2161385b1a9b0a59b0e528834b2f06f.withRegion(Region)
@@ -216,7 +217,7 @@ references:
     fullName: WithCreate com.microsoft.azure.management.storage.StorageAccount.DefinitionStages.WithEncryption.withEncryption(Encryption encryption)
     type: Method
     summary: |-
-      <p>Gibt die Einstellungen für die Verschlüsselung für das Konto an. Die Standardeinstellung ist unverschlüsselt.</p>
+      <p>Gibt die Einstellungen für die Verschlüsselung für das Konto an. Die Standardeinstellung ist unverschlüsselt. TODO: Diese Überladung sollte als veraltet markiert und entfernt werden (von der neuen vollständig fluent Verschlüsselung Withers ersetzt)</p>
       <p></p>
     syntax:
       content: public WithCreate withEncryption(Encryption encryption)
@@ -226,7 +227,22 @@ references:
           description: <p>die verschlüsselungseinstellung </p>
       return:
         type: com.microsoft.azure.management.storage._storage_account._definition_stages._with_create
-        description: <p>Das Nest-Phase der speicherkontendefinition </p>
+        description: <p>die nächste Phase der speicherkontendefinition </p>
+  - uid: com.microsoft.azure.management.storage._storage_account._definition_stages._with_encryption.withEncryption()
+    parent: com.microsoft.azure.management.storage._storage_account._definition_stages._with_encryption
+    href: com.microsoft.azure.management.storage._storage_account._definition_stages._with_encryption.yml
+    name: withEncryption()
+    nameWithType: StorageAccount.DefinitionStages.WithEncryption.withEncryption()
+    fullName: WithCreate com.microsoft.azure.management.storage.StorageAccount.DefinitionStages.WithEncryption.withEncryption()
+    type: Method
+    summary: |-
+      <p>Aktiviert die Verschlüsselung für alle Speicherdienste in das Konto, das Verschlüsselung unterstützt.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withEncryption()
+      return:
+        type: com.microsoft.azure.management.storage._storage_account._definition_stages._with_create
+        description: <p>die nächste Phase der speicherkontendefinition </p>
   - uid: com.microsoft.azure.management.storage._storage_account._definition_s94c180d27e5621e165c3464e9c5a649c.withGeneralPurposeAccountKind()
     parent: com.microsoft.azure.management.storage._storage_account._definition_s94c180d27e5621e165c3464e9c5a649c
     href: com.microsoft.azure.management.storage._storage_account._definition_s94c180d27e5621e165c3464e9c5a649c.yml
@@ -322,13 +338,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>

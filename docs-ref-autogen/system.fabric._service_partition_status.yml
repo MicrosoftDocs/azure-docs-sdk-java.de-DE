@@ -4,13 +4,13 @@ items:
     id: _service_partition_status
     parent: system.fabric
     children:
-      - system.fabric._service_partition_status.DELETING()
+      - system.fabric._service_partition_status.DELETING
       - system.fabric._service_partition_status.getValue()
-      - system.fabric._service_partition_status.IN_QUORUM_LOSS()
-      - system.fabric._service_partition_status.INVALID()
-      - system.fabric._service_partition_status.NOT_READY()
-      - system.fabric._service_partition_status.READY()
-      - system.fabric._service_partition_status.RECONFIGURING()
+      - system.fabric._service_partition_status.IN_QUORUM_LOSS
+      - system.fabric._service_partition_status.INVALID
+      - system.fabric._service_partition_status.NOT_READY
+      - system.fabric._service_partition_status.READY
+      - system.fabric._service_partition_status.RECONFIGURING
     href: system.fabric._service_partition_status.yml
     langs:
       - java
@@ -32,8 +32,8 @@ items:
     inheritance:
       - java.lang.Object
       - java.lang.Enum<ServicePartitionStatus>
-  - uid: system.fabric._service_partition_status.DELETING()
-    id: DELETING()
+  - uid: system.fabric._service_partition_status.DELETING
+    id: DELETING
     parent: system.fabric._service_partition_status
     href: system.fabric._service_partition_status.yml
     langs:
@@ -70,8 +70,8 @@ items:
       content: public int getValue()
       return:
         type: f75371fa
-  - uid: system.fabric._service_partition_status.IN_QUORUM_LOSS()
-    id: IN_QUORUM_LOSS()
+  - uid: system.fabric._service_partition_status.IN_QUORUM_LOSS
+    id: IN_QUORUM_LOSS
     parent: system.fabric._service_partition_status
     href: system.fabric._service_partition_status.yml
     langs:
@@ -85,11 +85,11 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServicePartitionStatus.java
       startLine: 26
     package: system.fabric
-    summary: '<p>Quorumsverlust in Partition. Dies bedeutet, dass weniger als Quorum MinReplicaSetSize Anzahl der Replikate beteiligt sind. </p>'
+    summary: '<p>Partition weist Clusterquorum verloren geht. Dies bedeutet, dass weniger als Quorum MinReplicaSetSize Anzahl der Replikate beteiligt sind. </p>'
     syntax:
       content: public IN_QUORUM_LOSS=(3)
-  - uid: system.fabric._service_partition_status.INVALID()
-    id: INVALID()
+  - uid: system.fabric._service_partition_status.INVALID
+    id: INVALID
     parent: system.fabric._service_partition_status
     href: system.fabric._service_partition_status.yml
     langs:
@@ -106,8 +106,8 @@ items:
     summary: '<p>Dies unterstützt die Service Fabric-Infrastruktur und ist nicht vorgesehen, direkt aus Ihrem Code verwendet werden. </p>'
     syntax:
       content: public INVALID=(0)
-  - uid: system.fabric._service_partition_status.NOT_READY()
-    id: NOT_READY()
+  - uid: system.fabric._service_partition_status.NOT_READY
+    id: NOT_READY
     parent: system.fabric._service_partition_status
     href: system.fabric._service_partition_status.yml
     langs:
@@ -124,8 +124,8 @@ items:
     summary: '<p>Partition ist nicht bereit. Dies wird zurückgegeben, wenn keiner der anderen Zustände anwenden. </p>'
     syntax:
       content: public NOT_READY=(2)
-  - uid: system.fabric._service_partition_status.READY()
-    id: READY()
+  - uid: system.fabric._service_partition_status.READY
+    id: READY
     parent: system.fabric._service_partition_status
     href: system.fabric._service_partition_status.yml
     langs:
@@ -139,11 +139,11 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServicePartitionStatus.java
       startLine: 17
     package: system.fabric
-    summary: '<p>Partition ist bereit. Für zustandslose Dienste besteht ein Stand Replikat für statusbehaftete--die Anzahl der Replikate bereit Services ist, größer als oder gleich der<xref href="system.fabric._stateful_service_description.getMinReplicaSetSize()" data-throw-if-not-resolved="false"></xref></p>'
+    summary: '<p>Partition ist bereit. Für zustandslose Dienste besteht ein Stand Replikat für statusbehaftete--die Anzahl der Replikate bereit Services ist, größer als oder gleich der <xref uid="system.fabric._stateful_service_description.getMinReplicaSetSize()" data-throw-if-not-resolved="false">StatefulServiceDescription#getMinReplicaSetSize()</xref></p>'
     syntax:
       content: public READY=(1)
-  - uid: system.fabric._service_partition_status.RECONFIGURING()
-    id: RECONFIGURING()
+  - uid: system.fabric._service_partition_status.RECONFIGURING
+    id: RECONFIGURING
     parent: system.fabric._service_partition_status
     href: system.fabric._service_partition_status.yml
     langs:
@@ -177,7 +177,7 @@ references:
     nameWithType: StatefulServiceDescription.getMinReplicaSetSize()
     fullName: long system.fabric.StatefulServiceDescription.getMinReplicaSetSize()
     type: Method
-    summary: "<p>Ruft die zulässige Mindestgröße des Replikatsatzes Größe für diesen Dienst an.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>definiert die minimale Anzahl der Replikate, die Service Fabric in eine Ansicht der Replikatgruppe für eine bestimmte Partition beibehalten werden sollen. Beispielsweise, wenn die <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#targetReplicaSetSize</ref> ist auf fünf (5) (fehlerfrei) normalerweise dann dort festgelegt werden fünf Replikate in der Ansicht des Replikatsatzes. Diese Zahl wird jedoch bei Ausfällen verringern. Die <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#minReplicaSetSize</ref> definiert die minimale Anzahl der Replikate in der Ansicht z. B. wenn die <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#targetReplicaSetSize</ref> werden fünf und die <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#minReplicaSetSize</ref> drei, auch wenn es drei gleichzeitiger Ausfälle gibt (wodurch nur zwei verbleibenden Replikaten ausgeführt) werden noch haben drei Replikate in der Ansicht des Replikats und legen dann (zwei nach-oben und unten ein). Da verwendet mehrheitsquorummodus, der die Anzahl der Replikate, die in dieser Ansicht des mehrheitsquorummodus beibehalten der <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#minReplicaSetSize</ref> Untergrenze der Zuverlässigkeit von jeder Vorgang ist: im vorherigen Beispiel mit Ziel = 5 und Min = 3, mit 3 gleichzeitiger Ausfälle, es gibt zwei Replikate (und einem nach unten), verbleibende und die mehrheitsquorummodus von 3 (der <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#minReplicaSetSize</ref>) ist 2. Dies bedeutet, dass der primären weiterhin Vorgänge replizieren können, dass es sich bei das verbleibende sekundäre Replikat den Vorgang in der Reihenfolge für das Replikat angewendet werden muss (Partition) Fortschritte festlegen. Wenn die Anzahl von Replikaten unter der mehrheitsquorummodus von fällt die <ref refid=\"\" kindref=\"compound\">system.fabric.StatefulServiceDescription#minReplicaSetSize</ref> und weiteren Schreibvorgänge nicht zulässig sind. </p>"
+    summary: "<p>Ruft die zulässige Mindestgröße des Replikatsatzes Größe für diesen Dienst an.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>definiert die minimale Anzahl der Replikate, die Service Fabric in eine Ansicht der Replikatgruppe für eine bestimmte Partition beibehalten werden sollen. Beispielsweise, wenn die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#targetReplicaSetSize</xref> ist auf fünf (5) (fehlerfrei) normalerweise dann dort festgelegt werden fünf Replikate in der Ansicht des Replikatsatzes. Diese Zahl wird jedoch bei Ausfällen verringern. Die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#minReplicaSetSize</xref> definiert die minimale Anzahl der Replikate in der Ansicht z. B. wenn die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#targetReplicaSetSize</xref> werden fünf und die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#minReplicaSetSize</xref> drei, auch wenn es drei gleichzeitiger Ausfälle gibt (wodurch nur zwei verbleibenden Replikaten ausgeführt) werden noch haben drei Replikate in der Ansicht des Replikats und legen dann (zwei nach-oben und unten ein). Da verwendet mehrheitsquorummodus, der die Anzahl der Replikate, die in dieser Ansicht des mehrheitsquorummodus beibehalten der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#minReplicaSetSize</xref> Untergrenze der Zuverlässigkeit von jeder Vorgang ist: im vorherigen Beispiel mit Ziel = 5 und Min = 3, mit 3 gleichzeitiger Ausfälle, es gibt zwei Replikate (und einem nach unten), verbleibende und die mehrheitsquorummodus von 3 (der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#minReplicaSetSize</xref>) ist 2. Dies bedeutet, dass der primären weiterhin Vorgänge replizieren können, dass es sich bei das verbleibende sekundäre Replikat den Vorgang in der Reihenfolge für das Replikat angewendet werden muss (Partition) Fortschritte festlegen. Wenn die Anzahl von Replikaten unter der mehrheitsquorummodus von fällt die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceDescription#minReplicaSetSize</xref> und weiteren Schreibvorgänge nicht zulässig sind. </p>"
     syntax:
       content: public long getMinReplicaSetSize()
       return:

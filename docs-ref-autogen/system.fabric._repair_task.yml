@@ -313,12 +313,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 377
     package: system.fabric
-    summary: "<p>Ruft ein Objekt, das die Auswirkungen der Reparatur beschreibt.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Auswirkung muss angegeben werden, von der Executor für die Reparatur beim Übergang in den Zustand vorbereiten. Die auswirkungsobjekts bestimmt, welche Aktionen, die das System zur Vorbereitung der Auswirkungen der Reparatur, vor der Ausführung der Reparatur genehmigen dauert. </p>"
+    summary: "<p>Ruft ein Objekt, das die Auswirkungen der Reparatur beschreibt.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Auswirkung muss angegeben werden, von der Executor für die Reparatur beim Übergang in den Zustand vorbereiten. Die auswirkungsobjekts bestimmt, welche Aktionen, die das System zur Vorbereitung der Auswirkungen der Reparatur, vor der Ausführung der Reparatur genehmigen dauert. </p>"
     syntax:
       content: public RepairImpactDescription getImpact()
       return:
         type: system.fabric._repair_impact_description
-        description: '<p>Ein <xref href="system.fabric._repair_impact_description" data-throw-if-not-resolved="false"></xref> Objekt, das die Auswirkungen der Reparatur beschreibt. </p>'
+        description: '<p>Ein <xref uid="system.fabric._repair_impact_description" data-throw-if-not-resolved="false">system.fabric.RepairImpactDescription</xref> Objekt, das die Auswirkungen der Reparatur beschreibt. </p>'
   - uid: system.fabric._repair_task.getPreparingTimestamp()
     id: getPreparingTimestamp()
     parent: system.fabric._repair_task
@@ -438,7 +438,7 @@ items:
       content: public RepairTaskResult getResultStatus()
       return:
         type: system.fabric.repair._repair_task_result
-        description: '<p>Ein <xref href="system.fabric.repair._repair_task_result" data-throw-if-not-resolved="false"></xref> Wert, der das Gesamtergebnis der Taskausführung Reparatur beschreibt. </p>'
+        description: '<p>Ein <xref uid="system.fabric.repair._repair_task_result" data-throw-if-not-resolved="false">system.fabric.repair.RepairTaskResult</xref> Wert, der das Gesamtergebnis der Taskausführung Reparatur beschreibt. </p>'
   - uid: system.fabric._repair_task.getScope()
     id: getScope()
     parent: system.fabric._repair_task
@@ -455,12 +455,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 197
     package: system.fabric
-    summary: "<p>Ruft ein Objekt beschreibt den Bereich des Tasks \"Reparieren\".</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Bereich Aufgabe Reparieren bestimmt die Ressource, mit denen der Zugriff Überprüfungen ausgeführt werden, wenn die reparaturaufgabe erstellt, geändert, gelöscht oder abgerufen wird. Entitäten, die durch eine Reparatur betroffene müssen innerhalb des Bereichs des Tasks \"Reparieren\" enthalten sein. Beispielsweise erfordern Reparaturen diese Auswirkungen auf die Knoten an, dass die reparaturaufgabe unter dem Bereich der Cluster erstellt werden. </p>"
+    summary: "<p>Ruft ein Objekt beschreibt den Bereich des Tasks \"Reparieren\".</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Bereich Aufgabe Reparieren bestimmt die Ressource, mit denen der Zugriff Überprüfungen ausgeführt werden, wenn die reparaturaufgabe erstellt, geändert, gelöscht oder abgerufen wird. Entitäten, die durch eine Reparatur betroffene müssen innerhalb des Bereichs des Tasks \"Reparieren\" enthalten sein. Beispielsweise erfordern Reparaturen diese Auswirkungen auf die Knoten an, dass die reparaturaufgabe unter dem Bereich der Cluster erstellt werden. </p>"
     syntax:
       content: public RepairScopeIdentifier getScope()
       return:
         type: system.fabric._repair_scope_identifier
-        description: '<p>Ein <xref href="system.fabric._repair_scope_identifier" data-throw-if-not-resolved="false"></xref> -Objekt, das den Bereich des Tasks "Reparieren" beschreibt. </p>'
+        description: '<p>Ein <xref uid="system.fabric._repair_scope_identifier" data-throw-if-not-resolved="false">system.fabric.RepairScopeIdentifier</xref> -Objekt, das den Bereich des Tasks "Reparieren" beschreibt. </p>'
   - uid: system.fabric._repair_task.getState()
     id: getState()
     parent: system.fabric._repair_task
@@ -501,7 +501,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 310
     package: system.fabric
-    summary: "<p>Ruft ein Objekt beschreibt die Entitäten, die der angeforderten Reparaturversuch abzielt.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Ziel ist möglicherweise null, wenn die Aktion zum Reparieren keine Informationen über bestimmte Ziele erforderlich ist. </p>"
+    summary: "<p>Ruft ein Objekt beschreibt die Entitäten, die der angeforderten Reparaturversuch abzielt.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Ziel ist möglicherweise null, wenn die Aktion zum Reparieren keine Informationen über bestimmte Ziele erforderlich ist. </p>"
     syntax:
       content: public RepairTargetDescription getTarget()
       return:
@@ -547,7 +547,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 223
     package: system.fabric
-    summary: "<p>Ruft die Version des Tasks \"Reparieren\".</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>beim Erstellen eines neuen Reparaturtasks muss die Version auf 0 (null) festgelegt werden. Beim Aktualisieren von reparaturaufträgen über die UpdateRepairExecutionStateAsync-Methode wird die Version für Überprüfungen auf vollständige Parallelität verwendet. Wenn die Version auf NULL gesetzt wird, wird das Update nicht für Write-Konflikte überprüfen. Wenn die Version auf einen Wert ungleich 0 (null) festgelegt ist, wird das Update nur erfolgreich, wenn die tatsächliche aktuelle Version des Tasks \"Reparieren\" mit diesem Wert übereinstimmt. </p>"
+    summary: "<p>Ruft die Version des Tasks \"Reparieren\".</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>beim Erstellen eines neuen Reparaturtasks muss die Version auf 0 (null) festgelegt werden. Beim Aktualisieren von reparaturaufträgen über die UpdateRepairExecutionStateAsync-Methode wird die Version für Überprüfungen auf vollständige Parallelität verwendet. Wenn die Version auf NULL gesetzt wird, wird das Update nicht für Write-Konflikte überprüfen. Wenn die Version auf einen Wert ungleich 0 (null) festgelegt ist, wird das Update nur erfolgreich, wenn die tatsächliche aktuelle Version des Tasks \"Reparieren\" mit diesem Wert übereinstimmt. </p>"
     syntax:
       content: public long getVersion()
       return:
@@ -665,13 +665,13 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 393
     package: system.fabric
-    summary: "<p>Legt ein Objekt, das die Auswirkungen der Reparatur beschreibt.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Auswirkung muss angegeben werden, von der Executor für die Reparatur beim Übergang in den Zustand vorbereiten. Die auswirkungsobjekts bestimmt, welche Aktionen, die das System zur Vorbereitung der Auswirkungen der Reparatur, vor der Ausführung der Reparatur genehmigen dauert. </p>"
+    summary: "<p>Legt ein Objekt, das die Auswirkungen der Reparatur beschreibt.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Auswirkung muss angegeben werden, von der Executor für die Reparatur beim Übergang in den Zustand vorbereiten. Die auswirkungsobjekts bestimmt, welche Aktionen, die das System zur Vorbereitung der Auswirkungen der Reparatur, vor der Ausführung der Reparatur genehmigen dauert. </p>"
     syntax:
       content: public void setImpact(RepairImpactDescription impact)
       parameters:
         - id: impact
           type: system.fabric._repair_impact_description
-          description: '<p>Ein <xref href="system.fabric._repair_impact_description" data-throw-if-not-resolved="false"></xref> Objekt, das die Auswirkungen der Reparatur beschreibt. </p>'
+          description: '<p>Ein <xref uid="system.fabric._repair_impact_description" data-throw-if-not-resolved="false">system.fabric.RepairImpactDescription</xref> Objekt, das die Auswirkungen der Reparatur beschreibt. </p>'
   - uid: 'system.fabric._repair_task.setInternalValues(String,long,String,int,long,String,RepairTargetDescription,RepairImpactDescription,String,String,int,int,String,long,long,long,long,long,long,long,long,long,long,long,long,long,long)'
     id: 'setInternalValues(String,long,String,int,long,String,RepairTargetDescription,RepairImpactDescription,String,String,int,int,String,long,long,long,long,long,long,long,long,long,long,long,long,long,long)'
     parent: system.fabric._repair_task
@@ -819,7 +819,7 @@ items:
       parameters:
         - id: resultStatus
           type: system.fabric.repair._repair_task_result
-          description: '<p>Ein <xref href="system.fabric.repair._repair_task_result" data-throw-if-not-resolved="false"></xref> Wert, der das Gesamtergebnis der Taskausführung Reparatur beschreibt. </p>'
+          description: '<p>Ein <xref uid="system.fabric.repair._repair_task_result" data-throw-if-not-resolved="false">system.fabric.repair.RepairTaskResult</xref> Wert, der das Gesamtergebnis der Taskausführung Reparatur beschreibt. </p>'
   - uid: system.fabric._repair_task.setState(RepairTaskState)
     id: setState(RepairTaskState)
     parent: system.fabric._repair_task
@@ -861,7 +861,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 324
     package: system.fabric
-    summary: "<p>Legt ein Objekt, beschreibt die Entitäten, die der angeforderten Reparaturversuch abzielt.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Ziel ist möglicherweise null, wenn die Aktion zum Reparieren keine Informationen über bestimmte Ziele erforderlich ist. </p>"
+    summary: "<p>Legt ein Objekt, beschreibt die Entitäten, die der angeforderten Reparaturversuch abzielt.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Ziel ist möglicherweise null, wenn die Aktion zum Reparieren keine Informationen über bestimmte Ziele erforderlich ist. </p>"
     syntax:
       content: public void setTarget(RepairTargetDescription target)
       parameters:
@@ -884,7 +884,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/RepairTask.java
       startLine: 241
     package: system.fabric
-    summary: "<p>Legt die Version des Tasks \"Reparieren\".</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>beim Erstellen eines neuen Reparaturtasks muss die Version auf 0 (null) festgelegt werden. Beim Aktualisieren von reparaturaufträgen über die UpdateRepairExecutionStateAsync-Methode wird die Version für Überprüfungen auf vollständige Parallelität verwendet. Wenn die Version auf NULL gesetzt wird, wird das Update nicht für Write-Konflikte überprüfen. Wenn die Version auf einen Wert ungleich 0 (null) festgelegt ist, wird das Update nur erfolgreich, wenn die tatsächliche aktuelle Version des Tasks \"Reparieren\" mit diesem Wert übereinstimmt. </p>"
+    summary: "<p>Legt die Version des Tasks \"Reparieren\".</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>beim Erstellen eines neuen Reparaturtasks muss die Version auf 0 (null) festgelegt werden. Beim Aktualisieren von reparaturaufträgen über die UpdateRepairExecutionStateAsync-Methode wird die Version für Überprüfungen auf vollständige Parallelität verwendet. Wenn die Version auf NULL gesetzt wird, wird das Update nicht für Write-Konflikte überprüfen. Wenn die Version auf einen Wert ungleich 0 (null) festgelegt ist, wird das Update nur erfolgreich, wenn die tatsächliche aktuelle Version des Tasks \"Reparieren\" mit diesem Wert übereinstimmt. </p>"
     syntax:
       content: public void setVersion(long version)
       parameters:
@@ -1103,7 +1103,7 @@ references:
     summary: '<p>Gibt den Workflowstatus von reparaturaufträgen. Dieser Typ unterstützt die Service Fabric-Plattform; Es ist nicht vorgesehen, direkt aus Ihrem Code verwendet werden. </p>'
     syntax:
       content: public enum RepairTaskState
-  - uid: system.fabric.repair._repair_task_state.Invalid()
+  - uid: system.fabric.repair._repair_task_state.Invalid
     parent: system.fabric.repair._repair_task_state
     href: system.fabric.repair._repair_task_state.yml
     name: Invalid
@@ -1123,7 +1123,7 @@ references:
     summary: '<p>Definiert Flags, die erweiterte Statusinformationen über eine reparaturaufgabe bereitstellen. Dieser Typ unterstützt die Service Fabric-Plattform; Es ist nicht vorgesehen, direkt aus Ihrem Code verwendet werden. </p>'
     syntax:
       content: public enum RepairTaskFlags
-  - uid: system.fabric.repair._repair_task_flags.None()
+  - uid: system.fabric.repair._repair_task_flags.None
     parent: system.fabric.repair._repair_task_flags
     href: system.fabric.repair._repair_task_flags.yml
     name: None

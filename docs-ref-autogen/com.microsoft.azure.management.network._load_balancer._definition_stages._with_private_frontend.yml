@@ -15,16 +15,14 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 124
+      startLine: 149
     package: com.microsoft.azure.management.network
     summary: '<p>Die Phase von einer internen Load Balancer-Definition, die festlegen, dass um eine oder mehrere private Front-Ends zu definieren. </p>'
     syntax:
-      content: public interface WithPrivateFrontend extends LoadBalancer.DefinitionStages.WithNetworkSubnet
-    inheritedMembers:
-      - 'com.microsoft.azure.management.network._load_balancer._definition_stages._with_network_subnet.withFrontendSubnet(Network,String)'
+      content: public interface WithPrivateFrontend
   - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend.definePrivateFrontend(String)
     id: definePrivateFrontend(String)
     parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend
@@ -33,73 +31,46 @@ items:
       - java
     name: definePrivateFrontend(String name)
     nameWithType: LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend(String name)
-    fullName: LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithPrivateFrontendOrBackend> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend(String name)
+    fullName: LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend(String name)
     overload: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend.definePrivateFrontend*
     type: Method
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 125
+      startLine: 158
     package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Beginnt eine explizite Definition von einem neuen privaten (intern) Laden des Lastenausgleichsmoduls Front-End. </p>
+      <p>(Beachten Sie, dass private Front-Ends auch implizit als Teil einer Lastenausgleichs-, Regel für eingehende NAT oder eingehenden NAT-Pool-Definition durch Verweisen auf einem vorhandenen Subnetz innerhalb dieser Definitionen erstellt werden können.) </p>
     syntax:
-      content: public LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithPrivateFrontendOrBackend> definePrivateFrontend(String name)
+      content: public LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithCreate> definePrivateFrontend(String name)
       parameters:
         - id: name
           type: '26831127'
+          description: <p>der Name für das Front-End </p>
       return:
-        type: 9e278c36com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64a08ddfce
+        type: 9e278c36com.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
+        description: <p>die erste Phase der Definition eines neuen Front-End </p>
 references:
   - uid: '26831127'
     spec.java:
       - name: String
         fullName: String
-  - uid: 9e278c36com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64a08ddfce
+  - uid: 9e278c36com.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
     spec.java:
       - name: LoadBalancerPrivateFrontend.DefinitionStages.Blank<
         fullName: LoadBalancerPrivateFrontend.DefinitionStages.Blank<
-      - uid: com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64
-        name: LoadBalancer.DefinitionStages.WithPrivateFrontendOrBackend
-        fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontendOrBackend
-        href: com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64.yml
+      - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_create
+        name: LoadBalancer.DefinitionStages.WithCreate
+        fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithCreate
+        href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_create.yml
       - name: '>'
         fullName: '>'
   - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend.definePrivateFrontend*
     name: definePrivateFrontend
     nameWithType: LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend
-    fullName: LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithPrivateFrontendOrBackend> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend
+    fullName: LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend
     package: com.microsoft.azure.management.network
-  - uid: 'com.microsoft.azure.management.network._load_balancer._definition_stages._with_network_subnet.withFrontendSubnet(Network,String)'
-    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_network_subnet
-    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_network_subnet.yml
-    name: 'withFrontendSubnet(Network network, String subnetName)'
-    nameWithType: 'LoadBalancer.DefinitionStages.WithNetworkSubnet.withFrontendSubnet(Network network, String subnetName)'
-    fullName: 'WithPrivateFrontendOrBackend com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithNetworkSubnet.withFrontendSubnet(Network network, String subnetName)'
-    type: Method
-    summary: |-
-      <p>Weist das angegebene Subnetz aus dem ausgewählten Netzwerk als die standardmäßige private Front-End-der diesem Lastenausgleichsmodul, wodurch der Load Balancer interne. </p>
-      <p>Sobald die erste private Front-End-hinzugefügt wird, können nur private Front-Ends danach hinzugefügt werden. </p>
-    syntax:
-      content: 'public WithPrivateFrontendOrBackend withFrontendSubnet(Network network, String subnetName)'
-      parameters:
-        - id: network
-          type: com.microsoft.azure.management.network._network
-          description: <p>ein vorhandenes virtuelles Netzwerk </p>
-        - id: subnetName
-          type: '26831127'
-          description: <p>der Name eines vorhandenen Subnetzes im angegebenen Netzwerk </p>
-      return:
-        type: com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64
-        description: <p>die nächste Phase der definition </p>
-  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_network_subnet
-    parent: com.microsoft.azure.management.network
-    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_network_subnet.yml
-    name: LoadBalancer.DefinitionStages.WithNetworkSubnet
-    nameWithType: LoadBalancer.DefinitionStages.WithNetworkSubnet
-    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithNetworkSubnet
-    type: Interface
-    summary: '<p>Die Stufe der einen Load Balancer-Definition, die an einem vorhandenen Subnetz als das private Front-End ermöglicht. </p>'
-    syntax:
-      content: public interface WithNetworkSubnet
   - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_frontend
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_frontend.yml
@@ -109,14 +80,14 @@ references:
     type: Interface
     summary: '<p>Die Phase der einen Load Balancer-Definition, beschreibt die Art der das Front-End des Load Balancers: interne oder Internetzugriff. </p>'
     syntax:
-      content: 'public interface WithFrontend extends LoadBalancer.DefinitionStages.WithPublicIPAddress<WithPublicFrontendOrBackend>,LoadBalancer.DefinitionStages.WithPublicFrontend,LoadBalancer.DefinitionStages.WithPrivateFrontend'
-  - uid: com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64
+      content: 'public interface WithFrontend extends LoadBalancer.DefinitionStages.WithPublicFrontend,LoadBalancer.DefinitionStages.WithPrivateFrontend'
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_create
     parent: com.microsoft.azure.management.network
-    href: com.microsoft.azure.management.network._load_balancer._definition_sta01506d95eede28f60114acac161a0e64.yml
-    name: LoadBalancer.DefinitionStages.WithPrivateFrontendOrBackend
-    nameWithType: LoadBalancer.DefinitionStages.WithPrivateFrontendOrBackend
-    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontendOrBackend
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_create.yml
+    name: LoadBalancer.DefinitionStages.WithCreate
+    nameWithType: LoadBalancer.DefinitionStages.WithCreate
+    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithCreate
     type: Interface
-    summary: '<p>Die Phase von einer internen Load-Balancer-Definition ermöglicht wird, geben Sie eine andere private Front-End-oder starten die Angabe eines Back-Ends. </p>'
+    summary: '<p>Die Stufe der einen Load Balancer-Definition enthält alle erforderlichen Eingaben für die Ressource erstellt werden, jedoch lässt sich außerdem für alle anderen optionalen Einstellungen angegeben werden. </p>'
     syntax:
-      content: public interface WithPrivateFrontendOrBackend
+      content: 'public interface WithCreate extends Creatable<LoadBalancer>,Resource.DefinitionWithTags<WithCreate>,LoadBalancer.DefinitionStages.WithBackend,LoadBalancer.DefinitionStages.WithFrontend,LoadBalancer.DefinitionStages.WithProbe,LoadBalancer.DefinitionStages.WithSku'

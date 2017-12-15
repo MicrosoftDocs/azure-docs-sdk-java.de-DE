@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZone.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZone.java
-      startLine: 91
+      startLine: 135
     package: com.microsoft.azure.management.dns
     summary: <p>Die Gesamtheit der Definition des DNS-Zone. </p>
     syntax:
@@ -27,6 +27,7 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync()
       - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineAaaaRecordSet(String)
       - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineARecordSet(String)
+      - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineCNameRecordSet(String)
       - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineMXRecordSet(String)
       - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineNSRecordSet(String)
       - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.definePtrRecordSet(String)
@@ -35,6 +36,7 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
       - 'com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.withCNameRecordSet(String,String)'
+      - com.microsoft.azure.management.dns._dns_zone._definition_stages._with_e_tag_check.withETagCheck()
       - 'com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.withTag(String,String)'
       - 'com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.withTags(Map<String, String>)'
 references:
@@ -125,6 +127,25 @@ references:
       return:
         type: 25f1db7dcom.microsoft.azure.management.dns._dns_zone._definition_stages._with_createa08ddfce
         description: '<p>die Phase, die Konfiguration für die Datensatzgruppe ein darstellt. </p>'
+  - uid: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineCNameRecordSet(String)
+    parent: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set
+    href: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.yml
+    name: defineCNameRecordSet(String name)
+    nameWithType: DnsZone.DefinitionStages.WithRecordSet.defineCNameRecordSet(String name)
+    fullName: DnsRecordSet.DefinitionStages.CNameRecordSetBlank<WithCreate> com.microsoft.azure.management.dns.DnsZone.DefinitionStages.WithRecordSet.defineCNameRecordSet(String name)
+    type: Method
+    summary: |-
+      <p>Gibt einen CNAME-Ressourceneintragssatz Definition.</p>
+      <p></p>
+    syntax:
+      content: public DnsRecordSet.DefinitionStages.CNameRecordSetBlank<WithCreate> defineCNameRecordSet(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>Namen von den CNAME-Ressourceneintragssatz </p>
+      return:
+        type: 9d2125dccom.microsoft.azure.management.dns._dns_zone._definition_stages._with_createa08ddfce
+        description: <p>die nächste Phase der DNS-Zone definition </p>
   - uid: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.defineMXRecordSet(String)
     parent: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set
     href: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_record_set.yml
@@ -266,6 +287,21 @@ references:
       return:
         type: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_create
         description: <p>die nächste Phase der DNS-Zone definition </p>
+  - uid: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_e_tag_check.withETagCheck()
+    parent: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_e_tag_check
+    href: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_e_tag_check.yml
+    name: withETagCheck()
+    nameWithType: DnsZone.DefinitionStages.WithETagCheck.withETagCheck()
+    fullName: WithCreate com.microsoft.azure.management.dns.DnsZone.DefinitionStages.WithETagCheck.withETagCheck()
+    type: Method
+    summary: |-
+      <p>Gibt an, dass die If-None-Match-Header muss festgelegt, * um zu verhindern, aktualisieren eine vorhandene DNS-Zone.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withETagCheck()
+      return:
+        type: com.microsoft.azure.management.dns._dns_zone._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
   - uid: 'com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.withTag(String,String)'
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09
     href: com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.yml
@@ -293,13 +329,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -320,6 +356,6 @@ references:
     nameWithType: DnsZone.DefinitionStages.WithCreate
     fullName: com.microsoft.azure.management.dns.DnsZone.DefinitionStages.WithCreate
     type: Interface
-    summary: '<p>Die Phase der Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
+    summary: '<p>Die Phase der Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">WithCreate#create()</xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
     syntax:
       content: public interface WithCreate

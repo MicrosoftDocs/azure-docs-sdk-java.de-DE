@@ -15,10 +15,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerEndpoint.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerEndpoint.java
-      startLine: 582
+      startLine: 687
     package: com.microsoft.azure.management.trafficmanager
     summary: <p>Die Phase des Traffic Manager Profil Endpunkt Updates an die endpunktpriorität zulassen. </p>
     syntax:
@@ -37,10 +37,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerEndpoint.java
-      startLine: 590
+      startLine: 695
     package: com.microsoft.azure.management.trafficmanager
     summary: |-
-      <p>Gibt die Gewichtung für den Endpunkt, der verwendet wird, wird auf Grundlage von Prioritäten Routingmethode <xref href="com.microsoft.azure.management.trafficmanager._traffic_routing_method.PRIORITY()" data-throw-if-not-resolved="false"></xref> auf das Profil aktiviert.</p>
+      <p>Gibt die Gewichtung für den Endpunkt, der verwendet wird, wird auf Grundlage von Prioritäten Routingmethode <xref uid="com.microsoft.azure.management.trafficmanager._traffic_routing_method.PRIORITY" data-throw-if-not-resolved="false">TrafficRoutingMethod #PRIORITY</xref> auf das Profil aktiviert.</p>
       <p></p>
     syntax:
       content: public Update withRoutingPriority(int priority)
@@ -68,16 +68,18 @@ references:
     nameWithType: TrafficManagerEndpoint.Update
     fullName: com.microsoft.azure.management.trafficmanager.TrafficManagerEndpoint.Update
     type: Interface
-    summary: '<p>der Satz von Konfigurationen, die für alle Endpoint unabhängig von ihrem Typ aktualisiert werden können (<xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>und externen Profil geschachtelt). </p>'
+    summary: '<p>der Satz von Konfigurationen, die für alle Endpoint unabhängig von ihrem Typ aktualisiert werden können (<xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>und externen Profil geschachtelt). </p>'
     syntax:
-      content: 'public interface Update extends Settable<TrafficManagerProfile.Update>,TrafficManagerEndpoint.UpdateStages.WithRoutingWeight,TrafficManagerEndpoint.UpdateStages.WithRoutingPriority,TrafficManagerEndpoint.UpdateStages.WithTrafficDisabledOrEnabled'
-  - uid: com.microsoft.azure.management.trafficmanager._traffic_routing_method.PRIORITY()
+      content: 'public interface Update extends Settable<TrafficManagerProfile.Update>,TrafficManagerEndpoint.UpdateStages.WithRoutingWeight,TrafficManagerEndpoint.UpdateStages.WithRoutingPriority,TrafficManagerEndpoint.UpdateStages.WithGeographicLocation,TrafficManagerEndpoint.UpdateStages.WithTrafficDisabledOrEnabled'
+  - uid: com.microsoft.azure.management.trafficmanager._traffic_routing_method.PRIORITY
     parent: com.microsoft.azure.management.trafficmanager._traffic_routing_method
     href: com.microsoft.azure.management.trafficmanager._traffic_routing_method.yml
     name: PRIORITY
     nameWithType: TrafficRoutingMethod.PRIORITY
-    fullName: com.microsoft.azure.management.trafficmanager.TrafficRoutingMethod.PRIORITY
+    fullName: final TrafficRoutingMethod com.microsoft.azure.management.trafficmanager.TrafficRoutingMethod.PRIORITY
     type: Field
-    summary: <p>Enum-Wert Priorität. </p>
+    summary: <p>Statischer Wert Priorität für die <xref uid="com.microsoft.azure.management.trafficmanager._traffic_routing_method" data-throw-if-not-resolved="false">TrafficRoutingMethod</xref>. </p>
     syntax:
-      content: public PRIORITY=("Priority")
+      content: public static final TrafficRoutingMethod PRIORITY= new TrafficRoutingMethod("Priority")
+      return:
+        type: 93de0ef9com.microsoft.azure.management.trafficmanager._traffic_routing_method

@@ -20,7 +20,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/StatefulServiceFactory.java
       startLine: 14
     package: system.fabric
-    summary: '<p>Stellt eine zustandsbehaftete dienstfactory, die für das Erstellen von Replikaten, der einen bestimmten Typ von einem zustandsbehafteten Dienst zuständig ist. Mit einem zustandsbehafteten Dienst Factorys registriert sind die <xref href="system.fabric._fabric_runtime" data-throw-if-not-resolved="false"></xref> von Diensthosts über <ref refid="" kindref="compound">system.fabric.FabricRuntime#registerStatefulServiceFactory(java.lang.String,system.fabric.StatefulServiceFactory)</ref> oder <ref refid="" kindref="compound">system.fabric.FabricRuntime#registerStatefulServiceFactoryAsync(java.lang.String,system.fabric.StatefulServiceFactory,java.time.Duration)</ref></p>'
+    summary: '<p>Stellt eine zustandsbehaftete dienstfactory, die für das Erstellen von Replikaten, der einen bestimmten Typ von einem zustandsbehafteten Dienst zuständig ist. Mit einem zustandsbehafteten Dienst Factorys registriert sind die <xref uid="system.fabric._fabric_runtime" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref> von Diensthosts über <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime#registerStatefulServiceFactory (java.lang.String, system.fabric.StatefulServiceFactory)</xref> oder <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime#registerStatefulServiceFactoryAsync(java.lang.String,system.fabric.StatefulServiceFactory,java.time.Duration)</xref></p>'
     syntax:
       content: public interface StatefulServiceFactory
   - uid: 'system.fabric._stateful_service_factory.createReplica(String,URI,byte [],UUID,long)'
@@ -53,7 +53,7 @@ items:
           description: '<p>Der Fabric: / name (Uri) des Diensts, der dieses Replikat zugeordnet ist. </p>'
         - id: initializationData
           type: ccd9418d
-          description: '<p>Ein Bytearray, das die Initialisierungsdaten enthält, die als Teil dieser Dienste ursprünglich übergeben wurde <xref href="system.fabric._service_description" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>Ein Bytearray, das die Initialisierungsdaten enthält, die als Teil dieser Dienste ursprünglich übergeben wurde <xref uid="system.fabric._service_description" data-throw-if-not-resolved="false">system.fabric.ServiceDescription</xref>. </p>'
         - id: partitionId
           type: add9545a
           description: '<p>Die Partitions-ID des Typs, der eine GUID, die dieses Replikat zugeordnet ist. </p>'
@@ -62,18 +62,18 @@ items:
           description: <p>Die Replikat-ID vom Typ long für dieses Replikat. </p>
       return:
         type: system.fabric._stateful_service_replica
-        description: <p>Gibt <xref href="system.fabric._stateful_service_replica" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Gibt <xref uid="system.fabric._stateful_service_replica" data-throw-if-not-resolved="false">system.fabric.StatefulServiceReplica</xref>. </p>
     exceptions:
       - type: 84fa3863
         description: <p>Bei der instanzerstellung </p>
-      - type: 81e09942
+      - type: '81e09942'
         description: <p>Für den Zugriff voilation </p>
 references:
   - uid: 84fa3863
     spec.java:
       - name: InstantiationException
         fullName: InstantiationException
-  - uid: 81e09942
+  - uid: '81e09942'
     spec.java:
       - name: IllegalAccessException
         fullName: IllegalAccessException
@@ -111,7 +111,7 @@ references:
     nameWithType: StatefulServiceReplica
     fullName: system.fabric.StatefulServiceReplica
     type: Interface
-    summary: "<p>Definiert das Verhalten, die den Lebenszyklus eines Replikats, z. B. starten, Initialisierung, rollenänderungen und Herunterfahren bestimmt. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>zustandsbehaftete Diensttypen müssen diese Schnittstelle implementieren. Die Logik der einen zustandsbehafteten Diensttyp enthält, die auf primären Replikaten aufgerufen wird und Verhalten, die auf sekundären Replikaten aufgerufen wird. Wenn dienstautor vornehmen möchte mithilfe des bereitgestellten <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref>, und klicken Sie dann der Dienst, auch implementieren muss <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref> verwenden Sie die Implementierung der <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> , die vom bereitgestellt<xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Definiert das Verhalten, die den Lebenszyklus eines Replikats, z. B. starten, Initialisierung, rollenänderungen und Herunterfahren bestimmt. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>zustandsbehaftete Diensttypen müssen diese Schnittstelle implementieren. Die Logik der einen zustandsbehafteten Diensttyp enthält, die auf primären Replikaten aufgerufen wird und Verhalten, die auf sekundären Replikaten aufgerufen wird. Wenn dienstautor vornehmen möchte mithilfe des bereitgestellten <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref>, und klicken Sie dann der Dienst, auch implementieren muss <xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref> verwenden Sie die Implementierung der <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> , die vom bereitgestellt <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref></p>"
     syntax:
       content: public interface StatefulServiceReplica
   - uid: system.fabric._service_description
@@ -121,7 +121,7 @@ references:
     nameWithType: ServiceDescription
     fullName: system.fabric.ServiceDescription
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._service_description" data-throw-if-not-resolved="false"></xref> enthält alle Informationen, die zum Erstellen eines Diensts erforderlich sind. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._service_description" data-throw-if-not-resolved="false">ServiceDescription</xref> enthält alle Informationen, die zum Erstellen eines Diensts erforderlich sind. </p>'
     syntax:
       content: public class ServiceDescription
   - uid: system.fabric._fabric_runtime
@@ -131,6 +131,6 @@ references:
     nameWithType: FabricRuntime
     fullName: system.fabric.FabricRuntime
     type: Class
-    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref href="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false"></xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> ] oder direkt Diensttypen. </p>'
+    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref uid="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false">system.fabric.CodePackageActivationContext</xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref>, <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> ] oder direkt Diensttypen. </p>'
     syntax:
       content: public class FabricRuntime

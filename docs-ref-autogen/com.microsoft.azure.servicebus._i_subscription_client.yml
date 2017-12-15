@@ -9,6 +9,10 @@ items:
       - com.microsoft.azure.servicebus._i_subscription_client.addRuleAsync(RuleDescription)
       - 'com.microsoft.azure.servicebus._i_subscription_client.addRuleAsync(String,Filter)'
       - com.microsoft.azure.servicebus._i_subscription_client.getReceiveMode()
+      - com.microsoft.azure.servicebus._i_subscription_client.getRules()
+      - com.microsoft.azure.servicebus._i_subscription_client.getRulesAsync()
+      - com.microsoft.azure.servicebus._i_subscription_client.getSubscriptionName()
+      - com.microsoft.azure.servicebus._i_subscription_client.getTopicName()
       - com.microsoft.azure.servicebus._i_subscription_client.removeRule(String)
       - com.microsoft.azure.servicebus._i_subscription_client.removeRuleAsync(String)
     href: com.microsoft.azure.servicebus._i_subscription_client.yml
@@ -24,10 +28,11 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 8
+      startLine: 15
     package: com.microsoft.azure.servicebus
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._subscription_client\" data-throw-if-not-resolved=\"false\">SubscriptionClient</xref> für alle grundlegenden Interaktionen mit einem Service Bus-Abonnement verwendet werden kann. </p>"
     syntax:
-      content: 'public interface ISubscriptionClient extends IMessageEntity,IMessageSessionEntity'
+      content: public interface ISubscriptionClient extends IMessageEntityClient
     inheritedMembers:
       - com.microsoft.azure.servicebus._i_message_and_session_pump.abandon(UUID)
       - 'com.microsoft.azure.servicebus._i_message_and_session_pump.abandon(UUID,Map<String, Object>)'
@@ -45,15 +50,7 @@ items:
       - 'com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetterAsync(UUID,Map<String, Object>)'
       - 'com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetterAsync(UUID,String,String)'
       - 'com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetterAsync(UUID,String,String,Map<String, Object>)'
-      - com.microsoft.azure.servicebus._i_message_and_session_pump.defer(UUID)
-      - 'com.microsoft.azure.servicebus._i_message_and_session_pump.defer(UUID,Map<String, Object>)'
-      - com.microsoft.azure.servicebus._i_message_and_session_pump.deferAsync(UUID)
-      - 'com.microsoft.azure.servicebus._i_message_and_session_pump.deferAsync(UUID,Map<String, Object>)'
-      - com.microsoft.azure.servicebus._i_message_entity.getEntityPath()
-      - com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions()
-      - com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions(Instant)
-      - com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync()
-      - com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync(Instant)
+      - com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
       - com.microsoft.azure.servicebus._i_message_and_session_pump.getPrefetchCount()
       - com.microsoft.azure.servicebus._i_message_and_session_pump.registerMessageHandler(IMessageHandler)
       - 'com.microsoft.azure.servicebus._i_message_and_session_pump.registerMessageHandler(IMessageHandler,MessageHandlerOptions)'
@@ -74,13 +71,22 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 11
+      startLine: 31
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Fügt eine Regel auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: public void addRule(RuleDescription ruleDescription)
       parameters:
         - id: ruleDescription
           type: com.microsoft.azure.servicebus.rules._rule_description
+          description: '<p>Eine Beschreibung der Regel, die die Regel hinzuzufügende bereitstellt. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler Regel hinzufügen </p>
   - uid: 'com.microsoft.azure.servicebus._i_subscription_client.addRule(String,Filter)'
     id: 'addRule(String,Filter)'
     parent: com.microsoft.azure.servicebus._i_subscription_client
@@ -95,15 +101,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 13
+      startLine: 49
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Fügt eine Regel mit dem angegebenen Namen und <xref uid="" data-throw-if-not-resolved="false">Filter</xref> auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: 'public void addRule(String ruleName, Filter filter)'
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>Der Regelname </p>
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: <p>Die <xref uid="" data-throw-if-not-resolved="false">Filter</xref> hinzufügen. </p>
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler Regel hinzufügen </p>
   - uid: com.microsoft.azure.servicebus._i_subscription_client.addRuleAsync(RuleDescription)
     id: addRuleAsync(RuleDescription)
     parent: com.microsoft.azure.servicebus._i_subscription_client
@@ -118,15 +134,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 12
+      startLine: 39
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Fügt asynchron eine Regel auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> addRuleAsync(RuleDescription ruleDescription)
       parameters:
         - id: ruleDescription
           type: com.microsoft.azure.servicebus.rules._rule_description
+          description: '<p>Eine Beschreibung der Regel, die die Regel hinzuzufügende bereitstellt. </p>'
       return:
         type: db03ee24
+        description: '<p>das Hinzufügen einer CompletableFuture, die die ausstehenden Regel darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_subscription_client.addRuleAsync(String,Filter)'
     id: 'addRuleAsync(String,Filter)'
     parent: com.microsoft.azure.servicebus._i_subscription_client
@@ -141,17 +162,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 14
+      startLine: 58
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Fügt asynchron eine Regel mit dem angegebenen Namen und <xref uid="" data-throw-if-not-resolved="false">Filter</xref> auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> addRuleAsync(String ruleName, Filter filter)'
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>Der Regelname </p>
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: <p>Die <xref uid="" data-throw-if-not-resolved="false">Filter</xref> hinzufügen. </p>
       return:
         type: db03ee24
+        description: '<p>das Hinzufügen einer CompletableFuture, die die ausstehenden Regel darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_subscription_client.getReceiveMode()
     id: getReceiveMode()
     parent: com.microsoft.azure.servicebus._i_subscription_client
@@ -166,12 +193,115 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 10
+      startLine: 22
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Ruft die <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref> des aktuellen Empfängers</p>
+      <p></p>
     syntax:
       content: public ReceiveMode getReceiveMode()
       return:
         type: com.microsoft.azure.servicebus._receive_mode
+        description: <p>Der Receive-Modus. </p>
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getRules()
+    id: getRules()
+    parent: com.microsoft.azure.servicebus._i_subscription_client
+    href: com.microsoft.azure.servicebus._i_subscription_client.yml
+    langs:
+      - java
+    name: getRules()
+    nameWithType: ISubscriptionClient.getRules()
+    fullName: Collection<RuleDescription> com.microsoft.azure.servicebus.ISubscriptionClient.getRules()
+    overload: com.microsoft.azure.servicebus._i_subscription_client.getRules*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
+      startLine: 84
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Rufen Sie aller Regeln, die dem Abonnement zugeordnet ab.</p>
+      <p></p>
+    syntax:
+      content: public Collection<RuleDescription> getRules()
+      return:
+        type: 12ebb11acom.microsoft.azure.servicebus.rules._rule_descriptiona08ddfce
+        description: <p>Die Auflistung fo Regeln. </p>
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler bei Get-Regeln </p>
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getRulesAsync()
+    id: getRulesAsync()
+    parent: com.microsoft.azure.servicebus._i_subscription_client
+    href: com.microsoft.azure.servicebus._i_subscription_client.yml
+    langs:
+      - java
+    name: getRulesAsync()
+    nameWithType: ISubscriptionClient.getRulesAsync()
+    fullName: CompletableFuture<Collection<RuleDescription>> com.microsoft.azure.servicebus.ISubscriptionClient.getRulesAsync()
+    overload: com.microsoft.azure.servicebus._i_subscription_client.getRulesAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
+      startLine: 91
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Rufen Sie aller Regeln, die dem Abonnement zugeordnet ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<Collection<RuleDescription>> getRulesAsync()
+      return:
+        type: 9161dfdccom.microsoft.azure.servicebus.rules._rule_descriptione7daa122
+        description: '<p>eine CompletableFuture, die den ausstehenden Regeln Abrufvorgang darstellt. </p>'
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getSubscriptionName()
+    id: getSubscriptionName()
+    parent: com.microsoft.azure.servicebus._i_subscription_client
+    href: com.microsoft.azure.servicebus._i_subscription_client.yml
+    langs:
+      - java
+    name: getSubscriptionName()
+    nameWithType: ISubscriptionClient.getSubscriptionName()
+    fullName: String com.microsoft.azure.servicebus.ISubscriptionClient.getSubscriptionName()
+    overload: com.microsoft.azure.servicebus._i_subscription_client.getSubscriptionName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
+      startLine: 104
+    package: com.microsoft.azure.servicebus
+    summary: <p>Ruft den Namen des Abonnements ab. </p>
+    syntax:
+      content: public String getSubscriptionName()
+      return:
+        type: '26831127'
+        description: <p>Der Name des Abonnements. </p>
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getTopicName()
+    id: getTopicName()
+    parent: com.microsoft.azure.servicebus._i_subscription_client
+    href: com.microsoft.azure.servicebus._i_subscription_client.yml
+    langs:
+      - java
+    name: getTopicName()
+    nameWithType: ISubscriptionClient.getTopicName()
+    fullName: String com.microsoft.azure.servicebus.ISubscriptionClient.getTopicName()
+    overload: com.microsoft.azure.servicebus._i_subscription_client.getTopicName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
+      startLine: 98
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Ruft den Namen des Themas für dieses Abonnement ab.</p>
+      <p></p>
+    syntax:
+      content: public String getTopicName()
+      return:
+        type: '26831127'
+        description: <p>der Name des Themas </p>
   - uid: com.microsoft.azure.servicebus._i_subscription_client.removeRule(String)
     id: removeRule(String)
     parent: com.microsoft.azure.servicebus._i_subscription_client
@@ -186,13 +316,22 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 16
+      startLine: 75
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Entfernt die Regel für das Abonnement durch RuleName identifiziert</p>
+      <p></p>
     syntax:
       content: public void removeRule(String ruleName)
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>Der Name der Regel. </p>
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler Remove-Regel </p>
   - uid: com.microsoft.azure.servicebus._i_subscription_client.removeRuleAsync(String)
     id: removeRuleAsync(String)
     parent: com.microsoft.azure.servicebus._i_subscription_client
@@ -207,21 +346,34 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/ISubscriptionClient.java
-      startLine: 15
+      startLine: 66
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Entfernt asynchron die Regel für das Abonnement durch RuleName identifiziert</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> removeRuleAsync(String ruleName)
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>de Name der Regel. </p>
       return:
         type: db03ee24
+        description: '<p>das Entfernen einer CompletableFuture, die die ausstehenden Regel darstellt. </p>'
 references:
   - uid: com.microsoft.azure.servicebus._i_subscription_client.getReceiveMode*
     name: getReceiveMode
     nameWithType: ISubscriptionClient.getReceiveMode
     fullName: ReceiveMode com.microsoft.azure.servicebus.ISubscriptionClient.getReceiveMode
     package: com.microsoft.azure.servicebus
+  - uid: 8256ba40
+    spec.java:
+      - name: InterruptedException
+        fullName: InterruptedException
+  - uid: 73fec9fb
+    spec.java:
+      - name: ServiceBusException
+        fullName: ServiceBusException
   - uid: com.microsoft.azure.servicebus._i_subscription_client.addRule*
     name: addRule
     nameWithType: ISubscriptionClient.addRule
@@ -250,6 +402,46 @@ references:
     nameWithType: ISubscriptionClient.removeRule
     fullName: void com.microsoft.azure.servicebus.ISubscriptionClient.removeRule
     package: com.microsoft.azure.servicebus
+  - uid: 12ebb11acom.microsoft.azure.servicebus.rules._rule_descriptiona08ddfce
+    spec.java:
+      - name: Collection<
+        fullName: Collection<
+      - uid: com.microsoft.azure.servicebus.rules._rule_description
+        name: RuleDescription
+        fullName: com.microsoft.azure.servicebus.rules.RuleDescription
+        href: com.microsoft.azure.servicebus.rules._rule_description.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getRules*
+    name: getRules
+    nameWithType: ISubscriptionClient.getRules
+    fullName: Collection<RuleDescription> com.microsoft.azure.servicebus.ISubscriptionClient.getRules
+    package: com.microsoft.azure.servicebus
+  - uid: 9161dfdccom.microsoft.azure.servicebus.rules._rule_descriptione7daa122
+    spec.java:
+      - name: CompletableFuture<Collection<
+        fullName: CompletableFuture<Collection<
+      - uid: com.microsoft.azure.servicebus.rules._rule_description
+        name: RuleDescription
+        fullName: com.microsoft.azure.servicebus.rules.RuleDescription
+        href: com.microsoft.azure.servicebus.rules._rule_description.yml
+      - name: '>>'
+        fullName: '>>'
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getRulesAsync*
+    name: getRulesAsync
+    nameWithType: ISubscriptionClient.getRulesAsync
+    fullName: CompletableFuture<Collection<RuleDescription>> com.microsoft.azure.servicebus.ISubscriptionClient.getRulesAsync
+    package: com.microsoft.azure.servicebus
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getTopicName*
+    name: getTopicName
+    nameWithType: ISubscriptionClient.getTopicName
+    fullName: String com.microsoft.azure.servicebus.ISubscriptionClient.getTopicName
+    package: com.microsoft.azure.servicebus
+  - uid: com.microsoft.azure.servicebus._i_subscription_client.getSubscriptionName*
+    name: getSubscriptionName
+    nameWithType: ISubscriptionClient.getSubscriptionName
+    fullName: String com.microsoft.azure.servicebus.ISubscriptionClient.getSubscriptionName
+    package: com.microsoft.azure.servicebus
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.abandon(UUID)
   - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.abandon(UUID,Map<String, Object>)'
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.abandonAsync(UUID)
@@ -261,6 +453,7 @@ references:
     nameWithType: ICloseable.close()
     fullName: void com.microsoft.azure.servicebus.ICloseable.close()
     type: Method
+    summary: '<p>Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Beim Aufrufen dieser Methode entspricht der aufrufen. Diese Methode blockiert, bis diese wird das Objekt geschlossen. </p>'
     syntax:
       content: public void close()
   - uid: com.microsoft.azure.servicebus._i_closeable.closeAsync()
@@ -270,10 +463,12 @@ references:
     nameWithType: ICloseable.closeAsync()
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.ICloseable.closeAsync()
     type: Method
+    summary: '<p>Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde. Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben. Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist. </p>'
     syntax:
       content: public CompletableFuture<Void> closeAsync()
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die das Schließen des dieses Objekt darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.complete(UUID)
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.completeAsync(UUID)
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetter(UUID)
@@ -284,95 +479,39 @@ references:
   - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetterAsync(UUID,Map<String, Object>)'
   - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetterAsync(UUID,String,String)'
   - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.deadLetterAsync(UUID,String,String,Map<String, Object>)'
-  - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.defer(UUID)
-  - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.defer(UUID,Map<String, Object>)'
-  - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.deferAsync(UUID)
-  - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.deferAsync(UUID,Map<String, Object>)'
-  - uid: com.microsoft.azure.servicebus._i_message_entity.getEntityPath()
-    parent: com.microsoft.azure.servicebus._i_message_entity
-    href: com.microsoft.azure.servicebus._i_message_entity.yml
+  - uid: com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
+    parent: com.microsoft.azure.servicebus._i_message_entity_client
+    href: com.microsoft.azure.servicebus._i_message_entity_client.yml
     name: getEntityPath()
-    nameWithType: IMessageEntity.getEntityPath()
-    fullName: String com.microsoft.azure.servicebus.IMessageEntity.getEntityPath()
+    nameWithType: IMessageEntityClient.getEntityPath()
+    fullName: String com.microsoft.azure.servicebus.IMessageEntityClient.getEntityPath()
     type: Method
+    summary: |-
+      <p>Ruft den Pfad der Entität, die dieser Client wird ab, Senden von Nachrichten an oder Empfang von Nachrichten aus.</p>
+      <p></p>
     syntax:
       content: public String getEntityPath()
       return:
         type: '26831127'
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions()
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessions()
-    nameWithType: IMessageSessionEntity.getMessageSessions()
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessions()
-    type: Method
-    syntax:
-      content: public Collection<IMessageSession> getMessageSessions()
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions(Instant)
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessions(Instant lastUpdatedTime)
-    nameWithType: IMessageSessionEntity.getMessageSessions(Instant lastUpdatedTime)
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessions(Instant lastUpdatedTime)
-    type: Method
-    syntax:
-      content: public Collection<IMessageSession> getMessageSessions(Instant lastUpdatedTime)
-      parameters:
-        - id: lastUpdatedTime
-          type: 328f8254
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync()
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessionsAsync()
-    nameWithType: IMessageSessionEntity.getMessageSessionsAsync()
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessionsAsync()
-    type: Method
-    syntax:
-      content: public CompletableFuture<Collection<IMessageSession>> getMessageSessionsAsync()
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync(Instant)
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessionsAsync(Instant lastUpdatedTime)
-    nameWithType: IMessageSessionEntity.getMessageSessionsAsync(Instant lastUpdatedTime)
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessionsAsync(Instant lastUpdatedTime)
-    type: Method
-    syntax:
-      content: public CompletableFuture<Collection<IMessageSession>> getMessageSessionsAsync(Instant lastUpdatedTime)
-      parameters:
-        - id: lastUpdatedTime
-          type: 328f8254
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122
+        description: '<p>Pfad der Entität, der diesem Client eine Verbindung herstellt </p>'
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.getPrefetchCount()
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.registerMessageHandler(IMessageHandler)
   - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.registerMessageHandler(IMessageHandler,MessageHandlerOptions)'
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.registerSessionHandler(ISessionHandler)
   - uid: 'com.microsoft.azure.servicebus._i_message_and_session_pump.registerSessionHandler(ISessionHandler,SessionHandlerOptions)'
   - uid: com.microsoft.azure.servicebus._i_message_and_session_pump.setPrefetchCount(int)
-  - uid: com.microsoft.azure.servicebus._i_message_entity
+  - uid: com.microsoft.azure.servicebus._i_message_entity_client
     parent: com.microsoft.azure.servicebus
-    href: com.microsoft.azure.servicebus._i_message_entity.yml
-    name: IMessageEntity
-    nameWithType: IMessageEntity
-    fullName: com.microsoft.azure.servicebus.IMessageEntity
+    href: com.microsoft.azure.servicebus._i_message_entity_client.yml
+    name: IMessageEntityClient
+    nameWithType: IMessageEntityClient
+    fullName: com.microsoft.azure.servicebus.IMessageEntityClient
     type: Interface
+    summary: |-
+      <p>Stellt einen messaging-Client mit einer Azure Service Bus-Entität dar.</p>
+      <p></p>
     syntax:
-      content: public interface IMessageEntity extends ICloseable
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity
-    parent: com.microsoft.azure.servicebus
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: IMessageSessionEntity
-    nameWithType: IMessageSessionEntity
-    fullName: com.microsoft.azure.servicebus.IMessageSessionEntity
-    type: Interface
-    syntax:
-      content: public interface IMessageSessionEntity
+      content: public interface IMessageEntityClient extends ICloseable
   - uid: com.microsoft.azure.servicebus._subscription_client
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._subscription_client.yml
@@ -389,6 +528,9 @@ references:
     nameWithType: ReceiveMode
     fullName: com.microsoft.azure.servicebus.ReceiveMode
     type: Enum
+    summary: |-
+      <p>Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</p>
+      <p></p>
     syntax:
       content: public enum ReceiveMode
   - uid: com.microsoft.azure.servicebus._subscription_client.getReceiveMode()
@@ -398,10 +540,14 @@ references:
     nameWithType: SubscriptionClient.getReceiveMode()
     fullName: ReceiveMode com.microsoft.azure.servicebus.SubscriptionClient.getReceiveMode()
     type: Method
+    summary: |-
+      <p>Ruft die <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref> des aktuellen Empfängers</p>
+      <p></p>
     syntax:
       content: public ReceiveMode getReceiveMode()
       return:
         type: com.microsoft.azure.servicebus._receive_mode
+        description: <p>Der Receive-Modus. </p>
   - uid: com.microsoft.azure.servicebus._subscription_client.addRule(RuleDescription)
     parent: com.microsoft.azure.servicebus._subscription_client
     href: com.microsoft.azure.servicebus._subscription_client.yml
@@ -409,11 +555,15 @@ references:
     nameWithType: SubscriptionClient.addRule(RuleDescription ruleDescription)
     fullName: void com.microsoft.azure.servicebus.SubscriptionClient.addRule(RuleDescription ruleDescription)
     type: Method
+    summary: |-
+      <p>Fügt eine Regel auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: public void addRule(RuleDescription ruleDescription)
       parameters:
         - id: ruleDescription
           type: com.microsoft.azure.servicebus.rules._rule_description
+          description: '<p>Eine Beschreibung der Regel, die die Regel hinzuzufügende bereitstellt. </p>'
   - uid: com.microsoft.azure.servicebus.rules._rule_description
     parent: com.microsoft.azure.servicebus.rules
     href: com.microsoft.azure.servicebus.rules._rule_description.yml
@@ -421,6 +571,9 @@ references:
     nameWithType: RuleDescription
     fullName: com.microsoft.azure.servicebus.rules.RuleDescription
     type: Class
+    summary: |-
+      <p>Darstellung einer Regel für Servicebus-Themen definiert.</p>
+      <p></p>
     syntax:
       content: public class RuleDescription
   - uid: com.microsoft.azure.servicebus.primitives._service_bus_exception
@@ -430,7 +583,7 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
     syntax:
       content: public class ServiceBusException
   - uid: com.microsoft.azure.servicebus._subscription_client.addRuleAsync(RuleDescription)
@@ -440,13 +593,18 @@ references:
     nameWithType: SubscriptionClient.addRuleAsync(RuleDescription ruleDescription)
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.SubscriptionClient.addRuleAsync(RuleDescription ruleDescription)
     type: Method
+    summary: |-
+      <p>Fügt asynchron eine Regel auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> addRuleAsync(RuleDescription ruleDescription)
       parameters:
         - id: ruleDescription
           type: com.microsoft.azure.servicebus.rules._rule_description
+          description: '<p>Eine Beschreibung der Regel, die die Regel hinzuzufügende bereitstellt. </p>'
       return:
         type: db03ee24
+        description: '<p>das Hinzufügen einer CompletableFuture, die die ausstehenden Regel darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._subscription_client.addRule(String,Filter)'
     parent: com.microsoft.azure.servicebus._subscription_client
     href: com.microsoft.azure.servicebus._subscription_client.yml
@@ -454,13 +612,18 @@ references:
     nameWithType: 'SubscriptionClient.addRule(String ruleName, Filter filter)'
     fullName: 'void com.microsoft.azure.servicebus.SubscriptionClient.addRule(String ruleName, Filter filter)'
     type: Method
+    summary: |-
+      <p>Fügt eine Regel mit dem angegebenen Namen und <xref uid="" data-throw-if-not-resolved="false">Filter</xref> auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: 'public void addRule(String ruleName, Filter filter)'
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>Der Regelname </p>
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: <p>Die <xref uid="" data-throw-if-not-resolved="false">Filter</xref> hinzufügen. </p>
   - uid: com.microsoft.azure.servicebus.rules._filter
     parent: com.microsoft.azure.servicebus.rules
     href: com.microsoft.azure.servicebus.rules._filter.yml
@@ -468,6 +631,9 @@ references:
     nameWithType: Filter
     fullName: com.microsoft.azure.servicebus.rules.Filter
     type: Class
+    summary: |-
+      <p>Stellt einen Filterausdruck, der für eine Nachricht für ein-Thema ausgewertet wird. Diese Clientbibliothek bietet Unterstützung für die Erstellung nur begrenzte Filtertypen. Dies ist eine leere Schnittstelle als Root-Schnittstelle für alle unterstützten Filtertypen dienen.</p>
+      <p></p>
     syntax:
       content: public class Filter
   - uid: 'com.microsoft.azure.servicebus._subscription_client.addRuleAsync(String,Filter)'
@@ -477,15 +643,21 @@ references:
     nameWithType: 'SubscriptionClient.addRuleAsync(String ruleName, Filter filter)'
     fullName: 'CompletableFuture<Void> com.microsoft.azure.servicebus.SubscriptionClient.addRuleAsync(String ruleName, Filter filter)'
     type: Method
+    summary: |-
+      <p>Fügt asynchron eine Regel mit dem angegebenen Namen und <xref uid="" data-throw-if-not-resolved="false">Filter</xref> auf das aktuelle Abonnement zum Filtern der Nachrichten im Thema zum Abonnement erreicht.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> addRuleAsync(String ruleName, Filter filter)'
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>Der Regelname </p>
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: <p>Die <xref uid="" data-throw-if-not-resolved="false">Filter</xref> hinzufügen. </p>
       return:
         type: db03ee24
+        description: '<p>das Hinzufügen einer CompletableFuture, die die ausstehenden Regel darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._subscription_client.removeRuleAsync(String)
     parent: com.microsoft.azure.servicebus._subscription_client
     href: com.microsoft.azure.servicebus._subscription_client.yml
@@ -493,13 +665,18 @@ references:
     nameWithType: SubscriptionClient.removeRuleAsync(String ruleName)
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.SubscriptionClient.removeRuleAsync(String ruleName)
     type: Method
+    summary: |-
+      <p>Entfernt asynchron die Regel für das Abonnement durch RuleName identifiziert</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> removeRuleAsync(String ruleName)
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>de Name der Regel. </p>
       return:
         type: db03ee24
+        description: '<p>das Entfernen einer CompletableFuture, die die ausstehenden Regel darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._subscription_client.removeRule(String)
     parent: com.microsoft.azure.servicebus._subscription_client
     href: com.microsoft.azure.servicebus._subscription_client.yml
@@ -507,8 +684,70 @@ references:
     nameWithType: SubscriptionClient.removeRule(String ruleName)
     fullName: void com.microsoft.azure.servicebus.SubscriptionClient.removeRule(String ruleName)
     type: Method
+    summary: |-
+      <p>Entfernt die Regel für das Abonnement durch RuleName identifiziert</p>
+      <p></p>
     syntax:
       content: public void removeRule(String ruleName)
       parameters:
         - id: ruleName
           type: '26831127'
+          description: <p>Der Name der Regel. </p>
+  - uid: com.microsoft.azure.servicebus._subscription_client.getRules()
+    parent: com.microsoft.azure.servicebus._subscription_client
+    href: com.microsoft.azure.servicebus._subscription_client.yml
+    name: getRules()
+    nameWithType: SubscriptionClient.getRules()
+    fullName: Collection<RuleDescription> com.microsoft.azure.servicebus.SubscriptionClient.getRules()
+    type: Method
+    summary: |-
+      <p>Rufen Sie aller Regeln, die dem Abonnement zugeordnet ab.</p>
+      <p></p>
+    syntax:
+      content: public Collection<RuleDescription> getRules()
+      return:
+        type: 12ebb11acom.microsoft.azure.servicebus.rules._rule_descriptiona08ddfce
+        description: <p>Die Auflistung fo Regeln. </p>
+  - uid: com.microsoft.azure.servicebus._subscription_client.getRulesAsync()
+    parent: com.microsoft.azure.servicebus._subscription_client
+    href: com.microsoft.azure.servicebus._subscription_client.yml
+    name: getRulesAsync()
+    nameWithType: SubscriptionClient.getRulesAsync()
+    fullName: CompletableFuture<Collection<RuleDescription>> com.microsoft.azure.servicebus.SubscriptionClient.getRulesAsync()
+    type: Method
+    summary: |-
+      <p>Rufen Sie aller Regeln, die dem Abonnement zugeordnet ab.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<Collection<RuleDescription>> getRulesAsync()
+      return:
+        type: 9161dfdccom.microsoft.azure.servicebus.rules._rule_descriptione7daa122
+        description: '<p>eine CompletableFuture, die den ausstehenden Regeln Abrufvorgang darstellt. </p>'
+  - uid: com.microsoft.azure.servicebus._subscription_client.getTopicName()
+    parent: com.microsoft.azure.servicebus._subscription_client
+    href: com.microsoft.azure.servicebus._subscription_client.yml
+    name: getTopicName()
+    nameWithType: SubscriptionClient.getTopicName()
+    fullName: String com.microsoft.azure.servicebus.SubscriptionClient.getTopicName()
+    type: Method
+    summary: |-
+      <p>Ruft den Namen des Themas für dieses Abonnement ab.</p>
+      <p></p>
+    syntax:
+      content: public String getTopicName()
+      return:
+        type: '26831127'
+        description: <p>der Name des Themas </p>
+  - uid: com.microsoft.azure.servicebus._subscription_client.getSubscriptionName()
+    parent: com.microsoft.azure.servicebus._subscription_client
+    href: com.microsoft.azure.servicebus._subscription_client.yml
+    name: getSubscriptionName()
+    nameWithType: SubscriptionClient.getSubscriptionName()
+    fullName: String com.microsoft.azure.servicebus.SubscriptionClient.getSubscriptionName()
+    type: Method
+    summary: <p>Ruft den Namen des Abonnements ab. </p>
+    syntax:
+      content: public String getSubscriptionName()
+      return:
+        type: '26831127'
+        description: <p>Der Name des Abonnements. </p>

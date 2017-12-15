@@ -39,7 +39,7 @@ items:
       - 'com.microsoft.azure.storage.file._cloud_file.downloadToFile(final String,final AccessCondition,FileRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.file._cloud_file.exists()
       - 'com.microsoft.azure.storage.file._cloud_file.exists(final AccessCondition,FileRequestOptions,OperationContext)'
-      - com.microsoft.azure.storage.file._cloud_file.fileServiceClient()
+      - com.microsoft.azure.storage.file._cloud_file.fileServiceClient
       - 'com.microsoft.azure.storage.file._cloud_file.generateSharedAccessSignature(final SharedAccessFilePolicy,final SharedAccessFileHeaders,final String)'
       - 'com.microsoft.azure.storage.file._cloud_file.generateSharedAccessSignature(final SharedAccessFilePolicy,final SharedAccessFileHeaders,final String,final IPRange,final SharedAccessProtocols)'
       - 'com.microsoft.azure.storage.file._cloud_file.generateSharedAccessSignature(final SharedAccessFilePolicy,final String)'
@@ -62,7 +62,7 @@ items:
       - 'com.microsoft.azure.storage.file._cloud_file.openWriteExisting(AccessCondition,FileRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long)
       - 'com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long,AccessCondition,FileRequestOptions,OperationContext)'
-      - com.microsoft.azure.storage.file._cloud_file.parent()
+      - com.microsoft.azure.storage.file._cloud_file.parent
       - com.microsoft.azure.storage.file._cloud_file.resize(long)
       - 'com.microsoft.azure.storage.file._cloud_file.resize(long,AccessCondition,FileRequestOptions,OperationContext)'
       - 'com.microsoft.azure.storage.file._cloud_file.setMetadata(final HashMap<String, String>)'
@@ -77,8 +77,8 @@ items:
       - 'com.microsoft.azure.storage.file._cloud_file.startCopy(final CloudFile,final AccessCondition,final AccessCondition,FileRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.file._cloud_file.startCopy(final URI)
       - 'com.microsoft.azure.storage.file._cloud_file.startCopy(final URI,final AccessCondition,final AccessCondition,FileRequestOptions,OperationContext)'
-      - com.microsoft.azure.storage.file._cloud_file.streamMinimumReadSizeInBytes()
-      - com.microsoft.azure.storage.file._cloud_file.streamWriteSizeInBytes()
+      - com.microsoft.azure.storage.file._cloud_file.streamMinimumReadSizeInBytes
+      - com.microsoft.azure.storage.file._cloud_file.streamWriteSizeInBytes
       - com.microsoft.azure.storage.file._cloud_file.updateEtagAndLastModifiedFromResponse(HttpURLConnection)
       - com.microsoft.azure.storage.file._cloud_file.updateLengthFromResponse(HttpURLConnection)
       - 'com.microsoft.azure.storage.file._cloud_file.upload(final InputStream,final long)'
@@ -130,7 +130,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 234
+      startLine: 237
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Bricht eine laufende Azure-Dateikopiervorgang ab.</p>
@@ -146,6 +146,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.abortCopy(final String,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'abortCopy(final String,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -160,7 +161,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 258
+      startLine: 262
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Bricht eine laufende Azure-Dateikopiervorgang ab.</p>
@@ -173,18 +174,19 @@ items:
           description: '<p>Ein <code>String</code> Objekt, das den Kopiervorgang identifiziert. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Azure-Dateidienst darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Azure-Dateidienst darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.clearRange(final long,final long)'
     id: 'clearRange(final long,final long)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -199,7 +201,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 543
+      startLine: 550
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht einen Bereich aus einer Datei an. </p>
@@ -217,6 +219,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.clearRange(final long,final long,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'clearRange(final long,final long,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -231,7 +234,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 572
+      startLine: 580
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht einen Bereich aus einer Datei mit der angegebenen Lease-ID, die Anforderungsoptionen und den Vorgangskontext. </p>
@@ -248,16 +251,17 @@ items:
           description: <p>Ein <code>long</code> der die Länge des zu löschenden Datenbereichs in Bytes darstellt. </p>
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.CloudFile(final CloudFile)
     id: CloudFile(final CloudFile)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -272,7 +276,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 184
+      startLine: 186
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt eine Instanz der Klasse durch Kopieren von Werten aus einer anderen Cloud-Datei an.</p>
@@ -282,7 +286,7 @@ items:
       parameters:
         - id: otherFile
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._cloud_file" data-throw-if-not-resolved="false"></xref></code> Objekt, das die zu kopierende Datei darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._cloud_file" data-throw-if-not-resolved="false">CloudFile</xref></code> Objekt, das die zu kopierende Datei darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.CloudFile(final StorageUri)
     id: CloudFile(final StorageUri)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -300,14 +304,14 @@ items:
       startLine: 142
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Erstellt eine Instanz der Klasse mit der angegebenen Absolute <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Erstellt eine Instanz der Klasse mit der angegebenen Absolute <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref>.</p>
       <p></p>
     syntax:
       content: public CloudFile(final StorageUri fileAbsoluteUri)
       parameters:
         - id: fileAbsoluteUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den absoluten URI zur Datei darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den absoluten URI zur Datei darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -327,23 +331,24 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 174
+      startLine: 176
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Erstellt eine Instanz der Klasse mit der angegebenen Absolute <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> und Anmeldeinformationen.</p>
+      <p>Erstellt eine Instanz der Klasse mit der angegebenen Absolute <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> und Anmeldeinformationen.</p>
       <p></p>
     syntax:
       content: 'public CloudFile(final StorageUri fileAbsoluteUri, final StorageCredentials credentials)'
       parameters:
         - id: fileAbsoluteUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den absoluten URI zur Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den absoluten URI zur Datei darstellt. </p>'
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.CloudFile(final StorageUri,final String,final CloudFileShare)'
     id: 'CloudFile(final StorageUri,final String,final CloudFileShare)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -358,7 +363,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 213
+      startLine: 215
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt eine Instanz der Klasse mit der angegebenen Adresse, die Freigabe und den Client.</p>
@@ -368,13 +373,13 @@ items:
       parameters:
         - id: uri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> , die das Dateiverzeichnis Adresse darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> , die das Dateiverzeichnis Adresse darstellt. </p>'
         - id: fileName
           type: 3d93591e
           description: '<p>Ein <code>String</code> , die den Namen der Datei darstellt. </p>'
         - id: share
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false"></xref> Objekt, das die zugeordneten Dateifreigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref> Objekt, das die zugeordneten Dateifreigabe darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.CloudFile(final URI)
     id: CloudFile(final URI)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -419,7 +424,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 158
+      startLine: 159
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt eine Instanz der Klasse mit dem angegebenen absolute URI und die Anmeldeinformationen.</p>
@@ -432,10 +437,11 @@ items:
           description: '<p>Ein <code>java.net.URI</code> Objekt, das den absoluten URI zur Datei darstellt. </p>'
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.create(final long)
     id: create(final long)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -450,7 +456,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 598
+      startLine: 607
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt eine Datei. Wenn die Datei bereits vorhanden ist, wird dadurch ersetzt werden.</p>
@@ -464,6 +470,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.create(final long,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'create(final long,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -478,7 +485,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 623
+      startLine: 633
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt eine Datei mit der Bedingung für den angegebenen Zugriff und Anforderungsoptionen Vorgangskontext. Wenn die Datei bereits vorhanden ist, wird dadurch ersetzt werden.</p>
@@ -491,16 +498,17 @@ items:
           description: '<p>Ein <code>long</code> der die Größe in Bytes, die Datei darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.delete()
     id: delete()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -515,7 +523,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 686
+      startLine: 697
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Datei.</p>
@@ -527,6 +535,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.delete(final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'delete(final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -541,7 +550,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 708
+      startLine: 720
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Datei mit der Bedingung für den angegebenen Zugriff, die Anforderungsoptionen und den Vorgangskontext.</p>
@@ -551,18 +560,19 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.deleteIfExists()
     id: deleteIfExists()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -577,7 +587,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 732
+      startLine: 746
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Datei an, falls vorhanden.</p>
@@ -590,6 +600,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.deleteIfExists(final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'deleteIfExists(final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -604,7 +615,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 756
+      startLine: 771
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Datei an, falls vorhanden, mit der Bedingung für den angegebenen Zugriff, die Anforderungsoptionen und den Vorgangskontext.</p>
@@ -614,19 +625,20 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4dda0764
         description: "<p>\r\n\r\n  <code>true</code>Wenn die Datei vorhanden war und gelöscht wurde; andernfalls<code>false</code></p>"
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.download(final OutputStream)
     id: download(final OutputStream)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -641,7 +653,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 825
+      startLine: 840
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt den Inhalt einer Datei in einen Datenstrom herunter.</p>
@@ -651,7 +663,7 @@ items:
       parameters:
         - id: outStream
           type: 688beaca
-          description: '<p>Ein <code><ref refid="" kindref="compound">OutputStream</ref></code> Objekt, das den Zieldatenstrom darstellt. </p>'
+          description: '<p>Ein <code><xref uid="" data-throw-if-not-resolved="false">OutputStream</xref></code> Objekt, das den Zieldatenstrom darstellt. </p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -671,7 +683,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 848
+      startLine: 863
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt den Inhalt einer Datei in einen Stream mit dem angegebenen Anforderungsoptionen und Vorgangskontext herunter.</p>
@@ -684,13 +696,13 @@ items:
           description: '<p>Ein <code>OutputStream</code> Objekt, das den Zieldatenstrom darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -710,7 +722,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1467
+      startLine: 1482
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Füllt Eigenschaften und Metadaten einer Datei. </p>
@@ -737,7 +749,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1493
+      startLine: 1508
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Füllt Eigenschaften und Metadaten mit den angegebenen Optionen und des vorgangskontexts einer Datei. </p>
@@ -748,13 +760,13 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -774,7 +786,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1226
+      startLine: 1241
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt eine Auflistung von Datei-Bereiche und für deren Start- und Enddaten Byte-Offsets an. </p>
@@ -802,7 +814,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1252
+      startLine: 1267
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt eine Auflistung von Datei Bereiche und deren Start- und endbyteoffsets mithilfe des angegebenen Anforderungskontexts Optionen und Vorgang beenden.</p>
@@ -812,13 +824,13 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 573b1e0bcom.microsoft.azure.storage.file._file_rangea08ddfce
         description: '<p>Ein <code>ArrayList</code> Objekt, das den Satz von Datei-Bereiche und für deren Start- und Enddaten endbyteoffsets darstellt.</p>'
@@ -839,7 +851,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 875
+      startLine: 890
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt den Inhalt einer Datei in einen Datenstrom herunter.</p>
@@ -855,7 +867,7 @@ items:
           description: <p>Ein <code>Long</code> die Zahl der zu lesenden Bytes oder <code>null</code>. </p>
         - id: outStream
           type: 688beaca
-          description: '<p>Ein <code><ref refid="" kindref="compound">OutputStream</ref></code> Objekt, das den Zieldatenstrom darstellt. </p>'
+          description: '<p>Ein <code><xref uid="" data-throw-if-not-resolved="false">OutputStream</xref></code> Objekt, das den Zieldatenstrom darstellt. </p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -875,7 +887,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 903
+      startLine: 918
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt den Inhalt einer Datei in einen Stream mit dem angegebenen Anforderungsoptionen und Vorgangskontext herunter.</p>
@@ -891,16 +903,16 @@ items:
           description: <p>Ein <code>Long</code> die Zahl der zu lesenden Bytes oder <code>null</code>. </p>
         - id: outStream
           type: 688beaca
-          description: '<p>Ein <code><ref refid="" kindref="compound">OutputStream</ref></code> Objekt, das den Zieldatenstrom darstellt. </p>'
+          description: '<p>Ein <code><xref uid="" data-throw-if-not-resolved="false">OutputStream</xref></code> Objekt, das den Zieldatenstrom darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -920,7 +932,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 943
+      startLine: 958
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich von Bytes aus der Datei in den angegebenen Bytepuffer.</p>
@@ -942,13 +954,13 @@ items:
           description: <p>Ein <code>int</code> der stellt des Offsets in der Byte-Puffer geschrieben werden soll. </p>
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, mit dem die Ausführung des Vorgangs nachzuverfolgen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt verwendet, um die Ausführung des Vorgangs nachzuverfolgen. </p>'
       return:
         type: cd225469
     exceptions:
@@ -968,7 +980,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 979
+      startLine: 994
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich von Bytes aus der Datei in den angegebenen Bytepuffer.</p>
@@ -1006,7 +1018,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1012
+      startLine: 1027
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich von Bytes aus der Datei mithilfe des angegebenen Anforderungskontexts Optionen und der Vorgang im angegebenen Byte-Puffer.</p>
@@ -1028,13 +1040,13 @@ items:
           description: '<p>Ein <code>int</code> , der das Byteoffset, verwenden Sie als Ausgangspunkt für das Ziel darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: cd225469
     exceptions:
@@ -1054,7 +1066,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1178
+      startLine: 1193
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt eine Datei in eine Zeichenfolge, die mit der Plattform-Standard-Codierung.</p>
@@ -1082,7 +1094,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1206
+      startLine: 1221
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt eine Datei in eine Zeichenfolge, die mit der angegebenen Codierung.</p>
@@ -1095,13 +1107,13 @@ items:
           description: '<p>Ein <code>String</code> der den Namen des dem Zeichensatz zu verwenden, um den Inhalt darstellt. Bei null wird der Plattform standardcodierung verwendet wird. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: '26831127'
         description: <p>Ein <code>String</code> der Inhalt der Datei darstellt.</p>
@@ -1123,7 +1135,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1045
+      startLine: 1060
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich von Bytes aus der Datei in den angegebenen Bytepuffer.</p>
@@ -1156,7 +1168,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1073
+      startLine: 1088
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich von Bytes aus der Datei mithilfe des angegebenen Anforderungskontexts Optionen und der Vorgang im angegebenen Byte-Puffer.</p>
@@ -1172,13 +1184,13 @@ items:
           description: '<p>Ein <code>long</code> , der das Byteoffset, verwenden Sie als Ausgangspunkt für das Ziel darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: cd225469
     exceptions:
@@ -1198,7 +1210,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1110
+      startLine: 1125
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Eine Datei herunterlädt.</p>
@@ -1227,7 +1239,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1134
+      startLine: 1149
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Eine Datei herunterlädt.</p>
@@ -1240,13 +1252,13 @@ items:
           description: '<p>Ein <code>String</code> die bezeichnet den Pfad zur Datei, die erstellt werden soll. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1265,7 +1277,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1559
+      startLine: 1574
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Überprüft, um festzustellen, ob die Datei vorhanden ist.</p>
@@ -1292,7 +1304,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1583
+      startLine: 1598
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Prüft, ob die Datei vorhanden ist, verwenden die Bedingung für den angegebenen Zugriff anfordern, Optionen und den Vorgang.</p>
@@ -1302,21 +1314,21 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4dda0764
         description: "<p>\r\n\r\n  <code>true</code>Wenn die Datei vorhanden, andernfalls ist <code>false</code>.</p>"
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
-  - uid: com.microsoft.azure.storage.file._cloud_file.fileServiceClient()
-    id: fileServiceClient()
+  - uid: com.microsoft.azure.storage.file._cloud_file.fileServiceClient
+    id: fileServiceClient
     parent: com.microsoft.azure.storage.file._cloud_file
     href: com.microsoft.azure.storage.file._cloud_file.yml
     langs:
@@ -1349,7 +1361,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1695
+      startLine: 1710
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt eine SAS für die Datei unter Verwendung des angegebenen Richtlinie Gruppenbezeichner und SAS-dateiheadern zurück. Hinweis Diese Version enthält keine das führende "?".</p>
@@ -1359,10 +1371,10 @@ items:
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_policy
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false"></xref></code> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false">SharedAccessFilePolicy</xref></code> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: headers
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_headers
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._shared_access_file_headers" data-throw-if-not-resolved="false"></xref></code> Objekt, das die optionalen Headerwerte, legen Sie für eine Datei, die mit dieser SAS zugegriffen darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._shared_access_file_headers" data-throw-if-not-resolved="false">SharedAccessFileHeaders</xref></code> Objekt, das die optionalen Headerwerte, legen Sie für eine Datei, die mit dieser SAS zugegriffen darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: '<p>Ein <code>String</code> , die auf Freigabeebene Zugriffsrichtlinie darstellt.</p>'
@@ -1390,7 +1402,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1729
+      startLine: 1744
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt eine SAS für die Datei unter Verwendung des angegebenen Richtlinie Gruppenbezeichner und SAS-dateiheadern zurück. Hinweis Diese Version enthält keine das führende "?".</p>
@@ -1400,19 +1412,19 @@ items:
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_policy
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false"></xref></code> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false">SharedAccessFilePolicy</xref></code> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: headers
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_headers
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._shared_access_file_headers" data-throw-if-not-resolved="false"></xref></code> Objekt, das die optionalen Headerwerte, legen Sie für eine Datei, die mit dieser SAS zugegriffen darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._shared_access_file_headers" data-throw-if-not-resolved="false">SharedAccessFileHeaders</xref></code> Objekt, das die optionalen Headerwerte, legen Sie für eine Datei, die mit dieser SAS zugegriffen darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: '<p>Ein <code>String</code> , die auf Freigabeebene Zugriffsrichtlinie darstellt. </p>'
         - id: ipRange
           type: 93de0ef9com.microsoft.azure.storage._i_p_range
-          description: <p>Ein <xref href="com.microsoft.azure.storage._i_p_range" data-throw-if-not-resolved="false"></xref> Objekt mit dem Bereich der zulässigen IP-Adressen. </p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._i_p_range" data-throw-if-not-resolved="false">"iprange"</xref> Objekt mit dem Bereich der zulässigen IP-Adressen. </p>
         - id: protocols
           type: 93de0ef9com.microsoft.azure.storage._shared_access_protocols
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._shared_access_protocols" data-throw-if-not-resolved="false"></xref> , die die zulässigen Internetprotokolle darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._shared_access_protocols" data-throw-if-not-resolved="false">SharedAccessProtocols</xref> , die die zulässigen Internetprotokolle darstellt.</p>'
       return:
         type: '26831127'
         description: '<p>Ein <code>String</code> , die die SAS-Signatur darstellt.</p>'
@@ -1437,7 +1449,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1668
+      startLine: 1683
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt eine SAS für die Datei unter Verwendung des angegebenen Richtlinie Gruppenbezeichner und SAS-dateiheadern zurück. Hinweis Diese Version enthält keine das führende "?".</p>
@@ -1447,7 +1459,7 @@ items:
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_policy
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false"></xref></code> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false">SharedAccessFilePolicy</xref></code> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: '<p>Ein <code>String</code> , die auf Freigabeebene Zugriffsrichtlinie darstellt.</p>'
@@ -1473,7 +1485,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1778
+      startLine: 1793
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt das Azure-Dateidienst Kopierstatus zurück.</p>
@@ -1482,7 +1494,7 @@ items:
       content: public CopyState getCopyState()
       return:
         type: com.microsoft.azure.storage.file._copy_state
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._copy_state" data-throw-if-not-resolved="false"></xref> Objekt, das den Kopierstatus der Datei darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._copy_state" data-throw-if-not-resolved="false">CopyState</xref> Objekt, das den Kopierstatus der Datei darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.getMetadata()
     id: getMetadata()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1497,7 +1509,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2781
+      startLine: 2818
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt die Metadaten für die Datei.</p>
@@ -1521,7 +1533,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2790
+      startLine: 2827
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt den Namen der Datei zurück.</p>
@@ -1545,7 +1557,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2805
+      startLine: 2842
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt das Dateielement übergeordnete zurück.</p>
@@ -1554,7 +1566,7 @@ items:
       content: public final CloudFileDirectory getParent()
       return:
         type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_directory
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekt, das das übergeordnete Verzeichnis für die Datei darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekt, das das übergeordnete Verzeichnis für die Datei darstellt.</p>'
     overridden: com.microsoft.azure.storage.file._list_file_item.getParent()
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
@@ -1575,7 +1587,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2647
+      startLine: 2683
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Ruft den Namen der übergeordneten für einen Datei-URI ab.</p>
@@ -1585,10 +1597,10 @@ items:
       parameters:
         - id: resourceAddress
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Ressourcen-URI darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Ressourcen-URI darstellt. </p>'
         - id: share
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false"></xref> Objekt, das die Dateifreigabe darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref> Objekt, das die Dateifreigabe darstellt.</p>'
       return:
         type: '26831127'
         description: <p>Ein <code>String</code> der übergeordnete Adresse für einen Datei-URI darstellt.</p>
@@ -1608,7 +1620,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2822
+      startLine: 2859
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt die Eigenschaften der Datei zurück.</p>
@@ -1617,7 +1629,7 @@ items:
       content: public final FileProperties getProperties()
       return:
         type: 93de0ef9com.microsoft.azure.storage.file._file_properties
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_properties" data-throw-if-not-resolved="false"></xref> Objekt, das die Eigenschaften der Datei darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_properties" data-throw-if-not-resolved="false">FileProperties</xref> Objekt, das die Eigenschaften der Datei darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.getServiceClient()
     id: getServiceClient()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1632,7 +1644,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2831
+      startLine: 2868
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt den File-Dienstclient der Datei zugeordnet.</p>
@@ -1641,7 +1653,7 @@ items:
       content: public final CloudFileClient getServiceClient()
       return:
         type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_client
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref> Objekt, das den Client darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref> -Objekt, das den Client darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.getShare()
     id: getShare()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1656,7 +1668,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2765
+      startLine: 2802
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt die Freigabe der Datei zurück.</p>
@@ -1665,7 +1677,7 @@ items:
       content: public final CloudFileShare getShare()
       return:
         type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false"></xref> Objekt, das die Freigabe der Datei darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref> Objekt, das die Freigabe der Datei darstellt. </p>'
     overridden: com.microsoft.azure.storage.file._list_file_item.getShare()
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
@@ -1686,7 +1698,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2861
+      startLine: 2898
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt die Liste der URIs für alle Speicherorte.</p>
@@ -1695,7 +1707,7 @@ items:
       content: public final StorageUri getStorageUri()
       return:
         type: 93de0ef9com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> , die die Liste der URIs für alle Speicherorte darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> , die die Liste der URIs für alle Speicherorte darstellt. </p>'
     overridden: com.microsoft.azure.storage.file._list_file_item.getStorageUri()
   - uid: com.microsoft.azure.storage.file._cloud_file.getStreamMinimumReadSizeInBytes()
     id: getStreamMinimumReadSizeInBytes()
@@ -1711,16 +1723,16 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2851
+      startLine: 2888
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Gibt die minimale Größe gelesen, bei Verwendung einer <xref href="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Gibt die minimale Größe gelesen, bei Verwendung einer <xref uid="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false">FileInputStream</xref>.</p>
       <p></p>
     syntax:
       content: public final int getStreamMinimumReadSizeInBytes()
       return:
         type: cd225469
-        description: <p>Ein <code>int</code> steht die minimale Größe in Bytes gelesen werden bei Verwendung einer <xref href="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Ein <code>int</code> steht die minimale Größe in Bytes gelesen werden bei Verwendung einer <xref uid="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false">FileInputStream</xref> Objekt. </p>
   - uid: com.microsoft.azure.storage.file._cloud_file.getStreamWriteSizeInBytes()
     id: getStreamWriteSizeInBytes()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1735,10 +1747,10 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2841
+      startLine: 2878
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Ruft die Anzahl der Byte des Puffers beim Schreiben in eine <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Ruft die Anzahl der Byte des Puffers beim Schreiben in eine <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref>.</p>
       <p></p>
     syntax:
       content: public final int getStreamWriteSizeInBytes()
@@ -1759,7 +1771,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2965
+      startLine: 3002
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt den transformierten URI für die Ressource zurück, wenn die angegebenen Anmeldeinformationen Transformation erfordern.</p>
@@ -1769,10 +1781,10 @@ items:
       parameters:
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 93de0ef9com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das die transformierten URI darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die transformierten URI darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1792,7 +1804,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2871
+      startLine: 2908
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Der URI für diese Datei zurückgegeben.</p>
@@ -1817,11 +1829,11 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1793
+      startLine: 1808
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Öffnet einen Datei Eingabedatenstrom zum Herunterladen der Datei an. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file.setStreamMinimumReadSizeInBytes(final int)" data-throw-if-not-resolved="false"></xref> so konfigurieren Sie die Größe gelesene.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file.setStreamMinimumReadSizeInBytes(final int)" data-throw-if-not-resolved="false">CloudFile#setStreamMinimumReadSizeInBytes(int)</xref> so konfigurieren Sie die Größe gelesene.</p>
       <p></p>
     syntax:
       content: public final FileInputStream openRead()
@@ -1845,24 +1857,24 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1820
+      startLine: 1835
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Öffnet einen Datei Eingabedatenstrom zum Herunterladen der Datei mit dem angegebenen Anforderungsoptionen und Vorgangskontext. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file.setStreamMinimumReadSizeInBytes(final int)" data-throw-if-not-resolved="false"></xref> so konfigurieren Sie die Größe gelesene.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file.setStreamMinimumReadSizeInBytes(final int)" data-throw-if-not-resolved="false">setStreamMinimumReadSizeInBytes(int)</xref> so konfigurieren Sie die Größe gelesene.</p>
       <p></p>
     syntax:
       content: 'public final FileInputStream openRead(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 93de0ef9com.microsoft.azure.storage.file._file_input_stream
         description: '<p>Ein <code>InputStream</code> Objekt, das den Stream, verwenden Sie zum Lesen aus der Datei darstellt.</p>'
@@ -1883,7 +1895,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1841
+      startLine: 1857
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Öffnet ein ausgabestreamobjekt zum Schreiben von Daten in die Datei an. Die Datei muss bereits vorhanden sein, und alle vorhandenen Daten werden möglicherweise überschrieben.</p>
@@ -1892,10 +1904,11 @@ items:
       content: public FileOutputStream openWriteExisting()
       return:
         type: com.microsoft.azure.storage.file._file_output_stream
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.openWriteExisting(AccessCondition,FileRequestOptions,OperationContext)'
     id: 'openWriteExisting(AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1910,7 +1923,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1867
+      startLine: 1884
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Öffnet ein ausgabestreamobjekt zum Schreiben von Daten in die Datei mithilfe des angegebenen Anforderungskontexts Optionen und den Vorgang. Die Datei muss bereits vorhanden sein, und alle vorhandenen Daten werden möglicherweise überschrieben.</p>
@@ -1920,19 +1933,20 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage.file._file_output_stream
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long)
     id: openWriteNew(final long)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1947,11 +1961,11 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1889
+      startLine: 1907
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Öffnet ein ausgabestreamobjekt zum Schreiben von Daten in die Datei an. Die Datei noch nicht vorhanden und wird mit der angegebenen Länge erstellt werden. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben. </p>
-      <p>Um nicht überschrieben werden, und stattdessen löst einen Fehler aus, und verwenden Sie die <xref href="com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long,AccessCondition,FileRequestOptions,OperationContext)" data-throw-if-not-resolved="false"></xref> überladen, mit dem entsprechenden <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Um nicht überschrieben werden, und stattdessen löst einen Fehler aus, und verwenden Sie die <xref uid="com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long,AccessCondition,FileRequestOptions,OperationContext)" data-throw-if-not-resolved="false">OpenWriteNew (long, AccessCondition FileRequestOptions, OperationContext)</xref> überladen, mit dem entsprechenden <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref>.</p>
       <p></p>
     syntax:
       content: public FileOutputStream openWriteNew(final long length)
@@ -1961,10 +1975,11 @@ items:
           description: '<p>Ein <code>long</code> der die Länge des Datenstroms zu erstellen, in Bytes darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.file._file_output_stream
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long,AccessCondition,FileRequestOptions,OperationContext)'
     id: 'openWriteNew(final long,AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -1979,11 +1994,11 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1921
+      startLine: 1940
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Öffnet ein ausgabestreamobjekt zum Schreiben von Daten in die Datei mithilfe der angegebenen Lease-ID, die Optionen und Vorgang Anforderungskontext. Die Datei ist nicht erforderlich, noch vorhanden und werden mit der angegebenen Länge erstellt. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben. </p>
-      <p>Um nicht überschrieben werden, und stattdessen löst einen Fehler aus, übergeben Sie einer <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> mit generiert <xref href="com.microsoft.azure.storage._access_condition.generateIfNotExistsCondition()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Um nicht überschrieben werden, und stattdessen löst einen Fehler aus, übergeben Sie einer <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> mit generiert <xref uid="com.microsoft.azure.storage._access_condition.generateIfNotExistsCondition()" data-throw-if-not-resolved="false">AccessCondition#generateIfNotExistsCondition()</xref>.</p>
       <p></p>
     syntax: &ref_3
       content: 'public FileOutputStream openWriteNew(final long length, AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
@@ -1993,21 +2008,22 @@ items:
           description: '<p>Ein <code>long</code> der die Länge des Datenstroms zu erstellen, in Bytes darstellt. </p>'
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage.file._file_output_stream
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref> Objekt, mit dem Schreiben von Daten in die Datei.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
-  - uid: com.microsoft.azure.storage.file._cloud_file.parent()
-    id: parent()
+      - type: '44102508'
+  - uid: com.microsoft.azure.storage.file._cloud_file.parent
+    id: parent
     parent: com.microsoft.azure.storage.file._cloud_file
     href: com.microsoft.azure.storage.file._cloud_file.yml
     langs:
@@ -2040,7 +2056,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2485
+      startLine: 2518
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Ändert die Größe der Datei in die angegebene Größe.</p>
@@ -2054,6 +2070,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.resize(long,AccessCondition,FileRequestOptions,OperationContext)'
     id: 'resize(long,AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2068,7 +2085,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2508
+      startLine: 2542
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Ändert die Größe der Datei in die angegebene Größe.</p>
@@ -2081,16 +2098,17 @@ items:
           description: <p>Ein <code>long</code> der die Größe der Datei in Bytes darstellt. </p>
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.setMetadata(final HashMap<String, String>)'
     id: 'setMetadata(final HashMap<String, String>)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2105,7 +2123,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2891
+      startLine: 2928
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Legt die Metadaten für die Datei fest.</p>
@@ -2132,7 +2150,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2901
+      startLine: 2938
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Legt die Eigenschaften für die Datei fest.</p>
@@ -2142,7 +2160,7 @@ items:
       parameters:
         - id: properties
           type: 93de0ef9com.microsoft.azure.storage.file._file_properties
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_properties" data-throw-if-not-resolved="false"></xref> Objekt, das die Eigenschaften zugewiesen wird, in der Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_properties" data-throw-if-not-resolved="false">FileProperties</xref> Objekt, das die Eigenschaften zugewiesen wird, in der Datei darstellt. </p>'
       return:
         type: 3f6357ce
   - uid: com.microsoft.azure.storage.file._cloud_file.setShare(final CloudFileShare)
@@ -2159,7 +2177,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2881
+      startLine: 2918
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Legt die Freigabe für die Datei fest.</p>
@@ -2169,7 +2187,7 @@ items:
       parameters:
         - id: share
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false"></xref> Objekt, das die Freigabe zugewiesen wird, in der Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref> Objekt, das die Freigabe zugewiesen wird, in der Datei darstellt. </p>'
       return:
         type: 3f6357ce
   - uid: com.microsoft.azure.storage.file._cloud_file.setStorageUri(final StorageUri)
@@ -2186,7 +2204,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2911
+      startLine: 2948
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Legt die Liste der URIs für alle Speicherorte.</p>
@@ -2196,7 +2214,7 @@ items:
       parameters:
         - id: storageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> , die die Liste der URIs für alle Speicherorte darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> , die die Liste der URIs für alle Speicherorte darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.setStreamMinimumReadSizeInBytes(final int)
     id: setStreamMinimumReadSizeInBytes(final int)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2211,17 +2229,17 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2924
+      startLine: 2961
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Legt die minimale gelesen Größe bei Verwendung einer <xref href="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Legt die minimale gelesen Größe bei Verwendung einer <xref uid="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false">FileInputStream</xref>.</p>
       <p></p>
     syntax: &ref_2
       content: public void setStreamMinimumReadSizeInBytes(final int minimumReadSize)
       parameters:
         - id: minimumReadSize
           type: cd225469
-          description: '<p>Ein <code>int</code> , die die minimale Anzahl von Bytes, die beim Lesen aus einer Datei bei der Verwendung gepuffert stellt ein <xref href="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false"></xref> Objekt. Muss größer als oder gleich 16 KB sein. </p>'
+          description: '<p>Ein <code>int</code> , die die minimale Anzahl von Bytes, die beim Lesen aus einer Datei bei der Verwendung gepuffert stellt eine <xref uid="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false">FileInputStream</xref> Objekt. Muss größer als oder gleich 16 KB sein. </p>'
     exceptions:
       - type: 3c87bd19
         description: <p>Wenn <code>minimumReadSize</code> beträgt weniger als 16 KB. </p>
@@ -2239,17 +2257,17 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2942
+      startLine: 2979
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Legt die Anzahl der Byte des Puffers beim Schreiben in eine <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Legt die Anzahl der Byte des Puffers beim Schreiben in eine <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref>.</p>
       <p></p>
     syntax:
       content: public void setStreamWriteSizeInBytes(final int streamWriteSizeInBytes)
       parameters:
         - id: streamWriteSizeInBytes
           type: cd225469
-          description: '<p>Ein <code>int</code> die stellt der Anzahl der Bytes, die bei der Verwendung der Puffer ein <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref> Objekt, das im Bereich von 512 Byte auf 4 MB, inklusive.</p>'
+          description: '<p>Ein <code>int</code> die stellt der Anzahl der Bytes, die bei der Verwendung Puffer eine <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref> Objekt, das im Bereich von 512 Byte auf 4 MB, inklusive.</p>'
     exceptions:
       - type: 3c87bd19
         description: <p>Wenn <code>streamWriteSizeInBytes</code> ist kleiner als 512 Byte oder größer als 4 MB. </p>
@@ -2267,7 +2285,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 321
+      startLine: 325
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Fordert den Dienst starten, ein Blob-Inhalte, Eigenschaften und Metadaten in eine neue Datei kopieren.</p>
@@ -2299,7 +2317,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 353
+      startLine: 357
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Anforderungen, die der Dienst zu kopierende Inhalt, Eigenschaften und Metadaten einer Datei in eine neue Datei, die mit der angegebenen zugriffsbedingungen lease-ID, die Optionen und Vorgangskontext.</p>
@@ -2312,16 +2330,16 @@ items:
           description: '<p>Ein <code>CloudBlob</code> -Objekt, das Quell-Blob kopiert darstellt. </p>'
         - id: sourceAccessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Quell-Blob darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Quell-Blob darstellt. </p>'
         - id: destinationAccessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Zieldatei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Zieldatei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <ref refid="" kindref="compound">BlobRequestOptions</ref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<ref refid="" kindref="compound">CloudBlobClient</ref>). </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3d93591e
         description: <p>Ein <code>String</code> der der Kopiervorgang zugeordnete Kopie-ID darstellt.</p>
@@ -2343,7 +2361,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 380
+      startLine: 384
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Fordert den Dienst starten, Inhalte, Eigenschaften und Metadaten einer Azure-Datei in eine neue Azure-Datei kopieren.</p>
@@ -2353,7 +2371,7 @@ items:
       parameters:
         - id: sourceFile
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._cloud_file" data-throw-if-not-resolved="false"></xref></code> Objekt, das die Quelle Azure, die zu kopierende Datei darstellt.</p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._cloud_file" data-throw-if-not-resolved="false">CloudFile</xref></code> Objekt, das die Quelle Azure, die zu kopierende Datei darstellt.</p>'
       return:
         type: 3d93591e
         description: <p>Ein <code>String</code> der der Kopiervorgang zugeordnete Kopie-ID darstellt.</p>
@@ -2375,7 +2393,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 412
+      startLine: 416
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Anforderungen, die der Dienst starten, kopieren ein Azure-Dateidienst Inhalt, Eigenschaften und Metadaten in eine neue Azure-Datei, mit der angegebenen zugriffsbedingungen lease-ID, die Optionen und Vorgangskontext.</p>
@@ -2385,19 +2403,19 @@ items:
       parameters:
         - id: sourceFile
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._cloud_file" data-throw-if-not-resolved="false"></xref></code> Objekt, das die, die zu kopierende Quelldatei darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._cloud_file" data-throw-if-not-resolved="false">CloudFile</xref></code> Objekt, das die, die zu kopierende Quelldatei darstellt. </p>'
         - id: sourceAccessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Quelle darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Quelle darstellt. </p>'
         - id: destinationAccessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Ziel darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Ziel darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3d93591e
         description: <p>Ein <code>String</code> der der Kopiervorgang zugeordnete Kopie-ID darstellt.</p>
@@ -2419,7 +2437,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 433
+      startLine: 438
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Fordert den Dienst starten, eines URIS-Inhalt, Eigenschaften und Metadaten in eine neue Azure-Datei kopieren.</p>
@@ -2436,6 +2454,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.startCopy(final URI,final AccessCondition,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'startCopy(final URI,final AccessCondition,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2450,7 +2469,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 464
+      startLine: 470
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Anforderungen, die der Dienst starten, Kopieren eines URIS-Inhalt, Eigenschaften und Metadaten in eine neue Azure-Datei, mit der angegebenen zugriffsbedingungen lease-ID, die Optionen und Vorgangskontext.</p>
@@ -2463,24 +2482,25 @@ items:
           description: <p>Der Quelle <code>java.net.URI</code>. </p>
         - id: sourceAccessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Quelle darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Quelle darstellt. </p>'
         - id: destinationAccessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Ziel darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Ziel darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3d93591e
         description: <p>Ein <code>String</code> der der Kopiervorgang zugeordnete Kopie-ID darstellt.</p>
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
-  - uid: com.microsoft.azure.storage.file._cloud_file.streamMinimumReadSizeInBytes()
-    id: streamMinimumReadSizeInBytes()
+      - type: '44102508'
+  - uid: com.microsoft.azure.storage.file._cloud_file.streamMinimumReadSizeInBytes
+    id: streamMinimumReadSizeInBytes
     parent: com.microsoft.azure.storage.file._cloud_file
     href: com.microsoft.azure.storage.file._cloud_file.yml
     langs:
@@ -2494,13 +2514,13 @@ items:
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
       startLine: 79
     package: com.microsoft.azure.storage.file
-    summary: '<p>Enthält die minimale Größe gelesen, bei Verwendung einer <xref href="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Enthält die minimale Größe gelesen, bei Verwendung einer <xref uid="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false">FileInputStream</xref>. </p>'
     syntax:
       content: protected int streamMinimumReadSizeInBytes= Constants.DEFAULT_MINIMUM_READ_SIZE_IN_BYTES
       return:
         type: f75371fa
-  - uid: com.microsoft.azure.storage.file._cloud_file.streamWriteSizeInBytes()
-    id: streamWriteSizeInBytes()
+  - uid: com.microsoft.azure.storage.file._cloud_file.streamWriteSizeInBytes
+    id: streamWriteSizeInBytes
     parent: com.microsoft.azure.storage.file._cloud_file
     href: com.microsoft.azure.storage.file._cloud_file.yml
     langs:
@@ -2514,7 +2534,7 @@ items:
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
       startLine: 74
     package: com.microsoft.azure.storage.file
-    summary: <p>Enthält die Anzahl der Byte des Puffers beim Schreiben in eine <xref href="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Enthält die Anzahl der Byte des Puffers beim Schreiben in eine <xref uid="com.microsoft.azure.storage.file._file_output_stream" data-throw-if-not-resolved="false">FileOutputStream</xref>. </p>
     syntax:
       content: protected int streamWriteSizeInBytes= Constants.DEFAULT_STREAM_WRITE_IN_BYTES
       return:
@@ -2533,7 +2553,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2735
+      startLine: 2772
     package: com.microsoft.azure.storage.file
     syntax:
       content: protected void updateEtagAndLastModifiedFromResponse(HttpURLConnection request)
@@ -2554,7 +2574,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2748
+      startLine: 2785
     package: com.microsoft.azure.storage.file
     syntax:
       content: protected void updateLengthFromResponse(HttpURLConnection request)
@@ -2575,7 +2595,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2573
+      startLine: 2608
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Quelldaten für den Datenstrom in die Datei hoch. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -2585,7 +2605,7 @@ items:
       parameters:
         - id: sourceStream
           type: ac354e53
-          description: <p>Ein <ref refid="" kindref="compound">InputStream</ref> Objekt zum Auslesen. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">InputStream</xref> Objekt zum Auslesen. </p>
         - id: length
           type: 4c60ae65
           description: <p>Ein <code>long</code> der die Länge der Streamdaten in Bytes darstellt. Nicht NULL darf sein.</p>
@@ -2594,6 +2614,7 @@ items:
         description: <p>Wenn eine e/a-Ausnahme aufgetreten ist. </p>
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.upload(final InputStream,final long,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'upload(final InputStream,final long,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2608,7 +2629,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2603
+      startLine: 2639
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Quelldaten für den Stream mit der Bedingung für den angegebenen Zugriff Anforderungsoptionen und Vorgangskontext in die Datei hoch. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -2618,24 +2639,25 @@ items:
       parameters:
         - id: sourceStream
           type: ac354e53
-          description: <p>Ein <ref refid="" kindref="compound">InputStream</ref> Objekt zum Auslesen. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">InputStream</xref> Objekt zum Auslesen. </p>
         - id: length
           type: 4c60ae65
           description: <p>Ein <code>long</code> der die Länge der Streamdaten in Bytes darstellt. Dies muss größer als oder gleich 0 (null) sein. </p>
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn eine e/a-Ausnahme aufgetreten ist. </p>
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadFromByteArray(final byte [],final int,final int)'
     id: 'uploadFromByteArray(final byte [],final int,final int)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2650,7 +2672,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 1993
+      startLine: 2014
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Hochladen eine Datei aus den Daten in ein Bytearray. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -2671,6 +2693,7 @@ items:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
       - type: cbf33bbe
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadFromByteArray(final byte [],final int,final int,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'uploadFromByteArray(final byte [],final int,final int,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2685,7 +2708,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2022
+      startLine: 2044
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Hochladen eine Datei aus den Daten in ein Bytearray. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -2704,17 +2727,18 @@ items:
           description: '<p>Ein <code>int</code> der die Anzahl der Bytes, die aus dem Eingabepuffer hochladen darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
       - type: cbf33bbe
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.uploadFromFile(final String)
     id: uploadFromFile(final String)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2729,7 +2753,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2040
+      startLine: 2063
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Wird eine lokale Datei hochgeladen. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -2744,6 +2768,7 @@ items:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
       - type: cbf33bbe
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadFromFile(final String,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'uploadFromFile(final String,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2758,7 +2783,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2064
+      startLine: 2088
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt eine Datei aus einer lokalen Datei hoch. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -2771,17 +2796,18 @@ items:
           description: '<p>Ein <code>String</code> der den Pfad darstellt, auf die Datei hochgeladen werden. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
       - type: cbf33bbe
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.uploadMetadata()
     id: uploadMetadata()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2796,11 +2822,11 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2306
+      startLine: 2335
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Metadaten der Datei an den Speicherdienst hoch. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false"></xref> um die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abzurufen.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false">CloudFile #downloadAttributes</xref> die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
       <p></p>
     syntax:
       content: public final void uploadMetadata()
@@ -2809,6 +2835,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadMetadata(final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'uploadMetadata(final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2823,29 +2850,30 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2332
+      startLine: 2362
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Metadaten der Datei an den Speicherdienst mit der Bedingung für den Zugriff, die Anforderungsoptionen und den Vorgangskontext hoch. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false"></xref> um die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abzurufen.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false">CloudFile #downloadAttributes</xref> die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
       <p></p>
     syntax:
       content: 'public final void uploadMetadata(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.uploadProperties()
     id: uploadProperties()
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2860,11 +2888,11 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2399
+      startLine: 2430
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Aktualisiert die Eigenschaften der Datei an den Speicherdienst. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false"></xref> um die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abzurufen.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false">CloudFile #downloadAttributes</xref> die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
       <p></p>
     syntax:
       content: public final void uploadProperties()
@@ -2873,6 +2901,7 @@ items:
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadProperties(final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'uploadProperties(final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2887,29 +2916,30 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2424
+      startLine: 2456
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Aktualisiert die Eigenschaften der Datei mit der Bedingung für den Zugriff, die Anforderungsoptionen und den Vorgangskontext. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false"></xref> um die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abzurufen.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file.downloadAttributes()" data-throw-if-not-resolved="false">CloudFile #downloadAttributes</xref> die aktuellen Werte für Eigenschaften und Metadaten der Datei aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
       <p></p>
     syntax:
       content: 'public final void uploadProperties(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadRange(final InputStream,final long,final long)'
     id: 'uploadRange(final InputStream,final long,final long)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2924,7 +2954,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2135
+      startLine: 2162
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich in eine Datei hoch.</p>
@@ -2934,7 +2964,7 @@ items:
       parameters:
         - id: sourceStream
           type: ac354e53
-          description: '<p>Ein <ref refid="" kindref="compound">InputStream</ref> Objekt, das den Eingabedatenstrom zum Schreiben in die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">InputStream</xref> Objekt, das den Eingabedatenstrom zum Schreiben in die Datei darstellt. </p>'
         - id: offset
           type: 4c60ae65
           description: '<p>Ein <code>long</code> die den Offset in die Anzahl der Bytes, ab dem Schreiben der Daten darstellt. </p>'
@@ -2946,6 +2976,7 @@ items:
         description: <p>Wenn eine e/a-Ausnahme aufgetreten ist. </p>
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadRange(final InputStream,final long,final long,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'uploadRange(final InputStream,final long,final long,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -2960,7 +2991,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2167
+      startLine: 2195
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt einen Bereich in einer Datei mit der angegebenen Lease-ID, die Anforderungsoptionen und den Vorgangskontext hoch.</p>
@@ -2970,7 +3001,7 @@ items:
       parameters:
         - id: sourceStream
           type: ac354e53
-          description: '<p>Ein <ref refid="" kindref="compound">InputStream</ref> Objekt, das den Eingabedatenstrom zum Schreiben in die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">InputStream</xref> Objekt, das den Eingabedatenstrom zum Schreiben in die Datei darstellt. </p>'
         - id: offset
           type: 4c60ae65
           description: '<p>Ein <code>long</code> die den Offset in die Anzahl der Bytes, ab dem Schreiben der Daten darstellt. </p>'
@@ -2979,18 +3010,19 @@ items:
           description: '<p>Ein <code>long</code> der die Länge in Bytes, der den zu schreibenden Daten darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn eine e/a-Ausnahme aufgetreten ist. </p>
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
   - uid: com.microsoft.azure.storage.file._cloud_file.uploadText(final String)
     id: uploadText(final String)
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -3005,7 +3037,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2084
+      startLine: 2109
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Hochladen eine Datei aus einer Zeichenfolge mit der Plattform-Standard-Codierung. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -3020,6 +3052,7 @@ items:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
       - type: cbf33bbe
+      - type: '44102508'
   - uid: 'com.microsoft.azure.storage.file._cloud_file.uploadText(final String,final String,final AccessCondition,FileRequestOptions,OperationContext)'
     id: 'uploadText(final String,final String,final AccessCondition,FileRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.file._cloud_file
@@ -3034,7 +3067,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFile.java
-      startLine: 2112
+      startLine: 2138
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Hochladen eine Datei aus einer Zeichenfolge mit der angegebenen Codierung. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben.</p>
@@ -3050,17 +3083,18 @@ items:
           description: '<p>Ein <code>String</code> der den Namen des dem Zeichensatz zu verwenden, um den Inhalt darstellt. Bei null wird der Plattform standardcodierung verwendet wird. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Datei darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
       - type: cbf33bbe
+      - type: '44102508'
 references:
   - uid: f75371fa
     spec.java:
@@ -3528,14 +3562,14 @@ references:
     summary: '<p>Stellt ein Element, das durch einen dateiauflistungsvorgang zurückgegeben werden kann. </p>'
     syntax:
       content: public interface ListFileItem
-  - uid: com.microsoft.azure.storage._constants.DEFAULT_STREAM_WRITE_IN_BYTES()
+  - uid: com.microsoft.azure.storage._constants.DEFAULT_STREAM_WRITE_IN_BYTES
     parent: com.microsoft.azure.storage._constants
     href: com.microsoft.azure.storage._constants.yml
     name: DEFAULT_STREAM_WRITE_IN_BYTES
     nameWithType: Constants.DEFAULT_STREAM_WRITE_IN_BYTES
     fullName: final int com.microsoft.azure.storage.Constants.DEFAULT_STREAM_WRITE_IN_BYTES
     type: Field
-    summary: '<p>Die Standardeinstellung schreiben Größe in Bytes, der von verwendeten <ref refid="" kindref="compound">BlobOutputStream</ref> oder <ref refid="" kindref="compound">FileOutputStream</ref>. </p>'
+    summary: '<p>Die Standardeinstellung schreiben Größe in Bytes, der von verwendeten <xref uid="" data-throw-if-not-resolved="false">BlobOutputStream</xref> oder <xref uid="" data-throw-if-not-resolved="false">FileOutputStream</xref>. </p>'
     syntax:
       content: public static final int DEFAULT_STREAM_WRITE_IN_BYTES=  4 * Constants.MB
       return:
@@ -3550,14 +3584,14 @@ references:
     summary: <p>Die Klasse ist eine nur Anhängen-Stream zum Schreiben in den Speicher. </p>
     syntax:
       content: public class FileOutputStream
-  - uid: com.microsoft.azure.storage._constants.DEFAULT_MINIMUM_READ_SIZE_IN_BYTES()
+  - uid: com.microsoft.azure.storage._constants.DEFAULT_MINIMUM_READ_SIZE_IN_BYTES
     parent: com.microsoft.azure.storage._constants
     href: com.microsoft.azure.storage._constants.yml
     name: DEFAULT_MINIMUM_READ_SIZE_IN_BYTES
     nameWithType: Constants.DEFAULT_MINIMUM_READ_SIZE_IN_BYTES
     fullName: final int com.microsoft.azure.storage.Constants.DEFAULT_MINIMUM_READ_SIZE_IN_BYTES
     type: Field
-    summary: '<p>Der minimale Standardwert gelesen werden Größe in Bytes, der für eine <ref refid="" kindref="compound">BlobInputStream</ref> oder <ref refid="" kindref="compound">FileInputStream</ref>. </p>'
+    summary: '<p>Der minimale Standardwert gelesen werden Größe in Bytes, der für eine <xref uid="" data-throw-if-not-resolved="false">BlobInputStream</xref> oder <xref uid="" data-throw-if-not-resolved="false">FileInputStream</xref>. </p>'
     syntax:
       content: public static final int DEFAULT_MINIMUM_READ_SIZE_IN_BYTES= 4 * Constants.MB
       return:
@@ -3581,7 +3615,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt ein virtuelles Verzeichnis mit Dateien dar. </p>
-      <p>Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekte, halten Sie Dateien und können auch Unterverzeichnisse enthalten. </p>
+      <p>Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekte, halten Sie Dateien und können auch Unterverzeichnisse enthalten. </p>
     syntax:
       content: public class CloudFileDirectory
   - uid: com.microsoft.azure.storage.file._cloud_file_client
@@ -3605,7 +3639,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt eine Freigabe in der Microsoft Azure-Dateidienst dar. </p>
-      <p>Freigaben enthalten die Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekte und Verzeichnisse enthalten Dateien. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+      <p>Freigaben enthalten die Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekte und Verzeichnisse enthalten Dateien. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
     syntax:
       content: public class CloudFileShare
   - uid: com.microsoft.azure.storage.file._file_properties
@@ -3654,7 +3688,7 @@ references:
     nameWithType: StorageCredentials
     fullName: com.microsoft.azure.storage.StorageCredentials
     type: Class
-    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false"></xref> Klassen. </p>
+    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref uid="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false">StorageCredentialsAccountAndKey</xref> und <xref uid="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false">StorageCredentialsSharedAccessSignature</xref> Klassen. </p>
     syntax:
       content: public class StorageCredentials
   - uid: com.microsoft.azure.storage._access_condition
@@ -3694,7 +3728,7 @@ references:
     nameWithType: CloudBlob
     fullName: com.microsoft.azure.storage.blob.CloudBlob
     type: Class
-    summary: <p>Stellt ein Microsoft Azure-Blob dar. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Klassen. </p>
+    summary: <p>Stellt ein Microsoft Azure-Blob dar. Dies ist die Basisklasse für die <xref uid="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false">CloudBlockBlob</xref> und <xref uid="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false">CloudPageBlob</xref> Klassen. </p>
     syntax:
       content: public class CloudBlob implements ListBlobItem
   - uid: com.microsoft.azure.storage.file._file_range
@@ -3765,7 +3799,7 @@ references:
     fullName: void com.microsoft.azure.storage.file.CloudFile.setStreamMinimumReadSizeInBytes(final int minimumReadSize)
     type: Method
     summary: |-
-      <p>Legt die minimale gelesen Größe bei Verwendung einer <xref href="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Legt die minimale gelesen Größe bei Verwendung einer <xref uid="com.microsoft.azure.storage.file._file_input_stream" data-throw-if-not-resolved="false">FileInputStream</xref>.</p>
       <p></p>
     syntax: *ref_2
   - uid: 'com.microsoft.azure.storage.file._cloud_file.openWriteNew(final long,AccessCondition,FileRequestOptions,OperationContext)'
@@ -3777,7 +3811,7 @@ references:
     type: Method
     summary: |-
       <p>Öffnet ein ausgabestreamobjekt zum Schreiben von Daten in die Datei mithilfe der angegebenen Lease-ID, die Optionen und Vorgang Anforderungskontext. Die Datei ist nicht erforderlich, noch vorhanden und werden mit der angegebenen Länge erstellt. Wenn die Datei bereits im Dienst vorhanden ist, wird sie überschrieben. </p>
-      <p>Um nicht überschrieben werden, und stattdessen löst einen Fehler aus, übergeben Sie einer <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> mit generiert <xref href="com.microsoft.azure.storage._access_condition.generateIfNotExistsCondition()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Um nicht überschrieben werden, und stattdessen löst einen Fehler aus, übergeben Sie einer <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> mit generiert <xref uid="com.microsoft.azure.storage._access_condition.generateIfNotExistsCondition()" data-throw-if-not-resolved="false">AccessCondition#generateIfNotExistsCondition()</xref>.</p>
       <p></p>
     syntax: *ref_3
   - uid: com.microsoft.azure.storage._access_condition.generateIfNotExistsCondition()
@@ -3789,14 +3823,14 @@ references:
     type: Method
     summary: |-
       <p>Gibt eine Bedingung für den Zugriff zurück, z. B., dass ein Vorgang ausgeführt wird, nur dann, wenn die Ressource für den Dienst nicht vorhanden ist. </p>
-      <p>Festlegen von dieser Bedingung für den Zugriff ändert die Anforderung der HTTP einschließen <emphasis>If-None-Match</emphasis> bedingten Header an. </p>
+      <p>Festlegen von dieser Bedingung für den Zugriff ändert die Anforderung der HTTP einschließen <em>If-None-Match</em> bedingten Header an. </p>
       <p>Weitere Informationen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224642">angeben von bedingten Headern für Blob-Dienstvorgänge</ulink>.</p>
       <p></p>
     syntax:
       content: public static AccessCondition generateIfNotExistsCondition()
       return:
         type: com.microsoft.azure.storage._access_condition
-        description: '<p>Ein <code><xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref></code> Objekt, das die If darstellt keine Bedingung vorhanden. </p>'
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref></code> Objekt, das die If darstellt keine Bedingung vorhanden. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file.downloadAttributes()
     parent: com.microsoft.azure.storage.file._cloud_file
     href: com.microsoft.azure.storage.file._cloud_file.yml
@@ -3823,7 +3857,7 @@ references:
       content: public CloudFileShare getShare()
       return:
         type: com.microsoft.azure.storage.file._cloud_file_share
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false"></xref> Objekt, das Freigabe des Dateielements darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref> Objekt, das Freigabe des Dateielements darstellt.</p>'
   - uid: com.microsoft.azure.storage.file._list_file_item.getParent()
     parent: com.microsoft.azure.storage.file._list_file_item
     href: com.microsoft.azure.storage.file._list_file_item.yml
@@ -3838,7 +3872,7 @@ references:
       content: public CloudFileDirectory getParent()
       return:
         type: com.microsoft.azure.storage.file._cloud_file_directory
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekt, das das Dateielement übergeordnete Element darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekt, das das Dateielement übergeordnete Element darstellt.</p>'
   - uid: com.microsoft.azure.storage.file._list_file_item.getStorageUri()
     parent: com.microsoft.azure.storage.file._list_file_item
     href: com.microsoft.azure.storage.file._list_file_item.yml
@@ -3853,7 +3887,7 @@ references:
       content: public StorageUri getStorageUri()
       return:
         type: com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <code><xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref></code> Objekt, das URI des Dateielements darstellt. </p>'
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref></code> Objekt, das URI des Dateielements darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._list_file_item.getUri()
     parent: com.microsoft.azure.storage.file._list_file_item
     href: com.microsoft.azure.storage.file._list_file_item.yml

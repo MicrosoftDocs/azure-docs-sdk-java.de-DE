@@ -1,0 +1,447 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    id: _multi_shard_connection
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    children:
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.ApplicationNameSuffix
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.close()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.closeOpenConnections()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.createCommand()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getConnectionString()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardConnections()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardLocations()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShards()
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.isClosed()
+      - 'com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>>)'
+      - 'com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection(String,Shard...)'
+      - 'com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection(String,ShardLocation...)'
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: MultiShardConnection
+    nameWithType: MultiShardConnection
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection
+    type: Class
+    source:
+      remote: &ref_0
+        path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+        branch: master
+        repo: 'https://github.com/Microsoft/elastic-db-tools-for-java'
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 34
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: '<p>Stellt eine Verbindung mit einem Satz von Shards, und bietet die Möglichkeit zum Verarbeiten von Abfragen in der shardgruppe. Zweck: Verbindungen mit dem angegebenen Satz von Shards erstellt und steuert die ihre Lebensdauer Hinweise: Diese Klasse ist nicht threadsicher. </p>'
+    syntax: &ref_1
+      content: public class MultiShardConnection
+    inheritance:
+      - java.lang.Object
+      - AutoCloseable
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.ApplicationNameSuffix
+    id: ApplicationNameSuffix
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: ApplicationNameSuffix
+    nameWithType: MultiShardConnection.ApplicationNameSuffix
+    fullName: String com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.ApplicationNameSuffix
+    type: Field
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 41
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: '<p>Das Suffix, um jeden Shard Parameter "ApplicationName" angefügt werden soll. Ist hilfreich für serverseitige Telemetrie. </p>'
+    syntax:
+      content: public static String ApplicationNameSuffix= "ESC_MSQv" + GlobalConstants.MultiShardQueryVersionInfo
+      return:
+        type: '26831127'
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.close()
+    id: close()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: close()
+    nameWithType: MultiShardConnection.close()
+    fullName: void com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.close()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.close*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 225
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: <p>Gibt alle von diesem Objekt verwendete Ressourcen frei. </p>
+    syntax:
+      content: public void close()
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.closeOpenConnections()
+    id: closeOpenConnections()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: closeOpenConnections()
+    nameWithType: MultiShardConnection.closeOpenConnections()
+    fullName: void com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.closeOpenConnections()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.closeOpenConnections*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 248
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: <p>Schließt alle geöffneten Verbindungen in Shards. Führt eine bestmögliche schließen durch und löst keine. </p>
+    syntax:
+      content: public void closeOpenConnections()
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.createCommand()
+    id: createCommand()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: createCommand()
+    nameWithType: MultiShardConnection.createCommand()
+    fullName: MultiShardStatement com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.createCommand()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.createCommand*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 218
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: |-
+      <p>Erstellt und gibt eine <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> Objekt. Die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> Objekt kann dann zum Ausführen eines Befehls für alle Shards in der Verbindung angegebene verwendet werden.</p>
+      <p></p>
+    syntax:
+      content: public MultiShardStatement createCommand()
+      return:
+        type: com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement
+        description: <p>die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> mit CommandText auf null festgelegt ist. </p>
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getConnectionString()
+    id: getConnectionString()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: getConnectionString()
+    nameWithType: MultiShardConnection.getConnectionString()
+    fullName: String com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getConnectionString()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getConnectionString*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 208
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: '<p>Ruft die Verbindungszeichenfolge, die dieser Verbindung zugeordnet. </p>'
+    syntax:
+      content: public String getConnectionString()
+      return:
+        type: '26831127'
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardConnections()
+    id: getShardConnections()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: getShardConnections()
+    nameWithType: MultiShardConnection.getShardConnections()
+    fullName: 'List<Pair<ShardLocation, Connection>> com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getShardConnections()'
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardConnections*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 201
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: '<p>Ruft die Auflistung von ShardLocations und Verbindungen, die dieser Verbindung zugeordnet. </p>'
+    syntax:
+      content: 'public List<Pair<ShardLocation, Connection>> getShardConnections()'
+      return:
+        type: 9d0a8d03com.microsoft.azure.elasticdb.shard.base._shard_locationab796af5
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardLocations()
+    id: getShardLocations()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: getShardLocations()
+    nameWithType: MultiShardConnection.getShardLocations()
+    fullName: List<ShardLocation> com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getShardLocations()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardLocations*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 194
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: <p>Ruft die Auflistung der ShardLocations dieser Verbindung zugeordnet. </p>
+    syntax:
+      content: public List<ShardLocation> getShardLocations()
+      return:
+        type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShards()
+    id: getShards()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: getShards()
+    nameWithType: MultiShardConnection.getShards()
+    fullName: List<Shard> com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getShards()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShards*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 187
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: '<p>Ruft die Auflistung von Shards, die dieser Verbindung zugeordnet. </p>'
+    syntax:
+      content: public List<Shard> getShards()
+      return:
+        type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._sharda08ddfce
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.isClosed()
+    id: isClosed()
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: isClosed()
+    nameWithType: MultiShardConnection.isClosed()
+    fullName: boolean com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.isClosed()
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.isClosed*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 266
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: |-
+      <p>Überprüfen Sie, ob die Verbindung geschlossen wird, oder nicht.</p>
+      <p></p>
+    syntax:
+      content: public boolean isClosed()
+      return:
+        type: 4fc6e284
+        description: '<p>True, wenn Sie geöffnet ist, False, wenn geschlossen. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>>)'
+    id: 'MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>>)'
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: 'MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>> shardConnections)'
+    nameWithType: 'MultiShardConnection.MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>> shardConnections)'
+    fullName: 'com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>> shardConnections)'
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 141
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: |-
+      <p>Erstellt eine Instanz dieser Klasse. NUR FÜR TESTS</p>
+      <p></p>
+    syntax:
+      content: 'public MultiShardConnection(ArrayList<Pair<ShardLocation, Connection>> shardConnections)'
+      parameters:
+        - id: shardConnections
+          type: fd6186a7com.microsoft.azure.elasticdb.shard.base._shard_locationab796af5
+          description: <p>Verbindungen mit den shards </p>
+  - uid: 'com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection(String,Shard...)'
+    id: )
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: 'MultiShardConnection(String connectionString, Shard... shards)'
+    nameWithType: 'MultiShardConnection.MultiShardConnection(String connectionString, Shard... shards)'
+    fullName: 'com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.MultiShardConnection(String connectionString, Shard... shards)'
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 69
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: "<p>Initialisiert eine neue Instanz der dem <xref uid=\"com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection\" data-throw-if-not-resolved=\"false\">MultiShardConnection</xref> Klasse.</p>\n<p>\r\n\r\n  <verbatim>Multiple Active Result Sets (MARS) werden nicht unterstützt und werden für die Verarbeitung an die Shards deaktiviert.</verbatim>\r\n\r\n</p>"
+    syntax:
+      content: 'public MultiShardConnection(String connectionString, Shard... shards)'
+      parameters:
+        - id: connectionString
+          type: '26831127'
+          description: '<p>Diese Anmeldeinformationen werden zum Herstellen der Shards verwendet werden. Die gleichen Anmeldeinformationen werden auf alle Shards verwendet. Daher müssen alle Shards, um die entsprechenden Berechtigungen für diese Anmeldeinformationen zum Ausführen des Befehls bereitzustellen. </p>'
+        - id: shards
+          type: e4c77887
+          description: '<p>Die Auflistung von Shards, die für diese Verbindungsinstanzen verwendet werden soll.</p>'
+  - uid: 'com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection(String,ShardLocation...)'
+    id: )
+    parent: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    langs:
+      - java
+    name: 'MultiShardConnection(String connectionString, ShardLocation... shardLocations)'
+    nameWithType: 'MultiShardConnection.MultiShardConnection(String connectionString, ShardLocation... shardLocations)'
+    fullName: 'com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.MultiShardConnection(String connectionString, ShardLocation... shardLocations)'
+    overload: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/MultiShardConnection.java
+      startLine: 107
+    package: com.microsoft.azure.elasticdb.query.multishard
+    summary: "<p>Initialisiert eine neue Instanz der dem <xref uid=\"com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection\" data-throw-if-not-resolved=\"false\">MultiShardConnection</xref> Klasse.</p>\n<p>\r\n\r\n  <verbatim>Multiple Active Result Sets (MARS) werden nicht unterstützt und werden für die Verarbeitung an die Shards deaktiviert.</verbatim>\r\n\r\n</p>"
+    syntax:
+      content: 'public MultiShardConnection(String connectionString, ShardLocation... shardLocations)'
+      parameters:
+        - id: connectionString
+          type: '26831127'
+          description: '<p>Diese Anmeldeinformationen werden zum Herstellen der Shards verwendet werden. Die gleichen Anmeldeinformationen werden auf alle Shards verwendet. Daher müssen alle Shards, um die entsprechenden Berechtigungen für diese Anmeldeinformationen zum Ausführen des Befehls bereitzustellen.</p>'
+        - id: shardLocations
+          type: c7c96d33
+          description: <p>Die Auflistung der ShardLocations für diese Verbindungsinstanzen verwendet. </p>
+references:
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: e4c77887
+    spec.java:
+      - name: Shard...
+        fullName: Shard...
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.MultiShardConnection*
+    name: MultiShardConnection
+    nameWithType: MultiShardConnection.MultiShardConnection
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.MultiShardConnection
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: c7c96d33
+    spec.java:
+      - name: ShardLocation...
+        fullName: ShardLocation...
+  - uid: fd6186a7com.microsoft.azure.elasticdb.shard.base._shard_locationab796af5
+    spec.java:
+      - name: ArrayList<Pair<
+        fullName: ArrayList<Pair<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+        name: ShardLocation
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+        href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+      - name: ', Connection>>'
+        fullName: ', Connection>>'
+  - uid: 5618da2dcom.microsoft.azure.elasticdb.shard.base._sharda08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard
+        name: Shard
+        fullName: com.microsoft.azure.elasticdb.shard.base.Shard
+        href: com.microsoft.azure.elasticdb.shard.base._shard.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShards*
+    name: getShards
+    nameWithType: MultiShardConnection.getShards
+    fullName: List<Shard> com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getShards
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+        name: ShardLocation
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+        href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardLocations*
+    name: getShardLocations
+    nameWithType: MultiShardConnection.getShardLocations
+    fullName: List<ShardLocation> com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getShardLocations
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: 9d0a8d03com.microsoft.azure.elasticdb.shard.base._shard_locationab796af5
+    spec.java:
+      - name: List<Pair<
+        fullName: List<Pair<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+        name: ShardLocation
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+        href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+      - name: ', Connection>>'
+        fullName: ', Connection>>'
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getShardConnections*
+    name: getShardConnections
+    nameWithType: MultiShardConnection.getShardConnections
+    fullName: 'List<Pair<ShardLocation, Connection>> com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getShardConnections'
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.getConnectionString*
+    name: getConnectionString
+    nameWithType: MultiShardConnection.getConnectionString
+    fullName: String com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.getConnectionString
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.createCommand*
+    name: createCommand
+    nameWithType: MultiShardConnection.createCommand
+    fullName: MultiShardStatement com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.createCommand
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.close*
+    name: close
+    nameWithType: MultiShardConnection.close
+    fullName: void com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.close
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.closeOpenConnections*
+    name: closeOpenConnections
+    nameWithType: MultiShardConnection.closeOpenConnections
+    fullName: void com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.closeOpenConnections
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: 4fc6e284
+    spec.java:
+      - name: boolean
+        fullName: boolean
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.isClosed*
+    name: isClosed
+    nameWithType: MultiShardConnection.isClosed
+    fullName: boolean com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection.isClosed
+    package: com.microsoft.azure.elasticdb.query.multishard
+  - uid: com.microsoft.azure.elasticdb.shard.base._shard
+    parent: com.microsoft.azure.elasticdb.shard.base
+    href: com.microsoft.azure.elasticdb.shard.base._shard.yml
+    name: Shard
+    nameWithType: Shard
+    fullName: com.microsoft.azure.elasticdb.shard.base.Shard
+    type: Class
+    summary: '<p>Darstellung von einem einzelnen shard zusammengeführt. Shards sind also im Grunde Locators für Datenquellen <xref uid="com.microsoft.azure.elasticdb.shard.base._shard_location" data-throw-if-not-resolved="false">ShardLocation</xref>s, die mit einer shardzuordnung registriert wurden. Shards werden bei der Zuordnung als Ziele von Zuordnungen verwendet (siehe <xref uid="com.microsoft.azure.elasticdb.shard.base._point_mapping" data-throw-if-not-resolved="false">PointMapping</xref> und <xref uid="com.microsoft.azure.elasticdb.shard.base._range_mapping" data-throw-if-not-resolved="false">RangeMapping</xref>). </p>'
+    syntax:
+      content: public class Shard
+  - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+    parent: com.microsoft.azure.elasticdb.shard.base
+    href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+    name: ShardLocation
+    nameWithType: ShardLocation
+    fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+    type: Class
+    summary: '<p>Stellt den Speicherort von einem Shard in Bezug auf die Servernamen und den Datenbanknamen dar. Dies dient zum Verwalten von Verbindungen zum Shard und andere Vorgänge auf Shards zu unterstützen. Im Gegensatz zu einer <xref uid="com.microsoft.azure.elasticdb.shard.base._shard" data-throw-if-not-resolved="false">Shard</xref>, ein Shard-Speicherort ist nicht mit der shardzuordnung registriert. </p>'
+    syntax:
+      content: public class ShardLocation
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    name: MultiShardConnection
+    nameWithType: MultiShardConnection
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection
+    type: Class
+    summary: '<p>Stellt eine Verbindung mit einem Satz von Shards, und bietet die Möglichkeit zum Verarbeiten von Abfragen in der shardgruppe. Zweck: Verbindungen mit dem angegebenen Satz von Shards erstellt und steuert die ihre Lebensdauer Hinweise: Diese Klasse ist nicht threadsicher. </p>'
+    syntax: *ref_1
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement.yml
+    name: MultiShardStatement
+    nameWithType: MultiShardStatement
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardStatement
+    type: Class
+    summary: '<p>Ergänzt die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection" data-throw-if-not-resolved="false">MultiShardConnection</xref> mit ein Command-Objekt, das die Triaden der Verbindung, der Anweisung und ResultSet ähnelt. Die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> T-SQL-Command-Anweisung als Eingabe akzeptiert und führt den Befehl über die Auflistung von Shards, die gemäß dem entsprechenden <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection" data-throw-if-not-resolved="false">MultiShardConnection</xref>. Die Ergebnisse der Verarbeitung der <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> werden über die Execute-Methoden zur Verfügung gestellt und die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_result_set" data-throw-if-not-resolved="false">MultiShardResultSet</xref>. Zweck: Ergänzt die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection" data-throw-if-not-resolved="false">MultiShardConnection</xref> und abstrahiert die Arbeit des Ausführens eines bestimmten Befehls für mehrere Shards Hinweise: Diese Klasse ist nicht threadsicher. Seit der Sync-API, die intern die asynchrone API aufruft, wird die Zeichenfolgeneigenschaft Verbindungen mit Shards mit Verbindung "Context Connection = True" werden nicht unterstützt. Transaktionssemantik werden nicht unterstützt. </p>'
+    syntax:
+      content: public class MultiShardStatement

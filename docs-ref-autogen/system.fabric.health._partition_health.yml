@@ -21,7 +21,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/PartitionHealth.java
       startLine: 10
     package: system.fabric.health
-    summary: '<p>Integrität einer Partition wird beschrieben, wie vom <xref href="system.fabric._health_client.getPartitionHealthAsync(PartitionHealthQueryDescription)" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Integrität einer Partition wird beschrieben, wie vom <xref uid="system.fabric._health_client.getPartitionHealthAsync(PartitionHealthQueryDescription)" data-throw-if-not-resolved="false">system.fabric.HealthClient#getPartitionHealthAsync(PartitionHealthQueryDescription)</xref>. </p>'
     syntax:
       content: public class PartitionHealth extends EntityHealth
     inheritance:
@@ -79,7 +79,7 @@ items:
       content: public List<ReplicaHealthState> getReplicaHealthState()
       return:
         type: 5618da2dsystem.fabric.health._replica_health_statea08ddfce
-        description: '<p>Die Replikate der aktuellen Partition als gefunden wurde im Health Store. Nur Replikate, die berücksichtigen die <xref href="system.fabric._partition_health_query_description.getReplicaHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Replikate zurückgegeben. Alle Replikate werden ausgewertet, um die aggregiert partitionsintegrität zu ermitteln. </p>'
+        description: '<p>Die Replikate der aktuellen Partition als gefunden wurde im Health Store. Nur Replikate, die berücksichtigen die <xref uid="system.fabric._partition_health_query_description.getReplicaHealthStatesFilter()" data-throw-if-not-resolved="false">system.fabric.PartitionHealthQueryDescription#getReplicaHealthStatesFilter()</xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Replikate zurückgegeben. Alle Replikate werden ausgewertet, um die aggregiert partitionsintegrität zu ermitteln. </p>'
 references:
   - uid: add9545a
     spec.java:
@@ -135,7 +135,7 @@ references:
       content: public HealthState getAggregatedHealthState()
       return:
         type: system.fabric.health._health_state
-        description: "<p>\r\n\r\n  <xref href=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\"></xref>der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState</xref> Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie, die der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt. </p>"
   - uid: system.fabric.health._entity_health.getHealthEvents()
     parent: system.fabric.health._entity_health
     href: system.fabric.health._entity_health.yml
@@ -143,7 +143,7 @@ references:
     nameWithType: EntityHealth.getHealthEvents()
     fullName: List<HealthEvent> system.fabric.health.EntityHealth.getHealthEvents()
     type: Method
-    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
+    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
     syntax:
       content: public List<HealthEvent> getHealthEvents()
       return:
@@ -191,7 +191,7 @@ references:
     nameWithType: HealthEvent
     fullName: system.fabric.health.HealthEvent
     type: Class
-    summary: '<p>Ein <xref href="system.fabric.health._health_event" data-throw-if-not-resolved="false"></xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
+    summary: '<p>Ein <xref uid="system.fabric.health._health_event" data-throw-if-not-resolved="false">HealthEvent</xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
     syntax:
       content: public class HealthEvent
   - uid: system.fabric.health._health_evaluation
@@ -211,12 +211,12 @@ references:
     nameWithType: PartitionHealthQueryDescription.getReplicaHealthStatesFilter()
     fullName: ReplicaHealthStatesFilter system.fabric.PartitionHealthQueryDescription.getReplicaHealthStatesFilter()
     type: Method
-    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._replica_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Partition aggregiert.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Partition aggregiert. Wenn der Filter nicht angegeben ist, werden alle untergeordneten Elemente für Partition zurückgegeben. </p>"
+    summary: "<p>Ruft den Filter für <xref uid=\"system.fabric.health._replica_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ReplicaHealthState</xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Partition aggregiert.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Partition aggregiert. Wenn der Filter nicht angegeben ist, werden alle untergeordneten Elemente für Partition zurückgegeben. </p>"
     syntax:
       content: public ReplicaHealthStatesFilter getReplicaHealthStatesFilter()
       return:
         type: system.fabric._replica_health_states_filter
-        description: <p>Die <xref href="system.fabric._replica_health_states_filter" data-throw-if-not-resolved="false"></xref> zum Filtern der zurückgegebenen Replikate. </p>
+        description: <p>Die <xref uid="system.fabric._replica_health_states_filter" data-throw-if-not-resolved="false">system.fabric.ReplicaHealthStatesFilter</xref> zum Filtern der zurückgegebenen Replikate. </p>
   - uid: system.fabric._health_client.getPartitionHealthAsync(PartitionHealthQueryDescription)
     parent: system.fabric._health_client
     href: system.fabric._health_client.yml

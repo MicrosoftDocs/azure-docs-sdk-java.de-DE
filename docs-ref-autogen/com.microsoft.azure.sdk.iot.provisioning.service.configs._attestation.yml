@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation
+    id: _attestation
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation.yml
+    langs:
+      - java
+    name: Attestation
+    nameWithType: Attestation
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.Attestation
+    type: Class
+    source:
+      remote:
+        path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/Attestation.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-iot-sdk-java'
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/Attestation.java
+      startLine: 12
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Dies ist die abstrakte Klasse, die alle Mögliche Typen von Nachweis vereinheitlicht, der Registrierungsdienst für Bereitstellung unterstützt.</p>
+      <p>Jetzt die Bereitstellung Dienst unterstützt <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._tpm_attestation" data-throw-if-not-resolved="false">TpmAttestation</xref> oder <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref>.</p>
+      <p></p>
+    syntax:
+      content: public class Attestation
+    inheritance:
+      - java.lang.Object
+references:
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._tpm_attestation
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._tpm_attestation.yml
+    name: TpmAttestation
+    nameWithType: TpmAttestation
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.TpmAttestation
+    type: Class
+    summary: |-
+      <p>Darstellung eines einzelnen Geräts Bereitstellung Dienst TPM <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation" data-throw-if-not-resolved="false">Nachweis</xref>.</p>
+      <p>Der bereitstellungs-Dienst unterstützt Trusted Platform Module oder TPM, als Nachweis Mechanismus Gerät an. Benutzer muss dem Endorsement Key angeben, und Sie können optional den Storage Root Key angeben.</p>
+      <p></p>
+    syntax:
+      content: public class TpmAttestation
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.yml
+    name: X509Attestation
+    nameWithType: X509Attestation
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.X509Attestation
+    type: Class
+    summary: "<p>Darstellung eines einzelnen Geräts Bereitstellung Diensts X509 <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Nachweis</xref>.</p>\n<p>Der bereitstellungs-Dienst unterstützt Gerät Bezeichner Kompositionsmodul oder Datenwürfel AUFGETEILT, als Gerät Nachweis Mechanismus. Um AUFTEILUNGEN verwenden zu können, muss Benutzer die X509 bereitstellen Zertifikat. Diese Klasse bieten die Möglichkeit zum Erstellen einer neuen Nachweis für eine X509 Zertifikat und gibt es als eine abstrakte Schnittstelle <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Nachweis</xref>.</p>\n<p>Ein X509 Nachweis können enthält mindestens eine der 3 Typen des Zertifikats:</p>\n<p>\r\n\r\n  <variablelist>\r\n\r\n    <varlistentry>\r\n\r\n      <b>Client- oder Alias-Zertifikat:</b>\r\n\r\n    </varlistentry>\r\n\r\n    <listitem>\r\n\r\n      <p>Für diese Klasse als ClientCertificates aufgerufen wird, kann dieses Zertifikat ein einzelnes Gerät authentifizieren. </p>\r\n\r\n    </listitem>\r\n\r\n    <varlistentry>\r\n\r\n      <b>Signieren oder Stammzertifikats:</b>\r\n\r\n    </varlistentry>\r\n\r\n    <listitem>\r\n\r\n      <p>Für diese Klasse als RootCertificates aufgerufen wird, kann dieses Zertifikat mehrere Clientzertifikate zum Authentifizieren von mehreren Geräten erstellen. </p>\r\n\r\n    </listitem>\r\n\r\n    <varlistentry>\r\n\r\n      <b>Referenz der Zertifizierungsstelle:</b>\r\n\r\n    </varlistentry>\r\n\r\n    <listitem>\r\n\r\n      <p>Für diese Klasse als aufgerufen <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_c_a_references\" data-throw-if-not-resolved=\"false\">X509CAReferences</xref>, dies ist ein Verweis Zertifizierungsstelle für eine Vertrauensanbieter, die mehrere Clientzertifikate zum Authentifizieren von mehreren Geräten erstellen können. </p>\n\n    </listitem>\n\n  </variablelist>\n\n</p>\n<p>Die Bereitstellung Dienst ermöglicht Benutzern das Erstellen <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> und <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group\" data-throw-if-not-resolved=\"false\">EnrollmentGroup</xref>. Für alle Vorgänge über <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> mit <b>AUFTEILUNGEN</b>, Benutzer bereitstellen muss eine <b>ClientCertificates</b>, und für Vorgänge über <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group\" data-throw-if-not-resolved=\"false\">EnrollmentGroup </xref>, Benutzer bereitstellen muss eine <b>RootCertificates</b> oder ein <b> <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_c_a_references\" data-throw-if-not-resolved=\"false\">X509CAReferences</xref></b>.</p>\n<p>Für jeden dieser Typen von Zertifikaten kann Benutzer 2 Zertifikate, ein primäres und ein sekundäres Replikat bereitstellen. Nur die primäre ist obligatorisch ist, wird die sekundäre Datenbank ist optional.</p>\n<p>Der bereitstellungs-Dienst verarbeitet die bereitgestellten Zertifikate, aber nie erneut zurück. Statt, <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.getPrimaryX509CertificateInfo()\" data-throw-if-not-resolved=\"false\">getPrimaryX509CertificateInfo()</xref> und <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.getSecondaryX509CertificateInfo()\" data-throw-if-not-resolved=\"false\">getSecondaryX509CertificateInfo()</xref> die Zertifikatinformationen für den Zertifikaten zurück.</p>\n<p></p>"
+    syntax:
+      content: public class X509Attestation

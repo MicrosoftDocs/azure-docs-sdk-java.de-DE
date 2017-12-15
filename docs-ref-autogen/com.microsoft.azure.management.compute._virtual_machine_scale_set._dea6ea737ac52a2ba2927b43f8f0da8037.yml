@@ -13,14 +13,14 @@ items:
     source:
       remote:
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-      startLine: 1098
+      startLine: 1143
     package: com.microsoft.azure.management.compute
     summary: <p>Die Phase der Definition enthält alle minimale erforderlichen Eingaben für die VM-Skalierungsgruppe erstellt werden und optional verwaltete Datenträger spezifische Einstellungen angegeben werden können. </p>
     syntax:
-      content: 'public interface WithManagedCreate extends VirtualMachineScaleSet.DefinitionStages.WithManagedDataDisk,VirtualMachineScaleSet.DefinitionStages.WithManagedDiskOptionals,VirtualMachineScaleSet.DefinitionStages.WithCreate'
+      content: 'public interface WithManagedCreate extends VirtualMachineScaleSet.DefinitionStages.WithManagedDataDisk,VirtualMachineScaleSet.DefinitionStages.WithManagedDiskOptionals,VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone,VirtualMachineScaleSet.DefinitionStages.WithCreate'
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.create()
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync(final ServiceCallback<T>)
@@ -28,12 +28,15 @@ items:
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de34bd2a0c4fed29b71e0c50bc0bfae121.defineNewExtension(String)
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.withAvailabilityZone(AvailabilityZoneId)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75.withCapacity(int)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de027ae021b04b91db48b0f2ab85810464.withComputerNamePrefix(String)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de5673d09bcb196c5f0f0f60cea2f1b286.withCustomData(String)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de6f78bdc4b7c129b7175f18071db85bdd.withDataDiskDefaultCachingType(CachingTypes)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de6f78bdc4b7c129b7175f18071db85bdd.withDataDiskDefaultStorageAccountType(StorageAccountTypes)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02aa0c10eea52819e80425c65d47893c.withExistingStorageAccount(StorageAccount)
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity()
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity(int)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int)
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int,int,CachingTypes)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int,int,CachingTypes,StorageAccountTypes)'
@@ -144,6 +147,25 @@ references:
       return:
         type: '26831127'
         description: <p>Der Name der Ressource </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.withAvailabilityZone(AvailabilityZoneId)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.yml
+    name: withAvailabilityZone(AvailabilityZoneId zoneId)
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    fullName: WithManagedCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    type: Method
+    summary: |-
+      <p>Gibt die Verfügbarkeit-Zone für die VM-Skalierungsgruppe an.</p>
+      <p></p>
+    syntax:
+      content: public WithManagedCreate withAvailabilityZone(AvailabilityZoneId zoneId)
+      parameters:
+        - id: zoneId
+          type: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+          description: <p>Der Zonenbezeichner. </p>
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._dea6ea737ac52a2ba2927b43f8f0da8037
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75.withCapacity(int)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75
     href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75.yml
@@ -258,6 +280,40 @@ references:
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_create
         description: <p>die nächste Stufe in der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity()
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.yml
+    name: withManagedServiceIdentity()
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity()
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de7d2f86c18d6f7983ff3cfbf5c72d911f
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity(int)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.yml
+    name: withManagedServiceIdentity(int tokenPort)
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity(int tokenPort)
+      parameters:
+        - id: tokenPort
+          type: f75371fa
+          description: '<p>der Port auf der VM-Skalierungsgruppe sammlungssatzinstanz, in dem Zugriffstoken verfügbar ist. </p>'
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de7d2f86c18d6f7983ff3cfbf5c72d911f
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b
     href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.yml
@@ -573,13 +629,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -622,6 +678,16 @@ references:
     summary: <p>Die Optionals gilt nur für verwaltete Datenträger. </p>
     syntax:
       content: public interface WithManagedDiskOptionals
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910
+    parent: com.microsoft.azure.management.compute
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.yml
+    name: VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone
+    fullName: com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone
+    type: Interface
+    summary: <p>Die Phase der VM-Skalierungsgruppe festgelegt Definition ermöglicht Verfügbarkeit Zone angeben. </p>
+    syntax:
+      content: public interface WithAvailabilityZone
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_create
     parent: com.microsoft.azure.management.compute
     href: com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_create.yml
@@ -631,7 +697,7 @@ references:
     type: Interface
     summary: '<p>Festlegen des Status der VM-Skalierungsgruppe-Definition enthält alle erforderlichen Eingaben für die Ressource erstellt werden, jedoch lässt sich außerdem für alle anderen optionalen Einstellungen angegeben werden. </p>'
     syntax:
-      content: 'public interface WithCreate extends Creatable<VirtualMachineScaleSet>,VirtualMachineScaleSet.DefinitionStages.WithOSDiskSettings,VirtualMachineScaleSet.DefinitionStages.WithComputerNamePrefix,VirtualMachineScaleSet.DefinitionStages.WithCapacity,VirtualMachineScaleSet.DefinitionStages.WithUpgradePolicy,VirtualMachineScaleSet.DefinitionStages.WithOverProvision,VirtualMachineScaleSet.DefinitionStages.WithStorageAccount,VirtualMachineScaleSet.DefinitionStages.WithCustomData,VirtualMachineScaleSet.DefinitionStages.WithExtension,Resource.DefinitionWithTags<VirtualMachineScaleSet.DefinitionStages.WithCreate>'
+      content: 'public interface WithCreate extends Creatable<VirtualMachineScaleSet>,VirtualMachineScaleSet.DefinitionStages.WithOSDiskSettings,VirtualMachineScaleSet.DefinitionStages.WithComputerNamePrefix,VirtualMachineScaleSet.DefinitionStages.WithCapacity,VirtualMachineScaleSet.DefinitionStages.WithUpgradePolicy,VirtualMachineScaleSet.DefinitionStages.WithOverProvision,VirtualMachineScaleSet.DefinitionStages.WithStorageAccount,VirtualMachineScaleSet.DefinitionStages.WithCustomData,VirtualMachineScaleSet.DefinitionStages.WithExtension,VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity,Resource.DefinitionWithTags<VirtualMachineScaleSet.DefinitionStages.WithCreate>'
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_managed
     parent: com.microsoft.azure.management.compute
     href: com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_managed.yml

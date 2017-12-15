@@ -5,6 +5,7 @@ items:
     parent: com.microsoft.azure.management.compute
     children:
       - com.microsoft.azure.management.compute._virtual_machine_extension_image_version.getImage()
+      - com.microsoft.azure.management.compute._virtual_machine_extension_image_version.getImageAsync()
       - com.microsoft.azure.management.compute._virtual_machine_extension_image_version.id()
       - com.microsoft.azure.management.compute._virtual_machine_extension_image_version.regionName()
       - com.microsoft.azure.management.compute._virtual_machine_extension_image_version.type()
@@ -18,12 +19,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
-      startLine: 17
+      startLine: 19
     package: com.microsoft.azure.management.compute
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Image-Version von Virtual Machine-Erweiterung. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Image-Version von Virtual Machine-Erweiterung. </p>
     syntax:
       content: 'public interface VirtualMachineExtensionImageVersion extends HasInner<VirtualMachineExtensionImageInner>,HasName'
     inheritedMembers:
@@ -43,13 +44,34 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
-      startLine: 38
+      startLine: 40
     package: com.microsoft.azure.management.compute
     syntax:
       content: public VirtualMachineExtensionImage getImage()
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_extension_image
         description: <p>Image eines virtuellen Computers Erweiterung stellt dieser version </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_extension_image_version.getImageAsync()
+    id: getImageAsync()
+    parent: com.microsoft.azure.management.compute._virtual_machine_extension_image_version
+    href: com.microsoft.azure.management.compute._virtual_machine_extension_image_version.yml
+    langs:
+      - java
+    name: getImageAsync()
+    nameWithType: VirtualMachineExtensionImageVersion.getImageAsync()
+    fullName: Observable<VirtualMachineExtensionImage> com.microsoft.azure.management.compute.VirtualMachineExtensionImageVersion.getImageAsync()
+    overload: com.microsoft.azure.management.compute._virtual_machine_extension_image_version.getImageAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
+      startLine: 47
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public Observable<VirtualMachineExtensionImage> getImageAsync()
+      return:
+        type: c2d0e8c6com.microsoft.azure.management.compute._virtual_machine_extension_imagea08ddfce
+        description: <p>Observable-Objekt nach Abonnement gibt das Bild aus. </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_extension_image_version.id()
     id: id()
     parent: com.microsoft.azure.management.compute._virtual_machine_extension_image_version
@@ -64,7 +86,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
-      startLine: 23
+      startLine: 25
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String id()
@@ -85,7 +107,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
-      startLine: 28
+      startLine: 30
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String regionName()
@@ -106,7 +128,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineExtensionImageVersion.java
-      startLine: 33
+      startLine: 35
     package: com.microsoft.azure.management.compute
     syntax:
       content: public VirtualMachineExtensionImageType type()
@@ -138,6 +160,21 @@ references:
     nameWithType: VirtualMachineExtensionImageVersion.getImage
     fullName: VirtualMachineExtensionImage com.microsoft.azure.management.compute.VirtualMachineExtensionImageVersion.getImage
     package: com.microsoft.azure.management.compute
+  - uid: c2d0e8c6com.microsoft.azure.management.compute._virtual_machine_extension_imagea08ddfce
+    spec.java:
+      - name: Observable<
+        fullName: Observable<
+      - uid: com.microsoft.azure.management.compute._virtual_machine_extension_image
+        name: VirtualMachineExtensionImage
+        fullName: com.microsoft.azure.management.compute.VirtualMachineExtensionImage
+        href: com.microsoft.azure.management.compute._virtual_machine_extension_image.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.compute._virtual_machine_extension_image_version.getImageAsync*
+    name: getImageAsync
+    nameWithType: VirtualMachineExtensionImageVersion.getImageAsync
+    fullName: Observable<VirtualMachineExtensionImage> com.microsoft.azure.management.compute.VirtualMachineExtensionImageVersion.getImageAsync
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.resources.fluentcore.model._has_inner.inner()
     parent: com.microsoft.azure.management.resources.fluentcore.model._has_inner
     href: com.microsoft.azure.management.resources.fluentcore.model._has_inner.yml
@@ -149,7 +186,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_name
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.yml
@@ -194,7 +231,7 @@ references:
     nameWithType: VirtualMachineExtensionImageType
     fullName: com.microsoft.azure.management.compute.VirtualMachineExtensionImageType
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> VM-Image Erweiterungstyp. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> VM-Image Erweiterungstyp. </p>
     syntax:
       content: 'public interface VirtualMachineExtensionImageType extends HasInner<VirtualMachineExtensionImageInner>,HasName'
   - uid: com.microsoft.azure.management.compute._virtual_machine_extension_image
@@ -205,8 +242,8 @@ references:
     fullName: com.microsoft.azure.management.compute.VirtualMachineExtensionImage
     type: Interface
     summary: |-
-      <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Erweiterung Abbild eines virtuellen Computers. </p>
-      <p>Hinweis: <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Erweiterung Abbild eines virtuellen Computers wird auch als VM-Erweiterungshandler bezeichnet. </p>
+      <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Erweiterung Abbild eines virtuellen Computers. </p>
+      <p>Hinweis: <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Erweiterung Abbild eines virtuellen Computers wird auch als VM-Erweiterungshandler bezeichnet. </p>
     syntax:
       content: public interface VirtualMachineExtensionImage extends HasInner<VirtualMachineExtensionImageInner>
   - uid: com.microsoft.azure.management._azure
@@ -216,6 +253,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

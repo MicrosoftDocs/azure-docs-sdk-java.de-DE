@@ -91,7 +91,7 @@ items:
       parameters:
         - id: other
           type: 93de0ef9com.microsoft.azure.storage.file._file_properties
-          description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._file_properties" data-throw-if-not-resolved="false"></xref></code> Objekt, das der zu kopierenden Dateieigenschaften darstellt. </p>'
+          description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._file_properties" data-throw-if-not-resolved="false">FileProperties</xref></code> Objekt, das der zu kopierenden Dateieigenschaften darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._file_properties.getCacheControl()
     id: getCacheControl()
     parent: com.microsoft.azure.storage.file._file_properties
@@ -259,7 +259,7 @@ items:
       content: public CopyState getCopyState()
       return:
         type: com.microsoft.azure.storage.file._copy_state
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._copy_state" data-throw-if-not-resolved="false"></xref> Objekt, das den Kopierstatus der Datei darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._copy_state" data-throw-if-not-resolved="false">CopyState</xref> Objekt, das den Kopierstatus der Datei darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._file_properties.getEtag()
     id: getEtag()
     parent: com.microsoft.azure.storage.file._file_properties
@@ -279,7 +279,7 @@ items:
     summary: |-
       <p>Ruft den ETag-Wert für die Datei an. </p>
       <p>Der ETag-Wert ist ein eindeutiger Bezeichner, der aktualisiert wird, wenn ein Schreibvorgang für die Datei ausgeführt wird. Es kann verwendet werden um Vorgänge bedingt, parallelitätssteuerung und verbesserte Effizienz bereitstellen. </p>
-      <p>Die <xref href="com.microsoft.azure.storage._access_condition.generateIfMatchCondition(final String)" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._access_condition.generateIfNoneMatchCondition(final String)" data-throw-if-not-resolved="false"></xref> Methoden verwenden Sie einen ETag-Wert und Zurückgeben einer <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das in der Anforderung angegeben werden kann.</p>
+      <p>Die <xref uid="com.microsoft.azure.storage._access_condition.generateIfMatchCondition(final String)" data-throw-if-not-resolved="false">AccessCondition#generateIfMatchCondition(String)</xref> und <xref uid="com.microsoft.azure.storage._access_condition.generateIfNoneMatchCondition(final String)" data-throw-if-not-resolved="false">AccessCondition#generateIfNoneMatchCondition(String)</xref> Methoden verwenden Sie einen ETag-Wert und Zurückgeben einer <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition </xref> -Objekt, das in der Anforderung angegeben werden kann.</p>
       <p></p>
     syntax:
       content: public String getEtag()
@@ -309,7 +309,7 @@ items:
       content: public Date getLastModified()
       return:
         type: '12977444'
-        description: <p>Ein <ref refid="" kindref="compound">java.util.Date</ref> Objekt die Uhrzeit der letzten Änderung darstellt. </p>
+        description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">java.util.Date</xref> Objekt die Uhrzeit der letzten Änderung darstellt. </p>
   - uid: com.microsoft.azure.storage.file._file_properties.getLength()
     id: getLength()
     parent: com.microsoft.azure.storage.file._file_properties
@@ -532,7 +532,7 @@ items:
       parameters:
         - id: copyState
           type: 93de0ef9com.microsoft.azure.storage.file._copy_state
-          description: <p>Ein <xref href="com.microsoft.azure.storage.file._copy_state" data-throw-if-not-resolved="false"></xref> Objekt das den kopieren-Statuswert festzulegende angibt. </p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage.file._copy_state" data-throw-if-not-resolved="false">CopyState</xref> Objekt das den kopieren-Statuswert festzulegende angibt. </p>
   - uid: com.microsoft.azure.storage.file._file_properties.setEtag(final String)
     id: setEtag(final String)
     parent: com.microsoft.azure.storage.file._file_properties
@@ -582,7 +582,7 @@ items:
       parameters:
         - id: lastModified
           type: 970a8f17
-          description: <p>Ein <ref refid="" kindref="compound">java.util.Date</ref> Objekt das Zeitpunkt der letzten Änderung festzulegende angibt. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">java.util.Date</xref> Objekt das Zeitpunkt der letzten Änderung festzulegende angibt. </p>
   - uid: com.microsoft.azure.storage.file._file_properties.setLength(final long)
     id: setLength(final long)
     parent: com.microsoft.azure.storage.file._file_properties
@@ -821,7 +821,7 @@ references:
     type: Method
     summary: |-
       <p>Gibt eine Bedingung für den Zugriff zurück, z. B., dass ein Vorgang ausgeführt wird, nur wenn der ETag-Wert der Ressource mit dem angegebenen ETag-Wert übereinstimmt. </p>
-      <p>Festlegen von dieser Bedingung für den Zugriff ändert die Anforderung der HTTP einschließen <emphasis>If-Match</emphasis> bedingten Header an. Wenn diese Bedingung für den Zugriff festgelegt ist, wird der Vorgang ausgeführt, nur dann, wenn das ETag der Ressource mit das angegebene ETag übereinstimmt. </p>
+      <p>Festlegen von dieser Bedingung für den Zugriff ändert die Anforderung der HTTP einschließen <em>If-Match</em> bedingten Header an. Wenn diese Bedingung für den Zugriff festgelegt ist, wird der Vorgang ausgeführt, nur dann, wenn das ETag der Ressource mit das angegebene ETag übereinstimmt. </p>
       <p>Weitere Informationen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224642">angeben von bedingten Headern für Blob-Dienstvorgänge</ulink>.</p>
       <p></p>
     syntax:
@@ -832,7 +832,7 @@ references:
           description: '<p>Ein <code>String</code> , den zu überprüfende ETag-Wert darstellt.</p>'
       return:
         type: com.microsoft.azure.storage._access_condition
-        description: '<p>Ein <code><xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref></code> -Objekt, das stellt die <emphasis>If-Match</emphasis> Bedingung. </p>'
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref></code> -Objekt, das stellt die <em>If-Match</em> Bedingung. </p>'
   - uid: com.microsoft.azure.storage._access_condition.generateIfNoneMatchCondition(final String)
     parent: com.microsoft.azure.storage._access_condition
     href: com.microsoft.azure.storage._access_condition.yml
@@ -842,7 +842,7 @@ references:
     type: Method
     summary: |-
       <p>Gibt eine Bedingung für den Zugriff zurück, z. B., dass ein Vorgang ausgeführt wird, nur wenn der ETag-Wert der Ressource nicht mit den angegebenen ETag-Wert übereinstimmt. </p>
-      <p>Festlegen von dieser Bedingung für den Zugriff ändert die Anforderung der HTTP einschließen <emphasis>If-None-Match</emphasis> bedingten Header an. Wenn diese Bedingung für den Zugriff festgelegt ist, wird der Vorgang ausgeführt, nur dann, wenn das ETag der Ressource nicht mit dem angegebene ETag übereinstimmt. </p>
+      <p>Festlegen von dieser Bedingung für den Zugriff ändert die Anforderung der HTTP einschließen <em>If-None-Match</em> bedingten Header an. Wenn diese Bedingung für den Zugriff festgelegt ist, wird der Vorgang ausgeführt, nur dann, wenn das ETag der Ressource nicht mit dem angegebene ETag übereinstimmt. </p>
       <p>Weitere Informationen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224642">angeben von bedingten Headern für Blob-Dienstvorgänge</ulink>.</p>
       <p></p>
     syntax:
@@ -853,7 +853,7 @@ references:
           description: '<p>Ein <code>String</code> , den zu überprüfende ETag-Wert darstellt.</p>'
       return:
         type: com.microsoft.azure.storage._access_condition
-        description: '<p>Ein <code><xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref></code> -Objekt, das stellt die <emphasis>If-None-Match</emphasis> Bedingung. </p>'
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref></code> -Objekt, das stellt die <em>If-None-Match</em> Bedingung. </p>'
   - uid: com.microsoft.azure.storage._access_condition
     parent: com.microsoft.azure.storage
     href: com.microsoft.azure.storage._access_condition.yml

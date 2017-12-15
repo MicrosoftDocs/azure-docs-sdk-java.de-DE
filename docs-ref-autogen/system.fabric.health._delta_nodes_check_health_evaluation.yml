@@ -24,7 +24,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/DeltaNodesCheckHealthEvaluation.java
       startLine: 10
     package: system.fabric.health
-    summary: '<p>Stellt die integritätsevaluierung für Deltaknoten, mit auswertungen der Clientintegrität für jeden fehlerhaften Knoten, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. Während des Upgrades Cluster zurückgegeben werden kann, wird der aggregierte Integritätszustand des Clusters <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref>. </p>'
+    summary: '<p>Stellt die integritätsevaluierung für Deltaknoten, mit auswertungen der Clientintegrität für jeden fehlerhaften Knoten, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. Während des Upgrades Cluster zurückgegeben werden kann, wird der aggregierte Integritätszustand des Clusters <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref>. </p>'
     syntax:
       content: public class DeltaNodesCheckHealthEvaluation extends HealthEvaluation
     inheritance:
@@ -54,13 +54,13 @@ items:
       startLine: 85
     package: system.fabric.health
     summary: |-
-      <p>Ruft die Anzahl der Knoten mit der aggregierte Integritätszustand <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref> am Anfang des Cluster-Upgrades in den Zustand zu speichern.</p>
+      <p>Ruft die Anzahl der Knoten mit der aggregierte Integritätszustand <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref> am Anfang des Cluster-Upgrades in den Zustand zu speichern.</p>
       <p></p>
     syntax:
       content: public long getBaselineErrorCount()
       return:
         type: 0364520f
-        description: '<p>Die Anzahl von Knoten mit der aggregierte Integritätszustand <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref> am Anfang des Cluster-Upgrades in den Zustand zu speichern. </p>'
+        description: '<p>Die Anzahl von Knoten mit der aggregierte Integritätszustand <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref> am Anfang des Cluster-Upgrades in den Zustand zu speichern. </p>'
   - uid: system.fabric.health._delta_nodes_check_health_evaluation.getBaselineTotalCount()
     id: getBaselineTotalCount()
     parent: system.fabric.health._delta_nodes_check_health_evaluation
@@ -102,7 +102,7 @@ items:
       startLine: 53
     package: system.fabric.health
     summary: |-
-      <p>Ruft die maximal zulässige Prozentsatz Delta fehlerhafte Knoten aus der<xref href="system.fabric.health._cluster_upgrade_health_policy" data-throw-if-not-resolved="false"></xref></p>
+      <p>Ruft die maximal zulässige Prozentsatz Delta fehlerhafte Knoten aus der <xref uid="system.fabric.health._cluster_upgrade_health_policy" data-throw-if-not-resolved="false">system.fabric.health.ClusterUpgradeHealthPolicy</xref></p>
       <p></p>
     syntax:
       content: public byte getMaxPercentDeltaUnhealthyNodes()
@@ -150,7 +150,7 @@ items:
       startLine: 43
     package: system.fabric.health
     summary: |-
-      <p>Ruft die Liste der fehlerhaften auswertungen, die zu der aggregierte Integritätszustand geführt hat. Schließt alle fehlerhaften <xref href="system.fabric.health._node_health_evaluation" data-throw-if-not-resolved="false"></xref> , die die zusammengefasste Integrität beeinträchtigt.</p>
+      <p>Ruft die Liste der fehlerhaften auswertungen, die zu der aggregierte Integritätszustand geführt hat. Schließt alle fehlerhaften <xref uid="system.fabric.health._node_health_evaluation" data-throw-if-not-resolved="false">system.fabric.health.NodeHealthEvaluation</xref> , die die zusammengefasste Integrität beeinträchtigt.</p>
       <p></p>
     syntax:
       content: public List<HealthEvaluation> getUnhealthyEvaluations()
@@ -229,7 +229,7 @@ references:
       content: public HealthState getAggregatedHealthState()
       return:
         type: system.fabric.health._health_state
-        description: '<p>Ein <xref href="system.fabric.health._health_state" data-throw-if-not-resolved="false"></xref> , der aggregierte Integritätszustand darstellt. </p>'
+        description: '<p>Ein <xref uid="system.fabric.health._health_state" data-throw-if-not-resolved="false">system.fabric.health.HealthState</xref> , der aggregierte Integritätszustand darstellt. </p>'
   - uid: system.fabric.health._health_evaluation.getDescription()
     parent: system.fabric.health._health_evaluation
     href: system.fabric.health._health_evaluation.yml
@@ -244,7 +244,7 @@ references:
       content: public String getDescription()
       return:
         type: '26831127'
-        description: '<p>Ein <ref refid="" kindref="compound">java.lang.String</ref> , die die Beschreibung der integritätsauswertung darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">java.lang.String</xref> , die die Beschreibung der integritätsauswertung darstellt. </p>'
   - uid: system.fabric.health._health_evaluation.getKind()
     parent: system.fabric.health._health_evaluation
     href: system.fabric.health._health_evaluation.yml
@@ -259,7 +259,7 @@ references:
       content: public HealthEvaluationKind getKind()
       return:
         type: system.fabric.health._health_evaluation_kind
-        description: <p>Ein <xref href="system.fabric.health._health_evaluation_kind" data-throw-if-not-resolved="false"></xref> der integritätsauswertung. </p>
+        description: <p>Ein <xref uid="system.fabric.health._health_evaluation_kind" data-throw-if-not-resolved="false">system.fabric.health.HealthEvaluationKind</xref> der integritätsauswertung. </p>
   - uid: 'system.fabric.health._health_evaluation.HealthEvaluation(HealthEvaluationKind,String,HealthState)'
     parent: system.fabric.health._health_evaluation
     href: system.fabric.health._health_evaluation.yml
@@ -304,7 +304,7 @@ references:
     nameWithType: NodeHealthEvaluation
     fullName: system.fabric.health.NodeHealthEvaluation
     type: Class
-    summary: '<p>Stellt die integritätsauswertung für einen Knoten, die mit Informationen zu den Daten und der Algorithmus zum Health Store integritätsevaluierung aktiviert werden soll. Die Auswertung wird nur zurückgegeben, wenn der aggregierte Integritätszustand entweder ist <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref> oder <ref refid="" kindref="compound">system.fabric.health.HealthState#Warning</ref>. </p>'
+    summary: '<p>Stellt die integritätsauswertung für einen Knoten, die mit Informationen zu den Daten und der Algorithmus zum Health Store integritätsevaluierung aktiviert werden soll. Die Auswertung wird nur zurückgegeben, wenn der aggregierte Integritätszustand entweder ist <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref> oder <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Warning</xref>. </p>'
     syntax:
       content: public class NodeHealthEvaluation
   - uid: system.fabric.health._cluster_upgrade_health_policy
@@ -314,6 +314,6 @@ references:
     nameWithType: ClusterUpgradeHealthPolicy
     fullName: system.fabric.health.ClusterUpgradeHealthPolicy
     type: Class
-    summary: "<p>Definiert eine Integritätsrichtlinie verwendet, um den Zustand des Clusters zum clusterupgrade bestimmte auszuwerten. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>abfrageproblem™ zusammen mit s <xref href=\"system.fabric._cluster_health_policy\" data-throw-if-not-resolved=\"false\"></xref> Auswerten der clusterintegrität und ermitteln, ob das überwachte clusterupgrade erfolgreich ist oder ein Rollback ausgeführt werden muss. </p>"
+    summary: "<p>Definiert eine Integritätsrichtlinie verwendet, um den Zustand des Clusters zum clusterupgrade bestimmte auszuwerten. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>abfrageproblem™ s zusammen mit <xref uid=\"system.fabric._cluster_health_policy\" data-throw-if-not-resolved=\"false\">system.fabric.ClusterHealthPolicy</xref> Auswerten der clusterintegrität und ermitteln, ob das überwachte clusterupgrade erfolgreich ist oder ein Rollback ausgeführt werden muss. </p>"
     syntax:
       content: public class ClusterUpgradeHealthPolicy

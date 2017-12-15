@@ -96,7 +96,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1210
     package: system.fabric
-    summary: <p>Bricht diese Instanz die <ref refid="" kindref="compound">system.fabric.KeyValueStoreReplica</ref> Klasse. </p>
+    summary: <p>Bricht diese Instanz die <xref uid="" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica</xref> Klasse. </p>
     syntax:
       content: public void abort()
     overridden: system.fabric._stateful_service_replica.abort()
@@ -147,29 +147,29 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 908
     package: system.fabric
-    summary: "<p>Erstellt asynchron eine Sicherung der Schlüssel / Wert-Speicher.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold> der <bold>PostBackupAsyncFunc</bold> wird nicht aufgerufen, wenn während der Sicherung ein Fehler aufgetreten ist. Außerdem ist es nicht aufgerufen wird, wenn <bold>BackupOption</bold> ist <xref href=\"system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY()\" data-throw-if-not-resolved=\"false\"></xref> , da es ist keine weitere Aktion, die vom Benutzer in diesem Fall einen einzelnen Sicherungszyklus abgeschlossen erforderlich. </p>"
+    summary: "<p>Erstellt asynchron eine Sicherung der Schlüssel / Wert-Speicher.</p>\n<p>\r\n\r\n  <b>Hinweise:</b> der <b>PostBackupAsyncFunc</b> wird nicht aufgerufen, wenn während der Sicherung ein Fehler aufgetreten ist. Außerdem ist es nicht aufgerufen wird, wenn <b>BackupOption</b> ist <xref uid=\"system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY\" data-throw-if-not-resolved=\"false\">StoreBackupOption #FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY</xref> , da es ist keine weitere Aktion, die vom Benutzer in diesem Fall zum Abschließen der erforderlichen ein einzelne Sicherungszyklus. </p>"
     syntax:
       content: 'public CompletableFuture<?> backupAsync(String backupDirectory, StoreBackupOption backupOption, Function<StoreBackupInfo, CompletableFuture<Boolean>> postBackupAsyncFunc)'
       parameters:
         - id: backupDirectory
           type: '26831127'
-          description: '<p>Das Verzeichnis, in dem die Sicherung gespeichert werden soll. Wenn <bold>BackupOption</bold> ist <xref href="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY()" data-throw-if-not-resolved="false"></xref>, und klicken Sie dann dieses Parameters muss null sein. Andernfalls dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. Wenn das Verzeichnis nicht vorhanden ist, wird es erstellt. Wenn es vorhanden ist und nicht leer ist, misslingt die inkrementeller Sicherung mit <xref href="system.fabric.exception._fabric_backup_directory_not_empty_exception" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>Das Verzeichnis, in dem die Sicherung gespeichert werden soll. Wenn <b>BackupOption</b> ist <xref uid="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY" data-throw-if-not-resolved="false">StoreBackupOption #FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY</xref>, und klicken Sie dann dieses Parameters muss null sein. Andernfalls dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. Wenn das Verzeichnis nicht vorhanden ist, wird es erstellt. Wenn es vorhanden ist und nicht leer ist, misslingt die inkrementeller Sicherung mit <xref uid="system.fabric.exception._fabric_backup_directory_not_empty_exception" data-throw-if-not-resolved="false">system.fabric.exception.FabricBackupDirectoryNotEmptyException</xref>. </p>'
         - id: backupOption
           type: system.fabric._store_backup_option
           description: <p>Die Sicherungsoption. </p>
         - id: postBackupAsyncFunc
           type: 432ffe41system.fabric._store_backup_info774bd4f0
-          description: '<p>Im Beitrag sichern asynchrone Methode, die von Windows Fabric, damit der Benutzer alle nach der Sicherung Aktivität abgeschlossen wird, vor dem Zurückgeben der Steuerung an das System kann aufgerufen wird. Wenn <bold>null</bold> übergeben, inkrementelle Sicherungen sind nicht zulässig. Wenn die Methode nach der Sicherung auf "false" zurückgibt, sind dann erneut inkrementelle Sicherungen nicht zulässig. </p>'
+          description: '<p>Im Beitrag sichern asynchrone Methode, die von Windows Fabric, damit der Benutzer alle nach der Sicherung Aktivität abgeschlossen wird, vor dem Zurückgeben der Steuerung an das System kann aufgerufen wird. Wenn <b>null</b> übergeben, inkrementelle Sicherungen sind nicht zulässig. Wenn die Methode nach der Sicherung auf "false" zurückgibt, sind dann erneut inkrementelle Sicherungen nicht zulässig. </p>'
       return:
         type: 16409f84
         description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
     exceptions:
       - type: 3c87bd19
-        description: <p>BackupDirectory ist <bold>null</bold> Wenn BackupOption keine ist <xref href="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY()" data-throw-if-not-resolved="false"></xref>. </p>
+        description: '<p>BackupDirectory ist <b>null</b> Wenn BackupOption keine ist <xref uid="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY" data-throw-if-not-resolved="false">StoreBackupOption #FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY</xref>. </p>'
       - type: 3c87bd19
-        description: '<p>BackupDirectory ist leer oder enthält nur Leerzeichen, wenn BackupOption nicht <xref href="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY()" data-throw-if-not-resolved="false"></xref> oder BackupDirectory ist nicht <bold>null</bold> Wenn BackupOption ist <xref href="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY()" data-throw-if-not-resolved="false"></xref>. </p>'
+        description: '<p>BackupDirectory ist leer oder enthält nur Leerzeichen, wenn BackupOption nicht <xref uid="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY" data-throw-if-not-resolved="false">StoreBackupOption #FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY</xref> oder BackupDirectory ist nicht <b>null</b> bei BackupOption ist <xref uid="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY" data-throw-if-not-resolved="false">StoreBackupOption #FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY</xref>. </p>'
       - type: system.fabric.exception._fabric_backup_directory_not_empty_exception
-        description: <p>Wenn BackupOption ist <xref href="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_INCREMENTAL()" data-throw-if-not-resolved="false"></xref> und das Sicherungsverzeichnis Dateien oder Unterverzeichnisse bereits enthält. </p>
+        description: '<p>Wenn BackupOption ist <xref uid="system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_INCREMENTAL" data-throw-if-not-resolved="false">StoreBackupOption #FABRIC_STORE_BACKUP_OPTION_INCREMENTAL</xref> und das Sicherungsverzeichnis Dateien oder Unterverzeichnisse bereits enthält. </p>'
       - type: system.fabric.exception._fabric_backup_in_progress_exception
         description: <p>Wenn eine zuvor begonnene Sicherung gerade ausgeführt wird. </p>
   - uid: 'system.fabric._key_value_store_replica.changeRoleAsync(ReplicaRole,CancellationToken)'
@@ -188,7 +188,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1128
     package: system.fabric
-    summary: "<p>Ändert die replikatrolle, der das Replikat als auch ihre Replikator an.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>muss diese Methode nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten überschreiben <xref href=\"system.fabric._key_value_store_replica.onChangeRoleAsync(ReplicaRole,CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> stattdessen. </p>"
+    summary: "<p>Ändert die replikatrolle, der das Replikat als auch ihre Replikator an.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>muss diese Methode nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten überschreiben <xref uid=\"system.fabric._key_value_store_replica.onChangeRoleAsync(ReplicaRole,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica#onChangeRoleAsync (system.fabric.ReplicaRole, system.fabric.CancellationToken)</xref> stattdessen. </p>"
     syntax:
       content: 'public CompletableFuture<String> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
       parameters:
@@ -197,7 +197,7 @@ items:
           description: <p>Die replikatrolle Ziel. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 06be942d
         description: '<p>Eine Aufgabe, deren Ergebnis die Adresse für dieses Replikat ist. </p>'
@@ -218,13 +218,13 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1180
     package: system.fabric
-    summary: "<p>Schließt das Replikat und ihre Replikator Vorbereitung aus einem Replikatsatz offline geschaltet. Derzeit wird nicht verwendet. Für zukünftige Verwendung reserviert.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>das Replikat nicht zwangsläufig entfernt dauerhaft aus dem Replikatsatz und können zu einem späteren Zeitpunkt erneut geöffnet werden. Die häufigsten Ursachen für das Schließen eines Replikats ist als Vorbereitung für das Upgrade oder Lastenausgleich ein ordnungsgemäßes Herunterfahren. Diese Methode muss nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten überschreiben <xref href=\"system.fabric._key_value_store_replica.onCloseAsync(CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> stattdessen. </p>"
+    summary: "<p>Schließt das Replikat und ihre Replikator Vorbereitung aus einem Replikatsatz offline geschaltet. Derzeit wird nicht verwendet. Für zukünftige Verwendung reserviert.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>das Replikat nicht zwangsläufig entfernt dauerhaft aus dem Replikatsatz und können zu einem späteren Zeitpunkt erneut geöffnet werden. Die häufigsten Ursachen für das Schließen eines Replikats ist als Vorbereitung für das Upgrade oder Lastenausgleich ein ordnungsgemäßes Herunterfahren. Diese Methode muss nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten überschreiben <xref uid=\"system.fabric._key_value_store_replica.onCloseAsync(CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica#onCloseAsync(system.fabric.CancellationToken)</xref> stattdessen. </p>"
     syntax:
       content: public CompletableFuture<Void> closeAsync(CancellationToken cancellationToken)
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: db03ee24
         description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
@@ -277,13 +277,13 @@ items:
       startLine: 317
     package: system.fabric
     summary: |-
-      <p>Erstellt einen eindeutigen <xref href="system.fabric._transaction" data-throw-if-not-resolved="false"></xref> -Instanz, die verwendet wird, um einen commit oder Rollback-Gruppen von Schlüssel/Wert-Speichervorgänge.</p>
+      <p>Erstellt einen eindeutigen <xref uid="system.fabric._transaction" data-throw-if-not-resolved="false">system.fabric.Transaction</xref> -Instanz, die verwendet wird, um einen commit oder Rollback-Gruppen von Schlüssel/Wert-Speichervorgänge.</p>
       <p></p>
     syntax:
       content: public Transaction createTransaction()
       return:
         type: system.fabric._transaction
-        description: '<p>Ein <xref href="system.fabric._transaction" data-throw-if-not-resolved="false"></xref> Objekt, das eine Transaktion darstellt. </p>'
+        description: '<p>Ein <xref uid="system.fabric._transaction" data-throw-if-not-resolved="false">system.fabric.Transaction</xref> Objekt, das eine Transaktion darstellt. </p>'
   - uid: system.fabric._key_value_store_replica.createTransaction(KeyValueStoreTransactionSettings)
     id: createTransaction(KeyValueStoreTransactionSettings)
     parent: system.fabric._key_value_store_replica
@@ -301,7 +301,7 @@ items:
       startLine: 337
     package: system.fabric
     summary: |-
-      <p>Erstellt einen eindeutigen <xref href="system.fabric._transaction" data-throw-if-not-resolved="false"></xref> -Instanz, die verwendet wird, um einen commit oder Rollback-Gruppen von Schlüssel/Wert-Speichervorgänge.</p>
+      <p>Erstellt einen eindeutigen <xref uid="system.fabric._transaction" data-throw-if-not-resolved="false">system.fabric.Transaction</xref> -Instanz, die verwendet wird, um einen commit oder Rollback-Gruppen von Schlüssel/Wert-Speichervorgänge.</p>
       <p></p>
     syntax:
       content: public Transaction createTransaction(KeyValueStoreTransactionSettings settings)
@@ -311,7 +311,7 @@ items:
           description: <p>Die transaktionseinstellungen. </p>
       return:
         type: system.fabric._transaction
-        description: '<p>Ein <xref href="system.fabric._transaction" data-throw-if-not-resolved="false"></xref> Objekt, das eine Transaktion darstellt. </p>'
+        description: '<p>Ein <xref uid="system.fabric._transaction" data-throw-if-not-resolved="false">system.fabric.Transaction</xref> Objekt, das eine Transaktion darstellt. </p>'
   - uid: system.fabric._key_value_store_replica.enumerate(TransactionBase)
     id: enumerate(TransactionBase)
     parent: system.fabric._key_value_store_replica
@@ -329,7 +329,7 @@ items:
       startLine: 721
     package: system.fabric
     summary: |-
-      <p>Gibt einen Enumerator, der durchläuft die <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Werte im Schlüssel/Wert-Speicher.</p>
+      <p>Gibt einen Enumerator, der durchläuft die <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Werte im Schlüssel/Wert-Speicher.</p>
       <p></p>
     syntax:
       content: public Enumeration<KeyValueStoreItem> enumerate(TransactionBase transactionBase)
@@ -339,7 +339,7 @@ items:
           description: <p>Die Transaktion-Instanz. </p>
       return:
         type: 29771a6asystem.fabric._key_value_store_itema08ddfce
-        description: <p>Ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Enumerator. </p>
+        description: <p>Ein <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Enumerator. </p>
   - uid: 'system.fabric._key_value_store_replica.enumerate(TransactionBase,String)'
     id: 'enumerate(TransactionBase,String)'
     parent: system.fabric._key_value_store_replica
@@ -357,7 +357,7 @@ items:
       startLine: 743
     package: system.fabric
     summary: |-
-      <p>Gibt einen Enumerator, der durchläuft die <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Werte im Schlüssel/Wert speichern, bei denen die Wert-Schlüssel für das angegebene Präfix übereinstimmen.</p>
+      <p>Gibt einen Enumerator, der durchläuft die <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Werte im Schlüssel/Wert speichern, bei denen die Wert-Schlüssel für das angegebene Präfix übereinstimmen.</p>
       <p></p>
     syntax:
       content: 'public Enumeration<KeyValueStoreItem> enumerate(TransactionBase transactionBase, String keyPrefix)'
@@ -370,7 +370,7 @@ items:
           description: '<p>Der Schlüssel oder Index, Präfix entsprechend (als Zeichenfolge). Beschränkt auf 800 Zeichen lang sein. </p>'
       return:
         type: 29771a6asystem.fabric._key_value_store_itema08ddfce
-        description: <p>Ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Enumerator. </p>
+        description: <p>Ein <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Enumerator. </p>
   - uid: 'system.fabric._key_value_store_replica.enumerate(TransactionBase,String,boolean)'
     id: 'enumerate(TransactionBase,String,boolean)'
     parent: system.fabric._key_value_store_replica
@@ -388,7 +388,7 @@ items:
       startLine: 769
     package: system.fabric
     summary: |-
-      <p>Gibt einen Enumerator, der durchläuft die <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Werte im Schlüssel/Wert-Speicher.</p>
+      <p>Gibt einen Enumerator, der durchläuft die <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Werte im Schlüssel/Wert-Speicher.</p>
       <p></p>
     syntax:
       content: 'public Enumeration<KeyValueStoreItem> enumerate(TransactionBase transactionBase, String keyPrefix, boolean strictPrefix)'
@@ -404,7 +404,7 @@ items:
           description: '<p>Bei "true", werden nur der angegebene Wert für "KeyPrefix" vorangestellt Schlüssel zurückgegeben. Andernfalls Enumeration mit den ersten Schlüssel übereinstimmenden lexikografisch größer oder gleich "KeyPrefix" beginnt und wird fortgesetzt, bis keine weiteren Zeilen vorhanden sind. Der Standardwert ist „true“. </p>'
       return:
         type: 29771a6asystem.fabric._key_value_store_itema08ddfce
-        description: <p>Ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Enumerator. </p>
+        description: <p>Ein <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Enumerator. </p>
   - uid: system.fabric._key_value_store_replica.enumerateMetadata(TransactionBase)
     id: enumerateMetadata(TransactionBase)
     parent: system.fabric._key_value_store_replica
@@ -422,7 +422,7 @@ items:
       startLine: 795
     package: system.fabric
     summary: |-
-      <p>Gibt einen Enumerator, der durchläuft die <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Werte im Schlüssel/Wert-Speicher.</p>
+      <p>Gibt einen Enumerator, der durchläuft die <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Werte im Schlüssel/Wert-Speicher.</p>
       <p></p>
     syntax:
       content: public Enumeration<KeyValueStoreItemMetadata> enumerateMetadata(TransactionBase transactionBase)
@@ -432,7 +432,7 @@ items:
           description: <p>Die Transaktion-Instanz. </p>
       return:
         type: 29771a6asystem.fabric._key_value_store_item_metadataa08ddfce
-        description: <p>Ein <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Enumerator. </p>
+        description: <p>Ein <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Enumerator. </p>
   - uid: 'system.fabric._key_value_store_replica.enumerateMetadata(TransactionBase,String)'
     id: 'enumerateMetadata(TransactionBase,String)'
     parent: system.fabric._key_value_store_replica
@@ -450,7 +450,7 @@ items:
       startLine: 818
     package: system.fabric
     summary: |-
-      <p>Gibt einen Enumerator, der durchläuft die <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Werte im Schlüssel/Wert speichern, bei denen die Wert-Schlüssel für das angegebene Präfix übereinstimmen.</p>
+      <p>Gibt einen Enumerator, der durchläuft die <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Werte im Schlüssel/Wert speichern, bei denen die Wert-Schlüssel für das angegebene Präfix übereinstimmen.</p>
       <p></p>
     syntax:
       content: 'public Enumeration<KeyValueStoreItemMetadata> enumerateMetadata(TransactionBase transactionBase, String keyPrefix)'
@@ -463,7 +463,7 @@ items:
           description: '<p>Der Schlüssel oder Index, Präfix entsprechend (als Zeichenfolge). Beschränkt auf 800 Zeichen lang sein. </p>'
       return:
         type: 29771a6asystem.fabric._key_value_store_item_metadataa08ddfce
-        description: <p>Ein <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Enumerator. </p>
+        description: <p>Ein <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Enumerator. </p>
   - uid: 'system.fabric._key_value_store_replica.enumerateMetadata(TransactionBase,String,boolean)'
     id: 'enumerateMetadata(TransactionBase,String,boolean)'
     parent: system.fabric._key_value_store_replica
@@ -481,7 +481,7 @@ items:
       startLine: 848
     package: system.fabric
     summary: |-
-      <p>Gibt einen Enumerator, der durchläuft die <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Werte im Schlüssel/Wert-Speicher.</p>
+      <p>Gibt einen Enumerator, der durchläuft die <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Werte im Schlüssel/Wert-Speicher.</p>
       <p></p>
     syntax:
       content: 'public Enumeration<KeyValueStoreItemMetadata> enumerateMetadata(TransactionBase transactionBase, String keyPrefix, boolean strictPrefix)'
@@ -497,7 +497,7 @@ items:
           description: '<p>Bei "true", werden nur der angegebene Wert für "KeyPrefix" vorangestellt Schlüssel zurückgegeben. Andernfalls Enumeration mit den ersten Schlüssel übereinstimmenden lexikografisch größer oder gleich "KeyPrefix" beginnt und wird fortgesetzt, bis keine weiteren Zeilen vorhanden sind. Der Standardwert ist „true“. </p>'
       return:
         type: 29771a6asystem.fabric._key_value_store_item_metadataa08ddfce
-        description: <p>Ein <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Enumerator. </p>
+        description: <p>Ein <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Enumerator. </p>
   - uid: 'system.fabric._key_value_store_replica.get(TransactionBase,String)'
     id: 'get(TransactionBase,String)'
     parent: system.fabric._key_value_store_replica
@@ -515,7 +515,7 @@ items:
       startLine: 573
     package: system.fabric
     summary: |-
-      <p>Ruft den gespeicherten Wert als ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> -Objekt, dem angegebenen Schlüssel zugeordnet.</p>
+      <p>Ruft den gespeicherten Wert als eine <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> -Objekt, dem angegebenen Schlüssel zugeordnet.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreItem get(TransactionBase transactionBase, String key)'
@@ -528,7 +528,7 @@ items:
           description: <p>Der Schlüssel oder Index des Werts (als Zeichenfolge) abgerufen werden sollen. Beschränkt auf 800 Zeichen lang sein. </p>
       return:
         type: system.fabric._key_value_store_item
-        description: '<p>Ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Objekt, das den gespeicherten Wert darstellt. </p>'
+        description: '<p>Ein <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Objekt, das den gespeicherten Wert darstellt. </p>'
   - uid: system.fabric._key_value_store_replica.getCurrentEpoch()
     id: getCurrentEpoch()
     parent: system.fabric._key_value_store_replica
@@ -590,7 +590,7 @@ items:
       startLine: 660
     package: system.fabric
     summary: |-
-      <p>Ruft die Metadaten als eine <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> -Objekt für den angegebenen Schlüssel zugeordnete Wert.</p>
+      <p>Ruft die Metadaten als eine <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> -Objekt für den angegebenen Schlüssel zugeordnete Wert.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreItemMetadata getMetadata(TransactionBase transactionBase, String key)'
@@ -603,7 +603,7 @@ items:
           description: <p>Der Schlüssel oder Index des Werts (als Zeichenfolge) abgerufen werden sollen. Beschränkt auf 800 Zeichen lang sein. </p>
       return:
         type: system.fabric._key_value_store_item_metadata
-        description: '<p>Ein <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> Objekt, das den angegebenen Wert zugeordnete Metadaten darstellt. </p>'
+        description: '<p>Ein <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> Objekt, das den angegebenen Wert zugeordnete Metadaten darstellt. </p>'
   - uid: system.fabric._key_value_store_replica.getReplicatorSettings()
     id: getReplicatorSettings()
     parent: system.fabric._key_value_store_replica
@@ -644,7 +644,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1453
     package: system.fabric
-    summary: "<p>Ruft den Namen des Schlüssel/Wert-Speichers ab.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Geschäftsnamen gültige Dateinamenzeichen entsprechen soll. </p>"
+    summary: "<p>Ruft den Namen des Schlüssel/Wert-Speichers ab.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der Geschäftsnamen gültige Dateinamenzeichen entsprechen soll. </p>"
     syntax:
       content: public String getStoreName()
       return:
@@ -697,7 +697,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1004
     package: system.fabric
-    summary: "<p>Initialisiert das Replikat als Vorbereitung für das Öffnen.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>muss diese Methode nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten überschreiben <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica#onInitialize(system.fabric.StatefulServiceInitializationParameters)</ref> stattdessen. </p>"
+    summary: "<p>Initialisiert das Replikat als Vorbereitung für das Öffnen.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>muss diese Methode nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten überschreiben <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica#onInitialize(system.fabric.StatefulServiceInitializationParameters)</xref> stattdessen. </p>"
     syntax:
       content: public void initialize(StatefulServiceInitializationParameters initializationParameters)
       parameters:
@@ -721,7 +721,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 164
     package: system.fabric
-    summary: "<p>Initialisiert eine neue Instanz der dem <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref> Klasse mit dem angegebenen Schlüssel/Wert-Geschäftsnamen.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Geschäftsnamen gültige Dateinamenzeichen entsprechen soll. </p>"
+    summary: "<p>Initialisiert eine neue Instanz der dem <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref> Klasse mit dem angegebenen Schlüssel/Wert-Geschäftsnamen.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der Geschäftsnamen gültige Dateinamenzeichen entsprechen soll. </p>"
     syntax:
       content: public KeyValueStoreReplica(String storeName)
       parameters:
@@ -745,7 +745,7 @@ items:
       startLine: 177
     package: system.fabric
     summary: |-
-      <p>Initialisiert eine neue Instanz der dem <ref refid="" kindref="compound">system.fabric.KeyValueStoreReplica</ref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Namen und Einstellungen für lokalen Speicher.</p>
+      <p>Initialisiert eine neue Instanz der dem <xref uid="" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica</xref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Namen und Einstellungen für lokalen Speicher.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreReplica(String storeName, LocalStoreSettings localStoreSettings)'
@@ -773,7 +773,7 @@ items:
       startLine: 208
     package: system.fabric
     summary: |-
-      <p>Initialisiert eine neue Instanz der dem <ref refid="" kindref="compound">system.fabric.KeyValueStoreReplica</ref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Name, der lokalen Speicher und Replikator Einstellungen.</p>
+      <p>Initialisiert eine neue Instanz der dem <xref uid="" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica</xref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Name, der lokalen Speicher und Replikator Einstellungen.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreReplica(String storeName, LocalStoreSettings localStoreSettings, ReplicatorSettings replicatorSettings)'
@@ -804,7 +804,7 @@ items:
       startLine: 254
     package: system.fabric
     summary: |-
-      <p>Initialisiert eine neue Instanz der dem <xref href="system.fabric._key_value_store_replica" data-throw-if-not-resolved="false"></xref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Name, lokalen speichereinstellungen Replikator Einstellungen und Einstellungen des Replikats.</p>
+      <p>Initialisiert eine neue Instanz der dem <xref uid="system.fabric._key_value_store_replica" data-throw-if-not-resolved="false">KeyValueStoreReplica</xref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Name, lokalen speichereinstellungen Replikator Einstellungen und Einstellungen des Replikats.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreReplica(String storeName, LocalStoreSettings localStoreSettings, ReplicatorSettings replicatorSettings, KeyValueStoreReplicaSettings kvsSettings)'
@@ -838,7 +838,7 @@ items:
       startLine: 233
     package: system.fabric
     summary: |-
-      <p>Initialisiert eine neue Instanz der dem <ref refid="" kindref="compound">system.fabric.KeyValueStoreReplica</ref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Name, der lokalen Speicher und Replikator Einstellungen. Sekundäres Replikat Benachrichtigungen sind über den Benachrichtigungsmodus aktiviert.</p>
+      <p>Initialisiert eine neue Instanz der dem <xref uid="" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica</xref> Klasse mit dem angegebenen Schlüssel/Wert zu speichern, Name, der lokalen Speicher und Replikator Einstellungen. Sekundäres Replikat Benachrichtigungen sind über den Benachrichtigungsmodus aktiviert.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreReplica(String storeName, LocalStoreSettings localStoreSettings, ReplicatorSettings replicatorSettings, SecondaryNotificationMode notificationMode)'
@@ -854,7 +854,7 @@ items:
           description: <p>Die optionseinstellungen für den Schlüssel/Wert speichern Replikator. </p>
         - id: notificationMode
           type: system.fabric._secondary_notification_mode
-          description: '<p>So aktivieren Sie die sekundäre Benachrichtigungsmodus <xref href="system.fabric._key_value_store_replica.onCopyComplete(KeyValueStoreEnumerator)" data-throw-if-not-resolved="false"></xref> und <ref refid="" kindref="compound">system.fabric.KeyValueStoreReplica#onReplicationOperation(java.util.Enumeration)</ref> Rückrufe auf diesem Replikat. </p>'
+          description: '<p>So aktivieren Sie die sekundäre Benachrichtigungsmodus <xref uid="system.fabric._key_value_store_replica.onCopyComplete(KeyValueStoreEnumerator)" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onCopyComplete(system.fabric.KeyValueStoreEnumerator)</xref> und <xref uid="" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica# onReplicationOperation(java.util.Enumeration)</xref> Rückrufe auf diesem Replikat. </p>'
   - uid: 'system.fabric._key_value_store_replica.KeyValueStoreReplica(String,ReplicatorSettings)'
     id: 'KeyValueStoreReplica(String,ReplicatorSettings)'
     parent: system.fabric._key_value_store_replica
@@ -871,7 +871,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 193
     package: system.fabric
-    summary: "<p>Initialisiert eine neue Instanz der dem <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref> -Klasse mit den angegebenen Schlüssel/Wert-Geschäftsnamen und Replikator Einstellungen speichern.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Geschäftsnamen gültige Dateinamenzeichen entsprechen soll. </p>"
+    summary: "<p>Initialisiert eine neue Instanz der dem <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref> -Klasse mit den angegebenen Schlüssel/Wert-Geschäftsnamen und Replikator Einstellungen speichern.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der Geschäftsnamen gültige Dateinamenzeichen entsprechen soll. </p>"
     syntax:
       content: 'public KeyValueStoreReplica(String storeName, ReplicatorSettings replicatorSettings)'
       parameters:
@@ -916,7 +916,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1360
     package: system.fabric
-    summary: "<p>Gibt an, dass dieses Replikat Rollen geändert hat.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der anwendungsreplikaten sollten diese Methode überschreiben, wenn die Ableitung <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref>, dies ist das empfohlene Muster. Das Replikat für die Anwendung sollte eine Aufgabe zurückgeben, deren Ergebnis die Adresse für dieses Replikat ist. Dieses Replikat-Adresse wird gespeichert, vom System und abgerufen werden können (unverändert) ResolveServiceAsync verwenden. Die Anwendung muss darauf achten, den Rollenwechsel rechtzeitig abgeschlossen werden, da die Neukonfiguration der Replikatgruppe hinter den Abschluss aller ausstehenden Änderung Rolle Aufrufe blockiert werden. </p>"
+    summary: "<p>Gibt an, dass dieses Replikat Rollen geändert hat.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der anwendungsreplikaten sollten diese Methode überschreiben, wenn die Ableitung <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref>, dies ist das empfohlene Muster. Das Replikat für die Anwendung sollte eine Aufgabe zurückgeben, deren Ergebnis die Adresse für dieses Replikat ist. Dieses Replikat-Adresse wird gespeichert, vom System und abgerufen werden können (unverändert) ResolveServiceAsync verwenden. Die Anwendung muss darauf achten, den Rollenwechsel rechtzeitig abgeschlossen werden, da die Neukonfiguration der Replikatgruppe hinter den Abschluss aller ausstehenden Änderung Rolle Aufrufe blockiert werden. </p>"
     syntax: &ref_3
       content: 'protected CompletableFuture<String> onChangeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
       parameters:
@@ -925,7 +925,7 @@ items:
           description: <p>Die Zielrolle. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 06be942d
         description: '<p>Eine Aufgabe, deren Ergebnis die auflösbaren Adresse dieses Replikats ist... </p>'
@@ -953,7 +953,7 @@ items:
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: db03ee24
         description: <p>Der asynchrone Vorgang. </p>
@@ -973,7 +973,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1261
     package: system.fabric
-    summary: "<p>Vom System auf sekundären Replikaten aufgerufen, wenn sie erstellen, die vom primären Server abgeschlossen haben und bereit sind, starten Replikationsvorgängen anwenden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der <xref href=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\"></xref> Objekt kann verwendet werden, um Daten auf dem sekundären Replikat im Rahmen dieser Methode lesen, bevor alle Replikationsvorgängen angewendet werden. Die <xref href=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\"></xref> Objekt ist nicht mehr gültig, nachdem diese Methode zurückgegeben und kann nicht im Kontext dieser Methode verwendet werden. Die Anwendung muss diesen Rückruf rechtzeitig abgeschlossen, da Replikationsvorgängen sind auf dem sekundären Replikat in die Warteschlange gestellt und erste angewendet, bis dieser Methode werden nicht gestartet werden. achten. Die <xref href=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\"></xref> -Objekt wird in einer einzelnen zugrunde liegenden lokale Transaktion gesichert und ist nicht threadsicher. </p>"
+    summary: "<p>Vom System auf sekundären Replikaten aufgerufen, wenn sie erstellen, die vom primären Server abgeschlossen haben und bereit sind, starten Replikationsvorgängen anwenden.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der <xref uid=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreEnumerator</xref> Objekt kann verwendet werden, um Daten auf dem sekundären Replikat im Rahmen dieser Methode lesen, bevor alle Replikationsvorgängen angewendet werden. Die <xref uid=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreEnumerator</xref> Objekt ist nicht mehr gültig, nachdem diese Methode zurückgegeben und kann nicht im Kontext dieser Methode verwendet werden. Die Anwendung muss diesen Rückruf rechtzeitig abgeschlossen, da Replikationsvorgängen sind auf dem sekundären Replikat in die Warteschlange gestellt und erste angewendet, bis dieser Methode werden nicht gestartet werden. achten. Die <xref uid=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreEnumerator</xref> -Objekt wird in einer einzelnen zugrunde liegenden lokale Transaktion gesichert und ist nicht threadsicher. </p>"
     syntax: &ref_2
       content: protected void onCopyComplete(KeyValueStoreEnumerator enumerator)
       parameters:
@@ -997,17 +997,17 @@ items:
       startLine: 1229
     package: system.fabric
     summary: |-
-      <p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung kann diese Methode, um das Ereignis asynchron zu verarbeiten, oder verwenden Sie entweder überschreiben <xref href="system.fabric._key_value_store_replica.onDatalossReported()" data-throw-if-not-resolved="false"></xref> Ereignis synchron zu verarbeiten. Beide stellen das gleiche Ereignis dar.</p>
+      <p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung kann diese Methode, um das Ereignis asynchron zu verarbeiten, oder verwenden Sie entweder überschreiben <xref uid="system.fabric._key_value_store_replica.onDatalossReported()" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onDatalossReported()</xref> Ereignis synchron zu verarbeiten. Beide stellen das gleiche Ereignis dar.</p>
       <p></p>
     syntax: &ref_6
       content: protected CompletableFuture<Boolean> onDataLossAsync(CancellationToken cancellationToken)
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 7e53ac82
-        description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">CompletableFuture</ref> Zukunft an, dass diese Daten wurde geändert, während der Wiederherstellung, und legen Sie das Replikat muss neu synchronisiert werden. Andernfalls \"false\", um anzugeben, dass die Daten nicht modifiziert wurden. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">CompletableFuture</xref> Zukunft an, dass diese Daten wurde geändert, während der Wiederherstellung, und legen Sie das Replikat muss neu synchronisiert werden. Andernfalls \"false\", um anzugeben, dass die Daten nicht modifiziert wurden. </p>"
   - uid: system.fabric._key_value_store_replica.onDatalossReported()
     id: onDatalossReported()
     parent: system.fabric._key_value_store_replica
@@ -1024,7 +1024,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1239
     package: system.fabric
-    summary: '<p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung für dieses Ereignis überwacht oder diesen überschreiben kann <xref href="system.fabric._key_value_store_replica.onDataLossAsync(CancellationToken)" data-throw-if-not-resolved="false"></xref> . Beide stellen das gleiche Ereignis dar. </p>'
+    summary: '<p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung für dieses Ereignis überwacht oder diesen überschreiben kann <xref uid="system.fabric._key_value_store_replica.onDataLossAsync(CancellationToken)" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onDataLossAsync(CancellationToken)</xref> . Beide stellen das gleiche Ereignis dar. </p>'
     syntax: &ref_5
       content: protected void onDatalossReported()
   - uid: system.fabric._key_value_store_replica.onInitialize(StatefulServiceInitializationParameters)
@@ -1072,16 +1072,16 @@ items:
       parameters:
         - id: openMode
           type: system.fabric._replica_open_mode
-          description: '<p>Ein <xref href="system.fabric._replica_open_mode" data-throw-if-not-resolved="false"></xref> Objekt, das für dieses Replikat angibt, ob es sich um neuen oder wiederhergestellten handelt. </p>'
+          description: '<p>Ein <xref uid="system.fabric._replica_open_mode" data-throw-if-not-resolved="false">system.fabric.ReplicaOpenMode</xref> Objekt, das für dieses Replikat angibt, ob es sich um neuen oder wiederhergestellten handelt. </p>'
         - id: partition
           type: system.fabric._stateful_service_partition
-          description: '<p>Ein <xref href="system.fabric._stateful_service_partition" data-throw-if-not-resolved="false"></xref> Objekt, das die Partitionsinformationen zustandsbehaftete Dienst für dieses Replikat darstellt. </p>'
+          description: '<p>Ein <xref uid="system.fabric._stateful_service_partition" data-throw-if-not-resolved="false">system.fabric.StatefulServicePartition</xref> Objekt, das die Partitionsinformationen zustandsbehaftete Dienst für dieses Replikat darstellt. </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: db03ee24
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> Objekt, das den asynchronen Vorgang darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> Objekt, das den asynchronen Vorgang darstellt. </p>'
   - uid: system.fabric._key_value_store_replica.onReplicationOperation(Enumeration<KeyValueStoreNotification>)
     id: onReplicationOperation(Enumeration<KeyValueStoreNotification>)
     parent: system.fabric._key_value_store_replica
@@ -1098,7 +1098,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1288
     package: system.fabric
-    summary: "<p>Vom System auf sekundären Replikaten für eingehende Replikationsvorgängen aufgerufen. Jede <xref href=\"system.fabric._key_value_store_notification\" data-throw-if-not-resolved=\"false\"></xref> Objekt enthält alle Daten für einen einzelnen atomic Replikationsvorgang.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> ist der Modus BlockSecondaryAck wurde angegeben, wird der eingehenden Replikationsvorgang ist nicht lokal auf dem sekundären Replikat angewendet und mit dem primären Replikat bestätigt wurde, bis die Methode einen Wert zurückgibt. Dies bedeutet, dass die Anwendung dafür sorgen, dass muss zum Blockieren der replikationsdatenstrom Vermeiden von dieser Methode rechtzeitig zurückgegeben. Da die Bestätigung nicht mit dem primären Replikat gesendet werden, bis diese Methode einen Wert zurückgibt, es kann nicht als gegeben angenommen, dass der beobachteten Replikationsvorgang bereits wurde (oder ist garantiert in der Zukunft) durch ein Quorum der Replikate in der Replikatgruppe angewendet. Wenn der NonBlockingQuorumAcked-Modus festgelegt wurde, wird der beobachteten Replikationsvorgang garantiert, bereits durch ein Quorum der Replikate in der Replikatgruppe angewendet wurden. Darüber hinaus der beobachteten Replikationsvorgang möglicherweise bereits lokal durch diese sekundäre Datenbank angewendet und bestätigt wurden mit dem primären Replikat zu dem Zeitpunkt, den die Methode, die vom System aufgerufen wird. Der Rückruf für die Methode wird nicht verhindert, die replikationsdatenstrom in diesem Modus, aber die Replikation Benachrichtigung vorgangsdatenstrom weiterhin blockiert. D. h. ist es rein eine ausstehende OnReplicationOperation Methode Rückruf zu einem beliebigen Zeitpunkt. </p>"
+    summary: "<p>Vom System auf sekundären Replikaten für eingehende Replikationsvorgängen aufgerufen. Jede <xref uid=\"system.fabric._key_value_store_notification\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreNotification</xref> Objekt enthält alle Daten für einen einzelnen atomic Replikationsvorgang.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> ist der Modus BlockSecondaryAck wurde angegeben, wird der eingehenden Replikationsvorgang ist nicht lokal auf dem sekundären Replikat angewendet und mit dem primären Replikat bestätigt wurde, bis die Methode einen Wert zurückgibt. Dies bedeutet, dass die Anwendung dafür sorgen, dass muss zum Blockieren der replikationsdatenstrom Vermeiden von dieser Methode rechtzeitig zurückgegeben. Da die Bestätigung nicht mit dem primären Replikat gesendet werden, bis diese Methode einen Wert zurückgibt, es kann nicht als gegeben angenommen, dass der beobachteten Replikationsvorgang bereits wurde (oder ist garantiert in der Zukunft) durch ein Quorum der Replikate in der Replikatgruppe angewendet. Wenn der NonBlockingQuorumAcked-Modus festgelegt wurde, wird der beobachteten Replikationsvorgang garantiert, bereits durch ein Quorum der Replikate in der Replikatgruppe angewendet wurden. Darüber hinaus der beobachteten Replikationsvorgang möglicherweise bereits lokal durch diese sekundäre Datenbank angewendet und bestätigt wurden mit dem primären Replikat zu dem Zeitpunkt, den die Methode, die vom System aufgerufen wird. Der Rückruf für die Methode wird nicht verhindert, die replikationsdatenstrom in diesem Modus, aber die Replikation Benachrichtigung vorgangsdatenstrom weiterhin blockiert. D. h. ist es rein eine ausstehende OnReplicationOperation Methode Rückruf zu einem beliebigen Zeitpunkt. </p>"
     syntax:
       content: protected void onReplicationOperation(Enumeration<KeyValueStoreNotification> enumerator)
       parameters:
@@ -1121,7 +1121,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 1069
     package: system.fabric
-    summary: "<p>Öffnet das Replikat als auch ihre Replikator als Vorbereitung für die in einer Replikatgruppe online geschaltet.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>muss diese Methode nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten OnOpenAsync stattdessen außer Kraft setzen. </p>"
+    summary: "<p>Öffnet das Replikat als auch ihre Replikator als Vorbereitung für die in einer Replikatgruppe online geschaltet.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>muss diese Methode nicht explizit aufgerufen werden, wenn das Replikat für die Anwendung abgeleitet <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref>, dies ist das empfohlene Muster. In diesem Fall sollte die anwendungsreplikaten OnOpenAsync stattdessen außer Kraft setzen. </p>"
     syntax:
       content: 'public CompletableFuture<Replicator> openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
       parameters:
@@ -1133,10 +1133,10 @@ items:
           description: <p>Enthält Informationen zur Beschreibung der Replikatgruppe zu dem das Replikat gehört. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 9cdf14d0system.fabric._replicatora08ddfce
-        description: '<p>Eine CompletableFuture an, dass der Abschluss der geöffneten <ref refid="" kindref="compound">java.util.concurrent.CompletableFuture</ref>. </p>'
+        description: '<p>Eine CompletableFuture an, dass der Abschluss der geöffneten <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.CompletableFuture</xref>. </p>'
     overridden: 'system.fabric._stateful_service_replica.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
   - uid: 'system.fabric._key_value_store_replica.remove(TransactionBase,String)'
     id: 'remove(TransactionBase,String)'
@@ -1213,7 +1213,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/KeyValueStoreReplica.java
       startLine: 962
     package: system.fabric
-    summary: "<p>Asynchron wiederhergestellt, das Schlüssel / Wert-Speicher-Replikat.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> es wird empfohlen, die Schreibvorgänge in die Schlüssel / Wert-Speicher nicht ausgeführt werden, während die Wiederherstellung ausgeführt wird, da die aktualisierten Daten verloren gehen würden der Speicher aus der Dateien im Sicherungsverzeichnis wiederhergestellt wird. </p>"
+    summary: "<p>Asynchron wiederhergestellt, das Schlüssel / Wert-Speicher-Replikat.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> es wird empfohlen, die Schreibvorgänge in die Schlüssel / Wert-Speicher nicht ausgeführt werden, während die Wiederherstellung ausgeführt wird, da die aktualisierten Daten verloren gehen würden der Speicher aus der Dateien im Sicherungsverzeichnis wiederhergestellt wird. </p>"
     syntax:
       content: public CompletableFuture<?> restoreAsync(String backupDirectory)
       parameters:
@@ -1225,7 +1225,7 @@ items:
         description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
     exceptions:
       - type: 3c87bd19
-        description: <p>BackupDirectory ist <bold>null</bold>. </p>
+        description: <p>BackupDirectory ist <b>null</b>. </p>
       - type: 3c87bd19
         description: <p>BackupDirectory ist leer oder enthält nur Leerzeichen. </p>
   - uid: 'system.fabric._key_value_store_replica.restoreAsync(String,RestoreSettings)'
@@ -1352,7 +1352,7 @@ items:
       startLine: 595
     package: system.fabric
     summary: |-
-      <p>Versucht, erhalten den gespeicherten Wert als ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> -Objekt, dem angegebenen Schlüssel zugeordnet.</p>
+      <p>Versucht, den gespeicherten Wert als Abrufen einer <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> -Objekt, dem angegebenen Schlüssel zugeordnet.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreItem tryGet(TransactionBase transactionBase, String key)'
@@ -1365,7 +1365,7 @@ items:
           description: '<p>Der Schlüssel oder Index, der den Wert (als Zeichenfolge) entfernt werden soll. Beschränkt auf 800 Zeichen lang sein. </p>'
       return:
         type: system.fabric._key_value_store_item
-        description: '<p>Ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Objekt, das den gespeicherten Wert darstellt, oder null, wenn der angegebene Schlüssel nicht vorhanden ist. </p>'
+        description: '<p>Ein <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Objekt, das den gespeicherten Wert darstellt, oder null, wenn der angegebene Schlüssel nicht vorhanden ist. </p>'
   - uid: 'system.fabric._key_value_store_replica.tryGetMetadata(TransactionBase,String)'
     id: 'tryGetMetadata(TransactionBase,String)'
     parent: system.fabric._key_value_store_replica
@@ -1383,7 +1383,7 @@ items:
       startLine: 682
     package: system.fabric
     summary: |-
-      <p>Versucht, die Metadaten als Abrufen einer <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> -Objekt für den angegebenen Schlüssel zugeordnete Wert.</p>
+      <p>Versucht, die Metadaten als Abrufen einer <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> -Objekt für den angegebenen Schlüssel zugeordnete Wert.</p>
       <p></p>
     syntax:
       content: 'public KeyValueStoreItemMetadata tryGetMetadata(TransactionBase transactionBase, String key)'
@@ -1396,7 +1396,7 @@ items:
           description: '<p>Der Schlüssel oder Index, der den Wert (als Zeichenfolge) entfernt werden soll. Beschränkt auf 800 Zeichen lang sein. </p>'
       return:
         type: system.fabric._key_value_store_item_metadata
-        description: '<p>Ein <xref href="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false"></xref> -Objekt, das die Metadaten darstellt, die mit dem angegebenen Wert verknüpft sind, oder null, wenn der angegebene Schlüssel nicht vorhanden ist. </p>'
+        description: '<p>Ein <xref uid="system.fabric._key_value_store_item_metadata" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItemMetadata</xref> -Objekt, das die Metadaten darstellt, die mit dem angegebenen Wert verknüpft sind, oder null, wenn der angegebene Schlüssel nicht vorhanden ist. </p>'
   - uid: 'system.fabric._key_value_store_replica.tryGetValue(TransactionBase,String)'
     id: 'tryGetValue(TransactionBase,String)'
     parent: system.fabric._key_value_store_replica
@@ -1646,7 +1646,7 @@ items:
       startLine: 298
     package: system.fabric
     summary: |-
-      <p>Aktualisiert die Schlüssel/Wert-Speicher Replicator mit den Einstellungen in der angegebenen <xref href="system.fabric._replicator_settings" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p>Aktualisiert die Schlüssel/Wert-Speicher Replicator mit den Einstellungen in der angegebenen <xref uid="system.fabric._replicator_settings" data-throw-if-not-resolved="false">system.fabric.ReplicatorSettings</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public void updateReplicatorSettings(ReplicatorSettings replicatorSettings)
@@ -1948,7 +1948,7 @@ references:
     nameWithType: StatefulServiceReplica
     fullName: system.fabric.StatefulServiceReplica
     type: Interface
-    summary: "<p>Definiert das Verhalten, die den Lebenszyklus eines Replikats, z. B. starten, Initialisierung, rollenänderungen und Herunterfahren bestimmt. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>zustandsbehaftete Diensttypen müssen diese Schnittstelle implementieren. Die Logik der einen zustandsbehafteten Diensttyp enthält, die auf primären Replikaten aufgerufen wird und Verhalten, die auf sekundären Replikaten aufgerufen wird. Wenn dienstautor vornehmen möchte mithilfe des bereitgestellten <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref>, und klicken Sie dann der Dienst, auch implementieren muss <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref> verwenden Sie die Implementierung der <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> , die vom bereitgestellt<xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Definiert das Verhalten, die den Lebenszyklus eines Replikats, z. B. starten, Initialisierung, rollenänderungen und Herunterfahren bestimmt. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>zustandsbehaftete Diensttypen müssen diese Schnittstelle implementieren. Die Logik der einen zustandsbehafteten Diensttyp enthält, die auf primären Replikaten aufgerufen wird und Verhalten, die auf sekundären Replikaten aufgerufen wird. Wenn dienstautor vornehmen möchte mithilfe des bereitgestellten <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref>, und klicken Sie dann der Dienst, auch implementieren muss <xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref> verwenden Sie die Implementierung der <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> , die vom bereitgestellt <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref></p>"
     syntax:
       content: public interface StatefulServiceReplica
   - uid: system.fabric._replica_role
@@ -1958,6 +1958,7 @@ references:
     nameWithType: ReplicaRole
     fullName: system.fabric.ReplicaRole
     type: Enum
+    summary: <p>Definiert die replikatrolle </p>
     syntax:
       content: public enum ReplicaRole
   - uid: system.fabric._replicator_settings
@@ -2035,7 +2036,7 @@ references:
     nameWithType: Epoch
     fullName: system.fabric.Epoch
     type: Class
-    summary: "<p>Stellt die aktuelle Version der Service Fabric-Partition an. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>ein <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> ist eine Konfiguration Zahl für die Partition als Ganzes. Beim Festlegen der Konfiguration des Replikats Änderungen, z. B., wenn das primäre Replikat ändert, werden die Vorgänge, die vom neuen primären Replikat repliziert werden als ein neues werden bezeichnet <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> aus. der von dem alten primären Replikat gesendet wurden. Die Tatsache, die dass das primäre geändert hat ist nicht direkt sichtbar auf sekundäre Replikate, die nicht durch einen Fehler in der Regel betroffen sind, die das ursprüngliche primäre Replikat betroffen. Um nachzuverfolgen, dass sich das primäre Replikat geändert wurde, an das sekundäre Replikat übertragen werden. Diese Kommunikation erfolgt über die <xref href=\"system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref> Methode. Die meisten Dienste können die Details der inneren Felder ignorieren die <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> wie es in der Regel ausreichend ist zu wissen, dass die <xref href=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\"></xref> wurde geändert und Epochs, um zu bestimmen, relative Reihenfolge der Vorgänge und-Ereignisse im System zu vergleichen. Zu diesem Zweck sind Vergleichsoperationen bereitgestellt. </p>"
+    summary: "<p>Stellt die aktuelle Version der Service Fabric-Partition an. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>ein <xref uid=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\">Epoche</xref> ist eine Konfiguration Zahl für die Partition als Ganzes. Beim Festlegen der Konfiguration des Replikats Änderungen, z. B., wenn das primäre Replikat ändert, werden die Vorgänge, die vom neuen primären Replikat repliziert werden als ein neues werden bezeichnet <xref uid=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\">Epoche</xref> aus, die von der alten primären Datenbank gesendet wurden. das Replikat ist. Die Tatsache, die dass das primäre geändert hat ist nicht direkt sichtbar auf sekundäre Replikate, die nicht durch einen Fehler in der Regel betroffen sind, die das ursprüngliche primäre Replikat betroffen. Um nachzuverfolgen, dass sich das primäre Replikat geändert wurde, an das sekundäre Replikat übertragen werden. Diese Kommunikation erfolgt über die <xref uid=\"system.fabric._state_provider.updateEpochAsync(Epoch,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider#updateEpochAsync (system.fabric.Epoch, system.fabric.SequenceNumber, system.fabric.CancellationToken)</xref> Methode. Die meisten Dienste können die Details der inneren Felder ignorieren die <xref uid=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\">Epoche</xref> wie es in der Regel ausreichend ist zu wissen, dass die <xref uid=\"system.fabric._epoch\" data-throw-if-not-resolved=\"false\">Epoche</xref> wurde geändert und Epochs, um zu bestimmen, relative Reihenfolge der Vorgänge zu vergleichen und Ereignisse im System. Zu diesem Zweck sind Vergleichsoperationen bereitgestellt. </p>"
     syntax:
       content: public class Epoch
   - uid: system.fabric._key_value_store_item
@@ -2055,7 +2056,7 @@ references:
     nameWithType: KeyValueStoreItemMetadata
     fullName: system.fabric.KeyValueStoreItemMetadata
     type: Class
-    summary: '<p>Stellt die Metadaten, die zugeordnet sind ein <xref href="system.fabric._key_value_store_item" data-throw-if-not-resolved="false"></xref> Objekt im Schlüssel/Wert-Speicher. </p>'
+    summary: '<p>Stellt die Metadaten, die zugeordnet sind ein <xref uid="system.fabric._key_value_store_item" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreItem</xref> Objekt im Schlüssel/Wert-Speicher. </p>'
     syntax:
       content: public class KeyValueStoreItemMetadata
   - uid: system.fabric._secondary_notification_mode
@@ -2065,7 +2066,7 @@ references:
     nameWithType: SecondaryNotificationMode
     fullName: system.fabric.SecondaryNotificationMode
     type: Enum
-    summary: '<p>Gibt die sekundären Benachrichtigungen auf der <xref href="system.fabric._key_value_store_replica" data-throw-if-not-resolved="false"></xref> und beschreibt das gewünschte Verhalten der <ref refid="" kindref="compound">system.fabric.KeyValueStoreReplica#onReplicationOperation(java.util.Enumeration)</ref> aktiviert. </p>'
+    summary: '<p>Gibt die sekundären Benachrichtigungen auf der <xref uid="system.fabric._key_value_store_replica" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica</xref> und beschreibt das gewünschte Verhalten der <xref uid="" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onReplicationOperation () java.util.Enumeration)</xref> aktiviert. </p>'
     syntax:
       content: public enum SecondaryNotificationMode
   - uid: system.fabric._key_value_store_replica.onCopyComplete(KeyValueStoreEnumerator)
@@ -2075,7 +2076,7 @@ references:
     nameWithType: KeyValueStoreReplica.onCopyComplete(KeyValueStoreEnumerator enumerator)
     fullName: void system.fabric.KeyValueStoreReplica.onCopyComplete(KeyValueStoreEnumerator enumerator)
     type: Method
-    summary: "<p>Vom System auf sekundären Replikaten aufgerufen, wenn sie erstellen, die vom primären Server abgeschlossen haben und bereit sind, starten Replikationsvorgängen anwenden.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der <xref href=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\"></xref> Objekt kann verwendet werden, um Daten auf dem sekundären Replikat im Rahmen dieser Methode lesen, bevor alle Replikationsvorgängen angewendet werden. Die <xref href=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\"></xref> Objekt ist nicht mehr gültig, nachdem diese Methode zurückgegeben und kann nicht im Kontext dieser Methode verwendet werden. Die Anwendung muss diesen Rückruf rechtzeitig abgeschlossen, da Replikationsvorgängen sind auf dem sekundären Replikat in die Warteschlange gestellt und erste angewendet, bis dieser Methode werden nicht gestartet werden. achten. Die <xref href=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\"></xref> -Objekt wird in einer einzelnen zugrunde liegenden lokale Transaktion gesichert und ist nicht threadsicher. </p>"
+    summary: "<p>Vom System auf sekundären Replikaten aufgerufen, wenn sie erstellen, die vom primären Server abgeschlossen haben und bereit sind, starten Replikationsvorgängen anwenden.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der <xref uid=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreEnumerator</xref> Objekt kann verwendet werden, um Daten auf dem sekundären Replikat im Rahmen dieser Methode lesen, bevor alle Replikationsvorgängen angewendet werden. Die <xref uid=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreEnumerator</xref> Objekt ist nicht mehr gültig, nachdem diese Methode zurückgegeben und kann nicht im Kontext dieser Methode verwendet werden. Die Anwendung muss diesen Rückruf rechtzeitig abgeschlossen, da Replikationsvorgängen sind auf dem sekundären Replikat in die Warteschlange gestellt und erste angewendet, bis dieser Methode werden nicht gestartet werden. achten. Die <xref uid=\"system.fabric._key_value_store_enumerator\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreEnumerator</xref> -Objekt wird in einer einzelnen zugrunde liegenden lokale Transaktion gesichert und ist nicht threadsicher. </p>"
     syntax: *ref_2
   - uid: system.fabric._transaction
     parent: system.fabric
@@ -2093,7 +2094,7 @@ references:
     nameWithType: KeyValueStoreTransactionSettings
     fullName: system.fabric.KeyValueStoreTransactionSettings
     type: Class
-    summary: '<p>Gibt an, um das Verhalten von Transaktionen, die von unterstützt beschreiben die optionalen Einstellungen <xref href="system.fabric._key_value_store_replica" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Gibt an, um das Verhalten von Transaktionen, die von unterstützt beschreiben die optionalen Einstellungen <xref uid="system.fabric._key_value_store_replica" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica</xref>. </p>'
     syntax:
       content: public class KeyValueStoreTransactionSettings
   - uid: system.fabric._transaction_base
@@ -2125,14 +2126,14 @@ references:
     summary: <p>Enthält Informationen über die Sicherung auf die Schlüssel / Wert-Speicher erstellt. </p>
     syntax:
       content: public class StoreBackupInfo
-  - uid: system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY()
+  - uid: system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY
     parent: system.fabric._store_backup_option
     href: system.fabric._store_backup_option.yml
     name: FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY
     nameWithType: StoreBackupOption.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY
     fullName: system.fabric.StoreBackupOption.FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY
     type: Field
-    summary: "<p>Die Option der Transaktionsprotokolle der der Schlüssel / Wert-Speicher abgeschnitten werden, ohne dass alle Sicherungsdateien erstellt. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Dies ist hilfreich bei der Erstellung von Sicherungsdateien im sekundären Replikaten zu vermeiden, wenn die inkrementeller Sicherung aktiviert ist. Wenn die inkrementeller Sicherung aktiviert ist, füllt Speicherplatz einrichten mit Transaktionsprotokollen, der die Schlüssel / Wert-Speicher. Um dies zu verhindern, müssen über häufige Sicherungen erstellt werden. Allerdings erstellen Sicherungen auf sekundären Replikaten nützlich bei einigen Diensten Schlüssel / Wert-Speicher möglicherweise nicht. Diese Dienste müssen auch zurecht, verwerfen das Sicherungsverzeichnis. Wenn diese Option verwendet wird, bereinigt es die Transaktionsprotokolle ohne Sicherungsdateien erstellen. </p>"
+    summary: "<p>Die Option der Transaktionsprotokolle der der Schlüssel / Wert-Speicher abgeschnitten werden, ohne dass alle Sicherungsdateien erstellt. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Dies ist hilfreich bei der Erstellung von Sicherungsdateien im sekundären Replikaten zu vermeiden, wenn die inkrementeller Sicherung aktiviert ist. Wenn die inkrementeller Sicherung aktiviert ist, füllt Speicherplatz einrichten mit Transaktionsprotokollen, der die Schlüssel / Wert-Speicher. Um dies zu verhindern, müssen über häufige Sicherungen erstellt werden. Allerdings erstellen Sicherungen auf sekundären Replikaten nützlich bei einigen Diensten Schlüssel / Wert-Speicher möglicherweise nicht. Diese Dienste müssen auch zurecht, verwerfen das Sicherungsverzeichnis. Wenn diese Option verwendet wird, bereinigt es die Transaktionsprotokolle ohne Sicherungsdateien erstellen. </p>"
     syntax:
       content: public FABRIC_STORE_BACKUP_OPTION_TRUNCATE_LOGS_ONLY=(3)
   - uid: system.fabric.exception._fabric_backup_directory_not_empty_exception
@@ -2145,7 +2146,7 @@ references:
     summary: '<p>Die Ausnahme, die ausgelöst wird, wenn das Sicherungsverzeichnis für die angegebenen Benutzer nicht leer ist. </p>'
     syntax:
       content: public class FabricBackupDirectoryNotEmptyException extends FabricException
-  - uid: system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_INCREMENTAL()
+  - uid: system.fabric._store_backup_option.FABRIC_STORE_BACKUP_OPTION_INCREMENTAL
     parent: system.fabric._store_backup_option
     href: system.fabric._store_backup_option.yml
     name: FABRIC_STORE_BACKUP_OPTION_INCREMENTAL
@@ -2189,7 +2190,7 @@ references:
       parameters:
         - id: initializationParameters
           type: system.fabric._stateful_service_initialization_parameters
-          description: <p>Die <xref href="system.fabric._stateful_service_initialization_parameters" data-throw-if-not-resolved="false"></xref> für dieses Replikat. </p>
+          description: <p>Die <xref uid="system.fabric._stateful_service_initialization_parameters" data-throw-if-not-resolved="false">system.fabric.StatefulServiceInitializationParameters</xref> für dieses Replikat. </p>
   - uid: system.fabric._replicator
     parent: system.fabric
     href: system.fabric._replicator.yml
@@ -2217,13 +2218,13 @@ references:
           description: '<p>Dies unterstützt die Service Fabric-Infrastruktur und ist nicht vorgesehen, direkt aus Ihrem Code verwendet werden. </p>'
         - id: partition
           type: system.fabric._stateful_service_partition
-          description: <p>Die <xref href="system.fabric._stateful_service_partition" data-throw-if-not-resolved="false"></xref> Informationen für dieses Replikat. </p>
+          description: <p>Die <xref uid="system.fabric._stateful_service_partition" data-throw-if-not-resolved="false">system.fabric.StatefulServicePartition</xref> Informationen für dieses Replikat. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 9cdf14d0system.fabric._replicatora08ddfce
-        description: '<p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref>&lt;<xref href="system.fabric._replicator" data-throw-if-not-resolved="false"></xref>&gt;, <xref href="system.fabric._replicator" data-throw-if-not-resolved="false"></xref> , das von der zustandsbehaftete Dienst verwendet wird. Verwenden Sie die Service Fabric-Implementierung in <xref href="system.fabric._stateful_service_replica.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)" data-throw-if-not-resolved="false"></xref> , sollte das Replikat Zurückgeben einer <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref> abgerufener<xref href="system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)" data-throw-if-not-resolved="false"></xref></p>'
+        description: '<p>Gibt <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref>&lt;<xref uid="system.fabric._replicator" data-throw-if-not-resolved="false">system.fabric.Replicator</xref>&gt;, <xref uid="system.fabric._replicator" data-throw-if-not-resolved="false">system.fabric.Replicator</xref> , das von der zustandsbehafteten verwendet wird -Dienst. Verwenden Sie die Service Fabric-Implementierung in <xref uid="system.fabric._stateful_service_replica.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)" data-throw-if-not-resolved="false">system.fabric.StatefulServiceReplica#openAsync (ReplicaOpenMode StatefulServicePartition, CancellationToken)</xref> , sollte das Replikat Zurückgeben einer <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"> system.fabric.FabricReplicator</xref> abgerufener <xref uid="system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)" data-throw-if-not-resolved="false">system.fabric.StatefulServicePartition#createReplicator (StateProvider, ReplicatorSettings)</xref></p>'
   - uid: system.fabric._replica_open_mode
     parent: system.fabric
     href: system.fabric._replica_open_mode.yml
@@ -2249,7 +2250,7 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax:
       content: public class CancellationToken
   - uid: 'system.fabric._stateful_service_replica.changeRoleAsync(ReplicaRole,CancellationToken)'
@@ -2259,19 +2260,19 @@ references:
     nameWithType: 'StatefulServiceReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     fullName: 'CompletableFuture<String> system.fabric.StatefulServiceReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     type: Method
-    summary: "<p>Ändert die Rolle eines primären oder sekundären Replikats an.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die neue Rolle wird als Parameter angegeben. Wenn die Dienst-Übergänge in die neue Rolle, verfügt der Dienst eine Möglichkeit, ihre aktuellen abhöradresse zu aktualisieren. Die abhöradresse ist die Adresse, in denen Clients herstellen. Dies ermöglicht dem Dienst wird ein primäres Replikat, Anspruch nur einige Ressourcen wie z. B. Ports aus, bei der Kommunikation von Clients erwartet wird. </p>"
+    summary: "<p>Ändert die Rolle eines primären oder sekundären Replikats an.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die neue Rolle wird als Parameter angegeben. Wenn die Dienst-Übergänge in die neue Rolle, verfügt der Dienst eine Möglichkeit, ihre aktuellen abhöradresse zu aktualisieren. Die abhöradresse ist die Adresse, in denen Clients herstellen. Dies ermöglicht dem Dienst wird ein primäres Replikat, Anspruch nur einige Ressourcen wie z. B. Ports aus, bei der Kommunikation von Clients erwartet wird. </p>"
     syntax:
       content: 'public CompletableFuture<String> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
       parameters:
         - id: newRole
           type: system.fabric._replica_role
-          description: '<p>Die aktualisierte <xref href="system.fabric._replica_role" data-throw-if-not-resolved="false"></xref> , die dieses Replikat zum übergehen soll. </p>'
+          description: '<p>Die aktualisierte <xref uid="system.fabric._replica_role" data-throw-if-not-resolved="false">system.fabric.ReplicaRole</xref> , die dieses Replikat zum übergehen soll. </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 06be942d
-        description: '<p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref> des Typs <ref refid="" kindref="compound">java.lang.String</ref>, das ermittelt€™ s neue Adresse für die Verbindung, die über die Benennung von Service Fabric-Replikat zugeordnet werden soll. </p>'
+        description: '<p>Gibt <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> des Typs <xref uid="" data-throw-if-not-resolved="false">java.lang.String</xref>, das ermittelt€™ s neue Adresse für die Verbindung, die über die Benennung von Service Fabric-Replikat zugeordnet werden soll. </p>'
   - uid: 'system.fabric._key_value_store_replica.onChangeRoleAsync(ReplicaRole,CancellationToken)'
     parent: system.fabric._key_value_store_replica
     href: system.fabric._key_value_store_replica.yml
@@ -2279,7 +2280,7 @@ references:
     nameWithType: 'KeyValueStoreReplica.onChangeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     fullName: 'CompletableFuture<String> system.fabric.KeyValueStoreReplica.onChangeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     type: Method
-    summary: "<p>Gibt an, dass dieses Replikat Rollen geändert hat.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der anwendungsreplikaten sollten diese Methode überschreiben, wenn die Ableitung <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica</ref>, dies ist das empfohlene Muster. Das Replikat für die Anwendung sollte eine Aufgabe zurückgeben, deren Ergebnis die Adresse für dieses Replikat ist. Dieses Replikat-Adresse wird gespeichert, vom System und abgerufen werden können (unverändert) ResolveServiceAsync verwenden. Die Anwendung muss darauf achten, den Rollenwechsel rechtzeitig abgeschlossen werden, da die Neukonfiguration der Replikatgruppe hinter den Abschluss aller ausstehenden Änderung Rolle Aufrufe blockiert werden. </p>"
+    summary: "<p>Gibt an, dass dieses Replikat Rollen geändert hat.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der anwendungsreplikaten sollten diese Methode überschreiben, wenn die Ableitung <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica</xref>, dies ist das empfohlene Muster. Das Replikat für die Anwendung sollte eine Aufgabe zurückgeben, deren Ergebnis die Adresse für dieses Replikat ist. Dieses Replikat-Adresse wird gespeichert, vom System und abgerufen werden können (unverändert) ResolveServiceAsync verwenden. Die Anwendung muss darauf achten, den Rollenwechsel rechtzeitig abgeschlossen werden, da die Neukonfiguration der Replikatgruppe hinter den Abschluss aller ausstehenden Änderung Rolle Aufrufe blockiert werden. </p>"
     syntax: *ref_3
   - uid: system.fabric._stateful_service_replica.closeAsync(CancellationToken)
     parent: system.fabric._stateful_service_replica
@@ -2296,10 +2297,10 @@ references:
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: db03ee24
-        description: <p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref>. </p>
+        description: <p>Gibt <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref>. </p>
   - uid: system.fabric._key_value_store_replica.onCloseAsync(CancellationToken)
     parent: system.fabric._key_value_store_replica
     href: system.fabric._key_value_store_replica.yml
@@ -2318,7 +2319,7 @@ references:
     nameWithType: StatefulServiceReplica.abort()
     fullName: void system.fabric.StatefulServiceReplica.abort()
     type: Method
-    summary: "<p>Nicht ordnungsgemäß beendet eine Instanz ein. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Verlust leasen und als Antwort auf den Dienst, die Verwendung von <xref href=\"system.fabric._service_partition.reportFault(FaultType)\" data-throw-if-not-resolved=\"false\"></xref> Bericht eine <ref refid=\"\" kindref=\"compound\">system.fabric.FaultType#Permanent</ref> Fehler finden Sie Beispiele für geordnete und ungeordnete Abbrüche Beendigung. Wenn diese Methode aufgerufen wird, sollten die Dienstinstanz sofort freigeben und bereinigen Sie alle Verweise und zurückgeben. </p>"
+    summary: "<p>Nicht ordnungsgemäß beendet eine Instanz ein. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>Verlust leasen und als Antwort auf den Dienst, die Verwendung von <xref uid=\"system.fabric._service_partition.reportFault(FaultType)\" data-throw-if-not-resolved=\"false\">system.fabric.ServicePartition#reportFault(FaultType)</xref> Bericht eine <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FaultType#Permanent</xref> Fehler sind Beispiele für geordnete und ungeordnete Abbrüche beenden. Wenn diese Methode aufgerufen wird, sollten die Dienstinstanz sofort freigeben und bereinigen Sie alle Verweise und zurückgeben. </p>"
     syntax:
       content: public void abort()
   - uid: system.fabric._key_value_store_replica.onDatalossReported()
@@ -2328,7 +2329,7 @@ references:
     nameWithType: KeyValueStoreReplica.onDatalossReported()
     fullName: void system.fabric.KeyValueStoreReplica.onDatalossReported()
     type: Method
-    summary: '<p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung für dieses Ereignis überwacht oder diesen überschreiben kann <xref href="system.fabric._key_value_store_replica.onDataLossAsync(CancellationToken)" data-throw-if-not-resolved="false"></xref> . Beide stellen das gleiche Ereignis dar. </p>'
+    summary: '<p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung für dieses Ereignis überwacht oder diesen überschreiben kann <xref uid="system.fabric._key_value_store_replica.onDataLossAsync(CancellationToken)" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onDataLossAsync(CancellationToken)</xref> . Beide stellen das gleiche Ereignis dar. </p>'
     syntax: *ref_5
   - uid: system.fabric._key_value_store_replica.onDataLossAsync(CancellationToken)
     parent: system.fabric._key_value_store_replica
@@ -2338,7 +2339,7 @@ references:
     fullName: CompletableFuture<Boolean> system.fabric.KeyValueStoreReplica.onDataLossAsync(CancellationToken cancellationToken)
     type: Method
     summary: |-
-      <p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung kann diese Methode, um das Ereignis asynchron zu verarbeiten, oder verwenden Sie entweder überschreiben <xref href="system.fabric._key_value_store_replica.onDatalossReported()" data-throw-if-not-resolved="false"></xref> Ereignis synchron zu verarbeiten. Beide stellen das gleiche Ereignis dar.</p>
+      <p>Signale, die das Replikat festgelegt, können Datenverlust aufgetreten sind. Die Anwendung kann diese Methode, um das Ereignis asynchron zu verarbeiten, oder verwenden Sie entweder überschreiben <xref uid="system.fabric._key_value_store_replica.onDatalossReported()" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onDatalossReported()</xref> Ereignis synchron zu verarbeiten. Beide stellen das gleiche Ereignis dar.</p>
       <p></p>
     syntax: *ref_6
   - uid: system.fabric._key_value_store_enumerator
@@ -2348,7 +2349,7 @@ references:
     nameWithType: KeyValueStoreEnumerator
     fullName: system.fabric.KeyValueStoreEnumerator
     type: Class
-    summary: '<p>Liest den Inhalt der lokalen Speicher eines sekundären Replikats, innerhalb des Kontexts eines Rückrufs Abschluss kopieren. See <xref href="system.fabric._key_value_store_replica.onCopyComplete(KeyValueStoreEnumerator)" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Liest den Inhalt der lokalen Speicher eines sekundären Replikats, innerhalb des Kontexts eines Rückrufs Abschluss kopieren. Finden Sie unter <xref uid="system.fabric._key_value_store_replica.onCopyComplete(KeyValueStoreEnumerator)" data-throw-if-not-resolved="false">system.fabric.KeyValueStoreReplica#onCopyComplete(system.fabric.KeyValueStoreEnumerator)</xref>. </p>'
     syntax:
       content: public class KeyValueStoreEnumerator
   - uid: system.fabric._key_value_store_notification
@@ -2358,7 +2359,7 @@ references:
     nameWithType: KeyValueStoreNotification
     fullName: system.fabric.KeyValueStoreNotification
     type: Class
-    summary: "<p>Enthält alle Informationen für eine replizierte Vorgang von einem sekundären Replikat empfangen. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>finden Sie unter <ref refid=\"\" kindref=\"compound\">system.fabric.KeyValueStoreReplica#onReplicationOperation(java.util.Enumeration)</ref>. </p>"
+    summary: "<p>Enthält alle Informationen für eine replizierte Vorgang von einem sekundären Replikat empfangen. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>finden Sie unter <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.KeyValueStoreReplica#onReplicationOperation(java.util.Enumeration)</xref>. </p>"
     syntax:
       content: public class KeyValueStoreNotification
   - uid: system.fabric.exception._fabric_exception

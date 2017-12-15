@@ -4,9 +4,14 @@ items:
     id: _amqps_iot_hub_connection
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps
     children:
+      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.addDeviceOperationSession(DeviceClientConfig)
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.addListener(ServerListener)
-      - 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.AmqpsIotHubConnection(DeviceClientConfig,Boolean)'
+      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.AmqpsIotHubConnection(DeviceClientConfig)
+      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.amqpsSessionManager
+      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.authenticate()
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.close()
+      - 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertFromProton(AmqpsMessage,DeviceClientConfig)'
+      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertToProton(com.microsoft.azure.sdk.iot.device.Message)
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onConnectionBound(Event)
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onConnectionInit(Event)
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onConnectionUnbound(Event)
@@ -19,7 +24,8 @@ items:
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onReactorInit(Event)
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onTransportError(Event)
       - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.open()
-      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessage(Message)
+      - com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.openLinks()
+      - 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessage(Message,MessageType,IotHubConnectionString)'
       - 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessageResult(AmqpsMessage,IotHubMessageResult)'
     href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
     langs:
@@ -34,7 +40,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-iot-sdk-java'
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 46
+      startLine: 33
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: '<p>Eine AMQPS IotHub-Verbindung zwischen einem Gerät und eine IoTHub. Diese Klasse enthält die Funktionalität zum Senden/Empfangen einer Nachricht und Logik zum Herstellen einer Verbindung mit dem IoTHub erneut für den Fall, dass es verloren geht. </p>'
     syntax: &ref_1
@@ -42,6 +48,31 @@ items:
     inheritance:
       - java.lang.Object
       - BaseHandler
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.addDeviceOperationSession(DeviceClientConfig)
+    id: addDeviceOperationSession(DeviceClientConfig)
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
+    langs:
+      - java
+    name: addDeviceOperationSession(DeviceClientConfig deviceClientConfig)
+    nameWithType: AmqpsIotHubConnection.addDeviceOperationSession(DeviceClientConfig deviceClientConfig)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.addDeviceOperationSession(DeviceClientConfig deviceClientConfig)
+    overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.addDeviceOperationSession*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
+      startLine: 154
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: |-
+      <p>Erstellt eine neue DeviceOperation mit der angegebenen Konfiguration...</p>
+      <p></p>
+    syntax:
+      content: public void addDeviceOperationSession(DeviceClientConfig deviceClientConfig)
+      parameters:
+        - id: deviceClientConfig
+          type: com.microsoft.azure.sdk.iot.device._device_client_config
+          description: <p>die Gerätekonfiguration hinzufügen. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.addListener(ServerListener)
     id: addListener(ServerListener)
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
@@ -56,7 +87,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 719
+      startLine: 716
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: '<p>Abonnieren Sie einen Listener, damit die Liste der Listener an. </p>'
     syntax:
@@ -65,37 +96,77 @@ items:
         - id: listener
           type: com.microsoft.azure.sdk.iot.device.transport.amqps._server_listener
           description: <p>der Listener abonniert werden sollen. </p>
-  - uid: 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.AmqpsIotHubConnection(DeviceClientConfig,Boolean)'
-    id: 'AmqpsIotHubConnection(DeviceClientConfig,Boolean)'
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.AmqpsIotHubConnection(DeviceClientConfig)
+    id: AmqpsIotHubConnection(DeviceClientConfig)
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
     href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
     langs:
       - java
-    name: 'AmqpsIotHubConnection(DeviceClientConfig config, Boolean useWebSockets)'
-    nameWithType: 'AmqpsIotHubConnection.AmqpsIotHubConnection(DeviceClientConfig config, Boolean useWebSockets)'
-    fullName: 'com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.AmqpsIotHubConnection(DeviceClientConfig config, Boolean useWebSockets)'
+    name: AmqpsIotHubConnection(DeviceClientConfig config)
+    nameWithType: AmqpsIotHubConnection.AmqpsIotHubConnection(DeviceClientConfig config)
+    fullName: com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.AmqpsIotHubConnection(DeviceClientConfig config)
     overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.AmqpsIotHubConnection*
     type: Constructor
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 100
+      startLine: 74
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: |-
-      <p>Konstruktor zum Einrichten von Verbindungsparameter mithilfe der <xref href="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Konstruktor zum Einrichten von Verbindungsparameter mithilfe der <xref uid="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false">DeviceClientConfig</xref>.</p>
       <p></p>
     syntax:
-      content: 'public AmqpsIotHubConnection(DeviceClientConfig config, Boolean useWebSockets)'
+      content: public AmqpsIotHubConnection(DeviceClientConfig config)
       parameters:
         - id: config
           type: com.microsoft.azure.sdk.iot.device._device_client_config
-          description: '<p>Die <xref href="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false"></xref> entspricht, auf dem Gerät zugeordneten <xref href="com.microsoft.azure.sdk.iot.device._device_client" data-throw-if-not-resolved="false"></xref>. </p>'
-        - id: useWebSockets
-          type: 866c2227
-          description: '<p>Gibt an, ob die Verbindung WebSockets oder nicht verwendet werden soll. </p>'
+          description: '<p>Die <xref uid="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false">DeviceClientConfig</xref> entspricht, auf dem Gerät zugeordneten <xref uid="com.microsoft.azure.sdk.iot.device._device_client" data-throw-if-not-resolved="false">com.microsoft.azure.sdk.iot.device.DeviceClient</xref>. </p>'
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn Fehler beim Herstellen einer Verbindung mit dem Iothub. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.amqpsSessionManager
+    id: amqpsSessionManager
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
+    langs:
+      - java
+    name: amqpsSessionManager
+    nameWithType: AmqpsIotHubConnection.amqpsSessionManager
+    fullName: AmqpsSessionManager com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.amqpsSessionManager
+    type: Field
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
+      startLine: 66
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    syntax:
+      content: public AmqpsSessionManager amqpsSessionManager
+      return:
+        type: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.authenticate()
+    id: authenticate()
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
+    langs:
+      - java
+    name: authenticate()
+    nameWithType: AmqpsIotHubConnection.authenticate()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.authenticate()
+    overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.authenticate*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
+      startLine: 254
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: |-
+      <p>Startet die Authentifizierung durch Aufrufen der <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager" data-throw-if-not-resolved="false">AmqpsSessionManager</xref>.</p>
+      <p></p>
+    syntax:
+      content: public void authenticate()
+    exceptions:
+      - type: cbf33bbe
+        description: '<p>löst aus, wenn die Authentifizierung öffnen. </p>'
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.close()
     id: close()
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
@@ -110,10 +181,10 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 226
+      startLine: 288
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: |-
-      <p>Schließt die <xref href="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Schließt die <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection" data-throw-if-not-resolved="false">AmqpsIotHubConnection</xref>. </p>
       <p>Wenn die aktuelle Verbindung nicht geschlossen ist, diese Funktion den aktuellen Zustand auf closed festgelegt und alle Verbindungen für ungültig zu erklären wird Variablen beziehen. </p>
       <p></p>
     syntax:
@@ -121,6 +192,71 @@ items:
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn das Schließen der Verbindung Iothub aufgetreten ist. </p>
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertFromProton(AmqpsMessage,DeviceClientConfig)'
+    id: 'convertFromProton(AmqpsMessage,DeviceClientConfig)'
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
+    langs:
+      - java
+    name: 'convertFromProton(AmqpsMessage amqpsMessage, DeviceClientConfig deviceClientConfig)'
+    nameWithType: 'AmqpsIotHubConnection.convertFromProton(AmqpsMessage amqpsMessage, DeviceClientConfig deviceClientConfig)'
+    fullName: 'AmqpsConvertFromProtonReturnValue com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.convertFromProton(AmqpsMessage amqpsMessage, DeviceClientConfig deviceClientConfig)'
+    overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertFromProton*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
+      startLine: 747
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: |-
+      <p>Ruft die <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager" data-throw-if-not-resolved="false">AmqpsSessionManager</xref> den entsprechenden ConvertFromProton Konverter gefunden.</p>
+      <p></p>
+    syntax:
+      content: 'protected AmqpsConvertFromProtonReturnValue convertFromProton(AmqpsMessage amqpsMessage, DeviceClientConfig deviceClientConfig)'
+      parameters:
+        - id: amqpsMessage
+          type: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_message
+          description: <p>Die Meldung zu konvertieren. </p>
+        - id: deviceClientConfig
+          type: com.microsoft.azure.sdk.iot.device._device_client_config
+          description: '<p>die Konfiguration, um die Nachricht zu identifizieren. </p>'
+      return:
+        type: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_from_proton_return_value
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_from_proton_return_value\" data-throw-if-not-resolved=\"false\">AmqpsConvertFromProtonReturnValue</xref> enthält den Status und die Nachricht konvertiert. </p>"
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn die Konvertierung schlägt fehl. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertToProton(com.microsoft.azure.sdk.iot.device.Message)
+    id: Message)
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
+    langs:
+      - java
+    name: convertToProton(com.microsoft.azure.sdk.iot.device.Message message)
+    nameWithType: AmqpsIotHubConnection.convertToProton(com.microsoft.azure.sdk.iot.device.Message message)
+    fullName: AmqpsConvertToProtonReturnValue com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.convertToProton(com.microsoft.azure.sdk.iot.device.Message message)
+    overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertToProton*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
+      startLine: 733
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: |-
+      <p>Ruft die <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager" data-throw-if-not-resolved="false">AmqpsSessionManager</xref> den entsprechenden ConvertToProton Konverter gefunden.</p>
+      <p></p>
+    syntax:
+      content: protected AmqpsConvertToProtonReturnValue convertToProton(com.microsoft.azure.sdk.iot.device.Message message)
+      parameters:
+        - id: message
+          type: com.microsoft.azure.sdk.iot.device._message
+          description: <p>Die Meldung zu konvertieren. </p>
+      return:
+        type: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_to_proton_return_value
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_to_proton_return_value\" data-throw-if-not-resolved=\"false\">AmqpsConvertToProtonReturnValue</xref> enthält den Status und die Nachricht konvertiert. </p>"
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn die Konvertierung schlägt fehl. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onConnectionBound(Event)
     id: onConnectionBound(Event)
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
@@ -135,7 +271,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 465
+      startLine: 522
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: <p>Ereignishandler für die Verbindung gebunden Ereignis. Sasl-Authentifizierung und den entsprechenden Authentifizierungsmodus festgelegt. </p>
     syntax:
@@ -158,7 +294,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 432
+      startLine: 495
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: <p>Ereignishandler für die Init-Verbindungsereignis </p>
     syntax:
@@ -181,13 +317,15 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 494
+      startLine: 548
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: <p>Der Ereignishandler für die ungebundenen Verbindungsereignis. Legt den Verbindungsstatus auf "geschlossen" fest. </p>
     syntax:
       content: public void onConnectionUnbound(Event event)
       parameters:
         - id: event
           type: 70fceca4
+          description: <p>Das Ereignisobjekt Proton. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onDelivery(Event)
     id: onDelivery(Event)
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
@@ -202,7 +340,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 553
+      startLine: 561
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: <p>Der Ereignishandler für die Übermittlungsereignis. Diese Methode behandelt das Senden und Empfangen einer Nachricht. </p>
     syntax:
@@ -225,7 +363,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 613
+      startLine: 637
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: <p>Der Ereignishandler für das Link-Flow-Ereignis. Senden eine einzelne Nachricht verarbeitet werden. </p>
     syntax:
@@ -248,7 +386,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 672
+      startLine: 614
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: <p>Der Ereignishandler für das Link-Init-Ereignis. Legt die richtigen Zieladresse auf den Link. </p>
     syntax:
@@ -271,7 +409,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 652
+      startLine: 682
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: '<p>Der Ereignishandler für das Link-remote-schließen-Ereignis. Dadurch wird die erneute Verbindung versucht, bis dies erfolgreich ausgelöst. Absender und Empfänger Links schließen Auslösen dieses Ereignis, damit wir nur verarbeitet, da der andere redundant ist. </p>'
     syntax:
@@ -294,9 +432,9 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 628
+      startLine: 652
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
-    summary: '<p>Der Ereignishandler für das Link-remote-öffnen-Ereignis. Gibt an, dass die <ref refid="" kindref="compound">org.apache.qpid.proton.reactor.Reactor</ref> ist bereit, damit wir die Verbindung geöffneten festgelegt. </p>'
+    summary: '<p>Der Ereignishandler für das Link-remote-öffnen-Ereignis. Gibt an, dass die <xref uid="" data-throw-if-not-resolved="false">org.apache.qpid.proton.reactor.Reactor</xref> ist bereit, damit wir die Verbindung geöffneten festgelegt. </p>'
     syntax:
       content: public void onLinkRemoteOpen(Event event)
       parameters:
@@ -317,13 +455,15 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 523
+      startLine: 460
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: '<p>Der Ereignishandler für das letzte Ereignis Reaktor. Hebt die Sperre schließende. Wenn erneuten Herstellen einer Verbindung festgelegt wurde, wird beim erneuten Verbindungsversuch vom aufrufenden openAsync() gestartet. </p>'
     syntax:
       content: public void onReactorFinal(Event event)
       parameters:
         - id: event
           type: 70fceca4
+          description: <p>Proton-Ereignisobjekt </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onReactorInit(Event)
     id: onReactorInit(Event)
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
@@ -338,7 +478,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 506
+      startLine: 438
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: <p>Der Ereignishandler für Reaktor Init-Ereignis. </p>
     syntax:
@@ -361,7 +501,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 705
+      startLine: 702
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: '<p>Der Ereignishandler für den Transport Error-Ereignis. Dadurch wird die erneute Verbindung versucht, bis dies erfolgreich ausgelöst. </p>'
     syntax:
@@ -384,43 +524,78 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 182
+      startLine: 174
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: |-
-      <p>Öffnet die <xref href="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Wenn die aktuelle Verbindung nicht geöffnet ist, diese Methode erstellt eine neue <ref refid="" kindref="compound">IotHubSasToken</ref>. Diese Methode startet die <ref refid="" kindref="compound">Reaktor</ref>, legen Sie die Verbindung zu öffnen, und stellen es bereit zum Senden. </p>
+      <p>Öffnet die <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection" data-throw-if-not-resolved="false">AmqpsIotHubConnection</xref>. </p>
+      <p>Wenn die aktuelle Verbindung nicht geöffnet ist, wird diese Methode eine neue SasToken erstellt. Diese Methode startet die <xref uid="" data-throw-if-not-resolved="false">Reaktor</xref>, legen Sie die Verbindung zu öffnen, und stellen es bereit zum Senden. </p>
       <p></p>
     syntax:
       content: public void open()
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn die Reaktor nicht initialisiert werden konnte. </p>
-  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessage(Message)
-    id: sendMessage(Message)
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.openLinks()
+    id: openLinks()
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
     href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
     langs:
       - java
-    name: sendMessage(Message message)
-    nameWithType: AmqpsIotHubConnection.sendMessage(Message message)
-    fullName: Integer com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessage(Message message)
+    name: openLinks()
+    nameWithType: AmqpsIotHubConnection.openLinks()
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.openLinks()
+    overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.openLinks*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
+      startLine: 269
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+    summary: |-
+      <p>Öffnet alle Links für den Vorgang durch Aufrufen der <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager" data-throw-if-not-resolved="false">AmqpsSessionManager</xref>.</p>
+      <p></p>
+    syntax:
+      content: public void openLinks()
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn Proton auslöst. </p>
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessage(Message,MessageType,IotHubConnectionString)'
+    id: 'sendMessage(Message,MessageType,IotHubConnectionString)'
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.yml
+    langs:
+      - java
+    name: 'sendMessage(Message message, MessageType messageType, IotHubConnectionString iotHubConnectionString)'
+    nameWithType: 'AmqpsIotHubConnection.sendMessage(Message message, MessageType messageType, IotHubConnectionString iotHubConnectionString)'
+    fullName: 'synchronized Integer com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessage(Message message, MessageType messageType, IotHubConnectionString iotHubConnectionString)'
     overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessage*
     type: Method
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 317
+      startLine: 364
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
-    summary: '<p>Erstellt eine binäre Nachricht mit dem angegebenen Inhalt und MessageId. Sendet die erstellte Nachricht, die über den Link Absender an. </p>'
+    summary: |-
+      <p>Erstellt eine binäre Nachricht mit dem angegebenen Inhalt und MessageId. Sendet die erstellte Nachricht, die über den Link Absender an.</p>
+      <p></p>
     syntax:
-      content: public Integer sendMessage(Message message)
+      content: 'public synchronized Integer sendMessage(Message message, MessageType messageType, IotHubConnectionString iotHubConnectionString)'
       parameters:
         - id: message
-          type: e78f2a4c
+          type: com.microsoft.azure.sdk.iot.device._message
           description: <p>Die zu sendende Meldung. </p>
+        - id: messageType
+          type: com.microsoft.azure.sdk.iot.device._message_type
+          description: <p>Der Typ der gesendeten Nachricht </p>
+        - id: iotHubConnectionString
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string
+          description: <p>die Verbindungszeichenfolge für die Identifizierung des Absenders verwendet. </p>
       return:
-        type: 08effaa0
-        description: '<p>Ein <ref refid="" kindref="compound">Ganzzahl</ref> , die der Hashwert der Nachricht oder-1 darstellt, wenn die Verbindung geschlossen wird. </p>'
+        type: e671a770
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">Ganzzahl</xref> , die der Hashwert der Nachricht oder-1 darstellt, wenn die Verbindung geschlossen wird. </p>'
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn Senden der Nachricht ein Fehler auftritt </p>
   - uid: 'com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessageResult(AmqpsMessage,IotHubMessageResult)'
     id: 'sendMessageResult(AmqpsMessage,IotHubMessageResult)'
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection
@@ -429,75 +604,96 @@ items:
       - java
     name: 'sendMessageResult(AmqpsMessage message, IotHubMessageResult result)'
     nameWithType: 'AmqpsIotHubConnection.sendMessageResult(AmqpsMessage message, IotHubMessageResult result)'
-    fullName: 'Boolean com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessageResult(AmqpsMessage message, IotHubMessageResult result)'
+    fullName: 'synchronized Boolean com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessageResult(AmqpsMessage message, IotHubMessageResult result)'
     overload: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessageResult*
     type: Method
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/amqps/AmqpsIotHubConnection.java
-      startLine: 387
+      startLine: 392
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
     summary: |-
       <p>Sendet das Ergebnis der Nachricht für die zuvor empfangenen Nachricht.</p>
       <p></p>
     syntax:
-      content: 'public Boolean sendMessageResult(AmqpsMessage message, IotHubMessageResult result)'
+      content: 'public synchronized Boolean sendMessageResult(AmqpsMessage message, IotHubMessageResult result)'
       parameters:
         - id: message
           type: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_message
           description: <p>die Meldung bestätigt werden. </p>
         - id: result
           type: com.microsoft.azure.sdk.iot.device._iot_hub_message_result
-          description: '<p>Das Ergebnis der Nachricht (eine der <ref refid="" kindref="compound">IotHubMessageResult #COMPLETE</ref>, <ref refid="" kindref="compound">IotHubMessageResult #ABANDON</ref>, oder <ref refid="" kindref="compound">IotHubMessageResult #REJECT</ref>). </p>'
+          description: '<p>Das Ergebnis der Nachricht (eine der <xref uid="" data-throw-if-not-resolved="false">IotHubMessageResult #COMPLETE</xref>, <xref uid="" data-throw-if-not-resolved="false">IotHubMessageResult #ABANDON</xref>, oder <xref uid="" data-throw-if-not-resolved="false">IotHubMessageResult #REJECT</xref>). </p>'
       return:
-        type: 866c2227
+        type: b47aff54
         description: '<p>eine boolesche True zurück, wenn erfolgreich, oder bei Fehler "false" gesendeten Nachricht empfangen wurde. </p>'
 references:
   - uid: cbf33bbe
     spec.java:
       - name: IOException
         fullName: IOException
-  - uid: 866c2227
-    spec.java:
-      - name: Boolean
-        fullName: Boolean
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.AmqpsIotHubConnection*
     name: AmqpsIotHubConnection
     nameWithType: AmqpsIotHubConnection.AmqpsIotHubConnection
     fullName: com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.AmqpsIotHubConnection
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.addDeviceOperationSession*
+    name: addDeviceOperationSession
+    nameWithType: AmqpsIotHubConnection.addDeviceOperationSession
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.addDeviceOperationSession
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.open*
     name: open
     nameWithType: AmqpsIotHubConnection.open
     fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.open
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.authenticate*
+    name: authenticate
+    nameWithType: AmqpsIotHubConnection.authenticate
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.authenticate
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.openLinks*
+    name: openLinks
+    nameWithType: AmqpsIotHubConnection.openLinks
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.openLinks
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.close*
     name: close
     nameWithType: AmqpsIotHubConnection.close
     fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.close
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
-  - uid: e78f2a4c
+  - uid: e671a770
     spec.java:
-      - name: Message
-        fullName: Message
-  - uid: 08effaa0
-    spec.java:
-      - name: Integer
-        fullName: Integer
+      - name: synchronized Integer
+        fullName: synchronized Integer
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessage*
     name: sendMessage
     nameWithType: AmqpsIotHubConnection.sendMessage
-    fullName: Integer com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessage
+    fullName: synchronized Integer com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessage
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: b47aff54
+    spec.java:
+      - name: synchronized Boolean
+        fullName: synchronized Boolean
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.sendMessageResult*
     name: sendMessageResult
     nameWithType: AmqpsIotHubConnection.sendMessageResult
-    fullName: Boolean com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessageResult
+    fullName: synchronized Boolean com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.sendMessageResult
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: 70fceca4
     spec.java:
       - name: Event
         fullName: Event
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onReactorInit*
+    name: onReactorInit
+    nameWithType: AmqpsIotHubConnection.onReactorInit
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onReactorInit
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onReactorFinal*
+    name: onReactorFinal
+    nameWithType: AmqpsIotHubConnection.onReactorFinal
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onReactorFinal
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onConnectionInit*
     name: onConnectionInit
     nameWithType: AmqpsIotHubConnection.onConnectionInit
@@ -513,20 +709,15 @@ references:
     nameWithType: AmqpsIotHubConnection.onConnectionUnbound
     fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onConnectionUnbound
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
-  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onReactorInit*
-    name: onReactorInit
-    nameWithType: AmqpsIotHubConnection.onReactorInit
-    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onReactorInit
-    package: com.microsoft.azure.sdk.iot.device.transport.amqps
-  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onReactorFinal*
-    name: onReactorFinal
-    nameWithType: AmqpsIotHubConnection.onReactorFinal
-    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onReactorFinal
-    package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onDelivery*
     name: onDelivery
     nameWithType: AmqpsIotHubConnection.onDelivery
     fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onDelivery
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onLinkInit*
+    name: onLinkInit
+    nameWithType: AmqpsIotHubConnection.onLinkInit
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onLinkInit
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onLinkFlow*
     name: onLinkFlow
@@ -543,11 +734,6 @@ references:
     nameWithType: AmqpsIotHubConnection.onLinkRemoteClose
     fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onLinkRemoteClose
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
-  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onLinkInit*
-    name: onLinkInit
-    nameWithType: AmqpsIotHubConnection.onLinkInit
-    fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.onLinkInit
-    package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.onTransportError*
     name: onTransportError
     nameWithType: AmqpsIotHubConnection.onTransportError
@@ -557,6 +743,16 @@ references:
     name: addListener
     nameWithType: AmqpsIotHubConnection.addListener
     fullName: void com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.addListener
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertToProton*
+    name: convertToProton
+    nameWithType: AmqpsIotHubConnection.convertToProton
+    fullName: AmqpsConvertToProtonReturnValue com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.convertToProton
+    package: com.microsoft.azure.sdk.iot.device.transport.amqps
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_iot_hub_connection.convertFromProton*
+    name: convertFromProton
+    nameWithType: AmqpsIotHubConnection.convertFromProton
+    fullName: AmqpsConvertFromProtonReturnValue com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsIotHubConnection.convertFromProton
     package: com.microsoft.azure.sdk.iot.device.transport.amqps
   - uid: com.microsoft.azure.sdk.iot.device.transport._state
     parent: com.microsoft.azure.sdk.iot.device.transport
@@ -606,6 +802,16 @@ references:
     type: Class
     syntax:
       content: public class CustomLogger
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_session_manager.yml
+    name: AmqpsSessionManager
+    nameWithType: AmqpsSessionManager
+    fullName: com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsSessionManager
+    type: Class
+    summary: <p>Verwalten von Clients für mehrere Geräte und Authentifizierungsmechanismus </p>
+    syntax:
+      content: public class AmqpsSessionManager
   - uid: com.microsoft.azure.sdk.iot.device._device_client
     parent: com.microsoft.azure.sdk.iot.device
     href: com.microsoft.azure.sdk.iot.device._device_client.yml
@@ -629,6 +835,35 @@ references:
     type: Class
     summary: '<p>Eine AMQPS IotHub-Verbindung zwischen einem Gerät und eine IoTHub. Diese Klasse enthält die Funktionalität zum Senden/Empfangen einer Nachricht und Logik zum Herstellen einer Verbindung mit dem IoTHub erneut für den Fall, dass es verloren geht. </p>'
     syntax: *ref_1
+  - uid: com.microsoft.azure.sdk.iot.device._message
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._message.yml
+    name: Message
+    nameWithType: Message
+    fullName: com.microsoft.azure.sdk.iot.device.Message
+    type: Class
+    syntax:
+      content: public class Message
+  - uid: com.microsoft.azure.sdk.iot.device._message_type
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._message_type.yml
+    name: MessageType
+    nameWithType: MessageType
+    fullName: com.microsoft.azure.sdk.iot.device.MessageType
+    type: Enum
+    summary: <p>Der Nachrichtentyp IoTHub </p>
+    syntax:
+      content: public enum MessageType
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string.yml
+    name: IotHubConnectionString
+    nameWithType: IotHubConnectionString
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionString
+    type: Class
+    summary: <p>Der Parser für die Verbindungszeichenfolge Iothub. </p>
+    syntax:
+      content: public class IotHubConnectionString
   - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_message
     parent: com.microsoft.azure.sdk.iot.device.transport.amqps
     href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_message.yml
@@ -636,7 +871,7 @@ references:
     nameWithType: AmqpsMessage
     fullName: com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsMessage
     type: Class
-    summary: '<p>Erweiterung der QPID-Proton-J MessageImpl Klasse implementiert die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Schnittstelle. Fügt ein Objekt für die Übermittlung als eine Private Membervariable hinzu und fügt ein neues <xref href="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_message._a_c_k___t_y_p_e" data-throw-if-not-resolved="false"></xref> Enum. Fügt die Möglichkeit, eine einzelne Nachricht problemlos zu bestätigen. </p>'
+    summary: '<p>Erweiterung der QPID-Proton-J MessageImpl Klasse implementiert die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Schnittstelle. Fügt ein Objekt für die Übermittlung als eine Private Membervariable hinzu und fügt ein neues <xref uid="com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_message._a_c_k___t_y_p_e" data-throw-if-not-resolved="false">ACK_TYPE</xref> Enum. Fügt die Möglichkeit, eine einzelne Nachricht problemlos zu bestätigen. </p>'
     syntax:
       content: public class AmqpsMessage
   - uid: com.microsoft.azure.sdk.iot.device._iot_hub_message_result
@@ -649,3 +884,21 @@ references:
     summary: '<p>Ein Rückgabewert aus einer Nachrichtenrückruf, der einen IoT Hub abgeschlossen ist, weist verwerfen oder die Nachricht ablehnen. </p>'
     syntax:
       content: public enum IotHubMessageResult
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_to_proton_return_value
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_to_proton_return_value.yml
+    name: AmqpsConvertToProtonReturnValue
+    nameWithType: AmqpsConvertToProtonReturnValue
+    fullName: com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsConvertToProtonReturnValue
+    type: Class
+    syntax:
+      content: public class AmqpsConvertToProtonReturnValue
+  - uid: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_from_proton_return_value
+    parent: com.microsoft.azure.sdk.iot.device.transport.amqps
+    href: com.microsoft.azure.sdk.iot.device.transport.amqps._amqps_convert_from_proton_return_value.yml
+    name: AmqpsConvertFromProtonReturnValue
+    nameWithType: AmqpsConvertFromProtonReturnValue
+    fullName: com.microsoft.azure.sdk.iot.device.transport.amqps.AmqpsConvertFromProtonReturnValue
+    type: Class
+    syntax:
+      content: public class AmqpsConvertFromProtonReturnValue

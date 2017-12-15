@@ -16,16 +16,18 @@ items:
       - com.microsoft.azure.management._azure.cdnProfiles()
       - com.microsoft.azure.management._azure.computeUsages()
       - com.microsoft.azure.management._azure.configure()
+      - com.microsoft.azure.management._azure.containerGroups()
       - com.microsoft.azure.management._azure.containerRegistries()
       - com.microsoft.azure.management._azure.containerServices()
+      - com.microsoft.azure.management._azure.cosmosDBAccounts()
       - com.microsoft.azure.management._azure.deployments()
       - com.microsoft.azure.management._azure.disks()
       - com.microsoft.azure.management._azure.dnsZones()
-      - com.microsoft.azure.management._azure.documentDBs()
       - com.microsoft.azure.management._azure.features()
       - com.microsoft.azure.management._azure.genericResources()
       - com.microsoft.azure.management._azure.getCurrentSubscription()
       - com.microsoft.azure.management._azure.loadBalancers()
+      - com.microsoft.azure.management._azure.localNetworkGateways()
       - com.microsoft.azure.management._azure.networkInterfaces()
       - com.microsoft.azure.management._azure.networks()
       - com.microsoft.azure.management._azure.networkSecurityGroups()
@@ -38,6 +40,7 @@ items:
       - com.microsoft.azure.management._azure.redisCaches()
       - com.microsoft.azure.management._azure.resourceGroups()
       - com.microsoft.azure.management._azure.routeTables()
+      - com.microsoft.azure.management._azure.searchServices()
       - com.microsoft.azure.management._azure.serviceBusNamespaces()
       - com.microsoft.azure.management._azure.snapshots()
       - com.microsoft.azure.management._azure.sqlServers()
@@ -51,6 +54,7 @@ items:
       - com.microsoft.azure.management._azure.virtualMachineImages()
       - com.microsoft.azure.management._azure.virtualMachines()
       - com.microsoft.azure.management._azure.virtualMachineScaleSets()
+      - com.microsoft.azure.management._azure.virtualNetworkGateways()
       - com.microsoft.azure.management._azure.webApps()
     href: com.microsoft.azure.management._azure.yml
     langs:
@@ -62,12 +66,12 @@ items:
     source:
       remote: &ref_0
         path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 92
+      startLine: 98
     package: com.microsoft.azure.management
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax: &ref_1
       content: public class Azure
     inheritance:
@@ -86,13 +90,13 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 696
+      startLine: 736
     package: com.microsoft.azure.management
     syntax:
       content: public AccessManagement accessManagement()
       return:
         type: com.microsoft.azure.management._access_management
-        description: <p>Einstiegspunkt für die Verwaltung von Authentifizierung und Autorisierung in<xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref></p>
+        description: <p>Einstiegspunkt für die Verwaltung von Authentifizierung und Autorisierung in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref></p>
   - uid: com.microsoft.azure.management._azure.applicationGateways()
     id: applicationGateways()
     parent: com.microsoft.azure.management._azure
@@ -107,7 +111,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 498
+      startLine: 508
     package: com.microsoft.azure.management
     syntax:
       content: public ApplicationGateways applicationGateways()
@@ -128,7 +132,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 640
+      startLine: 664
     package: com.microsoft.azure.management
     syntax:
       content: public AppServiceManager appServices()
@@ -149,10 +153,10 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 117
+      startLine: 125
     package: com.microsoft.azure.management
     summary: |-
-      <p>Authentifizieren Sie sich bei <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> mithilfe einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Anmeldeinformationsobjekt.</p>
+      <p>Authentifizieren Sie sich bei <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> mithilfe einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Anmeldeinformationsobjekt.</p>
       <p></p>
     syntax:
       content: public static Authenticated authenticate(AzureTokenCredentials credentials)
@@ -162,7 +166,7 @@ items:
           description: <p>das Anmeldeinformationenobjekt </p>
       return:
         type: com.microsoft.azure.management._azure._authenticated
-        description: <p>der authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client </p>
+        description: <p>der authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client </p>
   - uid: com.microsoft.azure.management._azure.authenticate(File)
     id: authenticate(File)
     parent: com.microsoft.azure.management._azure
@@ -177,7 +181,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 143
+      startLine: 152
     package: com.microsoft.azure.management
     summary: '<p>Authentifiziert die API-Zugriff mithilfe einer Eigenschaftendatei, die die erforderlichen Anmeldeinformationen enthält. </p>'
     syntax:
@@ -188,7 +192,7 @@ items:
           description: '<p>die Datei mit den Anmeldeinformationen in der Java-Standardeigenschaften Dateiformat mit den folgenden Schlüsseln:</p>'
       return:
         type: com.microsoft.azure.management._azure._authenticated
-        description: <p>authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client </p>
+        description: <p>authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client </p>
     exceptions:
       - type: cbf33bbe
         description: <p>Ausnahme von Dateizugriff </p>
@@ -206,7 +210,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 160
+      startLine: 170
     package: com.microsoft.azure.management
     summary: <p>Authentifiziert die API-Zugriff mithilfe einer RestClient-Instanz. </p>
     syntax:
@@ -214,13 +218,13 @@ items:
       parameters:
         - id: restClient
           type: 9545a295
-          description: <p>mit dem RestClient konfiguriert <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Authentifizierungsanmeldeinformationen </p>
+          description: <p>mit dem RestClient konfiguriert <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Authentifizierungsanmeldeinformationen </p>
         - id: tenantId
           type: '26831127'
           description: <p>die "tenantid" in Active Directory </p>
       return:
         type: com.microsoft.azure.management._azure._authenticated
-        description: <p>authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client </p>
+        description: <p>authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client </p>
   - uid: 'com.microsoft.azure.management._azure.authenticate(RestClient,String,String)'
     id: 'authenticate(RestClient,String,String)'
     parent: com.microsoft.azure.management._azure
@@ -235,7 +239,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 171
+      startLine: 181
     package: com.microsoft.azure.management
     summary: <p>Authentifiziert die API-Zugriff mithilfe einer RestClient-Instanz. </p>
     syntax:
@@ -243,16 +247,16 @@ items:
       parameters:
         - id: restClient
           type: 9545a295
-          description: <p>mit dem RestClient konfiguriert <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Authentifizierungsanmeldeinformationen </p>
+          description: <p>mit dem RestClient konfiguriert <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Authentifizierungsanmeldeinformationen </p>
         - id: tenantId
           type: '26831127'
           description: <p>die "tenantid" in Active Directory </p>
         - id: subscriptionId
           type: '26831127'
-          description: <p>die ID des Abonnements </p>
+          description: <p>Die ID des Abonnements </p>
       return:
         type: com.microsoft.azure.management._azure._authenticated
-        description: <p>authentifizierte <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Client </p>
+        description: <p>authentifizierte <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Client </p>
   - uid: com.microsoft.azure.management._azure.availabilitySets()
     id: availabilitySets()
     parent: com.microsoft.azure.management._azure
@@ -267,7 +271,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 470
+      startLine: 480
     package: com.microsoft.azure.management
     syntax:
       content: public AvailabilitySets availabilitySets()
@@ -288,7 +292,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 596
+      startLine: 620
     package: com.microsoft.azure.management
     syntax:
       content: public BatchAccounts batchAccounts()
@@ -309,7 +313,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 617
+      startLine: 641
     package: com.microsoft.azure.management
     syntax:
       content: public CdnProfiles cdnProfiles()
@@ -330,7 +334,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 582
+      startLine: 606
     package: com.microsoft.azure.management
     syntax:
       content: public ComputeUsages computeUsages()
@@ -351,13 +355,34 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 178
+      startLine: 188
     package: com.microsoft.azure.management
     syntax:
       content: public static Configurable configure()
       return:
         type: com.microsoft.azure.management._azure._configurable
         description: <p>eine Schnittstelle können Konfigurationen auf dem Client. </p>
+  - uid: com.microsoft.azure.management._azure.containerGroups()
+    id: containerGroups()
+    parent: com.microsoft.azure.management._azure
+    href: com.microsoft.azure.management._azure.yml
+    langs:
+      - java
+    name: containerGroups()
+    nameWithType: Azure.containerGroups()
+    fullName: ContainerGroups com.microsoft.azure.management.Azure.containerGroups()
+    overload: com.microsoft.azure.management._azure.containerGroups*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure/src/main/java/com/microsoft/azure/management/Azure.java
+      startLine: 704
+    package: com.microsoft.azure.management
+    syntax:
+      content: public ContainerGroups containerGroups()
+      return:
+        type: com.microsoft.azure.management.containerinstance._container_groups
+        description: <p>Einstiegspunkt für die Verwaltung von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Containerinstanzen. </p>
   - uid: com.microsoft.azure.management._azure.containerRegistries()
     id: containerRegistries()
     parent: com.microsoft.azure.management._azure
@@ -372,7 +397,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 680
+      startLine: 712
     package: com.microsoft.azure.management
     syntax:
       content: public Registries containerRegistries()
@@ -393,13 +418,34 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 672
+      startLine: 696
     package: com.microsoft.azure.management
     syntax:
       content: public ContainerServices containerServices()
       return:
         type: com.microsoft.azure.management.compute._container_services
         description: <p>der Einstiegspunkt für die Verwaltung von Service Bus-Vorgänge. </p>
+  - uid: com.microsoft.azure.management._azure.cosmosDBAccounts()
+    id: cosmosDBAccounts()
+    parent: com.microsoft.azure.management._azure
+    href: com.microsoft.azure.management._azure.yml
+    langs:
+      - java
+    name: cosmosDBAccounts()
+    nameWithType: Azure.cosmosDBAccounts()
+    fullName: CosmosDBAccounts com.microsoft.azure.management.Azure.cosmosDBAccounts()
+    overload: com.microsoft.azure.management._azure.cosmosDBAccounts*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure/src/main/java/com/microsoft/azure/management/Azure.java
+      startLine: 720
+    package: com.microsoft.azure.management
+    syntax:
+      content: public CosmosDBAccounts cosmosDBAccounts()
+      return:
+        type: com.microsoft.azure.management.cosmosdb._cosmos_d_b_accounts
+        description: <p>der Einstiegspunkt für die Verwaltung von Container Regsitries. </p>
   - uid: com.microsoft.azure.management._azure.deployments()
     id: deployments()
     parent: com.microsoft.azure.management._azure
@@ -414,7 +460,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 414
+      startLine: 424
     package: com.microsoft.azure.management
     syntax:
       content: public Deployments deployments()
@@ -435,7 +481,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 554
+      startLine: 578
     package: com.microsoft.azure.management
     syntax:
       content: public Disks disks()
@@ -456,34 +502,13 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 624
+      startLine: 648
     package: com.microsoft.azure.management
     syntax:
       content: public DnsZones dnsZones()
       return:
         type: com.microsoft.azure.management.dns._dns_zones
         description: <p>der Einstiegspunkt für die Verwaltung von DNS-Zonen. </p>
-  - uid: com.microsoft.azure.management._azure.documentDBs()
-    id: documentDBs()
-    parent: com.microsoft.azure.management._azure
-    href: com.microsoft.azure.management._azure.yml
-    langs:
-      - java
-    name: documentDBs()
-    nameWithType: Azure.documentDBs()
-    fullName: DocumentDBAccounts com.microsoft.azure.management.Azure.documentDBs()
-    overload: com.microsoft.azure.management._azure.documentDBs*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 688
-    package: com.microsoft.azure.management
-    syntax:
-      content: public DocumentDBAccounts documentDBs()
-      return:
-        type: 866fdc95
-        description: <p>der Einstiegspunkt für die Verwaltung von Container Regsitries. </p>
   - uid: com.microsoft.azure.management._azure.features()
     id: features()
     parent: com.microsoft.azure.management._azure
@@ -498,7 +523,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 428
+      startLine: 438
     package: com.microsoft.azure.management
     syntax:
       content: public Features features()
@@ -519,7 +544,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 421
+      startLine: 431
     package: com.microsoft.azure.management
     syntax:
       content: public GenericResources genericResources()
@@ -540,7 +565,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 393
+      startLine: 403
     package: com.microsoft.azure.management
     syntax:
       content: public Subscription getCurrentSubscription()
@@ -561,13 +586,34 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 491
+      startLine: 501
     package: com.microsoft.azure.management
     syntax:
       content: public LoadBalancers loadBalancers()
       return:
         type: com.microsoft.azure.management.network._load_balancers
         description: <p>Einstiegspunkt für die Verwaltung der Lastenausgleichsmodule </p>
+  - uid: com.microsoft.azure.management._azure.localNetworkGateways()
+    id: localNetworkGateways()
+    parent: com.microsoft.azure.management._azure
+    href: com.microsoft.azure.management._azure.yml
+    langs:
+      - java
+    name: localNetworkGateways()
+    nameWithType: Azure.localNetworkGateways()
+    fullName: LocalNetworkGateways com.microsoft.azure.management.Azure.localNetworkGateways()
+    overload: com.microsoft.azure.management._azure.localNetworkGateways*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure/src/main/java/com/microsoft/azure/management/Azure.java
+      startLine: 543
+    package: com.microsoft.azure.management
+    syntax:
+      content: public LocalNetworkGateways localNetworkGateways()
+      return:
+        type: com.microsoft.azure.management.network._local_network_gateways
+        description: <p>Einstiegspunkt für die Verwaltung von Gateways des lokalen Netzwerks </p>
   - uid: com.microsoft.azure.management._azure.networkInterfaces()
     id: networkInterfaces()
     parent: com.microsoft.azure.management._azure
@@ -582,7 +628,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 575
+      startLine: 599
     package: com.microsoft.azure.management
     syntax:
       content: public NetworkInterfaces networkInterfaces()
@@ -603,7 +649,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 477
+      startLine: 487
     package: com.microsoft.azure.management
     syntax:
       content: public Networks networks()
@@ -624,7 +670,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 505
+      startLine: 515
     package: com.microsoft.azure.management
     syntax:
       content: public NetworkSecurityGroups networkSecurityGroups()
@@ -645,7 +691,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 512
+      startLine: 522
     package: com.microsoft.azure.management
     syntax:
       content: public NetworkUsages networkUsages()
@@ -666,7 +712,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 519
+      startLine: 529
     package: com.microsoft.azure.management
     syntax:
       content: public NetworkWatchers networkWatchers()
@@ -687,7 +733,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 449
+      startLine: 459
     package: com.microsoft.azure.management
     syntax:
       content: public PolicyAssignments policyAssignments()
@@ -708,7 +754,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 442
+      startLine: 452
     package: com.microsoft.azure.management
     syntax:
       content: public PolicyDefinitions policyDefinitions()
@@ -729,7 +775,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 435
+      startLine: 445
     package: com.microsoft.azure.management
     syntax:
       content: public Providers providers()
@@ -750,7 +796,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 568
+      startLine: 592
     package: com.microsoft.azure.management
     syntax:
       content: public PublicIPAddresses publicIPAddresses()
@@ -771,7 +817,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 610
+      startLine: 634
     package: com.microsoft.azure.management
     syntax:
       content: public RedisCaches redisCaches()
@@ -792,7 +838,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 407
+      startLine: 417
     package: com.microsoft.azure.management
     syntax:
       content: public ResourceGroups resourceGroups()
@@ -813,13 +859,34 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 484
+      startLine: 494
     package: com.microsoft.azure.management
     syntax:
       content: public RouteTables routeTables()
       return:
         type: com.microsoft.azure.management.network._route_tables
         description: <p>Einstiegspunkt für die Verwaltung von Routentabellen </p>
+  - uid: com.microsoft.azure.management._azure.searchServices()
+    id: searchServices()
+    parent: com.microsoft.azure.management._azure
+    href: com.microsoft.azure.management._azure.yml
+    langs:
+      - java
+    name: searchServices()
+    nameWithType: Azure.searchServices()
+    fullName: SearchServices com.microsoft.azure.management.Azure.searchServices()
+    overload: com.microsoft.azure.management._azure.searchServices*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure/src/main/java/com/microsoft/azure/management/Azure.java
+      startLine: 728
+    package: com.microsoft.azure.management
+    syntax:
+      content: public SearchServices searchServices()
+      return:
+        type: com.microsoft.azure.management.search._search_services
+        description: <p>der Einstiegspunkt für die Verwaltung von Search-Dienste. </p>
   - uid: com.microsoft.azure.management._azure.serviceBusNamespaces()
     id: serviceBusNamespaces()
     parent: com.microsoft.azure.management._azure
@@ -834,7 +901,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 655
+      startLine: 679
     package: com.microsoft.azure.management
     syntax:
       content: public ServiceBusNamespaces serviceBusNamespaces()
@@ -855,7 +922,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 561
+      startLine: 585
     package: com.microsoft.azure.management
     syntax:
       content: public Snapshots snapshots()
@@ -876,7 +943,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 647
+      startLine: 671
     package: com.microsoft.azure.management
     syntax:
       content: public SqlServers sqlServers()
@@ -897,7 +964,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 456
+      startLine: 466
     package: com.microsoft.azure.management
     syntax:
       content: public StorageAccounts storageAccounts()
@@ -918,7 +985,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 463
+      startLine: 473
     package: com.microsoft.azure.management
     syntax:
       content: public Usages storageUsages()
@@ -939,7 +1006,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 386
+      startLine: 396
     package: com.microsoft.azure.management
     syntax:
       content: public String subscriptionId()
@@ -960,7 +1027,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 400
+      startLine: 410
     package: com.microsoft.azure.management
     syntax:
       content: public Subscriptions subscriptions()
@@ -981,7 +1048,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 603
+      startLine: 627
     package: com.microsoft.azure.management
     syntax:
       content: public TrafficManagerProfiles trafficManagerProfiles()
@@ -1002,7 +1069,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 589
+      startLine: 613
     package: com.microsoft.azure.management
     syntax:
       content: public Vaults vaults()
@@ -1023,7 +1090,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 547
+      startLine: 571
     package: com.microsoft.azure.management
     syntax:
       content: public VirtualMachineCustomImages virtualMachineCustomImages()
@@ -1044,7 +1111,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 540
+      startLine: 564
     package: com.microsoft.azure.management
     syntax:
       content: public VirtualMachineImages virtualMachineImages()
@@ -1065,7 +1132,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 526
+      startLine: 550
     package: com.microsoft.azure.management
     syntax:
       content: public VirtualMachines virtualMachines()
@@ -1086,13 +1153,34 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 533
+      startLine: 557
     package: com.microsoft.azure.management
     syntax:
       content: public VirtualMachineScaleSets virtualMachineScaleSets()
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_sets
         description: <p>der Einstiegspunkt für die Verwaltung von VM-skalierungsgruppen. </p>
+  - uid: com.microsoft.azure.management._azure.virtualNetworkGateways()
+    id: virtualNetworkGateways()
+    parent: com.microsoft.azure.management._azure
+    href: com.microsoft.azure.management._azure.yml
+    langs:
+      - java
+    name: virtualNetworkGateways()
+    nameWithType: Azure.virtualNetworkGateways()
+    fullName: VirtualNetworkGateways com.microsoft.azure.management.Azure.virtualNetworkGateways()
+    overload: com.microsoft.azure.management._azure.virtualNetworkGateways*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure/src/main/java/com/microsoft/azure/management/Azure.java
+      startLine: 536
+    package: com.microsoft.azure.management
+    syntax:
+      content: public VirtualNetworkGateways virtualNetworkGateways()
+      return:
+        type: com.microsoft.azure.management.network._virtual_network_gateways
+        description: <p>Einstiegspunkt für die Verwaltung von Gateways des virtuellen Netzwerks </p>
   - uid: com.microsoft.azure.management._azure.webApps()
     id: webApps()
     parent: com.microsoft.azure.management._azure
@@ -1107,7 +1195,7 @@ items:
     source:
       remote: *ref_0
       path: azure/src/main/java/com/microsoft/azure/management/Azure.java
-      startLine: 632
+      startLine: 656
     package: com.microsoft.azure.management
     syntax:
       content: public WebApps webApps()
@@ -1245,6 +1333,16 @@ references:
     nameWithType: Azure.networkWatchers
     fullName: NetworkWatchers com.microsoft.azure.management.Azure.networkWatchers
     package: com.microsoft.azure.management
+  - uid: com.microsoft.azure.management._azure.virtualNetworkGateways*
+    name: virtualNetworkGateways
+    nameWithType: Azure.virtualNetworkGateways
+    fullName: VirtualNetworkGateways com.microsoft.azure.management.Azure.virtualNetworkGateways
+    package: com.microsoft.azure.management
+  - uid: com.microsoft.azure.management._azure.localNetworkGateways*
+    name: localNetworkGateways
+    nameWithType: Azure.localNetworkGateways
+    fullName: LocalNetworkGateways com.microsoft.azure.management.Azure.localNetworkGateways
+    package: com.microsoft.azure.management
   - uid: com.microsoft.azure.management._azure.virtualMachines*
     name: virtualMachines
     nameWithType: Azure.virtualMachines
@@ -1349,6 +1447,11 @@ references:
     nameWithType: Azure.containerServices
     fullName: ContainerServices com.microsoft.azure.management.Azure.containerServices
     package: com.microsoft.azure.management
+  - uid: com.microsoft.azure.management._azure.containerGroups*
+    name: containerGroups
+    nameWithType: Azure.containerGroups
+    fullName: ContainerGroups com.microsoft.azure.management.Azure.containerGroups
+    package: com.microsoft.azure.management
   - uid: cf09ddc7
     spec.java:
       - name: Registries
@@ -1358,30 +1461,21 @@ references:
     nameWithType: Azure.containerRegistries
     fullName: Registries com.microsoft.azure.management.Azure.containerRegistries
     package: com.microsoft.azure.management
-  - uid: 866fdc95
-    spec.java:
-      - name: DocumentDBAccounts
-        fullName: DocumentDBAccounts
-  - uid: com.microsoft.azure.management._azure.documentDBs*
-    name: documentDBs
-    nameWithType: Azure.documentDBs
-    fullName: DocumentDBAccounts com.microsoft.azure.management.Azure.documentDBs
+  - uid: com.microsoft.azure.management._azure.cosmosDBAccounts*
+    name: cosmosDBAccounts
+    nameWithType: Azure.cosmosDBAccounts
+    fullName: CosmosDBAccounts com.microsoft.azure.management.Azure.cosmosDBAccounts
+    package: com.microsoft.azure.management
+  - uid: com.microsoft.azure.management._azure.searchServices*
+    name: searchServices
+    nameWithType: Azure.searchServices
+    fullName: SearchServices com.microsoft.azure.management.Azure.searchServices
     package: com.microsoft.azure.management
   - uid: com.microsoft.azure.management._azure.accessManagement*
     name: accessManagement
     nameWithType: Azure.accessManagement
     fullName: AccessManagement com.microsoft.azure.management.Azure.accessManagement
     package: com.microsoft.azure.management
-  - uid: com.microsoft.azure.management.resources.implementation._resource_manager
-    parent: com.microsoft.azure.management.resources.implementation
-    href: com.microsoft.azure.management.resources.implementation._resource_manager.yml
-    name: ResourceManager
-    nameWithType: ResourceManager
-    fullName: com.microsoft.azure.management.resources.implementation.ResourceManager
-    type: Class
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ressourcenverwaltung. </p>
-    syntax:
-      content: public class ResourceManager
   - uid: com.microsoft.azure.management._azure._authenticated
     parent: com.microsoft.azure.management
     href: com.microsoft.azure.management._azure._authenticated.yml
@@ -1390,8 +1484,8 @@ references:
     fullName: com.microsoft.azure.management.Azure.Authenticated
     type: Interface
     summary: |-
-      <p>Authentifizierter Zugriff auf eine Teilmenge der <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> APIs, die nicht über ein bestimmtes Abonnement benötigen. </p>
-      <p>Verwenden Sie die abonnementspezifischen-APIs für den Zugriff auf <xref href="com.microsoft.azure.management._azure._authenticated.withSubscription(String)" data-throw-if-not-resolved="false"></xref>, oder <xref href="com.microsoft.azure.management._azure._authenticated.withDefaultSubscription()" data-throw-if-not-resolved="false"></xref> , wenn ein Standardabonnement bereits zuvor (z. B. in einer zuvor angegebenen Authentifizierungsdatei) angegeben wurde. </p>
+      <p>Authentifizierter Zugriff auf eine Teilmenge der <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> APIs, die nicht über ein bestimmtes Abonnement benötigen. </p>
+      <p>Verwenden Sie die abonnementspezifischen-APIs für den Zugriff auf <xref uid="com.microsoft.azure.management._azure._authenticated.withSubscription(String)" data-throw-if-not-resolved="false">Authenticated#withSubscription(String)</xref>, oder <xref uid="com.microsoft.azure.management._azure._authenticated.withDefaultSubscription()" data-throw-if-not-resolved="false">withDefaultSubscription()</xref> Wenn ein Standardabonnement (für bereits zuvor angegeben wurde z. B. in einem zuvor angegebenen Authentifizierungsdatei). </p>
     syntax:
       content: public interface Authenticated extends AccessManagement
   - uid: com.microsoft.azure.management._azure
@@ -1401,7 +1495,7 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax: *ref_1
   - uid: com.microsoft.azure.management._azure._configurable
     parent: com.microsoft.azure.management
@@ -1420,7 +1514,7 @@ references:
     nameWithType: Subscription
     fullName: com.microsoft.azure.management.resources.Subscription
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Abonnement. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Abonnement. </p>
     syntax:
       content: public interface Subscription
   - uid: com.microsoft.azure.management.resources._subscriptions
@@ -1450,7 +1544,7 @@ references:
     nameWithType: Deployments
     fullName: com.microsoft.azure.management.resources.Deployments
     type: Interface
-    summary: <p>Einstiegspunkt für vorlagenbereitstellung in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für vorlagenbereitstellung in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Deployments
   - uid: com.microsoft.azure.management.resources._generic_resources
@@ -1540,7 +1634,7 @@ references:
     nameWithType: Networks
     fullName: com.microsoft.azure.management.network.Networks
     type: Interface
-    summary: <p>Einstiegspunkt für virtuelles Netzwerk-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Networks
   - uid: com.microsoft.azure.management.network._route_tables
@@ -1560,7 +1654,7 @@ references:
     nameWithType: LoadBalancers
     fullName: com.microsoft.azure.management.network.LoadBalancers
     type: Interface
-    summary: <p>Einstiegspunkt zum Laden des Lastenausgleichsmoduls dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt zum Laden des Lastenausgleichsmoduls dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface LoadBalancers
   - uid: com.microsoft.azure.management.network._application_gateways
@@ -1570,7 +1664,7 @@ references:
     nameWithType: ApplicationGateways
     fullName: com.microsoft.azure.management.network.ApplicationGateways
     type: Interface
-    summary: <p>Einstiegspunkt für die Anwendung Gateway-Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für die Anwendung Gateway-Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface ApplicationGateways extends SupportsCreating<ApplicationGateway.DefinitionStages.Blank>,SupportsListing<ApplicationGateway>,SupportsListingByResourceGroup<ApplicationGateway>,SupportsGettingByResourceGroup<ApplicationGateway>,SupportsGettingById<ApplicationGateway>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<ApplicationGateway>,SupportsBatchDeletion,HasManager<NetworkManager>,HasInner<ApplicationGatewaysInner>'
   - uid: com.microsoft.azure.management.network._network_security_groups
@@ -1600,9 +1694,29 @@ references:
     nameWithType: NetworkWatchers
     fullName: com.microsoft.azure.management.network.NetworkWatchers
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false"></xref> Watcher-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Watcher-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface NetworkWatchers
+  - uid: com.microsoft.azure.management.network._virtual_network_gateways
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._virtual_network_gateways.yml
+    name: VirtualNetworkGateways
+    nameWithType: VirtualNetworkGateways
+    fullName: com.microsoft.azure.management.network.VirtualNetworkGateways
+    type: Interface
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-Gateways Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface VirtualNetworkGateways
+  - uid: com.microsoft.azure.management.network._local_network_gateways
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._local_network_gateways.yml
+    name: LocalNetworkGateways
+    nameWithType: LocalNetworkGateways
+    fullName: com.microsoft.azure.management.network.LocalNetworkGateways
+    type: Interface
+    summary: <p>Einstiegspunkt zum lokalen Netzwerk-Gateways Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface LocalNetworkGateways
   - uid: com.microsoft.azure.management.compute._virtual_machines
     parent: com.microsoft.azure.management.compute
     href: com.microsoft.azure.management.compute._virtual_machines.yml
@@ -1650,7 +1764,7 @@ references:
     nameWithType: Disks
     fullName: com.microsoft.azure.management.compute.Disks
     type: Interface
-    summary: <p>Einstiegspunkt für verwaltete Datenträgerverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für verwaltete Datenträgerverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Disks
   - uid: com.microsoft.azure.management.compute._snapshots
@@ -1660,7 +1774,7 @@ references:
     nameWithType: Snapshots
     fullName: com.microsoft.azure.management.compute.Snapshots
     type: Interface
-    summary: <p>Einstiegspunkt für verwalteten Momentaufnahme-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für verwalteten Momentaufnahme-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Snapshots
   - uid: com.microsoft.azure.management.network._public_i_p_addresses
@@ -1710,7 +1824,7 @@ references:
     nameWithType: BatchAccounts
     fullName: com.microsoft.azure.management.batch.BatchAccounts
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Batch-Konto-Verwaltungs-API. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Batch-Konto-Verwaltungs-API. </p>
     syntax:
       content: public interface BatchAccounts
   - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profiles
@@ -1720,7 +1834,7 @@ references:
     nameWithType: TrafficManagerProfiles
     fullName: com.microsoft.azure.management.trafficmanager.TrafficManagerProfiles
     type: Interface
-    summary: <p>Einstiegspunkt für das traffic Manager-Profil dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für das traffic Manager-Profil dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface TrafficManagerProfiles
   - uid: com.microsoft.azure.management.redis._redis_caches
@@ -1750,7 +1864,7 @@ references:
     nameWithType: DnsZones
     fullName: com.microsoft.azure.management.dns.DnsZones
     type: Interface
-    summary: <p>Einstiegspunkt für DNS-Zone Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für DNS-Zone Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface DnsZones
   - uid: com.microsoft.azure.management.appservice._web_apps
@@ -1780,7 +1894,7 @@ references:
     nameWithType: ServiceBusNamespaces
     fullName: com.microsoft.azure.management.servicebus.ServiceBusNamespaces
     type: Interface
-    summary: <p>Einstiegspunkt für Service Bus-Namespace API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Service Bus-Namespace API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface ServiceBusNamespaces
   - uid: com.microsoft.azure.management.compute._container_services
@@ -1793,6 +1907,36 @@ references:
     summary: <p>Einstiegspunkt für einen Container dienstverwaltungs-API. </p>
     syntax:
       content: public interface ContainerServices
+  - uid: com.microsoft.azure.management.containerinstance._container_groups
+    parent: com.microsoft.azure.management.containerinstance
+    href: com.microsoft.azure.management.containerinstance._container_groups.yml
+    name: ContainerGroups
+    nameWithType: ContainerGroups
+    fullName: com.microsoft.azure.management.containerinstance.ContainerGroups
+    type: Interface
+    summary: <p>Einstiegspunkt für den Container Instanz-API. </p>
+    syntax:
+      content: public interface ContainerGroups
+  - uid: com.microsoft.azure.management.cosmosdb._cosmos_d_b_accounts
+    parent: com.microsoft.azure.management.cosmosdb
+    href: com.microsoft.azure.management.cosmosdb._cosmos_d_b_accounts.yml
+    name: CosmosDBAccounts
+    nameWithType: CosmosDBAccounts
+    fullName: com.microsoft.azure.management.cosmosdb.CosmosDBAccounts
+    type: Interface
+    summary: <p>Einstiegspunkt für einen Cosmos-DB-Verwaltungs-API. </p>
+    syntax:
+      content: public interface CosmosDBAccounts
+  - uid: com.microsoft.azure.management.search._search_services
+    parent: com.microsoft.azure.management.search
+    href: com.microsoft.azure.management.search._search_services.yml
+    name: SearchServices
+    nameWithType: SearchServices
+    fullName: com.microsoft.azure.management.search.SearchServices
+    type: Interface
+    summary: <p>Einstiegspunkt für die Suche dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface SearchServices
   - uid: com.microsoft.azure.management._access_management
     parent: com.microsoft.azure.management
     href: com.microsoft.azure.management._access_management.yml
@@ -1800,6 +1944,6 @@ references:
     nameWithType: AccessManagement
     fullName: com.microsoft.azure.management.AccessManagement
     type: Interface
-    summary: '<p>Macht Methoden, die im Zusammenhang mit der Verwaltung von Zugriffsberechtigungen im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Macht Methoden, die im Zusammenhang mit der Verwaltung von Zugriffsberechtigungen im <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>'
     syntax:
       content: public interface AccessManagement

@@ -17,14 +17,14 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 257
+      startLine: 275
     package: com.microsoft.azure.management.network
-    summary: '<p>Die Phase der netzwerkschnittstellendefinition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
+    summary: '<p>Die Phase der netzwerkschnittstellendefinition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden, sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
     syntax: &ref_1
-      content: 'public interface WithCreate extends Creatable<NetworkInterface>,Resource.DefinitionWithTags<WithCreate>,NetworkInterface.DefinitionStages.WithPrimaryPublicIPAddress,NetworkInterface.DefinitionStages.WithNetworkSecurityGroup,NetworkInterface.DefinitionStages.WithSecondaryIPConfiguration,NetworkInterface.DefinitionStages.WithLoadBalancer'
+      content: 'public interface WithCreate extends Creatable<NetworkInterface>,Resource.DefinitionWithTags<WithCreate>,NetworkInterface.DefinitionStages.WithPrimaryPublicIPAddress,NetworkInterface.DefinitionStages.WithNetworkSecurityGroup,NetworkInterface.DefinitionStages.WithSecondaryIPConfiguration,NetworkInterface.DefinitionStages.WithAcceleratedNetworking,NetworkInterface.DefinitionStages.WithLoadBalancer'
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.create()
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync(final ServiceCallback<T>)
@@ -32,6 +32,7 @@ items:
       - com.microsoft.azure.management.network._network_interface._definitiona3305dde35819c227153bd3b17e0a42b.defineSecondaryIPConfiguration(String)
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
+      - com.microsoft.azure.management.network._network_interface._definition97cce6edaa54b629b8ce891d6d8472f8.withAcceleratedNetworking()
       - 'com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer.withExistingLoadBalancerBackend(LoadBalancer,String)'
       - 'com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer.withExistingLoadBalancerInboundNatRule(LoadBalancer,String)'
       - com.microsoft.azure.management.network._network_interface._definition5863ef7e2aac363b1903b20980e558ce.withExistingNetworkSecurityGroup(NetworkSecurityGroup)
@@ -56,7 +57,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 280
+      startLine: 299
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Gibt die IP-Adresse der benutzerdefinierten DNS-Server, die Netzwerkschnittstelle zugeordnet werden soll. </p>
@@ -85,7 +86,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 288
+      startLine: 307
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Gibt den internen DNS-Namen für die Netzwerkschnittstelle an.</p>
@@ -113,10 +114,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 269
+      startLine: 288
     package: com.microsoft.azure.management.network
     summary: |-
-      <p>Aktivieren Sie die IP-Weiterleitung in der Netzwerkschnittstelle.</p>
+      <p>Aktiviert IP-Weiterleitung in der Netzwerkschnittstelle an.</p>
       <p></p>
     syntax:
       content: public WithCreate withIPForwarding()
@@ -235,6 +236,21 @@ references:
       return:
         type: '26831127'
         description: <p>Der Name der Ressource </p>
+  - uid: com.microsoft.azure.management.network._network_interface._definition97cce6edaa54b629b8ce891d6d8472f8.withAcceleratedNetworking()
+    parent: com.microsoft.azure.management.network._network_interface._definition97cce6edaa54b629b8ce891d6d8472f8
+    href: com.microsoft.azure.management.network._network_interface._definition97cce6edaa54b629b8ce891d6d8472f8.yml
+    name: withAcceleratedNetworking()
+    nameWithType: NetworkInterface.DefinitionStages.WithAcceleratedNetworking.withAcceleratedNetworking()
+    fullName: WithCreate com.microsoft.azure.management.network.NetworkInterface.DefinitionStages.WithAcceleratedNetworking.withAcceleratedNetworking()
+    type: Method
+    summary: |-
+      <p>Ermöglicht das beschleunigte Netzwerken. </p>
+      <p>Beachten Sie, die zusätzliche Schritte auf dem virtuellen Computer selbst für die virtuelle Maschine, die diese Netzwerkschnittstelle zugeordnet getroffen werden, um nutzen zu können müssen beschleunigte Netzwerk. Dieses Feature ist in einigen Regionen, VM-Größen oder Betriebssystemversionen möglicherweise nicht verfügbar. Er kann nur während der Erstellung einer Netzwerkschnittstelle nicht während eines Updates aktiviert werden. </p>
+    syntax:
+      content: public WithCreate withAcceleratedNetworking()
+      return:
+        type: com.microsoft.azure.management.network._network_interface._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
   - uid: 'com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer.withExistingLoadBalancerBackend(LoadBalancer,String)'
     parent: com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer
     href: com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer.yml
@@ -414,13 +430,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -432,7 +448,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.model.Creatable<T>
     type: Interface
     summary: |-
-      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">eine Signatures-Auflistung</xref>.</p>
       <p></p>
     syntax:
       content: 'public interface Creatable<T> extends Indexable,HasName'
@@ -484,6 +500,16 @@ references:
     summary: '<p>Die Stufe der netzwerkschnittstellendefinition ermöglichen, um eine sekundäre IP-Konfigurationen zuzuordnen. </p>'
     syntax:
       content: public interface WithSecondaryIPConfiguration
+  - uid: com.microsoft.azure.management.network._network_interface._definition97cce6edaa54b629b8ce891d6d8472f8
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._network_interface._definition97cce6edaa54b629b8ce891d6d8472f8.yml
+    name: NetworkInterface.DefinitionStages.WithAcceleratedNetworking
+    nameWithType: NetworkInterface.DefinitionStages.WithAcceleratedNetworking
+    fullName: com.microsoft.azure.management.network.NetworkInterface.DefinitionStages.WithAcceleratedNetworking
+    type: Interface
+    summary: <p>Die Phase der netzwerkschnittstellendefinition aktivieren ermöglicht beschleunigt Netzwerk. </p>
+    syntax:
+      content: public interface WithAcceleratedNetworking
   - uid: com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._network_interface._definition_stages._with_load_balancer.yml
@@ -511,5 +537,5 @@ references:
     nameWithType: NetworkInterface.DefinitionStages.WithCreate
     fullName: com.microsoft.azure.management.network.NetworkInterface.DefinitionStages.WithCreate
     type: Interface
-    summary: '<p>Die Phase der netzwerkschnittstellendefinition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
+    summary: '<p>Die Phase der netzwerkschnittstellendefinition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden, sondern auch für andere optionalen Einstellungen angegeben werden. </p>'
     syntax: *ref_1

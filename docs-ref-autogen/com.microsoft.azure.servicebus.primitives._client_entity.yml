@@ -27,9 +27,12 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 15
+      startLine: 16
     package: com.microsoft.azure.servicebus.primitives
-    summary: '<p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c Main Zwecke: CloseAll clusterentitäten intern-Klasse </p>'
+    summary: |-
+      <p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c </p>
+      <p>Main-Zweck: CloseAll verknüpften Entitäten </p>
+      <p>Internal-Klasse </p>
     syntax: &ref_1
       content: public class ClientEntity
     inheritance:
@@ -48,7 +51,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 24
+      startLine: 25
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: 'protected ClientEntity(final String clientId, final ClientEntity parent)'
@@ -71,7 +74,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 92
+      startLine: 93
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: public final void close()
@@ -91,7 +94,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 67
+      startLine: 68
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: public final CompletableFuture<Void> closeAsync()
@@ -111,7 +114,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 133
+      startLine: 134
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: protected void finalize()
@@ -129,7 +132,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 34
+      startLine: 35
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: public String getClientId()
@@ -149,7 +152,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 39
+      startLine: 40
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: protected boolean getIsClosed()
@@ -169,7 +172,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 49
+      startLine: 50
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: protected boolean getIsClosingOrClosed()
@@ -189,7 +192,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 32
+      startLine: 33
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: protected abstract CompletableFuture<Void> onClose()
@@ -209,7 +212,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 59
+      startLine: 60
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: protected final void setClosed()
@@ -229,7 +232,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/ClientEntity.java
-      startLine: 124
+      startLine: 125
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: protected final void throwIfClosed(Throwable cause)
@@ -333,7 +336,6 @@ references:
     nameWithType: CoreMessageReceiver
     fullName: com.microsoft.azure.servicebus.primitives.CoreMessageReceiver
     type: Class
-    summary: '<p>Allgemeine Empfänger, die alle Amqp abstrahiert bezogene Details übersetzt Reaktor ereignisgesteuerten Modell in asynchrone Api zu erhalten </p>'
     syntax:
       content: public class CoreMessageReceiver
   - uid: com.microsoft.azure.servicebus.primitives._core_message_sender
@@ -343,7 +345,6 @@ references:
     nameWithType: CoreMessageSender
     fullName: com.microsoft.azure.servicebus.primitives.CoreMessageSender
     type: Class
-    summary: <p>Abstrahiert alle Amqp bezogene Informationen übersetzt Reaktor ereignisgesteuerten Modell in asynchronen Senden Api </p>
     syntax:
       content: public class CoreMessageSender
   - uid: com.microsoft.azure.servicebus.primitives._messaging_factory
@@ -353,7 +354,7 @@ references:
     nameWithType: MessagingFactory
     fullName: com.microsoft.azure.servicebus.primitives.MessagingFactory
     type: Class
-    summary: <p>Abstrahiert alle Amqp bezogene details und macht AmqpConnection Objekt-Management-verbindungslebenszyklus </p>
+    summary: '<p>Abstrahiert alle AMQP im Zusammenhang details und kapselt eine AMQP-Verbindung und zum Verwalten des Lebenszyklus der Reihe nach. Jede Instanz dieser Klasse stellen eine AMQP-Verbindung mit dem Namespace dar. Wenn eine Anwendung mehrere Absender, Empfänger oder Clients, die mithilfe der gleichen MessagingFacotry-Instanz erstellt, gemeinsam alle diese Absender, Empfänger oder Clients die Verbindung mit dem Namespace. </p>'
     syntax:
       content: public class MessagingFactory
   - uid: com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler
@@ -373,7 +374,10 @@ references:
     nameWithType: ClientEntity
     fullName: com.microsoft.azure.servicebus.primitives.ClientEntity
     type: Class
-    summary: '<p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c Main Zwecke: CloseAll clusterentitäten intern-Klasse </p>'
+    summary: |-
+      <p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c </p>
+      <p>Main-Zweck: CloseAll verknüpften Entitäten </p>
+      <p>Internal-Klasse </p>
     syntax: *ref_1
   - uid: com.microsoft.azure.servicebus.primitives._service_bus_exception
     parent: com.microsoft.azure.servicebus.primitives
@@ -382,6 +386,6 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
     syntax:
       content: public class ServiceBusException

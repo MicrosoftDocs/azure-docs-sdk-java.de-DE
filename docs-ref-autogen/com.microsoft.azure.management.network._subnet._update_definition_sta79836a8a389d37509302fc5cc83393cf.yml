@@ -16,17 +16,17 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Subnet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Subnet.java
-      startLine: 253
+      startLine: 279
     package: com.microsoft.azure.management.network
     summary: <p>Die Phase der subnetzdefinition ermöglicht die Netzwerksicherheitsgruppe zum Subnetz zugewiesen an. </p>
     syntax:
       content: public interface WithNetworkSecurityGroup<ParentT>
       typeParameters:
         - type: 18a275b1
-          description: <p>der übergeordnete Typ </p>
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._subnet._update_definition_sta79836a8a389d37509302fc5cc83393cf.withExistingNetworkSecurityGroup(NetworkSecurityGroup)
     id: withExistingNetworkSecurityGroup(NetworkSecurityGroup)
     parent: com.microsoft.azure.management.network._subnet._update_definition_sta79836a8a389d37509302fc5cc83393cf
@@ -41,7 +41,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Subnet.java
-      startLine: 266
+      startLine: 292
     package: com.microsoft.azure.management.network
     summary: <p>Dieses Subnetz wird eine vorhandene Netzwerksicherheitsgruppe zugewiesen. </p>
     syntax:
@@ -67,7 +67,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Subnet.java
-      startLine: 259
+      startLine: 285
     package: com.microsoft.azure.management.network
     summary: <p>Dieses Subnetz wird eine vorhandene Netzwerksicherheitsgruppe zugewiesen. </p>
     syntax:
@@ -113,7 +113,7 @@ references:
       content: 'public interface UpdateDefinition<ParentT> extends Subnet.UpdateDefinitionStages.Blank<ParentT>,Subnet.UpdateDefinitionStages.WithAddressPrefix<ParentT>,Subnet.UpdateDefinitionStages.WithNetworkSecurityGroup<ParentT>,Subnet.UpdateDefinitionStages.WithAttach<ParentT>'
       typeParameters:
         - type: 18a275b1
-          description: <p>der Rückgabetyp der endgültigen<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref></p>
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._subnet._update_definition_stages._with_attach
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._subnet._update_definition_stages._with_attach.yml
@@ -123,12 +123,12 @@ references:
     type: Interface
     summary: |-
       <p>Die letzte Phase der subnetzdefinition. </p>
-      <p>Zu diesem Zeitpunkt alle verbleibenden optionalen Einstellungen angegeben werden können oder die subnetzdefinition angefügt werden kann, mit dem übergeordneten virtuellen Netzwerks Definition <xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Zu diesem Zeitpunkt alle verbleibenden Einstellungen an optionalen können angegeben werden, oder die subnetzdefinition angefügt werden kann, um die Definition des übergeordneten virtuellen Netzwerks. </p>
     syntax:
       content: 'public interface WithAttach<ParentT> extends Attachable<ParentT>.InUpdate,Subnet.UpdateDefinitionStages.WithNetworkSecurityGroup<ParentT>,Subnet.UpdateDefinitionStages.WithRouteTable<ParentT>'
       typeParameters:
         - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref></p>
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._network_security_group
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._network_security_group.yml
@@ -136,6 +136,6 @@ references:
     nameWithType: NetworkSecurityGroup
     fullName: com.microsoft.azure.management.network.NetworkSecurityGroup
     type: Interface
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.management.network._network\" data-throw-if-not-resolved=\"false\"></xref>Sicherheitsgruppe \"-\". </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.management.network._network\" data-throw-if-not-resolved=\"false\">Netzwerk</xref> Sicherheitsgruppe. </p>"
     syntax:
       content: 'public interface NetworkSecurityGroup extends GroupableResource<NetworkManager, NetworkSecurityGroupInner>,Refreshable<NetworkSecurityGroup>,Updatable<NetworkSecurityGroup.Update>,HasAssociatedSubnets'

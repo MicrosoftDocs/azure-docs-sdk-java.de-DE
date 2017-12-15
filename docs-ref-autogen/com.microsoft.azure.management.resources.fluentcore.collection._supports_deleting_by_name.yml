@@ -17,13 +17,13 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/collection/SupportsDeletingByName.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/collection/SupportsDeletingByName.java
       startLine: 19
     package: com.microsoft.azure.management.resources.fluentcore.collection
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, mit dem Ressourcennamen identifiziert wird. </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, mit dem Ressourcennamen identifiziert wird. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsDeletingByName
@@ -44,7 +44,7 @@ items:
       startLine: 25
     package: com.microsoft.azure.management.resources.fluentcore.collection
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, mit dem Ressourcennamen identifiziert wird.</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, mit dem Ressourcennamen identifiziert wird.</p>
       <p></p>
     syntax:
       content: public void deleteByName(String name)
@@ -69,7 +69,7 @@ items:
       startLine: 42
     package: com.microsoft.azure.management.resources.fluentcore.collection
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, mit dem Ressourcennamen identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, mit dem Ressourcennamen identifiziert wird.</p>
       <p></p>
     syntax:
       content: public Completable deleteByNameAsync(String name)
@@ -78,7 +78,7 @@ items:
           type: '26831127'
           description: <p>der Name der Ressource löschen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: 'com.microsoft.azure.management.resources.fluentcore.collection._supports_deleting_by_name.deleteByNameAsync(String,ServiceCallback<Void>)'
     id: 'deleteByNameAsync(String,ServiceCallback<Void>)'
@@ -97,7 +97,7 @@ items:
       startLine: 34
     package: com.microsoft.azure.management.resources.fluentcore.collection
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, mit dem Ressourcennamen identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, mit dem Ressourcennamen identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByNameAsync(String name, ServiceCallback<Void> callback)'
@@ -134,7 +134,7 @@ references:
     nameWithType: SupportsDeletingByName.deleteByNameAsync
     fullName: ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingByName.deleteByNameAsync
     package: com.microsoft.azure.management.resources.fluentcore.collection
-  - uid: 56537e90
+  - uid: '56537e90'
     spec.java:
       - name: Completable
         fullName: Completable
@@ -145,9 +145,19 @@ references:
     nameWithType: DeploymentSlots
     fullName: com.microsoft.azure.management.appservice.DeploymentSlots
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> web-app-Bereitstellung Slot Verwaltungs-API. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> web-app-Bereitstellung Slot Verwaltungs-API. </p>
     syntax:
       content: 'public interface DeploymentSlots extends SupportsCreating<DeploymentSlot.DefinitionStages.Blank>,SupportsListing<DeploymentSlot>,SupportsGettingByName<DeploymentSlot>,SupportsGettingById<DeploymentSlot>,SupportsDeletingById,SupportsDeletingByName,HasManager<AppServiceManager>,HasParent<WebApp>'
+  - uid: com.microsoft.azure.management.appservice._function_deployment_slots
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._function_deployment_slots.yml
+    name: FunctionDeploymentSlots
+    nameWithType: FunctionDeploymentSlots
+    fullName: com.microsoft.azure.management.appservice.FunctionDeploymentSlots
+    type: Interface
+    summary: '<p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Slot für die app-Bereitstellung, Verwaltungs-API-Funktion. </p>'
+    syntax:
+      content: 'public interface FunctionDeploymentSlots extends SupportsCreating<FunctionDeploymentSlot.DefinitionStages.Blank>,SupportsListing<FunctionDeploymentSlot>,SupportsGettingByName<FunctionDeploymentSlot>,SupportsGettingById<FunctionDeploymentSlot>,SupportsDeletingById,SupportsDeletingByName,HasManager<AppServiceManager>,HasParent<FunctionApp>'
   - uid: com.microsoft.azure.management.network._packet_captures
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._packet_captures.yml
@@ -155,9 +165,19 @@ references:
     nameWithType: PacketCaptures
     fullName: com.microsoft.azure.management.network.PacketCaptures
     type: Interface
-    summary: <p>Einstiegspunkt für Paket erfasst Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Paket erfasst Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface PacketCaptures extends SupportsCreating<PacketCapture.DefinitionStages.WithTarget>,SupportsListing<PacketCapture>,SupportsGettingByNameAsync<PacketCapture>,SupportsDeletingByName,HasInner<PacketCapturesInner>'
+  - uid: com.microsoft.azure.management.network._virtual_network_gateway_connections
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._virtual_network_gateway_connections.yml
+    name: VirtualNetworkGatewayConnections
+    nameWithType: VirtualNetworkGatewayConnections
+    fullName: com.microsoft.azure.management.network.VirtualNetworkGatewayConnections
+    type: Interface
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-Gateways Verbindungen Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface VirtualNetworkGatewayConnections
   - uid: com.microsoft.azure.management.resources._resource_groups
     parent: com.microsoft.azure.management.resources
     href: com.microsoft.azure.management.resources._resource_groups.yml
@@ -190,7 +210,7 @@ references:
     nameWithType: Queues
     fullName: com.microsoft.azure.management.servicebus.Queues
     type: Interface
-    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Queues extends SupportsCreating<Queue.DefinitionStages.Blank>,SupportsListing<Queue>,SupportsGettingByNameAsync<Queue>,SupportsDeletingByName,HasManager<ServiceBusManager>,HasInner<QueuesInner>'
   - uid: com.microsoft.azure.management.servicebus._service_bus_subscriptions
@@ -200,7 +220,7 @@ references:
     nameWithType: ServiceBusSubscriptions
     fullName: com.microsoft.azure.management.servicebus.ServiceBusSubscriptions
     type: Interface
-    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface ServiceBusSubscriptions extends SupportsCreating<ServiceBusSubscription.DefinitionStages.Blank>,SupportsListing<ServiceBusSubscription>,SupportsGettingByNameAsync<ServiceBusSubscription>,SupportsDeletingByName,HasManager<ServiceBusManager>,HasInner<SubscriptionsInner>'
   - uid: com.microsoft.azure.management.servicebus._topics
@@ -210,7 +230,7 @@ references:
     nameWithType: Topics
     fullName: com.microsoft.azure.management.servicebus.Topics
     type: Interface
-    summary: <p>Einstiegspunkt für Service Bus-Thema Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Service Bus-Thema Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Topics
   - uid: com.microsoft.azure.management._azure
@@ -220,6 +240,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

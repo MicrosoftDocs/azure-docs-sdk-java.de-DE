@@ -5,7 +5,11 @@ items:
     parent: com.microsoft.azure.management.compute
     children:
       - 'com.microsoft.azure.management.compute._disks.grantAccess(String,String,AccessLevel,int)'
+      - 'com.microsoft.azure.management.compute._disks.grantAccessAsync(String,String,AccessLevel,int)'
+      - 'com.microsoft.azure.management.compute._disks.grantAccessAsync(String,String,AccessLevel,int,ServiceCallback<String>)'
       - 'com.microsoft.azure.management.compute._disks.revokeAccess(String,String)'
+      - 'com.microsoft.azure.management.compute._disks.revokeAccessAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._disks.revokeAccessAsync(String,String,ServiceCallback<Void>)'
     href: com.microsoft.azure.management.compute._disks.yml
     langs:
       - java
@@ -16,12 +20,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
-      startLine: 27
+      startLine: 32
     package: com.microsoft.azure.management.compute
-    summary: <p>Einstiegspunkt für verwaltete Datenträgerverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für verwaltete Datenträgerverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Disks extends SupportsCreating<Disk.DefinitionStages.Blank>,SupportsListing<Disk>,SupportsListingByResourceGroup<Disk>,SupportsGettingByResourceGroup<Disk>,SupportsGettingById<Disk>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<Disk>,SupportsBatchDeletion,HasManager<ComputeManager>,HasInner<DisksInner>'
     inheritedMembers:
@@ -68,7 +72,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
-      startLine: 49
+      startLine: 54
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Gewährt den Zugriff auf einen Datenträger.</p>
@@ -91,6 +95,83 @@ items:
       return:
         type: '26831127'
         description: <p>die schreibgeschützte SAS-URI auf den Datenträger </p>
+  - uid: 'com.microsoft.azure.management.compute._disks.grantAccessAsync(String,String,AccessLevel,int)'
+    id: 'grantAccessAsync(String,String,AccessLevel,int)'
+    parent: com.microsoft.azure.management.compute._disks
+    href: com.microsoft.azure.management.compute._disks.yml
+    langs:
+      - java
+    name: 'grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration)'
+    nameWithType: 'Disks.grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration)'
+    fullName: 'Observable<String> com.microsoft.azure.management.compute.Disks.grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration)'
+    overload: com.microsoft.azure.management.compute._disks.grantAccessAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
+      startLine: 69
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Gewährt Zugriff auf den Datenträger asynchron auf.</p>
+      <p></p>
+    syntax:
+      content: 'public Observable<String> grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration)'
+      parameters:
+        - id: resourceGroupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: diskName
+          type: '26831127'
+          description: <p>der Name des Datenträgers </p>
+        - id: accessLevel
+          type: com.microsoft.azure.management.compute._access_level
+          description: <p>Zugriffsebene </p>
+        - id: accessDuration
+          type: f75371fa
+          description: <p>Access-Dauer </p>
+      return:
+        type: c4e15b74
+        description: '<p>eine Darstellung der verzögerten Berechnung dieses Aufrufs eine nur-Lese SAS-URI zurückgeben, auf den Datenträger </p>'
+  - uid: 'com.microsoft.azure.management.compute._disks.grantAccessAsync(String,String,AccessLevel,int,ServiceCallback<String>)'
+    id: 'grantAccessAsync(String,String,AccessLevel,int,ServiceCallback<String>)'
+    parent: com.microsoft.azure.management.compute._disks
+    href: com.microsoft.azure.management.compute._disks.yml
+    langs:
+      - java
+    name: 'grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration, ServiceCallback<String> callback)'
+    nameWithType: 'Disks.grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration, ServiceCallback<String> callback)'
+    fullName: 'ServiceFuture<String> com.microsoft.azure.management.compute.Disks.grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration, ServiceCallback<String> callback)'
+    overload: com.microsoft.azure.management.compute._disks.grantAccessAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
+      startLine: 85
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Gewährt Zugriff auf den Datenträger asynchron auf.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<String> grantAccessAsync(String resourceGroupName, String diskName, AccessLevel accessLevel, int accessDuration, ServiceCallback<String> callback)'
+      parameters:
+        - id: resourceGroupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: diskName
+          type: '26831127'
+          description: <p>der Name des Datenträgers </p>
+        - id: accessLevel
+          type: com.microsoft.azure.management.compute._access_level
+          description: <p>Zugriffsebene </p>
+        - id: accessDuration
+          type: f75371fa
+          description: <p>Access-Dauer </p>
+        - id: callback
+          type: c68ef411
+          description: '<p>der Rückruf auf Erfolg oder Fehler, bei Erfolg aufrufen, es wird nur-Lese SAS-URI auf den Datenträger Rückruf übergeben. </p>'
+      return:
+        type: 3038ebf6
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._disks.revokeAccess(String,String)'
     id: 'revokeAccess(String,String)'
     parent: com.microsoft.azure.management.compute._disks
@@ -105,7 +186,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
-      startLine: 60
+      startLine: 97
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Widerrufen Sie Zugriff auf einen Datenträger gewährt.</p>
@@ -119,6 +200,71 @@ items:
         - id: diskName
           type: '26831127'
           description: <p>der Name des Datenträgers </p>
+  - uid: 'com.microsoft.azure.management.compute._disks.revokeAccessAsync(String,String)'
+    id: 'revokeAccessAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._disks
+    href: com.microsoft.azure.management.compute._disks.yml
+    langs:
+      - java
+    name: 'revokeAccessAsync(String resourceGroupName, String diskName)'
+    nameWithType: 'Disks.revokeAccessAsync(String resourceGroupName, String diskName)'
+    fullName: 'Completable com.microsoft.azure.management.compute.Disks.revokeAccessAsync(String resourceGroupName, String diskName)'
+    overload: com.microsoft.azure.management.compute._disks.revokeAccessAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
+      startLine: 107
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Widerrufen Sie asynchron in die Momentaufnahme gewährt Zugriff.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable revokeAccessAsync(String resourceGroupName, String diskName)'
+      parameters:
+        - id: resourceGroupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: diskName
+          type: '26831127'
+          description: <p>der Name des Datenträgers </p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._disks.revokeAccessAsync(String,String,ServiceCallback<Void>)'
+    id: 'revokeAccessAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._disks
+    href: com.microsoft.azure.management.compute._disks.yml
+    langs:
+      - java
+    name: 'revokeAccessAsync(String resourceGroupName, String diskName, ServiceCallback<Void> callback)'
+    nameWithType: 'Disks.revokeAccessAsync(String resourceGroupName, String diskName, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.Disks.revokeAccessAsync(String resourceGroupName, String diskName, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._disks.revokeAccessAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disks.java
+      startLine: 118
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Widerrufen Sie asynchron in die Momentaufnahme gewährt Zugriff.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> revokeAccessAsync(String resourceGroupName, String diskName, ServiceCallback<Void> callback)'
+      parameters:
+        - id: resourceGroupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: diskName
+          type: '26831127'
+          description: <p>der Name des Datenträgers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -133,11 +279,45 @@ references:
     nameWithType: Disks.grantAccess
     fullName: String com.microsoft.azure.management.compute.Disks.grantAccess
     package: com.microsoft.azure.management.compute
+  - uid: c4e15b74
+    spec.java:
+      - name: Observable<String>
+        fullName: Observable<String>
+  - uid: com.microsoft.azure.management.compute._disks.grantAccessAsync*
+    name: grantAccessAsync
+    nameWithType: Disks.grantAccessAsync
+    fullName: Observable<String> com.microsoft.azure.management.compute.Disks.grantAccessAsync
+    package: com.microsoft.azure.management.compute
+  - uid: c68ef411
+    spec.java:
+      - name: ServiceCallback<String>
+        fullName: ServiceCallback<String>
+  - uid: 3038ebf6
+    spec.java:
+      - name: ServiceFuture<String>
+        fullName: ServiceFuture<String>
   - uid: com.microsoft.azure.management.compute._disks.revokeAccess*
     name: revokeAccess
     nameWithType: Disks.revokeAccess
     fullName: void com.microsoft.azure.management.compute.Disks.revokeAccess
     package: com.microsoft.azure.management.compute
+  - uid: '56537e90'
+    spec.java:
+      - name: Completable
+        fullName: Completable
+  - uid: com.microsoft.azure.management.compute._disks.revokeAccessAsync*
+    name: revokeAccessAsync
+    nameWithType: Disks.revokeAccessAsync
+    fullName: Completable com.microsoft.azure.management.compute.Disks.revokeAccessAsync
+    package: com.microsoft.azure.management.compute
+  - uid: da7fd5ea
+    spec.java:
+      - name: ServiceCallback<Void>
+        fullName: ServiceCallback<Void>
+  - uid: aa81d378
+    spec.java:
+      - name: ServiceFuture<Void>
+        fullName: ServiceFuture<Void>
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation.create(Creatable<ResourceT>...)
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation
     href: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation.yml
@@ -267,8 +447,8 @@ references:
     type: Method
     summary: |-
       <p>Startet eine Definition für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beachten Sie, dass die <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
+      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref>. </p>
+      <p>Beachten Sie, dass die <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
     syntax:
       content: public T define(String name)
       parameters:
@@ -286,7 +466,7 @@ references:
     fullName: void com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteById(String id)
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public void deleteById(String id)
@@ -302,7 +482,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByIdAsync(String id, ServiceCallback<Void> callback)'
@@ -324,7 +504,7 @@ references:
     fullName: Completable com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public Completable deleteByIdAsync(String id)
@@ -333,7 +513,7 @@ references:
           type: '26831127'
           description: <p>die Ressourcen-ID der Ressource löschen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.deleteByIds(Collection<String>)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
@@ -342,7 +522,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(Collection<String> ids)
       parameters:
@@ -356,7 +536,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(String...ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(String...ids)
       parameters:
@@ -370,7 +550,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(Collection<String> ids)
       parameters:
@@ -387,7 +567,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(String...ids)
       parameters:
@@ -405,7 +585,7 @@ references:
     fullName: 'void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public void deleteByResourceGroup(String resourceGroupName, String name)'
@@ -424,7 +604,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
@@ -449,7 +629,7 @@ references:
     fullName: 'Completable com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public Completable deleteByResourceGroupAsync(String resourceGroupName, String name)'
@@ -461,7 +641,7 @@ references:
           type: '26831127'
           description: <p>Der Name der Ressource </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id.getById(String)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id
@@ -471,7 +651,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getById(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public T getById(String id)
@@ -490,7 +670,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public Observable<T> getByIdAsync(String id)
@@ -509,7 +689,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByIdAsync(String id, ServiceCallback<T> callback)'
@@ -531,7 +711,7 @@ references:
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public T getByResourceGroup(String resourceGroupName, String name)'
@@ -553,7 +733,7 @@ references:
     fullName: 'Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public Observable<T> getByResourceGroupAsync(String resourceGroupName, String name)'
@@ -575,7 +755,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
@@ -603,7 +783,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.list()
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
     href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
@@ -692,7 +872,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsCreating<T>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Top-Level-Ressourcen. </p>
+      <p>Bietet Zugriff auf das Erstellen von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Top-Level-Ressourcen. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsCreating<T>
@@ -707,7 +887,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist)</p>
       <p></p>
     syntax:
@@ -723,7 +903,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsListingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -739,7 +919,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -755,7 +935,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage der Ressourcen-ID. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage der Ressourcen-ID. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -771,7 +951,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsDeletingById
@@ -783,7 +963,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsDeletingByResourceGroup
@@ -795,13 +975,13 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsBatchCreation<ResourceT>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
+      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsBatchCreation<ResourceT extends Indexable>
       typeParameters:
         - type: ab77b02a
-          description: <p>die oberste Ebene <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcentyp </p>
+          description: <p>die oberste Ebene <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcentyp </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection
     href: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.yml
@@ -810,7 +990,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch das IDs identifiziert werden. </p>
+      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch das IDs identifiziert werden. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsBatchDeletion
@@ -849,7 +1029,7 @@ references:
     nameWithType: AccessLevel
     fullName: com.microsoft.azure.management.compute.AccessLevel
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._access_level" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._access_level" data-throw-if-not-resolved="false">AccessLevel</xref>. </p>
     syntax:
       content: public enum AccessLevel
   - uid: com.microsoft.azure.management._azure
@@ -859,6 +1039,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-      startLine: 331
+      startLine: 361
     package: com.microsoft.azure.management.compute
     summary: <p>Die Gesamtheit der VM-Skalierungsgruppe festgelegt Definition. </p>
     syntax:
@@ -31,6 +31,7 @@ items:
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de7e932fef85b84450a661ef717c3e033c.withAdminPassword(String)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._deddfe5321b06a3b4c6d7ae6ff5d9856a1.withAdminUsername(String)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._deeb7a2230c5d32793a0916ccc0c9ebed0.withAutoUpdate()
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.withAvailabilityZone(AvailabilityZoneId)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75.withCapacity(int)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de027ae021b04b91db48b0f2ab85810464.withComputerNamePrefix(String)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de5673d09bcb196c5f0f0f60cea2f1b286.withCustomData(String)
@@ -43,6 +44,8 @@ items:
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_o_s.withLatestLinuxImage(String,String,String)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_o_s.withLatestWindowsImage(String,String,String)'
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_o_s.withLinuxCustomImage(String)
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity()
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity(int)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int)
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int,int,CachingTypes)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int,int,CachingTypes,StorageAccountTypes)'
@@ -194,7 +197,7 @@ references:
       parameters:
         - id: adminPassword
           type: '26831127'
-          description: <p>das Administratorkennwort ein. Dadurch muss die Kriterien für befolgen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> VM mit Windows-Kennwort. </p>
+          description: <p>das Administratorkennwort ein. Dadurch muss die Kriterien für befolgen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> VM mit Windows-Kennwort. </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de90aee0f8fc51d22117855007f15c2ddb
         description: '<p>die Phase, erstellt Windows-VM-Definition darstellt </p>'
@@ -231,6 +234,25 @@ references:
       content: public WithWindowsCreateManaged withAutoUpdate()
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._deeb7a2230c5d32793a0916ccc0c9ebed0
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.withAvailabilityZone(AvailabilityZoneId)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de53d1b3ba77c792aaded142505dc46910.yml
+    name: withAvailabilityZone(AvailabilityZoneId zoneId)
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    fullName: WithManagedCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    type: Method
+    summary: |-
+      <p>Gibt die Verfügbarkeit-Zone für die VM-Skalierungsgruppe an.</p>
+      <p></p>
+    syntax:
+      content: public WithManagedCreate withAvailabilityZone(AvailabilityZoneId zoneId)
+      parameters:
+        - id: zoneId
+          type: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+          description: <p>Der Zonenbezeichner. </p>
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._dea6ea737ac52a2ba2927b43f8f0da8037
         description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75.withCapacity(int)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de675c578279d7412d1ab4058711619e75
@@ -476,6 +498,40 @@ references:
           description: <p>die Ressourcen-ID des benutzerdefinierten Images </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._deb4cb9b647306d32fa5c9ab1506c5754d
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity()
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.yml
+    name: withManagedServiceIdentity()
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity()
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de7d2f86c18d6f7983ff3cfbf5c72d911f
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity(int)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.yml
+    name: withManagedServiceIdentity(int tokenPort)
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity(int tokenPort)
+      parameters:
+        - id: tokenPort
+          type: f75371fa
+          description: '<p>der Port auf der VM-Skalierungsgruppe sammlungssatzinstanz, in dem Zugriffstoken verfügbar ist. </p>'
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de7d2f86c18d6f7983ff3cfbf5c72d911f
         description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b.withNewDataDisk(int)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de0b63ba0b0ba7cc65b25e6f031d821a4b
@@ -954,7 +1010,7 @@ references:
       parameters:
         - id: rootPassword
           type: '26831127'
-          description: '<p>ein Kennwort, das die Komplexität Kriterien für die folgenden <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Linux VM Kennwörter </p>'
+          description: '<p>ein Kennwort, das die Komplexität Kriterien für die folgenden <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Linux VM Kennwörter </p>'
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de196add430dede4df54fafb81cc893119
         description: <p>die nächste Phase der definition </p>
@@ -1158,13 +1214,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>

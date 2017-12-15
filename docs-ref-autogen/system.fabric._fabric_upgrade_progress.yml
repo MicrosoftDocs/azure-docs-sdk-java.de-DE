@@ -130,7 +130,7 @@ items:
       content: public UpgradeDomainProgress getCurrentUpgradeDomainProgress()
       return:
         type: system.fabric._upgrade_domain_progress
-        description: <p>Gibt <xref href="system.fabric._upgrade_domain_progress" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Gibt <xref uid="system.fabric._upgrade_domain_progress" data-throw-if-not-resolved="false">system.fabric.UpgradeDomainProgress</xref>. </p>
   - uid: system.fabric._fabric_upgrade_progress.getFailureReason()
     id: getFailureReason()
     parent: system.fabric._fabric_upgrade_progress
@@ -154,7 +154,7 @@ items:
       content: public UpgradeFailureReason getFailureReason()
       return:
         type: system.fabric._upgrade_failure_reason
-        description: <p>Die Kategorie Upgrade ein Fehler auftritt. <xref href="system.fabric._upgrade_failure_reason" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Die Kategorie Upgrade ein Fehler auftritt. <xref uid="system.fabric._upgrade_failure_reason" data-throw-if-not-resolved="false">system.fabric.UpgradeFailureReason</xref>. </p>
   - uid: system.fabric._fabric_upgrade_progress.getFailureTimestampUtc()
     id: getFailureTimestampUtc()
     parent: system.fabric._fabric_upgrade_progress
@@ -316,13 +316,13 @@ items:
       startLine: 187
     package: system.fabric
     summary: |-
-      <p>Ruft die integritätsauswertungen, in denen beschrieben wird, die Daten und des vom Integritäts-Manager zum Auswerten der clusterintegrität verwendeten Algorithmus ab. Nur aufgefüllt, wenn die Clusterâ€™ s aggregiert Integrität Zustand ist <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref>. Das Upgrade aufgrund einer integritätsauswertung ein Rollback ausgeführt, stellt eine Ansicht der Momentaufnahme des Zustands bereit, zum Zeitpunkt der Systemdiagnose durchgeführt wurde.</p>
+      <p>Ruft die integritätsauswertungen, in denen beschrieben wird, die Daten und des vom Integritäts-Manager zum Auswerten der clusterintegrität verwendeten Algorithmus ab. Nur aufgefüllt, wenn die Clusterâ€™ s aggregiert Integrität Zustand ist <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref>. Das Upgrade aufgrund einer integritätsauswertung ein Rollback ausgeführt, stellt eine Ansicht der Momentaufnahme des Zustands bereit, zum Zeitpunkt der Systemdiagnose durchgeführt wurde.</p>
       <p></p>
     syntax:
       content: public List<HealthEvaluation> getUnhealthyEvaluations()
       return:
         type: 5618da2dsystem.fabric.health._health_evaluationa08ddfce
-        description: '<p>Die fehlerhaften auswertungen, die dem aktuellen aggregierte Integritätsstatus geführt hat. Die Elemente in der Liste der folgenden Typen sein können: <xref href="system.fabric.health._applications_health_evaluation" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric.health._nodes_health_evaluation" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric.health._upgrade_domain_nodes_health_evaluation" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric.health._system_application_health_evaluation" data-throw-if-not-resolved="false"></xref> Oror <xref href="system.fabric.health._event_health_evaluation" data-throw-if-not-resolved="false"></xref>. </p>'
+        description: '<p>Die fehlerhaften auswertungen, die dem aktuellen aggregierte Integritätsstatus geführt hat. Die Elemente in der Liste der folgenden Typen sein können: <xref uid="system.fabric.health._applications_health_evaluation" data-throw-if-not-resolved="false">system.fabric.health.ApplicationsHealthEvaluation</xref>, <xref uid="system.fabric.health._nodes_health_evaluation" data-throw-if-not-resolved="false">system.fabric.health.NodesHealthEvaluation</xref>, <xref uid="system.fabric.health._upgrade_domain_nodes_health_evaluation" data-throw-if-not-resolved="false"> system.fabric.health.UpgradeDomainNodesHealthEvaluation</xref>, <xref uid="system.fabric.health._system_application_health_evaluation" data-throw-if-not-resolved="false">system.fabric.health.SystemApplicationHealthEvaluation</xref> Oror <xref uid="system.fabric.health._event_health_evaluation" data-throw-if-not-resolved="false">system.fabric.health.EventHealthEvaluation </xref>. </p>'
   - uid: system.fabric._fabric_upgrade_progress.getUpgradeDescription()
     id: getUpgradeDescription()
     parent: system.fabric._fabric_upgrade_progress
@@ -370,7 +370,7 @@ items:
       content: public UpgradeDomainProgress getUpgradeDomainProgressAtFailure()
       return:
         type: system.fabric._upgrade_domain_progress
-        description: <p>Die Details zum upgradeverlauf. <xref href="system.fabric._upgrade_domain_progress" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Die Details zum upgradeverlauf. <xref uid="system.fabric._upgrade_domain_progress" data-throw-if-not-resolved="false">system.fabric.UpgradeDomainProgress</xref>. </p>
   - uid: system.fabric._fabric_upgrade_progress.getUpgradeDomains()
     id: getUpgradeDomains()
     parent: system.fabric._fabric_upgrade_progress
@@ -635,7 +635,7 @@ references:
     nameWithType: ApplicationsHealthEvaluation
     fullName: system.fabric.health.ApplicationsHealthEvaluation
     type: Class
-    summary: "<p>Stellt die integritätsevaluierung für Anwendungen, die mit auswertungen der Clientintegrität für jede \"fehlerhaft\" Anwendung, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>die Auswertung Anwendungen zurückgegeben werden kann, während integritätsevaluierung für Cluster, bei der aggregierte Integritätszustand des Clusters entweder <ref refid=\"\" kindref=\"compound\">system.fabric.health.HealthState#Error</ref> oder <ref refid=\"\" kindref=\"compound\">system.fabric.health.HealthState#Warning</ref>. </p>"
+    summary: "<p>Stellt die integritätsevaluierung für Anwendungen, die mit auswertungen der Clientintegrität für jede \"fehlerhaft\" Anwendung, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>die Auswertung Anwendungen zurückgegeben werden kann, während integritätsevaluierung für Cluster, bei der aggregierte Integritätszustand des Clusters entweder <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState#Error</xref> oder <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState#Warning</xref>. </p>"
     syntax:
       content: public class ApplicationsHealthEvaluation extends HealthEvaluation
   - uid: system.fabric.health._nodes_health_evaluation
@@ -654,7 +654,7 @@ references:
     nameWithType: UpgradeDomainNodesHealthEvaluation
     fullName: system.fabric.health.UpgradeDomainNodesHealthEvaluation
     type: Class
-    summary: '<p>Stellt die integritätsauswertung für die Clusterknoten in einer upgradedomäne mit auswertungen der Clientintegrität für jeden fehlerhaften Knoten, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. Zurückgegeben werden kann, wenn die Auswertung von Clusterzustand während der Cluster-Upgrade und der aggregierte Integritätszustand entweder ist <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref> oder <ref refid="" kindref="compound">system.fabric.health.HealthState#Warning</ref>. </p>'
+    summary: '<p>Stellt die integritätsauswertung für die Clusterknoten in einer upgradedomäne mit auswertungen der Clientintegrität für jeden fehlerhaften Knoten, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. Zurückgegeben werden kann, wenn die Auswertung von Clusterzustand während der Cluster-Upgrade und der aggregierte Integritätszustand entweder ist <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref> oder <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Warning</xref>. </p>'
     syntax:
       content: public class UpgradeDomainNodesHealthEvaluation
   - uid: system.fabric.health._system_application_health_evaluation
@@ -664,7 +664,7 @@ references:
     nameWithType: SystemApplicationHealthEvaluation
     fullName: system.fabric.health.SystemApplicationHealthEvaluation
     type: Class
-    summary: '<p>Stellt die integritätsauswertung für das Fabric: / System-Anwendung, die Informationen zu den Daten und den Algorithmus vom Health Store auf integritätsevaluierung aktiviert werden soll. Die Auswertung wird nur zurückgegeben, wenn der aggregierte Integritätszustand des Clusters entweder ist <ref refid="" kindref="compound">"healthstate" #Error</ref> oder <ref refid="" kindref="compound">"healthstate" #Warning</ref>. </p>'
+    summary: '<p>Stellt die integritätsauswertung für das Fabric: / System-Anwendung, die Informationen zu den Daten und den Algorithmus vom Health Store auf integritätsevaluierung aktiviert werden soll. Die Auswertung wird nur zurückgegeben, wenn der aggregierte Integritätszustand des Clusters entweder ist <xref uid="" data-throw-if-not-resolved="false">"healthstate" #Error</xref> oder <xref uid="" data-throw-if-not-resolved="false">"healthstate" #Warning</xref>. </p>'
     syntax:
       content: public class SystemApplicationHealthEvaluation
   - uid: system.fabric.health._event_health_evaluation
@@ -674,7 +674,7 @@ references:
     nameWithType: EventHealthEvaluation
     fullName: system.fabric.health.EventHealthEvaluation
     type: Class
-    summary: '<p>Bewertung der Netzwerkintegrität stellt eine <xref href="system.fabric.health._health_event" data-throw-if-not-resolved="false"></xref>. Zurückgegeben werden kann, Bewertung der Integrität einer Entität Rückkehr <ref refid="" kindref="compound">system.fabric.health.HealthState#Error</ref> oder <ref refid="" kindref="compound">system.fabric.health.HealthState#Warning</ref>. </p>'
+    summary: '<p>Bewertung der Netzwerkintegrität stellt eine <xref uid="system.fabric.health._health_event" data-throw-if-not-resolved="false">system.fabric.health.HealthEvent</xref>. Zurückgegeben werden kann, Bewertung der Integrität einer Entität Rückkehr <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Error</xref> oder <xref uid="" data-throw-if-not-resolved="false">system.fabric.health.HealthState#Warning</xref>. </p>'
     syntax:
       content: public class EventHealthEvaluation extends HealthEvaluation
   - uid: system.fabric._fabric_upgrade_progress

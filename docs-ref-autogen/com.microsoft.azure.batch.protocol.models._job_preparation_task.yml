@@ -6,6 +6,7 @@ items:
     children:
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.commandLine()
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.constraints()
+      - com.microsoft.azure.batch.protocol.models._job_preparation_task.containerSettings()
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.environmentSettings()
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.id()
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.rerunOnNodeRebootAfterSuccess()
@@ -14,6 +15,7 @@ items:
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.waitForSuccess()
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.withCommandLine(String)
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.withConstraints(TaskConstraints)
+      - com.microsoft.azure.batch.protocol.models._job_preparation_task.withContainerSettings(TaskContainerSettings)
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.withEnvironmentSettings(List<EnvironmentSetting>)
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.withId(String)
       - com.microsoft.azure.batch.protocol.models._job_preparation_task.withRerunOnNodeRebootAfterSuccess(Boolean)
@@ -33,9 +35,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-batch-sdk-for-java'
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 17
+      startLine: 34
     package: com.microsoft.azure.batch.protocol.models
-    summary: '<p>Ein Auftrag zur Vorbereitung Task ausführen, bevor alle Aufgaben des Auftrags auf einem gegebenen Knoten zu berechnen. </p>'
+    summary: '<p>Ein Auftrag zur Vorbereitung Task ausführen, bevor alle Aufgaben des Auftrags auf einem gegebenen Knoten zu berechnen. Auftrag zur Vorbereitung können Sie einen Serverknoten zum Ausführen von Aufgaben für den Auftrag vorbereiten. Auftrag zur Vorbereitung häufig ausgeführte Aktivitäten umfassen: Herunterladen von allgemeinen Ressourcendateien aller Aufgaben im Auftrag verwendet. Der Task Auftrag zur Vorbereitung kann diese allgemeine Ressourcendateien in den freigegebenen Speicherort auf den Computeknoten herunterladen. (AZ_BATCH_NODE_ROOT_DIR), oder starten Sie einen lokalen Dienst auf den Serverknoten, damit alle Aufgaben dieses Auftrags mit ihm kommunizieren können. Wenn der Auftrag Vorbereitung task ein Fehler auftritt (d. h. der Wiederholungsversuche vor dem Beenden mit Exitcode 0 zählen seitliches), wird der Batch nicht Aufgaben des Auftrags auf den Computeknoten ausgeführt. Der Knoten bleibt zum Ausführen von Aufgaben des Auftrags, bis ein reimaging ausgeführt wird. Der Knoten aktiv bleibt und für andere Aufträge verwendet werden kann. Der Auftrag zur Vorbereitung-Task kann mehrere Male auf dem gleichen Computeknoten ausgeführt werden. Aus diesem Grund sollten Sie den Auftrag zur Vorbereitung-Task, um die erneute Ausführung behandeln schreiben. Wenn der Computeknoten neu gestartet wird, wird der Auftrag zur Vorbereitung Task erneut ausgeführt auf dem Knoten vor allen anderen Aufgaben des Auftrags, Planung, wenn RerunOnNodeRebootAfterSuccess auf "true" festgelegt ist oder wenn der Auftrag zur Vorbereitung Task zuvor nicht abgeschlossen wurde. Wenn der Computeknoten ein reimaging ausgeführt wird, wird der Auftrag zur Vorbereitung Task ausgeführt, erneut ausführen, bevor jede Aufgabe des Auftrags planen. </p>'
     syntax: &ref_1
       content: public class JobPreparationTask
     inheritance:
@@ -54,7 +56,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 129
+      startLine: 160
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert für die Befehlszeile.</p>
@@ -78,7 +80,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 189
+      startLine: 240
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert der Einschränkungen.</p>
@@ -88,6 +90,30 @@ items:
       return:
         type: com.microsoft.azure.batch.protocol.models._task_constraints
         description: <p>der Wert von Einschränkungen </p>
+  - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.containerSettings()
+    id: containerSettings()
+    parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
+    href: com.microsoft.azure.batch.protocol.models._job_preparation_task.yml
+    langs:
+      - java
+    name: containerSettings()
+    nameWithType: JobPreparationTask.containerSettings()
+    fullName: TaskContainerSettings com.microsoft.azure.batch.protocol.models.JobPreparationTask.containerSettings()
+    overload: com.microsoft.azure.batch.protocol.models._job_preparation_task.containerSettings*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
+      startLine: 180
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Ruft den ContainerSettings-Wert.</p>
+      <p></p>
+    syntax:
+      content: public TaskContainerSettings containerSettings()
+      return:
+        type: com.microsoft.azure.batch.protocol.models._task_container_settings
+        description: <p>der Wert containerSettings </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.environmentSettings()
     id: environmentSettings()
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -102,7 +128,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 169
+      startLine: 220
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den EnvironmentSettings-Wert.</p>
@@ -126,7 +152,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 109
+      startLine: 140
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Id-Wert.</p>
@@ -150,7 +176,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 249
+      startLine: 300
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den RerunOnNodeRebootAfterSuccess-Wert.</p>
@@ -174,7 +200,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 149
+      startLine: 200
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den ResourceFiles-Wert.</p>
@@ -198,7 +224,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 229
+      startLine: 280
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den UserIdentity-Wert.</p>
@@ -222,7 +248,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 209
+      startLine: 260
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den WaitForSuccess-Wert.</p>
@@ -246,7 +272,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 139
+      startLine: 170
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Wert für die Befehlszeile.</p>
@@ -259,7 +285,7 @@ items:
           description: <p>Der festzulegende Wert commandLine </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withConstraints(TaskConstraints)
     id: withConstraints(TaskConstraints)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -274,7 +300,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 199
+      startLine: 250
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Wert für die Einschränkungen.</p>
@@ -287,7 +313,35 @@ items:
           description: <p>Der festzulegende Wert Einschränkungen </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withContainerSettings(TaskContainerSettings)
+    id: withContainerSettings(TaskContainerSettings)
+    parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
+    href: com.microsoft.azure.batch.protocol.models._job_preparation_task.yml
+    langs:
+      - java
+    name: withContainerSettings(TaskContainerSettings containerSettings)
+    nameWithType: JobPreparationTask.withContainerSettings(TaskContainerSettings containerSettings)
+    fullName: JobPreparationTask com.microsoft.azure.batch.protocol.models.JobPreparationTask.withContainerSettings(TaskContainerSettings containerSettings)
+    overload: com.microsoft.azure.batch.protocol.models._job_preparation_task.withContainerSettings*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
+      startLine: 190
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Legen Sie den ContainerSettings-Wert.</p>
+      <p></p>
+    syntax:
+      content: public JobPreparationTask withContainerSettings(TaskContainerSettings containerSettings)
+      parameters:
+        - id: containerSettings
+          type: com.microsoft.azure.batch.protocol.models._task_container_settings
+          description: <p>Der festzulegende Wert containerSettings </p>
+      return:
+        type: com.microsoft.azure.batch.protocol.models._job_preparation_task
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withEnvironmentSettings(List<EnvironmentSetting>)
     id: withEnvironmentSettings(List<EnvironmentSetting>)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -302,7 +356,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 179
+      startLine: 230
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den EnvironmentSettings-Wert.</p>
@@ -315,7 +369,7 @@ items:
           description: <p>Der festzulegende Wert environmentSettings </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withId(String)
     id: withId(String)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -330,7 +384,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 119
+      startLine: 150
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Id-Wert.</p>
@@ -343,7 +397,7 @@ items:
           description: <p>die Id-Wert festlegen </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withRerunOnNodeRebootAfterSuccess(Boolean)
     id: withRerunOnNodeRebootAfterSuccess(Boolean)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -358,7 +412,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 259
+      startLine: 310
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den RerunOnNodeRebootAfterSuccess-Wert.</p>
@@ -371,7 +425,7 @@ items:
           description: <p>Der festzulegende Wert rerunOnNodeRebootAfterSuccess </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withResourceFiles(List<ResourceFile>)
     id: withResourceFiles(List<ResourceFile>)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -386,7 +440,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 159
+      startLine: 210
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den ResourceFiles-Wert.</p>
@@ -399,7 +453,7 @@ items:
           description: <p>Der festzulegende Wert resourceFiles </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withUserIdentity(UserIdentity)
     id: withUserIdentity(UserIdentity)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -414,7 +468,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 239
+      startLine: 290
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den UserIdentity-Wert.</p>
@@ -427,7 +481,7 @@ items:
           description: <p>Der festzulegende Wert userIdentity </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withWaitForSuccess(Boolean)
     id: withWaitForSuccess(Boolean)
     parent: com.microsoft.azure.batch.protocol.models._job_preparation_task
@@ -442,7 +496,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobPreparationTask.java
-      startLine: 219
+      startLine: 270
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den WaitForSuccess-Wert.</p>
@@ -455,7 +509,7 @@ items:
           description: <p>Der festzulegende Wert waitForSuccess </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_preparation_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_preparation_task" data-throw-if-not-resolved="false">JobPreparationTask</xref> Objekt selbst. </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -480,6 +534,16 @@ references:
     name: withCommandLine
     nameWithType: JobPreparationTask.withCommandLine
     fullName: JobPreparationTask com.microsoft.azure.batch.protocol.models.JobPreparationTask.withCommandLine
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.containerSettings*
+    name: containerSettings
+    nameWithType: JobPreparationTask.containerSettings
+    fullName: TaskContainerSettings com.microsoft.azure.batch.protocol.models.JobPreparationTask.containerSettings
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._job_preparation_task.withContainerSettings*
+    name: withContainerSettings
+    nameWithType: JobPreparationTask.withContainerSettings
+    fullName: JobPreparationTask com.microsoft.azure.batch.protocol.models.JobPreparationTask.withContainerSettings
     package: com.microsoft.azure.batch.protocol.models
   - uid: 5618da2dcom.microsoft.azure.batch.protocol.models._resource_filea08ddfce
     spec.java:
@@ -565,6 +629,16 @@ references:
     nameWithType: JobPreparationTask.withRerunOnNodeRebootAfterSuccess
     fullName: JobPreparationTask com.microsoft.azure.batch.protocol.models.JobPreparationTask.withRerunOnNodeRebootAfterSuccess
     package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._task_container_settings
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._task_container_settings.yml
+    name: TaskContainerSettings
+    nameWithType: TaskContainerSettings
+    fullName: com.microsoft.azure.batch.protocol.models.TaskContainerSettings
+    type: Class
+    summary: <p>Die Container-Einstellungen für eine Aufgabe. </p>
+    syntax:
+      content: public class TaskContainerSettings
   - uid: com.microsoft.azure.batch.protocol.models._resource_file
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._resource_file.yml
@@ -582,7 +656,7 @@ references:
     nameWithType: Files
     fullName: com.microsoft.azure.batch.protocol.Files
     type: Interface
-    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref href="com.microsoft.azure.batch.protocol._files" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref uid="com.microsoft.azure.batch.protocol._files" data-throw-if-not-resolved="false">Dateien</xref>. </p>'
     syntax:
       content: public interface Files
   - uid: com.microsoft.azure.batch.protocol.models._environment_setting
@@ -622,5 +696,5 @@ references:
     nameWithType: JobPreparationTask
     fullName: com.microsoft.azure.batch.protocol.models.JobPreparationTask
     type: Class
-    summary: '<p>Ein Auftrag zur Vorbereitung Task ausführen, bevor alle Aufgaben des Auftrags auf einem gegebenen Knoten zu berechnen. </p>'
+    summary: '<p>Ein Auftrag zur Vorbereitung Task ausführen, bevor alle Aufgaben des Auftrags auf einem gegebenen Knoten zu berechnen. Auftrag zur Vorbereitung können Sie einen Serverknoten zum Ausführen von Aufgaben für den Auftrag vorbereiten. Auftrag zur Vorbereitung häufig ausgeführte Aktivitäten umfassen: Herunterladen von allgemeinen Ressourcendateien aller Aufgaben im Auftrag verwendet. Der Task Auftrag zur Vorbereitung kann diese allgemeine Ressourcendateien in den freigegebenen Speicherort auf den Computeknoten herunterladen. (AZ_BATCH_NODE_ROOT_DIR), oder starten Sie einen lokalen Dienst auf den Serverknoten, damit alle Aufgaben dieses Auftrags mit ihm kommunizieren können. Wenn der Auftrag Vorbereitung task ein Fehler auftritt (d. h. der Wiederholungsversuche vor dem Beenden mit Exitcode 0 zählen seitliches), wird der Batch nicht Aufgaben des Auftrags auf den Computeknoten ausgeführt. Der Knoten bleibt zum Ausführen von Aufgaben des Auftrags, bis ein reimaging ausgeführt wird. Der Knoten aktiv bleibt und für andere Aufträge verwendet werden kann. Der Auftrag zur Vorbereitung-Task kann mehrere Male auf dem gleichen Computeknoten ausgeführt werden. Aus diesem Grund sollten Sie den Auftrag zur Vorbereitung-Task, um die erneute Ausführung behandeln schreiben. Wenn der Computeknoten neu gestartet wird, wird der Auftrag zur Vorbereitung Task erneut ausgeführt auf dem Knoten vor allen anderen Aufgaben des Auftrags, Planung, wenn RerunOnNodeRebootAfterSuccess auf "true" festgelegt ist oder wenn der Auftrag zur Vorbereitung Task zuvor nicht abgeschlossen wurde. Wenn der Computeknoten ein reimaging ausgeführt wird, wird der Auftrag zur Vorbereitung Task ausgeführt, erneut ausführen, bevor jede Aufgabe des Auftrags planen. </p>'
     syntax: *ref_1

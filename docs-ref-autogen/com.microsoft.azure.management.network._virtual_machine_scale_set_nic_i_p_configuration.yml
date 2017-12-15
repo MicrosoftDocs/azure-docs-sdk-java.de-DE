@@ -13,7 +13,7 @@ items:
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/VirtualMachineScaleSetNicIPConfiguration.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/VirtualMachineScaleSetNicIPConfiguration.java
       startLine: 19
@@ -23,9 +23,11 @@ items:
       content: 'public interface VirtualMachineScaleSetNicIPConfiguration extends NicIPConfigurationBase,HasInner<NetworkInterfaceIPConfigurationInner>,ChildResource<VirtualMachineScaleSetNetworkInterface>,HasPrivateIPAddress,HasSubnet'
     inheritedMembers:
       - com.microsoft.azure.management.network._nic_i_p_configuration_base.getNetwork()
+      - com.microsoft.azure.management.network._nic_i_p_configuration_base.getNetworkSecurityGroup()
       - com.microsoft.azure.management.resources.fluentcore.model._has_inner.inner()
       - com.microsoft.azure.management.network._nic_i_p_configuration_base.isPrimary()
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
+      - com.microsoft.azure.management.network._nic_i_p_configuration_base.listAssociatedApplicationGatewayBackends()
       - com.microsoft.azure.management.network._nic_i_p_configuration_base.listAssociatedLoadBalancerBackends()
       - com.microsoft.azure.management.network._nic_i_p_configuration_base.listAssociatedLoadBalancerInboundNatRules()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
@@ -48,6 +50,21 @@ references:
       return:
         type: com.microsoft.azure.management.network._network
         description: <p>das virtuelle Netzwerk zugeordnete diese IP-Konfiguration </p>
+  - uid: com.microsoft.azure.management.network._nic_i_p_configuration_base.getNetworkSecurityGroup()
+    parent: com.microsoft.azure.management.network._nic_i_p_configuration_base
+    href: com.microsoft.azure.management.network._nic_i_p_configuration_base.yml
+    name: getNetworkSecurityGroup()
+    nameWithType: NicIPConfigurationBase.getNetworkSecurityGroup()
+    fullName: NetworkSecurityGroup com.microsoft.azure.management.network.NicIPConfigurationBase.getNetworkSecurityGroup()
+    type: Method
+    summary: |-
+      <p>
+      (Beachten Sie, dass zusätzliche Aufrufe für dadurch <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.) </p>
+    syntax:
+      content: public NetworkSecurityGroup getNetworkSecurityGroup()
+      return:
+        type: com.microsoft.azure.management.network._network_security_group
+        description: '<p>der Sicherheitsgruppe "Netzwerk", sofern vorhanden, dem Subnetz zugeordnet, wenn vorhanden, diese IP-Netzwerkschnittstellenkonfiguration zugewiesen </p>'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._has_inner.inner()
     parent: com.microsoft.azure.management.resources.fluentcore.model._has_inner
     href: com.microsoft.azure.management.resources.fluentcore.model._has_inner.yml
@@ -59,7 +76,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.network._nic_i_p_configuration_base.isPrimary()
     parent: com.microsoft.azure.management.network._nic_i_p_configuration_base
     href: com.microsoft.azure.management.network._nic_i_p_configuration_base.yml
@@ -71,7 +88,7 @@ references:
       content: public boolean isPrimary()
       return:
         type: 4fc6e284
-        description: '<p>"true", ist dies der primäre IP-Konfiguration </p>'
+        description: '<p>"true", ist dies die primäre IP-Konfiguration </p>'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -84,6 +101,18 @@ references:
       return:
         type: '26831127'
         description: <p>der Schlüssel des Indexes. </p>
+  - uid: com.microsoft.azure.management.network._nic_i_p_configuration_base.listAssociatedApplicationGatewayBackends()
+    parent: com.microsoft.azure.management.network._nic_i_p_configuration_base
+    href: com.microsoft.azure.management.network._nic_i_p_configuration_base.yml
+    name: listAssociatedApplicationGatewayBackends()
+    nameWithType: NicIPConfigurationBase.listAssociatedApplicationGatewayBackends()
+    fullName: Collection<ApplicationGatewayBackend> com.microsoft.azure.management.network.NicIPConfigurationBase.listAssociatedApplicationGatewayBackends()
+    type: Method
+    syntax:
+      content: public Collection<ApplicationGatewayBackend> listAssociatedApplicationGatewayBackends()
+      return:
+        type: 12ebb11acom.microsoft.azure.management.network._application_gateway_backenda08ddfce
+        description: <p>die Anwendung Gateway-Back-Ends verknüpft sind mit diesem Netzwerk-IP-Konfiguration </p>
   - uid: com.microsoft.azure.management.network._nic_i_p_configuration_base.listAssociatedLoadBalancerBackends()
     parent: com.microsoft.azure.management.network._nic_i_p_configuration_base
     href: com.microsoft.azure.management.network._nic_i_p_configuration_base.yml
@@ -201,7 +230,7 @@ references:
     type: Interface
     summary: <p>Die IP-Basiskonfiguration IP-Konfigurationen im regulären und die virtuelle Maschine Scale Set-Netzwerkschnittstelle gemeinsam. </p>
     syntax:
-      content: public interface NicIPConfigurationBase
+      content: 'public interface NicIPConfigurationBase extends HasSubnet,HasPrivateIPAddress'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._has_inner
     parent: com.microsoft.azure.management.resources.fluentcore.model
     href: com.microsoft.azure.management.resources.fluentcore.model._has_inner.yml

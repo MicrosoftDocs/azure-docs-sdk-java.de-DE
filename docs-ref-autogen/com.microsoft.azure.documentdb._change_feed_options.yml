@@ -30,6 +30,7 @@ items:
       - java.lang.Object
       - com.microsoft.azure.documentdb._feed_options_base
     inheritedMembers:
+      - com.microsoft.azure.documentdb._feed_options_base.FeedOptionsBase()
       - com.microsoft.azure.documentdb._feed_options_base.getPageSize()
       - com.microsoft.azure.documentdb._feed_options_base.getRequestContinuation()
       - com.microsoft.azure.documentdb._feed_options_base.setPageSize(Integer)
@@ -61,9 +62,9 @@ items:
         description: '<p>eine Zeichenfolge, die die Partitions-ID Schlüsselbereich angibt </p>'
     see:
       - type: com.microsoft.azure.documentdb._partition_key_range
-        description: ''
+        description: PartitionKeyRange
       - type: 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(String,FeedOptions)'
-        description: ''
+        description: 'DocumentClient::readPartitionKeyRanges (String, FeedOptions)'
   - uid: com.microsoft.azure.documentdb._change_feed_options.isStartFromBeginning()
     id: isStartFromBeginning()
     parent: com.microsoft.azure.documentdb._change_feed_options
@@ -116,9 +117,9 @@ items:
           description: '<p>eine Zeichenfolge, die die Partitions-ID Schlüsselbereich angibt </p>'
     see:
       - type: com.microsoft.azure.documentdb._partition_key_range
-        description: ''
+        description: PartitionKeyRange
       - type: 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(String,FeedOptions)'
-        description: ''
+        description: 'DocumentClient::readPartitionKeyRanges (String, FeedOptions)'
   - uid: com.microsoft.azure.documentdb._change_feed_options.setStartFromBeginning(boolean)
     id: setStartFromBeginning(boolean)
     parent: com.microsoft.azure.documentdb._change_feed_options
@@ -173,6 +174,15 @@ references:
     nameWithType: ChangeFeedOptions.setStartFromBeginning
     fullName: void com.microsoft.azure.documentdb.ChangeFeedOptions.setStartFromBeginning
     package: com.microsoft.azure.documentdb
+  - uid: com.microsoft.azure.documentdb._feed_options_base.FeedOptionsBase()
+    parent: com.microsoft.azure.documentdb._feed_options_base
+    href: com.microsoft.azure.documentdb._feed_options_base.yml
+    name: FeedOptionsBase()
+    nameWithType: FeedOptionsBase.FeedOptionsBase()
+    fullName: com.microsoft.azure.documentdb.FeedOptionsBase.FeedOptionsBase()
+    type: Constructor
+    syntax:
+      content: protected FeedOptionsBase()
   - uid: com.microsoft.azure.documentdb._feed_options_base.getPageSize()
     parent: com.microsoft.azure.documentdb._feed_options_base
     href: com.microsoft.azure.documentdb._feed_options_base.yml
@@ -264,11 +274,14 @@ references:
     type: Method
     summary: |-
       <p>Liest alle Partition Schlüsselbereiche in eine Dokument-Auflistung. </p>
-      <p>Beispiel: <preformatted> <xref href="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false"></xref> &lt; <xref href="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false"></xref> &gt; PartitionKeyRanges = this.client.readPartitionKeyRanges (Coll, null); Liste&lt;Zeichenfolge&gt; Ids = new ArrayList&lt;Zeichenfolge&gt;(); (<xref href="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false"></xref> Bereich: partitionKeyRanges.getQueryIterable()) {}
+      <p>Beispiel: <pre><xref uid="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false">FeedResponse</xref>&lt;<xref uid="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false">PartitionKeyRange</xref>&gt; partitionKeyRanges = this.client.readPartitionKeyRanges(coll, null);
+      List&lt;String&gt; ids = new ArrayList&lt;String&gt;();
+      for (<xref uid="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false">PartitionKeyRange</xref> range : partitionKeyRanges.getQueryIterable()) {
 
           ids.add(range.getId());
 
-      } </preformatted></p>
+      }
+      </pre></p>
     syntax:
       content: 'public FeedResponse<PartitionKeyRange> readPartitionKeyRanges(String collectionLink, FeedOptions options)'
       parameters:

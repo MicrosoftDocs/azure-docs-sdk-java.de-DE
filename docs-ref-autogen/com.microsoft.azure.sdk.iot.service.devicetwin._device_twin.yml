@@ -7,9 +7,14 @@ items:
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.createFromConnectionString(String)
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.getNextDeviceTwin(Query)
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.getTwin(DeviceTwinDevice)
+      - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.hasNext(QueryCollection)
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.hasNextDeviceTwin(Query)
+      - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next(QueryCollection)
+      - 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next(QueryCollection,QueryOptions)'
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwin(String)
       - 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwin(String,Integer)'
+      - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection(String)
+      - 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection(String,Integer)'
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.replaceDesiredProperties(DeviceTwinDevice)
       - com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.replaceTags(DeviceTwinDevice)
       - 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.scheduleUpdateTwin(String,DeviceTwinDevice,Date,long)'
@@ -61,7 +66,7 @@ items:
           description: <p>Der Iot Hub-Verbindungszeichenfolge </p>
       return:
         type: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
-        description: <p>Die Instanz von<xref href="com.microsoft.azure.sdk.iot.service.devicetwin._device_twin" data-throw-if-not-resolved="false"></xref></p>
+        description: <p>Die Instanz von <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._device_twin" data-throw-if-not-resolved="false">DeviceTwin</xref></p>
     exceptions:
       - type: cbf33bbe
         description: '<p>Diese Ausnahme wird ausgelöst, wenn Fehler beim Erstellen des Objekts </p>'
@@ -79,7 +84,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 437
+      startLine: 465
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: <p>Gibt das nächste Gerät und Dokument </p>
     syntax:
@@ -128,6 +133,35 @@ items:
         description: '<p>Diese Ausnahme wird ausgelöst, wenn der e/a-Vorgang fehlgeschlagen ist </p>'
       - type: 0d494ee6
         description: '<p>Diese Ausnahme wird ausgelöst, wenn die Antwort-Überprüfung fehlgeschlagen ist. </p>'
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.hasNext(QueryCollection)
+    id: hasNext(QueryCollection)
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.yml
+    langs:
+      - java
+    name: hasNext(QueryCollection deviceTwinQueryCollection)
+    nameWithType: DeviceTwin.hasNext(QueryCollection deviceTwinQueryCollection)
+    fullName: synchronized boolean com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.hasNext(QueryCollection deviceTwinQueryCollection)
+    overload: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.hasNext*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
+      startLine: 494
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+    summary: '<p>Gibt zurück, wenn die bereitgestellten DeviceTwinQueryCollection eine nachfolgende Seite Abfrage hat. </p>'
+    syntax:
+      content: public synchronized boolean hasNext(QueryCollection deviceTwinQueryCollection)
+      parameters:
+        - id: deviceTwinQueryCollection
+          type: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+          description: '<p>die Abfrage, um zu überprüfen </p>'
+      return:
+        type: 85b427c6
+        description: '<p>True, wenn die bereitgestellten DeviceTwinQueryCollection eine nachfolgende Seite Abfrage aufweist </p>'
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn die bereitgestellten DeviceTwinQueryCollection null ist. </p>
   - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.hasNextDeviceTwin(Query)
     id: hasNextDeviceTwin(Query)
     parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
@@ -142,15 +176,15 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 417
+      startLine: 445
     package: com.microsoft.azure.sdk.iot.service.devicetwin
-    summary: '<p>Gibt die Verfügbarkeit der nächsten zwei Elements nach Abfrage zurück. Wenn Sie nicht gefunden wurde, <xref href="com.microsoft.azure.sdk.iot.service.devicetwin._query" data-throw-if-not-resolved="false"></xref> über erneut gesendet wird und die Antwort wird entsprechend aktualisiert, bis keine Antwort für die Abfrage gefunden wurde. </p>'
+    summary: '<p>Gibt die Verfügbarkeit der nächsten zwei Elements nach Abfrage zurück. Wenn Sie nicht gefunden wurde, <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query" data-throw-if-not-resolved="false">Abfrage</xref> über erneut gesendet wird und die Antwort wird entsprechend aktualisiert, bis keine Antwort für die Abfrage gefunden wurde. </p>'
     syntax:
       content: public synchronized boolean hasNextDeviceTwin(Query deviceTwinQuery)
       parameters:
         - id: deviceTwinQuery
           type: com.microsoft.azure.sdk.iot.service.devicetwin._query
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\"></xref>Bei der Erstellung der Abfrage zurückgegebene Objekt </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\">Abfrage</xref> Objekt zurückgegeben, bei der Erstellung der Abfrage </p>"
       return:
         type: 85b427c6
         description: '<p>True, wenn darauf wiederum folgt verfügbar und "false" andere Wise. </p>'
@@ -159,6 +193,78 @@ items:
         description: <p>Wenn IotHub nicht erfolgreich an die Abfrage reagiert konnte </p>
       - type: cbf33bbe
         description: <p>Wenn der input-Parameter falsch ist. </p>
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next(QueryCollection)
+    id: next(QueryCollection)
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.yml
+    langs:
+      - java
+    name: next(QueryCollection deviceTwinQueryCollection)
+    nameWithType: DeviceTwin.next(QueryCollection deviceTwinQueryCollection)
+    fullName: synchronized QueryCollectionResponse<DeviceTwinDevice> com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.next(QueryCollection deviceTwinQueryCollection)
+    overload: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
+      startLine: 517
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+    summary: |-
+      <p>Gibt die nächste <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_device" data-throw-if-not-resolved="false">DeviceTwinDevice</xref> Auflistung für die angegebene Abfrage zusammen mit dem Fortsetzungstoken für das Abfragen der nächsten Seite erforderlich.</p>
+      <p>Diese Funktion muss ein lokaler Fortsetzungstoken fortlaufend, um die Abfrage zu fortfahren, daher brauchen Sie das zurückgegebene Fortsetzungstoken erneut einzugeben aktualisieren.</p>
+      <p></p>
+    syntax:
+      content: public synchronized QueryCollectionResponse<DeviceTwinDevice> next(QueryCollection deviceTwinQueryCollection)
+      parameters:
+        - id: deviceTwinQueryCollection
+          type: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+          description: <p>Ausführung der Abfrage </p>
+      return:
+        type: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response78504a52com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_devicea08ddfce
+        description: "<p>Die Seite der Abfrageergebnisse und das Fortsetzungstoken für die nächste Seite der Ergebnisse. Zurückgeben der Wert muss<code>null \r\n\r\n    </code> Wenn keine weiter Auflistung </p>"
+    exceptions:
+      - type: 0d494ee6
+        description: '<p>Wenn ein IotHubException tritt auf, wenn den Dienst Abfragen. </p>'
+      - type: cbf33bbe
+        description: '<p>Wenn ein IotHubException tritt auf, wenn es sich bei den Dienst Abfragen oder die Ergebnisse dieser Abfrage nicht die Erwartungen übereinstimmen. </p>'
+  - uid: 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next(QueryCollection,QueryOptions)'
+    id: 'next(QueryCollection,QueryOptions)'
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.yml
+    langs:
+      - java
+    name: 'next(QueryCollection deviceTwinQueryCollection, QueryOptions options)'
+    nameWithType: 'DeviceTwin.next(QueryCollection deviceTwinQueryCollection, QueryOptions options)'
+    fullName: 'synchronized QueryCollectionResponse<DeviceTwinDevice> com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.next(QueryCollection deviceTwinQueryCollection, QueryOptions options)'
+    overload: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
+      startLine: 540
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+    summary: |-
+      <p>Gibt die nächste <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_device" data-throw-if-not-resolved="false">DeviceTwinDevice</xref> Auflistung für die angegebene Abfrage zusammen mit dem Fortsetzungstoken für das Abfragen der nächsten Seite erforderlich.</p>
+      <p>Diese Funktion muss ein lokaler Fortsetzungstoken fortlaufend, um die Abfrage zu fortfahren, daher Sie das zurückgegebene Fortsetzungstoken erneut einzugeben brauchen, es sei denn, Sie möchten, dass Sie die Abfrage in einen anderen Startpunkt zu fortfahren aktualisieren. Zu diesem Zweck legen Sie das neue Fortsetzungstoken in der Abfrage Options-Objekt.</p>
+      <p>Die angegebene Option Seitengröße muss alle zuvor gespeicherten Seitenformat überschreiben.</p>
+      <p></p>
+    syntax:
+      content: 'public synchronized QueryCollectionResponse<DeviceTwinDevice> next(QueryCollection deviceTwinQueryCollection, QueryOptions options)'
+      parameters:
+        - id: deviceTwinQueryCollection
+          type: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+          description: <p>Ausführung der Abfrage </p>
+        - id: options
+          type: com.microsoft.azure.sdk.iot.service.devicetwin._query_options
+          description: '<p>die zum Ausführen der Abfrage mit Abfrageoptionen. Wenn das Fortsetzungstoken in diese Optionen null ist, wird die intern gespeicherte Fortsetzungstoken verwendet werden. Das Seitenformat in den Optionen festgelegt werden überschrieben, alle zuvor Seitengröße fest. </p>'
+      return:
+        type: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response78504a52com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_devicea08ddfce
+        description: "<p>Die Seite der Abfrageergebnisse und das Fortsetzungstoken für die nächste Seite der Ergebnisse. Zurückgeben der Wert muss<code>null \r\n\r\n    </code> Wenn keine weiter ist. </p>"
+    exceptions:
+      - type: 0d494ee6
+        description: '<p>Wenn ein IotHubException tritt auf, wenn den Dienst Abfragen. </p>'
+      - type: cbf33bbe
+        description: '<p>Wenn ein IotHubException tritt auf, wenn es sich bei den Dienst Abfragen oder die Ergebnisse dieser Abfrage nicht die Erwartungen übereinstimmen. </p>'
   - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwin(String)
     id: queryTwin(String)
     parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
@@ -173,7 +279,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 402
+      startLine: 403
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: <p>SQL-Stil-Abfrage für zwei </p>
     syntax:
@@ -184,10 +290,10 @@ items:
           description: <p>SQL-Abfragezeichenfolge abzufragende IotHub für zwei </p>
       return:
         type: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\"></xref>Objekt für das Suchen nach Antworten für diese Abfrage verwendet werden soll </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\">Abfrage</xref> Objekt für das Suchen nach Antworten für diese Abfrage verwendet werden soll </p>"
     exceptions:
       - type: 0d494ee6
-        description: <p>Wenn <xref href="com.microsoft.azure.sdk.iot.service.devicetwin._query" data-throw-if-not-resolved="false"></xref> Anforderung war nicht erfolgreich auf dem IotHub. </p>
+        description: <p>Wenn <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query" data-throw-if-not-resolved="false">Abfrage</xref> Anforderung war nicht erfolgreich auf dem IotHub. </p>
       - type: cbf33bbe
         description: <p>Wenn ein Eingabeparameter ungültig sind. </p>
   - uid: 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwin(String,Integer)'
@@ -204,7 +310,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 372
+      startLine: 373
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: <p>SQL-Stil-Abfrage für zwei </p>
     syntax:
@@ -218,12 +324,71 @@ items:
           description: <p>Größe Abfrageantwort von beschränken </p>
       return:
         type: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\"></xref>Objekt für das Suchen nach Antworten für diese Abfrage verwendet werden soll </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\">Abfrage</xref> Objekt für das Suchen nach Antworten für diese Abfrage verwendet werden soll </p>"
     exceptions:
       - type: 0d494ee6
-        description: <p>Wenn <xref href="com.microsoft.azure.sdk.iot.service.devicetwin._query" data-throw-if-not-resolved="false"></xref> Anforderung war nicht erfolgreich auf dem IotHub. </p>
+        description: <p>Wenn <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query" data-throw-if-not-resolved="false">Abfrage</xref> Anforderung war nicht erfolgreich auf dem IotHub. </p>
       - type: cbf33bbe
         description: <p>Wenn ein Eingabeparameter ungültig sind. </p>
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection(String)
+    id: queryTwinCollection(String)
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.yml
+    langs:
+      - java
+    name: queryTwinCollection(String sqlQuery)
+    nameWithType: DeviceTwin.queryTwinCollection(String sqlQuery)
+    fullName: synchronized QueryCollection com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.queryTwinCollection(String sqlQuery)
+    overload: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
+      startLine: 416
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+    summary: |-
+      <p>Erstellen einer <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query_collection" data-throw-if-not-resolved="false">QueryCollection</xref> -Objekt, das zum Abfragen von ganzer Ergebnisseiten zu einem Zeitpunkt verwendet werden kann. <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query_collection" data-throw-if-not-resolved="false">QueryCollection</xref> Objekte auch können Sie ein Fortsetzungstoken für die Abfrage zum Abholen aus bereitstellen</p>
+      <p></p>
+    syntax:
+      content: public synchronized QueryCollection queryTwinCollection(String sqlQuery)
+      parameters:
+        - id: sqlQuery
+          type: '26831127'
+          description: <p>Die Sql-Abfrage ausführen </p>
+      return:
+        type: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+        description: '<p>der erstellte <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query_collection" data-throw-if-not-resolved="false">QueryCollection</xref> -Objekt, das verwendet werden kann, um den Dienst abzufragen </p>'
+  - uid: 'com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection(String,Integer)'
+    id: 'queryTwinCollection(String,Integer)'
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.yml
+    langs:
+      - java
+    name: 'queryTwinCollection(String sqlQuery, Integer pageSize)'
+    nameWithType: 'DeviceTwin.queryTwinCollection(String sqlQuery, Integer pageSize)'
+    fullName: 'synchronized QueryCollection com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.queryTwinCollection(String sqlQuery, Integer pageSize)'
+    overload: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
+      startLine: 430
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+    summary: |-
+      <p>Erstellen einer <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query_collection" data-throw-if-not-resolved="false">QueryCollection</xref> -Objekt, das zum Abfragen von ganzer Ergebnisseiten zu einem Zeitpunkt verwendet werden kann. <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query_collection" data-throw-if-not-resolved="false">QueryCollection</xref> Objekte auch können Sie ein Fortsetzungstoken für die Abfrage zum Abholen aus bereitstellen</p>
+      <p></p>
+    syntax:
+      content: 'public synchronized QueryCollection queryTwinCollection(String sqlQuery, Integer pageSize)'
+      parameters:
+        - id: sqlQuery
+          type: '26831127'
+          description: <p>Die Sql-Abfrage ausführen </p>
+        - id: pageSize
+          type: 08effaa0
+          description: <p>die Anzahl der gleichzeitig zurückzugebenden Ergebnisse auf </p>
+      return:
+        type: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+        description: '<p>der erstellte <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._query_collection" data-throw-if-not-resolved="false">QueryCollection</xref> -Objekt, das verwendet werden kann, um den Dienst abzufragen </p>'
   - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.replaceDesiredProperties(DeviceTwinDevice)
     id: replaceDesiredProperties(DeviceTwinDevice)
     parent: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin
@@ -238,7 +403,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 242
+      startLine: 243
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: |-
       <p>Diese Methode ersetzt die gewünschte Eigenschaften für das angegebene Gerät. gewünschte Eigenschaften können über des Geräts SetDesiredProperties Methode eingegeben werden.</p>
@@ -268,7 +433,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 307
+      startLine: 308
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: |-
       <p>Diese Methode ersetzt Tags für das angegebene Gerät. Tags können über des Geräts SetTags Methode eingegeben werden.</p>
@@ -298,17 +463,17 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 480
+      startLine: 579
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: |-
-      <p>Erstellt ein neues <xref href="com.microsoft.azure.sdk.iot.service.devicetwin._job" data-throw-if-not-resolved="false"></xref> und Tags und die gewünschten Eigenschaften, die auf einem oder mehreren Geräten aktualisieren</p>
+      <p>Erstellt ein neues <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._job" data-throw-if-not-resolved="false">Auftrag</xref> zwei Tags und die gewünschten Eigenschaften, die auf einem oder mehreren Geräten aktualisieren</p>
       <p></p>
     syntax:
       content: 'public Job scheduleUpdateTwin(String queryCondition, DeviceTwinDevice updateTwin, Date startTimeUtc, long maxExecutionTimeInSeconds)'
       parameters:
         - id: queryCondition
           type: '26831127'
-          description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\"></xref>welche Geräte aus, um den Auftrag auszuführen, auf auszuwertende Bedingung. Es kann sein<programlisting><codeline><highlight class=\"normal\">null<sp> </sp> </highlight> </codeline> </programlisting> oder leer sein </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.service.devicetwin._query\" data-throw-if-not-resolved=\"false\">Abfrage</xref> welche Geräte aus, um den Auftrag auszuführen, auf auszuwertende Bedingung. Es kann sein<code>null \r\n\r\n    </code> oder leer sein </p>"
         - id: updateTwin
           type: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_device
           description: '<p>Ziel-Objekt, das für die Aktualisierung verwendet </p>'
@@ -320,7 +485,7 @@ items:
           description: '<p>Maximale Ausführungszeit in Sekunden an, d. h. Ttl-Dauer an, die der Auftrag ausgeführt werden kann </p>'
       return:
         type: com.microsoft.azure.sdk.iot.service.devicetwin._job
-        description: '<p>eine <xref href="com.microsoft.azure.sdk.iot.service.devicetwin._job" data-throw-if-not-resolved="false"></xref> Klasse, die diesen Auftrag auf IotHub darstellen. </p>'
+        description: '<p>eine <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._job" data-throw-if-not-resolved="false">Auftrag</xref> Klasse, die diesen Auftrag auf IotHub darstellen. </p>'
     exceptions:
       - type: cbf33bbe
         description: <p>Wenn die Funktion ungültige Parameter enthält. </p>
@@ -340,7 +505,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 179
+      startLine: 180
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: |-
       <p>Diese Methode aktualisiert die gewünschte Eigenschaften für das angegebene Gerät.</p>
@@ -370,7 +535,7 @@ items:
     source:
       remote: *ref_0
       path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/devicetwin/DeviceTwin.java
-      startLine: 114
+      startLine: 115
     package: com.microsoft.azure.sdk.iot.service.devicetwin
     summary: |-
       <p>Diese Methode wird das Gerät und für das angegebene Gerät aktualisiert.</p>
@@ -452,6 +617,19 @@ references:
     nameWithType: DeviceTwin.queryTwin
     fullName: synchronized Query com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.queryTwin
     package: com.microsoft.azure.sdk.iot.service.devicetwin
+  - uid: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+    spec.java:
+      - name: 'synchronized '
+        fullName: 'synchronized '
+      - uid: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+        name: QueryCollection
+        fullName: com.microsoft.azure.sdk.iot.service.devicetwin.QueryCollection
+        href: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection.yml
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.queryTwinCollection*
+    name: queryTwinCollection
+    nameWithType: DeviceTwin.queryTwinCollection
+    fullName: synchronized QueryCollection com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.queryTwinCollection
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
   - uid: 85b427c6
     spec.java:
       - name: synchronized boolean
@@ -477,6 +655,36 @@ references:
     name: getNextDeviceTwin
     nameWithType: DeviceTwin.getNextDeviceTwin
     fullName: synchronized DeviceTwinDevice com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.getNextDeviceTwin
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+  - uid: 3c87bd19
+    spec.java:
+      - name: IllegalArgumentException
+        fullName: IllegalArgumentException
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.hasNext*
+    name: hasNext
+    nameWithType: DeviceTwin.hasNext
+    fullName: synchronized boolean com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.hasNext
+    package: com.microsoft.azure.sdk.iot.service.devicetwin
+  - uid: cffad4f2com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response78504a52com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_devicea08ddfce
+    spec.java:
+      - name: 'synchronized '
+        fullName: 'synchronized '
+      - uid: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response
+        name: QueryCollectionResponse
+        fullName: com.microsoft.azure.sdk.iot.service.devicetwin.QueryCollectionResponse
+        href: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response.yml
+      - name: <
+        fullName: <
+      - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_device
+        name: DeviceTwinDevice
+        fullName: com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwinDevice
+        href: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin_device.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._device_twin.next*
+    name: next
+    nameWithType: DeviceTwin.next
+    fullName: synchronized QueryCollectionResponse<DeviceTwinDevice> com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwin.next
     package: com.microsoft.azure.sdk.iot.service.devicetwin
   - uid: '12977444'
     spec.java:
@@ -537,6 +745,35 @@ references:
     type: Class
     syntax:
       content: public class Query
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection.yml
+    name: QueryCollection
+    nameWithType: QueryCollection
+    fullName: com.microsoft.azure.sdk.iot.service.devicetwin.QueryCollection
+    type: Class
+    syntax:
+      content: public class QueryCollection
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._query_collection_response.yml
+    name: QueryCollectionResponse<E>
+    nameWithType: QueryCollectionResponse<E>
+    fullName: com.microsoft.azure.sdk.iot.service.devicetwin.QueryCollectionResponse<E>
+    type: Class
+    syntax:
+      content: public class QueryCollectionResponse<E>
+      typeParameters:
+        - type: 0ca03e3a
+  - uid: com.microsoft.azure.sdk.iot.service.devicetwin._query_options
+    parent: com.microsoft.azure.sdk.iot.service.devicetwin
+    href: com.microsoft.azure.sdk.iot.service.devicetwin._query_options.yml
+    name: QueryOptions
+    nameWithType: QueryOptions
+    fullName: com.microsoft.azure.sdk.iot.service.devicetwin.QueryOptions
+    type: Class
+    syntax:
+      content: public class QueryOptions
   - uid: com.microsoft.azure.sdk.iot.service.devicetwin._job
     parent: com.microsoft.azure.sdk.iot.service.devicetwin
     href: com.microsoft.azure.sdk.iot.service.devicetwin._job.yml
@@ -544,6 +781,6 @@ references:
     nameWithType: Job
     fullName: com.microsoft.azure.sdk.iot.service.devicetwin.Job
     type: Class
-    summary: <p>Darstellung einer einzelnen <xref href="com.microsoft.azure.sdk.iot.service.devicetwin._job" data-throw-if-not-resolved="false"></xref> auf dem Iothub geplant. </p>
+    summary: <p>Darstellung einer einzelnen <xref uid="com.microsoft.azure.sdk.iot.service.devicetwin._job" data-throw-if-not-resolved="false">Auftrag</xref> auf dem Iothub geplant. </p>
     syntax:
       content: public class Job

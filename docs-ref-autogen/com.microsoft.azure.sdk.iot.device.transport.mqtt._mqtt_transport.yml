@@ -8,14 +8,15 @@ items:
       - 'com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.addMessage(Message,IotHubResponseCallback,Object)'
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.close()
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.handleMessage()
-      - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.handleMessageLock()
+      - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.handleMessageLock
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.invokeCallbacks()
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.isEmpty()
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.MqttTransport(DeviceClientConfig)
+      - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.multiplexOpen(List<DeviceClient>)
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.open()
       - 'com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
       - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.sendMessages()
-      - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.sendMessagesLock()
+      - com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.sendMessagesLock
     href: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.yml
     langs:
       - java
@@ -29,7 +30,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-iot-sdk-java'
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 28
+      startLine: 29
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Ein MQTT-Transport. Enthält Funktionen zum Hinzufügen von Nachrichten und Senden von Nachrichten im Batchmodus für einen IoT Hub. Puffer nicht gesendete Nachrichten, bis sie durch einen IoT Hub empfangen werden. Ein Transport bei der Erstellung gebunden ist, den folgenden Parametern: IoT Hub-Namen, Geräte-ID, Geräteschlüssel und Nachricht gültige Sekunden. </p>
@@ -54,7 +55,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 130
+      startLine: 139
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
@@ -89,7 +90,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 163
+      startLine: 172
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Fügt eine Nachricht an die Warteschlange Transport. !!! Diese Funktionalität ist noch nicht unterstützt, Bitte verwenden Sie fehlerhaft sind.</p>
@@ -124,9 +125,9 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 92
+      startLine: 102
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
-    summary: '<p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<programlisting><codeline><highlight class="normal">close()<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich. </p>'
+    summary: "<p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<code>close() \r\n\r\n    </code> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich. </p>"
     syntax:
       content: public void close()
     overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.close()
@@ -144,7 +145,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 267
+      startLine: 290
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Ruft den Nachrichtenrückruf auf jedes Mal, wenn eine Nachricht vom Server eingeht. reagiert auf den IoT Hub auf wie die verarbeitete Nachricht durch den IoT Hub behandelt werden sollen. </p>
@@ -156,8 +157,8 @@ items:
     exceptions:
       - type: 12fe80de
         description: <p>Wenn der Transport nicht geöffnet wurde oder geschlossen wird. </p>
-  - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.handleMessageLock()
-    id: handleMessageLock()
+  - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.handleMessageLock
+    id: handleMessageLock
     parent: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport
     href: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.yml
     langs:
@@ -169,7 +170,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 32
+      startLine: 33
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     syntax:
       content: protected final Object handleMessageLock= new Object()
@@ -189,7 +190,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 230
+      startLine: 253
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Ruft die Rückrufe für alle abgeschlossenen Anforderungen.</p>
@@ -214,16 +215,14 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 331
+      startLine: 354
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
-    summary: |-
-      <p>Gibt<programlisting><codeline><highlight class="normal">"true"<sp> </sp> </highlight> </codeline> </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class="normal">"false"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls.</p>
-      <p></p>
+    summary: "<p>Gibt<code>true \r\n\r\n    </code> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<code>false \r\n\r\n    </code> andernfalls.</p>\n\n<p></p>"
     syntax:
       content: public boolean isEmpty()
       return:
         type: 4fc6e284
-        description: "<p>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">\"true\"<sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class=\"normal\">\"false\"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls. </p>"
+        description: "<p>\r\n\r\n  <code>true \r\n\r\n    </code>Wenn der Transport keine weiteren Nachrichten mehr verarbeiten, hat und<code>false \r\n\r\n    </code> andernfalls. </p>"
     overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.isEmpty()
   - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.MqttTransport(DeviceClientConfig)
     id: MqttTransport(DeviceClientConfig)
@@ -239,10 +238,10 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 53
+      startLine: 57
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
-      <p>Erstellt eine Instanz aus der angegebenen <xref href="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p>Erstellt eine Instanz aus der angegebenen <xref uid="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false">DeviceClientConfig</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public MqttTransport(DeviceClientConfig config)
@@ -250,6 +249,35 @@ items:
         - id: config
           type: com.microsoft.azure.sdk.iot.device._device_client_config
           description: <p>Konfigurationsparameter für die Verbindung. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.multiplexOpen(List<DeviceClient>)
+    id: multiplexOpen(List<DeviceClient>)
+    parent: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.yml
+    langs:
+      - java
+    name: multiplexOpen(List<DeviceClient> deviceClientList)
+    nameWithType: MqttTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.mqtt.MqttTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    overload: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.multiplexOpen*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
+      startLine: 92
+    package: com.microsoft.azure.sdk.iot.device.transport.mqtt
+    summary: |-
+      <p>Stellt einen Kanal-Usingmultiplexing Kommunikation mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void multiplexOpen(List<DeviceClient> deviceClientList)
+      parameters:
+        - id: deviceClientList
+          type: 5618da2dcom.microsoft.azure.sdk.iot.device._device_clienta08ddfce
+          description: <p>die Liste der Clients verwenden denselben Transport. </p>
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.multiplexOpen(List<DeviceClient>)
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn ein Kommunikationskanal hergestellt werden kann. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.open()
     id: open()
     parent: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport
@@ -264,7 +292,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 71
+      startLine: 75
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Stellt einen Kommunikationskanal mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
@@ -289,7 +317,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 353
+      startLine: 377
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Registriert einen Rückruf ausgeführt werden, wenn die Verbindung Mqtt verloren geht oder hergestellt wird.</p>
@@ -302,8 +330,11 @@ items:
           description: <p>der Rückruf aufgerufen werden. </p>
         - id: callbackContext
           type: '79317049'
-          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <programlisting> <codeline> <highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> Wenn kein Rückruf bereitgestellt wird. </p>'
+          description: "<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <code>null \r\n\r\n    </code> Wenn kein Rückruf bereitgestellt wird. </p>"
     overridden: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn der Rückruf null ist. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.sendMessages()
     id: sendMessages()
     parent: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport
@@ -318,7 +349,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 183
+      startLine: 192
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: |-
       <p>Sendet alle Nachrichten in der Warteschlange Transport, jeweils einzeln an. Wenn eine vorherige Sendeversuch Fehler ist aufgetreten, versucht die Funktion, die Nachrichten in der vorherigen Versuch erneut zu senden. </p>
@@ -330,8 +361,8 @@ items:
     exceptions:
       - type: 12fe80de
         description: <p>Wenn der Transport nicht geöffnet wurde oder geschlossen wird. </p>
-  - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.sendMessagesLock()
-    id: sendMessagesLock()
+  - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.sendMessagesLock
+    id: sendMessagesLock
     parent: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport
     href: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.yml
     langs:
@@ -343,7 +374,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/mqtt/MqttTransport.java
-      startLine: 31
+      startLine: 32
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
     summary: <p>Die Sperre für den MQTT-Verbindung. </p>
     syntax:
@@ -368,6 +399,21 @@ references:
     name: open
     nameWithType: MqttTransport.open
     fullName: void com.microsoft.azure.sdk.iot.device.transport.mqtt.MqttTransport.open
+    package: com.microsoft.azure.sdk.iot.device.transport.mqtt
+  - uid: 5618da2dcom.microsoft.azure.sdk.iot.device._device_clienta08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.sdk.iot.device._device_client
+        name: DeviceClient
+        fullName: com.microsoft.azure.sdk.iot.device.DeviceClient
+        href: com.microsoft.azure.sdk.iot.device._device_client.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.multiplexOpen*
+    name: multiplexOpen
+    nameWithType: MqttTransport.multiplexOpen
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.mqtt.MqttTransport.multiplexOpen
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
   - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.close*
     name: close
@@ -415,6 +461,10 @@ references:
     nameWithType: MqttTransport.isEmpty
     fullName: boolean com.microsoft.azure.sdk.iot.device.transport.mqtt.MqttTransport.isEmpty
     package: com.microsoft.azure.sdk.iot.device.transport.mqtt
+  - uid: 3c87bd19
+    spec.java:
+      - name: IllegalArgumentException
+        fullName: IllegalArgumentException
   - uid: com.microsoft.azure.sdk.iot.device.transport.mqtt._mqtt_transport.registerConnectionStateCallback*
     name: registerConnectionStateCallback
     nameWithType: MqttTransport.registerConnectionStateCallback
@@ -468,6 +518,18 @@ references:
     summary: '<p>Ein Paket mit der erforderlichen Daten für einen IoT Hub-Transport, einen Rückruf aufzurufen. </p>'
     syntax:
       content: public class IotHubCallbackPacket
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback.yml
+    name: IotHubConnectionStateCallback
+    nameWithType: IotHubConnectionStateCallback
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionStateCallback
+    type: Interface
+    summary: |-
+      <p>Eine Schnittstelle für ein IoT Hub-Verbindung-Status-Rückruf.</p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="" data-throw-if-not-resolved="false">IotHubConnectionStateCallback #Execute(IotHubConnectionState, Object)</xref> übergibt den Verbindungsstatus (nach unten, Erfolg usw.). </p>
+    syntax:
+      content: public interface IotHubConnectionStateCallback
   - uid: com.microsoft.azure.sdk.iot.device._device_client_config
     parent: com.microsoft.azure.sdk.iot.device
     href: com.microsoft.azure.sdk.iot.device._device_client_config.yml
@@ -490,6 +552,36 @@ references:
       <p></p>
     syntax:
       content: public void open()
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.multiplexOpen(List<DeviceClient>)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: multiplexOpen(List<DeviceClient> deviceClientList)
+    nameWithType: IotHubTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    type: Method
+    summary: |-
+      <p>Stellt einen Kanal-Usingmultiplexing Kommunikation mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void multiplexOpen(List<DeviceClient> deviceClientList)
+      parameters:
+        - id: deviceClientList
+          type: 5618da2dcom.microsoft.azure.sdk.iot.device._device_clienta08ddfce
+          description: <p>die Liste der Clients verwenden denselben Transport. </p>
+  - uid: com.microsoft.azure.sdk.iot.device._device_client
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._device_client.yml
+    name: DeviceClient
+    nameWithType: DeviceClient
+    fullName: com.microsoft.azure.sdk.iot.device.DeviceClient
+    type: Class
+    summary: |-
+      <p>Die öffentliche API. Können ein einzelnes logisches oder physisches Gerät für die Verbindung an einen IoT Hub. Der IoT Hub-Client unterstützt sendet keine Ereignisse an und Empfangen von Nachrichten von einem IoT Hub. </p>
+      <p>Zur Unterstützung dieser Workflows wird die Clientbibliothek Geben Sie die folgenden Abstraktionen: einer Nachricht mit seiner Nutzlast und die zugeordneten Eigenschaften aus. und einen Client, der Nachrichten sendet und empfängt. </p>
+      <p>Der Client puffert Nachrichten, während das Netzwerk ausgefallen ist und erneut gesendet, wenn das Netzwerk wieder online geschaltet wird. Nachrichten zur Verbesserung der Kommunikationseffizienz (nur für HTTPS) als auch batches. </p>
+      <p>Der Client unterstützt HTTPS 1.1 und 1.0 AMQPS Transporte. </p>
+    syntax:
+      content: public class DeviceClient
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.close()
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
     href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
@@ -497,9 +589,7 @@ references:
     nameWithType: IotHubTransport.close()
     fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.close()
     type: Method
-    summary: |-
-      <p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<programlisting><codeline><highlight class="normal">close()<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
-      <p></p>
+    summary: "<p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<code>close() \r\n\r\n    </code> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>\n\n<p></p>"
     syntax:
       content: public void close()
   - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubEventCallback,Object)'
@@ -542,7 +632,7 @@ references:
     type: Interface
     summary: |-
       <p>Eine Schnittstelle für einen Ereignisrückruf IoT Hub.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false">IotHubEventCallback #Execute(IotHubStatusCode, Object)</xref> beim Empfang einer Antwort von einem IoT Hub. </p>
     syntax:
       content: public interface IotHubEventCallback
   - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubResponseCallback,Object)'
@@ -576,7 +666,7 @@ references:
     type: Interface
     summary: |-
       <p>Eine Schnittstelle für ein IoT Hub-Antwort-Rückruf.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_response_callback.execute(ResponseMessage,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="com.microsoft.azure.sdk.iot.device._iot_hub_response_callback.execute(ResponseMessage,Object)" data-throw-if-not-resolved="false">IotHubResponseCallback #Execute(ResponseMessage, Object)</xref> beim Empfang einer Antwort von einem IoT Hub. </p>
     syntax:
       content: public interface IotHubResponseCallback
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.sendMessages()
@@ -621,14 +711,12 @@ references:
     nameWithType: IotHubTransport.isEmpty()
     fullName: boolean com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.isEmpty()
     type: Method
-    summary: |-
-      <p>Gibt<programlisting><codeline><highlight class="normal">"true"<sp> </sp> </highlight> </codeline> </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class="normal">"false"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls.</p>
-      <p></p>
+    summary: "<p>Gibt<code>true \r\n\r\n    </code> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<code>false \r\n\r\n    </code> andernfalls.</p>\n\n<p></p>"
     syntax:
       content: public boolean isEmpty()
       return:
         type: 4fc6e284
-        description: "<p>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">\"true\"<sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class=\"normal\">\"false\"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls. </p>"
+        description: "<p>\r\n\r\n  <code>true \r\n\r\n    </code>Wenn der Transport keine weiteren Nachrichten mehr verarbeiten, hat und<code>false \r\n\r\n    </code> andernfalls. </p>"
   - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
     href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
@@ -647,16 +735,4 @@ references:
           description: <p>der Rückruf aufgerufen werden. </p>
         - id: callbackContext
           type: '79317049'
-          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <programlisting> <codeline> <highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> Wenn kein Rückruf bereitgestellt wird. </p>'
-  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
-    parent: com.microsoft.azure.sdk.iot.device
-    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback.yml
-    name: IotHubConnectionStateCallback
-    nameWithType: IotHubConnectionStateCallback
-    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionStateCallback
-    type: Interface
-    summary: |-
-      <p>Eine Schnittstelle für ein IoT Hub-Verbindung-Status-Rückruf.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <ref refid="" kindref="compound">IotHubConnectionStateCallback #Execute(IotHubConnectionState, Object)</ref> übergibt den Verbindungsstatus (nach unten, Erfolg usw.). </p>
-    syntax:
-      content: public interface IotHubConnectionStateCallback
+          description: "<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <code>null \r\n\r\n    </code> Wenn kein Rückruf bereitgestellt wird. </p>"

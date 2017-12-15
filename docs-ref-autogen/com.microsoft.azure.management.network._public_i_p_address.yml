@@ -4,6 +4,7 @@ items:
     id: _public_i_p_address
     parent: com.microsoft.azure.management.network
     children:
+      - com.microsoft.azure.management.network._public_i_p_address.availabilityZones()
       - com.microsoft.azure.management.network._public_i_p_address.fqdn()
       - com.microsoft.azure.management.network._public_i_p_address.getAssignedLoadBalancerFrontend()
       - com.microsoft.azure.management.network._public_i_p_address.getAssignedNetworkInterfaceIPConfiguration()
@@ -14,6 +15,7 @@ items:
       - com.microsoft.azure.management.network._public_i_p_address.ipAllocationMethod()
       - com.microsoft.azure.management.network._public_i_p_address.leafDomainLabel()
       - com.microsoft.azure.management.network._public_i_p_address.reverseFqdn()
+      - com.microsoft.azure.management.network._public_i_p_address.sku()
       - com.microsoft.azure.management.network._public_i_p_address.version()
     href: com.microsoft.azure.management.network._public_i_p_address.yml
     langs:
@@ -25,10 +27,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 21
+      startLine: 25
     package: com.microsoft.azure.management.network
     summary: <p>Öffentliche IP-Adresse. </p>
     syntax:
@@ -47,6 +49,27 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.arm.models._resource.tags()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._resource.type()
       - com.microsoft.azure.management.resources.fluentcore.model._updatable.update()
+  - uid: com.microsoft.azure.management.network._public_i_p_address.availabilityZones()
+    id: availabilityZones()
+    parent: com.microsoft.azure.management.network._public_i_p_address
+    href: com.microsoft.azure.management.network._public_i_p_address.yml
+    langs:
+      - java
+    name: availabilityZones()
+    nameWithType: PublicIPAddress.availabilityZones()
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.network.PublicIPAddress.availabilityZones()
+    overload: com.microsoft.azure.management.network._public_i_p_address.availabilityZones*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
+      startLine: 91
+    package: com.microsoft.azure.management.network
+    syntax:
+      content: public Set<AvailabilityZoneId> availabilityZones()
+      return:
+        type: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+        description: '<p>die Verfügbarkeit Zonen zugewiesen, um die öffentliche IP-Adresse </p>'
   - uid: com.microsoft.azure.management.network._public_i_p_address.fqdn()
     id: fqdn()
     parent: com.microsoft.azure.management.network._public_i_p_address
@@ -61,7 +84,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 46
+      startLine: 50
     package: com.microsoft.azure.management.network
     syntax:
       content: public String fqdn()
@@ -82,7 +105,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 66
+      startLine: 70
     package: com.microsoft.azure.management.network
     syntax:
       content: public LoadBalancerPublicFrontend getAssignedLoadBalancerFrontend()
@@ -103,7 +126,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 76
+      startLine: 80
     package: com.microsoft.azure.management.network
     syntax:
       content: public NicIPConfiguration getAssignedNetworkInterfaceIPConfiguration()
@@ -124,7 +147,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 71
+      startLine: 75
     package: com.microsoft.azure.management.network
     syntax:
       content: public boolean hasAssignedLoadBalancer()
@@ -145,7 +168,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 81
+      startLine: 85
     package: com.microsoft.azure.management.network
     syntax:
       content: public boolean hasAssignedNetworkInterface()
@@ -166,7 +189,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 61
+      startLine: 65
     package: com.microsoft.azure.management.network
     syntax:
       content: public int idleTimeoutInMinutes()
@@ -187,7 +210,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 36
+      startLine: 40
     package: com.microsoft.azure.management.network
     syntax:
       content: public String ipAddress()
@@ -208,7 +231,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 56
+      startLine: 60
     package: com.microsoft.azure.management.network
     syntax:
       content: public IPAllocationMethod ipAllocationMethod()
@@ -229,7 +252,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 41
+      startLine: 45
     package: com.microsoft.azure.management.network
     syntax:
       content: public String leafDomainLabel()
@@ -250,13 +273,34 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 51
+      startLine: 55
     package: com.microsoft.azure.management.network
     syntax:
       content: public String reverseFqdn()
       return:
         type: '26831127'
         description: '<p>die zugewiesenen reverse FQDN, sofern vorhanden </p>'
+  - uid: com.microsoft.azure.management.network._public_i_p_address.sku()
+    id: sku()
+    parent: com.microsoft.azure.management.network._public_i_p_address
+    href: com.microsoft.azure.management.network._public_i_p_address.yml
+    langs:
+      - java
+    name: sku()
+    nameWithType: PublicIPAddress.sku()
+    fullName: PublicIPSkuType com.microsoft.azure.management.network.PublicIPAddress.sku()
+    overload: com.microsoft.azure.management.network._public_i_p_address.sku*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
+      startLine: 97
+    package: com.microsoft.azure.management.network
+    syntax:
+      content: public PublicIPSkuType sku()
+      return:
+        type: com.microsoft.azure.management.network._public_i_p_sku_type
+        description: <p>öffentliche IP-Adresse-Sku. </p>
   - uid: com.microsoft.azure.management.network._public_i_p_address.version()
     id: version()
     parent: com.microsoft.azure.management.network._public_i_p_address
@@ -271,7 +315,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/PublicIPAddress.java
-      startLine: 31
+      startLine: 35
     package: com.microsoft.azure.management.network
     syntax:
       content: public IPVersion version()
@@ -346,6 +390,26 @@ references:
     nameWithType: PublicIPAddress.hasAssignedNetworkInterface
     fullName: boolean com.microsoft.azure.management.network.PublicIPAddress.hasAssignedNetworkInterface
     package: com.microsoft.azure.management.network
+  - uid: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+    spec.java:
+      - name: Set<
+        fullName: Set<
+      - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+        name: AvailabilityZoneId
+        fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+        href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.network._public_i_p_address.availabilityZones*
+    name: availabilityZones
+    nameWithType: PublicIPAddress.availabilityZones
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.network.PublicIPAddress.availabilityZones
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._public_i_p_address.sku*
+    name: sku
+    nameWithType: PublicIPAddress.sku
+    fullName: PublicIPSkuType com.microsoft.azure.management.network.PublicIPAddress.sku
+    package: com.microsoft.azure.management.network
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.id()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.yml
@@ -369,7 +433,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -414,7 +478,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -429,7 +493,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -505,7 +569,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -564,7 +628,7 @@ references:
     nameWithType: IPVersion
     fullName: com.microsoft.azure.management.network.IPVersion
     type: Class
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.network._i_p_version" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._i_p_version" data-throw-if-not-resolved="false">IPVersion</xref>. </p>
     syntax:
       content: public class IPVersion
   - uid: com.microsoft.azure.management.network._i_p_allocation_method
@@ -574,7 +638,7 @@ references:
     nameWithType: IPAllocationMethod
     fullName: com.microsoft.azure.management.network.IPAllocationMethod
     type: Class
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.network._i_p_allocation_method" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._i_p_allocation_method" data-throw-if-not-resolved="false">Zuordnungsmethode verweisen</xref>. </p>
     syntax:
       content: public class IPAllocationMethod
   - uid: com.microsoft.azure.management.network._load_balancer_public_frontend
@@ -584,7 +648,7 @@ references:
     nameWithType: LoadBalancerPublicFrontend
     fullName: com.microsoft.azure.management.network.LoadBalancerPublicFrontend
     type: Interface
-    summary: '<p>Eine unveränderliche clientseitige Darstellung eines von einem Lastenausgleich für den Internetzugriff, eine öffentliche Front-Ends. </p>'
+    summary: '<p>Eine clientseitige Darstellung eines von einem Lastenausgleich für den Internetzugriff, eine öffentliche Front-Ends. </p>'
     syntax:
       content: 'public interface LoadBalancerPublicFrontend extends LoadBalancerFrontend,HasPublicIPAddress'
   - uid: com.microsoft.azure.management.network._nic_i_p_configuration
@@ -596,4 +660,24 @@ references:
     type: Interface
     summary: <p>Eine IP-Konfiguration in eine Netzwerkschnittstelle. </p>
     syntax:
-      content: 'public interface NicIPConfiguration extends NicIPConfigurationBase,HasInner<NetworkInterfaceIPConfigurationInner>,ChildResource<NetworkInterface>,HasPrivateIPAddress,HasPublicIPAddress,HasSubnet'
+      content: 'public interface NicIPConfiguration extends NicIPConfigurationBase,HasInner<NetworkInterfaceIPConfigurationInner>,ChildResource<NetworkInterface>,HasPublicIPAddress'
+  - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+    parent: com.microsoft.azure.management.resources.fluentcore.arm
+    href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+    name: AvailabilityZoneId
+    nameWithType: AvailabilityZoneId
+    fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+    type: Class
+    summary: <p>Verfügbarkeit Zeitzonenbezeichnern. </p>
+    syntax:
+      content: public class AvailabilityZoneId extends ExpandableStringEnum<AvailabilityZoneId>
+  - uid: com.microsoft.azure.management.network._public_i_p_sku_type
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._public_i_p_sku_type.yml
+    name: PublicIPSkuType
+    nameWithType: PublicIPSkuType
+    fullName: com.microsoft.azure.management.network.PublicIPSkuType
+    type: Class
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._public_i_p_sku_type" data-throw-if-not-resolved="false">PublicIPSkuType</xref>. </p>
+    syntax:
+      content: public class PublicIPSkuType

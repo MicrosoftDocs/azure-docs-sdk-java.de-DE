@@ -13,12 +13,12 @@ items:
     source:
       remote:
         path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/DeploymentSlot.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/DeploymentSlot.java
       startLine: 24
     package: com.microsoft.azure.management.appservice
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> bereitstellungsslots der Web-App. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> bereitstellungsslots der Web-App. </p>
     syntax:
       content: 'public interface DeploymentSlot extends IndependentChildResource<AppServiceManager, SiteInner>,WebAppBase,Refreshable<DeploymentSlot>,Updatable<DeploymentSlot.Update>,HasParent<WebApp>'
     inheritedMembers:
@@ -36,6 +36,7 @@ items:
       - com.microsoft.azure.management.appservice._web_app_base.containerSize()
       - com.microsoft.azure.management.appservice._web_app_base.defaultDocuments()
       - com.microsoft.azure.management.appservice._web_app_base.defaultHostName()
+      - com.microsoft.azure.management.appservice._web_app_base.deploy()
       - com.microsoft.azure.management.appservice._web_app_base.enabled()
       - com.microsoft.azure.management.appservice._web_app_base.enabledHostNames()
       - com.microsoft.azure.management.appservice._web_app_base.gatewaySiteName()
@@ -141,7 +142,7 @@ references:
           type: '26831127'
           description: <p>die zielslot zum Anwenden von Konfigurationen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.appServicePlanId()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -275,6 +276,19 @@ references:
       return:
         type: '26831127'
         description: <p>Standard-Hostname der Web-app </p>
+  - uid: com.microsoft.azure.management.appservice._web_app_base.deploy()
+    parent: com.microsoft.azure.management.appservice._web_app_base
+    href: com.microsoft.azure.management.appservice._web_app_base.yml
+    name: deploy()
+    nameWithType: WebAppBase.deploy()
+    fullName: WebDeployment.DefinitionStages.WithPackageUri com.microsoft.azure.management.appservice.WebAppBase.deploy()
+    type: Method
+    summary: '<p>Erste Schritt geben Sie die Parameter, um eine webbereitstellung (MS-Deploy) für die Web-app zu machen. </p>'
+    syntax:
+      content: public WebDeployment.DefinitionStages.WithPackageUri deploy()
+      return:
+        type: c3bed9d0
+        description: '<p>eine Phase, um die webbereitstellung erstellen </p>'
   - uid: com.microsoft.azure.management.appservice._web_app_base.enabled()
     parent: com.microsoft.azure.management.appservice._web_app_base
     href: com.microsoft.azure.management.appservice._web_app_base.yml
@@ -442,7 +456,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.isDefaultContainer()
     parent: com.microsoft.azure.management.appservice._web_app_base
     href: com.microsoft.azure.management.appservice._web_app_base.yml
@@ -691,7 +705,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -706,7 +720,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -794,7 +808,7 @@ references:
     syntax:
       content: public Completable resetSlotConfigurationsAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_resource_group.resourceGroupName()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_resource_group
@@ -829,7 +843,7 @@ references:
     syntax:
       content: public Completable restartAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.scmSiteAlsoStopped()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -864,7 +878,7 @@ references:
     syntax:
       content: public Completable startAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.state()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -899,7 +913,7 @@ references:
     syntax:
       content: public Completable stopAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.swap(String)
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -930,7 +944,7 @@ references:
           type: '26831127'
           description: <p>der zielslot für den Tauschvorgang. Verwenden Sie "Produktion" für den produktionsslot zu übergeben. </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._resource.tags()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._resource
@@ -967,7 +981,7 @@ references:
       content: public Set<String> trafficManagerHostNames()
       return:
         type: df32358c
-        description: <p>Liste der <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Traffic Manager Hostnamen zugeordnet Web-app </p>
+        description: <p>Liste der <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Traffic Manager Hostnamen zugeordnet Web-app </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._resource.type()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._resource
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._resource.yml
@@ -989,7 +1003,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -1043,7 +1057,7 @@ references:
           type: '26831127'
           description: <p>Das Überprüfungstoken Domäne für die zertifikatreihenfolge </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.webSocketsEnabled()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -1081,7 +1095,7 @@ references:
     nameWithType: WebAppBase
     fullName: com.microsoft.azure.management.appservice.WebAppBase
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Bereitstellung oder Web-App-Slot. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Bereitstellung oder Web-App-Slot. </p>
     syntax:
       content: public interface WebAppBase
   - uid: com.microsoft.azure.management.resources.fluentcore.model._refreshable
@@ -1134,6 +1148,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

@@ -5,6 +5,7 @@ items:
     parent: system.fabric
     children:
       - 'system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)'
+      - 'system.fabric._stateful_service_partition.createTransactionalReplicator(ReplicatorSettings,TransactionalReplicatorSettings,KtlLoggerSharedLogSettings)'
       - system.fabric._stateful_service_partition.getReadStatus()
       - system.fabric._stateful_service_partition.getwriteStatus()
       - system.fabric._stateful_service_partition.reportReplicaHealth(HealthInformation)
@@ -47,19 +48,46 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/StatefulServicePartition.java
       startLine: 51
     package: system.fabric
-    summary: "<p>Erstellt eine <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref> mit den angegebenen Einstellungen und gibt ihn an das Replikat zurück.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>zur Erstellung sollte diese Methode verwendet eine <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref> Service als die <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> für ein zustandsbehafteter Dienst, der implementiert <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>Erstellt eine <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> mit den angegebenen Einstellungen und gibt ihn an das Replikat zurück.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>zur Erstellung sollte diese Methode verwendet eine <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> Service als die <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> für ein zustandsbehafteter Dienst, der implementiert<xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref>. </p>"
     syntax:
       content: 'public FabricReplicator createReplicator(StateProvider stateProvider, ReplicatorSettings replicatorSettings)'
       parameters:
         - id: stateProvider
           type: system.fabric._state_provider
-          description: '<p>Die <xref href="system.fabric._state_provider" data-throw-if-not-resolved="false"></xref> mit dem zurückgegebenen <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref> verknüpft werden sollen. Dies ist häufig das gleiche Objekt, das implementiert <xref href="system.fabric._stateful_service_replica" data-throw-if-not-resolved="false"></xref>, jedoch bestimmte Dienste möglicherweise anders behandelt werden. </p>'
+          description: '<p>Die <xref uid="system.fabric._state_provider" data-throw-if-not-resolved="false">system.fabric.StateProvider</xref> mit dem zurückgegebenen <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">system.fabric.FabricReplicator</xref> verknüpft werden sollen. Dies ist häufig das gleiche Objekt, das implementiert <xref uid="system.fabric._stateful_service_replica" data-throw-if-not-resolved="false">system.fabric.StatefulServiceReplica</xref>, jedoch bestimmte Dienste möglicherweise anders behandelt werden. </p>'
         - id: replicatorSettings
           type: system.fabric._replicator_settings
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._replicator_settings\" data-throw-if-not-resolved=\"false\"></xref>mit dem zurückgegebenen <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref> muss konfiguriert werden. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._replicator_settings\" data-throw-if-not-resolved=\"false\">system.fabric.ReplicatorSettings</xref> mit dem zurückgegebenen <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> muss konfiguriert werden. </p>"
       return:
         type: system.fabric._fabric_replicator
-        description: <p>Gibt <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Gibt <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">FabricReplicator</xref>. </p>
+  - uid: 'system.fabric._stateful_service_partition.createTransactionalReplicator(ReplicatorSettings,TransactionalReplicatorSettings,KtlLoggerSharedLogSettings)'
+    id: 'createTransactionalReplicator(ReplicatorSettings,TransactionalReplicatorSettings,KtlLoggerSharedLogSettings)'
+    parent: system.fabric._stateful_service_partition
+    href: system.fabric._stateful_service_partition.yml
+    langs:
+      - java
+    name: 'createTransactionalReplicator(ReplicatorSettings replicatorSettings, TransactionalReplicatorSettings txReplicatorSettings, KtlLoggerSharedLogSettings ktLogSettings)'
+    nameWithType: 'StatefulServicePartition.createTransactionalReplicator(ReplicatorSettings replicatorSettings, TransactionalReplicatorSettings txReplicatorSettings, KtlLoggerSharedLogSettings ktLogSettings)'
+    fullName: 'FabricReplicator system.fabric.StatefulServicePartition.createTransactionalReplicator(ReplicatorSettings replicatorSettings, TransactionalReplicatorSettings txReplicatorSettings, KtlLoggerSharedLogSettings ktLogSettings)'
+    overload: system.fabric._stateful_service_partition.createTransactionalReplicator*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/system.fabric/src/system/fabric/StatefulServicePartition.java
+      startLine: 53
+    package: system.fabric
+    syntax:
+      content: 'public FabricReplicator createTransactionalReplicator(ReplicatorSettings replicatorSettings, TransactionalReplicatorSettings txReplicatorSettings, KtlLoggerSharedLogSettings ktLogSettings)'
+      parameters:
+        - id: replicatorSettings
+          type: system.fabric._replicator_settings
+        - id: txReplicatorSettings
+          type: system.fabric._transactional_replicator_settings
+        - id: ktLogSettings
+          type: system.fabric._ktl_logger_shared_log_settings
+      return:
+        type: system.fabric._fabric_replicator
   - uid: system.fabric._stateful_service_partition.getReadStatus()
     id: getReadStatus()
     parent: system.fabric._stateful_service_partition
@@ -76,12 +104,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/StatefulServicePartition.java
       startLine: 17
     package: system.fabric
-    summary: "<p>Verwendet, um die Bereitschaft des Replikats hinsichtlich Lesevorgänge zu überprüfen.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der ReadStatus sollte aktiviert sein, bevor das Replikat eine kundenanforderung verarbeitet wird, die ein Lesevorgang ist. </p>"
+    summary: "<p>Verwendet, um die Bereitschaft des Replikats hinsichtlich Lesevorgänge zu überprüfen.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der ReadStatus sollte aktiviert sein, bevor das Replikat eine kundenanforderung verarbeitet wird, die ein Lesevorgang ist. </p>"
     syntax:
       content: public PartitionAccessStatus getReadStatus()
       return:
         type: system.fabric._partition_access_status
-        description: "<p>\r\n\r\n  <xref href=\"system.fabric._partition_access_status\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric._partition_access_status\" data-throw-if-not-resolved=\"false\">system.fabric.PartitionAccessStatus</xref>. </p>"
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
         description: '<p>Dies gibt an, dass die Partitionsobjekt geschlossen ist. Die/Replikator/Replikatinstanz entweder geschlossen wurde oder wird jetzt geschlossen werden. </p>'
@@ -101,12 +129,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/StatefulServicePartition.java
       startLine: 30
     package: system.fabric
-    summary: "<p>Verwendet, um die Bereitschaft der Partition hinsichtlich Schreibvorgänge zu überprüfen.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der WriteStatus sollte aktiviert sein, bevor das Replikat eine kundenanforderung Dienste, von denen ein Schreibvorgang ist. </p>"
+    summary: "<p>Verwendet, um die Bereitschaft der Partition hinsichtlich Schreibvorgänge zu überprüfen.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der WriteStatus sollte aktiviert sein, bevor das Replikat eine kundenanforderung Dienste, von denen ein Schreibvorgang ist. </p>"
     syntax:
       content: public PartitionAccessStatus getwriteStatus()
       return:
         type: system.fabric._partition_access_status
-        description: "<p>\r\n\r\n  <xref href=\"system.fabric._partition_access_status\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric._partition_access_status\" data-throw-if-not-resolved=\"false\">system.fabric.PartitionAccessStatus</xref>. </p>"
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
         description: '<p>Dies gibt an, dass die Partitionsobjekt geschlossen ist. Die/Replikator/Replikatinstanz entweder geschlossen wurde oder wird jetzt geschlossen werden. </p>'
@@ -124,7 +152,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/system.fabric/src/system/fabric/StatefulServicePartition.java
-      startLine: 59
+      startLine: 61
     package: system.fabric
     summary: |-
       <p>Das aktuelle Replikat dieser Partition zugeordnet Integrität gemeldet.</p>
@@ -151,6 +179,11 @@ references:
     nameWithType: StatefulServicePartition.createReplicator
     fullName: FabricReplicator system.fabric.StatefulServicePartition.createReplicator
     package: system.fabric
+  - uid: system.fabric._stateful_service_partition.createTransactionalReplicator*
+    name: createTransactionalReplicator
+    nameWithType: StatefulServicePartition.createTransactionalReplicator
+    fullName: FabricReplicator system.fabric.StatefulServicePartition.createTransactionalReplicator
+    package: system.fabric
   - uid: system.fabric._stateful_service_partition.reportReplicaHealth*
     name: reportReplicaHealth
     nameWithType: StatefulServicePartition.reportReplicaHealth
@@ -164,13 +197,13 @@ references:
     fullName: ServicePartitionInformation system.fabric.ServicePartition.getPartitionInfo()
     type: Method
     summary: |-
-      <p>Ermöglicht den Zugriff auf die <xref href="system.fabric._service_partition_information" data-throw-if-not-resolved="false"></xref> des Diensts, enthält die Partitionstyp und -ID.</p>
+      <p>Ermöglicht den Zugriff auf die <xref uid="system.fabric._service_partition_information" data-throw-if-not-resolved="false">system.fabric.ServicePartitionInformation</xref> des Diensts, enthält die Partitionstyp und -ID.</p>
       <p></p>
     syntax:
       content: public ServicePartitionInformation getPartitionInfo()
       return:
         type: system.fabric._service_partition_information
-        description: <p>Gibt <xref href="system.fabric._service_partition_information" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Gibt <xref uid="system.fabric._service_partition_information" data-throw-if-not-resolved="false">system.fabric.ServicePartitionInformation</xref>. </p>
   - uid: system.fabric._service_partition.reportFault(FaultType)
     parent: system.fabric._service_partition
     href: system.fabric._service_partition.yml
@@ -178,13 +211,13 @@ references:
     nameWithType: ServicePartition.reportFault(FaultType faultType)
     fullName: void system.fabric.ServicePartition.reportFault(FaultType faultType)
     type: Method
-    summary: "<p>Meldet die Last für einen Satz von Metriken für den Lastenausgleich. Die Auslastung kann zu einem beliebigen Zeitpunkt über gemeldet werden die <ref refid=\"\" kindref=\"compound\">java.util.Collection</ref> von <xref href=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\"></xref> Methode und stellt eine oder mehrere Eigenschaften von der <xref href=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\"></xref> Methode.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>ein Fehler wird i. d. r. gemeldet, wenn der Dienstcode erkennt einige ausstellen, von denen nicht wiederhergestellt werden kann. </p>"
+    summary: "<p>Meldet die Last für einen Satz von Metriken für den Lastenausgleich. Die Auslastung kann zu einem beliebigen Zeitpunkt über gemeldet werden die <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.util.Collection</xref> von <xref uid=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\">LoadMetric</xref> Methode und stellt eine oder mehrere Eigenschaften von der <xref uid=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\">system.fabric.LoadMetric</xref> Methode .</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>ein Fehler wird i. d. r. gemeldet, wenn der Dienstcode erkennt einige ausstellen, von denen nicht wiederhergestellt werden kann. </p>"
     syntax:
       content: public void reportFault(FaultType faultType)
       parameters:
         - id: faultType
           type: system.fabric._fault_type
-          description: '<p>Die <xref href="system.fabric._load_metric" data-throw-if-not-resolved="false"></xref> , die der Dienst aufgetreten sind. </p>'
+          description: '<p>Die <xref uid="system.fabric._load_metric" data-throw-if-not-resolved="false">system.fabric.LoadMetric</xref> , die der Dienst aufgetreten sind. </p>'
   - uid: system.fabric._service_partition.reportLoad(Collection<LoadMetric>)
     parent: system.fabric._service_partition
     href: system.fabric._service_partition.yml
@@ -192,13 +225,13 @@ references:
     nameWithType: ServicePartition.reportLoad(Collection<LoadMetric> metrics)
     fullName: void system.fabric.ServicePartition.reportLoad(Collection<LoadMetric> metrics)
     type: Method
-    summary: "<p>Meldet die Last für einen Satz von Metriken für den Lastenausgleich. Die Auslastung kann zu einem beliebigen Zeitpunkt über gemeldet werden die <ref refid=\"\" kindref=\"compound\">java.util.Collection</ref> von <xref href=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\"></xref> Methode und stellt eine oder mehrere Eigenschaften von der <xref href=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\"></xref> Methode.</p>\n<p>\r\n\r\n  <bold>\"Hinweise\":</bold>gemeldeten Metriken sollten entsprechen denen, die finden Sie in der <xref href=\"system.fabric._service_load_metric_description\" data-throw-if-not-resolved=\"false\"></xref> als Teil der <xref href=\"system.fabric._service_description\" data-throw-if-not-resolved=\"false\"></xref> , die zum Erstellen des Diensts verwendet wird. Lastmetriken, die nicht in der Beschreibung vorhanden sind, werden ignoriert. Können benutzerdefinierte Metriken Reporting Service Fabric zum Lastenausgleich für Dienste, die zusätzliche benutzerdefinierte Informationen basieren. </p>"
+    summary: "<p>Meldet die Last für einen Satz von Metriken für den Lastenausgleich. Die Auslastung kann zu einem beliebigen Zeitpunkt über gemeldet werden die <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.util.Collection</xref> von <xref uid=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\">LoadMetric</xref> Methode und stellt eine oder mehrere Eigenschaften von der <xref uid=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\">system.fabric.LoadMetric</xref> Methode .</p>\n<p>\r\n\r\n  <b>Hinweise:</b>gemeldeten Metriken sollten entsprechen denen, die finden Sie in der <xref uid=\"system.fabric._service_load_metric_description\" data-throw-if-not-resolved=\"false\">system.fabric.ServiceLoadMetricDescription</xref> als Teil der <xref uid=\"system.fabric._service_description\" data-throw-if-not-resolved=\"false\">system.fabric.ServiceDescription</xref>, die zum Erstellen des Diensts verwendet wird. Lastmetriken, die nicht in der Beschreibung vorhanden sind, werden ignoriert. Können benutzerdefinierte Metriken Reporting Service Fabric zum Lastenausgleich für Dienste, die zusätzliche benutzerdefinierte Informationen basieren. </p>"
     syntax:
       content: public void reportLoad(Collection<LoadMetric> metrics)
       parameters:
         - id: metrics
           type: 12ebb11asystem.fabric._load_metrica08ddfce
-          description: <p>Auflistung von <xref href="system.fabric._load_metric" data-throw-if-not-resolved="false"></xref> um die Last zu melden. </p>
+          description: <p>Auflistung von <xref uid="system.fabric._load_metric" data-throw-if-not-resolved="false">system.fabric.LoadMetric</xref> um die Last zu melden. </p>
   - uid: system.fabric._service_partition.reportMoveCost(MoveCost)
     parent: system.fabric._service_partition
     href: system.fabric._service_partition.yml
@@ -206,13 +239,13 @@ references:
     nameWithType: ServicePartition.reportMoveCost(MoveCost moveCost)
     fullName: void system.fabric.ServicePartition.reportMoveCost(MoveCost moveCost)
     type: Method
-    summary: "<p>Meldet die Move-Kosten für ein Replikat.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Dienste verschieben Kosten für ein Replikat, das mit dieser Methode können gemeldet werden. Während der Service Fabric-Ressource Bilanzen den besten Kompromiss im Cluster sucht, überprüft es Informationen geladen und Kosten für jedes Replikat verschieben. Ressource Bilanzen, bevorzugen wahrscheinlich Replikate mit niedrigeren Kosten zu verschieben, um einen Lastenausgleich zu erzielen. </p>"
+    summary: "<p>Meldet die Move-Kosten für ein Replikat.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Dienste verschieben Kosten für ein Replikat, das mit dieser Methode können gemeldet werden. Während der Service Fabric-Ressource Bilanzen den besten Kompromiss im Cluster sucht, überprüft es Informationen geladen und Kosten für jedes Replikat verschieben. Ressource Bilanzen, bevorzugen wahrscheinlich Replikate mit niedrigeren Kosten zu verschieben, um einen Lastenausgleich zu erzielen. </p>"
     syntax:
       content: public void reportMoveCost(MoveCost moveCost)
       parameters:
         - id: moveCost
           type: system.fabric._move_cost
-          description: <p>Die gemeldete <xref href="system.fabric._move_cost" data-throw-if-not-resolved="false"></xref>. </p>
+          description: <p>Die gemeldete <xref uid="system.fabric._move_cost" data-throw-if-not-resolved="false">system.fabric.MoveCost</xref>. </p>
   - uid: system.fabric._service_partition.reportPartitionHealth(HealthInformation)
     parent: system.fabric._service_partition
     href: system.fabric._service_partition.yml
@@ -228,7 +261,7 @@ references:
       parameters:
         - id: healthInfo
           type: system.fabric.health._health_information
-          description: <p>ist <ref refid="" kindref="compound">HealthInformation</ref></p>
+          description: <p>ist <xref uid="" data-throw-if-not-resolved="false">HealthInformation</xref></p>
   - uid: system.fabric._service_partition
     parent: system.fabric
     href: system.fabric._service_partition.yml
@@ -239,7 +272,6 @@ references:
     summary: '<p>Enthält Informationen zum Dienst die Partition, zu der sie gehört, und bietet Methoden für den Dienst für die Interaktion mit dem System während der Laufzeit. </p>'
     syntax:
       content: public interface ServicePartition
-  - uid: system.fabric._j_stateful_service_partition
   - uid: system.fabric._partition_access_status
     parent: system.fabric
     href: system.fabric._partition_access_status.yml
@@ -265,7 +297,7 @@ references:
     nameWithType: FabricReplicator
     fullName: system.fabric.FabricReplicator
     type: Class
-    summary: "<p>Repliziert den Status für hohe Verfügbarkeit und Zuverlässigkeit. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>stellt die Standardimplementierung von der <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\"></xref>, und <xref href=\"system.fabric._primary_replicator\" data-throw-if-not-resolved=\"false\"></xref> Schnittstellen, die Benutzerdienste werden, zusammen mit ihrer Implementierung von verwendet können der <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref> Schnittstelle. Eine Instanz von der <ref refid=\"\" kindref=\"compound\">system.fabric.FabricReplicator</ref> Klasse abgerufen wird, über die <xref href=\"system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)\" data-throw-if-not-resolved=\"false\"></xref> -Methode, die in umgewandelt werden kann <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> für die Verwendung. </p>"
+    summary: "<p>Repliziert den Status für hohe Verfügbarkeit und Zuverlässigkeit. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>stellt die Standardimplementierung von der <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref>, <xref uid=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\">system.fabric.Replicator</xref>, und <xref uid=\"system.fabric._primary_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.PrimaryReplicator </xref> Schnittstellen, die Benutzerdienste werden, zusammen mit ihrer Implementierung von verwendet können der <xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref> Schnittstelle. Eine Instanz von der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> Klasse abgerufen wird, über die <xref uid=\"system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServicePartition#createReplicator (system.fabric.StateProvider, system.fabric.ReplicatorSettings) </xref> -Methode, die in umgewandelt werden kann <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> für die Verwendung. </p>"
     syntax:
       content: public class FabricReplicator implements Replicator
   - uid: system.fabric._state_provider
@@ -275,7 +307,7 @@ references:
     nameWithType: StateProvider
     fullName: system.fabric.StateProvider
     type: Interface
-    summary: '<p>Definiert das Verhalten, das ein Dienst implementieren muss, um die Interaktion mit der <xref href="system.fabric._fabric_replicator" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Definiert das Verhalten, das ein Dienst implementieren muss, um die Interaktion mit der <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">FabricReplicator</xref>. </p>'
     syntax:
       content: public interface StateProvider
   - uid: system.fabric._replicator_settings
@@ -294,7 +326,7 @@ references:
     nameWithType: StatefulServiceReplica
     fullName: system.fabric.StatefulServiceReplica
     type: Interface
-    summary: "<p>Definiert das Verhalten, die den Lebenszyklus eines Replikats, z. B. starten, Initialisierung, rollenänderungen und Herunterfahren bestimmt. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>zustandsbehaftete Diensttypen müssen diese Schnittstelle implementieren. Die Logik der einen zustandsbehafteten Diensttyp enthält, die auf primären Replikaten aufgerufen wird und Verhalten, die auf sekundären Replikaten aufgerufen wird. Wenn dienstautor vornehmen möchte mithilfe des bereitgestellten <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref>, und klicken Sie dann der Dienst, auch implementieren muss <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref> verwenden Sie die Implementierung der <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> , die vom bereitgestellt<xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Definiert das Verhalten, die den Lebenszyklus eines Replikats, z. B. starten, Initialisierung, rollenänderungen und Herunterfahren bestimmt. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>zustandsbehaftete Diensttypen müssen diese Schnittstelle implementieren. Die Logik der einen zustandsbehafteten Diensttyp enthält, die auf primären Replikaten aufgerufen wird und Verhalten, die auf sekundären Replikaten aufgerufen wird. Wenn dienstautor vornehmen möchte mithilfe des bereitgestellten <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref>, und klicken Sie dann der Dienst, auch implementieren muss <xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref> verwenden Sie die Implementierung der <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> , die vom bereitgestellt <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref></p>"
     syntax:
       content: public interface StatefulServiceReplica
   - uid: system.fabric._state_replicator
@@ -304,8 +336,27 @@ references:
     nameWithType: StateReplicator
     fullName: system.fabric.StateReplicator
     type: Interface
+    summary: '<p>Macht replikationsbezogener-Funktionen von der <xref uid="system.fabric._fabric_replicator" data-throw-if-not-resolved="false">FabricReplicator</xref> Klasse, mit denen <xref uid="system.fabric._state_provider" data-throw-if-not-resolved="false">StateProvider</xref> zum Replizieren von Zustand, um hohe Verfügbarkeit sicherzustellen. </p>'
     syntax:
       content: public interface StateReplicator
+  - uid: system.fabric._transactional_replicator_settings
+    parent: system.fabric
+    href: system.fabric._transactional_replicator_settings.yml
+    name: TransactionalReplicatorSettings
+    nameWithType: TransactionalReplicatorSettings
+    fullName: system.fabric.TransactionalReplicatorSettings
+    type: Class
+    syntax:
+      content: public class TransactionalReplicatorSettings
+  - uid: system.fabric._ktl_logger_shared_log_settings
+    parent: system.fabric
+    href: system.fabric._ktl_logger_shared_log_settings.yml
+    name: KtlLoggerSharedLogSettings
+    nameWithType: KtlLoggerSharedLogSettings
+    fullName: system.fabric.KtlLoggerSharedLogSettings
+    type: Class
+    syntax:
+      content: public class KtlLoggerSharedLogSettings
   - uid: system.fabric.health._health_information
     parent: system.fabric.health
     href: system.fabric.health._health_information.yml

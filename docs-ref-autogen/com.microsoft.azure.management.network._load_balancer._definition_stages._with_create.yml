@@ -13,20 +13,26 @@ items:
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 321
+      startLine: 250
     package: com.microsoft.azure.management.network
-    summary: '<p>Die Phase der einen Load Balancer-Definition enthält alle erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), aber auch für andere optionalen Einstellungen angegeben werden können. </p>'
+    summary: '<p>Die Stufe der einen Load Balancer-Definition enthält alle erforderlichen Eingaben für die Ressource erstellt werden, jedoch lässt sich außerdem für alle anderen optionalen Einstellungen angegeben werden. </p>'
     syntax:
-      content: 'public interface WithCreate extends Creatable<LoadBalancer>,Resource.DefinitionWithTags<WithCreate>'
+      content: 'public interface WithCreate extends Creatable<LoadBalancer>,Resource.DefinitionWithTags<WithCreate>,LoadBalancer.DefinitionStages.WithBackend,LoadBalancer.DefinitionStages.WithFrontend,LoadBalancer.DefinitionStages.WithProbe,LoadBalancer.DefinitionStages.WithSku'
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.create()
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync(final ServiceCallback<T>)
       - com.microsoft.azure.management.resources.fluentcore.model._creatable.createAsync()
+      - com.microsoft.azure.management.network._load_balancer._definition_stages._with_backend.defineBackend(String)
+      - com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.defineHttpProbe(String)
+      - com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend.definePrivateFrontend(String)
+      - com.microsoft.azure.management.network._load_balancer._definition_stages._with_public_frontend.definePublicFrontend(String)
+      - com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.defineTcpProbe(String)
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
+      - com.microsoft.azure.management.network._load_balancer._definition_stages._with_sku.withSku(LoadBalancerSkuType)
       - 'com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.withTag(String,String)'
       - 'com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.withTags(Map<String, String>)'
 references:
@@ -79,6 +85,95 @@ references:
       return:
         type: c2d0e8c6com.microsoft.azure.management.resources.fluentcore.model._indexablea08ddfce
         description: <p>Observable-Objekt der Anforderung </p>
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_backend.defineBackend(String)
+    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_backend
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_backend.yml
+    name: defineBackend(String name)
+    nameWithType: LoadBalancer.DefinitionStages.WithBackend.defineBackend(String name)
+    fullName: LoadBalancerBackend.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithBackend.defineBackend(String name)
+    type: Method
+    summary: <p>Startet die Definition eines Back-Ends. </p>
+    syntax:
+      content: public LoadBalancerBackend.DefinitionStages.Blank<WithCreate> defineBackend(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name der Back-End-zuweisen </p>
+      return:
+        type: 4ca3e598com.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
+        description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.defineHttpProbe(String)
+    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.yml
+    name: defineHttpProbe(String name)
+    nameWithType: LoadBalancer.DefinitionStages.WithProbe.defineHttpProbe(String name)
+    fullName: LoadBalancerHttpProbe.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithProbe.defineHttpProbe(String name)
+    type: Method
+    summary: <p>Beginn der Definition eine neue HTTP-Test zum Lastenausgleich hinzufügen. </p>
+    syntax:
+      content: public LoadBalancerHttpProbe.DefinitionStages.Blank<WithCreate> defineHttpProbe(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name des Prüfpunkts </p>
+      return:
+        type: c813f461com.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
+        description: <p>die erste Phase der Definition der neue Prüfpunkt </p>
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend.definePrivateFrontend(String)
+    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_private_frontend.yml
+    name: definePrivateFrontend(String name)
+    nameWithType: LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend(String name)
+    fullName: LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPrivateFrontend.definePrivateFrontend(String name)
+    type: Method
+    summary: |-
+      <p>Beginnt eine explizite Definition von einem neuen privaten (intern) Laden des Lastenausgleichsmoduls Front-End. </p>
+      <p>(Beachten Sie, dass private Front-Ends auch implizit als Teil einer Lastenausgleichs-, Regel für eingehende NAT oder eingehenden NAT-Pool-Definition durch Verweisen auf einem vorhandenen Subnetz innerhalb dieser Definitionen erstellt werden können.) </p>
+    syntax:
+      content: public LoadBalancerPrivateFrontend.DefinitionStages.Blank<WithCreate> definePrivateFrontend(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name für das Front-End </p>
+      return:
+        type: 9e278c36com.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
+        description: <p>die erste Phase der Definition eines neuen Front-End </p>
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_public_frontend.definePublicFrontend(String)
+    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_public_frontend
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_public_frontend.yml
+    name: definePublicFrontend(String name)
+    nameWithType: LoadBalancer.DefinitionStages.WithPublicFrontend.definePublicFrontend(String name)
+    fullName: LoadBalancerPublicFrontend.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithPublicFrontend.definePublicFrontend(String name)
+    type: Method
+    summary: |-
+      <p>Beginnt eine explizite Definition von einem neuen öffentlichen (Internetverbindung) Laden des Lastenausgleichsmoduls Front-End. </p>
+      <p>(Beachten Sie, dass die Front-Ends auch implizit als Teil einer Lastenausgleichs-, Regel für eingehende NAT oder eingehenden NAT-Pool-Definition durch Verweisen auf eine vorhandene öffentliche IP-Adresse innerhalb dieser Definitionen erstellt werden kann.) </p>
+    syntax:
+      content: public LoadBalancerPublicFrontend.DefinitionStages.Blank<WithCreate> definePublicFrontend(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name für das Front-End </p>
+      return:
+        type: 233b2dcdcom.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
+        description: <p>die erste Phase der Definition eines neuen Front-End </p>
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.defineTcpProbe(String)
+    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.yml
+    name: defineTcpProbe(String name)
+    nameWithType: LoadBalancer.DefinitionStages.WithProbe.defineTcpProbe(String name)
+    fullName: LoadBalancerTcpProbe.DefinitionStages.Blank<WithCreate> com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithProbe.defineTcpProbe(String name)
+    type: Method
+    summary: <p>Beginn der Definition eine neue TCP-Überprüfung zum Lastenausgleich hinzufügen. </p>
+    syntax:
+      content: public LoadBalancerTcpProbe.DefinitionStages.Blank<WithCreate> defineTcpProbe(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name des Prüfpunkts </p>
+      return:
+        type: 93bcca18com.microsoft.azure.management.network._load_balancer._definition_stages._with_createa08ddfce
+        description: <p>die erste Phase der Definition der neue Prüfpunkt </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -103,6 +198,25 @@ references:
       return:
         type: '26831127'
         description: <p>Der Name der Ressource </p>
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_sku.withSku(LoadBalancerSkuType)
+    parent: com.microsoft.azure.management.network._load_balancer._definition_stages._with_sku
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_sku.yml
+    name: withSku(LoadBalancerSkuType skuType)
+    nameWithType: LoadBalancer.DefinitionStages.WithSku.withSku(LoadBalancerSkuType skuType)
+    fullName: WithCreate com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithSku.withSku(LoadBalancerSkuType skuType)
+    type: Method
+    summary: |-
+      <p>Gibt die SKU für das Lastenausgleichsmodul an.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withSku(LoadBalancerSkuType skuType)
+      parameters:
+        - id: skuType
+          type: com.microsoft.azure.management.network._load_balancer_sku_type
+          description: <p>die SKU-Typs </p>
+      return:
+        type: com.microsoft.azure.management.network._load_balancer._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
   - uid: 'com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.withTag(String,String)'
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09
     href: com.microsoft.azure.management.resources.fluentcore.arm.models.720b3efb4062edecc50de4ad58dc1c09.yml
@@ -130,13 +244,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -148,7 +262,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.model.Creatable<T>
     type: Interface
     summary: |-
-      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">eine Signatures-Auflistung</xref>.</p>
       <p></p>
     syntax:
       content: 'public interface Creatable<T> extends Indexable,HasName'
@@ -170,6 +284,46 @@ references:
       typeParameters:
         - type: 8ce1ecb9
           description: '<p>Der Typ, der die nächste Phase in der Ressourcendefinition </p>'
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_backend
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_backend.yml
+    name: LoadBalancer.DefinitionStages.WithBackend
+    nameWithType: LoadBalancer.DefinitionStages.WithBackend
+    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithBackend
+    type: Interface
+    summary: <p>Die Stufe der einen Load Balancer-Definition ein Back-End hinzufügen können. </p>
+    syntax:
+      content: public interface WithBackend
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_frontend
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_frontend.yml
+    name: LoadBalancer.DefinitionStages.WithFrontend
+    nameWithType: LoadBalancer.DefinitionStages.WithFrontend
+    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithFrontend
+    type: Interface
+    summary: '<p>Die Phase der einen Load Balancer-Definition, beschreibt die Art der das Front-End des Load Balancers: interne oder Internetzugriff. </p>'
+    syntax:
+      content: public interface WithFrontend
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe.yml
+    name: LoadBalancer.DefinitionStages.WithProbe
+    nameWithType: LoadBalancer.DefinitionStages.WithProbe
+    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithProbe
+    type: Interface
+    summary: <p>Die Stufe der Load-Balancer-Definition ermöglicht eine Überprüfung für den Lastenausgleich hinzufügen. </p>
+    syntax:
+      content: public interface WithProbe
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_sku
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_sku.yml
+    name: LoadBalancer.DefinitionStages.WithSku
+    nameWithType: LoadBalancer.DefinitionStages.WithSku
+    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithSku
+    type: Interface
+    summary: <p>Die Stufe der Load-Balancer-Definition SKU angeben können. </p>
+    syntax:
+      content: public interface WithSku
   - uid: com.microsoft.azure.management.network._load_balancer._definition
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancer._definition.yml
@@ -179,7 +333,7 @@ references:
     type: Interface
     summary: <p>Die Gesamtheit der Load Balancer-Definition. </p>
     syntax:
-      content: 'public interface Definition extends LoadBalancer.DefinitionStages.Blank,LoadBalancer.DefinitionStages.WithGroup,LoadBalancer.DefinitionStages.WithFrontend,LoadBalancer.DefinitionStages.WithCreate,LoadBalancer.DefinitionStages.WithPublicFrontendOrBackend,LoadBalancer.DefinitionStages.WithPrivateFrontendOrBackend,LoadBalancer.DefinitionStages.WithNetworkSubnet,LoadBalancer.DefinitionStages.WithBackend,LoadBalancer.DefinitionStages.WithBackendOrProbe,LoadBalancer.DefinitionStages.WithProbe,LoadBalancer.DefinitionStages.WithProbeOrLoadBalancingRule,LoadBalancer.DefinitionStages.WithProbeOrNat,LoadBalancer.DefinitionStages.WithLoadBalancingRule,LoadBalancer.DefinitionStages.WithLoadBalancingRuleOrCreate,LoadBalancer.DefinitionStages.WithCreateAndInboundNatPool,LoadBalancer.DefinitionStages.WithCreateAndInboundNatRule,LoadBalancer.DefinitionStages.WithCreateAndNatChoice'
+      content: 'public interface Definition extends LoadBalancer.DefinitionStages.Blank,LoadBalancer.DefinitionStages.WithGroup,LoadBalancer.DefinitionStages.WithCreate,LoadBalancer.DefinitionStages.WithBackend,LoadBalancer.DefinitionStages.WithLoadBalancingRule,LoadBalancer.DefinitionStages.WithLBRuleOrNat,LoadBalancer.DefinitionStages.WithLBRuleOrNatOrCreate,LoadBalancer.DefinitionStages.WithCreateAndInboundNatPool,LoadBalancer.DefinitionStages.WithCreateAndInboundNatRule,LoadBalancer.DefinitionStages.WithCreateAndNatChoice'
   - uid: com.microsoft.azure.management.network._load_balancer._definition_sta8f7fa264b83d4e924c1ae99942561ca8
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancer._definition_sta8f7fa264b83d4e924c1ae99942561ca8.yml

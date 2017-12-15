@@ -13,26 +13,62 @@ items:
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-      startLine: 251
+      startLine: 314
     package: com.microsoft.azure.management.network
     summary: '<p>Vollständig eine lastenausgleichsregel, die im Rahmen eines Load Balancer-Updates aktualisiert werden. </p>'
     syntax:
-      content: 'public interface Update extends Settable<LoadBalancer.Update>,LoadBalancingRule.UpdateStages.WithFrontendPort,LoadBalancingRule.UpdateStages.WithFrontend,LoadBalancingRule.UpdateStages.WithProtocol,LoadBalancingRule.UpdateStages.WithBackendPort,LoadBalancingRule.UpdateStages.WithFloatingIP,LoadBalancingRule.UpdateStages.WithIdleTimeoutInMinutes,LoadBalancingRule.UpdateStages.WithLoadDistribution'
+      content: 'public interface Update extends Settable<LoadBalancer.Update>,LoadBalancingRule.UpdateStages.WithFrontendPort,LoadBalancingRule.UpdateStages.WithFrontend,LoadBalancingRule.UpdateStages.WithProtocol,LoadBalancingRule.UpdateStages.WithBackendPort,LoadBalancingRule.UpdateStages.WithFloatingIP,LoadBalancingRule.UpdateStages.WithIdleTimeoutInMinutes,LoadBalancingRule.UpdateStages.WithLoadDistribution,LoadBalancingRule.UpdateStages.WithProbe'
     inheritedMembers:
+      - com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend.fromFrontend(String)
+      - com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed.fromFrontendPort(int)
       - com.microsoft.azure.management.resources.fluentcore.model._settable.parent()
-      - com.microsoft.azure.management.network.model._has_backend_port._up2b14870ed3337f492ea271ed21d24503.withBackendPort(int)
+      - com.microsoft.azure.management.network.model._has_backend_port._up2b14870ed3337f492ea271ed21d24503.toBackendPort(int)
       - com.microsoft.azure.management.network.model._has_floating_i_p._up688627b4068c7bf866ddafc82fcf82e6.withFloatingIP(boolean)
       - com.microsoft.azure.management.network.model._has_floating_i_p._up688627b4068c7bf866ddafc82fcf82e6.withFloatingIPDisabled()
       - com.microsoft.azure.management.network.model._has_floating_i_p._up688627b4068c7bf866ddafc82fcf82e6.withFloatingIPEnabled()
-      - com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend.withFrontend(String)
-      - com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed.withFrontendPort(int)
       - com.microsoft.azure.management.network._load_balancing_rule._update_sc32d66274198971186fc8c2ff2473e4c.withIdleTimeoutInMinutes(int)
       - com.microsoft.azure.management.network._load_balancing_rule._update_s6dc49367dbab5ed42d601e59b7df31ca.withLoadDistribution(LoadDistribution)
+      - com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.withoutProbe()
+      - com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.withProbe(String)
       - com.microsoft.azure.management.network.model._has_protocol._update_stages._with_protocol.withProtocol(ProtocolT)
 references:
+  - uid: com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend.fromFrontend(String)
+    parent: com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend.yml
+    name: fromFrontend(String frontendName)
+    nameWithType: HasFrontend.UpdateStages.WithFrontend<ReturnT>.fromFrontend(String frontendName)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.UpdateStages.WithFrontend<ReturnT>.fromFrontend(String frontendName)
+    type: Method
+    summary: '<p>Gibt an, das Front-End. </p>'
+    syntax:
+      content: public ReturnT fromFrontend(String frontendName)
+      parameters:
+        - id: frontendName
+          type: '26831127'
+          description: <p>der Name eines vorhandenen Front-End-von diesem Load balancer </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed.fromFrontendPort(int)
+    parent: com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed
+    href: com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed.yml
+    name: fromFrontendPort(int port)
+    nameWithType: HasFrontendPort.UpdateStages.WithFrontendPort<ReturnT>.fromFrontendPort(int port)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontendPort.UpdateStages.WithFrontendPort<ReturnT>.fromFrontendPort(int port)
+    type: Method
+    summary: <p>Gibt den Front-End-Port für den Empfang des Netzwerkdatenverkehrs. </p>
+    syntax:
+      content: public ReturnT fromFrontendPort(int port)
+      parameters:
+        - id: port
+          type: f75371fa
+          description: <p>eine Portnummer an </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._settable.parent()
     parent: com.microsoft.azure.management.resources.fluentcore.model._settable
     href: com.microsoft.azure.management.resources.fluentcore.model._settable.yml
@@ -42,23 +78,23 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine untergeordnete Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, mit dem untergeordneten Ressourcen aktualisieren Sie die letzte Methode, die Durchführung des Updates und weiterhin die tatsächliche übergeordnete Ressource Updatevorgang in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators Muster, mit dem untergeordneten Ressourcen aktualisieren Sie die letzte Methode, die Durchführung des Updates und weiterhin die tatsächliche übergeordnete Ressource Updatevorgang in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false">Settable#parent()</xref> .</p>
       <p></p>
     syntax:
       content: public ParentT parent()
       return:
         type: 18a275b1
         description: <p>die Phase der übergeordneten Ressource aktualisieren </p>
-  - uid: com.microsoft.azure.management.network.model._has_backend_port._up2b14870ed3337f492ea271ed21d24503.withBackendPort(int)
+  - uid: com.microsoft.azure.management.network.model._has_backend_port._up2b14870ed3337f492ea271ed21d24503.toBackendPort(int)
     parent: com.microsoft.azure.management.network.model._has_backend_port._up2b14870ed3337f492ea271ed21d24503
     href: com.microsoft.azure.management.network.model._has_backend_port._up2b14870ed3337f492ea271ed21d24503.yml
-    name: withBackendPort(int port)
-    nameWithType: HasBackendPort.UpdateStages.WithBackendPort<ReturnT>.withBackendPort(int port)
-    fullName: ReturnT com.microsoft.azure.management.network.model.HasBackendPort.UpdateStages.WithBackendPort<ReturnT>.withBackendPort(int port)
+    name: toBackendPort(int port)
+    nameWithType: HasBackendPort.UpdateStages.WithBackendPort<ReturnT>.toBackendPort(int port)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasBackendPort.UpdateStages.WithBackendPort<ReturnT>.toBackendPort(int port)
     type: Method
-    summary: <p>Gibt den Back-End-Port. </p>
+    summary: <p>Gibt einen Back-End-Port zum Senden von Netzwerkdatenverkehr an. </p>
     syntax:
-      content: public ReturnT withBackendPort(int port)
+      content: public ReturnT toBackendPort(int port)
       parameters:
         - id: port
           type: f75371fa
@@ -109,40 +145,6 @@ references:
       return:
         type: c1a5ebc4
         description: <p>die nächste Phase der definition </p>
-  - uid: com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend.withFrontend(String)
-    parent: com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend
-    href: com.microsoft.azure.management.network.model._has_frontend._update_stages._with_frontend.yml
-    name: withFrontend(String frontendName)
-    nameWithType: HasFrontend.UpdateStages.WithFrontend<ReturnT>.withFrontend(String frontendName)
-    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.UpdateStages.WithFrontend<ReturnT>.withFrontend(String frontendName)
-    type: Method
-    summary: '<p>Gibt an, das Front-End. </p>'
-    syntax:
-      content: public ReturnT withFrontend(String frontendName)
-      parameters:
-        - id: frontendName
-          type: '26831127'
-          description: <p>der Name eines vorhandenen Front-End-von diesem Load balancer </p>
-      return:
-        type: c1a5ebc4
-        description: <p>die nächste Phase des Updates </p>
-  - uid: com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed.withFrontendPort(int)
-    parent: com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed
-    href: com.microsoft.azure.management.network.model._has_frontend_port._u743f68ed04989aab3f3cd67e55dfb3ed.yml
-    name: withFrontendPort(int port)
-    nameWithType: HasFrontendPort.UpdateStages.WithFrontendPort<ReturnT>.withFrontendPort(int port)
-    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontendPort.UpdateStages.WithFrontendPort<ReturnT>.withFrontendPort(int port)
-    type: Method
-    summary: <p>Gibt den Front-End-Port. </p>
-    syntax:
-      content: public ReturnT withFrontendPort(int port)
-      parameters:
-        - id: port
-          type: f75371fa
-          description: <p>eine Portnummer an </p>
-      return:
-        type: c1a5ebc4
-        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._update_sc32d66274198971186fc8c2ff2473e4c.withIdleTimeoutInMinutes(int)
     parent: com.microsoft.azure.management.network._load_balancing_rule._update_sc32d66274198971186fc8c2ff2473e4c
     href: com.microsoft.azure.management.network._load_balancing_rule._update_sc32d66274198971186fc8c2ff2473e4c.yml
@@ -177,6 +179,36 @@ references:
       return:
         type: com.microsoft.azure.management.network._load_balancing_rule._update
         description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.withoutProbe()
+    parent: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe
+    href: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.yml
+    name: withoutProbe()
+    nameWithType: LoadBalancingRule.UpdateStages.WithProbe.withoutProbe()
+    fullName: Update com.microsoft.azure.management.network.LoadBalancingRule.UpdateStages.WithProbe.withoutProbe()
+    type: Method
+    summary: <p>Entfernt alle Zuordnungen mit einem Prüfpunkt und fragt <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>des Standard-probing-Mechanismus. </p>
+    syntax:
+      content: public Update withoutProbe()
+      return:
+        type: com.microsoft.azure.management.network._load_balancing_rule._update
+        description: <p>die nächste Phase des Updates </p>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.withProbe(String)
+    parent: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe
+    href: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.yml
+    name: withProbe(String name)
+    nameWithType: LoadBalancingRule.UpdateStages.WithProbe.withProbe(String name)
+    fullName: Update com.microsoft.azure.management.network.LoadBalancingRule.UpdateStages.WithProbe.withProbe(String name)
+    type: Method
+    summary: '<p>Die lastenausgleichsregel den angegebenen vorhandenen HTTP oder TCP-Prüfpunkt auf, der diesem Lastenausgleichsmodul zugeordnet. </p>'
+    syntax:
+      content: public Update withProbe(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name einer vorhandenen HTTP oder TCP-Probe </p>
+      return:
+        type: com.microsoft.azure.management.network._load_balancing_rule._update
+        description: <p>die nächste Phase des Updates </p>
   - uid: com.microsoft.azure.management.network.model._has_protocol._update_stages._with_protocol.withProtocol(ProtocolT)
     parent: com.microsoft.azure.management.network.model._has_protocol._update_stages._with_protocol
     href: com.microsoft.azure.management.network.model._has_protocol._update_stages._with_protocol.yml
@@ -208,7 +240,7 @@ references:
       content: public interface Settable<ParentT>
       typeParameters:
         - type: 18a275b1
-          description: '<p>die Definition des übergeordneten <xref href="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false"></xref> gibt, </p>'
+          description: '<p>die Definition des übergeordneten <xref uid="com.microsoft.azure.management.resources.fluentcore.model._settable.parent()" data-throw-if-not-resolved="false">Settable#parent()</xref> gibt, </p>'
   - uid: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_frontend_port
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_frontend_port.yml
@@ -279,3 +311,13 @@ references:
     summary: '<p>Die Phase des Lastenausgleichs Regel Update zulassen, um die lastverteilung zu ändern. </p>'
     syntax:
       content: public interface WithLoadDistribution
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancing_rule._update_stages._with_probe.yml
+    name: LoadBalancingRule.UpdateStages.WithProbe
+    nameWithType: LoadBalancingRule.UpdateStages.WithProbe
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.UpdateStages.WithProbe
+    type: Interface
+    summary: '<p>Die Phase des Lastenausgleichs Regel Update zum gewähren, geben Sie die Überprüfung der Regel zugeordnet werden soll. </p>'
+    syntax:
+      content: public interface WithProbe

@@ -8,6 +8,7 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.utils._paged_list_converter
       - com.microsoft.azure.management.resources.fluentcore.utils._provider_registration_interceptor
       - com.microsoft.azure.management.resources.fluentcore.utils._r_x_mapper
+      - com.microsoft.azure.management.resources.fluentcore.utils._resource_manager_throttling_interceptor
       - com.microsoft.azure.management.resources.fluentcore.utils._resource_namer
       - com.microsoft.azure.management.resources.fluentcore.utils._resource_namer_factory
       - com.microsoft.azure.management.resources.fluentcore.utils._sdk_context
@@ -22,11 +23,11 @@ items:
     source:
       remote:
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/utils/DelayProvider.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/utils/DelayProvider.java
       startLine: 6
-    summary: <p>Dieses Paket enthält einige Hilfsklassen für die Arbeit mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen. </p>
+    summary: <p>Dieses Paket enthält einige Hilfsklassen für die Arbeit mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen. </p>
     syntax:
       content: package com.microsoft.azure.management.resources.fluentcore.utils
 references:
@@ -37,7 +38,7 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure
   - uid: com.microsoft.azure.management.resources.fluentcore.utils._delay_provider
@@ -73,7 +74,7 @@ references:
     fullName: 'com.microsoft.azure.management.resources.fluentcore.utils.PagedListConverter<U,V>'
     type: Class
     summary: |-
-      <p>Die Basisklasse für die Konvertierung <ref refid="" kindref="compound">PagedList</ref> eines bestimmten Typs der Ressource in eine andere, ohne Sie alle Elemente in einer Liste abrufen. Dieser Konverter eignet sich für interne Ressourcen für die oberen Ebenen in fluent Ressourcen für die oberen Ebenen zu konvertieren.</p>
+      <p>Die Basisklasse für die Konvertierung <xref uid="" data-throw-if-not-resolved="false">PagedList</xref> eines bestimmten Typs der Ressource in eine andere, ohne Sie alle Elemente in einer Liste abrufen. Dieser Konverter eignet sich für interne Ressourcen für die oberen Ebenen in fluent Ressourcen für die oberen Ebenen zu konvertieren.</p>
       <p></p>
     syntax:
       content: 'public class PagedListConverter<U,V>'
@@ -89,9 +90,21 @@ references:
     nameWithType: ProviderRegistrationInterceptor
     fullName: com.microsoft.azure.management.resources.fluentcore.utils.ProviderRegistrationInterceptor
     type: Class
-    summary: <p>Ein Interceptor für die automatische Anbieter Registrierung im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Ein Interceptor für die automatische Anbieter Registrierung im <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class ProviderRegistrationInterceptor
+  - uid: com.microsoft.azure.management.resources.fluentcore.utils._resource_manager_throttling_interceptor
+    parent: com.microsoft.azure.management.resources.fluentcore.utils
+    href: com.microsoft.azure.management.resources.fluentcore.utils._resource_manager_throttling_interceptor.yml
+    name: ResourceManagerThrottlingInterceptor
+    nameWithType: ResourceManagerThrottlingInterceptor
+    fullName: com.microsoft.azure.management.resources.fluentcore.utils.ResourceManagerThrottlingInterceptor
+    type: Class
+    summary: |-
+      <p>Ein Interceptor automatisch erneut beim <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen-Manager ist die Drosselung aufgrund zu vieler Anforderungen für Lese-/Schreibzugriff. </p>
+      <p>Für jedes Abonnement und ein Mandant <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen-Manager-Grenzen Lese-Anfragen auf 15.000 pro Stunde / Anfragen auf 1.200 pro Stunde. Diese Begrenzungen gelten für jede <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen-Manager-Instanz. </p>
+    syntax:
+      content: public class ResourceManagerThrottlingInterceptor
   - uid: com.microsoft.azure.management.resources.fluentcore.utils._resource_namer
     parent: com.microsoft.azure.management.resources.fluentcore.utils
     href: com.microsoft.azure.management.resources.fluentcore.utils._resource_namer.yml
@@ -99,7 +112,7 @@ references:
     nameWithType: ResourceNamer
     fullName: com.microsoft.azure.management.resources.fluentcore.utils.ResourceNamer
     type: Class
-    summary: <p>Die <xref href="com.microsoft.azure.management.resources.fluentcore.utils._resource_namer" data-throw-if-not-resolved="false"></xref> zufälligen Namen zu generieren. </p>
+    summary: <p>Die <xref uid="com.microsoft.azure.management.resources.fluentcore.utils._resource_namer" data-throw-if-not-resolved="false">ResourceNamer</xref> zufälligen Namen zu generieren. </p>
     syntax:
       content: public class ResourceNamer
   - uid: com.microsoft.azure.management.resources.fluentcore.utils._resource_namer_factory
@@ -109,7 +122,7 @@ references:
     nameWithType: ResourceNamerFactory
     fullName: com.microsoft.azure.management.resources.fluentcore.utils.ResourceNamerFactory
     type: Class
-    summary: <p>Die <xref href="com.microsoft.azure.management.resources.fluentcore.utils._resource_namer_factory" data-throw-if-not-resolved="false"></xref> generieren <xref href="com.microsoft.azure.management.resources.fluentcore.utils._resource_namer" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Die <xref uid="com.microsoft.azure.management.resources.fluentcore.utils._resource_namer_factory" data-throw-if-not-resolved="false">ResourceNamerFactory</xref> generieren <xref uid="com.microsoft.azure.management.resources.fluentcore.utils._resource_namer" data-throw-if-not-resolved="false">ResourceNamer</xref>. </p>
     syntax:
       content: public class ResourceNamerFactory
   - uid: com.microsoft.azure.management.resources.fluentcore.utils._r_x_mapper

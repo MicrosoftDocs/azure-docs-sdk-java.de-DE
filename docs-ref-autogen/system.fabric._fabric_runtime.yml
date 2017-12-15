@@ -33,7 +33,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/FabricRuntime.java
       startLine: 27
     package: system.fabric
-    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref href="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false"></xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> ] oder direkt Diensttypen. </p>'
+    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref uid="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false">system.fabric.CodePackageActivationContext</xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref>, <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> ] oder direkt Diensttypen. </p>'
     syntax: &ref_1
       content: public class FabricRuntime
     inheritance:
@@ -74,13 +74,13 @@ items:
       startLine: 116
     package: system.fabric
     summary: |-
-      <p>Erstellt die <ref refid="" kindref="compound">system.fabric.FabricRuntime</ref> Objekt.</p>
+      <p>Erstellt die <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public static FabricRuntime create()
       return:
         type: system.fabric._fabric_runtime
-        description: <p>Ein neu erstelltes <ref refid="" kindref="compound">system.fabric.FabricRuntime</ref> Objekt. </p>
+        description: <p>Ein neu erstelltes <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref> Objekt. </p>
   - uid: system.fabric._fabric_runtime.createAsync(Duration)
     id: createAsync(Duration)
     parent: system.fabric._fabric_runtime
@@ -98,7 +98,7 @@ items:
       startLine: 130
     package: system.fabric
     summary: |-
-      <p>Erstellt die <ref refid="" kindref="compound">system.fabric.FabricRuntime</ref> Objekt asynchron mit dem angegebenen Timeout-Parameter.</p>
+      <p>Erstellt die <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref> Objekt asynchron mit dem angegebenen Timeout-Parameter.</p>
       <p></p>
     syntax:
       content: public static CompletableFuture<FabricRuntime> createAsync(Duration timeout)
@@ -126,7 +126,7 @@ items:
       startLine: 146
     package: system.fabric
     summary: |-
-      <p>Erstellt die <ref refid="" kindref="compound">system.fabric.FabricRuntime</ref> Objekt asynchron mit dem festgelegten Rückruffunktion der ausgeführt wird, wenn die zugrunde liegenden Laufzeit beendet wird oder aus irgendeinem Grund beendet wird.</p>
+      <p>Erstellt die <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref> Objekt asynchron mit dem festgelegten Rückruffunktion der ausgeführt wird, wenn die zugrunde liegenden Laufzeit beendet wird oder aus irgendeinem Grund beendet wird.</p>
       <p></p>
     syntax:
       content: 'public static CompletableFuture<FabricRuntime> createAsync(Runnable fabricExitCallback, Duration timeout)'
@@ -157,7 +157,7 @@ items:
       startLine: 156
     package: system.fabric
     summary: |-
-      <p>Ruft ab den aktuellen <ref refid="" kindref="compound">system.fabric.FabricRuntime</ref>des <xref href="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Ruft ab den aktuellen <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref>des <xref uid="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false">system.fabric.CodePackageActivationContext</xref>.</p>
       <p></p>
     syntax:
       content: public static FabricCodePackageActivationContext getActivationContext()
@@ -181,7 +181,7 @@ items:
       startLine: 170
     package: system.fabric
     summary: |-
-      <p>Ruft ab den aktuellen <ref refid="" kindref="compound">system.fabric.FabricRuntime</ref>Â €™ s <xref href="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false"></xref> asynchron mit dem angegebenen Parameter.</p>
+      <p>Ruft ab den aktuellen <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref>Â €™ s <xref uid="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false">system.fabric.CodePackageActivationContext</xref> asynchron mit dem angegebenen Parameter.</p>
       <p></p>
     syntax:
       content: public static CompletableFuture<FabricCodePackageActivationContext> getActivationContextAsync(Duration timeout)
@@ -260,7 +260,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/FabricRuntime.java
       startLine: 280
     package: system.fabric
-    summary: "<p>Ordnet die angegebene ServiceTypeName mit dem tatsächlichen verwalteten Typ, die ihn implementiert.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Beachten Sie, dass dieser Mechanismus für die Registrierung der Service-Typ nicht über eine benutzerdefinierte erfordert <xref href=\"system.fabric._stateless_service_factory\" data-throw-if-not-resolved=\"false\"></xref> oder <xref href=\"system.fabric._stateful_service_factory\" data-throw-if-not-resolved=\"false\"></xref> zum Zeitpunkt der Registrierung bereitgestellt werden. Service Fabric eine zur Laufzeit generiert und automatisch zu verwenden. Wenn für eine benutzerdefinierte Implementierung der Factory erforderlich ist, können Sie implementieren <xref href=\"system.fabric._stateless_service_factory\" data-throw-if-not-resolved=\"false\"></xref> oder <xref href=\"system.fabric._stateful_service_factory\" data-throw-if-not-resolved=\"false\"></xref> , und geben Sie diese über die entsprechenden Factory Registrierungsmethoden ( <ref refid=\"\" kindref=\"compound\">system.fabric.FabricRuntime#registerStatelessServiceFactoryAsync (java.lang.String, system.fabric.StatelessServiceFactory, java.time.Duration)</ref> oder <ref refid=\"\" kindref=\"compound\">system.fabric.FabricRuntime#registerStatefulServiceFactoryAsync (java.lang.String, system.fabric.StatefulServiceFactory, java.time.Duration)</ref> ) </p>"
+    summary: "<p>Ordnet die angegebene ServiceTypeName mit dem tatsächlichen verwalteten Typ, die ihn implementiert.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>Beachten Sie, dass dieser Mechanismus für die Registrierung der Service-Typ nicht über eine benutzerdefinierte erfordert <xref uid=\"system.fabric._stateless_service_factory\" data-throw-if-not-resolved=\"false\">system.fabric.StatelessServiceFactory</xref> oder <xref uid=\"system.fabric._stateful_service_factory\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceFactory</xref> zum Zeitpunkt der Registrierung bereitgestellt werden. Service Fabric eine zur Laufzeit generiert und automatisch zu verwenden. Wenn für eine benutzerdefinierte Implementierung der Factory erforderlich ist, können Sie implementieren <xref uid=\"system.fabric._stateless_service_factory\" data-throw-if-not-resolved=\"false\">system.fabric.StatelessServiceFactory</xref> oder <xref uid=\"system.fabric._stateful_service_factory\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServiceFactory</xref> , und geben Sie diese über die entsprechende Registrierung-Factorymethoden ( <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricRuntime#registerStatelessServiceFactoryAsync (java.lang.String, system.fabric.StatelessServiceFactory, java.time.Duration)</xref> oder <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricRuntime#registerStatefulServiceFactoryAsync (java.lang.String, system.fabric.StatefulServiceFactory, java.time.Duration)</xref> ) </p>"
     syntax:
       content: 'public void registerServiceType(String serviceTypeName, Class<?> serviceTypeImplementation)'
       parameters:
@@ -321,7 +321,7 @@ items:
       startLine: 242
     package: system.fabric
     summary: |-
-      <p>Registriert das angegebene <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> für den angegebenen Diensttyp.</p>
+      <p>Registriert das angegebene <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> für den angegebenen Diensttyp.</p>
       <p></p>
     syntax:
       content: 'public void registerStatefulServiceFactory(String serviceTypeName, StatefulServiceFactory factory)'
@@ -331,7 +331,7 @@ items:
           description: <p>Der Typname des Diensttyps (als Zeichenfolge). Dies sollte den Typ des Diensttyps Gruppe entsprechend den Angaben in den Manifesten und/oder Befehls CreateService übereinstimmen. </p>
         - id: factory
           type: system.fabric._stateful_service_factory
-          description: <p>Die <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> können die den angegebenen Typ erstellt. </p>
+          description: <p>Die <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> können die den angegebenen Typ erstellt. </p>
   - uid: 'system.fabric._fabric_runtime.registerStatefulServiceFactoryAsync(String,StatefulServiceFactory,Duration)'
     id: 'registerStatefulServiceFactoryAsync(String,StatefulServiceFactory,Duration)'
     parent: system.fabric._fabric_runtime
@@ -349,7 +349,7 @@ items:
       startLine: 383
     package: system.fabric
     summary: |-
-      <p>Registriert das angegebene <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> für den angegebenen Typ mit dem angegebenen Timeout und CancellationToken.</p>
+      <p>Registriert das angegebene <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> für den angegebenen Typ mit dem angegebenen Timeout und CancellationToken.</p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<?> registerStatefulServiceFactoryAsync(String serviceTypeName, StatefulServiceFactory factory, Duration timeout)'
@@ -359,7 +359,7 @@ items:
           description: <p>Der Typname des Diensttyps (als Zeichenfolge). Dies sollte den Typ des Diensttyps Gruppe entsprechend den Angaben in den Manifesten und/oder Befehls CreateService übereinstimmen. </p>
         - id: factory
           type: system.fabric._stateful_service_factory
-          description: <p>Die <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> können die den angegebenen Typ erstellt. </p>
+          description: <p>Die <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> können die den angegebenen Typ erstellt. </p>
         - id: timeout
           type: e02a2de0
           description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang, um den Vorgang fortzusetzen, vor der Rückgabe einer TimeoutException. </p>'
@@ -383,7 +383,7 @@ items:
       startLine: 216
     package: system.fabric
     summary: |-
-      <p>Registriert das angegebene <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref> für den angegebenen Diensttyp.</p>
+      <p>Registriert das angegebene <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref> für den angegebenen Diensttyp.</p>
       <p></p>
     syntax:
       content: 'public void registerStatelessServiceFactory(String serviceTypeName, StatelessServiceFactory factory)'
@@ -393,7 +393,7 @@ items:
           description: <p>Der Typname des Diensttyps (als Zeichenfolge). Dies sollte den Typ des Diensttyps Gruppe entsprechend den Angaben in den Manifesten und/oder Befehls CreateService übereinstimmen. </p>
         - id: factory
           type: system.fabric._stateless_service_factory
-          description: <p>Die <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref> können die den angegebenen Typ erstellt. </p>
+          description: <p>Die <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref> können die den angegebenen Typ erstellt. </p>
   - uid: 'system.fabric._fabric_runtime.registerStatelessServiceFactoryAsync(String,StatelessServiceFactory,Duration)'
     id: 'registerStatelessServiceFactoryAsync(String,StatelessServiceFactory,Duration)'
     parent: system.fabric._fabric_runtime
@@ -411,7 +411,7 @@ items:
       startLine: 348
     package: system.fabric
     summary: |-
-      <p>Asynchron registriert das angegebene <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref> für den angegebenen Diensttyp, mit dem angegebenen Timeout und CancellationToken</p>
+      <p>Asynchron registriert das angegebene <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref> für den angegebenen Diensttyp, mit dem angegebenen Timeout und CancellationToken</p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<?> registerStatelessServiceFactoryAsync(String serviceTypeName, StatelessServiceFactory factory, Duration timeout)'
@@ -421,7 +421,7 @@ items:
           description: <p>Der Typname des Diensttyps (als Zeichenfolge). Dies sollte den Typ des Diensttyps Gruppe entsprechend den Angaben in den Manifesten und/oder Befehls CreateService übereinstimmen. </p>
         - id: factory
           type: system.fabric._stateless_service_factory
-          description: <p>Die <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref> können die den angegebenen Typ erstellt. </p>
+          description: <p>Die <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref> können die den angegebenen Typ erstellt. </p>
         - id: timeout
           type: e02a2de0
           description: '<p>Die maximale Zeitdauer Service Fabric können diesen Vorgang, um den Vorgang fortzusetzen, vor der Rückgabe einer TimeoutException. </p>'
@@ -580,7 +580,7 @@ references:
     nameWithType: FabricRuntime
     fullName: system.fabric.FabricRuntime
     type: Class
-    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref href="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false"></xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref href="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false"></xref>, <xref href="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false"></xref> ] oder direkt Diensttypen. </p>'
+    summary: '<p>Können benutzerdefinierte Hosts erhalten ihre <xref uid="system.fabric._code_package_activation_context" data-throw-if-not-resolved="false">system.fabric.CodePackageActivationContext</xref>, auch auf den erforderlichen Dienst Factorys registrieren [ <xref uid="system.fabric._stateless_service_factory" data-throw-if-not-resolved="false">system.fabric.StatelessServiceFactory</xref>, <xref uid="system.fabric._stateful_service_factory" data-throw-if-not-resolved="false">system.fabric.StatefulServiceFactory</xref> ] oder direkt Diensttypen. </p>'
     syntax: *ref_1
   - uid: system.fabric._code_package_activation_context
     parent: system.fabric
@@ -599,7 +599,7 @@ references:
     nameWithType: StatelessServiceFactory
     fullName: system.fabric.StatelessServiceFactory
     type: Interface
-    summary: "<p>Stellt eine zustandslosen Diensts-Factory, die zum Erstellen von Instanzen eines bestimmten Typs von zustandslosen Diensts zuständig ist. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>zustandslosen Diensts Factorys registriert werden, die <xref href=\"system.fabric._fabric_runtime\" data-throw-if-not-resolved=\"false\"></xref> von Diensthosts über <ref refid=\"\" kindref=\"compound\">system.fabric.FabricRuntime#registerStatelessServiceFactory(java.lang.String,system.fabric.StatelessServiceFactory)</ref> oder <ref refid=\"\" kindref=\"compound\">system.fabric.FabricRuntime#registerStatelessServiceFactoryAsync(java.lang.String,system.fabric.StatelessServiceFactory,java.time.Duration)</ref></p>"
+    summary: "<p>Stellt eine zustandslosen Diensts-Factory, die zum Erstellen von Instanzen eines bestimmten Typs von zustandslosen Diensts zuständig ist. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>zustandslosen Diensts Factorys registriert werden, die <xref uid=\"system.fabric._fabric_runtime\" data-throw-if-not-resolved=\"false\">system.fabric.FabricRuntime</xref> von Diensthosts über <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricRuntime#registerStatelessServiceFactory ( java.lang.String,system.fabric.StatelessServiceFactory)</xref> oder <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricRuntime#registerStatelessServiceFactoryAsync (java.lang.String,system.fabric.StatelessServiceFactory, java.time.Duration)</xref></p>"
     syntax:
       content: public interface StatelessServiceFactory
   - uid: system.fabric._stateful_service_factory
@@ -609,6 +609,6 @@ references:
     nameWithType: StatefulServiceFactory
     fullName: system.fabric.StatefulServiceFactory
     type: Interface
-    summary: '<p>Stellt eine zustandsbehaftete dienstfactory, die für das Erstellen von Replikaten, der einen bestimmten Typ von einem zustandsbehafteten Dienst zuständig ist. Mit einem zustandsbehafteten Dienst Factorys registriert sind die <xref href="system.fabric._fabric_runtime" data-throw-if-not-resolved="false"></xref> von Diensthosts über <ref refid="" kindref="compound">system.fabric.FabricRuntime#registerStatefulServiceFactory(java.lang.String,system.fabric.StatefulServiceFactory)</ref> oder <ref refid="" kindref="compound">system.fabric.FabricRuntime#registerStatefulServiceFactoryAsync(java.lang.String,system.fabric.StatefulServiceFactory,java.time.Duration)</ref></p>'
+    summary: '<p>Stellt eine zustandsbehaftete dienstfactory, die für das Erstellen von Replikaten, der einen bestimmten Typ von einem zustandsbehafteten Dienst zuständig ist. Mit einem zustandsbehafteten Dienst Factorys registriert sind die <xref uid="system.fabric._fabric_runtime" data-throw-if-not-resolved="false">system.fabric.FabricRuntime</xref> von Diensthosts über <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime#registerStatefulServiceFactory (java.lang.String, system.fabric.StatefulServiceFactory)</xref> oder <xref uid="" data-throw-if-not-resolved="false">system.fabric.FabricRuntime#registerStatefulServiceFactoryAsync(java.lang.String,system.fabric.StatefulServiceFactory,java.time.Duration)</xref></p>'
     syntax:
       content: public interface StatefulServiceFactory

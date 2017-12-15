@@ -11,6 +11,7 @@ items:
       - com.microsoft.azure.servicebus._session_handler_options.SessionHandlerOptions()
       - 'com.microsoft.azure.servicebus._session_handler_options.SessionHandlerOptions(int,boolean,Duration)'
       - 'com.microsoft.azure.servicebus._session_handler_options.SessionHandlerOptions(int,int,boolean,Duration)'
+      - com.microsoft.azure.servicebus._session_handler_options.toString()
     href: com.microsoft.azure.servicebus._session_handler_options.yml
     langs:
       - java
@@ -24,8 +25,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 4
+      startLine: 11
     package: com.microsoft.azure.servicebus
+    summary: <p>Die Verarbeitungsoptionen für den OnSession Handler. </p>
     syntax:
       content: public class SessionHandlerOptions
     inheritance:
@@ -44,12 +46,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 60
+      startLine: 90
     package: com.microsoft.azure.servicebus
-    syntax:
+    summary: |-
+      <p>Ruft die maximale Dauer, anhand derer die Sperre automatisch erneuert wird. Dieser Wert muss größer als die längste Dauer der nachrichtensperre sein; z. B. die LockDuration-Eigenschaft.</p>
+      <p></p>
+    syntax: &ref_3
       content: public Duration getMaxAutoRenewDuration()
       return:
         type: e02a2de0
+        description: '<p>Die maximale Zeitspanne, während die Sperren automatisch verlängert werden. </p>'
   - uid: com.microsoft.azure.servicebus._session_handler_options.getMaxConcurrentCallsPerSession()
     id: getMaxConcurrentCallsPerSession()
     parent: com.microsoft.azure.servicebus._session_handler_options
@@ -64,12 +70,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 55
+      startLine: 81
     package: com.microsoft.azure.servicebus
-    syntax:
+    summary: |-
+      <p>Ruft die maximale Anzahl gleichzeitiger Aufrufe an den Rückruf, den die Meldungsverteilschleife für jede Sitzung initiieren soll.</p>
+      <p></p>
+    syntax: &ref_2
       content: public int getMaxConcurrentCallsPerSession()
       return:
         type: f75371fa
+        description: <p>Die maximale Anzahl gleichzeitiger Aufrufe an den Rückruf. </p>
   - uid: com.microsoft.azure.servicebus._session_handler_options.getMaxConcurrentSessions()
     id: getMaxConcurrentSessions()
     parent: com.microsoft.azure.servicebus._session_handler_options
@@ -84,12 +94,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 51
+      startLine: 72
     package: com.microsoft.azure.servicebus
-    syntax:
+    summary: |-
+      <p>Ruft die maximale Anzahl gleichzeitiger Sitzungen, die die Datapump initiieren soll.</p>
+      <p></p>
+    syntax: &ref_1
       content: public int getMaxConcurrentSessions()
       return:
         type: f75371fa
+        description: <p>Die maximale Anzahl gleichzeitiger Sitzungen </p>
   - uid: com.microsoft.azure.servicebus._session_handler_options.isAutoComplete()
     id: isAutoComplete()
     parent: com.microsoft.azure.servicebus._session_handler_options
@@ -104,12 +118,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 47
+      startLine: 62
     package: com.microsoft.azure.servicebus
-    syntax:
+    summary: |-
+      <p>Gibt an, ob die automatische Vervollständigung festgelegt ist auf "true".</p>
+      <p></p>
+    syntax: &ref_4
       content: public boolean isAutoComplete()
       return:
         type: 4fc6e284
+        description: '<p>"true", die automatisch bei erfolgreicher Ausführung des Vorgangs die Verarbeitung der Nachricht abgeschlossen; andernfalls "false". </p>'
   - uid: com.microsoft.azure.servicebus._session_handler_options.SessionHandlerOptions()
     id: SessionHandlerOptions()
     parent: com.microsoft.azure.servicebus._session_handler_options
@@ -124,8 +142,9 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 15
+      startLine: 29
     package: com.microsoft.azure.servicebus
+    summary: '<p>Standardkonstruktor hat Standardwert Standardwerte <xref uid="com.microsoft.azure.servicebus._session_handler_options.getMaxConcurrentSessions()" data-throw-if-not-resolved="false">SessionHandlerOptions#getMaxConcurrentSessions()</xref> ist 1 Standardeinstellung <xref uid="com.microsoft.azure.servicebus._session_handler_options.getMaxConcurrentCallsPerSession()" data-throw-if-not-resolved="false">SessionHandlerOptions#getMaxConcurrentCallsPerSession()</xref> ist 1 Standardeinstellung <xref uid="com.microsoft.azure.servicebus._session_handler_options.getMaxAutoRenewDuration()" data-throw-if-not-resolved="false"> SessionHandlerOptions#getMaxAutoRenewDuration()</xref> beträgt fünf Minuten Standard <xref uid="com.microsoft.azure.servicebus._session_handler_options.isAutoComplete()" data-throw-if-not-resolved="false">SessionHandlerOptions#isAutoComplete()</xref> ist "true". </p>'
     syntax:
       content: public SessionHandlerOptions()
   - uid: 'com.microsoft.azure.servicebus._session_handler_options.SessionHandlerOptions(int,boolean,Duration)'
@@ -142,15 +161,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 27
+      startLine: 39
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public SessionHandlerOptions(int maxConcurrentSessions, boolean autoComplete, Duration maxAutoRenewDuration)'
       parameters:
         - id: maxConcurrentSessions
           type: f75371fa
+          description: <p>maximale Anzahl gleichzeitiger Sitzungen von der Sitzung Datapump akzeptiert </p>
         - id: autoComplete
           type: 4fc6e284
+          description: '<p>"true", wenn die Datapump Nachricht automatisch ausführen sollten, nachdem OnMessageHandler Aktion abgeschlossen ist. "False" andernfalls. </p>'
         - id: maxAutoRenewDuration
           type: e02a2de0
           description: '<p>- Maximale Dauer, anhand derer der Client die Sperre für die Sitzung erneuern verfolgt, wenn die Verarbeitung von sitzungsnachrichten oder Onclose Aktion vom Handler nicht abgeschlossen wird. </p>'
@@ -168,19 +189,43 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
-      startLine: 39
+      startLine: 50
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public SessionHandlerOptions(int maxConcurrentSessions, int maxConcurrentCallsPerSession, boolean autoComplete, Duration maxAutoRenewDuration)'
       parameters:
         - id: maxConcurrentSessions
           type: f75371fa
+          description: <p>maximale Anzahl gleichzeitiger Sitzungen von der Sitzung Datapump akzeptiert </p>
         - id: maxConcurrentCallsPerSession
           type: f75371fa
+          description: <p>maximale Anzahl gleichzeitiger Aufrufe an den Handler onMessage </p>
         - id: autoComplete
           type: 4fc6e284
+          description: '<p>"true", wenn die Datapump Nachricht automatisch ausführen sollten, nachdem OnMessageHandler Aktion abgeschlossen ist. "False" andernfalls </p>'
         - id: maxAutoRenewDuration
           type: e02a2de0
+          description: '<p>Maximale Dauer, anhand derer der Client die Sperre für die Sitzung erneuern verfolgt, wenn die Verarbeitung von sitzungsnachrichten oder Onclose Aktion vom Handler nicht abgeschlossen wird. </p>'
+  - uid: com.microsoft.azure.servicebus._session_handler_options.toString()
+    id: toString()
+    parent: com.microsoft.azure.servicebus._session_handler_options
+    href: com.microsoft.azure.servicebus._session_handler_options.yml
+    langs:
+      - java
+    name: toString()
+    nameWithType: SessionHandlerOptions.toString()
+    fullName: String com.microsoft.azure.servicebus.SessionHandlerOptions.toString()
+    overload: com.microsoft.azure.servicebus._session_handler_options.toString*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/SessionHandlerOptions.java
+      startLine: 95
+    package: com.microsoft.azure.servicebus
+    syntax:
+      content: public String toString()
+      return:
+        type: '26831127'
 references:
   - uid: com.microsoft.azure.servicebus._session_handler_options.SessionHandlerOptions*
     name: SessionHandlerOptions
@@ -219,3 +264,56 @@ references:
     nameWithType: SessionHandlerOptions.getMaxAutoRenewDuration
     fullName: Duration com.microsoft.azure.servicebus.SessionHandlerOptions.getMaxAutoRenewDuration
     package: com.microsoft.azure.servicebus
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: com.microsoft.azure.servicebus._session_handler_options.toString*
+    name: toString
+    nameWithType: SessionHandlerOptions.toString
+    fullName: String com.microsoft.azure.servicebus.SessionHandlerOptions.toString
+    package: com.microsoft.azure.servicebus
+  - uid: com.microsoft.azure.servicebus._session_handler_options.getMaxConcurrentSessions()
+    parent: com.microsoft.azure.servicebus._session_handler_options
+    href: com.microsoft.azure.servicebus._session_handler_options.yml
+    name: getMaxConcurrentSessions()
+    nameWithType: SessionHandlerOptions.getMaxConcurrentSessions()
+    fullName: int com.microsoft.azure.servicebus.SessionHandlerOptions.getMaxConcurrentSessions()
+    type: Method
+    summary: |-
+      <p>Ruft die maximale Anzahl gleichzeitiger Sitzungen, die die Datapump initiieren soll.</p>
+      <p></p>
+    syntax: *ref_1
+  - uid: com.microsoft.azure.servicebus._session_handler_options.getMaxConcurrentCallsPerSession()
+    parent: com.microsoft.azure.servicebus._session_handler_options
+    href: com.microsoft.azure.servicebus._session_handler_options.yml
+    name: getMaxConcurrentCallsPerSession()
+    nameWithType: SessionHandlerOptions.getMaxConcurrentCallsPerSession()
+    fullName: int com.microsoft.azure.servicebus.SessionHandlerOptions.getMaxConcurrentCallsPerSession()
+    type: Method
+    summary: |-
+      <p>Ruft die maximale Anzahl gleichzeitiger Aufrufe an den Rückruf, den die Meldungsverteilschleife für jede Sitzung initiieren soll.</p>
+      <p></p>
+    syntax: *ref_2
+  - uid: com.microsoft.azure.servicebus._session_handler_options.getMaxAutoRenewDuration()
+    parent: com.microsoft.azure.servicebus._session_handler_options
+    href: com.microsoft.azure.servicebus._session_handler_options.yml
+    name: getMaxAutoRenewDuration()
+    nameWithType: SessionHandlerOptions.getMaxAutoRenewDuration()
+    fullName: Duration com.microsoft.azure.servicebus.SessionHandlerOptions.getMaxAutoRenewDuration()
+    type: Method
+    summary: |-
+      <p>Ruft die maximale Dauer, anhand derer die Sperre automatisch erneuert wird. Dieser Wert muss größer als die längste Dauer der nachrichtensperre sein; z. B. die LockDuration-Eigenschaft.</p>
+      <p></p>
+    syntax: *ref_3
+  - uid: com.microsoft.azure.servicebus._session_handler_options.isAutoComplete()
+    parent: com.microsoft.azure.servicebus._session_handler_options
+    href: com.microsoft.azure.servicebus._session_handler_options.yml
+    name: isAutoComplete()
+    nameWithType: SessionHandlerOptions.isAutoComplete()
+    fullName: boolean com.microsoft.azure.servicebus.SessionHandlerOptions.isAutoComplete()
+    type: Method
+    summary: |-
+      <p>Gibt an, ob die automatische Vervollständigung festgelegt ist auf "true".</p>
+      <p></p>
+    syntax: *ref_4

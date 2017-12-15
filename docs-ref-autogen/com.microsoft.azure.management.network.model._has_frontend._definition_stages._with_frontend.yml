@@ -4,7 +4,15 @@ items:
     id: _with_frontend
     parent: com.microsoft.azure.management.network.model
     children:
-      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.withFrontend(String)
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress(PublicIPAddress)
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress(String)
+      - 'com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet(Network,String)'
+      - 'com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet(String,String)'
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet(Subnet)
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromFrontend(String)
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress()
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress(Creatable<PublicIPAddress>)
+      - com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress(String)
     href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
     langs:
       - java
@@ -15,10 +23,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
-      startLine: 28
+      startLine: 34
     package: com.microsoft.azure.management.network.model
     summary: <p>Die Phase der Definition eines an eine Load Balancer Front-End-ermöglicht. </p>
     syntax:
@@ -26,29 +34,255 @@ items:
       typeParameters:
         - type: c1a5ebc4
           description: <p>die nächste Phase der definition </p>
-  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.withFrontend(String)
-    id: withFrontend(String)
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress(PublicIPAddress)
+    id: fromExistingPublicIPAddress(PublicIPAddress)
     parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
     href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
     langs:
       - java
-    name: withFrontend(String frontendName)
-    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.withFrontend(String frontendName)
-    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.withFrontend(String frontendName)
-    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.withFrontend*
+    name: fromExistingPublicIPAddress(PublicIPAddress publicIPAddress)
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingPublicIPAddress(PublicIPAddress publicIPAddress)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingPublicIPAddress(PublicIPAddress publicIPAddress)
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress*
     type: Method
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
-      startLine: 34
+      startLine: 85
     package: com.microsoft.azure.management.network.model
-    summary: '<p>Gibt an, das Front-End zu verknüpfen. </p>'
+    summary: |-
+      <p>Gibt eine vorhandene öffentliche IP-Adresse den Empfang von Netzwerkdatenverkehr an. </p>
+      <p>Wenn dieses Lastenausgleichsmodul bereits eine Front-End-verweisen auf diese öffentliche IP-Adresse verfügt, ist das Front-End, das verwendet wird. Andernfalls wird einer automatisch benannten neue öffentliche Front-End-implizit auf das Lastenausgleichsmodul erstellt. </p>
     syntax:
-      content: public ReturnT withFrontend(String frontendName)
+      content: public ReturnT fromExistingPublicIPAddress(PublicIPAddress publicIPAddress)
+      parameters:
+        - id: publicIPAddress
+          type: com.microsoft.azure.management.network._public_i_p_address
+          description: <p>eine vorhandene öffentliche IP-Adresse </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress(String)
+    id: fromExistingPublicIPAddress(String)
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: fromExistingPublicIPAddress(String resourceId)
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingPublicIPAddress(String resourceId)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingPublicIPAddress(String resourceId)
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 96
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt eine vorhandene öffentliche IP-Adresse den Empfang von Netzwerkdatenverkehr an. </p>
+      <p>Wenn dieses Lastenausgleichsmodul bereits eine Front-End-verweisen auf diese öffentliche IP-Adresse verfügt, ist das Front-End, das verwendet wird. Andernfalls wird einer automatisch benannten neue öffentliche Front-End-implizit auf das Lastenausgleichsmodul erstellt. </p>
+    syntax:
+      content: public ReturnT fromExistingPublicIPAddress(String resourceId)
+      parameters:
+        - id: resourceId
+          type: '26831127'
+          description: '<p>die Ressourcen-ID, eine vorhandene öffentliche IP-Adresse </p>'
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: 'com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet(Network,String)'
+    id: 'fromExistingSubnet(Network,String)'
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: 'fromExistingSubnet(Network network, String subnetName)'
+    nameWithType: 'HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet(Network network, String subnetName)'
+    fullName: 'ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet(Network network, String subnetName)'
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 108
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt an einem vorhandenen privaten Subnetz Empfang von Netzwerkdatenverkehr aus. </p>
+      <p>Wenn dieses Lastenausgleichsmodul bereits eine Front-End-verweisen auf dieses Subnetz verfügt, ist das Front-End, das verwendet wird. Andernfalls wird einer automatisch benannten neue private Front-End-implizit auf das Lastenausgleichsmodul erstellt. </p>
+    syntax:
+      content: 'public ReturnT fromExistingSubnet(Network network, String subnetName)'
+      parameters:
+        - id: network
+          type: com.microsoft.azure.management.network._network
+          description: <p>ein vorhandenes Netzwerk </p>
+        - id: subnetName
+          type: '26831127'
+          description: <p>der Name von einem vorhandenen Subnetz innerhalb des angegebenen Netzwerks </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: 'com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet(String,String)'
+    id: 'fromExistingSubnet(String,String)'
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: 'fromExistingSubnet(String networkResourceId, String subnetName)'
+    nameWithType: 'HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet(String networkResourceId, String subnetName)'
+    fullName: 'ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet(String networkResourceId, String subnetName)'
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 119
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt an einem vorhandenen privaten Subnetz Empfang von Netzwerkdatenverkehr aus. </p>
+      <p>Wenn dieses Lastenausgleichsmodul bereits eine Front-End-verweisen auf dieses Subnetz verfügt, ist das Front-End, das verwendet wird. Andernfalls wird einer automatisch benannten neue private Front-End-implizit auf das Lastenausgleichsmodul erstellt. </p>
+    syntax:
+      content: 'public ReturnT fromExistingSubnet(String networkResourceId, String subnetName)'
+      parameters:
+        - id: networkResourceId
+          type: '26831127'
+          description: <p>die Ressourcen-ID eines vorhandenen Netzwerks </p>
+        - id: subnetName
+          type: '26831127'
+          description: <p>der Name von einem vorhandenen Subnetz innerhalb des angegebenen Netzwerks </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet(Subnet)
+    id: fromExistingSubnet(Subnet)
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: fromExistingSubnet(Subnet subnet)
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet(Subnet subnet)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet(Subnet subnet)
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 130
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt an einem vorhandenen privaten Subnetz Empfang von Netzwerkdatenverkehr aus. </p>
+      <p>Wenn dieses Lastenausgleichsmodul bereits eine Front-End-verweisen auf dieses Subnetz verfügt, ist das Front-End, das verwendet wird. Andernfalls wird einer automatisch benannten neue private Front-End-implizit auf das Lastenausgleichsmodul erstellt. </p>
+    syntax:
+      content: public ReturnT fromExistingSubnet(Subnet subnet)
+      parameters:
+        - id: subnet
+          type: com.microsoft.azure.management.network._subnet
+          description: <p>einem vorhandenen Subnetz </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromFrontend(String)
+    id: fromFrontend(String)
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: fromFrontend(String frontendName)
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromFrontend(String frontendName)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromFrontend(String frontendName)
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromFrontend*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 41
+    package: com.microsoft.azure.management.network.model
+    summary: '<p>Gibt an, die Front-End-Empfang von Netzwerkdatenverkehr aus. </p>'
+    syntax:
+      content: public ReturnT fromFrontend(String frontendName)
       parameters:
         - id: frontendName
           type: '26831127'
           description: <p>einen vorhandenen Front-End-Namen für dieses Lastenausgleichsmodul </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress()
+    id: fromNewPublicIPAddress()
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: fromNewPublicIPAddress()
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress()
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress()
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 74
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt an, dass Netzwerkdatenverkehr auf eine neue öffentliche IP-Adresse empfangen werden sollen, die automatisch Woth Standardeinstellungen zusammen mit der Load Balancer erstellt werden soll. </p>
+      <p>Eine neue automatisch benannt öffentliche Front-End wird implizit für dieses Lastenausgleichsmodul für jeden solchen neue öffentliche IP-Adresse erstellt werden. </p>
+    syntax:
+      content: public ReturnT fromNewPublicIPAddress()
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress(Creatable<PublicIPAddress>)
+    id: fromNewPublicIPAddress(Creatable<PublicIPAddress>)
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: fromNewPublicIPAddress(Creatable<PublicIPAddress> pipDefinition)
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress(Creatable<PublicIPAddress> pipDefinition)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress(Creatable<PublicIPAddress> pipDefinition)
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 64
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt an, dass Netzwerkdatenverkehr auf eine neue öffentliche IP-Adresse empfangen werden sollen, die zusammen mit der Load Balancer basierend auf der bereitgestellten Definition erstellt werden soll. </p>
+      <p>Eine neue automatisch benannt öffentliche Front-End wird implizit für dieses Lastenausgleichsmodul für jeden solchen neue öffentliche IP-Adresse erstellt werden. </p>
+    syntax:
+      content: public ReturnT fromNewPublicIPAddress(Creatable<PublicIPAddress> pipDefinition)
+      parameters:
+        - id: pipDefinition
+          type: com.microsoft.azure.management.resources.fluentcore.model._creatable78504a52com.microsoft.azure.management.network._public_i_p_addressa08ddfce
+          description: <p>eine Definition für die neue öffentliche IP-Adresse </p>
+      return:
+        type: c1a5ebc4
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress(String)
+    id: fromNewPublicIPAddress(String)
+    parent: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend
+    href: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.yml
+    langs:
+      - java
+    name: fromNewPublicIPAddress(String leafDnsLabel)
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress(String leafDnsLabel)
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress(String leafDnsLabel)
+    overload: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/model/HasFrontend.java
+      startLine: 53
+    package: com.microsoft.azure.management.network.model
+    summary: |-
+      <p>Gibt an, dass Netzwerkdatenverkehr sollten empfangen werden, auf eine neue öffentliche IP-Adresse, die zusammen mit der Load Balancer in der gleichen Region und die Ressourcengruppe erstellt werden unter dem bereitgestellten Endknoten DNS-Bezeichnung, vorausgesetzt, es ist jedoch verfügbar. </p>
+      <p>Eine neue automatisch benannt öffentliche Front-End-implizit auf dieses Lastenausgleichsmodul für jeden solchen neue öffentliche IP-Adresse erstellt werden, achten Sie darauf, eine eindeutige DNS-Bezeichnung verwenden. </p>
+    syntax:
+      content: public ReturnT fromNewPublicIPAddress(String leafDnsLabel)
+      parameters:
+        - id: leafDnsLabel
+          type: '26831127'
+          description: '<p>eindeutige Endknoten DNS-Bezeichnung, die die öffentliche IP-Adresse unter Erstellen </p>'
       return:
         type: c1a5ebc4
         description: <p>die nächste Phase der definition </p>
@@ -61,8 +295,82 @@ references:
     spec.java:
       - name: String
         fullName: String
-  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.withFrontend*
-    name: withFrontend
-    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.withFrontend
-    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.withFrontend
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromFrontend*
+    name: fromFrontend
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromFrontend
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromFrontend
     package: com.microsoft.azure.management.network.model
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromNewPublicIPAddress*
+    name: fromNewPublicIPAddress
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromNewPublicIPAddress
+    package: com.microsoft.azure.management.network.model
+  - uid: com.microsoft.azure.management.resources.fluentcore.model._creatable78504a52com.microsoft.azure.management.network._public_i_p_addressa08ddfce
+    spec.java:
+      - uid: com.microsoft.azure.management.resources.fluentcore.model._creatable
+        name: Creatable
+        fullName: com.microsoft.azure.management.resources.fluentcore.model.Creatable
+        href: com.microsoft.azure.management.resources.fluentcore.model._creatable.yml
+      - name: <
+        fullName: <
+      - uid: com.microsoft.azure.management.network._public_i_p_address
+        name: PublicIPAddress
+        fullName: com.microsoft.azure.management.network.PublicIPAddress
+        href: com.microsoft.azure.management.network._public_i_p_address.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingPublicIPAddress*
+    name: fromExistingPublicIPAddress
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingPublicIPAddress
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingPublicIPAddress
+    package: com.microsoft.azure.management.network.model
+  - uid: com.microsoft.azure.management.network.model._has_frontend._definition_stages._with_frontend.fromExistingSubnet*
+    name: fromExistingSubnet
+    nameWithType: HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet
+    fullName: ReturnT com.microsoft.azure.management.network.model.HasFrontend.DefinitionStages.WithFrontend<ReturnT>.fromExistingSubnet
+    package: com.microsoft.azure.management.network.model
+  - uid: com.microsoft.azure.management.resources.fluentcore.model._creatable
+    parent: com.microsoft.azure.management.resources.fluentcore.model
+    href: com.microsoft.azure.management.resources.fluentcore.model._creatable.yml
+    name: Creatable<T>
+    nameWithType: Creatable<T>
+    fullName: com.microsoft.azure.management.resources.fluentcore.model.Creatable<T>
+    type: Interface
+    summary: |-
+      <p>Die Definition der Ressource, an dem erstellt werden, mithilfe der abschließenden Phase <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">eine Signatures-Auflistung</xref>.</p>
+      <p></p>
+    syntax:
+      content: 'public interface Creatable<T> extends Indexable,HasName'
+      typeParameters:
+        - type: 8ce1ecb9
+          description: <p>der fluent-Typ der zu erstellenden Ressource </p>
+  - uid: com.microsoft.azure.management.network._public_i_p_address
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._public_i_p_address.yml
+    name: PublicIPAddress
+    nameWithType: PublicIPAddress
+    fullName: com.microsoft.azure.management.network.PublicIPAddress
+    type: Interface
+    summary: <p>Öffentliche IP-Adresse. </p>
+    syntax:
+      content: 'public interface PublicIPAddress extends GroupableResource<NetworkManager, PublicIPAddressInner>,Refreshable<PublicIPAddress>,Updatable<PublicIPAddress.Update>'
+  - uid: com.microsoft.azure.management.network._network
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._network.yml
+    name: Network
+    nameWithType: Network
+    fullName: com.microsoft.azure.management.network.Network
+    type: Interface
+    summary: <p>Einstiegspunkt für virtuelle <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: 'public interface Network extends GroupableResource<NetworkManager, VirtualNetworkInner>,Refreshable<Network>,Updatable<Network.Update>'
+  - uid: com.microsoft.azure.management.network._subnet
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._subnet.yml
+    name: Subnet
+    nameWithType: Subnet
+    fullName: com.microsoft.azure.management.network.Subnet
+    type: Interface
+    summary: <p>Eine clientseitige Darstellung eines Subnetzes eines virtuellen Netzwerks. </p>
+    syntax:
+      content: 'public interface Subnet extends HasInner<SubnetInner>,ChildResource<Network>'

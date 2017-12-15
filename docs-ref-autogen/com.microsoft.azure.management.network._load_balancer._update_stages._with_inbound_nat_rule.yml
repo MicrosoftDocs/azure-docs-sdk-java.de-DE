@@ -17,10 +17,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 590
+      startLine: 461
     package: com.microsoft.azure.management.network
     summary: '<p>Die Phase eines Lastenausgleichs aktualisieren definieren, entfernen oder bearbeiten die NAT-Eingangsregeln ermöglicht. </p>'
     syntax:
@@ -39,11 +39,11 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 605
+      startLine: 476
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Beginn der Definition einer neuen NAT-Eingangsregel. </p>
-      <p>Die Definition muss mit einem Aufruf von abgeschlossen werden<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref></p>
+      <p>Die Definition abgeschlossen werden muss, mit einem Aufruf von <xref uid="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false">LoadBalancerInboundNatRule.UpdateDefinitionStages.WithAttach#attach()</xref></p>
     syntax:
       content: public LoadBalancerInboundNatRule.UpdateDefinitionStages.Blank<Update> defineInboundNatRule(String name)
       parameters:
@@ -67,7 +67,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 612
+      startLine: 483
     package: com.microsoft.azure.management.network
     summary: <p>Startet die Beschreibung der Aktualisierung einer vorhandenen eingehenden NAT-Regel an. </p>
     syntax:
@@ -93,7 +93,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 596
+      startLine: 467
     package: com.microsoft.azure.management.network
     summary: <p>Entfernt die angegebene NAT-Eingangsregel aus dem Lastenausgleich. </p>
     syntax:
@@ -146,11 +146,9 @@ references:
     nameWithType: LoadBalancer.Update
     fullName: com.microsoft.azure.management.network.LoadBalancer.Update
     type: Interface
-    summary: |-
-      <p>Die Vorlage für eine Load Balancer Updatevorgang, enthält alle Einstellungen, die geändert werden können. </p>
-      <p>Rufen Sie <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref> beim Übernehmen der Änderungen an der Ressource im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: '<p>Die Vorlage für eine Load Balancer Updatevorgang, enthält alle Einstellungen, die geändert werden können. </p>'
     syntax:
-      content: 'public interface Update extends Appliable<LoadBalancer>,Resource.UpdateWithTags<Update>,LoadBalancer.UpdateStages.WithProbe,LoadBalancer.UpdateStages.WithBackend,LoadBalancer.UpdateStages.WithLoadBalancingRule,LoadBalancer.UpdateStages.WithInternetFrontend,LoadBalancer.UpdateStages.WithInternalFrontend,LoadBalancer.UpdateStages.WithNetworkSubnet,LoadBalancer.UpdateStages.WithInboundNatRule,LoadBalancer.UpdateStages.WithInboundNatPool'
+      content: 'public interface Update extends Appliable<LoadBalancer>,Resource.UpdateWithTags<Update>,LoadBalancer.UpdateStages.WithProbe,LoadBalancer.UpdateStages.WithBackend,LoadBalancer.UpdateStages.WithLoadBalancingRule,LoadBalancer.UpdateStages.WithPublicFrontend,LoadBalancer.UpdateStages.WithPrivateFrontend,LoadBalancer.UpdateStages.WithInboundNatRule,LoadBalancer.UpdateStages.WithInboundNatPool'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()
     parent: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update
     href: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.yml

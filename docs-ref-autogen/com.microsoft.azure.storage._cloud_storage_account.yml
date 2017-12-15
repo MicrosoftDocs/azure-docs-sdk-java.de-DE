@@ -4,9 +4,10 @@ items:
     id: _cloud_storage_account
     parent: com.microsoft.azure.storage
     children:
-      - com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_KEY_NAME()
-      - com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_NAME_NAME()
-      - com.microsoft.azure.storage._cloud_storage_account.BLOB_ENDPOINT_NAME()
+      - com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_KEY_NAME
+      - com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_NAME_NAME
+      - com.microsoft.azure.storage._cloud_storage_account.BLOB_ENDPOINT_NAME
+      - com.microsoft.azure.storage._cloud_storage_account.BLOB_SECONDARY_ENDPOINT_NAME
       - com.microsoft.azure.storage._cloud_storage_account.CloudStorageAccount(final StorageCredentials)
       - 'com.microsoft.azure.storage._cloud_storage_account.CloudStorageAccount(final StorageCredentials,final boolean)'
       - 'com.microsoft.azure.storage._cloud_storage_account.CloudStorageAccount(final StorageCredentials,final boolean,final String)'
@@ -34,10 +35,12 @@ items:
       - com.microsoft.azure.storage._cloud_storage_account.getTableEndpoint()
       - com.microsoft.azure.storage._cloud_storage_account.getTableStorageUri()
       - com.microsoft.azure.storage._cloud_storage_account.parse(final String)
-      - com.microsoft.azure.storage._cloud_storage_account.QUEUE_ENDPOINT_NAME()
+      - com.microsoft.azure.storage._cloud_storage_account.QUEUE_ENDPOINT_NAME
+      - com.microsoft.azure.storage._cloud_storage_account.QUEUE_SECONDARY_ENDPOINT_NAME
       - com.microsoft.azure.storage._cloud_storage_account.setCredentials(final StorageCredentials)
-      - com.microsoft.azure.storage._cloud_storage_account.SHARED_ACCESS_SIGNATURE_NAME()
-      - com.microsoft.azure.storage._cloud_storage_account.TABLE_ENDPOINT_NAME()
+      - com.microsoft.azure.storage._cloud_storage_account.SHARED_ACCESS_SIGNATURE_NAME
+      - com.microsoft.azure.storage._cloud_storage_account.TABLE_ENDPOINT_NAME
+      - com.microsoft.azure.storage._cloud_storage_account.TABLE_SECONDARY_ENDPOINT_NAME
       - com.microsoft.azure.storage._cloud_storage_account.toString()
       - com.microsoft.azure.storage._cloud_storage_account.toString(final boolean)
     href: com.microsoft.azure.storage._cloud_storage_account.yml
@@ -53,15 +56,15 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-storage-java'
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 41
+      startLine: 42
     package: com.microsoft.azure.storage
     summary: <p>Stellt ein Microsoft Azure-Speicherkonto dar. </p>
-    syntax: &ref_1
+    syntax: &ref_4
       content: public class CloudStorageAccount
     inheritance:
       - java.lang.Object
-  - uid: com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_KEY_NAME()
-    id: ACCOUNT_KEY_NAME()
+  - uid: com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_KEY_NAME
+    id: ACCOUNT_KEY_NAME
     parent: com.microsoft.azure.storage._cloud_storage_account
     href: com.microsoft.azure.storage._cloud_storage_account.yml
     langs:
@@ -73,15 +76,15 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 45
+      startLine: 46
     package: com.microsoft.azure.storage
     summary: <p>Stellt den Einstellungsnamen für den kontoschlüssel. </p>
-    syntax:
+    syntax: &ref_2
       content: protected static final String ACCOUNT_KEY_NAME= "AccountKey"
       return:
         type: 3d93591e
-  - uid: com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_NAME_NAME()
-    id: ACCOUNT_NAME_NAME()
+  - uid: com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_NAME_NAME
+    id: ACCOUNT_NAME_NAME
     parent: com.microsoft.azure.storage._cloud_storage_account
     href: com.microsoft.azure.storage._cloud_storage_account.yml
     langs:
@@ -93,15 +96,15 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 50
+      startLine: 51
     package: com.microsoft.azure.storage
     summary: <p>Stellt den Einstellungsnamen für den Kontonamen. </p>
-    syntax:
+    syntax: &ref_1
       content: protected static final String ACCOUNT_NAME_NAME= "AccountName"
       return:
         type: 3d93591e
-  - uid: com.microsoft.azure.storage._cloud_storage_account.BLOB_ENDPOINT_NAME()
-    id: BLOB_ENDPOINT_NAME()
+  - uid: com.microsoft.azure.storage._cloud_storage_account.BLOB_ENDPOINT_NAME
+    id: BLOB_ENDPOINT_NAME
     parent: com.microsoft.azure.storage._cloud_storage_account
     href: com.microsoft.azure.storage._cloud_storage_account.yml
     langs:
@@ -113,11 +116,31 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 75
+      startLine: 76
     package: com.microsoft.azure.storage
     summary: <p>Stellt den Namen der Einstellung für einen benutzerdefinierten Blob-Speicher-Endpunkt dar. </p>
     syntax:
       content: protected static final String BLOB_ENDPOINT_NAME= "BlobEndpoint"
+      return:
+        type: 3d93591e
+  - uid: com.microsoft.azure.storage._cloud_storage_account.BLOB_SECONDARY_ENDPOINT_NAME
+    id: BLOB_SECONDARY_ENDPOINT_NAME
+    parent: com.microsoft.azure.storage._cloud_storage_account
+    href: com.microsoft.azure.storage._cloud_storage_account.yml
+    langs:
+      - java
+    name: BLOB_SECONDARY_ENDPOINT_NAME
+    nameWithType: CloudStorageAccount.BLOB_SECONDARY_ENDPOINT_NAME
+    fullName: final String com.microsoft.azure.storage.CloudStorageAccount.BLOB_SECONDARY_ENDPOINT_NAME
+    type: Field
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
+      startLine: 81
+    package: com.microsoft.azure.storage
+    summary: <p>Stellt den Einstellungsnamen für den sekundären Endpunkt einen benutzerdefinierten Blob-Speicher. </p>
+    syntax:
+      content: protected static final String BLOB_SECONDARY_ENDPOINT_NAME= "BlobSecondaryEndpoint"
       return:
         type: 3d93591e
   - uid: com.microsoft.azure.storage._cloud_storage_account.CloudStorageAccount(final StorageCredentials)
@@ -134,19 +157,19 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 521
+      startLine: 772
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto. </p>
       <p>Mit diesem Konstruktor wird das Objekt unter Verwendung der Standardendpunkte HTTP-Speicher-Dienst erstellt. Die standardmäßigen HTTP-Speicher-Dienst-Endpunkte sind,,, und, wobei der Name des Speicherkontos ist. </p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public CloudStorageAccount(final StorageCredentials storageCredentials)
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt.</p>'
     exceptions:
       - type: '44102508'
         description: <p>Wenn <code>storageCredentials</code> Geben Sie ein ungültiges Konto an. </p>
@@ -164,19 +187,19 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 554
+      startLine: 805
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto und die Standard-Dienstendpunkte über HTTP oder HTTPS entsprechend den Angaben. </p>
       <p>Mit diesem Konstruktor wird das Objekt unter Verwendung der Standardendpunkte für Storage-Dienst erstellt. Der Standard-speicherdienstendpunkte werden:;; und dabei ist der Name des Speicherkontos. Zugriff auf das cloudspeicherkonto möglicherweise über HTTP oder HTTPS, wie durch den Parameter angegeben. </p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final boolean useHttps)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: useHttps
           type: 4dda0764
           description: "<p>\r\n\r\n  <code>true</code>Verwendung von HTTPS für den Speicher den Dienstendpunkten herstellen; andernfalls <code>false</code>.</p>"
@@ -197,19 +220,19 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 583
+      startLine: 834
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto. </p>
       <p>Mit diesem Konstruktor wird das Objekt erstellt, mit der angegebenen HTTP-Speicher Dienst endpunktsuffix (sofern vorhanden, andernfalls der Standardwert verwendet wird).</p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final boolean useHttps, final String endpointSuffix)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: useHttps
           type: 4dda0764
           description: "<p>\r\n\r\n  <code>true</code>Verwendung von HTTPS für den Speicher den Dienstendpunkten herstellen; andernfalls <code>false</code>. </p>"
@@ -233,19 +256,19 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 617
+      startLine: 868
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto. </p>
       <p>Mit diesem Konstruktor wird das Objekt erstellt, mit der angegebenen HTTP-Speicher Dienst endpunktsuffix (sofern vorhanden, andernfalls der Standardwert verwendet wird).</p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final boolean useHttps, final String endpointSuffix, String accountName)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: useHttps
           type: 4dda0764
           description: "<p>\r\n\r\n  <code>true</code>Verwendung von HTTPS für den Speicher den Dienstendpunkten herstellen; andernfalls <code>false</code>. </p>"
@@ -254,7 +277,7 @@ items:
           description: '<p>Eine Zeichenfolge, die EndpointSuffix zu verwenden, wenn alle darstellt. </p>'
         - id: accountName
           type: '26831127'
-          description: '<p>Ein <code>String</code> , enthält der Kontoname. Hiermit werden anstelle von einer <code>null</code> <xref href="com.microsoft.azure.storage._storage_credentials.getAccountName()" data-throw-if-not-resolved="false"></xref>, aber die beiden übereinstimmen, wenn beide nicht sind <code>null</code>.</p>'
+          description: '<p>Ein <code>String</code> , enthält der Kontoname. Hiermit werden anstelle von einer <code>null</code> <xref uid="com.microsoft.azure.storage._storage_credentials.getAccountName()" data-throw-if-not-resolved="false">StorageCredentials#getAccountName()</xref>, aber die beiden übereinstimmen, wenn beide nicht sind <code>null</code>.</p>'
     exceptions:
       - type: '44102508'
         description: <p>Wenn <code>storageCredentials</code> Geben Sie ein ungültiges Konto an. </p>
@@ -272,28 +295,28 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 725
+      startLine: 976
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto und die Dienstendpunkte. </p>
       <p>Verwenden Sie diesen Konstruktor zum Erstellen eines Objekts verwenden benutzerdefinierte Endpunkte in der Fall, in dem Sie einen benutzerdefinierten Domänennamen für Ihr Speicherkonto konfiguriert haben. </p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final StorageUri blobStorageUri, final StorageUri queueStorageUri, final StorageUri tableStorageUri)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: blobStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Blob-Dienstendpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Blob-Dienstendpunkt darstellt. </p>'
         - id: queueStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Warteschlangendienst-Endpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Warteschlangendienst-Endpunkt darstellt. </p>'
         - id: tableStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den tabellendienstendpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den tabellendienstendpunkt darstellt. </p>'
   - uid: 'com.microsoft.azure.storage._cloud_storage_account.CloudStorageAccount(final StorageCredentials,final StorageUri,final StorageUri,final StorageUri,final StorageUri)'
     id: 'CloudStorageAccount(final StorageCredentials,final StorageUri,final StorageUri,final StorageUri,final StorageUri)'
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -308,31 +331,31 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 756
+      startLine: 1007
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto und die Dienstendpunkte. </p>
       <p>Verwenden Sie diesen Konstruktor zum Erstellen eines Objekts verwenden benutzerdefinierte Endpunkte in der Fall, in dem Sie einen benutzerdefinierten Domänennamen für Ihr Speicherkonto konfiguriert haben. </p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final StorageUri blobStorageUri, final StorageUri queueStorageUri, final StorageUri tableStorageUri, final StorageUri fileStorageUri)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: blobStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Blob-Dienstendpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Blob-Dienstendpunkt darstellt. </p>'
         - id: queueStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Warteschlangendienst-Endpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Warteschlangendienst-Endpunkt darstellt. </p>'
         - id: tableStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den tabellendienstendpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den tabellendienstendpunkt darstellt. </p>'
         - id: fileStorageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den dateiendienstendpunkt darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den dateiendienstendpunkt darstellt. </p>'
   - uid: 'com.microsoft.azure.storage._cloud_storage_account.CloudStorageAccount(final StorageCredentials,final URI,final URI,final URI)'
     id: 'CloudStorageAccount(final StorageCredentials,final URI,final URI,final URI)'
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -347,19 +370,19 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 667
+      startLine: 918
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto und die Dienstendpunkte. </p>
       <p>Verwenden Sie diesen Konstruktor zum Erstellen eines Objekts verwenden benutzerdefinierte Endpunkte in der Fall, in dem Sie einen benutzerdefinierten Domänennamen für Ihr Speicherkonto konfiguriert haben. </p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final URI blobEndpoint, final URI queueEndpoint, final URI tableEndpoint)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: blobEndpoint
           type: bac42120
           description: '<p>Ein <code>java.net.URI</code> Objekt, das den Blob-Dienstendpunkt darstellt. </p>'
@@ -383,19 +406,19 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 697
+      startLine: 948
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt eine Instanz der Klasse mithilfe der Anmeldeinformationen für angegebenes Konto und die Dienstendpunkte. </p>
       <p>Verwenden Sie diesen Konstruktor zum Erstellen eines Objekts verwenden benutzerdefinierte Endpunkte in der Fall, in dem Sie einen benutzerdefinierten Domänennamen für Ihr Speicherkonto konfiguriert haben. </p>
-      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <ref refid="" kindref="compound">CloudBlobClient</ref> Objekt.</p>
+      <p>Beim Erstellen des Objekts angegebenen Anmeldeinformationen werden verwendet, um alle weiteren Anforderungen für Ressourcen zu authentifizieren, die über das Objekt zugegriffen wird, oder ein Clientobjekt daraus erstellt. Ein Clientobjekt möglicherweise eine <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'public CloudStorageAccount(final StorageCredentials storageCredentials, final URI blobEndpoint, final URI queueEndpoint, final URI tableEndpoint, final URI fileEndpoint)'
       parameters:
         - id: storageCredentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen zur Authentifizierung dieses Kontos darstellt. </p>'
         - id: blobEndpoint
           type: bac42120
           description: '<p>Ein <code>java.net.URI</code> Objekt, das den Blob-Dienstendpunkt darstellt. </p>'
@@ -422,7 +445,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 773
+      startLine: 1024
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt einen neuen Analytics-Dienst-Client.</p>
@@ -446,7 +469,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 795
+      startLine: 1046
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt einen neuen Blob-Dienstclient.</p>
@@ -455,7 +478,7 @@ items:
       content: public CloudBlobClient createCloudBlobClient()
       return:
         type: com.microsoft.azure.storage.blob._cloud_blob_client
-        description: '<p>Ein <ref refid="" kindref="compound">CloudBlobClient</ref> , die die Cloud Blob Client darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CloudBlobClient</xref> , die die Cloud Blob Client darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.createCloudFileClient()
     id: createCloudFileClient()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -470,7 +493,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 813
+      startLine: 1064
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt einen neue File-Dienstclient.</p>
@@ -479,7 +502,7 @@ items:
       content: public CloudFileClient createCloudFileClient()
       return:
         type: com.microsoft.azure.storage.file._cloud_file_client
-        description: '<p>Ein <ref refid="" kindref="compound">CloudFileClient</ref> , die die Cloud Datei Client darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CloudFileClient</xref> , die die Cloud Datei Client darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.createCloudQueueClient()
     id: createCloudQueueClient()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -494,7 +517,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 835
+      startLine: 1086
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt einen neue Warteschlangen-Dienstclient.</p>
@@ -518,7 +541,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 857
+      startLine: 1108
     package: com.microsoft.azure.storage
     summary: |-
       <p>Erstellt einen neue Tabelle-Dienstclient.</p>
@@ -542,7 +565,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 995
+      startLine: 1246
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt eine SAS für das Konto zurück.</p>
@@ -552,7 +575,7 @@ items:
       parameters:
         - id: policy
           type: com.microsoft.azure.storage._shared_access_account_policy
-          description: <p>Ein <xref href="com.microsoft.azure.storage._shared_access_account_policy" data-throw-if-not-resolved="false"></xref> die Zugriffsrichtlinie für die SAS angeben.</p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._shared_access_account_policy" data-throw-if-not-resolved="false">SharedAccessAccountPolicy</xref> die Zugriffsrichtlinie für die SAS angeben.</p>
       return:
         type: '26831127'
         description: <p>Die zurückgegebene Abfragezeichenfolge enthält das vorangestellte Fragezeichen. </p>
@@ -575,7 +598,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 880
+      startLine: 1131
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Blob-Dienst für das Speicherkonto zurück. Diese Methode wird nicht unterstützt, wenn Sie SAS-Signatur-Anmeldeinformationen verwenden.</p>
@@ -599,7 +622,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 894
+      startLine: 1145
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Blob-Dienst für das Speicherkonto zurück. Diese Methode wird nicht unterstützt, wenn Sie SAS-Signatur-Anmeldeinformationen verwenden.</p>
@@ -608,7 +631,7 @@ items:
       content: public StorageUri getBlobStorageUri()
       return:
         type: com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Blob-Dienstendpunkt, der diesem Konto zugeordneten darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Blob-Dienstendpunkt, der diesem Konto zugeordneten darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.getCredentials()
     id: getCredentials()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -623,7 +646,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 903
+      startLine: 1154
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt die Anmeldeinformationen für das Speicherkonto zurück.</p>
@@ -632,7 +655,7 @@ items:
       content: public StorageCredentials getCredentials()
       return:
         type: com.microsoft.azure.storage._storage_credentials
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das die Anmeldeinformationen für dieses Speicherkonto darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das die Anmeldeinformationen für dieses Speicherkonto darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.getDevelopmentStorageAccount()
     id: getDevelopmentStorageAccount()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -647,16 +670,16 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 149
+      startLine: 170
     package: com.microsoft.azure.storage
     summary: |-
-      <p>Gibt eine <xref href="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false"></xref> Objekt, das die Development-speicheranmeldeinformationen darstellt. Sekundäre Endpunkte sind standardmäßig aktiviert.</p>
+      <p>Gibt eine <xref uid="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false">CloudStorageAccount</xref> Objekt, das die Development-speicheranmeldeinformationen darstellt. Sekundäre Endpunkte sind standardmäßig aktiviert.</p>
       <p></p>
     syntax:
       content: public static CloudStorageAccount getDevelopmentStorageAccount()
       return:
         type: com.microsoft.azure.storage._cloud_storage_account
-        description: <p>Ein <xref href="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false"></xref> Objekt für die Entwicklung Storage-Anmeldeinformationen. </p>
+        description: <p>Ein <xref uid="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false">CloudStorageAccount</xref> Objekt für die Entwicklung Storage-Anmeldeinformationen. </p>
   - uid: com.microsoft.azure.storage._cloud_storage_account.getDevelopmentStorageAccount(final URI)
     id: getDevelopmentStorageAccount(final URI)
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -671,10 +694,10 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 172
+      startLine: 193
     package: com.microsoft.azure.storage
     summary: |-
-      <p>Gibt eine <xref href="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false"></xref> Objekt, das die Development Storage-Anmeldeinformationen mit den angegebenen Proxy-URI darstellt. Sekundäre Endpunkte sind standardmäßig aktiviert.</p>
+      <p>Gibt eine <xref uid="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false">CloudStorageAccount</xref> Objekt, das die Development Storage-Anmeldeinformationen mit den angegebenen Proxy-URI darstellt. Sekundäre Endpunkte sind standardmäßig aktiviert.</p>
       <p></p>
     syntax:
       content: public static CloudStorageAccount getDevelopmentStorageAccount(final URI proxyUri)
@@ -684,7 +707,7 @@ items:
           description: '<p>Ein <code>java.net.URI</code> Objekt, das die Proxy-Endpunktes für verwenden darstellt. Angeben von <code>null</code> verwenden Sie den Standardnamen <code><ulink url="http://127.0.0.1">http://127.0.0.1</ulink></code>.</p>'
       return:
         type: com.microsoft.azure.storage._cloud_storage_account
-        description: <p>Ein <xref href="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false"></xref> Objekt für die Entwicklung Storage-Anmeldeinformationen.</p>
+        description: <p>Ein <xref uid="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false">CloudStorageAccount</xref> Objekt für die Entwicklung Storage-Anmeldeinformationen.</p>
     exceptions:
       - type: '44102508'
         description: <p>Wenn Sie der Ressourcen-URI ist ungültig. </p>
@@ -702,7 +725,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 911
+      startLine: 1162
     package: com.microsoft.azure.storage
     summary: '<p>Wenn ein endpunktsuffix angegeben wurde, zurückgeben </p>'
     syntax:
@@ -724,7 +747,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 921
+      startLine: 1172
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Dateidienst für das Speicherkonto zurück. Diese Methode wird nicht unterstützt, wenn Sie SAS-Signatur-Anmeldeinformationen verwenden.</p>
@@ -748,7 +771,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 935
+      startLine: 1186
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Dateidienst für das Speicherkonto zurück. Diese Methode wird nicht unterstützt, wenn Sie SAS-Signatur-Anmeldeinformationen verwenden.</p>
@@ -757,7 +780,7 @@ items:
       content: public StorageUri getFileStorageUri()
       return:
         type: com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das die diesem Konto zugeordneten Dateidienst-Endpunkt darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die diesem Konto zugeordneten Dateidienst-Endpunkt darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.getQueueEndpoint()
     id: getQueueEndpoint()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -772,7 +795,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 944
+      startLine: 1195
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Warteschlangendienst für das Speicherkonto zurück.</p>
@@ -796,7 +819,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 957
+      startLine: 1208
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Warteschlangendienst für das Speicherkonto zurück.</p>
@@ -805,7 +828,7 @@ items:
       content: public StorageUri getQueueStorageUri()
       return:
         type: com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den Warteschlangendienst-Endpunkt, der diesem Konto zugeordneten darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den Warteschlangendienst-Endpunkt, der diesem Konto zugeordneten darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.getTableEndpoint()
     id: getTableEndpoint()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -820,7 +843,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 966
+      startLine: 1217
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Tabellendienst für das Speicherkonto zurück.</p>
@@ -829,7 +852,7 @@ items:
       content: public URI getTableEndpoint()
       return:
         type: '62304784'
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> -Objekt, das diesem Konto zugeordneten Tabellenspeicherdienst-Endpunkt darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> -Objekt, das diesem Konto zugeordneten Tabellenspeicherdienst-Endpunkt darstellt. </p>'
   - uid: com.microsoft.azure.storage._cloud_storage_account.getTableStorageUri()
     id: getTableStorageUri()
     parent: com.microsoft.azure.storage._cloud_storage_account
@@ -844,7 +867,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 979
+      startLine: 1230
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt den Endpunkt für den Tabellendienst für das Speicherkonto zurück.</p>
@@ -868,12 +891,12 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 234
+      startLine: 255
     package: com.microsoft.azure.storage
     summary: |-
       <p>Analysiert eine Verbindungszeichenfolge, und gibt Sie ein Cloud-Speicherkonto erstellt, aus der Verbindungszeichenfolge zurück. </p>
       <p>Die Verbindungszeichenfolge muss der <ulink url="http://msdn.microsoft.com/library/azure/ee758697.aspx">Azure Verbindungszeichenfolge</ulink> Format. </p>
-      <p>Beachten Sie, dass zwar eine Verbindungszeichenfolge ein SAS-Token enthalten kann, es oft einfacher zu verwenden, ist die <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.CloudBlobContainer(final URI)" data-throw-if-not-resolved="false"></xref>, <xref href="com.microsoft.azure.storage.queue._cloud_queue.CloudQueue(final URI)" data-throw-if-not-resolved="false"></xref>, <xref href="com.microsoft.azure.storage.table._cloud_table.CloudTable(final URI)" data-throw-if-not-resolved="false"></xref> Konstruktoren direkt. Zu diesem Zweck erstellen Sie eine <xref href="com.microsoft.azure.storage._storage_credentials_shared_access_signature.StorageCredentialsSharedAccessSignature(final String)" data-throw-if-not-resolved="false"></xref> Objekt mit der SAS-token ist, verwenden die <xref href="com.microsoft.azure.storage._storage_credentials.transformUri(final URI)" data-throw-if-not-resolved="false"></xref> Methode für den Container Warteschlange oder Tabelle URI, und klicken Sie dann diesen URI verwenden, um das Objekt zu erstellen.</p>
+      <p>Beachten Sie, dass zwar eine Verbindungszeichenfolge ein SAS-Token enthalten kann, es oft einfacher zu verwenden, ist die <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.CloudBlobContainer(final URI)" data-throw-if-not-resolved="false">CloudBlobContainer#CloudBlobContainer(URI)</xref>, <xref uid="com.microsoft.azure.storage.queue._cloud_queue.CloudQueue(final URI)" data-throw-if-not-resolved="false">CloudQueue#CloudQueue(URI)</xref>, <xref uid="com.microsoft.azure.storage.table._cloud_table.CloudTable(final URI)" data-throw-if-not-resolved="false">CloudTable # CloudTable(URI)</xref> Konstruktoren direkt. Zu diesem Zweck erstellen Sie eine <xref uid="com.microsoft.azure.storage._storage_credentials_shared_access_signature.StorageCredentialsSharedAccessSignature(final String)" data-throw-if-not-resolved="false">StorageCredentialsSharedAccessSignature#StorageCredentialsSharedAccessSignature(String)</xref> Objekt mit der SAS-token ist, verwenden die <xref uid="com.microsoft.azure.storage._storage_credentials.transformUri(final URI)" data-throw-if-not-resolved="false">StorageCredentialsSharedAccessSignature # transformUri(URI)</xref> Methode für den Container Warteschlange oder Tabelle URI, und klicken Sie dann diesen URI verwenden, um das Objekt zu erstellen.</p>
       <p></p>
     syntax:
       content: public static CloudStorageAccount parse(final String connectionString)
@@ -883,14 +906,14 @@ items:
           description: '<p>Ein <code>String</code> , die die zu analysierende Verbindungszeichenfolge darstellt.</p>'
       return:
         type: com.microsoft.azure.storage._cloud_storage_account
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false"></xref> -Objekt, das cloudspeicherkonto erstellt aus den in der Verbindungszeichenfolge bereitgestellten Werten darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._cloud_storage_account" data-throw-if-not-resolved="false">CloudStorageAccount</xref> -Objekt, das cloudspeicherkonto erstellt aus den in der Verbindungszeichenfolge bereitgestellten Werten darstellt.</p>'
     exceptions:
       - type: e333ca4f
         description: <p>Wenn Anmeldeinformationen in der Verbindungszeichenfolge einen ungültigen Schlüssel enthalten. </p>
       - type: '44102508'
         description: <p>Wenn die Verbindungszeichenfolge einen ungültigen URI angegeben. </p>
-  - uid: com.microsoft.azure.storage._cloud_storage_account.QUEUE_ENDPOINT_NAME()
-    id: QUEUE_ENDPOINT_NAME()
+  - uid: com.microsoft.azure.storage._cloud_storage_account.QUEUE_ENDPOINT_NAME
+    id: QUEUE_ENDPOINT_NAME
     parent: com.microsoft.azure.storage._cloud_storage_account
     href: com.microsoft.azure.storage._cloud_storage_account.yml
     langs:
@@ -902,11 +925,31 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 126
+      startLine: 137
     package: com.microsoft.azure.storage
     summary: <p>Stellt den Namen der Einstellung für eine benutzerdefinierte Warteschlangendienst-Endpunkt dar. </p>
     syntax:
       content: protected static final String QUEUE_ENDPOINT_NAME= "QueueEndpoint"
+      return:
+        type: 3d93591e
+  - uid: com.microsoft.azure.storage._cloud_storage_account.QUEUE_SECONDARY_ENDPOINT_NAME
+    id: QUEUE_SECONDARY_ENDPOINT_NAME
+    parent: com.microsoft.azure.storage._cloud_storage_account
+    href: com.microsoft.azure.storage._cloud_storage_account.yml
+    langs:
+      - java
+    name: QUEUE_SECONDARY_ENDPOINT_NAME
+    nameWithType: CloudStorageAccount.QUEUE_SECONDARY_ENDPOINT_NAME
+    fullName: final String com.microsoft.azure.storage.CloudStorageAccount.QUEUE_SECONDARY_ENDPOINT_NAME
+    type: Field
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
+      startLine: 142
+    package: com.microsoft.azure.storage
+    summary: <p>Stellt den Einstellungsnamen für eine benutzerdefinierte Warteschlange für sekundäre Endpunkt. </p>
+    syntax:
+      content: protected static final String QUEUE_SECONDARY_ENDPOINT_NAME= "QueueSecondaryEndpoint"
       return:
         type: 3d93591e
   - uid: com.microsoft.azure.storage._cloud_storage_account.setCredentials(final StorageCredentials)
@@ -923,10 +966,10 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 1116
+      startLine: 1368
     package: com.microsoft.azure.storage
     summary: |-
-      <p>Legt die <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> mit diesem Konto zu verwenden. Warnung: nur zur internen Verwendung, können als Aktualisierung die Anmeldeinformationen für ein neues Konto bereits vorhandene Objekte für ungültig zu erklären.</p>
+      <p>Legt die <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> mit diesem Konto zu verwenden. Warnung: nur zur internen Verwendung, können als Aktualisierung die Anmeldeinformationen für ein neues Konto bereits vorhandene Objekte für ungültig zu erklären.</p>
       <p></p>
     syntax:
       content: protected void setCredentials(final StorageCredentials credentials)
@@ -934,8 +977,8 @@ items:
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
           description: <p>die Anmeldeinformationen festlegen </p>
-  - uid: com.microsoft.azure.storage._cloud_storage_account.SHARED_ACCESS_SIGNATURE_NAME()
-    id: SHARED_ACCESS_SIGNATURE_NAME()
+  - uid: com.microsoft.azure.storage._cloud_storage_account.SHARED_ACCESS_SIGNATURE_NAME
+    id: SHARED_ACCESS_SIGNATURE_NAME
     parent: com.microsoft.azure.storage._cloud_storage_account
     href: com.microsoft.azure.storage._cloud_storage_account.yml
     langs:
@@ -947,15 +990,15 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 131
+      startLine: 147
     package: com.microsoft.azure.storage
     summary: <p>Stellt den Einstellungsnamen für einen SAS-Schlüssel. </p>
-    syntax:
+    syntax: &ref_3
       content: protected static final String SHARED_ACCESS_SIGNATURE_NAME= "SharedAccessSignature"
       return:
         type: 3d93591e
-  - uid: com.microsoft.azure.storage._cloud_storage_account.TABLE_ENDPOINT_NAME()
-    id: TABLE_ENDPOINT_NAME()
+  - uid: com.microsoft.azure.storage._cloud_storage_account.TABLE_ENDPOINT_NAME
+    id: TABLE_ENDPOINT_NAME
     parent: com.microsoft.azure.storage._cloud_storage_account
     href: com.microsoft.azure.storage._cloud_storage_account.yml
     langs:
@@ -967,11 +1010,31 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 136
+      startLine: 152
     package: com.microsoft.azure.storage
     summary: <p>Stellt den Namen der Einstellung für eine benutzerdefinierte Tabelle speicherendpunkt dar. </p>
     syntax:
       content: protected static final String TABLE_ENDPOINT_NAME= "TableEndpoint"
+      return:
+        type: 3d93591e
+  - uid: com.microsoft.azure.storage._cloud_storage_account.TABLE_SECONDARY_ENDPOINT_NAME
+    id: TABLE_SECONDARY_ENDPOINT_NAME
+    parent: com.microsoft.azure.storage._cloud_storage_account
+    href: com.microsoft.azure.storage._cloud_storage_account.yml
+    langs:
+      - java
+    name: TABLE_SECONDARY_ENDPOINT_NAME
+    nameWithType: CloudStorageAccount.TABLE_SECONDARY_ENDPOINT_NAME
+    fullName: final String com.microsoft.azure.storage.CloudStorageAccount.TABLE_SECONDARY_ENDPOINT_NAME
+    type: Field
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
+      startLine: 157
+    package: com.microsoft.azure.storage
+    summary: <p>Stellt den Einstellungsnamen für eine benutzerdefinierte Tabelle Speicher sekundären Endpunkt. </p>
+    syntax:
+      content: protected static final String TABLE_SECONDARY_ENDPOINT_NAME= "TableSecondaryEndpoint"
       return:
         type: 3d93591e
   - uid: com.microsoft.azure.storage._cloud_storage_account.toString()
@@ -988,7 +1051,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 1015
+      startLine: 1266
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt eine Verbindungszeichenfolge für dieses Speicherkonto ohne vertrauliche Daten zurück.</p>
@@ -1012,7 +1075,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/CloudStorageAccount.java
-      startLine: 1028
+      startLine: 1279
     package: com.microsoft.azure.storage
     summary: |-
       <p>Gibt eine Verbindungszeichenfolge für dieses Speicherkonto optional mit vertraulichen Daten zurück.</p>
@@ -1176,6 +1239,33 @@ references:
     nameWithType: CloudStorageAccount.setCredentials
     fullName: void com.microsoft.azure.storage.CloudStorageAccount.setCredentials
     package: com.microsoft.azure.storage
+  - uid: com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_NAME_NAME
+    parent: com.microsoft.azure.storage._cloud_storage_account
+    href: com.microsoft.azure.storage._cloud_storage_account.yml
+    name: ACCOUNT_NAME_NAME
+    nameWithType: CloudStorageAccount.ACCOUNT_NAME_NAME
+    fullName: final String com.microsoft.azure.storage.CloudStorageAccount.ACCOUNT_NAME_NAME
+    type: Field
+    summary: <p>Stellt den Einstellungsnamen für den Kontonamen. </p>
+    syntax: *ref_1
+  - uid: com.microsoft.azure.storage._cloud_storage_account.ACCOUNT_KEY_NAME
+    parent: com.microsoft.azure.storage._cloud_storage_account
+    href: com.microsoft.azure.storage._cloud_storage_account.yml
+    name: ACCOUNT_KEY_NAME
+    nameWithType: CloudStorageAccount.ACCOUNT_KEY_NAME
+    fullName: final String com.microsoft.azure.storage.CloudStorageAccount.ACCOUNT_KEY_NAME
+    type: Field
+    summary: <p>Stellt den Einstellungsnamen für den kontoschlüssel. </p>
+    syntax: *ref_2
+  - uid: com.microsoft.azure.storage._cloud_storage_account.SHARED_ACCESS_SIGNATURE_NAME
+    parent: com.microsoft.azure.storage._cloud_storage_account
+    href: com.microsoft.azure.storage._cloud_storage_account.yml
+    name: SHARED_ACCESS_SIGNATURE_NAME
+    nameWithType: CloudStorageAccount.SHARED_ACCESS_SIGNATURE_NAME
+    fullName: final String com.microsoft.azure.storage.CloudStorageAccount.SHARED_ACCESS_SIGNATURE_NAME
+    type: Field
+    summary: <p>Stellt den Einstellungsnamen für einen SAS-Schlüssel. </p>
+    syntax: *ref_3
   - uid: com.microsoft.azure.storage._storage_uri
     parent: com.microsoft.azure.storage
     href: com.microsoft.azure.storage._storage_uri.yml
@@ -1193,7 +1283,7 @@ references:
     nameWithType: StorageCredentials
     fullName: com.microsoft.azure.storage.StorageCredentials
     type: Class
-    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false"></xref> Klassen. </p>
+    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref uid="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false">StorageCredentialsAccountAndKey</xref> und <xref uid="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false">StorageCredentialsSharedAccessSignature</xref> Klassen. </p>
     syntax:
       content: public class StorageCredentials
   - uid: com.microsoft.azure.storage._cloud_storage_account
@@ -1204,7 +1294,7 @@ references:
     fullName: com.microsoft.azure.storage.CloudStorageAccount
     type: Class
     summary: <p>Stellt ein Microsoft Azure-Speicherkonto dar. </p>
-    syntax: *ref_1
+    syntax: *ref_4
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.CloudBlobContainer(final URI)
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
     href: com.microsoft.azure.storage.blob._cloud_blob_container.yml
@@ -1358,7 +1448,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt einen Dienstclient für den Zugriff auf Microsoft Azure-Tabellendienst bereit. </p>
-      <p>Die <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Klasse kapselt den Basis-URI für den Dienstendpunkt für die Tabelle und die Anmeldeinformationen für den Zugriff auf das Speicherkonto, und bietet Methoden zum Erstellen, löschen, auflisten und Abfragen von Tabellen sowie Methoden für Tabellenentitäten Vorgänge und Abfragen auszuführen. Diese Methoden rufen Storage-Dienst-REST-API-Vorgänge, um die Anforderungen und die zurückgegebenen Ergebnisse zu erhalten. </p>
+      <p>Die <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Klasse kapselt den Basis-URI für den Dienstendpunkt für die Tabelle und die Anmeldeinformationen für den Zugriff auf das Speicherkonto, und bietet Methoden zum Erstellen, löschen, auflisten und Abfragen von Tabellen sowie der Methoden auszuführen Vorgänge und Tabellenentitäten Abfragen. Diese Methoden rufen Storage-Dienst-REST-API-Vorgänge, um die Anforderungen und die zurückgegebenen Ergebnisse zu erhalten. </p>
       <p>Ein Dienstendpunkt für die Tabelle ist die Basis-URI für tabellendienstressourcen, einschließlich der DNS-Name des Speicherkontos: <br /><br />
 
        Weitere Informationen finden Sie im MSDN-Thema <ulink url="http://msdn.microsoft.com/en-us/library/azure/dd179360.aspx">Adressieren von Tabellendienstressourcen</ulink>. </p>

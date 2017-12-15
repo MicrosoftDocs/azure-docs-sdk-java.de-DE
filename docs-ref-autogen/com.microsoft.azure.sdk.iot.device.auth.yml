@@ -3,7 +3,16 @@ items:
   - uid: com.microsoft.azure.sdk.iot.device.auth
     id: auth
     children:
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_certificate_manager
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_s_s_l_context
       - com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_authentication_provider
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_hardware_authentication_provider
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_software_authentication_provider
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_authentication_provider
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_hardware_authentication_provider
+      - com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_software_authentication_provider
       - com.microsoft.azure.sdk.iot.device.auth._signature
       - com.microsoft.azure.sdk.iot.device.auth._signature_helper
     href: com.microsoft.azure.sdk.iot.device.auth.yml
@@ -15,15 +24,24 @@ items:
     type: Namespace
     source:
       remote:
-        path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/auth/IotHubSasToken.java
+        path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/auth/IotHubCertificateManager.java
         branch: master
         repo: 'https://github.com/Azure/azure-iot-sdk-java'
-      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/auth/IotHubSasToken.java
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/auth/IotHubCertificateManager.java
       startLine: 3
     summary: <p>Wird ein Gerät an einen IoT Hub über SAS-Token authentifiziert. </p>
     syntax:
       content: package com.microsoft.azure.sdk.iot.device.auth
 references:
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_certificate_manager
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_certificate_manager.yml
+    name: IotHubCertificateManager
+    nameWithType: IotHubCertificateManager
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubCertificateManager
+    type: Class
+    syntax:
+      content: public class IotHubCertificateManager
   - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token
     parent: com.microsoft.azure.sdk.iot.device.auth
     href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token.yml
@@ -34,6 +52,78 @@ references:
     summary: <p>Gewährt den Zugriff von Geräten an einen IoT Hub für die angegebene Zeitspanne. </p>
     syntax:
       content: public class IotHubSasToken
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_authentication_provider
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_authentication_provider.yml
+    name: IotHubSasTokenAuthenticationProvider
+    nameWithType: IotHubSasTokenAuthenticationProvider
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubSasTokenAuthenticationProvider
+    type: Class
+    syntax:
+      content: public class IotHubSasTokenAuthenticationProvider
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_hardware_authentication_provider
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_hardware_authentication_provider.yml
+    name: IotHubSasTokenHardwareAuthenticationProvider
+    nameWithType: IotHubSasTokenHardwareAuthenticationProvider
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubSasTokenHardwareAuthenticationProvider
+    type: Class
+    syntax:
+      content: public class IotHubSasTokenHardwareAuthenticationProvider extends IotHubSasTokenAuthenticationProvider
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_software_authentication_provider
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_sas_token_software_authentication_provider.yml
+    name: IotHubSasTokenSoftwareAuthenticationProvider
+    nameWithType: IotHubSasTokenSoftwareAuthenticationProvider
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubSasTokenSoftwareAuthenticationProvider
+    type: Class
+    syntax:
+      content: public class IotHubSasTokenSoftwareAuthenticationProvider extends IotHubSasTokenAuthenticationProvider
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_s_s_l_context
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_s_s_l_context.yml
+    name: IotHubSSLContext
+    nameWithType: IotHubSSLContext
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubSSLContext
+    type: Class
+    syntax:
+      content: public class IotHubSSLContext
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509.yml
+    name: IotHubX509
+    nameWithType: IotHubX509
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubX509
+    type: Class
+    syntax:
+      content: public class IotHubX509
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_authentication_provider
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_authentication_provider.yml
+    name: IotHubX509AuthenticationProvider
+    nameWithType: IotHubX509AuthenticationProvider
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubX509AuthenticationProvider
+    type: Class
+    syntax:
+      content: public class IotHubX509AuthenticationProvider
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_hardware_authentication_provider
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_hardware_authentication_provider.yml
+    name: IotHubX509HardwareAuthenticationProvider
+    nameWithType: IotHubX509HardwareAuthenticationProvider
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubX509HardwareAuthenticationProvider
+    type: Class
+    syntax:
+      content: public class IotHubX509HardwareAuthenticationProvider extends IotHubX509AuthenticationProvider
+  - uid: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_software_authentication_provider
+    parent: com.microsoft.azure.sdk.iot.device.auth
+    href: com.microsoft.azure.sdk.iot.device.auth._iot_hub_x509_software_authentication_provider.yml
+    name: IotHubX509SoftwareAuthenticationProvider
+    nameWithType: IotHubX509SoftwareAuthenticationProvider
+    fullName: com.microsoft.azure.sdk.iot.device.auth.IotHubX509SoftwareAuthenticationProvider
+    type: Class
+    syntax:
+      content: public class IotHubX509SoftwareAuthenticationProvider extends IotHubX509AuthenticationProvider
   - uid: com.microsoft.azure.sdk.iot.device.auth._signature
     parent: com.microsoft.azure.sdk.iot.device.auth
     href: com.microsoft.azure.sdk.iot.device.auth._signature.yml

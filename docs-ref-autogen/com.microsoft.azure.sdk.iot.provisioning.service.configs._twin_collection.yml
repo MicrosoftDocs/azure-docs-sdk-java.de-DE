@@ -1,0 +1,429 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    id: _twin_collection
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    children:
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getVersion()
+      - 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.put(String,Object)'
+      - 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.putAll(Map<? extends String, ?>)'
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.toJsonElement()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection()
+      - 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection(Map<? extends String, Object>)'
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: TwinCollection
+    nameWithType: TwinCollection
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection
+    type: Class
+    source:
+      remote: &ref_0
+        path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-iot-sdk-java'
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 96
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>Darstellung einer einzelnen und-Auflistung für die Bereitstellung.</p>\n<p>Die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> ist eine Erweiterung der eine<code>HashMap \r\n    </code> von<code>String \r\n    </code> und <code>Object \r\n    </code> Mechanismus für die versionsverwaltung für einzelne und allgemeine enthalten.</p>\n<p>Durch die Definition und die<code>Object \r\n    </code> können enthalten die Typen von<code>Boolean \r\n    </code> , <code>Number \r\n    </code> ,<code>String \r\n    </code> ,<code>Object \r\n    </code> , oder eine Sub-TwinCollection, aber sie Typen, die dem Benutzer oder Arrays definiert werden kann.</p>\n<p>Ein <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> kann bis zu 5 Ebenen des Sub TwinCollections enthalten. Einmal die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> ist eine Erweiterung von der<code>HashMap \r\n    </code> , beide <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> sowie dessen Sub-TwinCollections Zuordnung der Zeichenfolge und Objekt umgewandelt werden, kann.</p>\n<p>Die Auflistung wird im Rest-API als JSON-im Text dargestellt. Darf keine Metadaten enthalten oder kann (identifiziert durch die <b> $ </b> -Zeichen am Anfang des Schlüssels.</p>\n<p>Der Ziel-Metadaten, die Zeichen <b> $ </b> ist im Eintragsschlüssel nicht zulässig.</p>\n<p>Folgenden JSON-Code wird z. B. ein gültiger <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> mit seinen Metadaten. <pre><code>{\n        \"Color\":\"White\",\n        \"MaxSpeed\":{\n            \"Value\":500,\n            \"NewValue\":300\n        },\n        \"$metadata\":{\n            \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n            \"$lastUpdatedVersion\":4,\n            \"Color\":{\n                \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                \"$lastUpdatedVersion\":4,\n            },\n            \"MaxSpeed\":{\n                \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                \"$lastUpdatedVersion\":4,\n                \"Value\":{\n                    \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                    \"$lastUpdatedVersion\":4\n                },\n                \"NewValue\":{\n                    \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                    \"$lastUpdatedVersion\":4\n                }\n            }\n        },\n        \"$version\":4\n    }\n    </code></pre></p>\n<p>Diese Klasse stellt die Ziel-Auflistung mit oder ohne Metadaten als Karte Hier können Benutzer Gat den Wert und die Metadaten. Für die Instanz, in der oben genannten <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>, <xref uid=\"\" data-throw-if-not-resolved=\"false\">get(Object)</xref> für <b>Farbe</b> zurück <b>weiß</b> und <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata(String)\" data-throw-if-not-resolved=\"false\"> getTwinMetadata(String)</xref> für <b>Farbe</b> gibt zurück, das Objekt TwinMetadata, die enthalten <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata#getLastUpdated()</xref> , die zurückgegeben wird das<code>Date \r\n    </code> <b>2017-09-21T02:07:44.238Z</b> und <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata#getLastUpdatedVersion()</xref> , die zurückgegeben wird das<code>Integer \r\n    </code><b>4</b>.</p>\n<p>Für die geschachtelte <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>, gehen Sie genauso, z. B. wird der folgende Code gibt den Wert und die Metadaten der <b>NewValue</b> in geschachtelten <b>MaxSpeed</b>: <pre><code>// Get the value of the MaxSpeed, which is a inner TwinCollection.\n    TwinCollection innerMaxSpeed = (TwinCollection) twinCollection.get(\"MaxSpeed\");\n    \n    // From the inner TwinCollection, get the value of the NewValue.\n    Long maxSpeedNewValue = innerMaxSpeed.get(\"NewValue\");\n    \n    // As in the root TwinCollection, the inner TwinCollection contain its own metadata.\n    // So, get the metadata information for the inner NewValue.\n    TwinMetadata maxSpeedNewValueMetadata = innerMaxSpeed.getTwinMetadata(\"NewValue\");\n    Date newValueLastUpdated = maxSpeedNewValueMetadata.getLastUpdated(); //Shall contain `2017-09-21T02:07:44.238Z`\n    Integer newValueLastUpdatedVersion = maxSpeedNewValueMetadata.getLastUpdatedVersion(); //Shall contain `4`\n    </code></pre></p>\n<p></p>"
+    syntax: &ref_2
+      content: public class TwinCollection
+    inheritance:
+      - java.lang.Object
+      - 'java.util.HashMap<String, Object>'
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata()
+    id: getTwinMetadata()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: getTwinMetadata()
+    nameWithType: TwinCollection.getTwinMetadata()
+    fullName: TwinMetadata com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.getTwinMetadata()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 419
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Get-Accessor für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection" data-throw-if-not-resolved="false">TwinCollection</xref> Metadaten</p>
+      <p></p>
+    syntax:
+      content: public TwinMetadata getTwinMetadata()
+      return:
+        type: dc8b9d1a
+        description: "<p>die <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata</xref> Anteil am ganzen <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>. Es kann sein<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata(String)
+    id: getTwinMetadata(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: getTwinMetadata(String key)
+    nameWithType: TwinCollection.getTwinMetadata(String key)
+    fullName: TwinMetadata com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.getTwinMetadata(String key)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 431
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Getter-Methode für die Metadaten der Eintrag in der <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection" data-throw-if-not-resolved="false">TwinCollection</xref>.</p>
+      <p></p>
+    syntax: &ref_3
+      content: public TwinMetadata getTwinMetadata(String key)
+      parameters:
+        - id: key
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit dem Namen des Eintrags, der die Metadaten abzurufen. </p>"
+      return:
+        type: dc8b9d1a
+        description: "<p>die <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata</xref> zu bestimmten Eintrag in der <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>. Es kann sein<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getVersion()
+    id: getVersion()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: getVersion()
+    nameWithType: TwinCollection.getVersion()
+    fullName: Integer com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.getVersion()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getVersion*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 408
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für die Version.</p>
+      <p></p>
+    syntax:
+      content: public Integer getVersion()
+      return:
+        type: 08effaa0
+        description: "<p>Die<code>Integer \r\n\r\n    </code> mit dem Inhalt der Version. Es kann sein<code>null \r\n\r\n    </code> . </p>"
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.put(String,Object)'
+    id: 'put(String,Object)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: 'put(String key, Object value)'
+    nameWithType: 'TwinCollection.put(String key, Object value)'
+    fullName: 'Object com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.put(String key, Object value)'
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.put*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 185
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>Fügen Sie einen einzelnen neuen Eintrag in der <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>.</p>\n<p>Überschreiben Sie<code>HashMap.put(String, Object) \r\n\r\n    </code> .</p>\n\n<p>Diese Funktion wird einen einzelnes Paar Schlüsselwert zum Hinzufügen der <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>. Durch die Definition und die<code>Object \r\n\r\n    </code> können enthalten die Typen von<code>Boolean \r\n\r\n    </code> , <code>Number \r\n\r\n    </code> ,<code>String \r\n\r\n    </code> ,<code>Object \r\n\r\n    </code> , oder bis zu 5 Ebenen des Sub-TwinCollection, aber es können nicht Typen definiert werden dem Benutzer oder Arrays.</p>\n\n<p></p>"
+    syntax: &ref_1
+      content: 'public Object put(String key, Object value)'
+      parameters:
+        - id: key
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> , die die Schlüssel des neuen Eintrags darstellen. Es kann keine {#code Null} werden oder ist leer. </p>"
+        - id: value
+          type: '79317049'
+          description: "<p>die<code>Object \r\n\r\n    </code> , die den Wert des neuen Eintrags darstellt. Es darf nicht benutzerdefinierten Typ oder Array sein. </p>"
+      return:
+        type: '79317049'
+        description: "<p>Die<code>Object \r\n\r\n    </code> , die auf den letzten Wert dieses Schlüssels entsprechen. Sie werden<code>null \r\n\r\n    </code> Wenn kein vorheriger Wert vorhanden ist. </p>"
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.putAll(Map<? extends String, ?>)'
+    id: 'putAll(Map<? extends String, ?>)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: 'putAll(Map<? extends String, ?> map)'
+    nameWithType: 'TwinCollection.putAll(Map<? extends String, ?> map)'
+    fullName: 'void com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.putAll(Map<? extends String, ?> map)'
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.putAll*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 155
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>Fügen Sie alle Informationen in der bereitgestellten Zuordnung zu den <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>.</p>\n<p>Überschreiben Sie<code>HashMap.putAll(Map) \r\n\r\n    </code> .</p>\n\n<p>Diese Funktion wird fügen Sie alle Einträge in der Karte, um die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>. Wenn der bereitgestellte Schlüssel bereits vorhanden ist, wird den Wert durch den neuen Wert ersetzt. Diese Funktion wird nicht löschen oder ändern Sie den Inhalt der andere Schlüssel in der Zuordnung.</p>\n<p>Wie durch das Ziel definiert wird, kann der Wert eines Eintrags eine interne Zuordnung sein. <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> akzeptiert bis zu 5 Ebenen des inneren Zuordnungen.</p>\n<p></p>"
+    syntax:
+      content: 'public void putAll(Map<? extends String, ?> map)'
+      parameters:
+        - id: map
+          type: b3e9f05a
+          description: "<p>Ein<code>Map \r\n\r\n    </code> von Einträgen zum Hinzufügen der <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.toJsonElement()
+    id: toJsonElement()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: toJsonElement()
+    nameWithType: TwinCollection.toJsonElement()
+    fullName: JsonElement com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.toJsonElement()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.toJsonElement*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 346
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>serializer</p>\n<p>Erstellt eine<code>JsonElement \r\n\r\n    </code> , die den Inhalt darstellt, die Informationen in dieser Klasse und seiner Unterklassen in einem JSON-Format.</p>\n\n<p>Dies ist hilfreich, wenn der Aufrufer diese JSON mit JSON aus anderen Klassen, die eine konsolidierte JSON-Generierung integriert wird.</p>\n<p></p>"
+    syntax:
+      content: public JsonElement toJsonElement()
+      return:
+        type: 8585b2e7
+        description: "<p>Die<code>JsonElement \r\n\r\n    </code> mit dem Inhalt dieser Klasse. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection()
+    id: TwinCollection()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: TwinCollection()
+    nameWithType: TwinCollection.TwinCollection()
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.TwinCollection()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 116
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Konstruktor</p>
+      <p>Erstellt eine leere Auflistung. Füllen Sie es mit <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.put(String,Object)" data-throw-if-not-resolved="false">abgelegt (String, Object)</xref> oder <xref uid="" data-throw-if-not-resolved="false">putAll(Map)</xref>. </p>
+    syntax:
+      content: public TwinCollection()
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection(Map<? extends String, Object>)'
+    id: 'TwinCollection(Map<? extends String, Object>)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    langs:
+      - java
+    name: 'TwinCollection(Map<? extends String, Object> map)'
+    nameWithType: 'TwinCollection.TwinCollection(Map<? extends String, Object> map)'
+    fullName: 'com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.TwinCollection(Map<? extends String, Object> map)'
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/TwinCollection.java
+      startLine: 130
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Konstruktor</p>
+      <p>Erstellt eine neue Ziel-Auflistung, die Handhabung der bereitgestellten Zuordnung. Einmal <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection" data-throw-if-not-resolved="false">TwinCollection</xref> Zuordnung erweitert, diese Methode kann einen anderen kopieren <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection" data-throw-if-not-resolved="false">TwinCollection</xref>.</p>
+      <p></p>
+    syntax:
+      content: 'public TwinCollection(Map<? extends String, Object> map)'
+      parameters:
+        - id: map
+          type: 59e5fddd
+          description: "<p>die Zuordnung von<code>? extends String \r\n\r\n    </code> und<code>Object \r\n\r\n    </code> mit der Ziel-Auflistung </p>"
+references:
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.TwinCollection*
+    name: TwinCollection
+    nameWithType: TwinCollection.TwinCollection
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.TwinCollection
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: 59e5fddd
+    spec.java:
+      - name: 'Map<? extends String, Object>'
+        fullName: 'Map<? extends String, Object>'
+  - uid: b3e9f05a
+    spec.java:
+      - name: 'Map<? extends String, ?>'
+        fullName: 'Map<? extends String, ?>'
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.putAll*
+    name: putAll
+    nameWithType: TwinCollection.putAll
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.putAll
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: '79317049'
+    spec.java:
+      - name: Object
+        fullName: Object
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.put*
+    name: put
+    nameWithType: TwinCollection.put
+    fullName: Object com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.put
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: 8585b2e7
+    spec.java:
+      - name: JsonElement
+        fullName: JsonElement
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.toJsonElement*
+    name: toJsonElement
+    nameWithType: TwinCollection.toJsonElement
+    fullName: JsonElement com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.toJsonElement
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: 08effaa0
+    spec.java:
+      - name: Integer
+        fullName: Integer
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getVersion*
+    name: getVersion
+    nameWithType: TwinCollection.getVersion
+    fullName: Integer com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.getVersion
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: dc8b9d1a
+    spec.java:
+      - name: TwinMetadata
+        fullName: TwinMetadata
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata*
+    name: getTwinMetadata
+    nameWithType: TwinCollection.getTwinMetadata
+    fullName: TwinMetadata com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.getTwinMetadata
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.put(String,Object)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    name: 'put(String key, Object value)'
+    nameWithType: 'TwinCollection.put(String key, Object value)'
+    fullName: 'Object com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.put(String key, Object value)'
+    type: Method
+    summary: "<p>Fügen Sie einen einzelnen neuen Eintrag in der <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>.</p>\n<p>Überschreiben Sie<code>HashMap.put(String, Object) \r\n\r\n    </code> .</p>\n\n<p>Diese Funktion wird einen einzelnes Paar Schlüsselwert zum Hinzufügen der <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>. Durch die Definition und die<code>Object \r\n\r\n    </code> können enthalten die Typen von<code>Boolean \r\n\r\n    </code> , <code>Number \r\n\r\n    </code> ,<code>String \r\n\r\n    </code> ,<code>Object \r\n\r\n    </code> , oder bis zu 5 Ebenen des Sub-TwinCollection, aber es können nicht Typen definiert werden dem Benutzer oder Arrays.</p>\n\n<p></p>"
+    syntax: *ref_1
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    name: TwinCollection
+    nameWithType: TwinCollection
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection
+    type: Class
+    summary: "<p>Darstellung einer einzelnen und-Auflistung für die Bereitstellung.</p>\n<p>Die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> ist eine Erweiterung der eine<code>HashMap \r\n    </code> von<code>String \r\n    </code> und <code>Object \r\n    </code> Mechanismus für die versionsverwaltung für einzelne und allgemeine enthalten.</p>\n<p>Durch die Definition und die<code>Object \r\n    </code> können enthalten die Typen von<code>Boolean \r\n    </code> , <code>Number \r\n    </code> ,<code>String \r\n    </code> ,<code>Object \r\n    </code> , oder eine Sub-TwinCollection, aber sie Typen, die dem Benutzer oder Arrays definiert werden kann.</p>\n<p>Ein <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> kann bis zu 5 Ebenen des Sub TwinCollections enthalten. Einmal die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> ist eine Erweiterung von der<code>HashMap \r\n    </code> , beide <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> sowie dessen Sub-TwinCollections Zuordnung der Zeichenfolge und Objekt umgewandelt werden, kann.</p>\n<p>Die Auflistung wird im Rest-API als JSON-im Text dargestellt. Darf keine Metadaten enthalten oder kann (identifiziert durch die <b> $ </b> -Zeichen am Anfang des Schlüssels.</p>\n<p>Der Ziel-Metadaten, die Zeichen <b> $ </b> ist im Eintragsschlüssel nicht zulässig.</p>\n<p>Folgenden JSON-Code wird z. B. ein gültiger <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> mit seinen Metadaten. <pre><code>{\n        \"Color\":\"White\",\n        \"MaxSpeed\":{\n            \"Value\":500,\n            \"NewValue\":300\n        },\n        \"$metadata\":{\n            \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n            \"$lastUpdatedVersion\":4,\n            \"Color\":{\n                \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                \"$lastUpdatedVersion\":4,\n            },\n            \"MaxSpeed\":{\n                \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                \"$lastUpdatedVersion\":4,\n                \"Value\":{\n                    \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                    \"$lastUpdatedVersion\":4\n                },\n                \"NewValue\":{\n                    \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n                    \"$lastUpdatedVersion\":4\n                }\n            }\n        },\n        \"$version\":4\n    }\n    </code></pre></p>\n<p>Diese Klasse stellt die Ziel-Auflistung mit oder ohne Metadaten als Karte Hier können Benutzer Gat den Wert und die Metadaten. Für die Instanz, in der oben genannten <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>, <xref uid=\"\" data-throw-if-not-resolved=\"false\">get(Object)</xref> für <b>Farbe</b> zurück <b>weiß</b> und <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata(String)\" data-throw-if-not-resolved=\"false\"> getTwinMetadata(String)</xref> für <b>Farbe</b> gibt zurück, das Objekt TwinMetadata, die enthalten <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata#getLastUpdated()</xref> , die zurückgegeben wird das<code>Date \r\n    </code> <b>2017-09-21T02:07:44.238Z</b> und <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata#getLastUpdatedVersion()</xref> , die zurückgegeben wird das<code>Integer \r\n    </code><b>4</b>.</p>\n<p>Für die geschachtelte <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref>, gehen Sie genauso, z. B. wird der folgende Code gibt den Wert und die Metadaten der <b>NewValue</b> in geschachtelten <b>MaxSpeed</b>: <pre><code>// Get the value of the MaxSpeed, which is a inner TwinCollection.\n    TwinCollection innerMaxSpeed = (TwinCollection) twinCollection.get(\"MaxSpeed\");\n    \n    // From the inner TwinCollection, get the value of the NewValue.\n    Long maxSpeedNewValue = innerMaxSpeed.get(\"NewValue\");\n    \n    // As in the root TwinCollection, the inner TwinCollection contain its own metadata.\n    // So, get the metadata information for the inner NewValue.\n    TwinMetadata maxSpeedNewValueMetadata = innerMaxSpeed.getTwinMetadata(\"NewValue\");\n    Date newValueLastUpdated = maxSpeedNewValueMetadata.getLastUpdated(); //Shall contain `2017-09-21T02:07:44.238Z`\n    Integer newValueLastUpdatedVersion = maxSpeedNewValueMetadata.getLastUpdatedVersion(); //Shall contain `4`\n    </code></pre></p>\n<p></p>"
+    syntax: *ref_2
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment.yml
+    name: IndividualEnrollment
+    nameWithType: IndividualEnrollment
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.IndividualEnrollment
+    type: Class
+    summary: "<p>Darstellung der Registrierung einer einzelnen Bereitstellung Registrierungsdienst mit einem JSON-Serialisierungsprogramm und Deserialisierungsprogramm.</p>\n<p>Dieses Objekt wird zum Senden <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> Informationen, die die Bereitstellung von service oder empfangen <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> Informationen aus der Bereitstellung-Dienst.</p>\n<p>Erstellt oder aktualisiert eine <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> dienstseitig Bereitstellung sollten Sie ausfüllen dieses Objekts und Aufrufen der öffentliche API <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createOrUpdateIndividualEnrollment(IndividualEnrollment)\" data-throw-if-not-resolved=\"false\">ProvisioningServiceClient #createOrUpdateIndividualEnrollment () IndividualEnrollment)</xref>. Die Mindestinformationen Bereitstellung Dienst erforderlich ist der<code>registrationId \r\n\r\n    </code> und <code>attestation \r\n\r\n    </code> .</p>\n\n<p>Ein neues Gerät bereitgestellt werden kann, durch zwei Nachweis Mechanismen, vertrauen Platform Module (finden Sie unter <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._tpm_attestation\" data-throw-if-not-resolved=\"false\">TpmAttestation</xref>) oder X509 (siehe <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation\" data-throw-if-not-resolved=\"false\">X509Attestation</xref>). Die Definition der einzelnen Aktionen, abhängig von der Hardware für die physische Authentifizierung verwendet werden soll, die das Gerät enthält.</p>\n<p>Der Inhalt dieser Klasse werden in einem JSON-Format serialisiert und als Textkörper der Rest-API an den bereitstellungs-Dienst gesendet.</p>\n<p>Bei der Serialisierung ein <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> wird im folgenden Beispiel aussehen: <pre>\n*<code>*{\n\n         \"registrationId\":\"validRegistrationId\",\n\n         \"deviceId\":\"ContosoDevice-123\",\n\n         \"attestation\":{\n\n             \"type\":\"tpm\",\n\n             \"tpm\":{\n\n                 \"endorsementKey\":\"validEndorsementKey\"\n\n             }\n\n         },\n\n         \"iotHubHostName\":\"ContosoIoTHub.azure-devices.net\",\n\n         \"provisioningStatus\":\"enabled\"\n\n    *}\n\n    </code></pre></p>\n\n<p>Der Inhalt dieser Klasse ausgefüllt werden kann, durch eine JSON, aus der Bereitstellung Dienst als Ergebnis des Empfangen einer <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> Vorgang wie erstellen, aktualisieren oder Abfrage Registrierung.</p>\n<p>Die folgenden JSON-Code ist ein Beispiel für oder die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> Antwort, die von der Bereitstellung Dienst empfangen. <pre>\n*<code>*{\n\n         \"registrationId\":\"validRegistrationId\",\n\n         \"deviceId\":\"ContosoDevice-123\",\n\n         \"attestation\":{\n\n             \"type\":\"tpm\",\n\n             \"tpm\":{\n\n                 \"endorsementKey\":\"validEndorsementKey\"\n\n             }\n\n         },\n\n         \"iotHubHostName\":\"ContosoIoTHub.azure-devices.net\",\n\n         \"provisioningStatus\":\"enabled\"\n\n         \"createdDateTimeUtc\": \"2017-09-28T16:29:42.3447817Z\",\n\n         \"lastUpdatedDateTimeUtc\": \"2017-09-28T16:29:42.3447817Z\",\n\n         \"etag\": \"\\\"00000000-0000-0000-0000-00000000000\\\"\"\n\n    *}\n\n    </code></pre></p>\n\n<p></p>"
+    syntax:
+      content: public class IndividualEnrollment extends Serializable
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    name: EnrollmentGroup
+    nameWithType: EnrollmentGroup
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup
+    type: Class
+    summary: |-
+      <p>Darstellung einer einzelnen Bereitstellung Registrierungsdienst Registrierung Gruppe mit einem JSON-Serialisierungsprogramm und Deserialisierungsprogramm.</p>
+      <p>Dieses Objekt wird zum Senden <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Informationen, die die Bereitstellung von service oder empfangen <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Informationen aus der Bereitstellung-Dienst.</p>
+      <p>Erstellt oder aktualisiert eine <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> dienstseitig Bereitstellung sollten Sie ausfüllen dieses Objekts und Aufrufen der öffentliche API <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createOrUpdateEnrollmentGroup(EnrollmentGroup)" data-throw-if-not-resolved="false">ProvisioningServiceClient#createOrUpdateEnrollmentGroup(EnrollmentGroup)</xref>. Die Mindestinformationen Bereitstellung Dienst erforderlich ist der <xref uid="" data-throw-if-not-resolved="false">EnrollmentGroupId</xref> und <xref uid="" data-throw-if-not-resolved="false">Nachweis</xref>.</p>
+      <p>Zum Bereitstellen eines Geräts mithilfe <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>, es muss ein X509 enthalten Chip mit einem SigningCertificate für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref> Mechanismus.</p>
+      <p>Der Inhalt dieser Klasse werden in einem JSON-Format serialisiert und als Textkörper der Rest-API an den bereitstellungs-Dienst gesendet.</p>
+      <p>Bei der Serialisierung ein <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> wird im folgenden Beispiel aussehen: <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]"
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled"
+
+          }
+
+          </code></pre></p>
+
+      <p>Der Inhalt dieser Klasse ausgefüllt werden kann, durch eine JSON, aus der Bereitstellung Dienst als Ergebnis des Empfangen einer <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Vorgang wie erstellen, aktualisieren oder Abfrage <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>.</p>
+      <p>Die folgenden JSON-Code ist ein Beispiel für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Antwort, die von der Bereitstellung Dienst empfangen. <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]",
+
+                          "info": {
+
+                              "subjectName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "sha1Thumbprint": "0000000000000000000000000000000000",
+
+                              "sha256Thumbprint": "validEnrollmentGroupId",
+
+                              "issuerName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "notBeforeUtc": "2017-11-14T12:34:18Z",
+
+                              "notAfterUtc": "2017-11-20T12:34:18Z",
+
+                              "serialNumber": "000000000000000000",
+
+                              "version": 3
+
+                          }
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled",
+
+              "createdDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "lastUpdatedDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "etag": "\"00000000-0000-0000-0000-00000000000\""
+
+          }
+
+          </code></pre></p>
+
+      <p></p>
+    syntax:
+      content: public class EnrollmentGroup extends Serializable
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.getTwinMetadata(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection.yml
+    name: getTwinMetadata(String key)
+    nameWithType: TwinCollection.getTwinMetadata(String key)
+    fullName: TwinMetadata com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinCollection.getTwinMetadata(String key)
+    type: Method
+    summary: |-
+      <p>Getter-Methode für die Metadaten der Eintrag in der <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection" data-throw-if-not-resolved="false">TwinCollection</xref>.</p>
+      <p></p>
+    syntax: *ref_3

@@ -4,11 +4,11 @@ items:
     id: _share_listing_details
     parent: com.microsoft.azure.storage.file
     children:
-      - com.microsoft.azure.storage.file._share_listing_details.ALL()
-      - com.microsoft.azure.storage.file._share_listing_details.METADATA()
-      - com.microsoft.azure.storage.file._share_listing_details.NONE()
+      - com.microsoft.azure.storage.file._share_listing_details.METADATA
+      - com.microsoft.azure.storage.file._share_listing_details.NONE
       - com.microsoft.azure.storage.file._share_listing_details.ShareListingDetails(final int)
-      - com.microsoft.azure.storage.file._share_listing_details.value()
+      - com.microsoft.azure.storage.file._share_listing_details.SNAPSHOTS
+      - com.microsoft.azure.storage.file._share_listing_details.value
     href: com.microsoft.azure.storage.file._share_listing_details.yml
     langs:
       - java
@@ -30,26 +30,8 @@ items:
     inheritance:
       - java.lang.Object
       - java.lang.Enum<ShareListingDetails>
-  - uid: com.microsoft.azure.storage.file._share_listing_details.ALL()
-    id: ALL()
-    parent: com.microsoft.azure.storage.file._share_listing_details
-    href: com.microsoft.azure.storage.file._share_listing_details.yml
-    langs:
-      - java
-    name: ALL
-    nameWithType: ShareListingDetails.ALL
-    fullName: com.microsoft.azure.storage.file.ShareListingDetails.ALL
-    type: Field
-    source:
-      remote: *ref_0
-      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/ShareListingDetails.java
-      startLine: 29
-    package: com.microsoft.azure.storage.file
-    summary: '<p>Gibt an, einschließlich aller verfügbaren Details. </p>'
-    syntax:
-      content: public ALL=(1)
-  - uid: com.microsoft.azure.storage.file._share_listing_details.METADATA()
-    id: METADATA()
+  - uid: com.microsoft.azure.storage.file._share_listing_details.METADATA
+    id: METADATA
     parent: com.microsoft.azure.storage.file._share_listing_details
     href: com.microsoft.azure.storage.file._share_listing_details.yml
     langs:
@@ -61,13 +43,13 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/ShareListingDetails.java
-      startLine: 34
+      startLine: 29
     package: com.microsoft.azure.storage.file
     summary: '<p>Gibt an, einschließlich der freigabemetadaten. </p>'
     syntax:
       content: public METADATA=(1)
-  - uid: com.microsoft.azure.storage.file._share_listing_details.NONE()
-    id: NONE()
+  - uid: com.microsoft.azure.storage.file._share_listing_details.NONE
+    id: NONE
     parent: com.microsoft.azure.storage.file._share_listing_details
     href: com.microsoft.azure.storage.file._share_listing_details.yml
     langs:
@@ -98,7 +80,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/ShareListingDetails.java
-      startLine: 52
+      startLine: 47
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Legt den Wert dieser Enumeration.</p>
@@ -109,8 +91,26 @@ items:
         - id: val
           type: cd225469
           description: '<p>Ein <code>int</code> der darstellt, dass des Werts zugewiesen wird. </p>'
-  - uid: com.microsoft.azure.storage.file._share_listing_details.value()
-    id: value()
+  - uid: com.microsoft.azure.storage.file._share_listing_details.SNAPSHOTS
+    id: SNAPSHOTS
+    parent: com.microsoft.azure.storage.file._share_listing_details
+    href: com.microsoft.azure.storage.file._share_listing_details.yml
+    langs:
+      - java
+    name: SNAPSHOTS
+    nameWithType: ShareListingDetails.SNAPSHOTS
+    fullName: com.microsoft.azure.storage.file.ShareListingDetails.SNAPSHOTS
+    type: Field
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/ShareListingDetails.java
+      startLine: 34
+    package: com.microsoft.azure.storage.file
+    summary: <p>Gibt die Auflistung Freigabe Momentaufnahmen an. </p>
+    syntax:
+      content: public SNAPSHOTS=(2)
+  - uid: com.microsoft.azure.storage.file._share_listing_details.value
+    id: value
     parent: com.microsoft.azure.storage.file._share_listing_details
     href: com.microsoft.azure.storage.file._share_listing_details.yml
     langs:
@@ -122,9 +122,9 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/ShareListingDetails.java
-      startLine: 44
+      startLine: 39
     package: com.microsoft.azure.storage.file
-    summary: <p>Gibt die Auflistung Freigabe Momentaufnahmen an. Gibt den Wert dieser Enumeration zurück. </p>
+    summary: <p>Gibt den Wert dieser Enumeration zurück. </p>
     syntax:
       content: public int value
       return:

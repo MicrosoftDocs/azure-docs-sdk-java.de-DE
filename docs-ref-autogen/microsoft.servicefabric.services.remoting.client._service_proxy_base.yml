@@ -94,7 +94,7 @@ items:
           description: '<p>Schnittstellentyp, der Remote ausgeführt wird </p>'
         - id: serviceUri
           type: '62304784'
-          description: <p>Der URI der <xref href="microsoft.servicefabric.services.remoting._service" data-throw-if-not-resolved="false"></xref>. </p>
+          description: <p>Der URI der <xref uid="microsoft.servicefabric.services.remoting._service" data-throw-if-not-resolved="false">Service</xref>. </p>
         - id: partitionKey
           type: microsoft.servicefabric.services.client._service_partition_key
           description: '<p>Der Partitionsschlüssel, der bestimmt, welche Dienstpartition ist verantwortlich für die Verarbeitung von Anforderungen von diesem Dienstproxy </p>'
@@ -106,7 +106,7 @@ items:
           description: '<p>Dieser Parameter ist Optional, wenn der Dienst über einen einzelnen Kommunikation Listener verfügt. Die Endpunkte des Diensts sind, im Format {"Endpunkte": {"Listener1": "Endpoint1", "Listener2": "Endpoint2"...}}. Wenn der Dienst mehrere Endpunkte verfügbar macht, identifiziert dieser Parameter die dieser Endpunkte für das Remoting-Kommunikation verwenden.</p>'
       return:
         type: 1e2c6103microsoft.servicefabric.services.remoting._service21353812
-        description: '<p>Der Proxy, der die Schnittstelle implementiert, die Remote ausgeführt wird. Das zurückgegebene Objekt auch implementieren <xref href="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false"></xref> Schnittstelle. </p>'
+        description: '<p>Der Proxy, der die Schnittstelle implementiert, die Remote ausgeführt wird. Das zurückgegebene Objekt auch implementieren <xref uid="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false">microsoft.servicefabric.services.remoting.client.ServiceProxy</xref> Schnittstelle. </p>'
   - uid: microsoft.servicefabric.services.remoting.client._service_proxy_base.createRequestMessageBody(Object)
     id: createRequestMessageBody(Object)
     parent: microsoft.servicefabric.services.remoting.client._service_proxy_base
@@ -199,7 +199,7 @@ items:
       content: public Class<?> getServiceInterfaceType()
       return:
         type: a19781f8
-        description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.services.remoting._service\" data-throw-if-not-resolved=\"false\"></xref>Schnittstellentyp. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.services.remoting._service\" data-throw-if-not-resolved=\"false\">Dienst</xref> -Schnittstellentyp. </p>"
     overridden: microsoft.servicefabric.services.remoting.client._service_proxy.getServiceInterfaceType()
   - uid: microsoft.servicefabric.services.remoting.client._service_proxy_base.getServicePartitionClient()
     id: getServicePartitionClient()
@@ -224,7 +224,7 @@ items:
       content: public ServiceRemotingPartitionClient getServicePartitionClient()
       return:
         type: microsoft.servicefabric.services.remoting.client._service_remoting_partition_client
-        description: '<p>ServicePartitionClient verwendet werden, indem Sie die <xref href="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false"></xref>. </p>'
+        description: '<p>ServicePartitionClient verwendet werden, indem Sie die <xref uid="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false">ServiceProxy</xref>. </p>'
     overridden: microsoft.servicefabric.services.remoting.client._service_proxy.getServicePartitionClient()
   - uid: 'microsoft.servicefabric.services.remoting.client._service_proxy_base.initialize(ServiceProxyGenerator,ServiceRemotingPartitionClientImpl)'
     id: 'initialize(ServiceProxyGenerator,ServiceRemotingPartitionClientImpl)'
@@ -436,10 +436,10 @@ references:
       parameters:
         - id: future
           type: 55aa5245
-          description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , die den asynchronen Vorgang für den remote-Methodenaufruf darstellt. </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , die den asynchronen Vorgang für den remote-Methodenaufruf darstellt. </p>'
       return:
         type: 16409f84
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , die den asynchronen Vorgang für den remote-Methodenaufruf darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , die den asynchronen Vorgang für den remote-Methodenaufruf darstellt. </p>'
   - uid: 'microsoft.servicefabric.services.remoting.builder._proxy_base.getReturnValue(int,int,Object)'
     parent: microsoft.servicefabric.services.remoting.builder._proxy_base
     href: microsoft.servicefabric.services.remoting.builder._proxy_base.yml
@@ -462,7 +462,7 @@ references:
           description: <p>Der Antworttext. </p>
       return:
         type: 1377799a
-        description: <p>Der Rückgabewert des Methodenaufrufs als <ref refid="" kindref="compound">Objekt</ref>. </p>
+        description: <p>Der Rückgabewert des Methodenaufrufs als <xref uid="" data-throw-if-not-resolved="false">Objekt</xref>. </p>
   - uid: 'microsoft.servicefabric.services.remoting.builder._proxy_base.invoke(int,int,Object)'
     parent: microsoft.servicefabric.services.remoting.builder._proxy_base
     href: microsoft.servicefabric.services.remoting.builder._proxy_base.yml
@@ -507,7 +507,7 @@ references:
           type: system.fabric._cancellation_token
       return:
         type: 55aa5245
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , der asynchrone Aufruf Remoteobjekt asynchronen Vorgang darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , der asynchrone Aufruf Remoteobjekt asynchronen Vorgang darstellt. </p>'
   - uid: microsoft.servicefabric.services.remoting.builder._proxy_base.ProxyBase()
     parent: microsoft.servicefabric.services.remoting.builder._proxy_base
     href: microsoft.servicefabric.services.remoting.builder._proxy_base.yml
@@ -515,7 +515,7 @@ references:
     nameWithType: ProxyBase.ProxyBase()
     fullName: microsoft.servicefabric.services.remoting.builder.ProxyBase.ProxyBase()
     type: Constructor
-    summary: <p>Initialisiert eine neue Instanz der dem <xref href="microsoft.servicefabric.services.remoting.builder._proxy_base" data-throw-if-not-resolved="false"></xref> Klasse. </p>
+    summary: <p>Initialisiert eine neue Instanz der dem <xref uid="microsoft.servicefabric.services.remoting.builder._proxy_base" data-throw-if-not-resolved="false">ProxyBase</xref> Klasse. </p>
     syntax:
       content: protected ProxyBase()
   - uid: microsoft.servicefabric.services.remoting.builder._proxy_base
@@ -535,7 +535,7 @@ references:
     nameWithType: ServiceProxy
     fullName: microsoft.servicefabric.services.remoting.client.ServiceProxy
     type: Interface
-    summary: <p>Dies ist der Client Side Basisschnittstelle für das Remoting. Das Framework bietet die Infrastruktur für den Remotezugriff für alle Dienstverträge IService durch Vererben <xref href="microsoft.servicefabric.services.remoting._service_remoting_listener" data-throw-if-not-resolved="false"></xref> und <xref href="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Dies ist der Client Side Basisschnittstelle für das Remoting. Das Framework bietet die Infrastruktur für den Remotezugriff für alle Dienstverträge IService durch Vererben <xref uid="microsoft.servicefabric.services.remoting._service_remoting_listener" data-throw-if-not-resolved="false">ServiceRemotingListener</xref> und <xref uid="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false">ServiceProxy</xref>. </p>
     syntax:
       content: public interface ServiceProxy
   - uid: microsoft.servicefabric.services.remoting.client._fabric_service_proxy_factory
@@ -564,7 +564,7 @@ references:
     nameWithType: Service
     fullName: microsoft.servicefabric.services.remoting.Service
     type: Interface
-    summary: '<p>Dies ist die Markierungsschnittstelle zum Aktivieren von Remoting-Schnittstelle für Dienste. Ein <xref href="microsoft.servicefabric.services.remoting._service_remoting_listener" data-throw-if-not-resolved="false"></xref> bietet Remoting für alle Schnittstellen vom Dienst implementiert, die von dieser Schnittstelle ableiten. Die Remoteausführung Schnittstellen können über einen Proxyserver auf dem Client zugegriffen werden. </p>'
+    summary: '<p>Dies ist die Markierungsschnittstelle zum Aktivieren von Remoting-Schnittstelle für Dienste. Ein <xref uid="microsoft.servicefabric.services.remoting._service_remoting_listener" data-throw-if-not-resolved="false">ServiceRemotingListener</xref> bietet Remoting für alle Schnittstellen vom Dienst implementiert, die von dieser Schnittstelle ableiten. Die Remoteausführung Schnittstellen können über einen Proxyserver auf dem Client zugegriffen werden. </p>'
     syntax:
       content: public interface Service
   - uid: microsoft.servicefabric.services.client._service_partition_key
@@ -601,7 +601,7 @@ references:
       content: public Class<?> getServiceInterfaceType()
       return:
         type: a19781f8
-        description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.services.remoting._service\" data-throw-if-not-resolved=\"false\"></xref>Schnittstellentyp </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.services.remoting._service\" data-throw-if-not-resolved=\"false\">Dienst</xref> -Schnittstellentyp </p>"
   - uid: microsoft.servicefabric.services.remoting.client._service_remoting_partition_client
     parent: microsoft.servicefabric.services.remoting.client
     href: microsoft.servicefabric.services.remoting.client._service_remoting_partition_client.yml
@@ -626,7 +626,7 @@ references:
       content: public ServiceRemotingPartitionClient getServicePartitionClient()
       return:
         type: microsoft.servicefabric.services.remoting.client._service_remoting_partition_client
-        description: '<p>ServicePartitionClient verwendet werden, indem Sie die<xref href="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false"></xref></p>'
+        description: '<p>ServicePartitionClient verwendet werden, indem Sie die <xref uid="microsoft.servicefabric.services.remoting.client._service_proxy" data-throw-if-not-resolved="false">ServiceProxy</xref></p>'
   - uid: system.fabric._cancellation_token
     parent: system.fabric
     href: system.fabric._cancellation_token.yml
@@ -634,6 +634,6 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax:
       content: public class CancellationToken

@@ -9,6 +9,8 @@ items:
       - com.microsoft.azure.management.storage._storage_account.creationTime()
       - com.microsoft.azure.management.storage._storage_account.customDomain()
       - com.microsoft.azure.management.storage._storage_account.encryption()
+      - com.microsoft.azure.management.storage._storage_account.encryptionKeySource()
+      - com.microsoft.azure.management.storage._storage_account.encryptionStatuses()
       - com.microsoft.azure.management.storage._storage_account.endPoints()
       - com.microsoft.azure.management.storage._storage_account.getKeys()
       - com.microsoft.azure.management.storage._storage_account.getKeysAsync()
@@ -30,12 +32,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 30
+      startLine: 31
     package: com.microsoft.azure.management.storage
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Speicherkonto. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Speicherkonto. </p>
     syntax:
       content: 'public interface StorageAccount extends GroupableResource<StorageManager, StorageAccountInner>,Refreshable<StorageAccount>,Updatable<StorageAccount.Update>'
     inheritedMembers:
@@ -66,7 +68,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 99
+      startLine: 112
     package: com.microsoft.azure.management.storage
     syntax:
       content: public AccessTier accessTier()
@@ -87,7 +89,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 40
+      startLine: 41
     package: com.microsoft.azure.management.storage
     syntax:
       content: public AccountStatuses accountStatuses()
@@ -108,7 +110,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 58
+      startLine: 59
     package: com.microsoft.azure.management.storage
     syntax:
       content: public DateTime creationTime()
@@ -129,7 +131,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 63
+      startLine: 64
     package: com.microsoft.azure.management.storage
     syntax:
       content: public CustomDomain customDomain()
@@ -150,13 +152,55 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 91
+      startLine: 92
     package: com.microsoft.azure.management.storage
     syntax:
       content: public Encryption encryption()
       return:
         type: com.microsoft.azure.management.storage._encryption
-        description: '<p>die verschlüsselungseinstellungen für das Konto. Sofern nicht angegeben, das Konto ist unverschlüsselt. </p>'
+        description: '<p>die verschlüsselungseinstellungen für das Konto. TODO: Diese Getter sollte als veraltet markiert und entfernt werden (von vollständig fluent neuverschlüsselung ersetzt) </p>'
+  - uid: com.microsoft.azure.management.storage._storage_account.encryptionKeySource()
+    id: encryptionKeySource()
+    parent: com.microsoft.azure.management.storage._storage_account
+    href: com.microsoft.azure.management.storage._storage_account.yml
+    langs:
+      - java
+    name: encryptionKeySource()
+    nameWithType: StorageAccount.encryptionKeySource()
+    fullName: StorageAccountEncryptionKeySource com.microsoft.azure.management.storage.StorageAccount.encryptionKeySource()
+    overload: com.microsoft.azure.management.storage._storage_account.encryptionKeySource*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
+      startLine: 98
+    package: com.microsoft.azure.management.storage
+    syntax:
+      content: public StorageAccountEncryptionKeySource encryptionKeySource()
+      return:
+        type: com.microsoft.azure.management.storage._storage_account_encryption_key_source
+        description: <p>die Quelle des für die Verschlüsselung verwendete Schlüssel. </p>
+  - uid: com.microsoft.azure.management.storage._storage_account.encryptionStatuses()
+    id: encryptionStatuses()
+    parent: com.microsoft.azure.management.storage._storage_account
+    href: com.microsoft.azure.management.storage._storage_account.yml
+    langs:
+      - java
+    name: encryptionStatuses()
+    nameWithType: StorageAccount.encryptionStatuses()
+    fullName: 'Map<StorageService, StorageAccountEncryptionStatus> com.microsoft.azure.management.storage.StorageAccount.encryptionStatuses()'
+    overload: com.microsoft.azure.management.storage._storage_account.encryptionStatuses*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
+      startLine: 104
+    package: com.microsoft.azure.management.storage
+    syntax:
+      content: 'public Map<StorageService, StorageAccountEncryptionStatus> encryptionStatuses()'
+      return:
+        type: 6110eba5com.microsoft.azure.management.storage._storage_serviceb33c76fccom.microsoft.azure.management.storage._storage_account_encryption_statusa08ddfce
+        description: <p>die Verschlüsselung-Status von Dienst-Speichertyp indiziert. </p>
   - uid: com.microsoft.azure.management.storage._storage_account.endPoints()
     id: endPoints()
     parent: com.microsoft.azure.management.storage._storage_account
@@ -171,7 +215,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 85
+      startLine: 86
     package: com.microsoft.azure.management.storage
     syntax:
       content: public PublicEndpoints endPoints()
@@ -192,10 +236,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 106
+      startLine: 119
     package: com.microsoft.azure.management.storage
     summary: |-
-      <p>Abrufen die auf dem neuesten Stand Zugriffstasten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> für dieses Speicherkonto.</p>
+      <p>Abrufen die auf dem neuesten Stand Zugriffstasten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> für dieses Speicherkonto.</p>
       <p></p>
     syntax:
       content: public List<StorageAccountKey> getKeys()
@@ -216,10 +260,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 113
+      startLine: 126
     package: com.microsoft.azure.management.storage
     summary: |-
-      <p>Abrufen die auf dem neuesten Stand Zugriffstasten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> für diesen Speicher Konto asynchron.</p>
+      <p>Abrufen die auf dem neuesten Stand Zugriffstasten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> für diesen Speicher Konto asynchron.</p>
       <p></p>
     syntax:
       content: public Observable<List<StorageAccountKey>> getKeysAsync()
@@ -240,10 +284,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 121
+      startLine: 134
     package: com.microsoft.azure.management.storage
     summary: |-
-      <p>Abrufen die auf dem neuesten Stand Zugriffstasten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> für diesen Speicher Konto asynchron.</p>
+      <p>Abrufen die auf dem neuesten Stand Zugriffstasten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> für diesen Speicher Konto asynchron.</p>
       <p></p>
     syntax:
       content: public ServiceFuture<List<StorageAccountKey>> getKeysAsync(ServiceCallback<List<StorageAccountKey>> callback)
@@ -268,7 +312,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 53
+      startLine: 54
     package: com.microsoft.azure.management.storage
     syntax:
       content: public Kind kind()
@@ -289,7 +333,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 71
+      startLine: 72
     package: com.microsoft.azure.management.storage
     syntax:
       content: public DateTime lastGeoFailoverTime()
@@ -310,7 +354,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 78
+      startLine: 79
     package: com.microsoft.azure.management.storage
     syntax:
       content: public ProvisioningState provisioningState()
@@ -331,7 +375,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 129
+      startLine: 142
     package: com.microsoft.azure.management.storage
     summary: |-
       <p>Generiert die Zugriffsschlüssel für dieses Speicherkonto neu.</p>
@@ -359,7 +403,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 137
+      startLine: 150
     package: com.microsoft.azure.management.storage
     summary: |-
       <p>Die Zugriffsschlüssel für dieses Speicherkonto asynchron generiert.</p>
@@ -387,7 +431,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 146
+      startLine: 159
     package: com.microsoft.azure.management.storage
     summary: |-
       <p>Die Zugriffsschlüssel für dieses Speicherkonto asynchron generiert.</p>
@@ -418,7 +462,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-storage/src/main/java/com/microsoft/azure/management/storage/StorageAccount.java
-      startLine: 47
+      startLine: 48
     package: com.microsoft.azure.management.storage
     syntax:
       content: public Sku sku()
@@ -478,6 +522,32 @@ references:
     name: encryption
     nameWithType: StorageAccount.encryption
     fullName: Encryption com.microsoft.azure.management.storage.StorageAccount.encryption
+    package: com.microsoft.azure.management.storage
+  - uid: com.microsoft.azure.management.storage._storage_account.encryptionKeySource*
+    name: encryptionKeySource
+    nameWithType: StorageAccount.encryptionKeySource
+    fullName: StorageAccountEncryptionKeySource com.microsoft.azure.management.storage.StorageAccount.encryptionKeySource
+    package: com.microsoft.azure.management.storage
+  - uid: 6110eba5com.microsoft.azure.management.storage._storage_serviceb33c76fccom.microsoft.azure.management.storage._storage_account_encryption_statusa08ddfce
+    spec.java:
+      - name: Map<
+        fullName: Map<
+      - uid: com.microsoft.azure.management.storage._storage_service
+        name: StorageService
+        fullName: com.microsoft.azure.management.storage.StorageService
+        href: com.microsoft.azure.management.storage._storage_service.yml
+      - name: ', '
+        fullName: ', '
+      - uid: com.microsoft.azure.management.storage._storage_account_encryption_status
+        name: StorageAccountEncryptionStatus
+        fullName: com.microsoft.azure.management.storage.StorageAccountEncryptionStatus
+        href: com.microsoft.azure.management.storage._storage_account_encryption_status.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.storage._storage_account.encryptionStatuses*
+    name: encryptionStatuses
+    nameWithType: StorageAccount.encryptionStatuses
+    fullName: 'Map<StorageService, StorageAccountEncryptionStatus> com.microsoft.azure.management.storage.StorageAccount.encryptionStatuses'
     package: com.microsoft.azure.management.storage
   - uid: com.microsoft.azure.management.storage._storage_account.accessTier*
     name: accessTier
@@ -571,7 +641,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -616,7 +686,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -631,7 +701,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -707,7 +777,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -776,7 +846,7 @@ references:
     nameWithType: Kind
     fullName: com.microsoft.azure.management.storage.Kind
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.storage._kind" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.storage._kind" data-throw-if-not-resolved="false">Art</xref>. </p>
     syntax:
       content: public enum Kind
   - uid: com.microsoft.azure.management.storage._custom_domain
@@ -796,7 +866,7 @@ references:
     nameWithType: ProvisioningState
     fullName: com.microsoft.azure.management.storage.ProvisioningState
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.storage._provisioning_state" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.storage._provisioning_state" data-throw-if-not-resolved="false">ProvisioningState</xref>. </p>
     syntax:
       content: public enum ProvisioningState
   - uid: com.microsoft.azure.management.storage._public_endpoints
@@ -819,6 +889,36 @@ references:
     summary: <p>Die verschlüsselungseinstellungen für das Speicherkonto. </p>
     syntax:
       content: public class Encryption
+  - uid: com.microsoft.azure.management.storage._storage_account_encryption_key_source
+    parent: com.microsoft.azure.management.storage
+    href: com.microsoft.azure.management.storage._storage_account_encryption_key_source.yml
+    name: StorageAccountEncryptionKeySource
+    nameWithType: StorageAccountEncryptionKeySource
+    fullName: com.microsoft.azure.management.storage.StorageAccountEncryptionKeySource
+    type: Class
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.management._azure\" data-throw-if-not-resolved=\"false\">Azure</xref> Speicherkonto Encryption Key Quellen. </p>"
+    syntax:
+      content: public class StorageAccountEncryptionKeySource
+  - uid: com.microsoft.azure.management.storage._storage_service
+    parent: com.microsoft.azure.management.storage
+    href: com.microsoft.azure.management.storage._storage_service.yml
+    name: StorageService
+    nameWithType: StorageService
+    fullName: com.microsoft.azure.management.storage.StorageService
+    type: Class
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.management._azure\" data-throw-if-not-resolved=\"false\">Azure</xref> Speicher Diensttypen. </p>"
+    syntax:
+      content: public class StorageService
+  - uid: com.microsoft.azure.management.storage._storage_account_encryption_status
+    parent: com.microsoft.azure.management.storage
+    href: com.microsoft.azure.management.storage._storage_account_encryption_status.yml
+    name: StorageAccountEncryptionStatus
+    nameWithType: StorageAccountEncryptionStatus
+    fullName: com.microsoft.azure.management.storage.StorageAccountEncryptionStatus
+    type: Interface
+    summary: '<p>Der Typ, den einen Speicherdienst Verschlüsselungsstatus darstellt. </p>'
+    syntax:
+      content: public interface StorageAccountEncryptionStatus
   - uid: com.microsoft.azure.management.storage._access_tier
     parent: com.microsoft.azure.management.storage
     href: com.microsoft.azure.management.storage._access_tier.yml
@@ -826,7 +926,7 @@ references:
     nameWithType: AccessTier
     fullName: com.microsoft.azure.management.storage.AccessTier
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.storage._access_tier" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.storage._access_tier" data-throw-if-not-resolved="false">AccessTier</xref>. </p>
     syntax:
       content: public enum AccessTier
   - uid: com.microsoft.azure.management.storage._storage_account_key
@@ -846,6 +946,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

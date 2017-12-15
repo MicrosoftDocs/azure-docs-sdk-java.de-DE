@@ -14,6 +14,7 @@ items:
       - com.microsoft.applicationinsights.telemetry._request_telemetry.getName()
       - com.microsoft.applicationinsights.telemetry._request_telemetry.getResponseCode()
       - com.microsoft.applicationinsights.telemetry._request_telemetry.getSamplingPercentage()
+      - com.microsoft.applicationinsights.telemetry._request_telemetry.getSource()
       - com.microsoft.applicationinsights.telemetry._request_telemetry.getUrl()
       - com.microsoft.applicationinsights.telemetry._request_telemetry.isSuccess()
       - com.microsoft.applicationinsights.telemetry._request_telemetry.RequestTelemetry()
@@ -25,6 +26,7 @@ items:
       - com.microsoft.applicationinsights.telemetry._request_telemetry.setName(String)
       - com.microsoft.applicationinsights.telemetry._request_telemetry.setResponseCode(String)
       - com.microsoft.applicationinsights.telemetry._request_telemetry.setSamplingPercentage(Double)
+      - com.microsoft.applicationinsights.telemetry._request_telemetry.setSource(String)
       - com.microsoft.applicationinsights.telemetry._request_telemetry.setSuccess(boolean)
       - com.microsoft.applicationinsights.telemetry._request_telemetry.setTimestamp(Date)
       - com.microsoft.applicationinsights.telemetry._request_telemetry.setUrl(String)
@@ -42,11 +44,11 @@ items:
         branch: master
         repo: 'https://github.com/Microsoft/ApplicationInsights-Java'
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 42
+      startLine: 40
     package: com.microsoft.applicationinsights.telemetry
     summary: |-
       <p>Kapselt Informationen zu einer webanforderung von der Anwendung behandelt.</p>
-      <p>Sie können Informationen zur Übergabe von einer Instanz dieser Klasse an die Methode "TrackRequest" der von der Webanwendung an Application Insights verarbeiteten senden die<xref href="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false"></xref></p>
+      <p>Sie können Informationen zur Übergabe von einer Instanz dieser Klasse an die Methode "TrackRequest" der von der Webanwendung an Application Insights verarbeiteten senden die <xref uid="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.TelemetryClient</xref></p>
     syntax:
       content: public class RequestTelemetry extends BaseSampleSourceTelemetry<RequestData>
     inheritance:
@@ -69,7 +71,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 274
+      startLine: 290
     package: com.microsoft.applicationinsights.telemetry
     syntax:
       content: protected void additionalSanitize()
@@ -87,7 +89,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 292
+      startLine: 308
     package: com.microsoft.applicationinsights.telemetry
     syntax:
       content: public String getBaseTypeName()
@@ -107,7 +109,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 282
+      startLine: 298
     package: com.microsoft.applicationinsights.telemetry
     syntax:
       content: protected RequestData getData()
@@ -127,7 +129,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 202
+      startLine: 215
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Ruft die Größe ab, der Zeit die Anwendung zur Verarbeitung der Anforderung benötigt wurde. </p>'
     syntax:
@@ -149,7 +151,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 287
+      startLine: 303
     package: com.microsoft.applicationinsights.telemetry
     syntax:
       content: public String getEnvelopName()
@@ -169,9 +171,9 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 250
+      startLine: 264
     package: com.microsoft.applicationinsights.telemetry
-    summary: <p>Ruft die HTTP-Methode der Anforderung ab. </p>
+    summary: "<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000039\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Ruft die HTTP-Methode der Anforderung ab. </p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
     syntax:
       content: public String getHttpMethod()
       return:
@@ -191,7 +193,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 153
+      startLine: 151
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Ruft den eindeutigen Bezeichner der Anforderung ab. </p>
     syntax:
@@ -213,7 +215,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 134
+      startLine: 132
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Ruft ab oder einem von Menschen lesbaren Namen der angeforderten Seite. </p>
     syntax:
@@ -235,7 +237,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 170
+      startLine: 168
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Ruft die von der Anwendung nach der Verarbeitung der Anforderungs zurückgegebenen Antwortcode ab. </p>
     syntax:
@@ -257,12 +259,33 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 264
+      startLine: 279
     package: com.microsoft.applicationinsights.telemetry
     syntax:
       content: public Double getSamplingPercentage()
       return:
         type: 8dd309d9
+  - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.getSource()
+    id: getSource()
+    parent: com.microsoft.applicationinsights.telemetry._request_telemetry
+    href: com.microsoft.applicationinsights.telemetry._request_telemetry.yml
+    langs:
+      - java
+    name: getSource()
+    nameWithType: RequestTelemetry.getSource()
+    fullName: String com.microsoft.applicationinsights.telemetry.RequestTelemetry.getSource()
+    overload: com.microsoft.applicationinsights.telemetry._request_telemetry.getSource*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
+      startLine: 183
+    package: com.microsoft.applicationinsights.telemetry
+    summary: '<p>Ruft die Quelle für die Anforderung Telemetrie-Objekt ab. Dies ist häufig eine ID, die den Aufrufer zu identifizieren. </p>'
+    syntax:
+      content: public String getSource()
+      return:
+        type: '26831127'
   - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.getUrl()
     id: getUrl()
     parent: com.microsoft.applicationinsights.telemetry._request_telemetry
@@ -277,7 +300,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 219
+      startLine: 232
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Ruft Anforderungs-Url (optional). </p>
     syntax:
@@ -302,7 +325,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 186
+      startLine: 199
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Ruft einen Wert, der angibt, ob die Anwendung die Anforderung erfolgreich verarbeitet hat. </p>'
     syntax:
@@ -324,7 +347,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 62
+      startLine: 60
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Initialisiert eine neue Instanz der HttpRequestTelemetry-Klasse. </p>
     syntax:
@@ -343,7 +366,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 95
+      startLine: 93
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Initialisiert eine neue Instanz der Klasse HttpRequestTelemetry mit dem angegebenen Namen, den Zeitstempel, die Dauer, die HTTP-Antwort-Code und den Erfolg-Eigenschaftswerte. </p>'
     syntax:
@@ -357,7 +380,7 @@ items:
           description: <p>Der Zeitpunkt der Anforderung. </p>
         - id: duration
           type: com.microsoft.applicationinsights.telemetry._duration
-          description: '<p>Die Dauer als ein <xref href="com.microsoft.applicationinsights.telemetry._duration" data-throw-if-not-resolved="false"></xref> Instanz, von der Verarbeitung der Anforderung. </p>'
+          description: '<p>Die Dauer als ein <xref uid="com.microsoft.applicationinsights.telemetry._duration" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.Duration</xref> Instanz, von der Verarbeitung der Anforderung. </p>'
         - id: responseCode
           type: '26831127'
           description: <p>Der HTTP-Antwortcode. </p>
@@ -378,7 +401,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 82
+      startLine: 80
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Initialisiert eine neue Instanz der Klasse HttpRequestTelemetry mit dem angegebenen Namen, den Zeitstempel, die Dauer, die HTTP-Antwort-Code und den Erfolg-Eigenschaftswerte. </p>'
     syntax:
@@ -413,7 +436,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 210
+      startLine: 223
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Legt fest, wie der Zeit die Anwendung zur Verarbeitung der Anforderung benötigt wurde. </p>'
     syntax:
@@ -421,7 +444,7 @@ items:
       parameters:
         - id: duration
           type: com.microsoft.applicationinsights.telemetry._duration
-          description: '<p>Zeit in erfasst werden, einem <xref href="com.microsoft.applicationinsights.telemetry._duration" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>Zeit in erfasst werden, einem <xref uid="com.microsoft.applicationinsights.telemetry._duration" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.Duration</xref>. </p>'
   - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.setHttpMethod(String)
     id: setHttpMethod(String)
     parent: com.microsoft.applicationinsights.telemetry._request_telemetry
@@ -436,9 +459,9 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 259
+      startLine: 274
     package: com.microsoft.applicationinsights.telemetry
-    summary: <p>Legt den HTTP-Methode der Anforderung fest. </p>
+    summary: "<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000040\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Legt den HTTP-Methode der Anforderung fest. </p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
     syntax:
       content: public void setHttpMethod(String httpMethod)
       parameters:
@@ -459,7 +482,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 162
+      startLine: 160
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Legt den eindeutigen Bezeichner der Anforderung fest. </p>
     syntax:
@@ -482,7 +505,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 142
+      startLine: 140
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Legt fest oder einem von Menschen lesbaren Namen der angeforderten Seite. </p>
     syntax:
@@ -505,7 +528,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 178
+      startLine: 176
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Legt fest, von der Anwendung nach der Verarbeitung der Anforderungs zurückgegebenen Antwortcode. </p>'
     syntax:
@@ -528,13 +551,36 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 269
+      startLine: 284
     package: com.microsoft.applicationinsights.telemetry
     syntax:
       content: public void setSamplingPercentage(Double samplingPercentage)
       parameters:
         - id: samplingPercentage
           type: 8dd309d9
+  - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.setSource(String)
+    id: setSource(String)
+    parent: com.microsoft.applicationinsights.telemetry._request_telemetry
+    href: com.microsoft.applicationinsights.telemetry._request_telemetry.yml
+    langs:
+      - java
+    name: setSource(String value)
+    nameWithType: RequestTelemetry.setSource(String value)
+    fullName: void com.microsoft.applicationinsights.telemetry.RequestTelemetry.setSource(String value)
+    overload: com.microsoft.applicationinsights.telemetry._request_telemetry.setSource*
+    type: Method
+    source:
+      remote: *ref_0
+      path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
+      startLine: 191
+    package: com.microsoft.applicationinsights.telemetry
+    summary: '<p>Ruft die Quelle für die Anforderung Telemetrie-Objekt. Dies ist häufig eine ID, die den Aufrufer zu identifizieren. </p>'
+    syntax:
+      content: public void setSource(String value)
+      parameters:
+        - id: value
+          type: '26831127'
+          description: <p>Der Wert der Source-Eigenschaft. </p>
   - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.setSuccess(boolean)
     id: setSuccess(boolean)
     parent: com.microsoft.applicationinsights.telemetry._request_telemetry
@@ -549,7 +595,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 194
+      startLine: 207
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Legt einen Wert, der angibt, ob die Anwendung die Anforderung erfolgreich verarbeitet hat. </p>'
     syntax:
@@ -572,7 +618,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 122
+      startLine: 120
     package: com.microsoft.applicationinsights.telemetry
     summary: '<p>Legt den StartTime fest. Das Standardverhalten verwendet, und legt die Startzeit für die ''Data''-Eigenschaft </p>'
     syntax:
@@ -595,7 +641,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 240
+      startLine: 253
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Legt Anforderungs-Url. </p>
     syntax:
@@ -621,7 +667,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/telemetry/RequestTelemetry.java
-      startLine: 231
+      startLine: 244
     package: com.microsoft.applicationinsights.telemetry
     summary: <p>Legt Anforderungs-url </p>
     syntax:
@@ -686,6 +732,16 @@ references:
     name: setResponseCode
     nameWithType: RequestTelemetry.setResponseCode
     fullName: void com.microsoft.applicationinsights.telemetry.RequestTelemetry.setResponseCode
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.getSource*
+    name: getSource
+    nameWithType: RequestTelemetry.getSource
+    fullName: String com.microsoft.applicationinsights.telemetry.RequestTelemetry.getSource
+    package: com.microsoft.applicationinsights.telemetry
+  - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.setSource*
+    name: setSource
+    nameWithType: RequestTelemetry.setSource
+    fullName: void com.microsoft.applicationinsights.telemetry.RequestTelemetry.setSource
     package: com.microsoft.applicationinsights.telemetry
   - uid: com.microsoft.applicationinsights.telemetry._request_telemetry.isSuccess*
     name: isSuccess

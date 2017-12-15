@@ -62,7 +62,7 @@ items:
       - com.microsoft.azure.storage.blob._cloud_blob_container.listContainersSegmented()
       - com.microsoft.azure.storage.blob._cloud_blob_container.listContainersSegmented(final String)
       - 'com.microsoft.azure.storage.blob._cloud_blob_container.listContainersSegmented(final String,final ContainerListingDetails,final Integer,final ResultContinuation,final BlobRequestOptions,final OperationContext)'
-      - com.microsoft.azure.storage.blob._cloud_blob_container.metadata()
+      - com.microsoft.azure.storage.blob._cloud_blob_container.metadata
       - com.microsoft.azure.storage.blob._cloud_blob_container.releaseLease(final AccessCondition)
       - 'com.microsoft.azure.storage.blob._cloud_blob_container.releaseLease(final AccessCondition,BlobRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.blob._cloud_blob_container.renewLease(final AccessCondition)
@@ -91,7 +91,7 @@ items:
     package: com.microsoft.azure.storage.blob
     summary: |-
       <p>Stellt einen Container im Microsoft Azure Blob-Dienst dar. </p>
-      <p>Container enthalten die Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false"></xref> Objekte und Verzeichnisse enthalten die Block- und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+      <p>Container enthalten die Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false">CloudBlobDirectory</xref> Objekte und Verzeichnisse enthalten die Block- und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
     syntax: &ref_1
       content: public class CloudBlobContainer
     inheritance:
@@ -187,13 +187,13 @@ items:
           description: '<p>Ein <code>String</code> , die die vorgeschlagene Lease-ID für die neue Lease darstellt, oder null, wenn keine Lease ID vorgeschlagen wird.</p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt.</p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>).</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>).</p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3d93591e
         description: '<p>Ein <code>String</code> , die die Lease-ID darstellt</p>'
@@ -258,13 +258,13 @@ items:
           description: '<p>Ein <code>Integer</code> die Wartezeit in Sekunden, bis die aktuelle Lease unterbrochen wurde, gibt. Wenn der Wert null ist, ist der Unterbrechungszeitraum der Rest der aktuellen Lease oder 0 (null) bei unbegrenzten Leases.</p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4c60ae65
         description: '<p>Die Zeit in Sekunden, in der Leasedauer verbleiben.</p>'
@@ -298,7 +298,7 @@ items:
           description: '<p>Ein <code>String</code> , die die vorgeschlagene Lease-ID für die neue Lease darstellt, oder null, wenn keine Lease ID vorgeschlagen wird.</p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein. </p>'
       return:
         type: 3d93591e
         description: '<p>Ein <code>String</code> , das die neue Lease-ID darstellt.</p>'
@@ -332,13 +332,13 @@ items:
           description: '<p>Ein <code>String</code> , die die vorgeschlagene Lease-ID für die neue Leasedauer darstellt. Dies darf nicht null sein.</p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>).</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>).</p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
       return:
         type: 3d93591e
         description: '<p>Ein <code>String</code> , das die neue Lease-ID darstellt.</p>'
@@ -369,7 +369,7 @@ items:
       parameters:
         - id: storageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den URI des Containers darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den URI des Containers darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -390,17 +390,17 @@ items:
       startLine: 162
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Erstellt eine Instanz der Klasse unter Verwendung des angegebenen <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> und Anmeldeinformationen.</p>
+      <p>Erstellt eine Instanz der Klasse unter Verwendung des angegebenen <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> und Anmeldeinformationen.</p>
       <p></p>
     syntax:
       content: 'public CloudBlobContainer(final StorageUri storageUri, final StorageCredentials credentials)'
       parameters:
         - id: storageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das die absoluten darstellt <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> des Containers. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die absoluten darstellt <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> des Containers. </p>'
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -431,7 +431,7 @@ items:
           description: '<p>Ein <code>String</code> das den Container, der Benennungsregeln für Container Sicherheitsprinzipalobjekte darstellt. Der Containername muss keine Trennzeichen Pfad (/) enthalten. Containernamen müssen Kleinbuchstaben, 3 bis 63 Zeichen lang sein und müssen mit einem Buchstaben oder einer Ziffer beginnen. Containernamen darf nur Buchstaben, Zahlen und Bindestriche (-) enthalten. </p>'
         - id: client
           type: 93de0ef9com.microsoft.azure.storage.blob._cloud_blob_client
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref> Objekt, das die zugeordneten Dienstclient darstellt, und den Endpunkt für den Blob-Dienst angibt. *</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt, das die zugeordneten Dienstclient darstellt, und den Endpunkt für den Blob-Dienst angibt. *</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -492,7 +492,7 @@ items:
           description: '<p>Ein <code>java.net.URI</code> Objekt, das den absoluten URI des Containers darstellt. </p>'
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -544,13 +544,13 @@ items:
       parameters:
         - id: accessType
           type: com.microsoft.azure.storage.blob._blob_container_public_access_type
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref> Objekt, das angibt, ob die Daten im Container öffentlich zugegriffen werden können und welche Zugriffsebene zulässig sein. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false">BlobContainerPublicAccessType</xref> Objekt, das angibt, ob die Daten im Container öffentlich zugegriffen werden können und welche Zugriffsebene zulässig sein. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -578,10 +578,10 @@ items:
       parameters:
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -636,13 +636,13 @@ items:
       parameters:
         - id: accessType
           type: com.microsoft.azure.storage.blob._blob_container_public_access_type
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref> Objekt, das angibt, ob die Daten im Container öffentlich zugegriffen werden können und welche Zugriffsebene zulässig sein. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false">BlobContainerPublicAccessType</xref> Objekt, das angibt, ob die Daten im Container öffentlich zugegriffen werden können und welche Zugriffsebene zulässig sein. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn der Container noch nicht vorhanden war und erstellt wurde; andernfalls <code>false</code>.</p>"
@@ -673,10 +673,10 @@ items:
       parameters:
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn der Container noch nicht vorhanden war und erstellt wurde; andernfalls <code>false</code>.</p>"
@@ -731,13 +731,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -792,13 +792,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn der Container vorhanden war und gelöscht wurde; andernfalls <code>false</code>.</p>"
@@ -853,13 +853,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -886,7 +886,7 @@ items:
       content: public BlobContainerPermissions downloadPermissions()
       return:
         type: com.microsoft.azure.storage.blob._blob_container_permissions
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false"></xref> Objekt, das die Berechtigungen des Containers darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false">BlobContainerPermissions</xref> Objekt, das die Berechtigungen des Containers darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -914,16 +914,16 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage.blob._blob_container_permissions
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false"></xref> Objekt, das die Berechtigungen des Containers darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false">BlobContainerPermissions</xref> Objekt, das die Berechtigungen des Containers darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -978,13 +978,13 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn der Container vorhanden, andernfalls ist <code>false</code>.</p>"
@@ -1015,7 +1015,7 @@ items:
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.blob._shared_access_blob_policy
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._shared_access_blob_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._shared_access_blob_policy" data-throw-if-not-resolved="false">SharedAccessBlobPolicy</xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: <p>Ein <code>String</code> der die Zugriffsrichtlinie auf Containerebene darstellt.</p>
@@ -1051,16 +1051,16 @@ items:
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.blob._shared_access_blob_policy
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._shared_access_blob_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._shared_access_blob_policy" data-throw-if-not-resolved="false">SharedAccessBlobPolicy</xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: <p>Ein <code>String</code> der die Zugriffsrichtlinie auf Containerebene darstellt. </p>
         - id: ipRange
           type: 93de0ef9com.microsoft.azure.storage._i_p_range
-          description: <p>Ein <xref href="com.microsoft.azure.storage._i_p_range" data-throw-if-not-resolved="false"></xref> Objekt mit dem Bereich der zulässigen IP-Adressen. </p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._i_p_range" data-throw-if-not-resolved="false">"iprange"</xref> Objekt mit dem Bereich der zulässigen IP-Adressen. </p>
         - id: protocols
           type: 93de0ef9com.microsoft.azure.storage._shared_access_protocols
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._shared_access_protocols" data-throw-if-not-resolved="false"></xref> , die die zulässigen Internetprotokolle darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._shared_access_protocols" data-throw-if-not-resolved="false">SharedAccessProtocols</xref> , die die zulässigen Internetprotokolle darstellt.</p>'
       return:
         type: '26831127'
         description: <p>Ein <code>String</code> die eine SAS für den Container darstellt.</p>
@@ -1086,7 +1086,7 @@ items:
       startLine: 899
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Anhang-Blob in diesem Container darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false">CloudAppendBlob</xref> Objekt, das einen Anhang-Blob in diesem Container darstellt.</p>
       <p></p>
     syntax:
       content: public CloudAppendBlob getAppendBlobReference(final String blobName)
@@ -1096,7 +1096,7 @@ items:
           description: '<p>Ein <code>String</code> , der den Namen des Blob darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_append_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf die angegebene Anhang-Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false">CloudAppendBlob</xref> Objekt, das einen Verweis auf die angegebene Anhang-Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1119,7 +1119,7 @@ items:
       startLine: 919
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Anhang-Blob im Container, mit der angegebenen Momentaufnahme-ID darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false">CloudAppendBlob</xref> Objekt, das einen Anhang-Blob im Container, mit der angegebenen Momentaufnahme-ID darstellt.</p>
       <p></p>
     syntax:
       content: 'public CloudAppendBlob getAppendBlobReference(final String blobName, final String snapshotID)'
@@ -1132,7 +1132,7 @@ items:
           description: '<p>Ein <code>String</code> , die ID der Momentaufnahme des BLOBs darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_append_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf die angegebene Anhang-Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_append_blob" data-throw-if-not-resolved="false">CloudAppendBlob</xref> Objekt, das einen Verweis auf die angegebene Anhang-Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1156,7 +1156,7 @@ items:
     package: com.microsoft.azure.storage.blob
     summary: |-
       <p>Ruft einen Verweis auf ein Blob in diesem Container ab. Das Blob muss auf dem Dienst bereits vorhanden.</p>
-      <p>Im Gegensatz zu anderen Get * Verweis Methoden, diese Methode führt eine Serviceanfrage zum Abrufen von Metadaten und Eigenschaften des BLOBs. Das zurückgegebene Blob direkt als verwendet werden kann ein <xref href="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false"></xref> oder mit beiden Instanceof umgewandelt oder <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.getProperties()" data-throw-if-not-resolved="false"></xref>.getBlobType(), um zu bestimmen, dessen Untertyp.</p>
+      <p>Im Gegensatz zu anderen Get * Verweis Methoden, diese Methode führt eine Serviceanfrage zum Abrufen von Metadaten und Eigenschaften des BLOBs. Das zurückgegebene Blob direkt als verwendet werden kann ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false">CloudBlob</xref> oder mit beiden Instanceof umgewandelt oder <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.getProperties()" data-throw-if-not-resolved="false">getProperties()</xref>.getBlobType(), um zu bestimmen, dessen Untertyp.</p>
       <p></p>
     syntax:
       content: public final CloudBlob getBlobReferenceFromServer(final String blobName)
@@ -1166,7 +1166,7 @@ items:
           description: '<p>Ein <code>String</code> , der den Namen des Blob darstellt.</p>'
       return:
         type: 93de0ef9com.microsoft.azure.storage.blob._cloud_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf das angegebene Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false">CloudBlob</xref> Objekt, das einen Verweis auf das angegebene Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1190,7 +1190,7 @@ items:
     package: com.microsoft.azure.storage.blob
     summary: |-
       <p>Ruft einen Verweis auf ein Blob in diesem Container ab. Das Blob muss auf dem Dienst bereits vorhanden.</p>
-      <p>Im Gegensatz zu anderen Get * Verweis Methoden, diese Methode führt eine Serviceanfrage zum Abrufen von Metadaten und Eigenschaften des BLOBs. Das zurückgegebene Blob direkt als verwendet werden kann ein <xref href="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false"></xref> oder mit beiden Instanceof umgewandelt oder <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.getProperties()" data-throw-if-not-resolved="false"></xref>.getBlobType(), um zu bestimmen, dessen Untertyp.</p>
+      <p>Im Gegensatz zu anderen Get * Verweis Methoden, diese Methode führt eine Serviceanfrage zum Abrufen von Metadaten und Eigenschaften des BLOBs. Das zurückgegebene Blob direkt als verwendet werden kann ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false">CloudBlob</xref> oder mit beiden Instanceof umgewandelt oder <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.getProperties()" data-throw-if-not-resolved="false">getProperties()</xref>.getBlobType(), um zu bestimmen, dessen Untertyp.</p>
       <p></p>
     syntax:
       content: 'public final CloudBlob getBlobReferenceFromServer(final String blobName, final String snapshotID, AccessCondition accessCondition, BlobRequestOptions options, OperationContext opContext)'
@@ -1203,16 +1203,16 @@ items:
           description: '<p>Ein <code>String</code> , die ID der Momentaufnahme des BLOBs darstellt. </p>'
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 93de0ef9com.microsoft.azure.storage.blob._cloud_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf das angegebene Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob" data-throw-if-not-resolved="false">CloudBlob</xref> Objekt, das einen Verweis auf das angegebene Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1235,7 +1235,7 @@ items:
       startLine: 937
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Block-Blob in diesem Container darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false">CloudBlockBlob</xref> Objekt, das einen Block-Blob in diesem Container darstellt.</p>
       <p></p>
     syntax:
       content: public CloudBlockBlob getBlockBlobReference(final String blobName)
@@ -1245,7 +1245,7 @@ items:
           description: '<p>Ein <code>String</code> , der den Namen des Blob darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_block_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf den angegebenen Block-Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false">CloudBlockBlob</xref> Objekt, das einen Verweis auf den angegebenen Block-Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1268,7 +1268,7 @@ items:
       startLine: 957
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Block-Blob in diesem Container, mit der angegebenen Momentaufnahme-ID darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false">CloudBlockBlob</xref> Objekt, das einen Block-Blob in diesem Container, mit der angegebenen Momentaufnahme-ID darstellt.</p>
       <p></p>
     syntax:
       content: 'public CloudBlockBlob getBlockBlobReference(final String blobName, final String snapshotID)'
@@ -1281,7 +1281,7 @@ items:
           description: '<p>Ein <code>String</code> , die ID der Momentaufnahme des BLOBs darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_block_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf den angegebenen Block-Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false">CloudBlockBlob</xref> Objekt, das einen Verweis auf den angegebenen Block-Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1304,7 +1304,7 @@ items:
       startLine: 973
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf eine <xref href="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false"></xref> -Objekt, das ein virtuelles Blob-Verzeichnis innerhalb dieses Containers darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false">CloudBlobDirectory</xref> -Objekt, das ein virtuelles Blob-Verzeichnis innerhalb dieses Containers darstellt.</p>
       <p></p>
     syntax:
       content: public CloudBlobDirectory getDirectoryReference(String directoryName)
@@ -1314,7 +1314,7 @@ items:
           description: '<p>Ein <code>String</code> , der den Namen des virtuellen Blob-Verzeichnisses darstellt. Wenn das Stammverzeichnis (das Verzeichnis, das den Container darstellt) gewünscht ist, verwenden Sie eine leere Zeichenfolge. </p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_blob_directory
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false"></xref> , ein virtuelles Blob-Verzeichnis innerhalb dieses Containers darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false">CloudBlobDirectory</xref> , ein virtuelles Blob-Verzeichnis innerhalb dieses Containers darstellt. </p>'
     exceptions:
       - type: '44102508'
         description: <p>Wenn Sie der Ressourcen-URI ist ungültig. </p>
@@ -1335,7 +1335,7 @@ items:
       startLine: 1124
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt die Metadaten für den Container zurück. Dieser Wert wird durch einen Aufruf mit den Metadaten aus der Warteschlange initialisiert <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.downloadAttributes()" data-throw-if-not-resolved="false"></xref>, und wird festgelegt, in der Warteschlange mit einem Aufruf von <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Gibt die Metadaten für den Container zurück. Dieser Wert wird durch einen Aufruf mit den Metadaten aus der Warteschlange initialisiert <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.downloadAttributes()" data-throw-if-not-resolved="false">DownloadAttributes</xref>, und wird festgelegt, in der Warteschlange mit einem Aufruf von <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()" data-throw-if-not-resolved="false">UploadMetadata</xref>.</p>
       <p></p>
     syntax:
       content: 'public HashMap<String, String> getMetadata()'
@@ -1383,7 +1383,7 @@ items:
       startLine: 1159
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Seiten-Blob in diesem Container darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false">CloudPageBlob</xref> Objekt, das einen Seiten-Blob in diesem Container darstellt.</p>
       <p></p>
     syntax:
       content: public CloudPageBlob getPageBlobReference(final String blobName)
@@ -1393,7 +1393,7 @@ items:
           description: '<p>Ein <code>String</code> , der den Namen des Blob darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_page_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf den angegebenen Seiten-Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false">CloudPageBlob</xref> Objekt, das einen Verweis auf den angegebenen Seiten-Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1416,7 +1416,7 @@ items:
       startLine: 1179
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Seiten-Blob im Container, mit der angegebenen Momentaufnahme-ID darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false">CloudPageBlob</xref> Objekt, das einen Seiten-Blob im Container, mit der angegebenen Momentaufnahme-ID darstellt.</p>
       <p></p>
     syntax:
       content: 'public CloudPageBlob getPageBlobReference(final String blobName, final String snapshotID)'
@@ -1429,7 +1429,7 @@ items:
           description: '<p>Ein <code>String</code> , die ID der Momentaufnahme des BLOBs darstellt.</p>'
       return:
         type: com.microsoft.azure.storage.blob._cloud_page_blob
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Objekt, das einen Verweis auf den angegebenen Seiten-Blob darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false">CloudPageBlob</xref> Objekt, das einen Verweis auf den angegebenen Seiten-Blob darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1458,7 +1458,7 @@ items:
       content: public BlobContainerProperties getProperties()
       return:
         type: com.microsoft.azure.storage.blob._blob_container_properties
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_properties" data-throw-if-not-resolved="false"></xref> Objekt, das die Eigenschaften für den Container darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_properties" data-throw-if-not-resolved="false">BlobContainerProperties</xref> Objekt, das die Eigenschaften für den Container darstellt. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.getServiceClient()
     id: getServiceClient()
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1482,7 +1482,7 @@ items:
       content: public CloudBlobClient getServiceClient()
       return:
         type: com.microsoft.azure.storage.blob._cloud_blob_client
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref> Objekt, das die diesem Container zugeordneten Dienstclient darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref> Objekt, das die diesem Container zugeordneten Dienstclient darstellt. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.getStorageUri()
     id: getStorageUri()
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1506,7 +1506,7 @@ items:
       content: public StorageUri getStorageUri()
       return:
         type: com.microsoft.azure.storage._storage_uri
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das die Liste der URIs für alle Speicherorte darstellt... </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die Liste der URIs für alle Speicherorte darstellt... </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.getUri()
     id: getUri()
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1554,7 +1554,7 @@ items:
       content: public Iterable<ListBlobItem> listBlobs()
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die die Elemente in diesem Container darstellt. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> verzögert abgerufener Objekte, die die Elemente in diesem Container darstellt. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.listBlobs(final String)
     id: listBlobs(final String)
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1582,7 +1582,7 @@ items:
           description: '<p>Ein <code>String</code> , die das Präfix des Blob darstellt. Dieser Wert muss entweder durch den Namen des Containers oder der absolute Pfad zum Container vorangestellt sein.</p>'
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die die Elemente darstellt, deren Namen beginnen mit dem angegebenen Präfix in diesem Container. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> verzögert abgerufener Objekte, die die Elemente darstellt, deren Namen beginnen mit dem angegebenen Präfix in diesem Container. </p>'
   - uid: 'com.microsoft.azure.storage.blob._cloud_blob_container.listBlobs(final String,final boolean)'
     id: 'listBlobs(final String,final boolean)'
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1613,7 +1613,7 @@ items:
           description: "<p>\r\n\r\n  <code>true</code>um anzugeben, dass die zurückgegebene Liste Flatfile; <code>false</code> , um anzugeben, dass die zurückgegebene Liste hierarchische kann. </p>"
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die die Elemente darstellt, deren Namen beginnen mit dem angegebenen Präfix in diesem Container. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> verzögert abgerufener Objekte, die die Elemente darstellt, deren Namen beginnen mit dem angegebenen Präfix in diesem Container. </p>'
   - uid: 'com.microsoft.azure.storage.blob._cloud_blob_container.listBlobs(final String,final boolean,final EnumSet<BlobListingDetails>,BlobRequestOptions,OperationContext)'
     id: 'listBlobs(final String,final boolean,final EnumSet<BlobListingDetails>,BlobRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1644,16 +1644,16 @@ items:
           description: "<p>\r\n\r\n  <code>true</code>um anzugeben, dass die zurückgegebene Liste Flatfile; <code>false</code> , um anzugeben, dass die zurückgegebene Liste hierarchische kann. </p>"
         - id: listingDetails
           type: 7f216280com.microsoft.azure.storage.blob._blob_listing_detailsa08ddfce
-          description: '<p>Ein <code>java.util.EnumSet</code> Objekt, das enthält <xref href="com.microsoft.azure.storage.blob._blob_listing_details" data-throw-if-not-resolved="false"></xref> , der angibt, ob Momentaufnahmen, Metadaten und/oder Blöcke zurückgegeben werden. Blöcke mit ausgeführtem Commit werden immer zurückgegeben. </p>'
+          description: '<p>Ein <code>java.util.EnumSet</code> Objekt, das enthält <xref uid="com.microsoft.azure.storage.blob._blob_listing_details" data-throw-if-not-resolved="false">BlobListingDetails</xref> , der angibt, ob Momentaufnahmen, Metadaten und/oder Blöcke zurückgegeben werden. Blöcke mit ausgeführtem Commit werden immer zurückgegeben. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen. </p>'
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die die Elemente darstellt, deren Namen beginnen mit dem angegebenen Präfix in diesem Container. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> verzögert abgerufener Objekte, die die Elemente darstellt, deren Namen beginnen mit dem angegebenen Präfix in diesem Container. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.listBlobsSegmented()
     id: listBlobsSegmented()
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1677,7 +1677,7 @@ items:
       content: public ResultSegment<ListBlobItem> listBlobsSegmented()
       return:
         type: com.microsoft.azure.storage._result_segment78504a52com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> Objekte, die Blob-Elemente im Container darstellen.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> Objekte, die Blob-Elemente im Container darstellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1708,7 +1708,7 @@ items:
           description: '<p>Ein <code>String</code> , die das Präfix des Blob-Namen darstellt.</p>'
       return:
         type: com.microsoft.azure.storage._result_segment78504a52com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> Objekte, die Blob-Elemente darstellen, deren Namen mit dem angegebenen Präfix im Container beginnen.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> Objekte, die Blob-Elemente darstellen, deren Namen mit dem angegebenen Präfix im Container beginnen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1742,22 +1742,22 @@ items:
           description: "<p>\r\n\r\n  <code>true</code>um anzugeben, dass die zurückgegebene Liste Flatfile; <code>false</code> , um anzugeben, dass die zurückgegebene Liste hierarchische kann. </p>"
         - id: listingDetails
           type: 7f216280com.microsoft.azure.storage.blob._blob_listing_detailsa08ddfce
-          description: '<p>Ein <code>java.util.EnumSet</code> Objekt, das enthält <xref href="com.microsoft.azure.storage.blob._blob_listing_details" data-throw-if-not-resolved="false"></xref> , der angibt, ob Momentaufnahmen, Metadaten und/oder Blöcke zurückgegeben werden. Blöcke mit ausgeführtem Commit werden immer zurückgegeben. </p>'
+          description: '<p>Ein <code>java.util.EnumSet</code> Objekt, das enthält <xref uid="com.microsoft.azure.storage.blob._blob_listing_details" data-throw-if-not-resolved="false">BlobListingDetails</xref> , der angibt, ob Momentaufnahmen, Metadaten und/oder Blöcke zurückgegeben werden. Blöcke mit ausgeführtem Commit werden immer zurückgegeben. </p>'
         - id: maxResults
           type: 3437983f
           description: '<p>Die maximale Anzahl der abzurufenden Ergebnisse. Wenn <code>null</code> oder größer als 5000, der Server bis zu 5.000 Elemente zurück. Mindestens 1 muss sein. </p>'
         - id: continuationToken
           type: 93de0ef9com.microsoft.azure.storage._result_continuation
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._result_continuation" data-throw-if-not-resolved="false"></xref> Objekt, das ein von einem vorherigen Auflistungsvorgang zurückgegebenes Fortsetzungstoken darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_continuation" data-throw-if-not-resolved="false">ResultContinuation</xref> Objekt, das ein von einem vorherigen Auflistungsvorgang zurückgegebenes Fortsetzungstoken darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._result_segment78504a52com.microsoft.azure.storage.blob._list_blob_itema08ddfce
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref href="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false"></xref> Objekte, die Block-Elemente darstellen, deren Namen mit dem angegebenen Präfix im Container beginnen.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref uid="com.microsoft.azure.storage.blob._list_blob_item" data-throw-if-not-resolved="false">ListBlobItem</xref> Objekte, die Block-Elemente darstellen, deren Namen mit dem angegebenen Präfix im Container beginnen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1784,7 +1784,7 @@ items:
       content: public Iterable<CloudBlobContainer> listContainers()
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._cloud_blob_containera08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die für den Dienstclient, die diesem Container zugeordneten die Container darstellen. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> verzögert abgerufener Objekte, die für den Dienstclient, die diesem Container zugeordneten die Container darstellen. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.listContainers(final String)
     id: listContainers(final String)
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1812,7 +1812,7 @@ items:
           description: '<p>Ein <code>String</code> , die das Präfix des containernamens darstellt.</p>'
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._cloud_blob_containera08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die die Container darstellen, deren Namen mit dem angegebenen Präfix, für die diesem Container zugeordneten Dienstclient beginnen. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> verzögert abgerufener Objekte, die die Container darstellen, deren Namen mit dem angegebenen Präfix, für die diesem Container zugeordneten Dienstclient beginnen. </p>'
   - uid: 'com.microsoft.azure.storage.blob._cloud_blob_container.listContainers(final String,final ContainerListingDetails,final BlobRequestOptions,final OperationContext)'
     id: 'listContainers(final String,final ContainerListingDetails,final BlobRequestOptions,final OperationContext)'
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1840,16 +1840,16 @@ items:
           description: '<p>Ein <code>String</code> , die das Präfix des containernamens darstellt. </p>'
         - id: detailsIncluded
           type: 93de0ef9com.microsoft.azure.storage.blob._container_listing_details
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._container_listing_details" data-throw-if-not-resolved="false"></xref> Wert, der angibt, ob containermetadaten zurückgegeben wird. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._container_listing_details" data-throw-if-not-resolved="false">ContainerListingDetails</xref> Wert, der angibt, ob containermetadaten zurückgegeben wird. </p>'
         - id: options
           type: 93de0ef9com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 2a13b5a5com.microsoft.azure.storage.blob._cloud_blob_containera08ddfce
-        description: '<p>Eine aufzählbare Auflistung von <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> verzögert abgerufener Objekte, die den Container für den Dienstclient, die diesem Container zugeordneten darstellt. </p>'
+        description: '<p>Eine aufzählbare Auflistung von <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> verzögert abgerufener Objekte, die den Container für den Dienstclient, die diesem Container zugeordneten darstellt. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.listContainersSegmented()
     id: listContainersSegmented()
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -1873,7 +1873,7 @@ items:
       content: public ResultSegment<CloudBlobContainer> listContainersSegmented()
       return:
         type: com.microsoft.azure.storage._result_segment78504a52com.microsoft.azure.storage.blob._cloud_blob_containera08ddfce
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> Objekte, die Container für den Dienstclient, die diesem Container zugeordneten darstellen.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> Objekte, die Container für den Dienstclient, die diesem Container zugeordneten darstellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1904,7 +1904,7 @@ items:
           description: '<p>Ein <code>String</code> , die das Präfix des Blob darstellt.</p>'
       return:
         type: com.microsoft.azure.storage._result_segment78504a52com.microsoft.azure.storage.blob._cloud_blob_containera08ddfce
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> Objekte, die Container darstellen, deren Namen mit dem angegebenen Präfix, für den Dienstclient, die diesem Container zugeordneten beginnen.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> Objekte, die Container darstellen, deren Namen mit dem angegebenen Präfix für den Dienst beginnen, Clients, die diesem Container zugeordneten.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1935,27 +1935,27 @@ items:
           description: '<p>Ein <code>String</code> , die das Präfix den Containernamen darstellt. </p>'
         - id: detailsIncluded
           type: 93de0ef9com.microsoft.azure.storage.blob._container_listing_details
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._container_listing_details" data-throw-if-not-resolved="false"></xref> Objekt, das angibt, ob Metadaten enthalten ist. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._container_listing_details" data-throw-if-not-resolved="false">ContainerListingDetails</xref> Objekt, das angibt, ob Metadaten enthalten ist. </p>'
         - id: maxResults
           type: 3437983f
           description: '<p>Die maximale Anzahl der abzurufenden Ergebnisse. Wenn <code>null</code> oder größer als 5000, der Server bis zu 5.000 Elemente zurück. Mindestens 1 muss sein. </p>'
         - id: continuationToken
           type: 93de0ef9com.microsoft.azure.storage._result_continuation
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._result_continuation" data-throw-if-not-resolved="false"></xref> Objekt, das ein von einem vorherigen Auflistungsvorgang zurückgegebenes Fortsetzungstoken darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_continuation" data-throw-if-not-resolved="false">ResultContinuation</xref> Objekt, das ein von einem vorherigen Auflistungsvorgang zurückgegebenes Fortsetzungstoken darstellt. </p>'
         - id: options
           type: 93de0ef9com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._result_segment78504a52com.microsoft.azure.storage.blob._cloud_blob_containera08ddfce
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> Objekte, die Container darstellen, deren Namen mit dem angegebenen Präfix, für den Dienstclient, die diesem Container zugeordneten beginnen.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> -Objekt, das eine aufzählbare Auflistung von-Segment enthält <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> Objekte, die Container darstellen, deren Namen mit dem angegebenen Präfix für den Dienst beginnen, Clients, die diesem Container zugeordneten.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
-  - uid: com.microsoft.azure.storage.blob._cloud_blob_container.metadata()
-    id: metadata()
+  - uid: com.microsoft.azure.storage.blob._cloud_blob_container.metadata
+    id: metadata
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
     href: com.microsoft.azure.storage.blob._cloud_blob_container.yml
     langs:
@@ -1998,7 +1998,7 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -2028,13 +2028,13 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>).</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>).</p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -2064,7 +2064,7 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -2094,13 +2094,13 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für das Blob darstellt. Die Lease-ID ist erforderlich, um eine Bedingung für den Zugriff festgelegt sein.</p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>).</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>).</p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Der Kontext dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -2123,7 +2123,7 @@ items:
       startLine: 1686
     package: com.microsoft.azure.storage.blob
     summary: |-
-      <p>Festlegen der Metadaten-Auflistung von Name-Wert-Paare für den Container mit festzulegende ein <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()" data-throw-if-not-resolved="false"></xref> aufrufen. Diese Auflistung überschreibt alle vorhandenen containermetadaten. Wenn dies auf eine leere Auflistung festgelegt ist, wird die containermetadaten gelöscht werden, auf ein <xref href="com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()" data-throw-if-not-resolved="false"></xref> aufrufen.</p>
+      <p>Festlegen der Metadaten-Auflistung von Name-Wert-Paare für den Container mit festzulegende ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()" data-throw-if-not-resolved="false">UploadMetadata</xref> aufrufen. Diese Auflistung überschreibt alle vorhandenen containermetadaten. Wenn dies auf eine leere Auflistung festgelegt ist, wird die containermetadaten gelöscht werden, auf ein <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()" data-throw-if-not-resolved="false">UploadMetadata</xref> aufrufen.</p>
       <p></p>
     syntax:
       content: 'public void setMetadata(final HashMap<String, String> metadata)'
@@ -2155,7 +2155,7 @@ items:
       parameters:
         - id: properties
           type: 93de0ef9com.microsoft.azure.storage.blob._blob_container_properties
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_properties" data-throw-if-not-resolved="false"></xref> Objekt, das die Eigenschaften zugewiesen wird, den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_properties" data-throw-if-not-resolved="false">BlobContainerProperties</xref> Objekt, das die Eigenschaften zugewiesen wird, den Container darstellt. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.setStorageUri(final StorageUri)
     id: setStorageUri(final StorageUri)
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -2180,7 +2180,7 @@ items:
       parameters:
         - id: storageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das die Liste der URIs für alle Speicherorte darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die Liste der URIs für alle Speicherorte darstellt. </p>'
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.uploadMetadata()
     id: uploadMetadata()
     parent: com.microsoft.azure.storage.blob._cloud_blob_container
@@ -2229,13 +2229,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -2263,7 +2263,7 @@ items:
       parameters:
         - id: permissions
           type: 93de0ef9com.microsoft.azure.storage.blob._blob_container_permissions
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false"></xref> Objekt, das die Berechtigungen zum Hochladen darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false">BlobContainerPermissions</xref> Objekt, das die Berechtigungen zum Hochladen darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -2291,16 +2291,16 @@ items:
       parameters:
         - id: permissions
           type: 93de0ef9com.microsoft.azure.storage.blob._blob_container_permissions
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false"></xref> Objekt, das die Berechtigungen zum Hochladen darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_container_permissions" data-throw-if-not-resolved="false">BlobContainerPermissions</xref> Objekt, das die Berechtigungen zum Hochladen darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für den Container darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.blob._blob_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.blob._blob_request_options" data-throw-if-not-resolved="false">BlobRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.blob._cloud_blob_client" data-throw-if-not-resolved="false">CloudBlobClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -2738,7 +2738,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt die Berechtigungen für einen Container dar. </p>
-      <p>Die Berechtigungen des Containers enthält zwei Arten von zugriffseinstellungen für den Container:<itemizedlist><listitem><p>Der Container öffentlichen Zugriff Einstellung, dargestellt durch die <ref refid="" kindref="compound">"publicAccess"</ref> Eigenschaft. Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p></listitem><listitem><p>Zugriffsrichtlinien für den Container, dargestellt durch die <xref href="com.microsoft.azure.storage._permissions.getSharedAccessPolicies()" data-throw-if-not-resolved="false"></xref> Methode. Diese Einstellung verweist auf eine Auflistung der freigegebenen Zugriffsrichtlinien für den Container. Eine SAS-Richtlinie kann verwendet werden, um die Startzeit, Ablaufzeit und Berechtigungen für eine oder mehrere SAS zu steuern. Eine shared Access Signature bietet es sich um delegierte Zugriff auf Ressourcen des Containers. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten von Berechtigungen für Container finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224643">Verwalten des Zugriffs auf Container und Blobs</ulink>. </p>
+      <p>Die Berechtigungen des Containers enthält zwei Arten von zugriffseinstellungen für den Container:<itemizedlist><listitem><p>Der Container öffentlichen Zugriff Einstellung, dargestellt durch die <xref uid="" data-throw-if-not-resolved="false">"publicAccess"</xref> Eigenschaft. Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p></listitem><listitem><p>Zugriffsrichtlinien für den Container, dargestellt durch die <xref uid="com.microsoft.azure.storage._permissions.getSharedAccessPolicies()" data-throw-if-not-resolved="false">GetSharedAccessPolicies</xref> Methode. Diese Einstellung verweist auf eine Auflistung der freigegebenen Zugriffsrichtlinien für den Container. Eine SAS-Richtlinie kann verwendet werden, um die Startzeit, Ablaufzeit und Berechtigungen für eine oder mehrere SAS zu steuern. Eine shared Access Signature bietet es sich um delegierte Zugriff auf Ressourcen des Containers. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten von Berechtigungen für Container finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224643">Verwalten des Zugriffs auf Container und Blobs</ulink>. </p>
     syntax:
       content: public class BlobContainerPermissions extends Permissions<SharedAccessBlobPolicy>
   - uid: com.microsoft.azure.storage._storage_exception
@@ -2760,7 +2760,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt einen Container im Microsoft Azure Blob-Dienst dar. </p>
-      <p>Container enthalten die Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false"></xref> Objekte und Verzeichnisse enthalten die Block- und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+      <p>Container enthalten die Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.blob._cloud_blob_directory" data-throw-if-not-resolved="false">CloudBlobDirectory</xref> Objekte und Verzeichnisse enthalten die Block- und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
     syntax: *ref_1
   - uid: com.microsoft.azure.storage._storage_credentials
     parent: com.microsoft.azure.storage
@@ -2769,7 +2769,7 @@ references:
     nameWithType: StorageCredentials
     fullName: com.microsoft.azure.storage.StorageCredentials
     type: Class
-    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false"></xref> Klassen. </p>
+    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref uid="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false">StorageCredentialsAccountAndKey</xref> und <xref uid="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false">StorageCredentialsSharedAccessSignature</xref> Klassen. </p>
     syntax:
       content: public class StorageCredentials
   - uid: com.microsoft.azure.storage.blob._blob_request_options
@@ -2802,7 +2802,7 @@ references:
     summary: |-
       <p>Gibt die Ebene des öffentlichen Zugriffs, der für den Container zulässig ist. </p>
       <p>Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p>
-      <p>Die <xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()" data-throw-if-not-resolved="false"></xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
+      <p>Die <xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false">BlobContainerPublicAccessType</xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #OFF</xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #BLOB</xref>, die anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #CONTAINER</xref>, die anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
     syntax:
       content: public enum BlobContainerPublicAccessType
   - uid: com.microsoft.azure.storage._access_condition
@@ -2874,7 +2874,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt ein virtuelles Verzeichnis des Blobs, die durch ein Trennzeichen gekennzeichnet. </p>
-      <p>Container, die als gekapselt sind <xref href="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false"></xref> Objekte, enthalten die Verzeichnisse und Verzeichnisse enthalten die Block-Blobs und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+      <p>Container, die als gekapselt sind <xref uid="com.microsoft.azure.storage.blob._cloud_blob_container" data-throw-if-not-resolved="false">CloudBlobContainer</xref> Objekte, enthalten die Verzeichnisse und Verzeichnisse enthalten die Block-Blobs und Seiten-Blobs. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
     syntax:
       content: public class CloudBlobDirectory
   - uid: com.microsoft.azure.storage.blob._cloud_blob
@@ -2884,7 +2884,7 @@ references:
     nameWithType: CloudBlob
     fullName: com.microsoft.azure.storage.blob.CloudBlob
     type: Class
-    summary: <p>Stellt ein Microsoft Azure-Blob dar. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false"></xref> Klassen. </p>
+    summary: <p>Stellt ein Microsoft Azure-Blob dar. Dies ist die Basisklasse für die <xref uid="com.microsoft.azure.storage.blob._cloud_block_blob" data-throw-if-not-resolved="false">CloudBlockBlob</xref> und <xref uid="com.microsoft.azure.storage.blob._cloud_page_blob" data-throw-if-not-resolved="false">CloudPageBlob</xref> Klassen. </p>
     syntax:
       content: public class CloudBlob implements ListBlobItem
   - uid: com.microsoft.azure.storage.blob._cloud_blob_container.getProperties()
@@ -2974,7 +2974,7 @@ references:
     nameWithType: ResultContinuation
     fullName: com.microsoft.azure.storage.ResultContinuation
     type: Class
-    summary: '<p>Stellt ein Fortsetzungstoken für Auflistungsvorgänge dar. Fortsetzungstoken kommen in Methoden, mit denen eine <xref href="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false"></xref> Objekt, z. B. <xref href="com.microsoft.azure.storage.blob._cloud_blob_directory.listBlobsSegmented()" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Stellt ein Fortsetzungstoken für Auflistungsvorgänge dar. Fortsetzungstoken kommen in Methoden, mit denen eine <xref uid="com.microsoft.azure.storage._result_segment" data-throw-if-not-resolved="false">ResultSegment</xref> Objekt, z. B. <xref uid="com.microsoft.azure.storage.blob._cloud_blob_directory.listBlobsSegmented()" data-throw-if-not-resolved="false">CloudBlobDirectory #listBlobsSegmented</xref>. </p>'
     syntax:
       content: public class ResultContinuation
   - uid: com.microsoft.azure.storage.blob._container_listing_details

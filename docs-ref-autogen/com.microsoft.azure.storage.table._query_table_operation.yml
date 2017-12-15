@@ -32,7 +32,7 @@ items:
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/table/QueryTableOperation.java
       startLine: 38
     package: com.microsoft.azure.storage.table
-    summary: '<p>Eine Klasse, die erweitert <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> um eine Abfrage zum Abrufen einer einzelnen Tabellenentität zu implementieren. Zum Ausführen einer <xref href="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false"></xref> Instanz ist, rufen Sie die Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz. Dieser Vorgang kann ausgeführt werden, direkt oder als Teil einer <xref href="com.microsoft.azure.storage.table._table_batch_operation" data-throw-if-not-resolved="false"></xref>. Wenn die <xref href="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false"></xref> führen Sie eine Entität zurückgibt, erfolgt die Speicherung in der entsprechenden <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> von der Methode zurückgegeben. </p>'
+    summary: '<p>Eine Klasse, die erweitert <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> um eine Abfrage zum Abrufen einer einzelnen Tabellenentität zu implementieren. Zum Ausführen einer <xref uid="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false">QueryTableOperation</xref> Instanz ist, rufen Sie die Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz. Dieser Vorgang kann ausgeführt werden, direkt oder als Teil einer <xref uid="com.microsoft.azure.storage.table._table_batch_operation" data-throw-if-not-resolved="false">"tablebatchoperation"</xref>. Wenn die <xref uid="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false">QueryTableOperation</xref> führen Sie eine Entität zurückgibt, erfolgt die Speicherung in der entsprechenden <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> von der Methode zurückgegeben. </p>'
     syntax: &ref_1
       content: public class QueryTableOperation extends TableOperation
     inheritance:
@@ -82,7 +82,7 @@ items:
       content: protected Class<? extends TableEntity> getClazzType()
       return:
         type: 9f0d1dfbcom.microsoft.azure.storage.table._table_entitya08ddfce
-        description: '<p>Die <code>java.lang.Class</code> implementieren <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , das den Entitätstyp für die Abfrage darstellt. </p>'
+        description: '<p>Die <code>java.lang.Class</code> implementieren <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , das den Entitätstyp für die Abfrage darstellt. </p>'
   - uid: com.microsoft.azure.storage.table._query_table_operation.getPartitionKey()
     id: getPartitionKey()
     parent: com.microsoft.azure.storage.table._query_table_operation
@@ -130,7 +130,7 @@ items:
       content: public EntityResolver<?> getResolver()
       return:
         type: com.microsoft.azure.storage.table._entity_resolver7e6ad1eb
-        description: <p>Die <xref href="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false"></xref> Instanz. </p>
+        description: <p>Die <xref uid="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false">EntityResolver</xref> Instanz. </p>
   - uid: com.microsoft.azure.storage.table._query_table_operation.getRowKey()
     id: getRowKey()
     parent: com.microsoft.azure.storage.table._query_table_operation
@@ -193,7 +193,7 @@ items:
       startLine: 139
     package: com.microsoft.azure.storage.table
     summary: |-
-      <p>Für die interne Verwendung reserviert. Analysiert die Antworten für den Tabelle-Vorgang in einem <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> zurückgegeben.</p>
+      <p>Für die interne Verwendung reserviert. Analysiert die Antworten für den Tabelle-Vorgang in einem <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> zurückgegeben.</p>
       <p></p>
     syntax:
       content: 'protected TableResult parseResponse(final InputStream inStream, final int httpStatusCode, String etagFromHeader, final OperationContext opContext, final TableRequestOptions options)'
@@ -209,21 +209,21 @@ items:
           description: '<p>Die <code>String</code> mit Antworten für den Vorgang zurückgegeben, die das Etag enthält. </p>'
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. </p>'
         - id: options
           type: 93de0ef9com.microsoft.azure.storage.table._table_request_options
       return:
         type: com.microsoft.azure.storage.table._table_result
-        description: '<p>Die <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> , die das Ergebnis des Abfragevorgangs darstellt.</p>'
+        description: '<p>Die <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> , das dem Ergebnis des Abfragevorgangs.</p>'
     exceptions:
       - type: 84fa3863
         description: <p>Bei einem in der objekterstellung Fehler. </p>
-      - type: 81e09942
+      - type: '81e09942'
         description: <p>Bei einem bei der Reflektion eines Objekttyps Fehler. </p>
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Bei einem in den Speichervorgang Fehler. </p>
       - type: cbf33bbe
-        description: <p>Bei einem Fehler beim Zugriff auf die <ref refid="" kindref="compound">InputStream</ref> mit Json. </p>
+        description: <p>Bei einem Fehler beim Zugriff auf die <xref uid="" data-throw-if-not-resolved="false">InputStream</xref> mit Json. </p>
       - type: a667ba4c
         description: '<p>Wenn beim der Json-Analyse ein Fehler auftritt, wenn Json verwendet wird. </p>'
   - uid: 'com.microsoft.azure.storage.table._query_table_operation.performRetrieve(final CloudTableClient,final String,final TableRequestOptions,final OperationContext)'
@@ -243,27 +243,27 @@ items:
       startLine: 172
     package: com.microsoft.azure.storage.table
     summary: |-
-      <p>Für die interne Verwendung reserviert. Führt einen Abrufvorgang für die angegebene Tabelle, die unter Verwendung des angegebenen <xref href="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Diese Methode wird der REST-API für Storage-Dienst zum Ausführen von Table-Vorgang, mit der Tabelle Endpunkt und Speicher Anmeldeinformationen für das Dienstkonto in Aufrufen der <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p>Für die interne Verwendung reserviert. Führt einen Abrufvorgang für die angegebene Tabelle, die unter Verwendung des angegebenen <xref uid="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false">TableRequestOptions</xref> und <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref>. </p>
+      <p>Diese Methode wird der REST-API für Storage-Dienst zum Ausführen von Table-Vorgang, mit der Tabelle Endpunkt und Speicher Anmeldeinformationen für das Dienstkonto in Aufrufen der <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'protected TableResult performRetrieve(final CloudTableClient client, final String tableName, final TableRequestOptions options, final OperationContext opContext)'
       parameters:
         - id: client
           type: 93de0ef9com.microsoft.azure.storage.table._cloud_table_client
-          description: <p>Ein <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz unter Angabe der Tabelle Endpunkt und Speicher Dienstkonto-Anmeldeinformationen verwenden. </p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz unter Angabe der Tabelle Endpunkt und Speicher Dienstkonto-Anmeldeinformationen verwenden. </p>
         - id: tableName
           type: 3d93591e
           description: '<p>Ein <code>String</code> mit dem Namen der Tabelle, die Abfrage. </p>'
         - id: options
           type: 93de0ef9com.microsoft.azure.storage.table._table_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false"></xref> '' Optionen ''-Objekt, das die Ausführung gibt an, wie z. B. Einstellungen für Richtlinien und Timeout für den Vorgang zu wiederholen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false">TableRequestOptions</xref> '' Optionen ''-Objekt, das die Ausführung gibt an, wie z. B. Einstellungen für Richtlinien und Timeout für den Vorgang zu wiederholen. </p>'
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: <p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt zum Nachverfolgen von des aktuellen Vorgangs.</p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt zum Nachverfolgen von des aktuellen Vorgangs.</p>
       return:
         type: com.microsoft.azure.storage.table._table_result
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> , die die Ergebnisse der Ausführung des Abfragevorgangs enthält.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> , die die Ergebnisse der Ausführung des Abfragevorgangs enthält.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Bei einem in den Speichervorgang Fehler. </p>
@@ -310,7 +310,7 @@ items:
       parameters:
         - id: clazzType
           type: f6d66785com.microsoft.azure.storage.table._table_entitya08ddfce
-          description: '<p>Die <code>java.lang.Class</code> implementieren <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , das den Entitätstyp für die Abfrage darstellt. </p>'
+          description: '<p>Die <code>java.lang.Class</code> implementieren <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , das den Entitätstyp für die Abfrage darstellt. </p>'
   - uid: com.microsoft.azure.storage.table._query_table_operation.setPartitionKey(final String)
     id: setPartitionKey(final String)
     parent: com.microsoft.azure.storage.table._query_table_operation
@@ -382,7 +382,7 @@ items:
       parameters:
         - id: resolver
           type: 93de0ef9com.microsoft.azure.storage.table._entity_resolver7e6ad1eb
-          description: <p>Die <xref href="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false"></xref> Instanz verwenden. </p>
+          description: <p>Die <xref uid="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false">EntityResolver</xref> Instanz verwenden. </p>
   - uid: com.microsoft.azure.storage.table._query_table_operation.setRowKey(final String)
     id: setRowKey(final String)
     parent: com.microsoft.azure.storage.table._query_table_operation
@@ -433,7 +433,7 @@ references:
     spec.java:
       - name: InstantiationException
         fullName: InstantiationException
-  - uid: 81e09942
+  - uid: '81e09942'
     spec.java:
       - name: IllegalAccessException
         fullName: IllegalAccessException
@@ -584,17 +584,17 @@ references:
     fullName: static TableOperation com.microsoft.azure.storage.table.TableOperation.delete(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz um die angegebene Entität aus Microsoft Azure-Speicher zu löschen. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> -Instanz mit der</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz um die angegebene Entität aus Microsoft Azure-Speicher zu löschen. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> -Instanz mit der</p>
       <p></p>
     syntax:
       content: public static TableOperation delete(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz die Tabellenentität eingefügt. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> die Tabellenentität einzufügende Instanz. </p>
   - uid: 'com.microsoft.azure.storage.table._table_operation.execute(final CloudTableClient,final String,TableRequestOptions,OperationContext)'
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -603,27 +603,27 @@ references:
     fullName: 'TableResult com.microsoft.azure.storage.table.TableOperation.execute(final CloudTableClient client, final String tableName, TableRequestOptions options, OperationContext opContext)'
     type: Method
     summary: |-
-      <p>Für die interne Verwendung reserviert. Führen Sie diese Table-Vorgang für die angegebene Tabelle, die unter Verwendung des angegebenen <xref href="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Diese Methode wird der REST-API für Storage-Dienst zum Ausführen von Table-Vorgang, mit der Tabelle Endpunkt und Speicher Anmeldeinformationen für das Dienstkonto in Aufrufen der <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p>Für die interne Verwendung reserviert. Führen Sie diese Table-Vorgang für die angegebene Tabelle, die unter Verwendung des angegebenen <xref uid="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false">TableRequestOptions</xref> und <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref>. </p>
+      <p>Diese Methode wird der REST-API für Storage-Dienst zum Ausführen von Table-Vorgang, mit der Tabelle Endpunkt und Speicher Anmeldeinformationen für das Dienstkonto in Aufrufen der <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Objekt.</p>
       <p></p>
     syntax:
       content: 'protected TableResult execute(final CloudTableClient client, final String tableName, TableRequestOptions options, OperationContext opContext)'
       parameters:
         - id: client
           type: 93de0ef9com.microsoft.azure.storage.table._cloud_table_client
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz, die den tabellendienstendpunkt, Anmeldeinformationen für das Speicherkonto und alle weiteren Abfrageparameter angeben. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz, die den tabellendienstendpunkt, Anmeldeinformationen für das Speicherkonto und alle weiteren Abfrageparameter angeben. </p>'
         - id: tableName
           type: 3d93591e
           description: <p>Ein <code>String</code> gibt den Namen der Tabelle an. </p>
         - id: options
           type: com.microsoft.azure.storage.table._table_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false"></xref> '' Optionen ''-Objekt, das die Ausführung gibt an, wie z. B. Einstellungen für Richtlinien und Timeout für den Vorgang zu wiederholen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.table._table_request_options" data-throw-if-not-resolved="false">TableRequestOptions</xref> '' Optionen ''-Objekt, das die Ausführung gibt an, wie z. B. Einstellungen für Richtlinien und Timeout für den Vorgang zu wiederholen. </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: <p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt zum Nachverfolgen von des aktuellen Vorgangs.</p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt zum Nachverfolgen von des aktuellen Vorgangs.</p>
       return:
         type: com.microsoft.azure.storage.table._table_result
-        description: <p>Ein <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> der die Ergebnisse der Ausführung des Vorgangs darstellt.</p>
+        description: <p>Ein <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> der die Ergebnisse der Ausführung des Vorgangs darstellt.</p>
   - uid: 'com.microsoft.azure.storage.table._table_operation.generateRequestIdentity(boolean,final String)'
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -694,7 +694,7 @@ references:
       content: protected synchronized final TableEntity getEntity()
       return:
         type: 381eaeebcom.microsoft.azure.storage.table._table_entity
-        description: '<p>Die <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> Instanz, die diesem Vorgang zugeordnet. </p>'
+        description: '<p>Die <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> Instanz, die diesem Vorgang zugeordnet. </p>'
   - uid: com.microsoft.azure.storage.table._table_operation.getOperationType()
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -709,7 +709,7 @@ references:
       content: protected synchronized final TableOperationType getOperationType()
       return:
         type: 5e042f60
-        description: '<p>die OpType der <ref refid="" kindref="compound">TableOperationType</ref> Instanz, die diesem Vorgang zugeordnet. </p>'
+        description: '<p>die OpType der <xref uid="" data-throw-if-not-resolved="false">TableOperationType</xref> Instanz, die diesem Vorgang zugeordnet. </p>'
   - uid: com.microsoft.azure.storage.table._table_operation.insert(final TableEntity)
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -718,17 +718,17 @@ references:
     fullName: static TableOperation com.microsoft.azure.storage.table.TableOperation.insert(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz mit die angegebene Entität in Microsoft Azure-Speicher einfügen. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> -Instanz mit der</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz mit die angegebene Entität in Microsoft Azure-Speicher einfügen. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> -Instanz mit der</p>
       <p></p>
     syntax:
       content: public static TableOperation insert(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz die Tabellenentität eingefügt. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> die Tabellenentität einzufügende Instanz. </p>
   - uid: 'com.microsoft.azure.storage.table._table_operation.insert(final TableEntity,boolean)'
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -737,20 +737,20 @@ references:
     fullName: 'static TableOperation com.microsoft.azure.storage.table.TableOperation.insert(final TableEntity entity, boolean echoContent)'
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz mit die angegebene Entität in Microsoft Azure-Speicher einfügen. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> -Instanz mit der</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz mit die angegebene Entität in Microsoft Azure-Speicher einfügen. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> -Instanz mit der</p>
       <p></p>
     syntax:
       content: 'public static TableOperation insert(final TableEntity entity, boolean echoContent)'
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
         - id: echoContent
           type: 4fc6e284
           description: '<p>Der boolesche darstellt, ob die Nachrichtennutzlast in der Antwort zurückgegeben werden sollen. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz die Tabellenentität eingefügt. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> die Tabellenentität einzufügende Instanz. </p>
   - uid: com.microsoft.azure.storage.table._table_operation.insertOrMerge(final TableEntity)
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -759,17 +759,17 @@ references:
     fullName: static TableOperation com.microsoft.azure.storage.table.TableOperation.insertOrMerge(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> -Instanz aus, um die angegebene Entität in Microsoft Azure-Speicher zusammenzuführen, oder fügen Sie ihn, wenn er nicht vorhanden ist. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz mit dem Tabellennamen und die <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> als Argumente.</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> -Instanz aus, um die angegebene Entität in Microsoft Azure-Speicher zusammenzuführen, oder fügen Sie ihn, wenn er nicht vorhanden ist. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz mit dem Tabellennamen und die <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> als Argumente.</p>
       <p></p>
     syntax:
       content: public static TableOperation insertOrMerge(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz zum Einfügen oder Zusammenführen der Tabellenentität. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz zum Einfügen oder Zusammenführen der Tabellenentität. </p>
   - uid: com.microsoft.azure.storage.table._table_operation.insertOrReplace(final TableEntity)
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -778,17 +778,17 @@ references:
     fullName: static TableOperation com.microsoft.azure.storage.table.TableOperation.insertOrReplace(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> -Instanz aus, um die angegebene Entität in Microsoft Azure-Speicher zu ersetzen, oder fügen Sie ihn, wenn er nicht vorhanden ist. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz mit dem Tabellennamen und die <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> als Argumente.</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> -Instanz aus, um die angegebene Entität in Microsoft Azure-Speicher zu ersetzen, oder fügen Sie ihn, wenn er nicht vorhanden ist. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz mit dem Tabellennamen und die <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> als Argumente.</p>
       <p></p>
     syntax:
       content: public static TableOperation insertOrReplace(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz zum Einfügen oder Ersetzen der Tabellenentität. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz zum Einfügen oder Ersetzen der Tabellenentität. </p>
   - uid: com.microsoft.azure.storage.table._table_operation.merge(final TableEntity)
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -797,17 +797,17 @@ references:
     fullName: static TableOperation com.microsoft.azure.storage.table.TableOperation.merge(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz mit der angegebenen Tabellenentität in Microsoft Azure-Speicher zusammenzuführen. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> -Instanz mit der</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz mit der angegebenen Tabellenentität in Microsoft Azure-Speicher zusammenzuführen. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> -Instanz mit der</p>
       <p></p>
     syntax:
       content: public static TableOperation merge(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> -Instanz für das Zusammenführen der Tabellenentität. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> -Instanz für das Zusammenführen der Tabellenentität. </p>
   - uid: com.microsoft.azure.storage.table._table_operation.replace(final TableEntity)
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -816,17 +816,17 @@ references:
     fullName: static TableOperation com.microsoft.azure.storage.table.TableOperation.replace(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz mit der angegebenen Tabellenentität zu ersetzen. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> für eine bestimmte Tabelle rufen die <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode.</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz mit der angegebenen Tabellenentität zu ersetzen. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode.</p>
       <p></p>
     syntax:
       content: public static TableOperation replace(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz zum Ersetzen der Tabellenentität. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz zum Ersetzen der Tabellenentität. </p>
   - uid: 'com.microsoft.azure.storage.table._table_operation.retrieve(final String,final String,final Class<? extends TableEntity>)'
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -835,7 +835,7 @@ references:
     fullName: 'static TableOperation com.microsoft.azure.storage.table.TableOperation.retrieve(final String partitionKey, final String rowKey, final Class<? extends TableEntity> clazzType)'
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz rufen Sie die Entität für die angegebene Tabelle und dem angegebenen Typ zurückgeben. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> -Instanz mit der</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz rufen Sie die Entität für die angegebene Tabelle und dem angegebenen Typ zurückgeben. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> -Instanz mit der</p>
       <p></p>
     syntax:
       content: 'public static TableOperation retrieve(final String partitionKey, final String rowKey, final Class<? extends TableEntity> clazzType)'
@@ -851,7 +851,7 @@ references:
           description: '<p>Der Klassentyp, der das Entitätsobjekt Tabelle abgerufen werden soll. </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz zum Abrufen der Tabellenentität. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz zum Abrufen der Tabellenentität. </p>
   - uid: 'com.microsoft.azure.storage.table._table_operation.retrieve(final String,final String,final EntityResolver<?>)'
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -860,7 +860,7 @@ references:
     fullName: 'static TableOperation com.microsoft.azure.storage.table.TableOperation.retrieve(final String partitionKey, final String rowKey, final EntityResolver<?> resolver)'
     type: Method
     summary: |-
-      <p>Eine statische Factory-Methode zurückgeben einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz rufen Sie die Entität für die angegebene Tabelle und eine Projektion mithilfe des angegebenen Konfliktlösers zurückzugeben. Zum Ausführen dieser <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> rufen Sie für eine bestimmte Tabelle der <xref href="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false"></xref> Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz mit dem Tabellennamen und die <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> als Argumente.</p>
+      <p>Eine statische Factory-Methode zurückgeben einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz rufen Sie die Entität für die angegebene Tabelle und eine Projektion mithilfe des angegebenen Konfliktlösers zurückzugeben. Zum Ausführen dieser <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> rufen Sie für eine bestimmte Tabelle der <xref uid="com.microsoft.azure.storage.table._cloud_table.execute(final TableOperation)" data-throw-if-not-resolved="false">CloudTable#execute(TableOperation)</xref> Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz mit dem Tabellennamen und die <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> als Argumente.</p>
       <p></p>
     syntax:
       content: 'public static TableOperation retrieve(final String partitionKey, final String rowKey, final EntityResolver<?> resolver)'
@@ -873,10 +873,10 @@ references:
           description: <p>Ein <code>String</code> gibt die RowKey-Wert für die abzurufenden Entität. </p>
         - id: resolver
           type: 93de0ef9com.microsoft.azure.storage.table._entity_resolver7e6ad1eb
-          description: '<p>Die Implementierung der <xref href="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false"></xref> zu verwenden, um die Ergebnis-Entität als Typ "t"-Projekt </p>'
+          description: '<p>Die Implementierung der <xref uid="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false">EntityResolver</xref> zu verwenden, um die Ergebnis-Entität als Typ "t"-Projekt </p>'
       return:
         type: com.microsoft.azure.storage.table._table_operation
-        description: <p>Ein neues <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz zum Abrufen der Tabellenentität. </p>
+        description: <p>Ein neues <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz zum Abrufen der Tabellenentität. </p>
   - uid: com.microsoft.azure.storage.table._table_operation.setEchoContent(boolean)
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -901,14 +901,14 @@ references:
     fullName: synchronized final void com.microsoft.azure.storage.table.TableOperation.setEntity(final TableEntity entity)
     type: Method
     summary: |-
-      <p>Für die interne Verwendung reserviert. Legt die <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> Instanz für den tabellenvorgang ab.</p>
+      <p>Für die interne Verwendung reserviert. Legt die <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> Instanz für den tabellenvorgang ab.</p>
       <p></p>
     syntax:
       content: protected synchronized final void setEntity(final TableEntity entity)
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: <p>Die <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> -Instanz. </p>
+          description: <p>Die <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> -Instanz. </p>
       return:
         type: 8d07681d
   - uid: com.microsoft.azure.storage.table._table_operation.TableOperation()
@@ -929,17 +929,17 @@ references:
     fullName: 'com.microsoft.azure.storage.table.TableOperation.TableOperation(final TableEntity entity, final TableOperationType opType)'
     type: Constructor
     summary: |-
-      <p>Für die interne Verwendung reserviert. Erstellt eine <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> mit den angegebenen Tabellentyp Entität und den Vorgang.</p>
+      <p>Für die interne Verwendung reserviert. Erstellt eine <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> mit den angegebenen Tabellentyp Entität und den Vorgang.</p>
       <p></p>
     syntax:
       content: 'protected TableOperation(final TableEntity entity, final TableOperationType opType)'
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
         - id: opType
           type: ad32c68e
-          description: <p>Die <ref refid="" kindref="compound">TableOperationType</ref> Enumerationswert für den Vorgangstyp. </p>
+          description: <p>Die <xref uid="" data-throw-if-not-resolved="false">TableOperationType</xref> Enumerationswert für den Vorgangstyp. </p>
   - uid: 'com.microsoft.azure.storage.table._table_operation.TableOperation(final TableEntity,final TableOperationType,final boolean)'
     parent: com.microsoft.azure.storage.table._table_operation
     href: com.microsoft.azure.storage.table._table_operation.yml
@@ -948,17 +948,17 @@ references:
     fullName: 'com.microsoft.azure.storage.table.TableOperation.TableOperation(final TableEntity entity, final TableOperationType opType, final boolean echoContent)'
     type: Constructor
     summary: |-
-      <p>Für die interne Verwendung reserviert. Erstellt eine <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> mit den angegebenen Tabellentyp Entität und den Vorgang.</p>
+      <p>Für die interne Verwendung reserviert. Erstellt eine <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> mit den angegebenen Tabellentyp Entität und den Vorgang.</p>
       <p></p>
     syntax:
       content: 'protected TableOperation(final TableEntity entity, final TableOperationType opType, final boolean echoContent)'
       parameters:
         - id: entity
           type: 93de0ef9com.microsoft.azure.storage.table._table_entity
-          description: '<p>Die Instanz implementiert <xref href="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false"></xref> , den Vorgang zugeordnet werden soll. </p>'
+          description: '<p>Die Instanz implementiert <xref uid="com.microsoft.azure.storage.table._table_entity" data-throw-if-not-resolved="false">TableEntity</xref> , den Vorgang zugeordnet werden soll. </p>'
         - id: opType
           type: ad32c68e
-          description: <p>Die <ref refid="" kindref="compound">TableOperationType</ref> Enumerationswert für den Vorgangstyp. </p>
+          description: <p>Die <xref uid="" data-throw-if-not-resolved="false">TableOperationType</xref> Enumerationswert für den Vorgangstyp. </p>
         - id: echoContent
           type: 4dda0764
           description: '<p>Der boolesche darstellt, ob die Nachrichtennutzlast in der Antwort zurückgegeben werden sollen. </p>'
@@ -971,7 +971,7 @@ references:
     type: Class
     summary: |-
       <p>Eine Klasse einen einzelnen tabellenvorgang dar. </p>
-      <p>Verwenden Sie die statischen Factorymethoden zum Erstellen <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanzen für Vorgänge für Tabellen, die insert, update, merge, löschen, ersetzen oder Tabellenentitäten abrufen. Zum Ausführen einer <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> Instanz ist, rufen Sie die Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz. Ein <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> kann ausgeführt werden, direkt oder als Teil einer <xref href="com.microsoft.azure.storage.table._table_batch_operation" data-throw-if-not-resolved="false"></xref>. Wenn eine <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> führen Sie eine Entität zurückgibt, erfolgt die Speicherung in der entsprechenden <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> von der Methode zurückgegeben. </p>
+      <p>Verwenden Sie die statischen Factorymethoden zum Erstellen <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanzen für Vorgänge für Tabellen, die insert, update, merge, löschen, ersetzen oder Tabellenentitäten abrufen. Zum Ausführen einer <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> Instanz ist, rufen Sie die Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz. Ein <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> kann ausgeführt werden, direkt oder als Teil einer <xref uid="com.microsoft.azure.storage.table._table_batch_operation" data-throw-if-not-resolved="false">"tablebatchoperation"</xref>. Wenn eine <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> führen Sie eine Entität zurückgibt, erfolgt die Speicherung in der entsprechenden <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> von der Methode zurückgegeben. </p>
     syntax:
       content: public class TableOperation
   - uid: com.microsoft.azure.storage.table._entity_resolver
@@ -982,8 +982,8 @@ references:
     fullName: com.microsoft.azure.storage.table.EntityResolver<T>
     type: Interface
     summary: |-
-      <p>Eine Schnittstelle zum Client-Side-Projektion für eine abgerufene Entität ausführen. Ein <xref href="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false"></xref> Instanz muss eine Methode, die Entitätsdaten, die von den Parametern, die als eine neue Instanz der durch den Typparameter angegebene Typ übergeben dargestellt projizieren implementieren. </p>
-      <p>Diese Schnittstelle ist nützlich für die Konvertierung direkt von Tabellendaten für die Entität in eine Art von Objekt ohne eine separate Tabelle Entität Klassentyp, der für jede Eigenschaft einzeln deserialisiert. Ein Client kann z. B. eine Client Side Projektion Ausführen einer <emphasis>Kunden</emphasis> Entität durch eine einfache Rückkehr der für die <emphasis>CustomerName</emphasis> Eigenschaft der einzelnen Entitäten. Das Ergebnis dieser Projektion werden eine Auflistung von s, die Kundennamen jedes enthält.</p>
+      <p>Eine Schnittstelle zum Client-Side-Projektion für eine abgerufene Entität ausführen. Ein <xref uid="com.microsoft.azure.storage.table._entity_resolver" data-throw-if-not-resolved="false">EntityResolver</xref> Instanz muss eine Methode, die Entitätsdaten, die von den Parametern, die als eine neue Instanz der durch den Typparameter angegebene Typ übergeben dargestellt projizieren implementieren. </p>
+      <p>Diese Schnittstelle ist nützlich für die Konvertierung direkt von Tabellendaten für die Entität in eine Art von Objekt ohne eine separate Tabelle Entität Klassentyp, der für jede Eigenschaft einzeln deserialisiert. Ein Client kann z. B. eine Client Side Projektion Ausführen einer <em>Kunden</em> Entität durch eine einfache Rückkehr der für die <em>CustomerName</em> Eigenschaft der einzelnen Entitäten. Das Ergebnis dieser Projektion werden eine Auflistung von s, die Kundennamen jedes enthält.</p>
       <p></p>
     syntax:
       content: public interface EntityResolver<T>
@@ -997,7 +997,7 @@ references:
     nameWithType: TableEntity
     fullName: com.microsoft.azure.storage.table.TableEntity
     type: Interface
-    summary: "<p>Eine Schnittstelle, die für tabellenentitätstypen erforderlich sind. Die <xref href=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\"></xref> Schnittstelle deklariert Getter- und Setter-Methoden für die allgemeinen Entitätseigenschaften, und und Methoden für die Serialisierung und Deserialisierung aller Entitätseigenschaften, die mithilfe einer eigenschaftenzuordnung. Erstellen von Klassen implementieren <xref href=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\"></xref> Eigenschaftspeicher, abrufen, Serialisierung und Deserialisierung anpassen und zusätzlichen benutzerdefinierte Logik für eine Tabellenentität bereitzustellen. </p>\n<p>Die speicherclientbibliothek enthält zwei Implementierungen von <xref href=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\"></xref> , die für einfache Eigenschaftenzugriff und Serialisierung bereitstellen: </p>\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.storage.table._dynamic_table_entity\" data-throw-if-not-resolved=\"false\"></xref>implementiert <xref href=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\"></xref> und bietet eine einfache eigenschaftenzuordnung zum Speichern und Abrufen von Eigenschaften. Verwenden einer <xref href=\"com.microsoft.azure.storage.table._dynamic_table_entity\" data-throw-if-not-resolved=\"false\"></xref> für den einfachen Zugriff auf Entitätseigenschaften, wenn nur eine Teilmenge der Eigenschaften (z. B. durch eine select-Klausel in einer Abfrage) zurückgegeben werden, oder wenn die Abfrage mehrere Entitätstypen mit verschiedenen Eigenschaften zurückgeben kann. Sie können auch dieses Typs verwenden, um massentabellenaktualisierungen von heterogenen Entitäten ohne Verlust von Eigenschaftsinformationen auszuführen. </p>\n\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\"></xref>ist eine Implementierung von <xref href=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\"></xref> , verwendet reflektionsbasiertes Serialisierungs- und Deserialisierungsprozesse Verhalten in seiner und Methoden. <xref href=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\"></xref>-abgeleitete Klassen mit Methoden, die Dateinamenskonvention für Typen- und Namenskonvention werden automatisch serialisiert und deserialisiert. </p>\n\n<p>Jede Klasse, die implementiert <xref href=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\"></xref> nutzen das automatische reflektionsbasiertes Serialisierungs- und Deserialisierungsprozesse Verhalten in <xref href=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\"></xref> durch Aufrufen der statischen Methoden, die in und. Die Klasse muss Methoden bereit, die den Typ und die Benennungskonvention, um Serialisierung und Deserialisierung automatisch folgen. Wenn eine Getter-Methode und die Setter-Methode für eine angegebene Eigenschaft und den angegebenen Datentyp gefunden werden, wird die entsprechende Methode automatisch aufgerufen, um Serialisieren oder Deserialisieren der Daten. Für Get- und Set-Methoden in Paaren des Formulars sieht der Reflektionscode </p>\n<p></p>\n<p>und </p>\n<p></p>\n<p>wobei <emphasis>PropertyName</emphasis> wird ein Eigenschaftenname für die Tabellenentität und <emphasis>Typ</emphasis> ist ein Java-Typ kompatibel mit dem EDM-Datentyp der Eigenschaft. Siehe die Tabelle in der Beschreibung der Klasse für <xref href=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\"></xref> für eine Karte Eigenschaftentypen zu ihren Java-Entsprechungen. Die <xref href=\"com.microsoft.azure.storage.table._store_as\" data-throw-if-not-resolved=\"false\"></xref> Anmerkung kann mit einem Attribut an einen Eigenschaftsnamen für die Reflektion für Getter und Setter-Methoden, die nicht der Namenskonvention für die Eigenschaft folgen angewendet werden. Methodennamen und das Attribut des <xref href=\"com.microsoft.azure.storage.table._store_as\" data-throw-if-not-resolved=\"false\"></xref> Anmerkungen Groß-/Kleinschreibung beachtet, für den Abgleich von Eigenschaftennamen mit Reflektion. Verwenden der <xref href=\"com.microsoft.azure.storage.table._ignore\" data-throw-if-not-resolved=\"false\"></xref> Anmerkung, um zu verhindern, dass Methoden, die durch Reflektion für die automatische Serialisierung und Deserialisierung verwendet wird. Beachten Sie, die den Namen \"PartitionKey\", \"RowKey\", \"Timestamp\" und \"Etag\" sind reserviert und wird ignoriert, wenn durch festgelegt werden die <xref href=\"com.microsoft.azure.storage.table._store_as\" data-throw-if-not-resolved=\"false\"></xref> Anmerkung in einer Unterklasse, die die Reflektionsmethoden verwendet. </p>\n<p></p>"
+    summary: "<p>Eine Schnittstelle, die für tabellenentitätstypen erforderlich sind. Die <xref uid=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\">TableEntity</xref> Schnittstelle deklariert Getter- und Setter-Methoden für die allgemeinen Entitätseigenschaften, und und Methoden für die Serialisierung und Deserialisierung aller Entitätseigenschaften, die mithilfe einer eigenschaftenzuordnung. Erstellen von Klassen implementieren <xref uid=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\">TableEntity</xref> Eigenschaftspeicher, abrufen, Serialisierung und Deserialisierung anpassen und zusätzlichen benutzerdefinierte Logik für eine Tabellenentität bereitzustellen. </p>\n<p>Die speicherclientbibliothek enthält zwei Implementierungen von <xref uid=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\">TableEntity</xref> , die für einfache Eigenschaftenzugriff und Serialisierung bereitstellen: </p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.storage.table._dynamic_table_entity\" data-throw-if-not-resolved=\"false\">DynamicTableEntity</xref> implementiert <xref uid=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\">TableEntity</xref> und bietet eine einfache eigenschaftenzuordnung zum Speichern und Abrufen von Eigenschaften. Verwenden einer <xref uid=\"com.microsoft.azure.storage.table._dynamic_table_entity\" data-throw-if-not-resolved=\"false\">DynamicTableEntity</xref> für den einfachen Zugriff auf Entitätseigenschaften, wenn nur eine Teilmenge der Eigenschaften (z. B. durch eine select-Klausel in einer Abfrage) zurückgegeben werden, oder wenn Ihre Abfrage mehrere Entitätstypen mit verschiedenen zurückgeben kann, Eigenschaften. Sie können auch dieses Typs verwenden, um massentabellenaktualisierungen von heterogenen Entitäten ohne Verlust von Eigenschaftsinformationen auszuführen. </p>\n\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\">TableServiceEntity</xref> ist eine Implementierung von <xref uid=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\">TableEntity</xref> , verwendet reflektionsbasiertes Serialisierungs- und Deserialisierungsprozesse Verhalten in seiner und Methoden. <xref uid=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\">TableServiceEntity</xref>-abgeleitete Klassen mit Methoden, die Dateinamenskonvention für Typen- und Namenskonvention werden automatisch serialisiert und deserialisiert. </p>\n\n<p>Jede Klasse, die implementiert <xref uid=\"com.microsoft.azure.storage.table._table_entity\" data-throw-if-not-resolved=\"false\">TableEntity</xref> nutzen das automatische reflektionsbasiertes Serialisierungs- und Deserialisierungsprozesse Verhalten in <xref uid=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\">TableServiceEntity</xref> durch Aufrufen der statischen Methoden in und  in. Die Klasse muss Methoden bereit, die den Typ und die Benennungskonvention, um Serialisierung und Deserialisierung automatisch folgen. Wenn eine Getter-Methode und die Setter-Methode für eine angegebene Eigenschaft und den angegebenen Datentyp gefunden werden, wird die entsprechende Methode automatisch aufgerufen, um Serialisieren oder Deserialisieren der Daten. Für Get- und Set-Methoden in Paaren des Formulars sieht der Reflektionscode </p>\n<p></p>\n<p>und </p>\n<p></p>\n<p>wobei <em>PropertyName</em> wird ein Eigenschaftenname für die Tabellenentität und <em>Typ</em> ist ein Java-Typ kompatibel mit dem EDM-Datentyp der Eigenschaft. Siehe die Tabelle in der Beschreibung der Klasse für <xref uid=\"com.microsoft.azure.storage.table._table_service_entity\" data-throw-if-not-resolved=\"false\">TableServiceEntity</xref> für eine Karte Eigenschaftentypen zu ihren Java-Entsprechungen. Die <xref uid=\"com.microsoft.azure.storage.table._store_as\" data-throw-if-not-resolved=\"false\">StoreAs</xref> Anmerkung kann mit einem Attribut an einen Eigenschaftsnamen für die Reflektion für Getter und Setter-Methoden, die nicht der Namenskonvention für die Eigenschaft folgen angewendet werden. Methodennamen und das Attribut des <xref uid=\"com.microsoft.azure.storage.table._store_as\" data-throw-if-not-resolved=\"false\">StoreAs</xref> Anmerkungen Groß-/Kleinschreibung beachtet, für den Abgleich von Eigenschaftennamen mit Reflektion. Verwenden der <xref uid=\"com.microsoft.azure.storage.table._ignore\" data-throw-if-not-resolved=\"false\">ignorieren</xref> Anmerkung, um zu verhindern, dass Methoden, die durch Reflektion für die automatische Serialisierung und Deserialisierung verwendet wird. Beachten Sie, die den Namen \"PartitionKey\", \"RowKey\", \"Timestamp\" und \"Etag\" sind reserviert und wird ignoriert, wenn durch festgelegt werden die <xref uid=\"com.microsoft.azure.storage.table._store_as\" data-throw-if-not-resolved=\"false\">StoreAs</xref> Anmerkung in einer Unterklasse, die die Reflektionsmethoden verwendet. </p>\n<p></p>"
     syntax:
       content: public interface TableEntity
   - uid: com.microsoft.azure.storage.table._table_result
@@ -1007,7 +1007,7 @@ references:
     nameWithType: TableResult
     fullName: com.microsoft.azure.storage.table.TableResult
     type: Class
-    summary: '<p>Eine Klasse, die das Ergebnis eines tabellenvorgangs darstellt. Die <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> -Klasse kapselt die HTTP-Antwort und alle Tabellenergebnisse-Entität des Storage-Dienst-REST-API-Vorgangs für einen bestimmten so genanntes zurückgegebenes <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Eine Klasse, die das Ergebnis eines tabellenvorgangs darstellt. Die <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> -Klasse kapselt die HTTP-Antwort und alle Tabellenergebnisse-Entität des Storage-Dienst-REST-API-Vorgangs für einen bestimmten so genanntes zurückgegebenes <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref>. </p>'
     syntax:
       content: public class TableResult
   - uid: com.microsoft.azure.storage._operation_context
@@ -1049,7 +1049,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt einen Dienstclient für den Zugriff auf Microsoft Azure-Tabellendienst bereit. </p>
-      <p>Die <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Klasse kapselt den Basis-URI für den Dienstendpunkt für die Tabelle und die Anmeldeinformationen für den Zugriff auf das Speicherkonto, und bietet Methoden zum Erstellen, löschen, auflisten und Abfragen von Tabellen sowie Methoden für Tabellenentitäten Vorgänge und Abfragen auszuführen. Diese Methoden rufen Storage-Dienst-REST-API-Vorgänge, um die Anforderungen und die zurückgegebenen Ergebnisse zu erhalten. </p>
+      <p>Die <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Klasse kapselt den Basis-URI für den Dienstendpunkt für die Tabelle und die Anmeldeinformationen für den Zugriff auf das Speicherkonto, und bietet Methoden zum Erstellen, löschen, auflisten und Abfragen von Tabellen sowie der Methoden auszuführen Vorgänge und Tabellenentitäten Abfragen. Diese Methoden rufen Storage-Dienst-REST-API-Vorgänge, um die Anforderungen und die zurückgegebenen Ergebnisse zu erhalten. </p>
       <p>Ein Dienstendpunkt für die Tabelle ist die Basis-URI für tabellendienstressourcen, einschließlich der DNS-Name des Speicherkontos: <br /><br />
 
        Weitere Informationen finden Sie im MSDN-Thema <ulink url="http://msdn.microsoft.com/en-us/library/azure/dd179360.aspx">Adressieren von Tabellendienstressourcen</ulink>. </p>
@@ -1064,7 +1064,7 @@ references:
     nameWithType: QueryTableOperation
     fullName: com.microsoft.azure.storage.table.QueryTableOperation
     type: Class
-    summary: '<p>Eine Klasse, die erweitert <xref href="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false"></xref> um eine Abfrage zum Abrufen einer einzelnen Tabellenentität zu implementieren. Zum Ausführen einer <xref href="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false"></xref> Instanz ist, rufen Sie die Methode auf eine <xref href="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false"></xref> Instanz. Dieser Vorgang kann ausgeführt werden, direkt oder als Teil einer <xref href="com.microsoft.azure.storage.table._table_batch_operation" data-throw-if-not-resolved="false"></xref>. Wenn die <xref href="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false"></xref> führen Sie eine Entität zurückgibt, erfolgt die Speicherung in der entsprechenden <xref href="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false"></xref> von der Methode zurückgegeben. </p>'
+    summary: '<p>Eine Klasse, die erweitert <xref uid="com.microsoft.azure.storage.table._table_operation" data-throw-if-not-resolved="false">TableOperation</xref> um eine Abfrage zum Abrufen einer einzelnen Tabellenentität zu implementieren. Zum Ausführen einer <xref uid="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false">QueryTableOperation</xref> Instanz ist, rufen Sie die Methode auf eine <xref uid="com.microsoft.azure.storage.table._cloud_table_client" data-throw-if-not-resolved="false">CloudTableClient</xref> Instanz. Dieser Vorgang kann ausgeführt werden, direkt oder als Teil einer <xref uid="com.microsoft.azure.storage.table._table_batch_operation" data-throw-if-not-resolved="false">"tablebatchoperation"</xref>. Wenn die <xref uid="com.microsoft.azure.storage.table._query_table_operation" data-throw-if-not-resolved="false">QueryTableOperation</xref> führen Sie eine Entität zurückgibt, erfolgt die Speicherung in der entsprechenden <xref uid="com.microsoft.azure.storage.table._table_result" data-throw-if-not-resolved="false">TableResult</xref> von der Methode zurückgegeben. </p>'
     syntax: *ref_1
   - uid: com.microsoft.azure.storage.core._storage_request
     parent: com.microsoft.azure.storage.core

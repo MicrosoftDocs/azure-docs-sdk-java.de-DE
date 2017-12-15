@@ -27,8 +27,11 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 2
+      startLine: 10
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Darstellung einer Regel für Servicebus-Themen definiert.</p>
+      <p></p>
     syntax:
       content: public class RuleDescription
     inheritance:
@@ -47,12 +50,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 37
+      startLine: 75
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Ruft die Aktion, die mit dieser Regel auf Nachrichten, die von dieser Regel Filter gefunden wird, führt.</p>
+      <p></p>
     syntax:
       content: public RuleAction getAction()
       return:
         type: com.microsoft.azure.servicebus.rules._rule_action
+        description: <p>-Aktion führt diese Regel für übereinstimmenden Nachrichten </p>
   - uid: com.microsoft.azure.servicebus.rules._rule_description.getFilter()
     id: getFilter()
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -67,12 +74,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 29
+      startLine: 57
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Ruft den Filter gegen diese Regel ab.</p>
+      <p></p>
     syntax:
       content: public Filter getFilter()
       return:
         type: com.microsoft.azure.servicebus.rules._filter
+        description: '<p>der Filter, den mit dieser Regel verwendet, um Nachrichten zu filtern </p>'
   - uid: com.microsoft.azure.servicebus.rules._rule_description.getName()
     id: getName()
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -87,12 +98,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 45
+      startLine: 93
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Ruft den Namen dieser Regel.</p>
+      <p></p>
     syntax:
       content: public String getName()
       return:
         type: '26831127'
+        description: <p>Namen dieser Regel </p>
   - uid: com.microsoft.azure.servicebus.rules._rule_description.RuleDescription()
     id: RuleDescription()
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -107,8 +122,9 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 7
+      startLine: 18
     package: com.microsoft.azure.servicebus.rules
+    summary: <p>Erstellt eine Regelbeschreibung ohne Namen <xref uid="com.microsoft.azure.servicebus.rules._true_filter" data-throw-if-not-resolved="false">TrueFilter</xref> als Filter und keine Aktion. </p>
     syntax:
       content: public RuleDescription()
   - uid: com.microsoft.azure.servicebus.rules._rule_description.RuleDescription(Filter)
@@ -125,13 +141,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 18
+      startLine: 37
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Erstellt eine Regelbeschreibung ohne Namen Filter als Filter und keine Aktion angegeben.</p>
+      <p></p>
     syntax:
       content: public RuleDescription(Filter filter)
       parameters:
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: '<p>Filtern Sie die Regel verwendet, um Nachrichten zu filtern. Kann <xref uid="com.microsoft.azure.servicebus.rules._correlation_filter" data-throw-if-not-resolved="false">CorrelationFilter</xref> oder <xref uid="com.microsoft.azure.servicebus.rules._sql_filter" data-throw-if-not-resolved="false">SqlFilter</xref>. </p>'
   - uid: com.microsoft.azure.servicebus.rules._rule_description.RuleDescription(String)
     id: RuleDescription(String)
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -146,13 +166,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 12
+      startLine: 27
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Erstellt eine Regelbeschreibung mit dem angegebenen Namen unter <xref uid="com.microsoft.azure.servicebus.rules._true_filter" data-throw-if-not-resolved="false">TrueFilter</xref> als Filter und keine Aktion.</p>
+      <p></p>
     syntax:
       content: public RuleDescription(String name)
       parameters:
         - id: name
           type: '26831127'
+          description: <p>Name der Regel. </p>
   - uid: 'com.microsoft.azure.servicebus.rules._rule_description.RuleDescription(String,Filter)'
     id: 'RuleDescription(String,Filter)'
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -167,15 +191,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 23
+      startLine: 47
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Erstellt eine Regelbeschreibung mit dem angegebenen Namen unter Berücksichtigung Filter als Filter und keine Aktion.</p>
+      <p></p>
     syntax:
       content: 'public RuleDescription(String name, Filter filter)'
       parameters:
         - id: name
           type: '26831127'
+          description: <p>Name der Regel. </p>
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: '<p>Filter, die mit dieser Regel verwendet, um Nachrichten zu filtern. Kann Werte ist möglich werden <xref uid="com.microsoft.azure.servicebus.rules._correlation_filter" data-throw-if-not-resolved="false">CorrelationFilter</xref> oder <xref uid="com.microsoft.azure.servicebus.rules._sql_filter" data-throw-if-not-resolved="false">SqlFilter</xref>. </p>'
   - uid: com.microsoft.azure.servicebus.rules._rule_description.setAction(RuleAction)
     id: setAction(RuleAction)
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -190,13 +219,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 41
+      startLine: 84
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Legt die Aktion, die mit dieser Regel auf Nachrichten, die von dieser Regel Filter gefunden wird, ausführt.</p>
+      <p></p>
     syntax:
       content: public void setAction(RuleAction action)
       parameters:
         - id: action
           type: com.microsoft.azure.servicebus.rules._rule_action
+          description: <p>Aktion führt diese Regel für übereinstimmenden Nachrichten </p>
   - uid: com.microsoft.azure.servicebus.rules._rule_description.setFilter(Filter)
     id: setFilter(Filter)
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -211,13 +244,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 33
+      startLine: 66
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Legt den Filter des mit dieser Regel.</p>
+      <p></p>
     syntax:
       content: public void setFilter(Filter filter)
       parameters:
         - id: filter
           type: com.microsoft.azure.servicebus.rules._filter
+          description: '<p>Filter, die mit dieser Regel verwendet, um Nachrichten zu filtern. Kann Werte ist möglich werden <xref uid="com.microsoft.azure.servicebus.rules._correlation_filter" data-throw-if-not-resolved="false">CorrelationFilter</xref> oder <xref uid="com.microsoft.azure.servicebus.rules._sql_filter" data-throw-if-not-resolved="false">SqlFilter</xref>. </p>'
   - uid: com.microsoft.azure.servicebus.rules._rule_description.setName(String)
     id: setName(String)
     parent: com.microsoft.azure.servicebus.rules._rule_description
@@ -232,13 +269,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/RuleDescription.java
-      startLine: 49
+      startLine: 102
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Legt den Namen dieser Regel.</p>
+      <p></p>
     syntax:
       content: public void setName(String name)
       parameters:
         - id: name
           type: '26831127'
+          description: <p>Namen dieser Regel </p>
 references:
   - uid: com.microsoft.azure.servicebus.rules._rule_description.RuleDescription*
     name: RuleDescription
@@ -286,6 +327,9 @@ references:
     nameWithType: Filter
     fullName: com.microsoft.azure.servicebus.rules.Filter
     type: Class
+    summary: |-
+      <p>Stellt einen Filterausdruck, der für eine Nachricht für ein-Thema ausgewertet wird. Diese Clientbibliothek bietet Unterstützung für die Erstellung nur begrenzte Filtertypen. Dies ist eine leere Schnittstelle als Root-Schnittstelle für alle unterstützten Filtertypen dienen.</p>
+      <p></p>
     syntax:
       content: public class Filter
   - uid: com.microsoft.azure.servicebus.rules._rule_action
@@ -295,5 +339,44 @@ references:
     nameWithType: RuleAction
     fullName: com.microsoft.azure.servicebus.rules.RuleAction
     type: Class
+    summary: |-
+      <p>Stellt eine Aktion, die eine Nachricht abgeglichen, die durch einen Filter transformiert. Diese Clientbibliothek bietet Unterstützung für nur eingeschränkte Typen von Regelaktionen erstellen. Dies ist eine leere Schnittstelle als Root-Schnittstelle für alle unterstützten Regelaktionen dienen.</p>
+      <p></p>
     syntax:
       content: public class RuleAction
+  - uid: com.microsoft.azure.servicebus.rules._true_filter
+    parent: com.microsoft.azure.servicebus.rules
+    href: com.microsoft.azure.servicebus.rules._true_filter.yml
+    name: TrueFilter
+    nameWithType: TrueFilter
+    fullName: com.microsoft.azure.servicebus.rules.TrueFilter
+    type: Class
+    summary: |-
+      <p>Stellt eine besondere Art von Filter, die jede Nachricht entspricht.</p>
+      <p></p>
+    syntax:
+      content: public class TrueFilter
+  - uid: com.microsoft.azure.servicebus.rules._correlation_filter
+    parent: com.microsoft.azure.servicebus.rules
+    href: com.microsoft.azure.servicebus.rules._correlation_filter.yml
+    name: CorrelationFilter
+    nameWithType: CorrelationFilter
+    fullName: com.microsoft.azure.servicebus.rules.CorrelationFilter
+    type: Class
+    summary: |-
+      <p>Stellt einen Filterausdruck Korrelation dar. Ein korrelationsfilter ist eine effiziente Abkürzung für Deklarationen von Filtern, die nur mit Korrelation Gleichheit von Nachrichteneigenschaften. Ein korrelationsfilter kann erstellt werden, um eine oder mehrere der standardmäßigen oder benutzerdefinierten Eigenschaften einer Nachricht übereinstimmen. In den Dienst werden korrelationsfilter als Hashtabelle Suchvorgänge implementiert. Daher sind sie wesentlich schneller, zur Laufzeit als andere Arten von Filtern.</p>
+      <p></p>
+    syntax:
+      content: public class CorrelationFilter extends Filter
+  - uid: com.microsoft.azure.servicebus.rules._sql_filter
+    parent: com.microsoft.azure.servicebus.rules
+    href: com.microsoft.azure.servicebus.rules._sql_filter.yml
+    name: SqlFilter
+    nameWithType: SqlFilter
+    fullName: com.microsoft.azure.servicebus.rules.SqlFilter
+    type: Class
+    summary: |-
+      <p>Stellt einen SQL-Sprache basierende Filter-Ausdruck, der für eine Nachricht ausgewertet wird.</p>
+      <p></p>
+    syntax:
+      content: public class SqlFilter

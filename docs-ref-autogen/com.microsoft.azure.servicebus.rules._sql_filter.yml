@@ -19,9 +19,12 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/SqlFilter.java
-      startLine: 4
+      startLine: 10
     package: com.microsoft.azure.servicebus.rules
-    syntax:
+    summary: |-
+      <p>Stellt einen SQL-Sprache basierende Filter-Ausdruck, der für eine Nachricht ausgewertet wird.</p>
+      <p></p>
+    syntax: &ref_1
       content: public class SqlFilter extends Filter
     inheritance:
       - java.lang.Object
@@ -40,12 +43,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/SqlFilter.java
-      startLine: 13
+      startLine: 28
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Ruft die Vergleichsausdruck dieses Filters ab.</p>
+      <p></p>
     syntax:
       content: public String getSqlExpression()
       return:
         type: '26831127'
+        description: '<p>Language-basierte SQL-Ausdruck, der dieser filter </p>'
   - uid: com.microsoft.azure.servicebus.rules._sql_filter.SqlFilter(String)
     id: SqlFilter(String)
     parent: com.microsoft.azure.servicebus.rules._sql_filter
@@ -60,13 +67,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/rules/SqlFilter.java
-      startLine: 8
+      startLine: 19
     package: com.microsoft.azure.servicebus.rules
+    summary: |-
+      <p>Erstellt eine Instanz des mit dem angegebenen Vergleichsausdruck.</p>
+      <p></p>
     syntax:
       content: public SqlFilter(String sqlExpression)
       parameters:
         - id: sqlExpression
           type: '26831127'
+          description: <p>SQL-Sprache basierende Filterausdruck </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -89,6 +100,9 @@ references:
     nameWithType: Filter
     fullName: com.microsoft.azure.servicebus.rules.Filter
     type: Class
+    summary: |-
+      <p>Stellt einen Filterausdruck, der für eine Nachricht für ein-Thema ausgewertet wird. Diese Clientbibliothek bietet Unterstützung für die Erstellung nur begrenzte Filtertypen. Dies ist eine leere Schnittstelle als Root-Schnittstelle für alle unterstützten Filtertypen dienen.</p>
+      <p></p>
     syntax:
       content: public class Filter
   - uid: com.microsoft.azure.servicebus.rules._false_filter
@@ -98,6 +112,9 @@ references:
     nameWithType: FalseFilter
     fullName: com.microsoft.azure.servicebus.rules.FalseFilter
     type: Class
+    summary: |-
+      <p>Stellt eine besondere Art von Filter, der jede Nachricht übereinstimmt.</p>
+      <p></p>
     syntax:
       content: public class FalseFilter extends SqlFilter
   - uid: com.microsoft.azure.servicebus.rules._true_filter
@@ -107,5 +124,19 @@ references:
     nameWithType: TrueFilter
     fullName: com.microsoft.azure.servicebus.rules.TrueFilter
     type: Class
+    summary: |-
+      <p>Stellt eine besondere Art von Filter, die jede Nachricht entspricht.</p>
+      <p></p>
     syntax:
       content: public class TrueFilter
+  - uid: com.microsoft.azure.servicebus.rules._sql_filter
+    parent: com.microsoft.azure.servicebus.rules
+    href: com.microsoft.azure.servicebus.rules._sql_filter.yml
+    name: SqlFilter
+    nameWithType: SqlFilter
+    fullName: com.microsoft.azure.servicebus.rules.SqlFilter
+    type: Class
+    summary: |-
+      <p>Stellt einen SQL-Sprache basierende Filter-Ausdruck, der für eine Nachricht ausgewertet wird.</p>
+      <p></p>
+    syntax: *ref_1

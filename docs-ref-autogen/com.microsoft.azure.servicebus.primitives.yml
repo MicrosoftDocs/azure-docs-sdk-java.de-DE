@@ -87,7 +87,10 @@ references:
     nameWithType: ClientEntity
     fullName: com.microsoft.azure.servicebus.primitives.ClientEntity
     type: Class
-    summary: '<p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c Main Zwecke: CloseAll clusterentitäten intern-Klasse </p>'
+    summary: |-
+      <p>Vertrag für alle Client-Entitäten mit Open-schließen/Abort Zustand m/c </p>
+      <p>Main-Zweck: CloseAll verknüpften Entitäten </p>
+      <p>Internal-Klasse </p>
     syntax:
       content: public class ClientEntity
   - uid: com.microsoft.azure.servicebus.primitives._communication_exception
@@ -107,7 +110,25 @@ references:
     nameWithType: ConnectionStringBuilder
     fullName: com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\"></xref>kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>\n\n<p>Beispielcode: <preformatted> <programlisting> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>ConnectionStringBuilder<sp></sp>ConnectionStringBuilder<sp></sp>=<sp></sp>neue<sp></sp>ConnectionStringBuilder (</highlight></codeline><codeline><highlight class=\"normal\"><sp></sp><sp></sp><sp></sp><sp></sp>\"ServiceBusNamespaceName\",<sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>\"ServiceBusEntityName\",<sp></sp>//<sp></sp>\"eventhubname\"<sp></sp>oder<sp></sp>QueueName<sp></sp>oder<sp></sp>Name_des_themas<sp></sp></highlight></codeline><codeline><highlight class=\"normal\"><sp></sp><sp></sp><sp></sp><sp></sp>\"SharedAccessSignatureKeyName\",<sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>\"SharedAccessSignatureKey\");</highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\">Zeichenfolge<sp></sp>\"ConnectionString\"<sp></sp>=<sp></sp>connectionStringBuilder.toString();</highlight></codeline></programlisting></preformatted></p>\n<p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste \";\". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, die die Service Bus-Namespace enthält </p></listitem><listitem><p>EntityPath - der Pfad zu der Servicebus-Entität (Warteschlange/Thema/Eventhub/Abonnement/Consumergroup/Partition) </p></listitem><listitem><p>SharedAccessKeyName - der entsprechenden freigegebenen Zugriffsrichtlinie im Schlüsselnamen für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem></itemizedlist></p>"
+    summary: |-
+      <p>Diese Klasse kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>
+      <p>Beispielcode: <pre><code>ConnectionStringBuilder connectionStringBuilder = new ConnectionStringBuilder(
+
+                                                   "ServiceBusNamespaceName", 
+
+                                                   "ServiceBusEntityName", // QueueName or TopicName or SubscriptionPath
+
+                                                   "SharedAccessSignatureKeyName", 
+
+                                                   "SharedAccessSignatureKey");
+
+           
+
+          String connectionString = connectionStringBuilder.toString();
+
+          </code></pre></p>
+
+      <p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste ";". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, an den Service Bus-Namespace verweist. </p></listitem><listitem><p>EntityPath - Pfad zu der Servicebus-Entität (Warteschlange/Thema/Abonnement /). Für Warteschlangen und Themen ist es nur die Namen der Entität. Für Abonnements Pfad ist &lt;Name_des_themas&gt;/Subscriptions /&lt;SubscriptionName&gt; </p></listitem><listitem><p>SharedAccessKeyName - Key-Name auf den entsprechenden freigegebenen Zugriffsrichtlinie für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel-Wert für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem><listitem><p>SharedAccessSignatureToken - können anstelle einer Schlüsselnamen und einen Schlüsselwert, Clients eine bereits generierte SAS-Token bereitstellen. </p></listitem><listitem><p>OperationTimeout - Standardtimeout für alle Absender, Empfänger und Clients, die aus dieser Verbindungszeichenfolge erstellte verwendet werden. </p></listitem><listitem><p><xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">Die RetryPolicy</xref> - Name der Richtlinie versuchen Sie es erneut. </p></listitem></itemizedlist></p>
     syntax:
       content: public class ConnectionStringBuilder
   - uid: com.microsoft.azure.servicebus.primitives._core_message_receiver
@@ -117,7 +138,6 @@ references:
     nameWithType: CoreMessageReceiver
     fullName: com.microsoft.azure.servicebus.primitives.CoreMessageReceiver
     type: Class
-    summary: '<p>Allgemeine Empfänger, die alle Amqp abstrahiert bezogene Details übersetzt Reaktor ereignisgesteuerten Modell in asynchrone Api zu erhalten </p>'
     syntax:
       content: public class CoreMessageReceiver extends ClientEntity
   - uid: com.microsoft.azure.servicebus.primitives._core_message_sender
@@ -127,7 +147,6 @@ references:
     nameWithType: CoreMessageSender
     fullName: com.microsoft.azure.servicebus.primitives.CoreMessageSender
     type: Class
-    summary: <p>Abstrahiert alle Amqp bezogene Informationen übersetzt Reaktor ereignisgesteuerten Modell in asynchronen Senden Api </p>
     syntax:
       content: public class CoreMessageSender extends ClientEntity
   - uid: com.microsoft.azure.servicebus.primitives._exception_util
@@ -156,6 +175,7 @@ references:
     nameWithType: MessageLockLostException
     fullName: com.microsoft.azure.servicebus.primitives.MessageLockLostException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Empfänger versucht oder oder oder oder einen Vorgang für Nachrichten einsehen gesperrt, dessen Sperre bereits abgelaufen war. </p>'
     syntax:
       content: public class MessageLockLostException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._message_not_found_exception
@@ -165,6 +185,7 @@ references:
     nameWithType: MessageNotFoundException
     fullName: com.microsoft.azure.servicebus.primitives.MessageNotFoundException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Empfänger versucht, eine Nachricht mit der Sequenznummer empfangen und die Nachricht mit dem diese Sequenznummer nicht in die Warteschlange oder einem Abonnement verfügbar ist. </p>'
     syntax:
       content: public class MessageNotFoundException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._message_with_delivery_tag
@@ -192,6 +213,7 @@ references:
     nameWithType: MessagingEntityAlreadyExistsException
     fullName: com.microsoft.azure.servicebus.primitives.MessagingEntityAlreadyExistsException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein abonnementclient versucht, eine Regel mit dem Namen einer bereits vorhandenen Regel zu erstellen. </p>'
     syntax:
       content: public class MessagingEntityAlreadyExistsException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._messaging_entity_disabled_exception
@@ -201,6 +223,7 @@ references:
     nameWithType: MessagingEntityDisabledException
     fullName: com.microsoft.azure.servicebus.primitives.MessagingEntityDisabledException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Client versucht, Nachrichten zu senden oder Empfangen von Nachrichten aus einer Entität deaktiviert. Eine Entität kann für SEND-Vorgänge oder Empfangsvorgänge oder beides deaktiviert werden. </p>'
     syntax:
       content: public class MessagingEntityDisabledException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._messaging_entity_not_found_exception
@@ -210,6 +233,7 @@ references:
     nameWithType: MessagingEntityNotFoundException
     fullName: com.microsoft.azure.servicebus.primitives.MessagingEntityNotFoundException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Client versucht, eine Absender oder Empfänger oder -Clients eine nicht vorhandene Entität zu erstellen. </p>'
     syntax:
       content: public class MessagingEntityNotFoundException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._messaging_factory
@@ -219,7 +243,7 @@ references:
     nameWithType: MessagingFactory
     fullName: com.microsoft.azure.servicebus.primitives.MessagingFactory
     type: Class
-    summary: <p>Abstrahiert alle Amqp bezogene details und macht AmqpConnection Objekt-Management-verbindungslebenszyklus </p>
+    summary: '<p>Abstrahiert alle AMQP im Zusammenhang details und kapselt eine AMQP-Verbindung und zum Verwalten des Lebenszyklus der Reihe nach. Jede Instanz dieser Klasse stellen eine AMQP-Verbindung mit dem Namespace dar. Wenn eine Anwendung mehrere Absender, Empfänger oder Clients, die mithilfe der gleichen MessagingFacotry-Instanz erstellt, gemeinsam alle diese Absender, Empfänger oder Clients die Verbindung mit dem Namespace. </p>'
     syntax:
       content: public class MessagingFactory extends ClientEntity
   - uid: com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler
@@ -270,6 +294,7 @@ references:
     nameWithType: QuotaExceededException
     fullName: com.microsoft.azure.servicebus.primitives.QuotaExceededException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, um zu signalisieren, dass ein Servicebus-Entität oder einen Namespace das Kontingent überschritten. Ein Kontingent kann ein Limit für die Größe von Entitäten, Größe, maximale Anzahl gleichzeitiger Verbindungen oder maximale gleichzeitige Vorgänge sein. </p>'
     syntax:
       content: public class QuotaExceededException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._receiver_disconnected_exception
@@ -316,7 +341,7 @@ references:
     nameWithType: RetryExponential
     fullName: com.microsoft.azure.servicebus.primitives.RetryExponential
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\"></xref>die Implementierung, in denen die Verzögerung zwischen den Wiederholungsversuchen auf einer exponentiellen Weise anwächst. <xref href=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\"></xref>kann festgelegt werden, auf die Clientvorgänge mit <xref href=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\"></xref>. RetryIntervals wird mithilfe einer RetryFactor also eine Funktion der DeltaBackOff (MaximumBackoff - MinimumBackoff) berechnet werden und MaximumRetryCount </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\">Die RetryPolicy</xref> Implementierung, in denen die Verzögerung zwischen den Wiederholungsversuchen auf einer exponentiellen Weise wächst. <xref uid=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\">Die RetryPolicy</xref> kann festgelegt werden, auf die Clientvorgänge mit <xref uid=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\">ConnectionStringBuilder</xref>. RetryIntervals wird mithilfe einer RetryFactor also eine Funktion der DeltaBackOff (MaximumBackoff - MinimumBackoff) berechnet werden und MaximumRetryCount </p>"
     syntax:
       content: public class RetryExponential extends RetryPolicy
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy
@@ -326,6 +351,7 @@ references:
     nameWithType: RetryPolicy
     fullName: com.microsoft.azure.servicebus.primitives.RetryPolicy
     type: Class
+    summary: '<p>Stellt eine Abstraktion einer Richtlinie für die Wiederholung Messagingvorgänge ausgeführt wird, wenn eine Ausnahme aufgetreten ist. Einige Ausnahmen, die von einem Absender oder Empfänger gefundene können vorübergehende wie ServerBusy und der Vorgang erfolgreich ist, wenn wiederholt werden. Clients können angeben, die eine Wiederholung Richtlinie mit <xref uid="com.microsoft.azure.servicebus.primitives._connection_string_builder" data-throw-if-not-resolved="false">ConnectionStringBuilder</xref> unterstützt Absender und Empfänger, um den fehlgeschlagenen Vorgang vor dem Auslösen der Ausnahme an die Clientanwendung automatisch zu wiederholen. Benutzer sollten diese Klasse nicht implementiert, sollte stattdessen eine der bereitgestellten Implementierungen über <xref uid="com.microsoft.azure.servicebus.primitives._retry_policy.getDefault()" data-throw-if-not-resolved="false">GetDefault</xref> oder <xref uid="com.microsoft.azure.servicebus.primitives._retry_policy.getNoRetry()" data-throw-if-not-resolved="false">GetNoRetry</xref>. </p>'
     syntax:
       content: public class RetryPolicy
   - uid: com.microsoft.azure.servicebus.primitives._s_a_s_util
@@ -363,7 +389,7 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
     syntax:
       content: public class ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._session_cannot_be_locked_exception
@@ -373,6 +399,7 @@ references:
     nameWithType: SessionCannotBeLockedException
     fullName: com.microsoft.azure.servicebus.primitives.SessionCannotBeLockedException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Client versucht, eine Sitzung zu akzeptieren, die bereits von einem anderen Client gesperrt ist. </p>'
     syntax:
       content: public class SessionCannotBeLockedException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._session_lock_lost_exception
@@ -382,6 +409,7 @@ references:
     nameWithType: SessionLockLostException
     fullName: com.microsoft.azure.servicebus.primitives.SessionLockLostException
     type: Class
+    summary: '<p>Diese Ausnahme wird ausgelöst, wenn ein Empfänger Sitzung führt eine Operation für eine Sitzung, nachdem seine Sperre abgelaufen ist. Wenn ein Client eine Sitzung akzeptiert, ist die Sitzung für eine Dauer angegeben, in der Entitätsdefinition an den Empfänger gesperrt. Die akzeptierte Sitzung für die Dauer der Sperre, die keine Vorgänge für die Sitzung ausgeführt wird im Leerlauf bleibt, wenn die Sperre abläuft, und die Sitzung wird für andere Clients zur Verfügung gestellt. </p>'
     syntax:
       content: public class SessionLockLostException extends ServiceBusException
   - uid: com.microsoft.azure.servicebus.primitives._settle_mode_pair

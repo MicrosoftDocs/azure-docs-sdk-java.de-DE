@@ -1,0 +1,814 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    id: _recovery_manager
+    parent: com.microsoft.azure.elasticdb.shard.recovery
+    children:
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard(ShardLocation)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard(ShardLocation,String)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard(ShardLocation)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard(ShardLocation,String)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences(ShardLocation)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences(ShardLocation,String)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getMappingDifferences(RecoveryToken)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>)'
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>,ReferenceObjectHelper<ShardLocation>)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardLocation(RecoveryToken)
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapName(RecoveryToken)
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapType(RecoveryToken)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShard(RecoveryToken,List<ShardRange>)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>,String)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>,String)'
+      - com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.RecoveryManager(ShardMapManager)
+      - 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.resolveMappingDifferences(RecoveryToken,MappingDifferenceResolution)'
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: RecoveryManager
+    nameWithType: RecoveryManager
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager
+    type: Class
+    source:
+      remote: &ref_0
+        path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+        branch: master
+        repo: 'https://github.com/Microsoft/elastic-db-tools-for-java'
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 48
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: '<p>Verwaltet unterschiedliche Recovery Aufgaben im Zusammenhang mit für eine shardzuordnungs-Manager. Er erleichtert das Auflösen von Probleme mit beschädigten Daten zwischen Shards Zuordnung Informationen lokal gespeichert werden, auf die Shards und in der globalen Shard Map-Manager-Datenbank. Es wird auch mit bestimmten "leider" Recovery-Szenarien, in der Wiederherstellung der shardzuordnungen von datenbanksicherungen oder Datenbankkopien erforderlich ist. Beachten Sie, dass einige der Wiederherstellungsmethoden nicht behebbaren Datenverlust bei nicht ordnungsgemäßer verursachen können. Es wird empfohlen, Sicherungen oder Kopien aller Datenbanken, die in Wiederherstellungsvorgänge einbezogen werden. </p>'
+    syntax:
+      content: public class RecoveryManager
+    inheritance:
+      - java.lang.Object
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard(ShardLocation)
+    id: attachShard(ShardLocation)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: attachShard(ShardLocation location)
+    nameWithType: RecoveryManager.attachShard(ShardLocation location)
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.attachShard(ShardLocation location)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 123
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Fügt einen Shard an die shardzuordnungs-Manager an. Frühere Versionen von Zuordnungen für die gleiche shardzuordnung werden automatisch aktualisiert werden, wenn neuere Versionen auf den Shard anzufügenden gefunden werden. Nach dem Anfügen eines Shards, sollte DetectMappingDifferences (ShardLocation, String) aufgerufen werden, dass eine Überprüfung auf Inkonsistenzen, die manuelle konfliktauflösung erforderlich machen.</p>
+      <p></p>
+    syntax:
+      content: public void attachShard(ShardLocation location)
+      parameters:
+        - id: location
+          type: com.microsoft.azure.elasticdb.shard.base._shard_location
+          description: '<p>Der Speicherort des betreffenden Shards angefügt wird. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard(ShardLocation,String)'
+    id: 'attachShard(ShardLocation,String)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'attachShard(ShardLocation location, String shardMapName)'
+    nameWithType: 'RecoveryManager.attachShard(ShardLocation location, String shardMapName)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.attachShard(ShardLocation location, String shardMapName)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 139
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Fügt einen Shard an die shardzuordnungs-Manager an. Frühere Versionen von Zuordnungen für die gleiche shardzuordnung werden automatisch aktualisiert werden, wenn neuere Versionen auf den Shard anzufügenden gefunden werden. Shard Speicherort wird auf neueste Version des lokalen Speichers im Rahmen dieses Vorgangs aktualisiert werden. Nach dem Anfügen eines Shards, sollte DetectMappingDifferences (ShardLocation, String) aufgerufen werden, dass eine Überprüfung auf Inkonsistenzen, die manuelle konfliktauflösung erforderlich machen.</p>
+      <p></p>
+    syntax:
+      content: 'public void attachShard(ShardLocation location, String shardMapName)'
+      parameters:
+        - id: location
+          type: com.microsoft.azure.elasticdb.shard.base._shard_location
+          description: <p>Der Speicherort des betreffenden Shards angefügt wird. </p>
+        - id: shardMapName
+          type: '26831127'
+          description: '<p>Optionale Zeichenfolge, die auf den Namen der shardzuordnung filtern. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard(ShardLocation)
+    id: detachShard(ShardLocation)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: detachShard(ShardLocation location)
+    nameWithType: RecoveryManager.detachShard(ShardLocation location)
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.detachShard(ShardLocation location)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 183
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Trennt den angegebenen Shard aus der shardzuordnungs-Manager. Auf den Shard zu löschenden zeigen Mappings werden von dieser Methode automatisch entfernt werden.</p>
+      <p></p>
+    syntax:
+      content: public void detachShard(ShardLocation location)
+      parameters:
+        - id: location
+          type: com.microsoft.azure.elasticdb.shard.base._shard_location
+          description: '<p>Der Speicherort des betreffenden Shards getrennt wird. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard(ShardLocation,String)'
+    id: 'detachShard(ShardLocation,String)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'detachShard(ShardLocation location, String shardMapName)'
+    nameWithType: 'RecoveryManager.detachShard(ShardLocation location, String shardMapName)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.detachShard(ShardLocation location, String shardMapName)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 196
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Trennt den angegebenen Shard aus der shardzuordnungs-Manager. Auf den Shard zu löschenden zeigen Mappings werden von dieser Methode automatisch entfernt werden.</p>
+      <p></p>
+    syntax:
+      content: 'public void detachShard(ShardLocation location, String shardMapName)'
+      parameters:
+        - id: location
+          type: com.microsoft.azure.elasticdb.shard.base._shard_location
+          description: <p>Der Speicherort des betreffenden Shards getrennt wird. </p>
+        - id: shardMapName
+          type: '26831127'
+          description: '<p>Optionale Zeichenfolge, die auf den Namen der shardzuordnung filtern. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences(ShardLocation)
+    id: detectMappingDifferences(ShardLocation)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: detectMappingDifferences(ShardLocation location)
+    nameWithType: RecoveryManager.detectMappingDifferences(ShardLocation location)
+    fullName: List<RecoveryToken> com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.detectMappingDifferences(ShardLocation location)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 523
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Listet die Unterschiede in den Zuordnungen zwischen der globalen Shard Map-Manager-Datenbank und der lokalen Shard-Datenbank in den angegebenen Shard-Speicherort.</p>
+      <p></p>
+    syntax:
+      content: public List<RecoveryToken> detectMappingDifferences(ShardLocation location)
+      parameters:
+        - id: location
+          type: com.microsoft.azure.elasticdb.shard.base._shard_location
+          description: <p>Speicherort des Shard für das Erkennen von Inkonsistenzen. </p>
+      return:
+        type: 5618da2dcom.microsoft.azure.elasticdb.shard.recovery._recovery_tokena08ddfce
+        description: <p>Die Auflistung von Token für die weitere Auflösung Aufgaben verwendet werden soll (Siehe ResolveMappingDifferences). </p>
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences(ShardLocation,String)'
+    id: 'detectMappingDifferences(ShardLocation,String)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'detectMappingDifferences(ShardLocation location, String shardMapName)'
+    nameWithType: 'RecoveryManager.detectMappingDifferences(ShardLocation location, String shardMapName)'
+    fullName: 'List<RecoveryToken> com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.detectMappingDifferences(ShardLocation location, String shardMapName)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 537
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Listet die Unterschiede in den Zuordnungen zwischen der globalen Shard Map-Manager-Datenbank und der lokalen Shard-Datenbank in den angegebenen Shard-Speicherort.</p>
+      <p></p>
+    syntax:
+      content: 'public List<RecoveryToken> detectMappingDifferences(ShardLocation location, String shardMapName)'
+      parameters:
+        - id: location
+          type: com.microsoft.azure.elasticdb.shard.base._shard_location
+          description: <p>Speicherort des Shard für das Erkennen von Inkonsistenzen. </p>
+        - id: shardMapName
+          type: '26831127'
+          description: <p>Optionaler Parameter zum Angeben einer bestimmten shardzuordnung. </p>
+      return:
+        type: 5618da2dcom.microsoft.azure.elasticdb.shard.recovery._recovery_tokena08ddfce
+        description: <p>Die Auflistung von Token für die weitere Auflösung Aufgaben verwendet werden soll (Siehe ResolveMappingDifferences). </p>
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getMappingDifferences(RecoveryToken)
+    id: getMappingDifferences(RecoveryToken)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: getMappingDifferences(RecoveryToken token)
+    nameWithType: RecoveryManager.getMappingDifferences(RecoveryToken token)
+    fullName: 'Map<ShardRange, MappingLocation> com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getMappingDifferences(RecoveryToken token)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getMappingDifferences*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 222
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Gibt ein Wörterbuch von Bereichsposition-Schlüssel-Wert-Paaren zurück. Der Speicherort zurückgegeben wird ein Enumerator, der angibt, ob eine bestimmte Bereich-(oder) vorhanden, nur in der lokalen shardzuordnung, nur in der globalen shardzuordnung oder beides handelt. Bereiche, die nicht in einer shardzuordnung enthalten darf keine Unterschiede enthalten, damit diese Bereiche nicht angezeigt werden.</p>
+      <p></p>
+    syntax:
+      content: 'public Map<ShardRange, MappingLocation> getMappingDifferences(RecoveryToken token)'
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+      return:
+        type: 6110eba5com.microsoft.azure.elasticdb.shard.base._shard_rangeb33c76fccom.microsoft.azure.elasticdb.shard.recovery._mapping_locationa08ddfce
+        description: '<p>Der Satz von Bereichen und ihre entsprechenden <xref uid="com.microsoft.azure.elasticdb.shard.recovery._mapping_location" data-throw-if-not-resolved="false">MappingLocation</xref>. Diese Methode geht davon aus einem vorherigen Aufruf von DetectMappingDifferences (ShardLocation Zeichenfolge), die die Wiederherstellung tokenparameter bereitstellt. Das Ergebnis dieser Methode wird in der Regel bei nachfolgenden Aufrufen verwendet, z. B. ResolveMappingDifferences oder RebuildMappingsOnShard Inkonsistenzen aufzulösen. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>)'
+    id: 'getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName)'
+    nameWithType: 'RecoveryManager.getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 287
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Ruft ab, Shard Map-Typ und Name basiert auf dem Token von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</p>
+      <p></p>
+    syntax:
+      content: 'public void getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName)'
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+        - id: mapType
+          type: 2695f77dcom.microsoft.azure.elasticdb.shard.map._shard_map_typea08ddfce
+          description: <p>Der Ausgabetyp ShardMap (Bereichs- oder Listen). </p>
+        - id: shardMapName
+          type: 4f397241
+          description: <p>Der Ausgabename der shardzuordnung. </p>
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>,ReferenceObjectHelper<ShardLocation>)'
+    id: 'getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>,ReferenceObjectHelper<ShardLocation>)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName, ReferenceObjectHelper<ShardLocation> shardLocation)'
+    nameWithType: 'RecoveryManager.getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName, ReferenceObjectHelper<ShardLocation> shardLocation)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName, ReferenceObjectHelper<ShardLocation> shardLocation)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 249
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Ruft ab Shard Typ, Name und Shard Standorte der Karte basiert auf dem Token von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</p>
+      <p></p>
+    syntax:
+      content: 'public void getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName, ReferenceObjectHelper<ShardLocation> shardLocation)'
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+        - id: mapType
+          type: 2695f77dcom.microsoft.azure.elasticdb.shard.map._shard_map_typea08ddfce
+          description: <p>Ausgaben Shard Map-Typ (Bereichs- oder Listen). </p>
+        - id: shardMapName
+          type: 4f397241
+          description: <p>Namen der shardzuordnung Ausgaben. </p>
+        - id: shardLocation
+          type: 2695f77dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+          description: <p>Ausgaben Shard-Speicherort </p>
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardLocation(RecoveryToken)
+    id: getShardLocation(RecoveryToken)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: getShardLocation(RecoveryToken token)
+    nameWithType: RecoveryManager.getShardLocation(RecoveryToken token)
+    fullName: ShardLocation com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardLocation(RecoveryToken token)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardLocation*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 360
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Gibt den Shard-Speicherort, der die lokale shardzuordnung von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</p>
+      <p></p>
+    syntax:
+      content: public ShardLocation getShardLocation(RecoveryToken token)
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken Merry DetectMappingDifferences (ShardLocation, String) </p>'
+      return:
+        type: com.microsoft.azure.elasticdb.shard.base._shard_location
+        description: '<p>Der Speicherort des betreffenden Shards auf den Satz der Zuordnung der Unterschiede festgestellt in DetectMappingDifferences (ShardLocation, String) entspricht. </p>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapName(RecoveryToken)
+    id: getShardMapName(RecoveryToken)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: getShardMapName(RecoveryToken token)
+    nameWithType: RecoveryManager.getShardMapName(RecoveryToken token)
+    fullName: String com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardMapName(RecoveryToken token)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 336
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Gibt den shardzuordnungsnamen der shardzuordnung, die von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</p>
+      <p></p>
+    syntax:
+      content: public String getShardMapName(RecoveryToken token)
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+      return:
+        type: '26831127'
+        description: <p>Der Name des der shardzuordnung für das angegebene Recovery-Token. </p>
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapType(RecoveryToken)
+    id: getShardMapType(RecoveryToken)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: getShardMapType(RecoveryToken token)
+    nameWithType: RecoveryManager.getShardMapType(RecoveryToken token)
+    fullName: ShardMapType com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardMapType(RecoveryToken token)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 313
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Gibt den Shard-Map-Typ der shardzuordnung, die von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</p>
+      <p></p>
+    syntax:
+      content: public ShardMapType getShardMapType(RecoveryToken token)
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+      return:
+        type: com.microsoft.azure.elasticdb.shard.map._shard_map_type
+        description: '<p>Der Typ des Shard Zuordnung (Liste in Bereich, usw.) entspricht, mit dem Recovery-Token. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShard(RecoveryToken,List<ShardRange>)'
+    id: 'rebuildMappingsOnShard(RecoveryToken,List<ShardRange>)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'rebuildMappingsOnShard(RecoveryToken token, List<ShardRange> ranges)'
+    nameWithType: 'RecoveryManager.rebuildMappingsOnShard(RecoveryToken token, List<ShardRange> ranges)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShard(RecoveryToken token, List<ShardRange> ranges)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShard*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 460
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Erstellt eine shardzuordnung lokalen Bereich aus einer Liste von inkonsistenten Shard Bereiche von DetectMappingDifferences ("ShardLocation", "String") erkannt, und klicken Sie dann GetMappingDifferences zugreift. Die resultierende lokalen Bereich shardzuordnung wird immer noch nicht mit der globalen shardzuordnung in den Shard-Map-Manager-Datenbank sein. Ein nachfolgender Aufruf von ResolveMappingDifferences ist erforderlich, das System wieder in einen fehlerfreien Zustand zu versetzen.</p>
+      <p></p>
+    syntax:
+      content: 'public void rebuildMappingsOnShard(RecoveryToken token, List<ShardRange> ranges)'
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: <p>Das Recovery-Token von einem vorherigen Aufruf von DetectMappingDifferences </p>
+        - id: ranges
+          type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_rangea08ddfce
+          description: '<p>Der Satz von Bereichen an, um auf den lokalen Shard behalten Sie beim Neuerstellen der lokalen shardzuordnung. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. Nur Shard Bereichen mit Inkonsistenzen können mit dieser Methode neu erstellt werden. Alle Bereiche mit keine Inkonsistenzen zwischen den lokalen Shard und der globale shardzuordnung werden auf den lokalen Shard unverändert beibehalten werden und werden durch diesen Aufruf nicht betroffen. Nachfolgende Änderungen an die nicht in Konflikt stehender Zuordnungen können später mithilfe der regulären Schnittstellen in den shardzuordnungs-Manager vorgenommen werden. Es ist nicht notwendig, den Wiederherstellungs-Manager zu verwenden, nicht in Konflikt stehender Zuordnungen ändern. </p>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>)
+    id: rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations)
+    nameWithType: RecoveryManager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations)
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 419
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Rekonstruiert eine angegebene eine Sammlung von Shard-Speicherorte die shardzuordnungs-Manager basierend auf Informationen über die Zuordnung in den einzelnen Shards gespeichert. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt. Wenn die Informationen in den einzelnen shardzuordnungen oder inkonsistent, ist das Verhalten nicht definiert. Keine Sperren Cross Shard vorgenommen werden sind, wenn während der Ausführung dieser Methode alle Shards inkonsistent werden, der finalen Status der globalen shardzuordnung möglicherweise beschädigt.</p>
+      <p></p>
+    syntax:
+      content: public void rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations)
+      parameters:
+        - id: shardLocations
+          type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+          description: '<p>Die Auflistung der Shard-Positionen. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>,String)'
+    id: 'rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>,String)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations, String shardMapName)'
+    nameWithType: 'RecoveryManager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations, String shardMapName)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations, String shardMapName)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 436
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Rekonstruiert eine angegebene eine Sammlung von Shard-Speicherorte die shardzuordnungs-Manager basierend auf Informationen über die Zuordnung in den einzelnen Shards gespeichert. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt. Wenn die Informationen in den einzelnen shardzuordnungen oder inkonsistent, ist das Verhalten nicht definiert. Keine Sperren Cross Shard vorgenommen werden sind, wenn während der Ausführung dieser Methode alle Shards inkonsistent werden, der finalen Status der globalen shardzuordnung möglicherweise beschädigt.</p>
+      <p></p>
+    syntax:
+      content: 'public void rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations, String shardMapName)'
+      parameters:
+        - id: shardLocations
+          type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+          description: <p>Die Auflistung der Shard-Positionen. </p>
+        - id: shardMapName
+          type: '26831127'
+          description: '<p>Optionaler Name des shardzuordnung. Wenn nicht angegeben, wird versucht, die Wiederherstellung alle shardzuordnungen für jeden Shard vorhanden. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>)
+    id: rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations)
+    nameWithType: RecoveryManager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations)
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 385
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Erhält eine Auflistung von Shard-Speicherorte, Basis rekonstruiert, ordnet lokalen shard, auf der gespeicherten Zuordnungsinformationen in der globalen shardzuordnung. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</p>
+      <p></p>
+    syntax:
+      content: public void rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations)
+      parameters:
+        - id: shardLocations
+          type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+          description: '<p>Die Auflistung der Shard-Positionen. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>,String)'
+    id: 'rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>,String)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations, String shardMapName)'
+    nameWithType: 'RecoveryManager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations, String shardMapName)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations, String shardMapName)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 400
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Erhält eine Auflistung von Shard-Speicherorte, Basis rekonstruiert, ordnet lokalen shard, auf der gespeicherten Zuordnungsinformationen in der globalen shardzuordnung. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</p>
+      <p></p>
+    syntax:
+      content: 'public void rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations, String shardMapName)'
+      parameters:
+        - id: shardLocations
+          type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+          description: <p>Die Auflistung der Shard-Positionen. </p>
+        - id: shardMapName
+          type: '26831127'
+          description: '<p>Optionaler Parameter, um nach den Namen der shardzuordnung zu filtern. Wenn nicht angegeben, werden alle shardzuordnungen neu erstellt werden. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.RecoveryManager(ShardMapManager)
+    id: RecoveryManager(ShardMapManager)
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: RecoveryManager(ShardMapManager shardMapManager)
+    nameWithType: RecoveryManager.RecoveryManager(ShardMapManager shardMapManager)
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.RecoveryManager(ShardMapManager shardMapManager)
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.RecoveryManager*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 74
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Erstellt eine Instanz des Wiederherstellungs-Managers für die angegebene shardzuordnungs-Manager.</p>
+      <p></p>
+    syntax:
+      content: public RecoveryManager(ShardMapManager shardMapManager)
+      parameters:
+        - id: shardMapManager
+          type: com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager
+          description: <p>Shardzuordnungs-Manager wiederhergestellt werden. </p>
+  - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.resolveMappingDifferences(RecoveryToken,MappingDifferenceResolution)'
+    id: 'resolveMappingDifferences(RecoveryToken,MappingDifferenceResolution)'
+    parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.yml
+    langs:
+      - java
+    name: 'resolveMappingDifferences(RecoveryToken token, MappingDifferenceResolution resolution)'
+    nameWithType: 'RecoveryManager.resolveMappingDifferences(RecoveryToken token, MappingDifferenceResolution resolution)'
+    fullName: 'void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.resolveMappingDifferences(RecoveryToken token, MappingDifferenceResolution resolution)'
+    overload: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.resolveMappingDifferences*
+    type: Method
+    source:
+      remote: *ref_0
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
+      startLine: 771
+    package: com.microsoft.azure.elasticdb.shard.recovery
+    summary: |-
+      <p>Wählt einen von der shardzuordnungen (lokal oder global) als Quelle für Wahrheit aus, und schaltet Zuordnungen auf beide synchron shardzuordnungen.</p>
+      <p></p>
+    syntax:
+      content: 'public void resolveMappingDifferences(RecoveryToken token, MappingDifferenceResolution resolution)'
+      parameters:
+        - id: token
+          type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+        - id: resolution
+          type: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference_resolution
+          description: '<p>Die Auflösungsstrategie für die Auflösung verwendet werden. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+references:
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.RecoveryManager*
+    name: RecoveryManager
+    nameWithType: RecoveryManager.RecoveryManager
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.RecoveryManager
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard*
+    name: attachShard
+    nameWithType: RecoveryManager.attachShard
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.attachShard
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard*
+    name: detachShard
+    nameWithType: RecoveryManager.detachShard
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.detachShard
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: 6110eba5com.microsoft.azure.elasticdb.shard.base._shard_rangeb33c76fccom.microsoft.azure.elasticdb.shard.recovery._mapping_locationa08ddfce
+    spec.java:
+      - name: Map<
+        fullName: Map<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_range
+        name: ShardRange
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardRange
+        href: com.microsoft.azure.elasticdb.shard.base._shard_range.yml
+      - name: ', '
+        fullName: ', '
+      - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_location
+        name: MappingLocation
+        fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingLocation
+        href: com.microsoft.azure.elasticdb.shard.recovery._mapping_location.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getMappingDifferences*
+    name: getMappingDifferences
+    nameWithType: RecoveryManager.getMappingDifferences
+    fullName: 'Map<ShardRange, MappingLocation> com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getMappingDifferences'
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: 2695f77dcom.microsoft.azure.elasticdb.shard.map._shard_map_typea08ddfce
+    spec.java:
+      - name: ReferenceObjectHelper<
+        fullName: ReferenceObjectHelper<
+      - uid: com.microsoft.azure.elasticdb.shard.map._shard_map_type
+        name: ShardMapType
+        fullName: com.microsoft.azure.elasticdb.shard.map.ShardMapType
+        href: com.microsoft.azure.elasticdb.shard.map._shard_map_type.yml
+      - name: '>'
+        fullName: '>'
+  - uid: 4f397241
+    spec.java:
+      - name: ReferenceObjectHelper<String>
+        fullName: ReferenceObjectHelper<String>
+  - uid: 2695f77dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+    spec.java:
+      - name: ReferenceObjectHelper<
+        fullName: ReferenceObjectHelper<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+        name: ShardLocation
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+        href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo*
+    name: getShardInfo
+    nameWithType: RecoveryManager.getShardInfo
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardInfo
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapType*
+    name: getShardMapType
+    nameWithType: RecoveryManager.getShardMapType
+    fullName: ShardMapType com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardMapType
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapName*
+    name: getShardMapName
+    nameWithType: RecoveryManager.getShardMapName
+    fullName: String com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardMapName
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardLocation*
+    name: getShardLocation
+    nameWithType: RecoveryManager.getShardLocation
+    fullName: ShardLocation com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.getShardLocation
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+        name: ShardLocation
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+        href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager*
+    name: rebuildMappingsOnShardsFromShardMapManager
+    nameWithType: RecoveryManager.rebuildMappingsOnShardsFromShardMapManager
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShardsFromShardMapManager
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards*
+    name: rebuildMappingsOnShardMapManagerFromShards
+    nameWithType: RecoveryManager.rebuildMappingsOnShardMapManagerFromShards
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShardMapManagerFromShards
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_rangea08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.elasticdb.shard.base._shard_range
+        name: ShardRange
+        fullName: com.microsoft.azure.elasticdb.shard.base.ShardRange
+        href: com.microsoft.azure.elasticdb.shard.base._shard_range.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShard*
+    name: rebuildMappingsOnShard
+    nameWithType: RecoveryManager.rebuildMappingsOnShard
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.rebuildMappingsOnShard
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: 5618da2dcom.microsoft.azure.elasticdb.shard.recovery._recovery_tokena08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+        name: RecoveryToken
+        fullName: com.microsoft.azure.elasticdb.shard.recovery.RecoveryToken
+        href: com.microsoft.azure.elasticdb.shard.recovery._recovery_token.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences*
+    name: detectMappingDifferences
+    nameWithType: RecoveryManager.detectMappingDifferences
+    fullName: List<RecoveryToken> com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.detectMappingDifferences
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.resolveMappingDifferences*
+    name: resolveMappingDifferences
+    nameWithType: RecoveryManager.resolveMappingDifferences
+    fullName: void com.microsoft.azure.elasticdb.shard.recovery.RecoveryManager.resolveMappingDifferences
+    package: com.microsoft.azure.elasticdb.shard.recovery
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
+    parent: com.microsoft.azure.elasticdb.shard.recovery
+    href: com.microsoft.azure.elasticdb.shard.recovery._recovery_token.yml
+    name: RecoveryToken
+    nameWithType: RecoveryToken
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.RecoveryToken
+    type: Class
+    summary: <p>Wiederherstellungstoken generiert und von Methoden des verwendet die <xref uid="com.microsoft.azure.elasticdb.shard.recovery._recovery_manager" data-throw-if-not-resolved="false">RecoveryManager</xref> auszuführenden konflikterkennung und-Lösung für Shard zugeordnet. </p>
+    syntax:
+      content: public class RecoveryToken
+  - uid: com.microsoft.azure.elasticdb.shard.base._shard_range
+    parent: com.microsoft.azure.elasticdb.shard.base
+    href: com.microsoft.azure.elasticdb.shard.base._shard_range.yml
+    name: ShardRange
+    nameWithType: ShardRange
+    fullName: com.microsoft.azure.elasticdb.shard.base.ShardRange
+    type: Class
+    summary: <p>Ein Bereich von Shard-Schlüsseln zwischen einem niedrig und eine hohe Schlüssel. Der niedrige Schlüssel ist inklusiv (Teil des Bereichs) während der hohe Schlüssel ist exklusiv (nicht Teil des Bereichs). Die <xref uid="com.microsoft.azure.elasticdb.shard.base._shard_range" data-throw-if-not-resolved="false">ShardRange</xref> -Klasse unveränderlich ist. </p>
+    syntax:
+      content: public class ShardRange
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference
+    parent: com.microsoft.azure.elasticdb.shard.recovery
+    href: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference.yml
+    name: MappingDifference
+    nameWithType: MappingDifference
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingDifference
+    type: Class
+    summary: <p>Klasse für die Zuordnung Unterschiede. </p>
+    syntax:
+      content: public class MappingDifference
+  - uid: com.microsoft.azure.elasticdb.shard.store._store_shard_map
+    parent: com.microsoft.azure.elasticdb.shard.store
+    href: com.microsoft.azure.elasticdb.shard.store._store_shard_map.yml
+    name: StoreShardMap
+    nameWithType: StoreShardMap
+    fullName: com.microsoft.azure.elasticdb.shard.store.StoreShardMap
+    type: Class
+    summary: <p>Speichern Sie die Darstellung einer shardzuordnung. </p>
+    syntax:
+      content: public class StoreShardMap
+  - uid: com.microsoft.azure.elasticdb.shard.store._store_shard
+    parent: com.microsoft.azure.elasticdb.shard.store
+    href: com.microsoft.azure.elasticdb.shard.store._store_shard.yml
+    name: StoreShard
+    nameWithType: StoreShard
+    fullName: com.microsoft.azure.elasticdb.shard.store.StoreShard
+    type: Class
+    summary: <p>Speicherdarstellung von einem einzelnen shard zusammengeführt. </p>
+    syntax:
+      content: public class StoreShard
+  - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
+    parent: com.microsoft.azure.elasticdb.shard.base
+    href: com.microsoft.azure.elasticdb.shard.base._shard_location.yml
+    name: ShardLocation
+    nameWithType: ShardLocation
+    fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
+    type: Class
+    summary: '<p>Stellt den Speicherort von einem Shard in Bezug auf die Servernamen und den Datenbanknamen dar. Dies dient zum Verwalten von Verbindungen zum Shard und andere Vorgänge auf Shards zu unterstützen. Im Gegensatz zu einer <xref uid="com.microsoft.azure.elasticdb.shard.base._shard" data-throw-if-not-resolved="false">Shard</xref>, ein Shard-Speicherort ist nicht mit der shardzuordnung registriert. </p>'
+    syntax:
+      content: public class ShardLocation
+  - uid: com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager
+    parent: com.microsoft.azure.elasticdb.shard.mapmanager
+    href: com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager.yml
+    name: ShardMapManager
+    nameWithType: ShardMapManager
+    fullName: com.microsoft.azure.elasticdb.shard.mapmanager.ShardMapManager
+    type: Class
+    summary: '<p>Stellt den Einstiegspunkt für die Erstellung, Verwaltung und Suchvorgänge für shardzuordnungen. </p>'
+    syntax:
+      content: public class ShardMapManager
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_location
+    parent: com.microsoft.azure.elasticdb.shard.recovery
+    href: com.microsoft.azure.elasticdb.shard.recovery._mapping_location.yml
+    name: MappingLocation
+    nameWithType: MappingLocation
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingLocation
+    type: Enum
+    summary: '<p>Der Speicherort, in denen anderen Zuordnungen vorhanden. </p>'
+    syntax:
+      content: public enum MappingLocation
+  - uid: com.microsoft.azure.elasticdb.shard.map._shard_map_type
+    parent: com.microsoft.azure.elasticdb.shard.map
+    href: com.microsoft.azure.elasticdb.shard.map._shard_map_type.yml
+    name: ShardMapType
+    nameWithType: ShardMapType
+    fullName: com.microsoft.azure.elasticdb.shard.map.ShardMapType
+    type: Enum
+    summary: <p>Typ der shardzuordnung. </p>
+    syntax:
+      content: public enum ShardMapType
+  - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference_resolution
+    parent: com.microsoft.azure.elasticdb.shard.recovery
+    href: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference_resolution.yml
+    name: MappingDifferenceResolution
+    nameWithType: MappingDifferenceResolution
+    fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingDifferenceResolution
+    type: Enum
+    summary: <p>Auflösungsstrategie zum Auflösen von Zuordnung Unterschiede. </p>
+    syntax:
+      content: public enum MappingDifferenceResolution

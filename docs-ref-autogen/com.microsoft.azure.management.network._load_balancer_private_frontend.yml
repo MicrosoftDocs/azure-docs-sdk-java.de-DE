@@ -4,6 +4,7 @@ items:
     id: _load_balancer_private_frontend
     parent: com.microsoft.azure.management.network
     children:
+      - com.microsoft.azure.management.network._load_balancer_private_frontend.availabilityZones()
       - com.microsoft.azure.management.network._load_balancer_private_frontend.getSubnet()
     href: com.microsoft.azure.management.network._load_balancer_private_frontend.yml
     langs:
@@ -15,12 +16,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancerPrivateFrontend.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancerPrivateFrontend.java
-      startLine: 19
+      startLine: 22
     package: com.microsoft.azure.management.network
-    summary: <p>Eine unveränderliche clientseitige Darstellung von einem private Front-End des internen Lastenausgleichs. </p>
+    summary: <p>Eine clientseitige Darstellung von einem private Front-End des internen Lastenausgleichs. </p>
     syntax:
       content: 'public interface LoadBalancerPrivateFrontend extends LoadBalancerFrontend,HasPrivateIPAddress,HasSubnet'
     inheritedMembers:
@@ -36,6 +37,27 @@ items:
       - com.microsoft.azure.management.network.model._has_private_i_p_address.privateIPAddress()
       - com.microsoft.azure.management.network.model._has_private_i_p_address.privateIPAllocationMethod()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_subnet.subnetName()
+  - uid: com.microsoft.azure.management.network._load_balancer_private_frontend.availabilityZones()
+    id: availabilityZones()
+    parent: com.microsoft.azure.management.network._load_balancer_private_frontend
+    href: com.microsoft.azure.management.network._load_balancer_private_frontend.yml
+    langs:
+      - java
+    name: availabilityZones()
+    nameWithType: LoadBalancerPrivateFrontend.availabilityZones()
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.network.LoadBalancerPrivateFrontend.availabilityZones()
+    overload: com.microsoft.azure.management.network._load_balancer_private_frontend.availabilityZones*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancerPrivateFrontend.java
+      startLine: 38
+    package: com.microsoft.azure.management.network
+    syntax:
+      content: public Set<AvailabilityZoneId> availabilityZones()
+      return:
+        type: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+        description: <p>die Verfügbarkeit Zonen Private Front-End-zugewiesen ist. </p>
   - uid: com.microsoft.azure.management.network._load_balancer_private_frontend.getSubnet()
     id: getSubnet()
     parent: com.microsoft.azure.management.network._load_balancer_private_frontend
@@ -50,11 +72,11 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancerPrivateFrontend.java
-      startLine: 29
+      startLine: 32
     package: com.microsoft.azure.management.network
     summary: |-
       <p>
-      Beachten Sie einen separaten Aufruf von dadurch <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+      Beachten Sie einen separaten Aufruf von dadurch <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public Subnet getSubnet()
       return:
@@ -65,6 +87,21 @@ references:
     name: getSubnet
     nameWithType: LoadBalancerPrivateFrontend.getSubnet
     fullName: Subnet com.microsoft.azure.management.network.LoadBalancerPrivateFrontend.getSubnet
+    package: com.microsoft.azure.management.network
+  - uid: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+    spec.java:
+      - name: Set<
+        fullName: Set<
+      - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+        name: AvailabilityZoneId
+        fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+        href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.network._load_balancer_private_frontend.availabilityZones*
+    name: availabilityZones
+    nameWithType: LoadBalancerPrivateFrontend.availabilityZones
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.network.LoadBalancerPrivateFrontend.availabilityZones
     package: com.microsoft.azure.management.network
   - uid: com.microsoft.azure.management.network._load_balancer_frontend.inboundNatPools()
     parent: com.microsoft.azure.management.network._load_balancer_frontend
@@ -101,7 +138,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.network._load_balancer_frontend.isPublic()
     parent: com.microsoft.azure.management.network._load_balancer_frontend
     href: com.microsoft.azure.management.network._load_balancer_frontend.yml
@@ -217,7 +254,7 @@ references:
     nameWithType: LoadBalancerFrontend
     fullName: com.microsoft.azure.management.network.LoadBalancerFrontend
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung von einem Load Balancer Front-End. </p>
+    summary: <p>Eine clientseitige Darstellung von einem Load Balancer Front-End. </p>
     syntax:
       content: 'public interface LoadBalancerFrontend extends HasInner<FrontendIPConfigurationInner>,ChildResource<LoadBalancer>,HasLoadBalancingRules'
   - uid: com.microsoft.azure.management.network.model._has_private_i_p_address
@@ -247,7 +284,7 @@ references:
     nameWithType: Subnet
     fullName: com.microsoft.azure.management.network.Subnet
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung eines Subnetzes eines virtuellen Netzwerks. </p>
+    summary: <p>Eine clientseitige Darstellung eines Subnetzes eines virtuellen Netzwerks. </p>
     syntax:
       content: public interface Subnet
   - uid: com.microsoft.azure.management._azure
@@ -257,6 +294,16 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure
+  - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+    parent: com.microsoft.azure.management.resources.fluentcore.arm
+    href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+    name: AvailabilityZoneId
+    nameWithType: AvailabilityZoneId
+    fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+    type: Class
+    summary: <p>Verfügbarkeit Zeitzonenbezeichnern. </p>
+    syntax:
+      content: public class AvailabilityZoneId extends ExpandableStringEnum<AvailabilityZoneId>

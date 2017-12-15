@@ -20,20 +20,12 @@ items:
       - 'com.microsoft.azure.servicebus._queue_client.deadLetterAsync(UUID,Map<String, Object>)'
       - 'com.microsoft.azure.servicebus._queue_client.deadLetterAsync(UUID,String,String)'
       - 'com.microsoft.azure.servicebus._queue_client.deadLetterAsync(UUID,String,String,Map<String, Object>)'
-      - com.microsoft.azure.servicebus._queue_client.defer(UUID)
-      - 'com.microsoft.azure.servicebus._queue_client.defer(UUID,Map<String, Object>)'
-      - com.microsoft.azure.servicebus._queue_client.deferAsync(UUID)
-      - 'com.microsoft.azure.servicebus._queue_client.deferAsync(UUID,Map<String, Object>)'
       - com.microsoft.azure.servicebus._queue_client.getEntityPath()
-      - com.microsoft.azure.servicebus._queue_client.getMessageSessions()
-      - com.microsoft.azure.servicebus._queue_client.getMessageSessions(Instant)
-      - com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync()
-      - com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync(Instant)
       - com.microsoft.azure.servicebus._queue_client.getPrefetchCount()
+      - com.microsoft.azure.servicebus._queue_client.getQueueName()
       - com.microsoft.azure.servicebus._queue_client.getReceiveMode()
       - com.microsoft.azure.servicebus._queue_client.onClose()
-      - 'com.microsoft.azure.servicebus._queue_client.QueueClient(MessagingFactory,String,ReceiveMode)'
-      - 'com.microsoft.azure.servicebus._queue_client.QueueClient(String,ReceiveMode)'
+      - 'com.microsoft.azure.servicebus._queue_client.QueueClient(ConnectionStringBuilder,ReceiveMode)'
       - com.microsoft.azure.servicebus._queue_client.registerMessageHandler(IMessageHandler)
       - 'com.microsoft.azure.servicebus._queue_client.registerMessageHandler(IMessageHandler,MessageHandlerOptions)'
       - com.microsoft.azure.servicebus._queue_client.registerSessionHandler(ISessionHandler)
@@ -58,7 +50,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 15
+      startLine: 22
     package: com.microsoft.azure.servicebus
     syntax:
       content: public class QueueClient implements IQueueClient
@@ -93,7 +85,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 163
+      startLine: 237
     package: com.microsoft.azure.servicebus
     syntax:
       content: public void abandon(UUID lockToken)
@@ -114,7 +106,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 168
+      startLine: 242
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public void abandon(UUID lockToken, Map<String, Object> propertiesToModify)'
@@ -137,7 +129,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 173
+      startLine: 247
     package: com.microsoft.azure.servicebus
     syntax:
       content: public CompletableFuture<Void> abandonAsync(UUID lockToken)
@@ -160,7 +152,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 178
+      startLine: 252
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public CompletableFuture<Void> abandonAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
@@ -185,14 +177,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 102
+      startLine: 176
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Bricht das Einreihen einer bereits gesendeten geplante Nachricht ab, wenn es nicht bereits in die Warteschlange eingereihten war. Diese Methode blockiert, bis die Nachricht, auf die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: public void cancelScheduledMessage(long sequenceNumber)
       parameters:
         - id: sequenceNumber
           type: 0364520f
+          description: <p>Sequenznummer der Nachricht geplante </p>
     overridden: com.microsoft.azure.servicebus._i_message_sender.cancelScheduledMessage(long)
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn der geplante Nachricht konnte nicht abgebrochen werden </p>
   - uid: com.microsoft.azure.servicebus._queue_client.cancelScheduledMessageAsync(long)
     id: cancelScheduledMessageAsync(long)
     parent: com.microsoft.azure.servicebus._queue_client
@@ -207,15 +208,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 92
+      startLine: 163
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Bricht das Einreihen einer bereits gesendeten geplante Nachricht ab, wenn es nicht bereits in die Warteschlange eingereihten war. Dies ist eine asynchrone Methode, die Rückgabe einer CompletableFuture die abgeschlossen wird, wenn die Nachricht abgebrochen wird.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> cancelScheduledMessageAsync(long sequenceNumber)
       parameters:
         - id: sequenceNumber
           type: 0364520f
+          description: <p>Sequenznummer der Nachricht geplante </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die den ausstehenden Abbruch darstellt. </p>'
     overridden: com.microsoft.azure.servicebus._i_message_sender.cancelScheduledMessageAsync(long)
   - uid: com.microsoft.azure.servicebus._queue_client.complete(UUID)
     id: complete(UUID)
@@ -231,7 +237,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 183
+      startLine: 257
     package: com.microsoft.azure.servicebus
     syntax:
       content: public void complete(UUID lockToken)
@@ -252,7 +258,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 188
+      startLine: 262
     package: com.microsoft.azure.servicebus
     syntax:
       content: public CompletableFuture<Void> completeAsync(UUID lockToken)
@@ -275,7 +281,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 213
+      startLine: 287
     package: com.microsoft.azure.servicebus
     syntax:
       content: public void deadLetter(UUID lockToken)
@@ -296,7 +302,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 218
+      startLine: 292
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public void deadLetter(UUID lockToken, Map<String, Object> propertiesToModify)'
@@ -319,7 +325,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 223
+      startLine: 297
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public void deadLetter(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription)'
@@ -344,7 +350,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 228
+      startLine: 302
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public void deadLetter(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription, Map<String, Object> propertiesToModify)'
@@ -371,7 +377,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 233
+      startLine: 307
     package: com.microsoft.azure.servicebus
     syntax:
       content: public CompletableFuture<Void> deadLetterAsync(UUID lockToken)
@@ -394,7 +400,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 238
+      startLine: 312
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
@@ -419,7 +425,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 243
+      startLine: 317
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription)'
@@ -446,7 +452,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 248
+      startLine: 322
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription, Map<String, Object> propertiesToModify)'
@@ -457,98 +463,6 @@ items:
           type: '26831127'
         - id: deadLetterErrorDescription
           type: '26831127'
-        - id: propertiesToModify
-          type: e7b06046
-      return:
-        type: db03ee24
-  - uid: com.microsoft.azure.servicebus._queue_client.defer(UUID)
-    id: defer(UUID)
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: defer(UUID lockToken)
-    nameWithType: QueueClient.defer(UUID lockToken)
-    fullName: void com.microsoft.azure.servicebus.QueueClient.defer(UUID lockToken)
-    overload: com.microsoft.azure.servicebus._queue_client.defer*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 193
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public void defer(UUID lockToken)
-      parameters:
-        - id: lockToken
-          type: add9545a
-  - uid: 'com.microsoft.azure.servicebus._queue_client.defer(UUID,Map<String, Object>)'
-    id: 'defer(UUID,Map<String, Object>)'
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: 'defer(UUID lockToken, Map<String, Object> propertiesToModify)'
-    nameWithType: 'QueueClient.defer(UUID lockToken, Map<String, Object> propertiesToModify)'
-    fullName: 'void com.microsoft.azure.servicebus.QueueClient.defer(UUID lockToken, Map<String, Object> propertiesToModify)'
-    overload: com.microsoft.azure.servicebus._queue_client.defer*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 198
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: 'public void defer(UUID lockToken, Map<String, Object> propertiesToModify)'
-      parameters:
-        - id: lockToken
-          type: add9545a
-        - id: propertiesToModify
-          type: e7b06046
-  - uid: com.microsoft.azure.servicebus._queue_client.deferAsync(UUID)
-    id: deferAsync(UUID)
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: deferAsync(UUID lockToken)
-    nameWithType: QueueClient.deferAsync(UUID lockToken)
-    fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.QueueClient.deferAsync(UUID lockToken)
-    overload: com.microsoft.azure.servicebus._queue_client.deferAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 203
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public CompletableFuture<Void> deferAsync(UUID lockToken)
-      parameters:
-        - id: lockToken
-          type: add9545a
-      return:
-        type: db03ee24
-  - uid: 'com.microsoft.azure.servicebus._queue_client.deferAsync(UUID,Map<String, Object>)'
-    id: 'deferAsync(UUID,Map<String, Object>)'
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: 'deferAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
-    nameWithType: 'QueueClient.deferAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
-    fullName: 'CompletableFuture<Void> com.microsoft.azure.servicebus.QueueClient.deferAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
-    overload: com.microsoft.azure.servicebus._queue_client.deferAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 208
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: 'public CompletableFuture<Void> deferAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
-      parameters:
-        - id: lockToken
-          type: add9545a
         - id: propertiesToModify
           type: e7b06046
       return:
@@ -567,103 +481,17 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 107
+      startLine: 181
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Ruft den Pfad der Entität, die dieser Client wird ab, Senden von Nachrichten an oder Empfang von Nachrichten aus.</p>
+      <p></p>
     syntax:
       content: public String getEntityPath()
       return:
         type: '26831127'
-    overridden: com.microsoft.azure.servicebus._i_message_entity.getEntityPath()
-  - uid: com.microsoft.azure.servicebus._queue_client.getMessageSessions()
-    id: getMessageSessions()
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: getMessageSessions()
-    nameWithType: QueueClient.getMessageSessions()
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.QueueClient.getMessageSessions()
-    overload: com.microsoft.azure.servicebus._queue_client.getMessageSessions*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 143
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public Collection<IMessageSession> getMessageSessions()
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-    overridden: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions()
-  - uid: com.microsoft.azure.servicebus._queue_client.getMessageSessions(Instant)
-    id: getMessageSessions(Instant)
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: getMessageSessions(Instant lastUpdatedTime)
-    nameWithType: QueueClient.getMessageSessions(Instant lastUpdatedTime)
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.QueueClient.getMessageSessions(Instant lastUpdatedTime)
-    overload: com.microsoft.azure.servicebus._queue_client.getMessageSessions*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 148
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public Collection<IMessageSession> getMessageSessions(Instant lastUpdatedTime)
-      parameters:
-        - id: lastUpdatedTime
-          type: 328f8254
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-    overridden: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions(Instant)
-  - uid: com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync()
-    id: getMessageSessionsAsync()
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: getMessageSessionsAsync()
-    nameWithType: QueueClient.getMessageSessionsAsync()
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.QueueClient.getMessageSessionsAsync()
-    overload: com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 153
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public CompletableFuture<Collection<IMessageSession>> getMessageSessionsAsync()
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122
-    overridden: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync()
-  - uid: com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync(Instant)
-    id: getMessageSessionsAsync(Instant)
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: getMessageSessionsAsync(Instant lastUpdatedTime)
-    nameWithType: QueueClient.getMessageSessionsAsync(Instant lastUpdatedTime)
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.QueueClient.getMessageSessionsAsync(Instant lastUpdatedTime)
-    overload: com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 158
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public CompletableFuture<Collection<IMessageSession>> getMessageSessionsAsync(Instant lastUpdatedTime)
-      parameters:
-        - id: lastUpdatedTime
-          type: 328f8254
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122
-    overridden: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync(Instant)
+        description: '<p>Pfad der Entität, der diesem Client eine Verbindung herstellt </p>'
+    overridden: com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
   - uid: com.microsoft.azure.servicebus._queue_client.getPrefetchCount()
     id: getPrefetchCount()
     parent: com.microsoft.azure.servicebus._queue_client
@@ -678,12 +506,37 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 253
+      startLine: 327
     package: com.microsoft.azure.servicebus
     syntax:
       content: public int getPrefetchCount()
       return:
         type: f75371fa
+  - uid: com.microsoft.azure.servicebus._queue_client.getQueueName()
+    id: getQueueName()
+    parent: com.microsoft.azure.servicebus._queue_client
+    href: com.microsoft.azure.servicebus._queue_client.yml
+    langs:
+      - java
+    name: getQueueName()
+    nameWithType: QueueClient.getQueueName()
+    fullName: String com.microsoft.azure.servicebus.QueueClient.getQueueName()
+    overload: com.microsoft.azure.servicebus._queue_client.getQueueName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
+      startLine: 337
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Ruft den Namen der Warteschlange ab.</p>
+      <p></p>
+    syntax:
+      content: public String getQueueName()
+      return:
+        type: '26831127'
+        description: <p>Der Name der Warteschlange. </p>
+    overridden: com.microsoft.azure.servicebus._i_queue_client.getQueueName()
   - uid: com.microsoft.azure.servicebus._queue_client.getReceiveMode()
     id: getReceiveMode()
     parent: com.microsoft.azure.servicebus._queue_client
@@ -698,12 +551,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 62
+      startLine: 124
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Ruft die <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref> des aktuellen Empfängers</p>
+      <p></p>
     syntax:
       content: public ReceiveMode getReceiveMode()
       return:
         type: com.microsoft.azure.servicebus._receive_mode
+        description: <p>Der Receive-Modus. </p>
     overridden: com.microsoft.azure.servicebus._i_queue_client.getReceiveMode()
   - uid: com.microsoft.azure.servicebus._queue_client.onClose()
     id: onClose()
@@ -719,58 +576,33 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 138
+      startLine: 212
     package: com.microsoft.azure.servicebus
     syntax:
       content: protected CompletableFuture<Void> onClose()
       return:
         type: db03ee24
-  - uid: 'com.microsoft.azure.servicebus._queue_client.QueueClient(MessagingFactory,String,ReceiveMode)'
-    id: 'QueueClient(MessagingFactory,String,ReceiveMode)'
+  - uid: 'com.microsoft.azure.servicebus._queue_client.QueueClient(ConnectionStringBuilder,ReceiveMode)'
+    id: 'QueueClient(ConnectionStringBuilder,ReceiveMode)'
     parent: com.microsoft.azure.servicebus._queue_client
     href: com.microsoft.azure.servicebus._queue_client.yml
     langs:
       - java
-    name: 'QueueClient(MessagingFactory factory, String queuePath, ReceiveMode receiveMode)'
-    nameWithType: 'QueueClient.QueueClient(MessagingFactory factory, String queuePath, ReceiveMode receiveMode)'
-    fullName: 'com.microsoft.azure.servicebus.QueueClient.QueueClient(MessagingFactory factory, String queuePath, ReceiveMode receiveMode)'
+    name: 'QueueClient(ConnectionStringBuilder amqpConnectionStringBuilder, ReceiveMode receiveMode)'
+    nameWithType: 'QueueClient.QueueClient(ConnectionStringBuilder amqpConnectionStringBuilder, ReceiveMode receiveMode)'
+    fullName: 'com.microsoft.azure.servicebus.QueueClient.QueueClient(ConnectionStringBuilder amqpConnectionStringBuilder, ReceiveMode receiveMode)'
     overload: com.microsoft.azure.servicebus._queue_client.QueueClient*
     type: Constructor
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 37
+      startLine: 42
     package: com.microsoft.azure.servicebus
     syntax:
-      content: 'public QueueClient(MessagingFactory factory, String queuePath, ReceiveMode receiveMode)'
+      content: 'public QueueClient(ConnectionStringBuilder amqpConnectionStringBuilder, ReceiveMode receiveMode)'
       parameters:
-        - id: factory
-          type: com.microsoft.azure.servicebus.primitives._messaging_factory
-        - id: queuePath
-          type: '26831127'
-        - id: receiveMode
-          type: com.microsoft.azure.servicebus._receive_mode
-  - uid: 'com.microsoft.azure.servicebus._queue_client.QueueClient(String,ReceiveMode)'
-    id: 'QueueClient(String,ReceiveMode)'
-    parent: com.microsoft.azure.servicebus._queue_client
-    href: com.microsoft.azure.servicebus._queue_client.yml
-    langs:
-      - java
-    name: 'QueueClient(String amqpConnectionString, ReceiveMode receiveMode)'
-    nameWithType: 'QueueClient.QueueClient(String amqpConnectionString, ReceiveMode receiveMode)'
-    fullName: 'com.microsoft.azure.servicebus.QueueClient.QueueClient(String amqpConnectionString, ReceiveMode receiveMode)'
-    overload: com.microsoft.azure.servicebus._queue_client.QueueClient*
-    type: Constructor
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 29
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: 'public QueueClient(String amqpConnectionString, ReceiveMode receiveMode)'
-      parameters:
-        - id: amqpConnectionString
-          type: '26831127'
+        - id: amqpConnectionStringBuilder
+          type: com.microsoft.azure.servicebus.primitives._connection_string_builder
         - id: receiveMode
           type: com.microsoft.azure.servicebus._receive_mode
   - uid: com.microsoft.azure.servicebus._queue_client.registerMessageHandler(IMessageHandler)
@@ -787,7 +619,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 112
+      startLine: 186
     package: com.microsoft.azure.servicebus
     syntax:
       content: public void registerMessageHandler(IMessageHandler handler)
@@ -808,7 +640,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 117
+      startLine: 191
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public void registerMessageHandler(IMessageHandler handler, MessageHandlerOptions handlerOptions)'
@@ -831,7 +663,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 122
+      startLine: 196
     package: com.microsoft.azure.servicebus
     syntax:
       content: public void registerSessionHandler(ISessionHandler handler)
@@ -852,7 +684,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 127
+      startLine: 201
     package: com.microsoft.azure.servicebus
     syntax:
       content: 'public void registerSessionHandler(ISessionHandler handler, SessionHandlerOptions handlerOptions)'
@@ -875,18 +707,29 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 97
+      startLine: 171
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Sendet eine geplante Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Eine geplante Nachricht in die Warteschlange eingereiht und an Empfänger nur zum Zeitpunkt geplanten Enqueue zur Verfügung gestellt. Diese Methode blockiert, bis die Nachricht, auf die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: 'public long scheduleMessage(IMessage message, Instant scheduledEnqueueTimeUtc)'
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
         - id: scheduledEnqueueTimeUtc
           type: 328f8254
+          description: '<p>Zeitpunkt, an dem die Nachricht in der Entität in die Warteschlange eingereiht werden sollen </p>'
       return:
         type: 0364520f
+        description: <p>Sequenznummer der Nachricht geplante </p>
     overridden: 'com.microsoft.azure.servicebus._i_message_sender.scheduleMessage(IMessage,Instant)'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Nachricht konnte nicht die Entität gesendet werden </p>
   - uid: 'com.microsoft.azure.servicebus._queue_client.scheduleMessageAsync(IMessage,Instant)'
     id: 'scheduleMessageAsync(IMessage,Instant)'
     parent: com.microsoft.azure.servicebus._queue_client
@@ -901,17 +744,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 87
+      startLine: 155
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Sendet eine geplante Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Eine geplante Nachricht in die Warteschlange eingereiht und an Empfänger nur zum Zeitpunkt geplanten Enqueue zur Verfügung gestellt. Dies ist eine asynchrone Methode, die eine CompletableFuture die abgeschlossen wird, wenn die Nachricht, auf die Entität gesendet wird zurückgibt. Die CompletableFuture nach Abschluss gibt die Sequenznummer der geplanten Nachricht die verwendet werden kann, um die Planung der Nachricht abzubrechen.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Long> scheduleMessageAsync(IMessage message, Instant scheduledEnqueueTimeUtc)'
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
         - id: scheduledEnqueueTimeUtc
           type: 328f8254
+          description: '<p>Zeitpunkt, an dem die Nachricht in der Entität in die Warteschlange eingereiht werden sollen </p>'
       return:
         type: 30822cb1
+        description: '<p>eine CompletableFuture, die die ausstehenden senden, das die Sequenznummer der geplanten Nachricht zurückgibt darstellt. Diese Sequenznummer kann verwendet werden, um die Planung der Nachricht abzubrechen. </p>'
     overridden: 'com.microsoft.azure.servicebus._i_message_sender.scheduleMessageAsync(IMessage,Instant)'
   - uid: com.microsoft.azure.servicebus._queue_client.send(IMessage)
     id: send(IMessage)
@@ -927,14 +776,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 67
+      startLine: 129
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Sendet eine Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Diese Methode blockiert, bis die Nachricht, auf die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: public void send(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
     overridden: com.microsoft.azure.servicebus._i_message_sender.send(IMessage)
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Nachricht konnte nicht die Entität gesendet werden </p>
   - uid: com.microsoft.azure.servicebus._queue_client.sendAsync(IMessage)
     id: sendAsync(IMessage)
     parent: com.microsoft.azure.servicebus._queue_client
@@ -949,15 +807,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 77
+      startLine: 139
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Sendet eine Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Dies ist eine asynchrone Methode, die eine CompletableFuture die abgeschlossen wird, wenn die Nachricht, auf die Entität gesendet wird zurückgibt.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> sendAsync(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden senden darstellt. </p>'
     overridden: com.microsoft.azure.servicebus._i_message_sender.sendAsync(IMessage)
   - uid: com.microsoft.azure.servicebus._queue_client.sendBatch(Collection<? extends IMessage>)
     id: sendBatch(Collection<? extends IMessage>)
@@ -973,14 +836,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 72
+      startLine: 134
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Sendet einen Nachrichtenbatch für die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Diese Methode blockiert, bis der Batch an die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: public void sendBatch(Collection<? extends IMessage> messages)
       parameters:
         - id: messages
           type: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
+          description: <p>Auflistung von Nachrichten an die Entität gesendet werden </p>
     overridden: com.microsoft.azure.servicebus._i_message_sender.sendBatch(Collection<? extends IMessage>)
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn der Batch für die Entität gesendet werden konnte nicht </p>
   - uid: com.microsoft.azure.servicebus._queue_client.sendBatchAsync(Collection<? extends IMessage>)
     id: sendBatchAsync(Collection<? extends IMessage>)
     parent: com.microsoft.azure.servicebus._queue_client
@@ -995,15 +867,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 82
+      startLine: 147
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Sendet einen Nachrichtenbatch für die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Dies ist eine asynchrone Methode, die eine CompletableFuture die abgeschlossen wird, wenn der Batch, auf die Entität gesendet wird zurückgibt.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> sendBatchAsync(Collection<? extends IMessage> messages)
       parameters:
         - id: messages
           type: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
+          description: <p>Auflistung von Nachrichten an die Entität gesendet werden </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden senden darstellt. </p>'
     overridden: com.microsoft.azure.servicebus._i_message_sender.sendBatchAsync(Collection<? extends IMessage>)
   - uid: com.microsoft.azure.servicebus._queue_client.setPrefetchCount(int)
     id: setPrefetchCount(int)
@@ -1019,7 +896,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/QueueClient.java
-      startLine: 258
+      startLine: 332
     package: com.microsoft.azure.servicebus
     syntax:
       content: public void setPrefetchCount(int prefetchCount)
@@ -1027,10 +904,6 @@ items:
         - id: prefetchCount
           type: f75371fa
 references:
-  - uid: '26831127'
-    spec.java:
-      - name: String
-        fullName: String
   - uid: com.microsoft.azure.servicebus._queue_client.QueueClient*
     name: QueueClient
     nameWithType: QueueClient.QueueClient
@@ -1041,6 +914,14 @@ references:
     nameWithType: QueueClient.getReceiveMode
     fullName: ReceiveMode com.microsoft.azure.servicebus.QueueClient.getReceiveMode
     package: com.microsoft.azure.servicebus
+  - uid: 8256ba40
+    spec.java:
+      - name: InterruptedException
+        fullName: InterruptedException
+  - uid: 73fec9fb
+    spec.java:
+      - name: ServiceBusException
+        fullName: ServiceBusException
   - uid: com.microsoft.azure.servicebus._queue_client.send*
     name: send
     nameWithType: QueueClient.send
@@ -1107,6 +988,10 @@ references:
     nameWithType: QueueClient.cancelScheduledMessage
     fullName: void com.microsoft.azure.servicebus.QueueClient.cancelScheduledMessage
     package: com.microsoft.azure.servicebus
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
   - uid: com.microsoft.azure.servicebus._queue_client.getEntityPath*
     name: getEntityPath
     nameWithType: QueueClient.getEntityPath
@@ -1121,36 +1006,6 @@ references:
     name: registerSessionHandler
     nameWithType: QueueClient.registerSessionHandler
     fullName: void com.microsoft.azure.servicebus.QueueClient.registerSessionHandler
-    package: com.microsoft.azure.servicebus
-  - uid: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-    spec.java:
-      - name: Collection<
-        fullName: Collection<
-      - uid: com.microsoft.azure.servicebus._i_message_session
-        name: IMessageSession
-        fullName: com.microsoft.azure.servicebus.IMessageSession
-        href: com.microsoft.azure.servicebus._i_message_session.yml
-      - name: '>'
-        fullName: '>'
-  - uid: com.microsoft.azure.servicebus._queue_client.getMessageSessions*
-    name: getMessageSessions
-    nameWithType: QueueClient.getMessageSessions
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.QueueClient.getMessageSessions
-    package: com.microsoft.azure.servicebus
-  - uid: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122
-    spec.java:
-      - name: CompletableFuture<Collection<
-        fullName: CompletableFuture<Collection<
-      - uid: com.microsoft.azure.servicebus._i_message_session
-        name: IMessageSession
-        fullName: com.microsoft.azure.servicebus.IMessageSession
-        href: com.microsoft.azure.servicebus._i_message_session.yml
-      - name: '>>'
-        fullName: '>>'
-  - uid: com.microsoft.azure.servicebus._queue_client.getMessageSessionsAsync*
-    name: getMessageSessionsAsync
-    nameWithType: QueueClient.getMessageSessionsAsync
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.QueueClient.getMessageSessionsAsync
     package: com.microsoft.azure.servicebus
   - uid: add9545a
     spec.java:
@@ -1180,16 +1035,6 @@ references:
     nameWithType: QueueClient.completeAsync
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.QueueClient.completeAsync
     package: com.microsoft.azure.servicebus
-  - uid: com.microsoft.azure.servicebus._queue_client.defer*
-    name: defer
-    nameWithType: QueueClient.defer
-    fullName: void com.microsoft.azure.servicebus.QueueClient.defer
-    package: com.microsoft.azure.servicebus
-  - uid: com.microsoft.azure.servicebus._queue_client.deferAsync*
-    name: deferAsync
-    nameWithType: QueueClient.deferAsync
-    fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.QueueClient.deferAsync
-    package: com.microsoft.azure.servicebus
   - uid: com.microsoft.azure.servicebus._queue_client.deadLetter*
     name: deadLetter
     nameWithType: QueueClient.deadLetter
@@ -1213,6 +1058,11 @@ references:
     name: setPrefetchCount
     nameWithType: QueueClient.setPrefetchCount
     fullName: void com.microsoft.azure.servicebus.QueueClient.setPrefetchCount
+    package: com.microsoft.azure.servicebus
+  - uid: com.microsoft.azure.servicebus._queue_client.getQueueName*
+    name: getQueueName
+    nameWithType: QueueClient.getQueueName
+    fullName: String com.microsoft.azure.servicebus.QueueClient.getQueueName
     package: com.microsoft.azure.servicebus
   - uid: com.microsoft.azure.servicebus._queue_client.onClose*
     name: onClose
@@ -1251,6 +1101,7 @@ references:
     nameWithType: ICloseable.close()
     fullName: void com.microsoft.azure.servicebus.ICloseable.close()
     type: Method
+    summary: '<p>Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Beim Aufrufen dieser Methode entspricht der aufrufen. Diese Methode blockiert, bis diese wird das Objekt geschlossen. </p>'
     syntax:
       content: public void close()
   - uid: com.microsoft.azure.servicebus.primitives._client_entity.closeAsync()
@@ -1271,10 +1122,12 @@ references:
     nameWithType: ICloseable.closeAsync()
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.ICloseable.closeAsync()
     type: Method
+    summary: '<p>Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde. Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben. Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist. </p>'
     syntax:
       content: public CompletableFuture<Void> closeAsync()
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die das Schließen des dieses Objekt darstellt. </p>'
   - uid: com.microsoft.azure.servicebus.primitives._client_entity.finalize()
     parent: com.microsoft.azure.servicebus.primitives._client_entity
     href: com.microsoft.azure.servicebus.primitives._client_entity.yml
@@ -1350,8 +1203,9 @@ references:
     nameWithType: IQueueClient
     fullName: com.microsoft.azure.servicebus.IQueueClient
     type: Interface
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._queue_client\" data-throw-if-not-resolved=\"false\">QueueClient</xref> für alle grundlegenden Interaktionen mit Service Bus-Warteschlange verwendet werden kann. </p>"
     syntax:
-      content: 'public interface IQueueClient extends IMessageSender,IMessageSessionEntity,IMessageEntity'
+      content: 'public interface IQueueClient extends IMessageSender,IMessageEntityClient'
   - uid: com.microsoft.azure.servicebus._receive_mode
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._receive_mode.yml
@@ -1359,8 +1213,21 @@ references:
     nameWithType: ReceiveMode
     fullName: com.microsoft.azure.servicebus.ReceiveMode
     type: Enum
+    summary: |-
+      <p>Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</p>
+      <p></p>
     syntax:
       content: public enum ReceiveMode
+  - uid: com.microsoft.azure.servicebus.primitives._messaging_factory
+    parent: com.microsoft.azure.servicebus.primitives
+    href: com.microsoft.azure.servicebus.primitives._messaging_factory.yml
+    name: MessagingFactory
+    nameWithType: MessagingFactory
+    fullName: com.microsoft.azure.servicebus.primitives.MessagingFactory
+    type: Class
+    summary: '<p>Abstrahiert alle AMQP im Zusammenhang details und kapselt eine AMQP-Verbindung und zum Verwalten des Lebenszyklus der Reihe nach. Jede Instanz dieser Klasse stellen eine AMQP-Verbindung mit dem Namespace dar. Wenn eine Anwendung mehrere Absender, Empfänger oder Clients, die mithilfe der gleichen MessagingFacotry-Instanz erstellt, gemeinsam alle diese Absender, Empfänger oder Clients die Verbindung mit dem Namespace. </p>'
+    syntax:
+      content: public class MessagingFactory extends ClientEntity
   - uid: com.microsoft.azure.servicebus._i_message_sender
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1368,8 +1235,11 @@ references:
     nameWithType: IMessageSender
     fullName: com.microsoft.azure.servicebus.IMessageSender
     type: Interface
+    summary: |-
+      <p>Stellt den Absender einer Nachricht, die Nachrichten an Azure Service Bus sendet.</p>
+      <p></p>
     syntax:
-      content: public interface IMessageSender extends IMessageEntity
+      content: public interface IMessageSender extends IMessageEntityClient
   - uid: com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler
     parent: com.microsoft.azure.servicebus.primitives
     href: com.microsoft.azure.servicebus.primitives._misc_request_response_operation_handler.yml
@@ -1379,16 +1249,34 @@ references:
     type: Class
     syntax:
       content: public class MiscRequestResponseOperationHandler extends ClientEntity
-  - uid: com.microsoft.azure.servicebus.primitives._messaging_factory
+  - uid: com.microsoft.azure.servicebus.primitives._connection_string_builder
     parent: com.microsoft.azure.servicebus.primitives
-    href: com.microsoft.azure.servicebus.primitives._messaging_factory.yml
-    name: MessagingFactory
-    nameWithType: MessagingFactory
-    fullName: com.microsoft.azure.servicebus.primitives.MessagingFactory
+    href: com.microsoft.azure.servicebus.primitives._connection_string_builder.yml
+    name: ConnectionStringBuilder
+    nameWithType: ConnectionStringBuilder
+    fullName: com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder
     type: Class
-    summary: <p>Abstrahiert alle Amqp bezogene details und macht AmqpConnection Objekt-Management-verbindungslebenszyklus </p>
+    summary: |-
+      <p>Diese Klasse kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>
+      <p>Beispielcode: <pre><code>ConnectionStringBuilder connectionStringBuilder = new ConnectionStringBuilder(
+
+                                                   "ServiceBusNamespaceName", 
+
+                                                   "ServiceBusEntityName", // QueueName or TopicName or SubscriptionPath
+
+                                                   "SharedAccessSignatureKeyName", 
+
+                                                   "SharedAccessSignatureKey");
+
+           
+
+          String connectionString = connectionStringBuilder.toString();
+
+          </code></pre></p>
+
+      <p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste ";". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, an den Service Bus-Namespace verweist. </p></listitem><listitem><p>EntityPath - Pfad zu der Servicebus-Entität (Warteschlange/Thema/Abonnement /). Für Warteschlangen und Themen ist es nur die Namen der Entität. Für Abonnements Pfad ist &lt;Name_des_themas&gt;/Subscriptions /&lt;SubscriptionName&gt; </p></listitem><listitem><p>SharedAccessKeyName - Key-Name auf den entsprechenden freigegebenen Zugriffsrichtlinie für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel-Wert für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem><listitem><p>SharedAccessSignatureToken - können anstelle einer Schlüsselnamen und einen Schlüsselwert, Clients eine bereits generierte SAS-Token bereitstellen. </p></listitem><listitem><p>OperationTimeout - Standardtimeout für alle Absender, Empfänger und Clients, die aus dieser Verbindungszeichenfolge erstellte verwendet werden. </p></listitem><listitem><p><xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">Die RetryPolicy</xref> - Name der Richtlinie versuchen Sie es erneut. </p></listitem></itemizedlist></p>
     syntax:
-      content: public class MessagingFactory extends ClientEntity
+      content: public class ConnectionStringBuilder
   - uid: com.microsoft.azure.servicebus.primitives._service_bus_exception
     parent: com.microsoft.azure.servicebus.primitives
     href: com.microsoft.azure.servicebus.primitives._service_bus_exception.yml
@@ -1396,7 +1284,7 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
     syntax:
       content: public class ServiceBusException
   - uid: com.microsoft.azure.servicebus._i_queue_client.getReceiveMode()
@@ -1406,10 +1294,14 @@ references:
     nameWithType: IQueueClient.getReceiveMode()
     fullName: ReceiveMode com.microsoft.azure.servicebus.IQueueClient.getReceiveMode()
     type: Method
+    summary: |-
+      <p>Ruft die <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref> des aktuellen Empfängers</p>
+      <p></p>
     syntax:
       content: public ReceiveMode getReceiveMode()
       return:
         type: com.microsoft.azure.servicebus._receive_mode
+        description: <p>Der Receive-Modus. </p>
   - uid: com.microsoft.azure.servicebus._i_message_sender.send(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1417,11 +1309,15 @@ references:
     nameWithType: IMessageSender.send(IMessage message)
     fullName: void com.microsoft.azure.servicebus.IMessageSender.send(IMessage message)
     type: Method
+    summary: |-
+      <p>Sendet eine Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Diese Methode blockiert, bis die Nachricht, auf die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: public void send(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
   - uid: com.microsoft.azure.servicebus._i_message
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message.yml
@@ -1429,20 +1325,27 @@ references:
     nameWithType: IMessage
     fullName: com.microsoft.azure.servicebus.IMessage
     type: Interface
+    summary: |-
+      <p>Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</p>
+      <p></p>
     syntax:
       content: public interface IMessage
   - uid: com.microsoft.azure.servicebus._i_message_sender.sendBatch(Collection<? extends IMessage>)
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
-    name: sendBatch(Collection<? extends IMessage> message)
-    nameWithType: IMessageSender.sendBatch(Collection<? extends IMessage> message)
-    fullName: void com.microsoft.azure.servicebus.IMessageSender.sendBatch(Collection<? extends IMessage> message)
+    name: sendBatch(Collection<? extends IMessage> messages)
+    nameWithType: IMessageSender.sendBatch(Collection<? extends IMessage> messages)
+    fullName: void com.microsoft.azure.servicebus.IMessageSender.sendBatch(Collection<? extends IMessage> messages)
     type: Method
+    summary: |-
+      <p>Sendet einen Nachrichtenbatch für die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Diese Methode blockiert, bis der Batch an die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
-      content: public void sendBatch(Collection<? extends IMessage> message)
+      content: public void sendBatch(Collection<? extends IMessage> messages)
       parameters:
-        - id: message
+        - id: messages
           type: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
+          description: <p>Auflistung von Nachrichten an die Entität gesendet werden </p>
   - uid: com.microsoft.azure.servicebus._i_message_sender.sendAsync(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1450,27 +1353,37 @@ references:
     nameWithType: IMessageSender.sendAsync(IMessage message)
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageSender.sendAsync(IMessage message)
     type: Method
+    summary: |-
+      <p>Sendet eine Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Dies ist eine asynchrone Methode, die eine CompletableFuture die abgeschlossen wird, wenn die Nachricht, auf die Entität gesendet wird zurückgibt.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> sendAsync(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden senden darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_sender.sendBatchAsync(Collection<? extends IMessage>)
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
-    name: sendBatchAsync(Collection<? extends IMessage> message)
-    nameWithType: IMessageSender.sendBatchAsync(Collection<? extends IMessage> message)
-    fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageSender.sendBatchAsync(Collection<? extends IMessage> message)
+    name: sendBatchAsync(Collection<? extends IMessage> messages)
+    nameWithType: IMessageSender.sendBatchAsync(Collection<? extends IMessage> messages)
+    fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageSender.sendBatchAsync(Collection<? extends IMessage> messages)
     type: Method
+    summary: |-
+      <p>Sendet einen Nachrichtenbatch für die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Dies ist eine asynchrone Methode, die eine CompletableFuture die abgeschlossen wird, wenn der Batch, auf die Entität gesendet wird zurückgibt.</p>
+      <p></p>
     syntax:
-      content: public CompletableFuture<Void> sendBatchAsync(Collection<? extends IMessage> message)
+      content: public CompletableFuture<Void> sendBatchAsync(Collection<? extends IMessage> messages)
       parameters:
-        - id: message
+        - id: messages
           type: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
+          description: <p>Auflistung von Nachrichten an die Entität gesendet werden </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden senden darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_sender.scheduleMessageAsync(IMessage,Instant)'
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1478,15 +1391,21 @@ references:
     nameWithType: 'IMessageSender.scheduleMessageAsync(IMessage message, Instant scheduledEnqueueTimeUtc)'
     fullName: 'CompletableFuture<Long> com.microsoft.azure.servicebus.IMessageSender.scheduleMessageAsync(IMessage message, Instant scheduledEnqueueTimeUtc)'
     type: Method
+    summary: |-
+      <p>Sendet eine geplante Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Eine geplante Nachricht in die Warteschlange eingereiht und an Empfänger nur zum Zeitpunkt geplanten Enqueue zur Verfügung gestellt. Dies ist eine asynchrone Methode, die eine CompletableFuture die abgeschlossen wird, wenn die Nachricht, auf die Entität gesendet wird zurückgibt. Die CompletableFuture nach Abschluss gibt die Sequenznummer der geplanten Nachricht die verwendet werden kann, um die Planung der Nachricht abzubrechen.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Long> scheduleMessageAsync(IMessage message, Instant scheduledEnqueueTimeUtc)'
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
         - id: scheduledEnqueueTimeUtc
           type: 328f8254
+          description: '<p>Zeitpunkt, an dem die Nachricht in der Entität in die Warteschlange eingereiht werden sollen </p>'
       return:
         type: 30822cb1
+        description: '<p>eine CompletableFuture, die die ausstehenden senden, das die Sequenznummer der geplanten Nachricht zurückgibt darstellt. Diese Sequenznummer kann verwendet werden, um die Planung der Nachricht abzubrechen. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_sender.cancelScheduledMessageAsync(long)
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1494,13 +1413,18 @@ references:
     nameWithType: IMessageSender.cancelScheduledMessageAsync(long sequenceNumber)
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageSender.cancelScheduledMessageAsync(long sequenceNumber)
     type: Method
+    summary: |-
+      <p>Bricht das Einreihen einer bereits gesendeten geplante Nachricht ab, wenn es nicht bereits in die Warteschlange eingereihten war. Dies ist eine asynchrone Methode, die Rückgabe einer CompletableFuture die abgeschlossen wird, wenn die Nachricht abgebrochen wird.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> cancelScheduledMessageAsync(long sequenceNumber)
       parameters:
         - id: sequenceNumber
           type: 0364520f
+          description: <p>Sequenznummer der Nachricht geplante </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die den ausstehenden Abbruch darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_sender.scheduleMessage(IMessage,Instant)'
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1508,15 +1432,21 @@ references:
     nameWithType: 'IMessageSender.scheduleMessage(IMessage message, Instant scheduledEnqueueTimeUtc)'
     fullName: 'long com.microsoft.azure.servicebus.IMessageSender.scheduleMessage(IMessage message, Instant scheduledEnqueueTimeUtc)'
     type: Method
+    summary: |-
+      <p>Sendet eine geplante Nachricht an die Azure Service Bus-Entität, der mit diesem Absender verbunden ist. Eine geplante Nachricht in die Warteschlange eingereiht und an Empfänger nur zum Zeitpunkt geplanten Enqueue zur Verfügung gestellt. Diese Methode blockiert, bis die Nachricht, auf die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: 'public long scheduleMessage(IMessage message, Instant scheduledEnqueueTimeUtc)'
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Nachricht an die Entität gesendet werden </p>
         - id: scheduledEnqueueTimeUtc
           type: 328f8254
+          description: '<p>Zeitpunkt, an dem die Nachricht in der Entität in die Warteschlange eingereiht werden sollen </p>'
       return:
         type: 0364520f
+        description: <p>Sequenznummer der Nachricht geplante </p>
   - uid: com.microsoft.azure.servicebus._i_message_sender.cancelScheduledMessage(long)
     parent: com.microsoft.azure.servicebus._i_message_sender
     href: com.microsoft.azure.servicebus._i_message_sender.yml
@@ -1524,22 +1454,30 @@ references:
     nameWithType: IMessageSender.cancelScheduledMessage(long sequenceNumber)
     fullName: void com.microsoft.azure.servicebus.IMessageSender.cancelScheduledMessage(long sequenceNumber)
     type: Method
+    summary: |-
+      <p>Bricht das Einreihen einer bereits gesendeten geplante Nachricht ab, wenn es nicht bereits in die Warteschlange eingereihten war. Diese Methode blockiert, bis die Nachricht, auf die Entität gesendet wird. Beim Aufrufen dieser Methode entspricht dem Aufruf. Verwenden Sie asynchrone Methoden für eine bessere Leistung.</p>
+      <p></p>
     syntax:
       content: public void cancelScheduledMessage(long sequenceNumber)
       parameters:
         - id: sequenceNumber
           type: 0364520f
-  - uid: com.microsoft.azure.servicebus._i_message_entity.getEntityPath()
-    parent: com.microsoft.azure.servicebus._i_message_entity
-    href: com.microsoft.azure.servicebus._i_message_entity.yml
+          description: <p>Sequenznummer der Nachricht geplante </p>
+  - uid: com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
+    parent: com.microsoft.azure.servicebus._i_message_entity_client
+    href: com.microsoft.azure.servicebus._i_message_entity_client.yml
     name: getEntityPath()
-    nameWithType: IMessageEntity.getEntityPath()
-    fullName: String com.microsoft.azure.servicebus.IMessageEntity.getEntityPath()
+    nameWithType: IMessageEntityClient.getEntityPath()
+    fullName: String com.microsoft.azure.servicebus.IMessageEntityClient.getEntityPath()
     type: Method
+    summary: |-
+      <p>Ruft den Pfad der Entität, die dieser Client wird ab, Senden von Nachrichten an oder Empfang von Nachrichten aus.</p>
+      <p></p>
     syntax:
       content: public String getEntityPath()
       return:
         type: '26831127'
+        description: '<p>Pfad der Entität, der diesem Client eine Verbindung herstellt </p>'
   - uid: com.microsoft.azure.servicebus._i_message_handler
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message_handler.yml
@@ -1547,6 +1485,7 @@ references:
     nameWithType: IMessageHandler
     fullName: com.microsoft.azure.servicebus.IMessageHandler
     type: Interface
+    summary: '<p>Definiert den Vertrag für die Registrierung des Rückrufs <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerMessageHandler(IMessageHandler)</xref> und <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerMessageHandler(IMessageHandler)</xref> für <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> und <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>. </p>'
     syntax:
       content: public interface IMessageHandler
   - uid: com.microsoft.azure.servicebus._message_handler_options
@@ -1556,6 +1495,7 @@ references:
     nameWithType: MessageHandlerOptions
     fullName: com.microsoft.azure.servicebus.MessageHandlerOptions
     type: Class
+    summary: <p>Die Verarbeitungsoptionen der OnMessage-Handler. </p>
     syntax:
       content: public class MessageHandlerOptions
   - uid: com.microsoft.azure.servicebus._i_session_handler
@@ -1565,6 +1505,7 @@ references:
     nameWithType: ISessionHandler
     fullName: com.microsoft.azure.servicebus.ISessionHandler
     type: Interface
+    summary: '<p>Definiert den Vertrag für die Registrierung des Rückrufs Nachrichtenverarbeitung Sitzung <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerSessionHandler(ISessionHandler)</xref> oder <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerSessionHandler(ISessionHandler)</xref> für <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> und <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>. </p>'
     syntax:
       content: public interface ISessionHandler
   - uid: com.microsoft.azure.servicebus._session_handler_options
@@ -1574,8 +1515,24 @@ references:
     nameWithType: SessionHandlerOptions
     fullName: com.microsoft.azure.servicebus.SessionHandlerOptions
     type: Class
+    summary: <p>Die Verarbeitungsoptionen für den OnSession Handler. </p>
     syntax:
       content: public class SessionHandlerOptions
+  - uid: com.microsoft.azure.servicebus._i_queue_client.getQueueName()
+    parent: com.microsoft.azure.servicebus._i_queue_client
+    href: com.microsoft.azure.servicebus._i_queue_client.yml
+    name: getQueueName()
+    nameWithType: IQueueClient.getQueueName()
+    fullName: String com.microsoft.azure.servicebus.IQueueClient.getQueueName()
+    type: Method
+    summary: |-
+      <p>Ruft den Namen der Warteschlange ab.</p>
+      <p></p>
+    syntax:
+      content: public String getQueueName()
+      return:
+        type: '26831127'
+        description: <p>Der Name der Warteschlange. </p>
   - uid: com.microsoft.azure.servicebus._i_message_session
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -1583,55 +1540,10 @@ references:
     nameWithType: IMessageSession
     fullName: com.microsoft.azure.servicebus.IMessageSession
     type: Interface
+    summary: |-
+      <p>Beschreibt ein Sitzungsobjekt. <xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden. </p>
+      <p>Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten. Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung. </p>
+      <p>Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner. Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet. </p>
+      <p>Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist. Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt. </p>
     syntax:
       content: public interface IMessageSession extends IMessageReceiver
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions()
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessions()
-    nameWithType: IMessageSessionEntity.getMessageSessions()
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessions()
-    type: Method
-    syntax:
-      content: public Collection<IMessageSession> getMessageSessions()
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessions(Instant)
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessions(Instant lastUpdatedTime)
-    nameWithType: IMessageSessionEntity.getMessageSessions(Instant lastUpdatedTime)
-    fullName: Collection<IMessageSession> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessions(Instant lastUpdatedTime)
-    type: Method
-    syntax:
-      content: public Collection<IMessageSession> getMessageSessions(Instant lastUpdatedTime)
-      parameters:
-        - id: lastUpdatedTime
-          type: 328f8254
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_message_sessiona08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync()
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessionsAsync()
-    nameWithType: IMessageSessionEntity.getMessageSessionsAsync()
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessionsAsync()
-    type: Method
-    syntax:
-      content: public CompletableFuture<Collection<IMessageSession>> getMessageSessionsAsync()
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122
-  - uid: com.microsoft.azure.servicebus._i_message_session_entity.getMessageSessionsAsync(Instant)
-    parent: com.microsoft.azure.servicebus._i_message_session_entity
-    href: com.microsoft.azure.servicebus._i_message_session_entity.yml
-    name: getMessageSessionsAsync(Instant lastUpdatedTime)
-    nameWithType: IMessageSessionEntity.getMessageSessionsAsync(Instant lastUpdatedTime)
-    fullName: CompletableFuture<Collection<IMessageSession>> com.microsoft.azure.servicebus.IMessageSessionEntity.getMessageSessionsAsync(Instant lastUpdatedTime)
-    type: Method
-    syntax:
-      content: public CompletableFuture<Collection<IMessageSession>> getMessageSessionsAsync(Instant lastUpdatedTime)
-      parameters:
-        - id: lastUpdatedTime
-          type: 328f8254
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_message_sessione7daa122

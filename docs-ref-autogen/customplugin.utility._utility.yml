@@ -7,12 +7,13 @@ items:
       - customplugin.utility._utility.findConsole(String)
       - 'customplugin.utility._utility.findGradleFilesInPath(IPath,IWorkspaceRoot)'
       - customplugin.utility._utility.formatClassName(String)
+      - customplugin.utility._utility.getAppropriateClassName(final String)
+      - customplugin.utility._utility.getAppropriateServiceName(String)
       - customplugin.utility._utility.getCurrentProject()
       - customplugin.utility._utility.getStandardDisplay()
       - customplugin.utility._utility.linkDefaultOutStreamToConsole()
       - 'customplugin.utility._utility.openWizard(String,WizardInvokationType)'
       - customplugin.utility._utility.unlinkDefaultOutStreamToConsole()
-      - customplugin.utility._utility.validateClassName(final String)
     href: customplugin.utility._utility.yml
     langs:
       - java
@@ -28,7 +29,7 @@ items:
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
       startLine: 38
     package: customplugin.utility
-    summary: "<p>\r\n\r\n  <xref href=\"customplugin.utility._utility\" data-throw-if-not-resolved=\"false\"></xref>Klasse für Eclipse-Plug-in Zusammenhang Utility-Methoden.</p>\n\n<p></p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"customplugin.utility._utility\" data-throw-if-not-resolved=\"false\">Hilfsprogramm</xref> -Klasse Eclipse-Plug-in Hilfsprogrammmethoden beziehen.</p>\n\n<p></p>"
     syntax: &ref_2
       content: public class Utility
     inheritance:
@@ -47,7 +48,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 157
+      startLine: 163
     package: customplugin.utility
     summary: |-
       <p>MessageConsole zurück, der den angegebenen Eingabenamen</p>
@@ -74,7 +75,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 125
+      startLine: 131
     package: customplugin.utility
     syntax:
       content: 'public static List<IResource> findGradleFilesInPath(IPath path, IWorkspaceRoot myWorkspaceRoot)'
@@ -93,9 +94,9 @@ items:
     href: customplugin.utility._utility.yml
     langs:
       - java
-    name: formatClassName(String name)
-    nameWithType: Utility.formatClassName(String name)
-    fullName: static String customplugin.utility.Utility.formatClassName(String name)
+    name: formatClassName(String serviceName)
+    nameWithType: Utility.formatClassName(String serviceName)
+    fullName: static String customplugin.utility.Utility.formatClassName(String serviceName)
     overload: customplugin.utility._utility.formatClassName*
     type: Method
     source:
@@ -107,13 +108,63 @@ items:
       <p>Formatiert und gibt die Eingabe Klassenname - zurück, sodass der erste Buchstabe immer großgeschrieben ist.</p>
       <p></p>
     syntax: &ref_1
-      content: public static String formatClassName(String name)
+      content: public static String formatClassName(String serviceName)
       parameters:
-        - id: name
+        - id: serviceName
           type: '26831127'
       return:
         type: '26831127'
         description: '<p>Zeichenfolgennamen - formatiert, dass Anfangsbuchstaben ist Großbuchstaben, wenn noch nicht. </p>'
+  - uid: customplugin.utility._utility.getAppropriateClassName(final String)
+    id: getAppropriateClassName(final String)
+    parent: customplugin.utility._utility
+    href: customplugin.utility._utility.yml
+    langs:
+      - java
+    name: getAppropriateClassName(final String name)
+    nameWithType: Utility.getAppropriateClassName(final String name)
+    fullName: static String customplugin.utility.Utility.getAppropriateClassName(final String name)
+    overload: customplugin.utility._utility.getAppropriateClassName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
+      startLine: 49
+    package: customplugin.utility
+    summary: |-
+      <p>Überprüft, ob die Zeichenfolge Eingabename Java-Standards für Netzwerkkennwörter entspricht. Standard folgt, und ruft dann <xref uid="customplugin.utility._utility.formatClassName(String)" data-throw-if-not-resolved="false">formatClassName()</xref> First-Letter Kapital vornehmen.</p>
+      <p></p>
+    syntax:
+      content: public static String getAppropriateClassName(final String name)
+      parameters:
+        - id: name
+          type: 3d93591e
+      return:
+        type: '26831127'
+        description: '<p>String-Name, mit dem ersten Zeichen als Großbuchstabe Wenn Eingabename keine Java-Klasse, die Benennungskonventionen für verletzt, </p>'
+  - uid: customplugin.utility._utility.getAppropriateServiceName(String)
+    id: getAppropriateServiceName(String)
+    parent: customplugin.utility._utility
+    href: customplugin.utility._utility.yml
+    langs:
+      - java
+    name: getAppropriateServiceName(String serviceName)
+    nameWithType: Utility.getAppropriateServiceName(String serviceName)
+    fullName: static String customplugin.utility.Utility.getAppropriateServiceName(String serviceName)
+    overload: customplugin.utility._utility.getAppropriateServiceName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
+      startLine: 79
+    package: customplugin.utility
+    syntax:
+      content: public static String getAppropriateServiceName(String serviceName)
+      parameters:
+        - id: serviceName
+          type: '26831127'
+      return:
+        type: '26831127'
   - uid: customplugin.utility._utility.getCurrentProject()
     id: getCurrentProject()
     parent: customplugin.utility._utility
@@ -128,7 +179,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 84
+      startLine: 90
     package: customplugin.utility
     summary: |-
       <p>Gibt die aktuellen Projekt von Plattform, Workbench + Auswahl</p>
@@ -152,9 +203,9 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 223
+      startLine: 229
     package: customplugin.utility
-    summary: "<p>\r\n\r\n  <xref href=\"customplugin.utility._utility\" data-throw-if-not-resolved=\"false\"></xref>Funktion, um die standard-Anzeige am zu jedem Zeitpunkt zurückzugeben.</p>\n\n<p></p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"customplugin.utility._utility\" data-throw-if-not-resolved=\"false\">Hilfsprogramm</xref> Funktion, um die standard-Anzeige am zu jedem Zeitpunkt zurückzugeben.</p>\n\n<p></p>"
     syntax:
       content: public static Display getStandardDisplay()
       return:
@@ -174,7 +225,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 134
+      startLine: 140
     package: customplugin.utility
     summary: <p>Umleiten Sie Standardausgabestreams an eine neue Konsole Konsolenansicht hinzugefügt. </p>
     syntax:
@@ -193,7 +244,7 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 175
+      startLine: 181
     package: customplugin.utility
     summary: |-
       <p>Erteilt vollständig Quallified-Id, den Assistenten, öffnet er den Assistenten</p>
@@ -219,38 +270,11 @@ items:
     source:
       remote: *ref_0
       path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 146
+      startLine: 152
     package: customplugin.utility
     summary: <p>Setzen Sie auf systemeigene Ausgabestream zurück. </p>
     syntax:
       content: public static void unlinkDefaultOutStreamToConsole()
-  - uid: customplugin.utility._utility.validateClassName(final String)
-    id: validateClassName(final String)
-    parent: customplugin.utility._utility
-    href: customplugin.utility._utility.yml
-    langs:
-      - java
-    name: validateClassName(final String name)
-    nameWithType: Utility.validateClassName(final String name)
-    fullName: static String customplugin.utility.Utility.validateClassName(final String name)
-    overload: customplugin.utility._utility.validateClassName*
-    type: Method
-    source:
-      remote: *ref_0
-      path: src/prod/src/java/eclipseplugin/customplugin/src/customplugin/utility/Utility.java
-      startLine: 49
-    package: customplugin.utility
-    summary: |-
-      <p>Überprüft, ob die Zeichenfolge Eingabename Java-Standards für Netzwerkkennwörter entspricht. Standard folgt, und ruft dann <xref href="customplugin.utility._utility.formatClassName(String)" data-throw-if-not-resolved="false"></xref> First-Letter Kapital vornehmen.</p>
-      <p></p>
-    syntax:
-      content: public static String validateClassName(final String name)
-      parameters:
-        - id: name
-          type: 3d93591e
-      return:
-        type: '26831127'
-        description: '<p>String-Name, mit dem ersten Zeichen als Großbuchstabe Wenn Eingabename keine Java-Klasse, die Benennungskonventionen für verletzt, </p>'
 references:
   - uid: 3d93591e
     spec.java:
@@ -260,15 +284,20 @@ references:
     spec.java:
       - name: String
         fullName: String
-  - uid: customplugin.utility._utility.validateClassName*
-    name: validateClassName
-    nameWithType: Utility.validateClassName
-    fullName: static String customplugin.utility.Utility.validateClassName
+  - uid: customplugin.utility._utility.getAppropriateClassName*
+    name: getAppropriateClassName
+    nameWithType: Utility.getAppropriateClassName
+    fullName: static String customplugin.utility.Utility.getAppropriateClassName
     package: customplugin.utility
   - uid: customplugin.utility._utility.formatClassName*
     name: formatClassName
     nameWithType: Utility.formatClassName
     fullName: static String customplugin.utility.Utility.formatClassName
+    package: customplugin.utility
+  - uid: customplugin.utility._utility.getAppropriateServiceName*
+    name: getAppropriateServiceName
+    nameWithType: Utility.getAppropriateServiceName
+    fullName: static String customplugin.utility.Utility.getAppropriateServiceName
     package: customplugin.utility
   - uid: 1750ec8e
     spec.java:
@@ -332,9 +361,9 @@ references:
   - uid: customplugin.utility._utility.formatClassName(String)
     parent: customplugin.utility._utility
     href: customplugin.utility._utility.yml
-    name: formatClassName(String name)
-    nameWithType: Utility.formatClassName(String name)
-    fullName: static String customplugin.utility.Utility.formatClassName(String name)
+    name: formatClassName(String serviceName)
+    nameWithType: Utility.formatClassName(String serviceName)
+    fullName: static String customplugin.utility.Utility.formatClassName(String serviceName)
     type: Method
     summary: |-
       <p>Formatiert und gibt die Eingabe Klassenname - zurück, sodass der erste Buchstabe immer großgeschrieben ist.</p>
@@ -356,5 +385,5 @@ references:
     nameWithType: Utility
     fullName: customplugin.utility.Utility
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"customplugin.utility._utility\" data-throw-if-not-resolved=\"false\"></xref>Klasse für Eclipse-Plug-in Zusammenhang Utility-Methoden.</p>\n\n<p></p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"customplugin.utility._utility\" data-throw-if-not-resolved=\"false\">Hilfsprogramm</xref> -Klasse Eclipse-Plug-in Hilfsprogrammmethoden beziehen.</p>\n\n<p></p>"
     syntax: *ref_2

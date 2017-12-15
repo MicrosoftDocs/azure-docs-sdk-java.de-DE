@@ -6,8 +6,6 @@ items:
     children:
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.defineLoadBalancingRule(String)
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.updateLoadBalancingRule(String)
-      - 'com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule(int,TransportProtocol,int)'
-      - 'com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule(int,TransportProtocol)'
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withoutLoadBalancingRule(String)
     href: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.yml
     langs:
@@ -19,10 +17,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 475
+      startLine: 388
     package: com.microsoft.azure.management.network
     summary: '<p>Die Stufe des Load Balancers aktualisieren, sodass hinzufügen, entfernen oder Ändern von Load balancer-Regeln. </p>'
     syntax:
@@ -41,11 +39,9 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 504
+      startLine: 394
     package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Beginn der Definition einer neuen lastenausgleichsregel zum Lastenausgleich hinzufügen. </p>
-      <p>Die Definition muss mit einem Aufruf von abgeschlossen werden<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+    summary: <p>Beginn der Definition einer neuen lastenausgleichsregel zum Lastenausgleich hinzufügen. </p>
     syntax:
       content: public LoadBalancingRule.UpdateDefinitionStages.Blank<Update> defineLoadBalancingRule(String name)
       parameters:
@@ -69,7 +65,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 518
+      startLine: 408
     package: com.microsoft.azure.management.network
     summary: <p>Startet die Beschreibung des ein Update für eine vorhandene lastenausgleichsregel für dieses Lastenausgleichsmodul. </p>
     syntax:
@@ -81,71 +77,6 @@ items:
       return:
         type: ef517a50
         description: <p>die erste Phase des Load balancing Regel Updates </p>
-  - uid: 'com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule(int,TransportProtocol,int)'
-    id: 'withLoadBalancingRule(int,TransportProtocol,int)'
-    parent: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule
-    href: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.yml
-    langs:
-      - java
-    name: 'withLoadBalancingRule(int frontendPort, TransportProtocol protocol, int backendPort)'
-    nameWithType: 'LoadBalancer.UpdateStages.WithLoadBalancingRule.withLoadBalancingRule(int frontendPort, TransportProtocol protocol, int backendPort)'
-    fullName: 'Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithLoadBalancingRule.withLoadBalancingRule(int frontendPort, TransportProtocol protocol, int backendPort)'
-    overload: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 485
-    package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Fügt eine Trennlinie zwischen den angegebenen front-End und Back-End-Ports und im Protokoll für den Lastenausgleich hinzu. </p>
-      <p>Die neue Regel wird unter dem Namen "Default" erstellt. </p>
-    syntax:
-      content: 'public Update withLoadBalancingRule(int frontendPort, TransportProtocol protocol, int backendPort)'
-      parameters:
-        - id: frontendPort
-          type: f75371fa
-          description: '<p>die Portnummer an, auf dem Front-End für eingehenden Datenverkehr akzeptieren </p>'
-        - id: protocol
-          type: com.microsoft.azure.management.network._transport_protocol
-          description: <p>das Protokoll für den Lastenausgleich </p>
-        - id: backendPort
-          type: f75371fa
-          description: <p>die Portnummer auf dem Back-End Datenverkehr mit Lastenausgleich zu senden. </p>
-      return:
-        type: com.microsoft.azure.management.network._load_balancer._update
-        description: <p>die nächste Phase der definition </p>
-  - uid: 'com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule(int,TransportProtocol)'
-    id: 'withLoadBalancingRule(int,TransportProtocol)'
-    parent: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule
-    href: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.yml
-    langs:
-      - java
-    name: 'withLoadBalancingRule(int port, TransportProtocol protocol)'
-    nameWithType: 'LoadBalancer.UpdateStages.WithLoadBalancingRule.withLoadBalancingRule(int port, TransportProtocol protocol)'
-    fullName: 'Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithLoadBalancingRule.withLoadBalancingRule(int port, TransportProtocol protocol)'
-    overload: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 495
-    package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Fügt eine lastenausgleichsregel für den angegebenen Port und Protokoll an. </p>
-      <p>Die neue Regel wird unter dem Namen "Default" erstellt. </p>
-    syntax:
-      content: 'public Update withLoadBalancingRule(int port, TransportProtocol protocol)'
-      parameters:
-        - id: port
-          type: f75371fa
-          description: '<p>die Portnummer an, auf die vorderen und hinteren Ende für den Netzwerkdatenverkehr Last ausgeglichen auf </p>'
-        - id: protocol
-          type: com.microsoft.azure.management.network._transport_protocol
-          description: <p>das Protokoll für den Lastenausgleich </p>
-      return:
-        type: com.microsoft.azure.management.network._load_balancer._update
-        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withoutLoadBalancingRule(String)
     id: withoutLoadBalancingRule(String)
     parent: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule
@@ -160,7 +91,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 511
+      startLine: 401
     package: com.microsoft.azure.management.network
     summary: '<p>Entfernt die angegebene lastenausgleichsregel aus dem Lastenausgleich, falls vorhanden. </p>'
     syntax:
@@ -173,15 +104,6 @@ items:
         type: com.microsoft.azure.management.network._load_balancer._update
         description: <p>die nächste Phase des Updates </p>
 references:
-  - uid: f75371fa
-    spec.java:
-      - name: int
-        fullName: int
-  - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_load_balancing_rule.withLoadBalancingRule*
-    name: withLoadBalancingRule
-    nameWithType: LoadBalancer.UpdateStages.WithLoadBalancingRule.withLoadBalancingRule
-    fullName: Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithLoadBalancingRule.withLoadBalancingRule
-    package: com.microsoft.azure.management.network
   - uid: '26831127'
     spec.java:
       - name: String
@@ -222,31 +144,6 @@ references:
     nameWithType: LoadBalancer.Update
     fullName: com.microsoft.azure.management.network.LoadBalancer.Update
     type: Interface
-    summary: |-
-      <p>Die Vorlage für eine Load Balancer Updatevorgang, enthält alle Einstellungen, die geändert werden können. </p>
-      <p>Rufen Sie <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref> beim Übernehmen der Änderungen an der Ressource im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: '<p>Die Vorlage für eine Load Balancer Updatevorgang, enthält alle Einstellungen, die geändert werden können. </p>'
     syntax:
-      content: 'public interface Update extends Appliable<LoadBalancer>,Resource.UpdateWithTags<Update>,LoadBalancer.UpdateStages.WithProbe,LoadBalancer.UpdateStages.WithBackend,LoadBalancer.UpdateStages.WithLoadBalancingRule,LoadBalancer.UpdateStages.WithInternetFrontend,LoadBalancer.UpdateStages.WithInternalFrontend,LoadBalancer.UpdateStages.WithNetworkSubnet,LoadBalancer.UpdateStages.WithInboundNatRule,LoadBalancer.UpdateStages.WithInboundNatPool'
-  - uid: com.microsoft.azure.management.network._transport_protocol
-    parent: com.microsoft.azure.management.network
-    href: com.microsoft.azure.management.network._transport_protocol.yml
-    name: TransportProtocol
-    nameWithType: TransportProtocol
-    fullName: com.microsoft.azure.management.network.TransportProtocol
-    type: Class
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.network._transport_protocol" data-throw-if-not-resolved="false"></xref>. </p>
-    syntax:
-      content: public class TransportProtocol
-  - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()
-    parent: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition
-    href: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.yml
-    name: attach()
-    nameWithType: Attachable.InDefinition<ParentT>.attach()
-    fullName: ParentT com.microsoft.azure.management.resources.fluentcore.model.Attachable<ParentT>.InDefinition<ParentT>.attach()
-    type: Method
-    summary: <p>Fügt die Definition der untergeordneten an die übergeordnete Ressource Definition an. </p>
-    syntax:
-      content: public ParentT attach()
-      return:
-        type: 18a275b1
-        description: <p>die nächste Phase der der Definition des übergeordneten </p>
+      content: 'public interface Update extends Appliable<LoadBalancer>,Resource.UpdateWithTags<Update>,LoadBalancer.UpdateStages.WithProbe,LoadBalancer.UpdateStages.WithBackend,LoadBalancer.UpdateStages.WithLoadBalancingRule,LoadBalancer.UpdateStages.WithPublicFrontend,LoadBalancer.UpdateStages.WithPrivateFrontend,LoadBalancer.UpdateStages.WithInboundNatRule,LoadBalancer.UpdateStages.WithInboundNatPool'

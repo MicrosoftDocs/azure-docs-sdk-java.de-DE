@@ -26,7 +26,9 @@ items:
       - 'com.microsoft.azure.documentdb._document_client.deleteUser(String,RequestOptions)'
       - 'com.microsoft.azure.documentdb._document_client.deleteUserDefinedFunction(String,RequestOptions)'
       - 'com.microsoft.azure.documentdb._document_client.DocumentClient(String,List<Permission>,ConnectionPolicy,ConsistencyLevel)'
+      - 'com.microsoft.azure.documentdb._document_client.DocumentClient(String,List<Permission>,ObjectMapper,ConnectionPolicy,ConsistencyLevel)'
       - 'com.microsoft.azure.documentdb._document_client.DocumentClient(String,String,ConnectionPolicy,ConsistencyLevel)'
+      - 'com.microsoft.azure.documentdb._document_client.DocumentClient(String,String,ObjectMapper,ConnectionPolicy,ConsistencyLevel)'
       - 'com.microsoft.azure.documentdb._document_client.executeStoredProcedure(String,Object [])'
       - 'com.microsoft.azure.documentdb._document_client.executeStoredProcedure(String,RequestOptions,Object [])'
       - com.microsoft.azure.documentdb._document_client.getConnectionPolicy()
@@ -35,7 +37,7 @@ items:
       - com.microsoft.azure.documentdb._document_client.getReadEndpoint()
       - com.microsoft.azure.documentdb._document_client.getServiceEndpoint()
       - com.microsoft.azure.documentdb._document_client.getWriteEndpoint()
-      - com.microsoft.azure.documentdb._document_client.PartitionResolverErrorMessage()
+      - com.microsoft.azure.documentdb._document_client.PartitionResolverErrorMessage
       - 'com.microsoft.azure.documentdb._document_client.queryAggregateValues(String,SqlQuerySpec,FeedOptions)'
       - 'com.microsoft.azure.documentdb._document_client.queryAggregateValues(String,SqlQuerySpec,FeedOptions,Object)'
       - 'com.microsoft.azure.documentdb._document_client.queryAggregateValues(String,String,FeedOptions)'
@@ -80,6 +82,7 @@ items:
       - com.microsoft.azure.documentdb._document_client.readOffers(FeedOptions)
       - 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(DocumentCollection,FeedOptions)'
       - 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(String,FeedOptions)'
+      - 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(String,String)'
       - 'com.microsoft.azure.documentdb._document_client.readPermission(String,RequestOptions)'
       - 'com.microsoft.azure.documentdb._document_client.readPermissions(String,FeedOptions)'
       - 'com.microsoft.azure.documentdb._document_client.readStoredProcedure(String,RequestOptions)'
@@ -123,10 +126,10 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-documentdb-java-pr'
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 84
+      startLine: 88
     package: com.microsoft.azure.documentdb
     summary: |-
-      <p>Bietet eine clientseitige logische Darstellung des Diensts Azure DocumentDB. Dieser Client wird verwendet, zu konfigurieren und Anforderungen für den Dienst auszuführen. </p>
+      <p>Bietet eine clientseitige logische Darstellung des Diensts Azure DocumentDB. Mit diesem Client werden Anforderungen für den Dienst konfiguriert und ausgeführt. </p>
       <p>Der Dienstclient kapselt den Endpunkt und die Anmeldeinformationen für den Dienstzugriff DocumentDB verwendet. </p>
     syntax: &ref_1
       content: public class DocumentClient
@@ -147,9 +150,9 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 3265
+      startLine: 3408
     package: com.microsoft.azure.documentdb
-    summary: <p>Schließen Sie diese <xref href="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false"></xref> Instanz </p>
+    summary: <p>Schließen Sie diese <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref> Instanz </p>
     syntax:
       content: public void close()
   - uid: 'com.microsoft.azure.documentdb._document_client.createAttachment(String,Attachment,RequestOptions)'
@@ -166,7 +169,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1920
+      startLine: 2051
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine Anlage an.</p>
@@ -203,7 +206,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2117
+      startLine: 2248
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine Anlage an.</p>
@@ -240,7 +243,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 549
+      startLine: 589
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine Dokument-Auflistung.</p>
@@ -277,7 +280,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 423
+      startLine: 463
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine Datenbank.</p>
@@ -311,7 +314,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 738
+      startLine: 779
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt ein Dokument.</p>
@@ -324,7 +327,7 @@ items:
           description: <p>der Link auf die übergeordnete Dokument-Auflistung. </p>
         - id: document
           type: '79317049'
-          description: <p>das Dokument als eine POJO dargestellt oder <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+          description: <p>das Dokument als eine POJO dargestellt oder <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> Objekt. </p>
         - id: options
           type: com.microsoft.azure.documentdb._request_options
           description: <p>Die Anforderungsoptionen. </p>
@@ -351,7 +354,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2511
+      startLine: 2642
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine Berechtigung an.</p>
@@ -388,7 +391,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1198
+      startLine: 1239
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine gespeicherte Prozedur.</p>
@@ -425,7 +428,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1454
+      startLine: 1504
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ein Trigger erstellt.</p>
@@ -462,7 +465,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2336
+      startLine: 2467
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt einen Benutzer.</p>
@@ -499,7 +502,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1713
+      startLine: 1844
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Erstellt eine benutzerdefinierte Funktion an.</p>
@@ -536,7 +539,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2003
+      startLine: 2134
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht eine Anlage an.</p>
@@ -570,7 +573,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 613
+      startLine: 653
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht eine Dokument-Auflistung über den Link der Auflistung.</p>
@@ -604,7 +607,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2313
+      startLine: 2444
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht einen Konflikt.</p>
@@ -638,7 +641,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 449
+      startLine: 489
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht eine Datenbank.</p>
@@ -672,7 +675,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 943
+      startLine: 984
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht ein Dokument durch den dokumentlink.</p>
@@ -706,7 +709,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2588
+      startLine: 2719
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht eine Berechtigung an.</p>
@@ -740,7 +743,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1285
+      startLine: 1326
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht eine gespeicherte Prozedur die gespeicherte Prozedur verweist.</p>
@@ -774,7 +777,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1534
+      startLine: 1584
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht einen Trigger.</p>
@@ -808,7 +811,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2405
+      startLine: 2536
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht einen Benutzer.</p>
@@ -842,7 +845,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1799
+      startLine: 1930
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Löscht einen benutzerdefinierten benutzerdefinierten Funktion.</p>
@@ -876,7 +879,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 141
+      startLine: 163
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Initialisiert eine neue Instanz der Microsoft.Azure.Documents.Client.DocumentClient-Klasse, die mit dem angegebenen DocumentDB-Dienstendpunkt und Berechtigungen.</p>
@@ -890,6 +893,43 @@ items:
         - id: permissionFeed
           type: 5618da2dcom.microsoft.azure.documentdb._permissiona08ddfce
           description: <p>die feed-Berechtigung. </p>
+        - id: connectionPolicy
+          type: com.microsoft.azure.documentdb._connection_policy
+          description: <p>die Verbindungsrichtlinie für die. </p>
+        - id: desiredConsistencyLevel
+          type: com.microsoft.azure.documentdb._consistency_level
+          description: <p>die gewünschte konsistenzebene. </p>
+  - uid: 'com.microsoft.azure.documentdb._document_client.DocumentClient(String,List<Permission>,ObjectMapper,ConnectionPolicy,ConsistencyLevel)'
+    id: 'DocumentClient(String,List<Permission>,ObjectMapper,ConnectionPolicy,ConsistencyLevel)'
+    parent: com.microsoft.azure.documentdb._document_client
+    href: com.microsoft.azure.documentdb._document_client.yml
+    langs:
+      - java
+    name: 'DocumentClient(String serviceEndpoint, List<Permission> permissionFeed, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+    nameWithType: 'DocumentClient.DocumentClient(String serviceEndpoint, List<Permission> permissionFeed, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+    fullName: 'com.microsoft.azure.documentdb.DocumentClient.DocumentClient(String serviceEndpoint, List<Permission> permissionFeed, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+    overload: com.microsoft.azure.documentdb._document_client.DocumentClient*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
+      startLine: 180
+    package: com.microsoft.azure.documentdb
+    summary: |-
+      <p>Initialisiert eine neue Instanz der Microsoft.Azure.Documents.Client.DocumentClient-Klasse, die mit dem angegebenen DocumentDB-Dienstendpunkt und Berechtigungen.</p>
+      <p></p>
+    syntax:
+      content: 'public DocumentClient(String serviceEndpoint, List<Permission> permissionFeed, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+      parameters:
+        - id: serviceEndpoint
+          type: '26831127'
+          description: <p>Der URI des Dienst-Endpunkt. </p>
+        - id: permissionFeed
+          type: 5618da2dcom.microsoft.azure.documentdb._permissiona08ddfce
+          description: <p>die feed-Berechtigung. </p>
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierte objectMapper </p>
         - id: connectionPolicy
           type: com.microsoft.azure.documentdb._connection_policy
           description: <p>die Verbindungsrichtlinie für die. </p>
@@ -910,10 +950,10 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 125
+      startLine: 130
     package: com.microsoft.azure.documentdb
     summary: |-
-      <p>Initialisiert eine neue Instanz der dem <xref href="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false"></xref> -Klasse unter Verwendung der angegebenen DocumentDB-Dienstendpunkts und der Schlüssel.</p>
+      <p>Initialisiert eine neue Instanz der dem <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref> -Klasse unter Verwendung der angegebenen DocumentDB-Dienstendpunkts und der Schlüssel.</p>
       <p></p>
     syntax:
       content: 'public DocumentClient(String serviceEndpoint, String masterKey, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
@@ -924,6 +964,43 @@ items:
         - id: masterKey
           type: '26831127'
           description: <p>der Hauptschlüssel. </p>
+        - id: connectionPolicy
+          type: com.microsoft.azure.documentdb._connection_policy
+          description: <p>die Verbindungsrichtlinie für die. </p>
+        - id: desiredConsistencyLevel
+          type: com.microsoft.azure.documentdb._consistency_level
+          description: <p>die gewünschte konsistenzebene. </p>
+  - uid: 'com.microsoft.azure.documentdb._document_client.DocumentClient(String,String,ObjectMapper,ConnectionPolicy,ConsistencyLevel)'
+    id: 'DocumentClient(String,String,ObjectMapper,ConnectionPolicy,ConsistencyLevel)'
+    parent: com.microsoft.azure.documentdb._document_client
+    href: com.microsoft.azure.documentdb._document_client.yml
+    langs:
+      - java
+    name: 'DocumentClient(String serviceEndpoint, String masterKey, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+    nameWithType: 'DocumentClient.DocumentClient(String serviceEndpoint, String masterKey, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+    fullName: 'com.microsoft.azure.documentdb.DocumentClient.DocumentClient(String serviceEndpoint, String masterKey, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+    overload: com.microsoft.azure.documentdb._document_client.DocumentClient*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
+      startLine: 146
+    package: com.microsoft.azure.documentdb
+    summary: |-
+      <p>Initialisiert eine neue Instanz der dem <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref> -Klasse unter Verwendung der angegebenen DocumentDB-Dienstendpunkts und der Schlüssel.</p>
+      <p></p>
+    syntax:
+      content: 'public DocumentClient(String serviceEndpoint, String masterKey, ObjectMapper objectMapper, ConnectionPolicy connectionPolicy, ConsistencyLevel desiredConsistencyLevel)'
+      parameters:
+        - id: serviceEndpoint
+          type: '26831127'
+          description: <p>Der URI des Dienst-Endpunkt. </p>
+        - id: masterKey
+          type: '26831127'
+          description: <p>der Hauptschlüssel. </p>
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierte objectMapper </p>
         - id: connectionPolicy
           type: com.microsoft.azure.documentdb._connection_policy
           description: <p>die Verbindungsrichtlinie für die. </p>
@@ -944,7 +1021,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1406
+      startLine: 1447
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Führt eine gespeicherte Prozedur unter dem Link für die gespeicherte Prozedur aus.</p>
@@ -978,7 +1055,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1420
+      startLine: 1461
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Führt eine gespeicherte Prozedur unter dem Link für die gespeicherte Prozedur aus.</p>
@@ -1015,7 +1092,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 370
+      startLine: 410
     package: com.microsoft.azure.documentdb
     syntax:
       content: public ConnectionPolicy getConnectionPolicy()
@@ -1035,7 +1112,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2791
+      startLine: 2922
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft die Kontoinformationen für die Datenbank ab.</p>
@@ -1062,7 +1139,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 332
+      startLine: 372
     package: com.microsoft.azure.documentdb
     syntax:
       content: protected PartitionResolver getPartitionResolver(String databaseLink)
@@ -1085,7 +1162,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 366
+      startLine: 406
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft der aktuellen ausgewählten Endpunkt gelesen, abhängig von Verfügbarkeit und ab.</p>
@@ -1109,7 +1186,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 348
+      startLine: 388
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft den Standard-Dienstendpunkt ab, wie vom Benutzer während der Erstellung übergeben.</p>
@@ -1133,7 +1210,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 357
+      startLine: 397
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft der aktuellen ausgewählte Schreibzugriff Endpunkt auf Verfügbarkeit und der Einstellung basiert.</p>
@@ -1143,8 +1220,8 @@ items:
       return:
         type: '62304784'
         description: <p>Write-Endpunkt-URI </p>
-  - uid: com.microsoft.azure.documentdb._document_client.PartitionResolverErrorMessage()
-    id: PartitionResolverErrorMessage()
+  - uid: com.microsoft.azure.documentdb._document_client.PartitionResolverErrorMessage
+    id: PartitionResolverErrorMessage
     parent: com.microsoft.azure.documentdb._document_client
     href: com.microsoft.azure.documentdb._document_client.yml
     langs:
@@ -1156,7 +1233,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 87
+      startLine: 91
     package: com.microsoft.azure.documentdb
     syntax:
       content: protected static final String PartitionResolverErrorMessage= "Couldn't find any partition resolvers for the database link provided. Ensure that the link you used when registering the partition resolvers matches the link provided or you need to register both types of database link(self link as well as ID based link)."
@@ -1176,7 +1253,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1118
+      startLine: 1159
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für die der Aggregationswerte in einer Auflistung Dokument.</p>
@@ -1210,7 +1287,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1131
+      startLine: 1172
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für die der Aggregationswerte in einer Auflistung Dokument.</p>
@@ -1247,7 +1324,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1092
+      startLine: 1133
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für die der Aggregationswerte in einer Auflistung Dokument.</p>
@@ -1281,7 +1358,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1105
+      startLine: 1146
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für die der Aggregationswerte in einer Auflistung Dokument.</p>
@@ -1318,7 +1395,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2090
+      startLine: 2221
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Anlagen.</p>
@@ -1352,7 +1429,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2070
+      startLine: 2201
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Anlagen.</p>
@@ -1386,7 +1463,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 707
+      startLine: 748
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für dokumentauflistungen in einer Datenbank.</p>
@@ -1420,7 +1497,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 686
+      startLine: 727
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für dokumentauflistungen in einer Datenbank.</p>
@@ -1454,7 +1531,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2286
+      startLine: 2417
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Konflikte.</p>
@@ -1488,7 +1565,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2265
+      startLine: 2396
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Konflikte.</p>
@@ -1522,7 +1599,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 526
+      startLine: 566
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfragen von Datenbanken.</p>
@@ -1553,7 +1630,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 511
+      startLine: 551
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfragen von Datenbanken.</p>
@@ -1584,20 +1661,28 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1170
+      startLine: 1211
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfragen von Dokumenten ändern, die in einer Auflistung Dokument feed. </p>
-      <p>Beispiel: <preformatted> Zeichenfolge PartitionKeyRangeId = "0";   Verwenden Sie client.readPartitionKeyRanges(), um die Bereiche zu erhalten.
-      Eine Zeichenfolge CheckpointContinuation = Null; <xref href="com.microsoft.azure.documentdb._change_feed_options" data-throw-if-not-resolved="false"></xref> Optionen = neue ChangeFeedOptions() options.setPartitionKeyRangeId(partitionKeyRangeId) options.setRequestContinuation(checkpointContinuation); options.setStartFromBeginning(true); <xref href="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false"></xref> &lt; <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> &gt; Abfrage = client.queryDocumentChangeFeed(coll.getSelfLink() Optionen); {führen
+      <p>Beispiel: <pre>
+      String partitionKeyRangeId = "0";   // Use client.readPartitionKeyRanges() to obtain the ranges.
+      String checkpointContinuation = null;
+      <xref uid="com.microsoft.azure.documentdb._change_feed_options" data-throw-if-not-resolved="false">ChangeFeedOptions</xref> options = new ChangeFeedOptions();
+      options.setPartitionKeyRangeId(partitionKeyRangeId);
+      options.setRequestContinuation(checkpointContinuation);
+      options.setStartFromBeginning(true);
+      <xref uid="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false">FeedResponse</xref>&lt;<xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Document</xref>&gt; query = client.queryDocumentChangeFeed(coll.getSelfLink(), options);
+      do {
 
-          List&lt;<xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref>&gt; docs = query.getQueryIterable().fetchNextBlock();
+          List&lt;<xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Document</xref>&gt; docs = query.getQueryIterable().fetchNextBlock();
 
           // Process the documents
 
           // Checkpoint query.getResponseContinuation()
 
-      } Beim (query.getQueryIterator().hasNext());</preformatted></p>
+      } while (query.getQueryIterator().hasNext());
+      </pre></p>
     syntax:
       content: 'public FeedResponse<Document> queryDocumentChangeFeed(String collectionLink, ChangeFeedOptions changeFeedOptions)'
       parameters:
@@ -1612,9 +1697,9 @@ items:
         description: <p>der feed Antwort mit den abgerufenen Dokumenten </p>
     see:
       - type: com.microsoft.azure.documentdb._change_feed_options
-        description: ''
+        description: ChangeFeedOptions
       - type: com.microsoft.azure.documentdb._partition_key_range
-        description: ''
+        description: PartitionKeyRange
   - uid: 'com.microsoft.azure.documentdb._document_client.queryDocuments(String,SqlQuerySpec,FeedOptions)'
     id: 'queryDocuments(String,SqlQuerySpec,FeedOptions)'
     parent: com.microsoft.azure.documentdb._document_client
@@ -1629,7 +1714,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1044
+      startLine: 1085
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Dokumente in einem Dokument-Auflistung.</p>
@@ -1663,7 +1748,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1057
+      startLine: 1098
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Dokumente in einem Dokument-Auflistung.</p>
@@ -1700,7 +1785,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1011
+      startLine: 1052
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Dokumente in einem Dokument-Auflistung.</p>
@@ -1734,7 +1819,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1024
+      startLine: 1065
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfragen von Dokumenten in einer Auflistung Dokument mit einem partitionKey</p>
@@ -1771,7 +1856,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2770
+      startLine: 2901
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Angebote in einer Datenbank.</p>
@@ -1802,7 +1887,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2756
+      startLine: 2887
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Angebote in einer Datenbank.</p>
@@ -1833,7 +1918,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2671
+      startLine: 2802
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Berechtigungen.</p>
@@ -1867,7 +1952,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2650
+      startLine: 2781
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Berechtigungen.</p>
@@ -1901,7 +1986,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1378
+      startLine: 1419
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für gespeicherte Prozeduren in einer Auflistung Dokument.</p>
@@ -1935,7 +2020,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1357
+      startLine: 1398
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für gespeicherte Prozeduren in einer Auflistung Dokument.</p>
@@ -1969,7 +2054,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1623
+      startLine: 1673
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Trigger.</p>
@@ -2003,7 +2088,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1600
+      startLine: 1650
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Trigger.</p>
@@ -2037,7 +2122,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1890
+      startLine: 2021
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Benutzer definierten Funktionen.</p>
@@ -2071,7 +2156,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1867
+      startLine: 1998
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Benutzer definierten Funktionen.</p>
@@ -2105,7 +2190,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2482
+      startLine: 2613
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Benutzer.</p>
@@ -2139,7 +2224,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2462
+      startLine: 2593
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Abfrage für Benutzer.</p>
@@ -2173,7 +2258,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2027
+      startLine: 2158
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest eine Anlage an.</p>
@@ -2207,7 +2292,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2048
+      startLine: 2179
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Anlagen in einem Dokument.</p>
@@ -2238,7 +2323,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 638
+      startLine: 679
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest eine Dokument-Auflistung über den Link der Auflistung.</p>
@@ -2272,7 +2357,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 663
+      startLine: 704
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle dokumentauflistungen in einer Datenbank an.</p>
@@ -2303,7 +2388,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2222
+      startLine: 2353
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest einen Konflikt.</p>
@@ -2337,7 +2422,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2243
+      startLine: 2374
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Konflikte in einem Dokument-Auflistung.</p>
@@ -2368,7 +2453,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 473
+      startLine: 513
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest eine Datenbank an.</p>
@@ -2402,7 +2487,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 495
+      startLine: 535
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Datenbanken.</p>
@@ -2430,7 +2515,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 966
+      startLine: 1007
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest ein Dokument durch den dokumentlink.</p>
@@ -2464,7 +2549,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 988
+      startLine: 1029
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Dokumente in einem Dokument-Auflistung.</p>
@@ -2495,7 +2580,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2171
+      startLine: 2302
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest ein Medium von Medienlink an.</p>
@@ -2526,7 +2611,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2722
+      startLine: 2853
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest ein Angebot.</p>
@@ -2557,7 +2642,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2739
+      startLine: 2870
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest die Angebote.</p>
@@ -2585,15 +2670,18 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1696
+      startLine: 1746
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Partition Schlüsselbereiche in eine Dokument-Auflistung. </p>
-      <p>Beispiel: <preformatted> <xref href="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false"></xref> &lt; <xref href="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false"></xref> &gt; PartitionKeyRanges = this.client.readPartitionKeyRanges (Coll, null); Liste&lt;Zeichenfolge&gt; Ids = new ArrayList&lt;Zeichenfolge&gt;(); (<xref href="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false"></xref> Bereich: partitionKeyRanges.getQueryIterable()) {}
+      <p>Beispiel: <pre><xref uid="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false">FeedResponse</xref>&lt;<xref uid="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false">PartitionKeyRange</xref>&gt; partitionKeyRanges = this.client.readPartitionKeyRanges(coll, null);
+      List&lt;String&gt; ids = new ArrayList&lt;String&gt;();
+      for (<xref uid="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false">PartitionKeyRange</xref> range : partitionKeyRanges.getQueryIterable()) {
 
           ids.add(range.getId());
 
-      } </preformatted></p>
+      }
+      </pre></p>
     syntax:
       content: 'public FeedResponse<PartitionKeyRange> readPartitionKeyRanges(DocumentCollection documentCollection, FeedOptions options)'
       parameters:
@@ -2608,7 +2696,7 @@ items:
         description: <p>die feed-Antwort mit der schreibgeschützten Partition Schlüsselbereichen. </p>
     see:
       - type: com.microsoft.azure.documentdb._partition_key_range
-        description: ''
+        description: PartitionKeyRange
   - uid: 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(String,FeedOptions)'
     id: 'readPartitionKeyRanges(String,FeedOptions)'
     parent: com.microsoft.azure.documentdb._document_client
@@ -2623,15 +2711,18 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1661
+      startLine: 1711
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Partition Schlüsselbereiche in eine Dokument-Auflistung. </p>
-      <p>Beispiel: <preformatted> <xref href="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false"></xref> &lt; <xref href="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false"></xref> &gt; PartitionKeyRanges = this.client.readPartitionKeyRanges (Coll, null); Liste&lt;Zeichenfolge&gt; Ids = new ArrayList&lt;Zeichenfolge&gt;(); (<xref href="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false"></xref> Bereich: partitionKeyRanges.getQueryIterable()) {}
+      <p>Beispiel: <pre><xref uid="com.microsoft.azure.documentdb._feed_response" data-throw-if-not-resolved="false">FeedResponse</xref>&lt;<xref uid="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false">PartitionKeyRange</xref>&gt; partitionKeyRanges = this.client.readPartitionKeyRanges(coll, null);
+      List&lt;String&gt; ids = new ArrayList&lt;String&gt;();
+      for (<xref uid="com.microsoft.azure.documentdb._partition_key_range" data-throw-if-not-resolved="false">PartitionKeyRange</xref> range : partitionKeyRanges.getQueryIterable()) {
 
           ids.add(range.getId());
 
-      } </preformatted></p>
+      }
+      </pre></p>
     syntax:
       content: 'public FeedResponse<PartitionKeyRange> readPartitionKeyRanges(String collectionLink, FeedOptions options)'
       parameters:
@@ -2646,7 +2737,41 @@ items:
         description: <p>die feed-Antwort mit der schreibgeschützten Partition Schlüsselbereichen. </p>
     see:
       - type: com.microsoft.azure.documentdb._partition_key_range
-        description: ''
+        description: PartitionKeyRange
+  - uid: 'com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges(String,String)'
+    id: 'readPartitionKeyRanges(String,String)'
+    parent: com.microsoft.azure.documentdb._document_client
+    href: com.microsoft.azure.documentdb._document_client.yml
+    langs:
+      - java
+    name: 'readPartitionKeyRanges(String collectionLink, String query)'
+    nameWithType: 'DocumentClient.readPartitionKeyRanges(String collectionLink, String query)'
+    fullName: 'Collection<PartitionKeyRange> com.microsoft.azure.documentdb.DocumentClient.readPartitionKeyRanges(String collectionLink, String query)'
+    overload: com.microsoft.azure.documentdb._document_client.readPartitionKeyRanges*
+    type: Method
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
+      startLine: 1762
+    package: com.microsoft.azure.documentdb
+    summary: |-
+      <p>Liest alle Partition Schlüsselbereiche in eine Dokument-Auflistung für eine angegebene Abfrage an.</p>
+      <p></p>
+    syntax:
+      content: 'public Collection<PartitionKeyRange> readPartitionKeyRanges(String collectionLink, String query)'
+      parameters:
+        - id: collectionLink
+          type: '26831127'
+          description: <p>die Auflistung dokumentlink </p>
+        - id: query
+          type: '26831127'
+          description: <p>die Abfragezeichenfolge </p>
+      return:
+        type: 12ebb11acom.microsoft.azure.documentdb._partition_key_rangea08ddfce
+        description: <p>die Liste der Bereitstellung Schlüsselbereichen Partition für die Abfrage </p>
+    exceptions:
+      - type: com.microsoft.azure.documentdb._document_client_exception
+        description: <p>von Schlüsselbereichen partitionsabfrage </p>
   - uid: 'com.microsoft.azure.documentdb._document_client.readPermission(String,RequestOptions)'
     id: 'readPermission(String,RequestOptions)'
     parent: com.microsoft.azure.documentdb._document_client
@@ -2661,7 +2786,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2609
+      startLine: 2740
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest eine Berechtigung an.</p>
@@ -2695,7 +2820,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2629
+      startLine: 2760
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Berechtigungen an.</p>
@@ -2726,7 +2851,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1310
+      startLine: 1351
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Gelesen Sie eine gespeicherte Prozedur von der gespeicherten Prozedur Link.</p>
@@ -2760,7 +2885,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1334
+      startLine: 1375
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle gespeicherte Prozeduren in einer Auflistung dokumentlink.</p>
@@ -2791,7 +2916,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1556
+      startLine: 1606
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest einen Trigger vom Trigger Link.</p>
@@ -2825,7 +2950,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1577
+      startLine: 1627
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Trigger in einem Dokument-Auflistung.</p>
@@ -2856,7 +2981,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2425
+      startLine: 2556
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest einen Benutzer an.</p>
@@ -2890,7 +3015,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1822
+      startLine: 1953
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Lesen eines Benutzers benutzerdefinierten Funktion.</p>
@@ -2924,7 +3049,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1844
+      startLine: 1975
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle benutzerdefinierten Funktionen in einer Auflistung Dokument.</p>
@@ -2955,7 +3080,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2444
+      startLine: 2575
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Liest alle Benutzer in einer Datenbank an.</p>
@@ -2986,7 +3111,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 319
+      startLine: 359
     package: com.microsoft.azure.documentdb
     syntax:
       content: 'public void registerPartitionResolver(String databaseLink, PartitionResolver partitionResolver)'
@@ -3009,7 +3134,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1976
+      startLine: 2107
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt eine Anlage an.</p>
@@ -3043,7 +3168,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 583
+      startLine: 623
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt eine Dokument-Auflistung.</p>
@@ -3077,7 +3202,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 890
+      startLine: 931
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt ein Dokument mit dem übergebenen Dokument.</p>
@@ -3111,7 +3236,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 867
+      startLine: 908
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt ein Dokument mithilfe eines POJO-Objekts.</p>
@@ -3124,7 +3249,7 @@ items:
           description: <p>der Link des gewünschten Dokuments. </p>
         - id: document
           type: '79317049'
-          description: <p>das Dokument als eine POJO dargestellt oder <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+          description: <p>das Dokument als eine POJO dargestellt oder <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> Objekt. </p>
         - id: options
           type: com.microsoft.azure.documentdb._request_options
           description: <p>Die Anforderungsoptionen. </p>
@@ -3148,7 +3273,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2699
+      startLine: 2830
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt ein Angebot.</p>
@@ -3179,7 +3304,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2562
+      startLine: 2693
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt eine Berechtigung an.</p>
@@ -3213,7 +3338,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1256
+      startLine: 1297
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt eine gespeicherte Prozedur.</p>
@@ -3247,7 +3372,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1507
+      startLine: 1557
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt einen Trigger.</p>
@@ -3281,7 +3406,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2383
+      startLine: 2514
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt einen Benutzer an.</p>
@@ -3315,7 +3440,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1772
+      startLine: 1903
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ersetzt einen benutzerdefinierten benutzerdefinierten Funktion.</p>
@@ -3349,7 +3474,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2193
+      startLine: 2324
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Aktualisiert ein Medium von Medienlink an.</p>
@@ -3386,7 +3511,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1938
+      startLine: 2069
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts Anlage.</p>
@@ -3423,7 +3548,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2136
+      startLine: 2267
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts einer Anlage in den Medienstream</p>
@@ -3460,7 +3585,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 776
+      startLine: 817
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts eines Dokuments.</p>
@@ -3473,7 +3598,7 @@ items:
           description: <p>der Link auf die übergeordnete Dokument-Auflistung. </p>
         - id: document
           type: '79317049'
-          description: <p>das Dokument als eine POJO dargestellt oder <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> Upsert-Objekt. </p>
+          description: <p>das Dokument als eine POJO dargestellt oder <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> Upsert-Objekt. </p>
         - id: options
           type: com.microsoft.azure.documentdb._request_options
           description: <p>Die Anforderungsoptionen. </p>
@@ -3500,7 +3625,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2527
+      startLine: 2658
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts eine Berechtigung.</p>
@@ -3537,7 +3662,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1217
+      startLine: 1258
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts einer gespeicherten Prozedur.</p>
@@ -3574,7 +3699,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1471
+      startLine: 1521
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts eines Triggers.</p>
@@ -3611,7 +3736,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 2352
+      startLine: 2483
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts eines Benutzers.</p>
@@ -3648,7 +3773,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/DocumentClient.java
-      startLine: 1733
+      startLine: 1864
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Upserts eines Benutzers benutzerdefinierten Funktion.</p>
@@ -3685,6 +3810,10 @@ references:
     nameWithType: DocumentClient.DocumentClient
     fullName: com.microsoft.azure.documentdb.DocumentClient.DocumentClient
     package: com.microsoft.azure.documentdb
+  - uid: 7db3dbca
+    spec.java:
+      - name: ObjectMapper
+        fullName: ObjectMapper
   - uid: 5618da2dcom.microsoft.azure.documentdb._permissiona08ddfce
     spec.java:
       - name: List<
@@ -4074,6 +4203,16 @@ references:
     nameWithType: DocumentClient.readPartitionKeyRanges
     fullName: FeedResponse<PartitionKeyRange> com.microsoft.azure.documentdb.DocumentClient.readPartitionKeyRanges
     package: com.microsoft.azure.documentdb
+  - uid: 12ebb11acom.microsoft.azure.documentdb._partition_key_rangea08ddfce
+    spec.java:
+      - name: Collection<
+        fullName: Collection<
+      - uid: com.microsoft.azure.documentdb._partition_key_range
+        name: PartitionKeyRange
+        fullName: com.microsoft.azure.documentdb.PartitionKeyRange
+        href: com.microsoft.azure.documentdb._partition_key_range.yml
+      - name: '>'
+        fullName: '>'
   - uid: com.microsoft.azure.documentdb._resource_response78504a52com.microsoft.azure.documentdb._user_defined_functiona08ddfce
     spec.java:
       - uid: com.microsoft.azure.documentdb._resource_response
@@ -4458,7 +4597,7 @@ references:
     nameWithType: ConnectionPolicy
     fullName: com.microsoft.azure.documentdb.ConnectionPolicy
     type: Class
-    summary: <p>Die zugeordnete Verbindungsrichtlinie stellt eine <xref href="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false"></xref> in Azure DocumentDB-Datenbank-Dienst. </p>
+    summary: <p>Die zugeordnete Verbindungsrichtlinie stellt eine <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref> in Azure DocumentDB-Datenbank-Dienst. </p>
     syntax:
       content: public class ConnectionPolicy
   - uid: com.microsoft.azure.documentdb._consistency_level
@@ -4470,7 +4609,7 @@ references:
     type: Enum
     summary: |-
       <p>Stellt die konsistenzebenen für DocumentDB-Clientvorgänge in Azure DocumentDB-Datenbank-Dienst unterstützt. </p>
-      <p>Der angeforderte <xref href="com.microsoft.azure.documentdb._consistency_level" data-throw-if-not-resolved="false"></xref> müssen übereinstimmen oder schwächer als die, die für das Konto der Datenbank bereitgestellt werden. Konsistenzebenen Fenstern Stärke sind Strong können BoundedStaleness, Session oder Eventual. </p>
+      <p>Der angeforderte <xref uid="com.microsoft.azure.documentdb._consistency_level" data-throw-if-not-resolved="false">ConsistencyLevel</xref> müssen übereinstimmen oder schwächer als die, die für das Konto der Datenbank bereitgestellt werden. Konsistenzebenen Fenstern Stärke sind Strong können BoundedStaleness, Session oder Eventual. </p>
     syntax:
       content: public enum ConsistencyLevel
   - uid: com.microsoft.azure.documentdb._partition_resolver
@@ -4491,7 +4630,7 @@ references:
     fullName: com.microsoft.azure.documentdb.DocumentClient
     type: Class
     summary: |-
-      <p>Bietet eine clientseitige logische Darstellung des Diensts Azure DocumentDB. Dieser Client wird verwendet, zu konfigurieren und Anforderungen für den Dienst auszuführen. </p>
+      <p>Bietet eine clientseitige logische Darstellung des Diensts Azure DocumentDB. Mit diesem Client werden Anforderungen für den Dienst konfiguriert und ausgeführt. </p>
       <p>Der Dienstclient kapselt den Endpunkt und die Anmeldeinformationen für den Dienstzugriff DocumentDB verwendet. </p>
     syntax: *ref_1
   - uid: com.microsoft.azure.documentdb._permission
@@ -4501,7 +4640,7 @@ references:
     nameWithType: Permission
     fullName: com.microsoft.azure.documentdb.Permission
     type: Class
-    summary: '<p>Stellt eine benutzerspezifische <xref href="com.microsoft.azure.documentdb._permission" data-throw-if-not-resolved="false"></xref> auf eine bestimmte Ressource zugreifen, z. B. <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> oder der Datenbankdienst für Azure DocumentDB-Auflistung. </p>'
+    summary: '<p>Stellt eine benutzerspezifische <xref uid="com.microsoft.azure.documentdb._permission" data-throw-if-not-resolved="false">Berechtigung</xref> auf eine bestimmte Ressource zugreifen, z. B. <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> oder der Datenbankdienst für Azure DocumentDB-Auflistung. </p>'
     syntax:
       content: public class Permission
   - uid: com.microsoft.azure.documentdb._document_client_exception
@@ -4512,10 +4651,10 @@ references:
     fullName: com.microsoft.azure.documentdb.DocumentClientException
     type: Class
     summary: |-
-      <p>Diese Klasse definiert einen benutzerdefinierter Ausnahmetyp für alle Vorgänge auf <xref href="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false"></xref> in Azure DocumentDB-Datenbank-Dienst. Anwendungen voraussichtlich catch <xref href="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false"></xref> und Behandeln von Fehlern beim ggf. als Aufrufen von Methoden für <xref href="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Während der normalen Ausführung vom Dienst stammende Fehler werden in konvertiert <xref href="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false"></xref> vor der Rückgabe an die Anwendung mit folgender Ausnahme: </p>
-      <p>Wenn ein werden-Fehler auftritt, wird während einer <xref href="com.microsoft.azure.documentdb._query_iterable" data-throw-if-not-resolved="false"></xref> &lt;T&gt; Iteration IllegalStateException wird ausgelöst, anstelle von <xref href="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Wenn ein Transport Level-Fehler tritt auf, diese Anforderung kann nicht auf den Dienst zu erreichen, wird anstelle von IllegalStateException ausgelöst <xref href="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Diese Klasse definiert einen benutzerdefinierter Ausnahmetyp für alle Vorgänge auf <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref> in Azure DocumentDB-Datenbank-Dienst. Anwendungen voraussichtlich catch <xref uid="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false">DocumentClientException</xref> und Behandeln von Fehlern beim ggf. als Aufrufen von Methoden für <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref>. </p>
+      <p>Während der normalen Ausführung vom Dienst stammende Fehler werden in konvertiert <xref uid="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false">DocumentClientException</xref> vor der Rückgabe an die Anwendung mit folgender Ausnahme: </p>
+      <p>Wenn ein werden-Fehler auftritt, wird während einer <xref uid="com.microsoft.azure.documentdb._query_iterable" data-throw-if-not-resolved="false">QueryIterable</xref>&lt;T&gt; Iteration IllegalStateException wird ausgelöst, anstelle von <xref uid="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false">DocumentClientException</xref>. </p>
+      <p>Wenn ein Transport Level-Fehler tritt auf, diese Anforderung kann nicht auf den Dienst zu erreichen, wird anstelle von IllegalStateException ausgelöst <xref uid="com.microsoft.azure.documentdb._document_client_exception" data-throw-if-not-resolved="false">DocumentClientException</xref>. </p>
     syntax:
       content: public class DocumentClientException
   - uid: com.microsoft.azure.documentdb._resource_response
@@ -4526,7 +4665,7 @@ references:
     fullName: com.microsoft.azure.documentdb.ResourceResponse<T>
     type: Class
     summary: |-
-      <p>Stellt die Antwort des Diensts auf eine Anforderung, die von <xref href="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false"></xref> in Azure DocumentDB-Datenbank-Dienst. Enthält die Ressource und die Antwortheader.</p>
+      <p>Stellt die Antwort des Diensts auf eine Anforderung, die von <xref uid="com.microsoft.azure.documentdb._document_client" data-throw-if-not-resolved="false">DocumentClient</xref> in Azure DocumentDB-Datenbank-Dienst. Enthält die Ressource und die Antwortheader.</p>
       <p></p>
     syntax:
       content: public class ResourceResponse<T extends Resource>
@@ -4541,8 +4680,8 @@ references:
     fullName: com.microsoft.azure.documentdb.Database
     type: Class
     summary: |-
-      <p>Stellt eine <xref href="com.microsoft.azure.documentdb._database" data-throw-if-not-resolved="false"></xref> in Azure DocumentDB-Datenbank-Dienst. Eine Datenbank verwaltet, Benutzer, Berechtigungen und eine Reihe von Sammlungen </p>
-      <p>Jeder Azure DocumentDB-Dienst kann mehrere unabhängige benannte Datenbanken, mit der Datenbank, logischer Container für Daten zu unterstützen. Jede <xref href="com.microsoft.azure.documentdb._database" data-throw-if-not-resolved="false"></xref> besteht aus einer oder mehreren Sammlungen, von denen jeder wiederum einen oder mehrere Dokumente enthalten. Da Datenbanken sind eine werden zum zugreifen und erfolgreich abgeschlossen, eine beliebige Aktion mit einer administrativen Ressource und mit dem Diensthauptschlüssel benötigt die <xref href="com.microsoft.azure.documentdb._user" data-throw-if-not-resolved="false"></xref> APIs. </p>
+      <p>Stellt eine <xref uid="com.microsoft.azure.documentdb._database" data-throw-if-not-resolved="false">Datenbank</xref> in Azure DocumentDB-Datenbank-Dienst. Eine Datenbank verwaltet, Benutzer, Berechtigungen und eine Reihe von Sammlungen </p>
+      <p>Jeder Azure DocumentDB-Dienst kann mehrere unabhängige benannte Datenbanken, mit der Datenbank, logischer Container für Daten zu unterstützen. Jede <xref uid="com.microsoft.azure.documentdb._database" data-throw-if-not-resolved="false">Datenbank</xref> besteht aus einer oder mehreren Sammlungen, von denen jeder wiederum einen oder mehrere Dokumente enthalten. Da Datenbanken sind eine werden zum zugreifen und erfolgreich abgeschlossen, eine beliebige Aktion mit einer administrativen Ressource und mit dem Diensthauptschlüssel benötigt die <xref uid="com.microsoft.azure.documentdb._user" data-throw-if-not-resolved="false">Benutzer</xref> APIs. </p>
     syntax:
       content: public class Database extends Resource
   - uid: com.microsoft.azure.documentdb._request_options
@@ -4611,7 +4750,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt ein Dokument in der Azure DocumentDB-Datenbankdienst dar. </p>
-      <p>Ein Dokument ist eine strukturierte JSON-Dokument. Es gibt kein Schema Satz für die JSON-Dokumente, und ein Dokument kann eine beliebige Anzahl von benutzerdefinierten Eigenschaften sowie eine optionale Liste von Anlagen enthalten. <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref>ist eine Anwendungsressource und mit dem Hauptschlüssel oder / / Ressourcenschlüssel autorisiert werden kann. </p>
+      <p>Ein Dokument ist eine strukturierte JSON-Dokument. Es gibt kein Schema Satz für die JSON-Dokumente, und ein Dokument kann eine beliebige Anzahl von benutzerdefinierten Eigenschaften sowie eine optionale Liste von Anlagen enthalten. <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> ist eine Anwendungsressource und mit dem Hauptschlüssel oder / / Ressourcenschlüssel autorisiert werden kann. </p>
     syntax:
       content: public class Document extends Resource
   - uid: com.microsoft.azure.documentdb._change_feed_options

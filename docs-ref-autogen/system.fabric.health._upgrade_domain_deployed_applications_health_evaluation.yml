@@ -23,7 +23,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/UpgradeDomainDeployedApplicationsHealthEvaluation.java
       startLine: 18
     package: system.fabric.health
-    summary: "<p>Stellt die integritätsauswertung für die bereitgestellten Anwendungen einer Anwendung in einer upgradedomäne mit auswertungen der Clientintegrität für jede \"fehlerhaft\" bereitgestellte Anwendung, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>zurückgegeben werden kann, wenn die Auswertung von Anwendungsintegrität während der Cluster oder einer Anwendung ein Upgrade und der aggregierte Integritätszustand entweder ist <ref refid=\"\" kindref=\"compound\">system.fabric.health.HealthState#Error</ref> oder <ref refid=\"\" kindref=\"compound\">system.fabric.health.HealthState#Warning</ref>. </p>"
+    summary: "<p>Stellt die integritätsauswertung für die bereitgestellten Anwendungen einer Anwendung in einer upgradedomäne mit auswertungen der Clientintegrität für jede \"fehlerhaft\" bereitgestellte Anwendung, die aktuellen aggregierte Integritätsstatus ausgewirkt haben. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>zurückgegeben werden kann, wenn die Auswertung von Anwendungsintegrität während der Cluster oder einer Anwendung ein Upgrade und der aggregierte Integritätszustand entweder ist <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState#Error</xref> oder <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState#Warning</xref>. </p>"
     syntax:
       content: public class UpgradeDomainDeployedApplicationsHealthEvaluation extends HealthEvaluation
     inheritance:
@@ -53,7 +53,7 @@ items:
       startLine: 73
     package: system.fabric.health
     summary: |-
-      <p>Ruft die maximal zulässige Prozentsatz fehlerhafter bereitgestellten Anwendungen aus dem <xref href="system.fabric._application_health_policy" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Ruft die maximal zulässige Prozentsatz fehlerhafter bereitgestellten Anwendungen aus dem <xref uid="system.fabric._application_health_policy" data-throw-if-not-resolved="false">ApplicationHealthPolicy</xref>.</p>
       <p></p>
     syntax:
       content: public byte getMaxPercentUnhealthyDeployedApplications()
@@ -101,7 +101,7 @@ items:
       startLine: 51
     package: system.fabric.health
     summary: |-
-      <p>Ruft die Liste der fehlerhaften auswertungen, die zu der aggregierte Integritätszustand geführt hat. Schließt alle fehlerhaften <xref href="system.fabric.health._deployed_application_health_evaluation" data-throw-if-not-resolved="false"></xref> , die die zusammengefasste Integrität beeinträchtigt.</p>
+      <p>Ruft die Liste der fehlerhaften auswertungen, die zu der aggregierte Integritätszustand geführt hat. Schließt alle fehlerhaften <xref uid="system.fabric.health._deployed_application_health_evaluation" data-throw-if-not-resolved="false">system.fabric.health.DeployedApplicationHealthEvaluation</xref> , die die zusammengefasste Integrität beeinträchtigt.</p>
       <p></p>
     syntax:
       content: public List<HealthEvaluation> getUnhealthyEvaluations()
@@ -131,7 +131,7 @@ items:
       content: public String getUpgradeDomainName()
       return:
         type: '26831127'
-        description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">java.lang.String</ref> UpgradeDomainName </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.lang.String</xref> UpgradeDomainName </p>"
 references:
   - uid: 5618da2dsystem.fabric.health._health_evaluationa08ddfce
     spec.java:
@@ -203,7 +203,7 @@ references:
       content: public HealthState getAggregatedHealthState()
       return:
         type: system.fabric.health._health_state
-        description: '<p>Ein <xref href="system.fabric.health._health_state" data-throw-if-not-resolved="false"></xref> , der aggregierte Integritätszustand darstellt. </p>'
+        description: '<p>Ein <xref uid="system.fabric.health._health_state" data-throw-if-not-resolved="false">system.fabric.health.HealthState</xref> , der aggregierte Integritätszustand darstellt. </p>'
   - uid: system.fabric.health._health_evaluation.getDescription()
     parent: system.fabric.health._health_evaluation
     href: system.fabric.health._health_evaluation.yml
@@ -218,7 +218,7 @@ references:
       content: public String getDescription()
       return:
         type: '26831127'
-        description: '<p>Ein <ref refid="" kindref="compound">java.lang.String</ref> , die die Beschreibung der integritätsauswertung darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">java.lang.String</xref> , die die Beschreibung der integritätsauswertung darstellt. </p>'
   - uid: system.fabric.health._health_evaluation.getKind()
     parent: system.fabric.health._health_evaluation
     href: system.fabric.health._health_evaluation.yml
@@ -233,7 +233,7 @@ references:
       content: public HealthEvaluationKind getKind()
       return:
         type: system.fabric.health._health_evaluation_kind
-        description: <p>Ein <xref href="system.fabric.health._health_evaluation_kind" data-throw-if-not-resolved="false"></xref> der integritätsauswertung. </p>
+        description: <p>Ein <xref uid="system.fabric.health._health_evaluation_kind" data-throw-if-not-resolved="false">system.fabric.health.HealthEvaluationKind</xref> der integritätsauswertung. </p>
   - uid: 'system.fabric.health._health_evaluation.HealthEvaluation(HealthEvaluationKind,String,HealthState)'
     parent: system.fabric.health._health_evaluation
     href: system.fabric.health._health_evaluation.yml
@@ -278,7 +278,7 @@ references:
     nameWithType: DeployedApplicationHealthEvaluation
     fullName: system.fabric.health.DeployedApplicationHealthEvaluation
     type: Class
-    summary: "<p>Stellt die integritätsauswertung für eine bereitgestellte Anwendung, die mit Informationen zu den Daten und der Algorithmus zum Health Store integritätsevaluierung aktiviert werden soll. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>die Auswertung wird nur zurückgegeben, wenn der aggregierte Integritätszustand entweder ist <ref refid=\"\" kindref=\"compound\">system.fabric.health.HealthState#Error</ref> oder <ref refid=\"\" kindref=\"compound\">system.fabric.health.HealthState#Warning</ref></p>"
+    summary: "<p>Stellt die integritätsauswertung für eine bereitgestellte Anwendung, die mit Informationen zu den Daten und der Algorithmus zum Health Store integritätsevaluierung aktiviert werden soll. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>die Auswertung wird nur zurückgegeben, wenn der aggregierte Integritätszustand entweder ist <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState#Error</xref> oder <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState#Warning</xref></p>"
     syntax:
       content: public class DeployedApplicationHealthEvaluation extends HealthEvaluation
   - uid: system.fabric._application_health_policy

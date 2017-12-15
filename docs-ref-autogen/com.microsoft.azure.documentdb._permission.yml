@@ -29,7 +29,7 @@ items:
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/Permission.java
       startLine: 15
     package: com.microsoft.azure.documentdb
-    summary: '<p>Stellt eine benutzerspezifische <xref href="com.microsoft.azure.documentdb._permission" data-throw-if-not-resolved="false"></xref> auf eine bestimmte Ressource zugreifen, z. B. <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> oder der Datenbankdienst für Azure DocumentDB-Auflistung. </p>'
+    summary: '<p>Stellt eine benutzerspezifische <xref uid="com.microsoft.azure.documentdb._permission" data-throw-if-not-resolved="false">Berechtigung</xref> auf eine bestimmte Ressource zugreifen, z. B. <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> oder der Datenbankdienst für Azure DocumentDB-Auflistung. </p>'
     syntax: &ref_1
       content: public class Permission extends Resource
     inheritance:
@@ -57,10 +57,12 @@ items:
       - com.microsoft.azure.documentdb._resource.getTimestamp()
       - com.microsoft.azure.documentdb._json_serializable.has(String)
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable()
+      - 'com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String,ObjectMapper)'
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String)
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable(JSONObject)
       - com.microsoft.azure.documentdb._json_serializable.remove(String)
       - com.microsoft.azure.documentdb._resource.Resource()
+      - 'com.microsoft.azure.documentdb._resource.Resource(String,ObjectMapper)'
       - com.microsoft.azure.documentdb._resource.Resource(String)
       - com.microsoft.azure.documentdb._resource.Resource(JSONObject)
       - com.microsoft.azure.documentdb._resource.setId(String)
@@ -669,6 +671,25 @@ references:
     type: Constructor
     syntax:
       content: protected JsonSerializable()
+  - uid: 'com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String,ObjectMapper)'
+    parent: com.microsoft.azure.documentdb._json_serializable
+    href: com.microsoft.azure.documentdb._json_serializable.yml
+    name: 'JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    nameWithType: 'JsonSerializable.JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    fullName: 'com.microsoft.azure.documentdb.JsonSerializable.JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    type: Constructor
+    summary: |-
+      <p>Der Konstruktor.</p>
+      <p></p>
+    syntax:
+      content: 'protected JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+      parameters:
+        - id: jsonString
+          type: '26831127'
+          description: '<p>die Json-Zeichenfolge, die stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierten Zuordnungen </p>
   - uid: com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -684,7 +705,7 @@ references:
       parameters:
         - id: jsonString
           type: '26831127'
-          description: '<p>die Json-Zeichenfolge, die stellt die <xref href="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>die Json-Zeichenfolge, die stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
   - uid: com.microsoft.azure.documentdb._json_serializable.JsonSerializable(JSONObject)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -700,7 +721,7 @@ references:
       parameters:
         - id: jsonObject
           type: 2b3125a5
-          description: '<p>Das Json-Objekt, das stellt die <xref href="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>Das Json-Objekt, das stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
   - uid: com.microsoft.azure.documentdb._json_serializable.remove(String)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -727,6 +748,25 @@ references:
     summary: <p>Der Konstruktor. </p>
     syntax:
       content: protected Resource()
+  - uid: 'com.microsoft.azure.documentdb._resource.Resource(String,ObjectMapper)'
+    parent: com.microsoft.azure.documentdb._resource
+    href: com.microsoft.azure.documentdb._resource.yml
+    name: 'Resource(String jsonString, ObjectMapper objectMapper)'
+    nameWithType: 'Resource.Resource(String jsonString, ObjectMapper objectMapper)'
+    fullName: 'com.microsoft.azure.documentdb.Resource.Resource(String jsonString, ObjectMapper objectMapper)'
+    type: Constructor
+    summary: |-
+      <p>Der Konstruktor.</p>
+      <p></p>
+    syntax:
+      content: 'protected Resource(String jsonString, ObjectMapper objectMapper)'
+      parameters:
+        - id: jsonString
+          type: '26831127'
+          description: '<p>die Json-Zeichenfolge, die Ressource darstellt. </p>'
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierten Zuordnungen </p>
   - uid: com.microsoft.azure.documentdb._resource.Resource(String)
     parent: com.microsoft.azure.documentdb._resource
     href: com.microsoft.azure.documentdb._resource.yml
@@ -831,7 +871,7 @@ references:
     type: Method
     summary: |-
       <p>Ruft die einfache Darstellung der Eigenschaftensammlung ab.</p>
-      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref href="com.microsoft.azure.documentdb._json_serializable.toJson()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref uid="com.microsoft.azure.documentdb._json_serializable.toJson()" data-throw-if-not-resolved="false">toJson()</xref>.</p>
       <p></p>
     syntax:
       content: public String toString()
@@ -845,7 +885,7 @@ references:
     nameWithType: JsonSerializable.toString(int indentFactor)
     fullName: String com.microsoft.azure.documentdb.JsonSerializable.toString(int indentFactor)
     type: Method
-    summary: "<p>Ruft eine formatierte Darstellung des Eigenschaftenbehälters.</p>\n<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000019\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref href=\"com.microsoft.azure.documentdb._json_serializable.toJson(SerializationFormattingPolicy)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
+    summary: "<p>Ruft eine formatierte Darstellung des Eigenschaftenbehälters.</p>\n<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000043\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref uid=\"com.microsoft.azure.documentdb._json_serializable.toJson(SerializationFormattingPolicy)\" data-throw-if-not-resolved=\"false\">toJson(SerializationFormattingPolicy)</xref>.</p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
     syntax:
       content: public String toString(int indentFactor)
       parameters:
@@ -892,7 +932,7 @@ references:
     nameWithType: Permission
     fullName: com.microsoft.azure.documentdb.Permission
     type: Class
-    summary: '<p>Stellt eine benutzerspezifische <xref href="com.microsoft.azure.documentdb._permission" data-throw-if-not-resolved="false"></xref> auf eine bestimmte Ressource zugreifen, z. B. <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref> oder der Datenbankdienst für Azure DocumentDB-Auflistung. </p>'
+    summary: '<p>Stellt eine benutzerspezifische <xref uid="com.microsoft.azure.documentdb._permission" data-throw-if-not-resolved="false">Berechtigung</xref> auf eine bestimmte Ressource zugreifen, z. B. <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> oder der Datenbankdienst für Azure DocumentDB-Auflistung. </p>'
     syntax: *ref_1
   - uid: com.microsoft.azure.documentdb._document
     parent: com.microsoft.azure.documentdb
@@ -903,6 +943,6 @@ references:
     type: Class
     summary: |-
       <p>Stellt ein Dokument in der Azure DocumentDB-Datenbankdienst dar. </p>
-      <p>Ein Dokument ist eine strukturierte JSON-Dokument. Es gibt kein Schema Satz für die JSON-Dokumente, und ein Dokument kann eine beliebige Anzahl von benutzerdefinierten Eigenschaften sowie eine optionale Liste von Anlagen enthalten. <xref href="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false"></xref>ist eine Anwendungsressource und mit dem Hauptschlüssel oder / / Ressourcenschlüssel autorisiert werden kann. </p>
+      <p>Ein Dokument ist eine strukturierte JSON-Dokument. Es gibt kein Schema Satz für die JSON-Dokumente, und ein Dokument kann eine beliebige Anzahl von benutzerdefinierten Eigenschaften sowie eine optionale Liste von Anlagen enthalten. <xref uid="com.microsoft.azure.documentdb._document" data-throw-if-not-resolved="false">Dokument</xref> ist eine Anwendungsressource und mit dem Hauptschlüssel oder / / Ressourcenschlüssel autorisiert werden kann. </p>
     syntax:
       content: public class Document extends Resource

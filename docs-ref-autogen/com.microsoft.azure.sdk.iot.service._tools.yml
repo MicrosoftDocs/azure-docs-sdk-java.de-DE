@@ -5,6 +5,7 @@ items:
     parent: com.microsoft.azure.sdk.iot.service
     children:
       - 'com.microsoft.azure.sdk.iot.service._tools.appendJsonAttribute(StringBuilder,String,String,Boolean,Boolean)'
+      - 'com.microsoft.azure.sdk.iot.service._tools.areEqual(Object,Object)'
       - 'com.microsoft.azure.sdk.iot.service._tools.getNumberValueFromJsonObject(JsonObject,String)'
       - 'com.microsoft.azure.sdk.iot.service._tools.getValueFromJsonObject(JsonObject,String)'
       - com.microsoft.azure.sdk.iot.service._tools.getValueFromJsonString(JsonString)
@@ -68,6 +69,35 @@ items:
         - id: isLast
           type: 866c2227
           description: <p>Wenn "false" nachgestellte Komma wird hinzugefügt </p>
+  - uid: 'com.microsoft.azure.sdk.iot.service._tools.areEqual(Object,Object)'
+    id: 'areEqual(Object,Object)'
+    parent: com.microsoft.azure.sdk.iot.service._tools
+    href: com.microsoft.azure.sdk.iot.service._tools.yml
+    langs:
+      - java
+    name: 'areEqual(Object a, Object b)'
+    nameWithType: 'Tools.areEqual(Object a, Object b)'
+    fullName: 'static boolean com.microsoft.azure.sdk.iot.service.Tools.areEqual(Object a, Object b)'
+    overload: com.microsoft.azure.sdk.iot.service._tools.areEqual*
+    type: Method
+    source:
+      remote: *ref_0
+      path: service/iot-service-client/src/main/java/com/microsoft/azure/sdk/iot/service/Tools.java
+      startLine: 259
+    package: com.microsoft.azure.sdk.iot.service
+    summary: '<p>Überprüfung auf Gleichheit für Objekte, die Konten für Vergleiche mit null-Wert. Wenn beide Objekte null sind, wird "false" zurückgegeben. Beide Objekte müssen.equals(...) für diese Methode funktioniert ordnungsgemäß implementiert haben. </p>'
+    syntax:
+      content: 'public static boolean areEqual(Object a, Object b)'
+      parameters:
+        - id: a
+          type: '79317049'
+          description: <p>das erste Objekt </p>
+        - id: b
+          type: '79317049'
+          description: <p>das Objekt Sekunden </p>
+      return:
+        type: 4fc6e284
+        description: <p>Wenn die beiden gleich sind. </p>
   - uid: 'com.microsoft.azure.sdk.iot.service._tools.getNumberValueFromJsonObject(JsonObject,String)'
     id: 'getNumberValueFromJsonObject(JsonObject,String)'
     parent: com.microsoft.azure.sdk.iot.service._tools
@@ -308,4 +338,17 @@ references:
     name: appendJsonAttribute
     nameWithType: Tools.appendJsonAttribute
     fullName: static void com.microsoft.azure.sdk.iot.service.Tools.appendJsonAttribute
+    package: com.microsoft.azure.sdk.iot.service
+  - uid: '79317049'
+    spec.java:
+      - name: Object
+        fullName: Object
+  - uid: 4fc6e284
+    spec.java:
+      - name: boolean
+        fullName: boolean
+  - uid: com.microsoft.azure.sdk.iot.service._tools.areEqual*
+    name: areEqual
+    nameWithType: Tools.areEqual
+    fullName: static boolean com.microsoft.azure.sdk.iot.service.Tools.areEqual
     package: com.microsoft.azure.sdk.iot.service

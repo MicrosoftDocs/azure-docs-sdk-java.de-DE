@@ -29,11 +29,11 @@ items:
         branch: master
         repo: 'https://github.com/Microsoft/ApplicationInsights-Java'
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 44
+      startLine: 40
     package: com.microsoft.applicationinsights
     summary: |-
       <p>Kapselt die globalen Telemetrie-Konfiguration, die in der Regel aus der Datei ApplicationInsights.xml geladen.</p>
-      <p>Alle <xref href="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false"></xref> Objekte werden mithilfe der 'Active' (zurückgegeben von der statischen 'GetActive'-Methode) initialisiert Telemetrie-Konfiguration, die von dieser Klasse bereitgestellten. </p>
+      <p>Alle <xref uid="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.TelemetryContext</xref> Objekte werden mithilfe der 'Active' (zurückgegeben von der statischen 'GetActive'-Methode) initialisiert Telemetrie-Konfiguration, die von dieser Klasse bereitgestellten. </p>
     syntax: &ref_1
       content: public class TelemetryConfiguration
     inheritance:
@@ -52,7 +52,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 88
+      startLine: 84
     package: com.microsoft.applicationinsights
     summary: '<p>Erstellt eine neue Instanz der ApplicationInsights.xml-Datei geladen. Wenn die Konfigurationsdatei nicht vorhanden ist, wird die neue konfigurationsinstanz mit minimalen Standardwerte, die zum Senden von Telemetriedaten an Application Insights benötigt initialisiert. </p>'
     syntax:
@@ -74,9 +74,9 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 68
+      startLine: 64
     package: com.microsoft.applicationinsights
-    summary: '<p>Ruft den aktiven <ref refid="" kindref="compound">com.microsoft.applicationinsights.TelemetryConfiguration</ref> Instanz aus der Datei ApplicationInsights.xml geladen. Wenn die Konfigurationsdatei nicht vorhanden ist, wird die Instanz aktive Konfiguration mit minimalen Standardwerte, die zum Senden von Telemetriedaten an Application Insights benötigt initialisiert. </p>'
+    summary: '<p>Ruft den aktiven <xref uid="" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.TelemetryConfiguration</xref> Instanz aus der Datei ApplicationInsights.xml geladen. Wenn die Konfigurationsdatei nicht vorhanden ist, wird die Instanz aktive Konfiguration mit minimalen Standardwerte, die zum Senden von Telemetriedaten an Application Insights benötigt initialisiert. </p>'
     syntax:
       content: public static TelemetryConfiguration getActive()
       return:
@@ -96,14 +96,14 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 98
+      startLine: 94
     package: com.microsoft.applicationinsights
     summary: <p>Ruft die Telemetrie-Kanal ab. </p>
     syntax:
       content: public TelemetryChannel getChannel()
       return:
         type: com.microsoft.applicationinsights.channel._telemetry_channel
-        description: <p>Eine Instanz von<xref href="com.microsoft.applicationinsights.channel._telemetry_channel" data-throw-if-not-resolved="false"></xref></p>
+        description: <p>Eine Instanz von <xref uid="com.microsoft.applicationinsights.channel._telemetry_channel" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.channel.TelemetryChannel</xref></p>
   - uid: com.microsoft.applicationinsights._telemetry_configuration.getContextInitializers()
     id: getContextInitializers()
     parent: com.microsoft.applicationinsights._telemetry_configuration
@@ -118,11 +118,11 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 143
+      startLine: 139
     package: com.microsoft.applicationinsights
     summary: |-
-      <p>Ruft die Liste der <ref refid="" kindref="compound">ContextInitializer</ref> Objekte, die zusätzliche Informationen zur Anwendung bereitzustellen.</p>
-      <p>Kontextinitialisierern Application Insights Telemetrie-Erfassung erweitern, indem Sie zusätzlichen Informationen über die Umgebung der Anwendung, z. B. "Benutzerinformationen" angeben (in TelemetryContext.getUser oder -Gerät (in TelemetryContext.getDevice ruft Telemetrie Initialisierer jedes Mal die <xref href="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false"></xref>des "nachverfolgen" wird aufgerufen</p>
+      <p>Ruft die Liste der <xref uid="" data-throw-if-not-resolved="false">ContextInitializer</xref> Objekte, die zusätzliche Informationen zur Anwendung bereitzustellen.</p>
+      <p>Kontextinitialisierern Application Insights Telemetrie-Erfassung erweitern, indem Sie zusätzlichen Informationen über die Umgebung der Anwendung, z. B. "Benutzerinformationen" angeben (in TelemetryContext.getUser oder -Gerät (in TelemetryContext.getDevice aufruft Telemetrie-Initialisierer jedes Mal die <xref uid="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false">TelemetryClient</xref>des "nachverfolgen" wird aufgerufen</p>
       <p>Die Standardliste der Telemetrie-Initialisierer wird vom SDK bereitgestellt und kann auch in der ApplicationInsights.xml festgelegt werden. </p>
     syntax:
       content: public List<ContextInitializer> getContextInitializers()
@@ -143,11 +143,11 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 174
+      startLine: 170
     package: com.microsoft.applicationinsights
     summary: |-
       <p>Ruft ab, oder legt ihn fest die Instrumentation Standardschlüssel für die Anwendung.</p>
-      <p>Dieser Schlüsselwert Instrumentation wird standardmäßig von allen verwendet <xref href="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false"></xref> Instanzen, die in der Anwendung erstellt. Dieser Wert kann überschrieben werden, durch Festlegen der Instrumentierungsschlüssel <xref href="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false"></xref> Klasse </p>
+      <p>Dieser Schlüsselwert Instrumentation wird standardmäßig von allen verwendet <xref uid="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.TelemetryClient</xref> Instanzen, die in der Anwendung erstellt. Dieser Wert kann überschrieben werden, durch Festlegen der Instrumentierungsschlüssel <xref uid="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.TelemetryContext</xref> Klasse </p>
     syntax:
       content: public String getInstrumentationKey()
       return:
@@ -167,7 +167,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 154
+      startLine: 150
     package: com.microsoft.applicationinsights
     summary: |-
       <p>Ruft die Liste der Module, die anwendungstelemetrie automatisch generiert.</p>
@@ -191,7 +191,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 158
+      startLine: 154
     package: com.microsoft.applicationinsights
     syntax:
       content: public List<TelemetryModule> getTelemetryModules()
@@ -211,7 +211,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 162
+      startLine: 158
     package: com.microsoft.applicationinsights
     syntax:
       content: public List<TelemetryProcessor> getTelemetryProcessors()
@@ -231,11 +231,11 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 118
+      startLine: 114
     package: com.microsoft.applicationinsights
     summary: |-
       <p>Ruft Wert, der angibt, ob Senden von Telemetriedaten an Application Insights deaktiviert ist.</p>
-      <p>Dieser Einstellungswert nachverfolgen deaktivieren wird standardmäßig von allen verwendet <xref href="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false"></xref> Instanzen, die in der Anwendung erstellt.</p>
+      <p>Dieser Einstellungswert nachverfolgen deaktivieren wird standardmäßig von allen verwendet <xref uid="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.TelemetryClient</xref> Instanzen, die in der Anwendung erstellt.</p>
       <p></p>
     syntax:
       content: public boolean isTrackingDisabled()
@@ -256,7 +256,7 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 106
+      startLine: 102
     package: com.microsoft.applicationinsights
     summary: '<p>Legt fest, den Telemetrie-Kanal. </p>'
     syntax:
@@ -264,7 +264,7 @@ items:
       parameters:
         - id: channel
           type: com.microsoft.applicationinsights.channel._telemetry_channel
-          description: <p>Eine Instanz von<xref href="com.microsoft.applicationinsights.channel._telemetry_channel" data-throw-if-not-resolved="false"></xref></p>
+          description: <p>Eine Instanz von <xref uid="com.microsoft.applicationinsights.channel._telemetry_channel" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.channel.TelemetryChannel</xref></p>
   - uid: com.microsoft.applicationinsights._telemetry_configuration.setInstrumentationKey(String)
     id: setInstrumentationKey(String)
     parent: com.microsoft.applicationinsights._telemetry_configuration
@@ -279,11 +279,11 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 187
+      startLine: 183
     package: com.microsoft.applicationinsights
     summary: |-
       <p>Ruft ab, oder legt ihn fest die Instrumentation Standardschlüssel für die Anwendung.</p>
-      <p>Dieser Schlüsselwert Instrumentation wird standardmäßig von allen verwendet <xref href="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false"></xref> Instanzen, die in der Anwendung erstellt. Dieser Wert kann überschrieben werden, durch Festlegen der Instrumentierungsschlüssel <xref href="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false"></xref> Klasse </p>
+      <p>Dieser Schlüsselwert Instrumentation wird standardmäßig von allen verwendet <xref uid="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.TelemetryClient</xref> Instanzen, die in der Anwendung erstellt. Dieser Wert kann überschrieben werden, durch Festlegen der Instrumentierungsschlüssel <xref uid="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.TelemetryContext</xref> Klasse </p>
     syntax:
       content: public void setInstrumentationKey(String key)
       parameters:
@@ -307,11 +307,11 @@ items:
     source:
       remote: *ref_0
       path: core/src/main/java/com/microsoft/applicationinsights/TelemetryConfiguration.java
-      startLine: 129
+      startLine: 125
     package: com.microsoft.applicationinsights
     summary: |-
       <p>Legt fest, der angibt, ob Senden von Telemetriedaten an Application Insights deaktiviert ist.</p>
-      <p>Dieser Einstellungswert nachverfolgen deaktivieren wird standardmäßig von allen verwendet <xref href="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false"></xref> Instanzen, die in der Anwendung erstellt. </p>
+      <p>Dieser Einstellungswert nachverfolgen deaktivieren wird standardmäßig von allen verwendet <xref uid="com.microsoft.applicationinsights._telemetry_client" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.TelemetryClient</xref> Instanzen, die in der Anwendung erstellt. </p>
     syntax:
       content: public void setTrackingIsDisabled(boolean disable)
       parameters:
@@ -440,7 +440,7 @@ references:
     type: Class
     summary: |-
       <p>Kapselt die globalen Telemetrie-Konfiguration, die in der Regel aus der Datei ApplicationInsights.xml geladen.</p>
-      <p>Alle <xref href="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false"></xref> Objekte werden mithilfe der 'Active' (zurückgegeben von der statischen 'GetActive'-Methode) initialisiert Telemetrie-Konfiguration, die von dieser Klasse bereitgestellten. </p>
+      <p>Alle <xref uid="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.TelemetryContext</xref> Objekte werden mithilfe der 'Active' (zurückgegeben von der statischen 'GetActive'-Methode) initialisiert Telemetrie-Konfiguration, die von dieser Klasse bereitgestellten. </p>
     syntax: *ref_1
   - uid: com.microsoft.applicationinsights.extensibility._context_initializer
     parent: com.microsoft.applicationinsights.extensibility
@@ -449,7 +449,7 @@ references:
     nameWithType: ContextInitializer
     fullName: com.microsoft.applicationinsights.extensibility.ContextInitializer
     type: Interface
-    summary: '<p>Stellt ein Objekt, das für TelemetryContext unterstützenden Logik implementiert. <xref href="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false"></xref></p>'
+    summary: '<p>Stellt ein Objekt, das für TelemetryContext unterstützenden Logik implementiert. <xref uid="com.microsoft.applicationinsights.telemetry._telemetry_context" data-throw-if-not-resolved="false">com.microsoft.applicationinsights.telemetry.TelemetryContext</xref></p>'
     syntax:
       content: public interface ContextInitializer
   - uid: com.microsoft.applicationinsights.extensibility._telemetry_initializer
@@ -479,7 +479,24 @@ references:
     nameWithType: TelemetryProcessor
     fullName: com.microsoft.applicationinsights.extensibility.TelemetryProcessor
     type: Interface
-    summary: "<p>Ruft die Methode eine <ref refid=\"\" kindref=\"compound\">Telemetrie</ref> -Instanz, die gesendet werden kann. Dies ist die Möglichkeit, genehmigen oder ablehnen. Rückgabe von \"false\" bedeutet, dass die Telemetrie nicht gesendet werden, wird während \"True\" bedeutet, dass die Genehmigung.</p>\n<p>Die Telemetrie möglicherweise andere Filter durchlaufen, obwohl dessen senden, die verweigert, möglicherweise.</p>\n<p>Dieser Prozessor aktivieren, Sie es in der ApplicationInsights.xml wie folgt hinzufügen müssen:</p>\n<p>\r\n  <preformatted>\r\n    <programlisting>\r\n      <codeline>\r\n        <highlight class=\"normal\">&lt;TelemetryProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;CustomProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;Prozessor<sp></sp>type=\"full.path.to.Filter\"&gt; </highlight> \r\n      </codeline> \r\n      <codeline> \r\n        <highlight class=\"normal\"> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> &lt;Hinzufügen<sp></sp>Name = \"Eigenschaft\"<sp></sp>Wert = \"StringValue\" /&gt; </highlight> \r\n      </codeline> \r\n      <codeline> \r\n        <highlight class=\"normal\"> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> &lt;/Processor&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;/CustomProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">&lt;/TelemetryProcessors&gt; </highlight> \r\n      </codeline> \r\n    </programlisting>*</preformatted>\r\n</p>\n<p>Beachten Sie, dass die Klasse definiert eine Eigenschaft mit dem Namen \"Property\", der zu konfiguriert ist. Jede Eigenschaft, die Sie konfigurieren möchten muss eine öffentliche 'SetX'-Methode, z. B. \"SetProperty\" in diesem Beispiel verfügen <bold>'SetX'-Methoden ausgelöste Ausnahmen werden abgefangen werden, durch das Framework, die den Filter ignoriert werden kann</bold></p>\n<p>Gupele erstellt am 7/26/2016. </p>"
+    summary: |-
+      <p>Ruft die Methode eine <xref uid="" data-throw-if-not-resolved="false">Telemetrie</xref> -Instanz, die gesendet werden kann. Dies ist die Möglichkeit, genehmigen oder ablehnen. Rückgabe von "false" bedeutet, dass die Telemetrie nicht gesendet werden, wird während "True" bedeutet, dass die Genehmigung.</p>
+      <p>Die Telemetrie möglicherweise andere Filter durchlaufen, obwohl dessen senden, die verweigert, möglicherweise.</p>
+      <p>Dieser Prozessor aktivieren, Sie es in der ApplicationInsights.xml wie folgt hinzufügen müssen:</p>
+      <p>
+        <pre>
+          <code>&lt;TelemetryProcessors&gt;
+              &lt;CustomProcessors&gt;
+                  &lt;Processor type="full.path.to.Filter"&gt;
+                      &lt;Add name="Property" value="stringValue"/&gt;
+                  &lt;/Processor&gt;
+              &lt;/CustomProcessors&gt;
+          &lt;/TelemetryProcessors&gt;
+          </code> 
+      *</pre>
+      </p>
+      <p>Beachten Sie, dass die Klasse definiert eine Eigenschaft mit dem Namen "Property", der zu konfiguriert ist. Jede Eigenschaft, die Sie konfigurieren möchten muss eine öffentliche 'SetX'-Methode, z. B. "SetProperty" in diesem Beispiel verfügen <b>'SetX'-Methoden ausgelöste Ausnahmen werden abgefangen werden, durch das Framework, die den Filter ignoriert werden kann</b></p>
+      <p>Gupele erstellt am 7/26/2016. </p>
     syntax:
       content: public interface TelemetryProcessor
   - uid: com.microsoft.applicationinsights.channel._telemetry_channel

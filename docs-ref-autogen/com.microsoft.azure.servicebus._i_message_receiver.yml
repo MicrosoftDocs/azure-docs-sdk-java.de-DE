@@ -10,8 +10,6 @@ items:
       - 'com.microsoft.azure.servicebus._i_message_receiver.abandonAsync(UUID,Map<String, Object>)'
       - com.microsoft.azure.servicebus._i_message_receiver.complete(UUID)
       - com.microsoft.azure.servicebus._i_message_receiver.completeAsync(UUID)
-      - com.microsoft.azure.servicebus._i_message_receiver.completeBatch(Collection<? extends IMessage>)
-      - com.microsoft.azure.servicebus._i_message_receiver.completeBatchAsync(Collection<? extends IMessage>)
       - com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID)
       - 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,Map<String, Object>)'
       - 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,String,String)'
@@ -28,16 +26,16 @@ items:
       - com.microsoft.azure.servicebus._i_message_receiver.getReceiveMode()
       - com.microsoft.azure.servicebus._i_message_receiver.receive()
       - com.microsoft.azure.servicebus._i_message_receiver.receive(Duration)
-      - com.microsoft.azure.servicebus._i_message_receiver.receive(long)
       - com.microsoft.azure.servicebus._i_message_receiver.receiveAsync()
       - com.microsoft.azure.servicebus._i_message_receiver.receiveAsync(Duration)
-      - com.microsoft.azure.servicebus._i_message_receiver.receiveAsync(long)
-      - com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(Collection<Long>)
       - com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(int)
       - 'com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(int,Duration)'
-      - com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(Collection<Long>)
       - com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(int)
       - 'com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(int,Duration)'
+      - com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessage(long)
+      - com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageAsync(long)
+      - com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatch(Collection<Long>)
+      - com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatchAsync(Collection<Long>)
       - com.microsoft.azure.servicebus._i_message_receiver.renewMessageLock(IMessage)
       - com.microsoft.azure.servicebus._i_message_receiver.renewMessageLockAsync(IMessage)
       - com.microsoft.azure.servicebus._i_message_receiver.setPrefetchCount(int)
@@ -54,14 +52,15 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 11
+      startLine: 17
     package: com.microsoft.azure.servicebus
+    summary: '<p>Definiert die Nachricht Empfänger-Schnittstelle. Die MessageReceiver kann zum Empfangen von Nachrichten aus Warteschlangen und Abonnements, und bestätigen sie verwendet werden. </p>'
     syntax:
-      content: 'public interface IMessageReceiver extends IMessageEntity,IMessageBrowser'
+      content: 'public interface IMessageReceiver extends IMessageEntityClient,IMessageBrowser'
     inheritedMembers:
       - com.microsoft.azure.servicebus._i_closeable.close()
       - com.microsoft.azure.servicebus._i_closeable.closeAsync()
-      - com.microsoft.azure.servicebus._i_message_entity.getEntityPath()
+      - com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
       - com.microsoft.azure.servicebus._i_message_browser.peek()
       - com.microsoft.azure.servicebus._i_message_browser.peek(long)
       - com.microsoft.azure.servicebus._i_message_browser.peekAsync()
@@ -84,13 +83,22 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 14
+      startLine: 33
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verwerfen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Sperrtoken. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht erhöht die Übermittlungsanzahl der Nachricht</p>
+      <p></p>
     syntax:
       content: public void abandon(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Abandon fehlgeschlagen ist. </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.abandon(UUID,Map<String, Object>)'
     id: 'abandon(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -105,15 +113,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 16
+      startLine: 43
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verwerfen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Lock-token und aktualisierte Message-Eigenschaft. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht erhöht die Übermittlungsanzahl der Nachricht</p>
+      <p></p>
     syntax:
       content: 'public void abandon(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Abandon fehlgeschlagen ist. </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.abandonAsync(UUID)
     id: abandonAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -128,15 +146,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 18
+      startLine: 51
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verwerfen Sie asynchron <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Sperrtoken. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht, erhöhen Sie die Übermittlungsanzahl der Nachricht.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> abandonAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Abandon darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.abandonAsync(UUID,Map<String, Object>)'
     id: 'abandonAsync(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -151,17 +174,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 20
+      startLine: 60
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verwerfen Sie asynchron <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Lock-token und aktualisierte Message-Eigenschaft. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht, erhöhen Sie die Übermittlungsanzahl der Nachricht.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> abandonAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Abandon darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.complete(UUID)
     id: complete(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -176,13 +205,22 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 22
+      startLine: 69
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Schließt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Hierdurch wird die Nachricht vom Dienst gelöscht.</p>
+      <p></p>
     syntax:
       content: public void complete(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Abandon fehlgeschlagen ist. </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.completeAsync(UUID)
     id: completeAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -197,59 +235,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 26
+      startLine: 79
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Asynchron abgeschlossen ist ein <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Hierdurch wird die Nachricht vom Dienst gelöscht.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> completeAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
       return:
         type: db03ee24
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.completeBatch(Collection<? extends IMessage>)
-    id: completeBatch(Collection<? extends IMessage>)
-    parent: com.microsoft.azure.servicebus._i_message_receiver
-    href: com.microsoft.azure.servicebus._i_message_receiver.yml
-    langs:
-      - java
-    name: completeBatch(Collection<? extends IMessage> messages)
-    nameWithType: IMessageReceiver.completeBatch(Collection<? extends IMessage> messages)
-    fullName: void com.microsoft.azure.servicebus.IMessageReceiver.completeBatch(Collection<? extends IMessage> messages)
-    overload: com.microsoft.azure.servicebus._i_message_receiver.completeBatch*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 24
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public void completeBatch(Collection<? extends IMessage> messages)
-      parameters:
-        - id: messages
-          type: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.completeBatchAsync(Collection<? extends IMessage>)
-    id: completeBatchAsync(Collection<? extends IMessage>)
-    parent: com.microsoft.azure.servicebus._i_message_receiver
-    href: com.microsoft.azure.servicebus._i_message_receiver.yml
-    langs:
-      - java
-    name: completeBatchAsync(Collection<? extends IMessage> messages)
-    nameWithType: IMessageReceiver.completeBatchAsync(Collection<? extends IMessage> messages)
-    fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageReceiver.completeBatchAsync(Collection<? extends IMessage> messages)
-    overload: com.microsoft.azure.servicebus._i_message_receiver.completeBatchAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 28
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public CompletableFuture<Void> completeBatchAsync(Collection<? extends IMessage> messages)
-      parameters:
-        - id: messages
-          type: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
-      return:
-        type: db03ee24
+        description: '<p>ein CompletableFuture, die ausstehend. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID)
     id: deadLetter(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -264,13 +263,22 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 38
+      startLine: 126
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> auf die Unterwarteschlange für unzustellbare Nachrichten.</p>
+      <p></p>
     syntax:
       content: public void deadLetter(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,Map<String, Object>)'
     id: 'deadLetter(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -285,15 +293,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 40
+      startLine: 136
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> an die Warteschlange für unzustellbare Nachrichten untergeordnete, mit geänderten Nachrichteneigenschaften.</p>
+      <p></p>
     syntax:
       content: 'public void deadLetter(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,String,String)'
     id: 'deadLetter(UUID,String,String)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -308,17 +326,28 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 42
+      startLine: 147
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Beschreibung der Ursache und Fehler.</p>
+      <p></p>
     syntax:
       content: 'public void deadLetter(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: deadLetterReason
           type: '26831127'
+          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
         - id: deadLetterErrorDescription
           type: '26831127'
+          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,String,String,Map<String, Object>)'
     id: 'deadLetter(UUID,String,String,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -333,19 +362,31 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 44
+      startLine: 159
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Grund und Fehler Beschreibung und die geänderten Eigenschaften.</p>
+      <p></p>
     syntax:
       content: 'public void deadLetter(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: deadLetterReason
           type: '26831127'
+          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
         - id: deadLetterErrorDescription
           type: '26831127'
+          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID)
     id: deadLetterAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -360,15 +401,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 46
+      startLine: 167
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> deadLetterAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID,Map<String, Object>)'
     id: 'deadLetterAsync(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -383,17 +429,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 48
+      startLine: 176
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> an die Warteschlange für unzustellbare Nachrichten untergeordnete, mit der geänderten Eigenschaften.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID,String,String)'
     id: 'deadLetterAsync(UUID,String,String)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -408,19 +460,26 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 50
+      startLine: 186
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Beschreibung der Ursache und Fehler.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: deadLetterReason
           type: '26831127'
+          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
         - id: deadLetterErrorDescription
           type: '26831127'
+          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID,String,String,Map<String, Object>)'
     id: 'deadLetterAsync(UUID,String,String,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -435,21 +494,29 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 52
+      startLine: 197
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Grund und Fehler Beschreibung und die geänderten Eigenschaften.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: deadLetterReason
           type: '26831127'
+          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
         - id: deadLetterErrorDescription
           type: '26831127'
+          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.defer(UUID)
     id: defer(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -464,13 +531,22 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 30
+      startLine: 90
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Orientiert sich eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p></p>
     syntax:
       content: public void defer(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn zurückstellen fehlgeschlagen </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.defer(UUID,Map<String, Object>)'
     id: 'defer(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -485,15 +561,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 32
+      startLine: 100
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Orientiert sich eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mithilfe seiner Sperrtoken mit Message-Eigenschaft geändert. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p></p>
     syntax:
       content: 'public void defer(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn zurückstellen fehlgeschlagen </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.deferAsync(UUID)
     id: deferAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -508,15 +594,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 34
+      startLine: 108
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verzögert asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> deferAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Defer darstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deferAsync(UUID,Map<String, Object>)'
     id: 'deferAsync(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -531,17 +622,23 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 36
+      startLine: 117
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Verzögert asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mithilfe seiner Sperrtoken mit Nachricht-Eigenschaft geändert. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deferAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
         - id: propertiesToModify
           type: e7b06046
+          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
       return:
         type: db03ee24
+        description: '<p>eine CompletableFuture, die die ausstehenden Defer darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.getPrefetchCount()
     id: getPrefetchCount()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -556,12 +653,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 86
+      startLine: 338
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Abrufen der Prefetch-festgelegte Wert.</p>
+      <p></p>
     syntax:
       content: public int getPrefetchCount()
       return:
         type: f75371fa
+        description: <p>Der Satz Prefetch Count-Wert. </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.getReceiveMode()
     id: getReceiveMode()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -576,12 +677,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 12
+      startLine: 24
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Abrufen des aktuellen Empfängers <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref>.</p>
+      <p></p>
     syntax:
       content: public ReceiveMode getReceiveMode()
       return:
         type: com.microsoft.azure.servicebus._receive_mode
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._receive_mode\" data-throw-if-not-resolved=\"false\">ReceiveMode</xref>\r\n\r\n</p>"
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receive()
     id: receive()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -596,12 +701,21 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 54
+      startLine: 206
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Standardserver Wartezeit.</p>
+      <p></p>
     syntax:
       content: public IMessage receive()
       return:
         type: com.microsoft.azure.servicebus._i_message
+        description: '<p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler beim Empfang </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receive(Duration)
     id: receive(Duration)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -616,38 +730,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 56
+      startLine: 216
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem angegebenen Server Wartezeit.</p>
+      <p></p>
     syntax:
       content: public IMessage receive(Duration serverWaitTime)
       parameters:
         - id: serverWaitTime
           type: e02a2de0
+          description: <p>Die Server-Wartezeit </p>
       return:
         type: com.microsoft.azure.servicebus._i_message
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.receive(long)
-    id: receive(long)
-    parent: com.microsoft.azure.servicebus._i_message_receiver
-    href: com.microsoft.azure.servicebus._i_message_receiver.yml
-    langs:
-      - java
-    name: receive(long sequenceNumber)
-    nameWithType: IMessageReceiver.receive(long sequenceNumber)
-    fullName: IMessage com.microsoft.azure.servicebus.IMessageReceiver.receive(long sequenceNumber)
-    overload: com.microsoft.azure.servicebus._i_message_receiver.receive*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 58
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public IMessage receive(long sequenceNumber)
-      parameters:
-        - id: sequenceNumber
-          type: 0364520f
-      return:
-        type: com.microsoft.azure.servicebus._i_message
+        description: '<p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler beim Empfang </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveAsync()
     id: receiveAsync()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -662,12 +763,16 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 66
+      startLine: 264
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure-Servicebus.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<IMessage> receiveAsync()
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
+        description: '<p>Die empfangene Nachricht. Gibt null, wenn keine Nachricht gefunden wird </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveAsync(Duration)
     id: receiveAsync(Duration)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -682,61 +787,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 68
+      startLine: 272
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<IMessage> receiveAsync(Duration serverWaitTime)
       parameters:
         - id: serverWaitTime
           type: e02a2de0
+          description: '<p>Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt. </p>'
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveAsync(long)
-    id: receiveAsync(long)
-    parent: com.microsoft.azure.servicebus._i_message_receiver
-    href: com.microsoft.azure.servicebus._i_message_receiver.yml
-    langs:
-      - java
-    name: receiveAsync(long sequenceNumber)
-    nameWithType: IMessageReceiver.receiveAsync(long sequenceNumber)
-    fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveAsync(long sequenceNumber)
-    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 70
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public CompletableFuture<IMessage> receiveAsync(long sequenceNumber)
-      parameters:
-        - id: sequenceNumber
-          type: 0364520f
-      return:
-        type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(Collection<Long>)
-    id: receiveBatch(Collection<Long>)
-    parent: com.microsoft.azure.servicebus._i_message_receiver
-    href: com.microsoft.azure.servicebus._i_message_receiver.yml
-    langs:
-      - java
-    name: receiveBatch(Collection<Long> sequenceNumbers)
-    nameWithType: IMessageReceiver.receiveBatch(Collection<Long> sequenceNumbers)
-    fullName: Collection<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveBatch(Collection<Long> sequenceNumbers)
-    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveBatch*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 64
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public Collection<IMessage> receiveBatch(Collection<Long> sequenceNumbers)
-      parameters:
-        - id: sequenceNumbers
-          type: f936a554
-      return:
-        type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
+        description: '<p>Die empfangene Nachricht. Gibt null, wenn keine Nachricht gefunden wird </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(int)
     id: receiveBatch(int)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -751,15 +815,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 60
+      startLine: 236
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt ein Maximum von MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus.</p>
+      <p></p>
     syntax:
       content: public Collection<IMessage> receiveBatch(int maxMessageCount)
       parameters:
         - id: maxMessageCount
           type: f75371fa
+          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
+        description: '<p>Liste der Nachrichten empfangen. Gibt null zurück, wenn keine Nachricht gefunden wird. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler beim Empfang </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(int,Duration)'
     id: 'receiveBatch(int,Duration)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -774,40 +848,28 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 62
+      startLine: 247
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt ein Maximum von MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</p>
+      <p></p>
     syntax:
       content: 'public Collection<IMessage> receiveBatch(int maxMessageCount, Duration serverWaitTime)'
       parameters:
         - id: maxMessageCount
           type: f75371fa
+          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
         - id: serverWaitTime
           type: e02a2de0
+          description: '<p>Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt. </p>'
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(Collection<Long>)
-    id: receiveBatchAsync(Collection<Long>)
-    parent: com.microsoft.azure.servicebus._i_message_receiver
-    href: com.microsoft.azure.servicebus._i_message_receiver.yml
-    langs:
-      - java
-    name: receiveBatchAsync(Collection<Long> sequenceNumbers)
-    nameWithType: IMessageReceiver.receiveBatchAsync(Collection<Long> sequenceNumbers)
-    fullName: CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageReceiver.receiveBatchAsync(Collection<Long> sequenceNumbers)
-    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 76
-    package: com.microsoft.azure.servicebus
-    syntax:
-      content: public CompletableFuture<Collection<IMessage>> receiveBatchAsync(Collection<Long> sequenceNumbers)
-      parameters:
-        - id: sequenceNumbers
-          type: f936a554
-      return:
-        type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
+        description: '<p>Liste der Nachrichten empfangen. Gibt null zurück, wenn keine Nachricht gefunden wird. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler beim Empfang </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(int)
     id: receiveBatchAsync(int)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -822,15 +884,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 72
+      startLine: 288
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Asynchron empfängt maximal MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> aus der Entität.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Collection<IMessage>> receiveBatchAsync(int maxMessageCount)
       parameters:
         - id: maxMessageCount
           type: f75371fa
+          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
+        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(int,Duration)'
     id: 'receiveBatchAsync(int,Duration)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -845,17 +912,145 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 74
+      startLine: 297
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Asynchron empfängt maximal MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Collection<IMessage>> receiveBatchAsync(int maxMessageCount, Duration serverWaitTime)'
       parameters:
         - id: maxMessageCount
           type: f75371fa
+          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
         - id: serverWaitTime
           type: e02a2de0
+          description: '<p>Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt. </p>'
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
+        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessage(long)
+    id: receiveDeferredMessage(long)
+    parent: com.microsoft.azure.servicebus._i_message_receiver
+    href: com.microsoft.azure.servicebus._i_message_receiver.yml
+    langs:
+      - java
+    name: receiveDeferredMessage(long sequenceNumber)
+    nameWithType: IMessageReceiver.receiveDeferredMessage(long sequenceNumber)
+    fullName: IMessage com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessage(long sequenceNumber)
+    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessage*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
+      startLine: 226
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt eine verzögerte <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>. Verzögerte Nachrichten können nur mithilfe der Sequenznummer empfangen werden.</p>
+      <p></p>
+    syntax:
+      content: public IMessage receiveDeferredMessage(long sequenceNumber)
+      parameters:
+        - id: sequenceNumber
+          type: 0364520f
+          description: '<p>Die <xref uid="com.microsoft.azure.servicebus._message.getSequenceNumber()" data-throw-if-not-resolved="false">Message#getSequenceNumber()</xref>. </p>'
+      return:
+        type: com.microsoft.azure.servicebus._i_message
+        description: '<p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist, für das angegebene Sequenznummer. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler beim Empfang </p>
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageAsync(long)
+    id: receiveDeferredMessageAsync(long)
+    parent: com.microsoft.azure.servicebus._i_message_receiver
+    href: com.microsoft.azure.servicebus._i_message_receiver.yml
+    langs:
+      - java
+    name: receiveDeferredMessageAsync(long sequenceNumber)
+    nameWithType: IMessageReceiver.receiveDeferredMessageAsync(long sequenceNumber)
+    fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessageAsync(long sequenceNumber)
+    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
+      startLine: 280
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfängt asynchron einen bestimmten verzögert <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> identifizierte Sequenznummer.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<IMessage> receiveDeferredMessageAsync(long sequenceNumber)
+      parameters:
+        - id: sequenceNumber
+          type: 0364520f
+          description: '<p>Die Sequenznummer der Nachricht, die empfangen werden. </p>'
+      return:
+        type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
+        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatch(Collection<Long>)
+    id: receiveDeferredMessageBatch(Collection<Long>)
+    parent: com.microsoft.azure.servicebus._i_message_receiver
+    href: com.microsoft.azure.servicebus._i_message_receiver.yml
+    langs:
+      - java
+    name: receiveDeferredMessageBatch(Collection<Long> sequenceNumbers)
+    nameWithType: IMessageReceiver.receiveDeferredMessageBatch(Collection<Long> sequenceNumbers)
+    fullName: Collection<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessageBatch(Collection<Long> sequenceNumbers)
+    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatch*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
+      startLine: 257
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Erhält eine Lieferung mit verzögerten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>.</p>
+      <p></p>
+    syntax:
+      content: public Collection<IMessage> receiveDeferredMessageBatch(Collection<Long> sequenceNumbers)
+      parameters:
+        - id: sequenceNumbers
+          type: f936a554
+          description: <p>Die Sequenznummern der gewünschten verzögerte Nachrichten. </p>
+      return:
+        type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
+        description: '<p>Liste der Nachrichten empfangen. Gibt null zurück, wenn keine Nachricht gefunden wird. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn Fehler beim Empfang </p>
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatchAsync(Collection<Long>)
+    id: receiveDeferredMessageBatchAsync(Collection<Long>)
+    parent: com.microsoft.azure.servicebus._i_message_receiver
+    href: com.microsoft.azure.servicebus._i_message_receiver.yml
+    langs:
+      - java
+    name: receiveDeferredMessageBatchAsync(Collection<Long> sequenceNumbers)
+    nameWithType: IMessageReceiver.receiveDeferredMessageBatchAsync(Collection<Long> sequenceNumbers)
+    fullName: CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessageBatchAsync(Collection<Long> sequenceNumbers)
+    overload: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatchAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
+      startLine: 305
+    package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Asynchron empfängt einen Satz von verzögerte <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> aus der Entität.</p>
+      <p></p>
+    syntax:
+      content: public CompletableFuture<Collection<IMessage>> receiveDeferredMessageBatchAsync(Collection<Long> sequenceNumbers)
+      parameters:
+        - id: sequenceNumbers
+          type: f936a554
+          description: '<p>Die Sequenznummern der Nachricht, die empfangen werden. </p>'
+      return:
+        type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
+        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.renewMessageLock(IMessage)
     id: renewMessageLock(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -870,15 +1065,25 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 82
+      startLine: 329
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Erneuert die Sperre für die Nachricht durch das Sperrtoken angegeben. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden. Beim Empfang einer Nachricht im <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode #PEEKLOCK</xref> Modus wird die Nachricht ist für eine Dauer entsprechend den Angaben auf dem Server für diese Instanz Empfänger gesperrt, während der Erstellung der Warteschlange/Abonnement (LockDuration). Wenn die Verarbeitung der Nachricht länger als diese Dauer erforderlich ist, muss die Sperre erneuert werden. Bei jeder Verlängerung wird die Sperre durch die Entität LockDuration erneuert.</p>
+      <p></p>
     syntax:
       content: public Instant renewMessageLock(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Die <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> erneuert werden soll. </p>
       return:
         type: 328f8254
+        description: '<p>Die neue gesperrt, bis die UTC-Zeit. </p>'
+    exceptions:
+      - type: 8256ba40
+        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+      - type: 73fec9fb
+        description: <p>Wenn erneuern fehlgeschlagen </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.renewMessageLockAsync(IMessage)
     id: renewMessageLockAsync(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -893,15 +1098,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 78
+      startLine: 313
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Asynchron erneuert die Sperre für die Nachricht durch das Sperrtoken angegeben. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Instant> renewMessageLockAsync(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Die <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> erneuert werden soll. </p>
       return:
         type: 6666b360
+        description: '<p>eine CompletableFuture, ausstehende erneuern darstellt. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.setPrefetchCount(int)
     id: setPrefetchCount(int)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -916,19 +1126,35 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
-      startLine: 88
+      startLine: 350
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Legen Sie den vorabrufwert des Empfängers. Prefetch beschleunigt den Nachrichtenfluss durch ins Leben gerufen, eine Nachricht, die für den lokalen Abruf unmittelbar verfügbar sein, wenn und vor der Anwendung, für eine aufgefordert Verwendung empfangen. Einen Wert ungleich Null festlegen, vorab PrefetchCount Anzahl der Nachrichten abruft. Festlegen des Werts auf 0 (null) wird Prefetch deaktiviert. RECEIVEANDDELETE-Modus ist der Standardwert 0. PEEKLOCK-Modus ist der Standardwert 100. </p>
+      <p>Der Wert kann nicht festgelegt werden, bis der Empfänger erstellt wird.</p>
+      <p></p>
     syntax:
       content: public void setPrefetchCount(int prefetchCount)
       parameters:
         - id: prefetchCount
           type: f75371fa
+          description: <p>Der gewünschte Vorabruf. </p>
+    exceptions:
+      - type: 73fec9fb
+        description: <p>Wenn der Wert konnte nicht festgelegt </p>
 references:
   - uid: com.microsoft.azure.servicebus._i_message_receiver.getReceiveMode*
     name: getReceiveMode
     nameWithType: IMessageReceiver.getReceiveMode
     fullName: ReceiveMode com.microsoft.azure.servicebus.IMessageReceiver.getReceiveMode
     package: com.microsoft.azure.servicebus
+  - uid: 8256ba40
+    spec.java:
+      - name: InterruptedException
+        fullName: InterruptedException
+  - uid: 73fec9fb
+    spec.java:
+      - name: ServiceBusException
+        fullName: ServiceBusException
   - uid: add9545a
     spec.java:
       - name: UUID
@@ -956,30 +1182,10 @@ references:
     nameWithType: IMessageReceiver.complete
     fullName: void com.microsoft.azure.servicebus.IMessageReceiver.complete
     package: com.microsoft.azure.servicebus
-  - uid: d56263b8com.microsoft.azure.servicebus._i_messagea08ddfce
-    spec.java:
-      - name: 'Collection<? extends '
-        fullName: 'Collection<? extends '
-      - uid: com.microsoft.azure.servicebus._i_message
-        name: IMessage
-        fullName: com.microsoft.azure.servicebus.IMessage
-        href: com.microsoft.azure.servicebus._i_message.yml
-      - name: '>'
-        fullName: '>'
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.completeBatch*
-    name: completeBatch
-    nameWithType: IMessageReceiver.completeBatch
-    fullName: void com.microsoft.azure.servicebus.IMessageReceiver.completeBatch
-    package: com.microsoft.azure.servicebus
   - uid: com.microsoft.azure.servicebus._i_message_receiver.completeAsync*
     name: completeAsync
     nameWithType: IMessageReceiver.completeAsync
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageReceiver.completeAsync
-    package: com.microsoft.azure.servicebus
-  - uid: com.microsoft.azure.servicebus._i_message_receiver.completeBatchAsync*
-    name: completeBatchAsync
-    nameWithType: IMessageReceiver.completeBatchAsync
-    fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageReceiver.completeBatchAsync
     package: com.microsoft.azure.servicebus
   - uid: com.microsoft.azure.servicebus._i_message_receiver.defer*
     name: defer
@@ -1018,6 +1224,11 @@ references:
     spec.java:
       - name: long
         fullName: long
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessage*
+    name: receiveDeferredMessage
+    nameWithType: IMessageReceiver.receiveDeferredMessage
+    fullName: IMessage com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessage
+    package: com.microsoft.azure.servicebus
   - uid: f75371fa
     spec.java:
       - name: int
@@ -1041,6 +1252,11 @@ references:
     spec.java:
       - name: Collection<Long>
         fullName: Collection<Long>
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatch*
+    name: receiveDeferredMessageBatch
+    nameWithType: IMessageReceiver.receiveDeferredMessageBatch
+    fullName: Collection<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessageBatch
+    package: com.microsoft.azure.servicebus
   - uid: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
     spec.java:
       - name: CompletableFuture<
@@ -1056,6 +1272,11 @@ references:
     nameWithType: IMessageReceiver.receiveAsync
     fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveAsync
     package: com.microsoft.azure.servicebus
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageAsync*
+    name: receiveDeferredMessageAsync
+    nameWithType: IMessageReceiver.receiveDeferredMessageAsync
+    fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessageAsync
+    package: com.microsoft.azure.servicebus
   - uid: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
     spec.java:
       - name: CompletableFuture<Collection<
@@ -1070,6 +1291,11 @@ references:
     name: receiveBatchAsync
     nameWithType: IMessageReceiver.receiveBatchAsync
     fullName: CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageReceiver.receiveBatchAsync
+    package: com.microsoft.azure.servicebus
+  - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatchAsync*
+    name: receiveDeferredMessageBatchAsync
+    nameWithType: IMessageReceiver.receiveDeferredMessageBatchAsync
+    fullName: CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageReceiver.receiveDeferredMessageBatchAsync
     package: com.microsoft.azure.servicebus
   - uid: 6666b360
     spec.java:
@@ -1106,6 +1332,7 @@ references:
     nameWithType: ICloseable.close()
     fullName: void com.microsoft.azure.servicebus.ICloseable.close()
     type: Method
+    summary: '<p>Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Beim Aufrufen dieser Methode entspricht der aufrufen. Diese Methode blockiert, bis diese wird das Objekt geschlossen. </p>'
     syntax:
       content: public void close()
   - uid: com.microsoft.azure.servicebus._i_closeable.closeAsync()
@@ -1115,21 +1342,27 @@ references:
     nameWithType: ICloseable.closeAsync()
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.ICloseable.closeAsync()
     type: Method
+    summary: '<p>Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde. Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben. Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist. </p>'
     syntax:
       content: public CompletableFuture<Void> closeAsync()
       return:
         type: db03ee24
-  - uid: com.microsoft.azure.servicebus._i_message_entity.getEntityPath()
-    parent: com.microsoft.azure.servicebus._i_message_entity
-    href: com.microsoft.azure.servicebus._i_message_entity.yml
+        description: '<p>eine CompletableFuture, die das Schließen des dieses Objekt darstellt. </p>'
+  - uid: com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
+    parent: com.microsoft.azure.servicebus._i_message_entity_client
+    href: com.microsoft.azure.servicebus._i_message_entity_client.yml
     name: getEntityPath()
-    nameWithType: IMessageEntity.getEntityPath()
-    fullName: String com.microsoft.azure.servicebus.IMessageEntity.getEntityPath()
+    nameWithType: IMessageEntityClient.getEntityPath()
+    fullName: String com.microsoft.azure.servicebus.IMessageEntityClient.getEntityPath()
     type: Method
+    summary: |-
+      <p>Ruft den Pfad der Entität, die dieser Client wird ab, Senden von Nachrichten an oder Empfang von Nachrichten aus.</p>
+      <p></p>
     syntax:
       content: public String getEntityPath()
       return:
         type: '26831127'
+        description: '<p>Pfad der Entität, der diesem Client eine Verbindung herstellt </p>'
   - uid: com.microsoft.azure.servicebus._i_message_browser.peek()
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1137,10 +1370,14 @@ references:
     nameWithType: IMessageBrowser.peek()
     fullName: IMessage com.microsoft.azure.servicebus.IMessageBrowser.peek()
     type: Method
+    summary: |-
+      <p>als Nächstes liest Sie die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung ein. Der erste Aufruf von <xref uid="com.microsoft.azure.servicebus._i_message_browser.peek()" data-throw-if-not-resolved="false">IMessageBrowser#peek()</xref> Ruft die erste aktive Nachricht für diesen Empfänger. Jeder nachfolgender Aufruf ruft die nachfolgende Meldung in der Entität ab.</p>
+      <p></p>
     syntax:
       content: public IMessage peek()
       return:
         type: com.microsoft.azure.servicebus._i_message
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen </p>"
   - uid: com.microsoft.azure.servicebus._i_message_browser.peek(long)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1148,13 +1385,18 @@ references:
     nameWithType: IMessageBrowser.peek(long fromSequenceNumber)
     fullName: IMessage com.microsoft.azure.servicebus.IMessageBrowser.peek(long fromSequenceNumber)
     type: Method
+    summary: |-
+      <p>Als Nächstes liest Sie die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung ein.</p>
+      <p></p>
     syntax:
       content: public IMessage peek(long fromSequenceNumber)
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
+          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
       return:
         type: com.microsoft.azure.servicebus._i_message
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen </p>"
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekAsync()
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1162,10 +1404,14 @@ references:
     nameWithType: IMessageBrowser.peekAsync()
     fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekAsync()
     type: Method
+    summary: |-
+      <p>Liest asynchron aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<IMessage> peekAsync()
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen </p>"
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekAsync(long)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1173,13 +1419,18 @@ references:
     nameWithType: IMessageBrowser.peekAsync(long fromSequenceNumber)
     fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekAsync(long fromSequenceNumber)
     type: Method
+    summary: |-
+      <p>Als Nächstes liest die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung asynchron.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<IMessage> peekAsync(long fromSequenceNumber)
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
+          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
+        description: '<p>CompletableFuture, die zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen. </p>'
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekBatch(int)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1187,13 +1438,18 @@ references:
     nameWithType: IMessageBrowser.peekBatch(int messageCount)
     fullName: Collection<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekBatch(int messageCount)
     type: Method
+    summary: |-
+      <p>Liest nächste Batch von der aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p></p>
     syntax:
       content: public Collection<IMessage> peekBatch(int messageCount)
       parameters:
         - id: messageCount
           type: f75371fa
+          description: <p>Die Anzahl der Nachrichten. </p>
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
+        description: <p>Batch <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> eingesehen </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_browser.peekBatch(long,int)'
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1201,15 +1457,21 @@ references:
     nameWithType: 'IMessageBrowser.peekBatch(long fromSequenceNumber, int messageCount)'
     fullName: 'Collection<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekBatch(long fromSequenceNumber, int messageCount)'
     type: Method
+    summary: |-
+      <p>Liest nächste Batch von der aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p></p>
     syntax:
       content: 'public Collection<IMessage> peekBatch(long fromSequenceNumber, int messageCount)'
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
+          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
         - id: messageCount
           type: f75371fa
+          description: <p>Die Anzahl der Nachrichten. </p>
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
+        description: <p>Batch <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> eingesehen </p>
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekBatchAsync(int)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1217,13 +1479,18 @@ references:
     nameWithType: IMessageBrowser.peekBatchAsync(int messageCount)
     fullName: CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageBrowser.peekBatchAsync(int messageCount)
     type: Method
+    summary: |-
+      <p>Liest asynchron den nächsten Batch aktiver Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Collection<IMessage>> peekBatchAsync(int messageCount)
       parameters:
         - id: messageCount
           type: f75371fa
+          description: <p>Die Anzahl der Nachrichten. </p>
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
+        description: '<p>CompletableFuture, der Batch zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen. </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_browser.peekBatchAsync(long,int)'
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1231,24 +1498,33 @@ references:
     nameWithType: 'IMessageBrowser.peekBatchAsync(long fromSequenceNumber, int messageCount)'
     fullName: 'CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageBrowser.peekBatchAsync(long fromSequenceNumber, int messageCount)'
     type: Method
+    summary: |-
+      <p>Liest asynchron den nächsten Batch aktiver Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p></p>
     syntax:
       content: 'public CompletableFuture<Collection<IMessage>> peekBatchAsync(long fromSequenceNumber, int messageCount)'
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
+          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
         - id: messageCount
           type: f75371fa
+          description: <p>Die Anzahl der Nachrichten. </p>
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
-  - uid: com.microsoft.azure.servicebus._i_message_entity
+        description: '<p>CompletableFuture, der Batch zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen. </p>'
+  - uid: com.microsoft.azure.servicebus._i_message_entity_client
     parent: com.microsoft.azure.servicebus
-    href: com.microsoft.azure.servicebus._i_message_entity.yml
-    name: IMessageEntity
-    nameWithType: IMessageEntity
-    fullName: com.microsoft.azure.servicebus.IMessageEntity
+    href: com.microsoft.azure.servicebus._i_message_entity_client.yml
+    name: IMessageEntityClient
+    nameWithType: IMessageEntityClient
+    fullName: com.microsoft.azure.servicebus.IMessageEntityClient
     type: Interface
+    summary: |-
+      <p>Stellt einen messaging-Client mit einer Azure Service Bus-Entität dar.</p>
+      <p></p>
     syntax:
-      content: public interface IMessageEntity extends ICloseable
+      content: public interface IMessageEntityClient extends ICloseable
   - uid: com.microsoft.azure.servicebus._i_message_browser
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1256,6 +1532,7 @@ references:
     nameWithType: IMessageBrowser
     fullName: com.microsoft.azure.servicebus.IMessageBrowser
     type: Interface
+    summary: '<p>Stellt eine nachrichtenbrowser, die Nachrichten von Azure Service Bus durchsuchen können. </p>'
     syntax:
       content: public interface IMessageBrowser
   - uid: com.microsoft.azure.servicebus._i_message_session
@@ -1265,6 +1542,11 @@ references:
     nameWithType: IMessageSession
     fullName: com.microsoft.azure.servicebus.IMessageSession
     type: Interface
+    summary: |-
+      <p>Beschreibt ein Sitzungsobjekt. <xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden. </p>
+      <p>Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten. Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung. </p>
+      <p>Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner. Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet. </p>
+      <p>Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist. Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt. </p>
     syntax:
       content: public interface IMessageSession
   - uid: com.microsoft.azure.servicebus._message_receiver
@@ -1275,6 +1557,9 @@ references:
     nameWithType: ReceiveMode
     fullName: com.microsoft.azure.servicebus.ReceiveMode
     type: Enum
+    summary: |-
+      <p>Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</p>
+      <p></p>
     syntax:
       content: public enum ReceiveMode
   - uid: com.microsoft.azure.servicebus.primitives._service_bus_exception
@@ -1284,9 +1569,33 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
     syntax:
       content: public class ServiceBusException
+  - uid: com.microsoft.azure.servicebus._message
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._message.yml
+    name: Message
+    nameWithType: Message
+    fullName: com.microsoft.azure.servicebus.Message
+    type: Class
+    syntax:
+      content: public class Message
+  - uid: com.microsoft.azure.servicebus._message.getLockToken()
+    parent: com.microsoft.azure.servicebus._message
+    href: com.microsoft.azure.servicebus._message.yml
+    name: getLockToken()
+    nameWithType: Message.getLockToken()
+    fullName: UUID com.microsoft.azure.servicebus.Message.getLockToken()
+    type: Method
+    summary: |-
+      <p>Ruft die Sperre token dieser Nachricht, wenn diese Nachricht empfangen wird mit <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode #PEEKLOCK</xref> Modus. Dieses Token wird verwendet, um Sie abzuschließen oder zu verwerfen oder die Warteschlange für unzustellbare Nachrichten oder das Aufschieben der diese Nachricht.</p>
+      <p></p>
+    syntax:
+      content: public UUID getLockToken()
+      return:
+        type: add9545a
+        description: '<p>Sperrtoken dieser Nachricht, wenn diese Nachricht empfangen wird PEEKLOCK-Modus verwenden. Andernfalls wird ein Token von der alle Nullen (0) zurückgegeben. </p>'
   - uid: com.microsoft.azure.servicebus._i_message
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message.yml
@@ -1294,5 +1603,33 @@ references:
     nameWithType: IMessage
     fullName: com.microsoft.azure.servicebus.IMessage
     type: Interface
+    summary: |-
+      <p>Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</p>
+      <p></p>
     syntax:
       content: public interface IMessage
+  - uid: com.microsoft.azure.servicebus._message.getSequenceNumber()
+    parent: com.microsoft.azure.servicebus._message
+    href: com.microsoft.azure.servicebus._message.yml
+    name: getSequenceNumber()
+    nameWithType: Message.getSequenceNumber()
+    fullName: long com.microsoft.azure.servicebus.Message.getSequenceNumber()
+    type: Method
+    summary: |-
+      <p>Abgerufen Sie die Sequenznummer dieser Nachricht werden. Azure Service Bus werden alle Nachrichten in Warteschlangen in einer Entität eine einmalige Sequenznummer zugewiesen.</p>
+      <p></p>
+    syntax:
+      content: public long getSequenceNumber()
+      return:
+        type: 0364520f
+        description: <p>Sequenznummer dieser Nachricht </p>
+  - uid: com.microsoft.azure.servicebus._receive_mode.PEEKLOCK
+    parent: com.microsoft.azure.servicebus._receive_mode
+    href: com.microsoft.azure.servicebus._receive_mode.yml
+    name: PEEKLOCK
+    nameWithType: ReceiveMode.PEEKLOCK
+    fullName: com.microsoft.azure.servicebus.ReceiveMode.PEEKLOCK
+    type: Field
+    summary: '<p>In diesem Modus empfangene Nachricht wird nicht aus der Warteschlange oder einem Abonnement gelöscht, es wird stattdessen an den Empfänger, die für andere Empfänger unsichtbar machen vorübergehend gesperrt. Dann wartet der Dienst für eines der drei Ereignisse<itemizedlist><listitem><p>Wenn der Empfänger die Nachricht erfolgreich verarbeitet, aufruft und die Nachricht gelöscht werden. </p></listitem><listitem><p>Wenn der Empfänger entscheidet, dass er die Nachricht nicht erfolgreich verarbeiten kann, aufruft und die Nachricht wird entsperrt und für andere Empfänger verfügbar gemacht werden. </p></listitem><listitem><p>Wenn möchte, dass der Empfänger die Verarbeitung der Nachricht zu einem späteren Zeitpunkt zeitlich verzögern, aufruft und die Nachricht wird verzögert werden. Eine verzögerte kann nur durch seine Sequenznummer empfangen werden. </p></listitem><listitem><p>Wenn der Empfänger unzustellbare Nachricht möchte, aufruft und die Nachricht wird an eine spezielle untergeordnete Warteschlange Warteschlange für unzustellbare Nachrichten verschoben werden. </p></listitem><listitem><p>Der Empfänger keine dieser Methoden in einem konfigurierbaren Zeitraum (standardmäßig 60 Sekunden) aufgerufen wird, geht davon aus der Dienst, dass der Empfänger ein Fehler aufgetreten ist. In diesem Fall verhält, als ob der Empfänger und die Nachricht für andere Empfänger zur Verfügung aufgerufen haben, </p></listitem></itemizedlist></p>'
+    syntax:
+      content: public PEEKLOCK

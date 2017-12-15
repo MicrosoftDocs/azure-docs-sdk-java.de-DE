@@ -5,10 +5,20 @@ items:
     parent: com.microsoft.azure.management.compute
     children:
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocate(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOff(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimage(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.restart(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.start(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync(String,String,ServiceCallback<Void>)'
     href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
     langs:
       - java
@@ -19,10 +29,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-      startLine: 30
+      startLine: 34
     package: com.microsoft.azure.management.compute
     summary: <p>Der Einstiegspunkt für VM Scale Set-API. </p>
     syntax:
@@ -71,10 +81,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-      startLine: 51
+      startLine: 55
     package: com.microsoft.azure.management.compute
     summary: |-
-      <p>Fährt den virtuellen Computer in der Menge der Skalierung und die Serverressourcen freigegeben.</p>
+      <p>Die virtuellen Computer in der Skalierungsgruppe heruntergefahren, und die Serverressourcen freigegeben.</p>
       <p></p>
     syntax:
       content: 'public void deallocate(String groupName, String name)'
@@ -92,6 +102,71 @@ items:
         description: <p>von der Serialisierung/Deserialisierung ausgelöste Ausnahme </p>
       - type: 8256ba40
         description: '<p>Ausnahme ausgelöst, wenn der Vorgang unterbrochen wird </p>'
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync(String,String)'
+    id: 'deallocateAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'deallocateAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachineScaleSets.deallocateAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.deallocateAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 66
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Die virtuellen Computer in der Skalierungsgruppe heruntergefahren und asynchron die Serverressourcen freigegeben.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable deallocateAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync(String,String,ServiceCallback<Void>)'
+    id: 'deallocateAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachineScaleSets.deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachineScaleSets.deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 77
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Die virtuellen Computer in der Skalierungsgruppe heruntergefahren und asynchron die Serverressourcen freigegeben.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOff(String,String)'
     id: 'powerOff(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
@@ -106,7 +181,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-      startLine: 62
+      startLine: 88
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Schaltet (beendet) der virtuellen Computer in der Skala festlegen.</p>
@@ -127,6 +202,69 @@ items:
         description: <p>von der Serialisierung/Deserialisierung ausgelöste Ausnahme </p>
       - type: 8256ba40
         description: '<p>Ausnahme ausgelöst, wenn der Vorgang unterbrochen wird </p>'
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync(String,String)'
+    id: 'powerOffAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'powerOffAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachineScaleSets.powerOffAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.powerOffAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 98
+    package: com.microsoft.azure.management.compute
+    summary: <p>Schaltet (beendet) legen Sie die virtuellen Computer in der Skala asynchron. </p>
+    syntax:
+      content: 'public Completable powerOffAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe wird die virtuelle Maschine in der Menge der Skalierung </p>
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync(String,String,ServiceCallback<Void>)'
+    id: 'powerOffAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachineScaleSets.powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachineScaleSets.powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 109
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Schaltet (Beenden) legen Sie die virtuellen Computer in der Skala asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe wird die virtuelle Maschine in der Menge der Skalierung </p>
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimage(String,String)'
     id: 'reimage(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
@@ -141,7 +279,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-      startLine: 95
+      startLine: 184
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Ein Abbild (aktualisiert die Version des installierten Betriebssystems) die virtuellen Computer in der Menge der Skala.</p>
@@ -162,6 +300,71 @@ items:
         description: <p>von der Serialisierung/Deserialisierung ausgelöste Ausnahme </p>
       - type: 8256ba40
         description: '<p>Ausnahme ausgelöst, wenn der Vorgang unterbrochen wird </p>'
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync(String,String)'
+    id: 'reimageAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'reimageAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachineScaleSets.reimageAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.reimageAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 195
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Ein Abbild (aktualisiert die Version des installierten Betriebssystems) legen Sie die virtuellen Computer in der Skala asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable reimageAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync(String,String,ServiceCallback<Void>)'
+    id: 'reimageAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'reimageAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachineScaleSets.reimageAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachineScaleSets.reimageAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 206
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Ein Abbild (aktualisiert die Version des installierten Betriebssystems) legen Sie die virtuellen Computer in der Skala asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> reimageAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.restart(String,String)'
     id: 'restart(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
@@ -176,7 +379,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-      startLine: 73
+      startLine: 120
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Startet den virtuellen Computern in der Skalierungsgruppe neu.</p>
@@ -197,6 +400,71 @@ items:
         description: <p>von der Serialisierung/Deserialisierung ausgelöste Ausnahme </p>
       - type: 8256ba40
         description: '<p>Ausnahme ausgelöst, wenn der Vorgang unterbrochen wird </p>'
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync(String,String)'
+    id: 'restartAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'restartAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachineScaleSets.restartAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.restartAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 130
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Startet den virtuellen Computern in das Scale set asynchron neu.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable restartAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>die VM-Skalierungsgruppe name </p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync(String,String,ServiceCallback<Void>)'
+    id: 'restartAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachineScaleSets.restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachineScaleSets.restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 141
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Startet den virtuellen Computern in das Scale set asynchron neu.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>die VM-Skalierungsgruppe name </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.start(String,String)'
     id: 'start(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
@@ -211,7 +479,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
-      startLine: 84
+      startLine: 152
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Startet den virtuellen Computern in der Menge der Skala an.</p>
@@ -232,6 +500,69 @@ items:
         description: <p>von der Serialisierung/Deserialisierung ausgelöste Ausnahme </p>
       - type: 8256ba40
         description: '<p>Ausnahme ausgelöst, wenn der Vorgang unterbrochen wird </p>'
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync(String,String)'
+    id: 'startAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'startAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachineScaleSets.startAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.startAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 162
+    package: com.microsoft.azure.management.compute
+    summary: <p>Startet den virtuellen Computern in das Scale set asynchron. </p>
+    syntax:
+      content: 'public Completable startAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync(String,String,ServiceCallback<Void>)'
+    id: 'startAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_sets
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_sets.yml
+    langs:
+      - java
+    name: 'startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachineScaleSets.startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachineScaleSets.startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSets.java
+      startLine: 173
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Startet den virtuellen Computern in das Scale set asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, in der VM-Skalierungsgruppe wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des VM-Skalierungsgruppe </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
 references:
   - uid: dc385fd4
     spec.java:
@@ -254,25 +585,62 @@ references:
     nameWithType: VirtualMachineScaleSets.deallocate
     fullName: void com.microsoft.azure.management.compute.VirtualMachineScaleSets.deallocate
     package: com.microsoft.azure.management.compute
+  - uid: '56537e90'
+    spec.java:
+      - name: Completable
+        fullName: Completable
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.deallocateAsync*
+    name: deallocateAsync
+    nameWithType: VirtualMachineScaleSets.deallocateAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.deallocateAsync
+    package: com.microsoft.azure.management.compute
+  - uid: da7fd5ea
+    spec.java:
+      - name: ServiceCallback<Void>
+        fullName: ServiceCallback<Void>
+  - uid: aa81d378
+    spec.java:
+      - name: ServiceFuture<Void>
+        fullName: ServiceFuture<Void>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOff*
     name: powerOff
     nameWithType: VirtualMachineScaleSets.powerOff
     fullName: void com.microsoft.azure.management.compute.VirtualMachineScaleSets.powerOff
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.powerOffAsync*
+    name: powerOffAsync
+    nameWithType: VirtualMachineScaleSets.powerOffAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.powerOffAsync
     package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.restart*
     name: restart
     nameWithType: VirtualMachineScaleSets.restart
     fullName: void com.microsoft.azure.management.compute.VirtualMachineScaleSets.restart
     package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.restartAsync*
+    name: restartAsync
+    nameWithType: VirtualMachineScaleSets.restartAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.restartAsync
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.start*
     name: start
     nameWithType: VirtualMachineScaleSets.start
     fullName: void com.microsoft.azure.management.compute.VirtualMachineScaleSets.start
     package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.startAsync*
+    name: startAsync
+    nameWithType: VirtualMachineScaleSets.startAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.startAsync
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimage*
     name: reimage
     nameWithType: VirtualMachineScaleSets.reimage
     fullName: void com.microsoft.azure.management.compute.VirtualMachineScaleSets.reimage
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_sets.reimageAsync*
+    name: reimageAsync
+    nameWithType: VirtualMachineScaleSets.reimageAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachineScaleSets.reimageAsync
     package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation.create(Creatable<ResourceT>...)
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation
@@ -403,8 +771,8 @@ references:
     type: Method
     summary: |-
       <p>Startet eine Definition für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beachten Sie, dass die <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
+      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref>. </p>
+      <p>Beachten Sie, dass die <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
     syntax:
       content: public T define(String name)
       parameters:
@@ -422,7 +790,7 @@ references:
     fullName: void com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteById(String id)
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public void deleteById(String id)
@@ -438,7 +806,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByIdAsync(String id, ServiceCallback<Void> callback)'
@@ -460,7 +828,7 @@ references:
     fullName: Completable com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public Completable deleteByIdAsync(String id)
@@ -469,7 +837,7 @@ references:
           type: '26831127'
           description: <p>die Ressourcen-ID der Ressource löschen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.deleteByIds(Collection<String>)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
@@ -478,7 +846,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(Collection<String> ids)
       parameters:
@@ -492,7 +860,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(String...ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(String...ids)
       parameters:
@@ -506,7 +874,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(Collection<String> ids)
       parameters:
@@ -523,7 +891,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(String...ids)
       parameters:
@@ -541,7 +909,7 @@ references:
     fullName: 'void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public void deleteByResourceGroup(String resourceGroupName, String name)'
@@ -560,7 +928,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
@@ -585,7 +953,7 @@ references:
     fullName: 'Completable com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public Completable deleteByResourceGroupAsync(String resourceGroupName, String name)'
@@ -597,7 +965,7 @@ references:
           type: '26831127'
           description: <p>Der Name der Ressource </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id.getById(String)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id
@@ -607,7 +975,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getById(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public T getById(String id)
@@ -626,7 +994,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public Observable<T> getByIdAsync(String id)
@@ -645,7 +1013,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByIdAsync(String id, ServiceCallback<T> callback)'
@@ -667,7 +1035,7 @@ references:
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public T getByResourceGroup(String resourceGroupName, String name)'
@@ -689,7 +1057,7 @@ references:
     fullName: 'Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public Observable<T> getByResourceGroupAsync(String resourceGroupName, String name)'
@@ -711,7 +1079,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
@@ -739,7 +1107,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.list()
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
     href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
@@ -828,7 +1196,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist)</p>
       <p></p>
     syntax:
@@ -844,7 +1212,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsListingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -860,7 +1228,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -876,7 +1244,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage der Ressourcen-ID. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage der Ressourcen-ID. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -892,7 +1260,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsCreating<T>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Top-Level-Ressourcen. </p>
+      <p>Bietet Zugriff auf das Erstellen von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Top-Level-Ressourcen. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsCreating<T>
@@ -907,7 +1275,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsDeletingById
@@ -919,7 +1287,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsDeletingByResourceGroup
@@ -931,13 +1299,13 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsBatchCreation<ResourceT>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
+      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsBatchCreation<ResourceT extends Indexable>
       typeParameters:
         - type: ab77b02a
-          description: <p>die oberste Ebene <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcentyp </p>
+          description: <p>die oberste Ebene <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcentyp </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection
     href: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.yml
@@ -946,7 +1314,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch das IDs identifiziert werden. </p>
+      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch das IDs identifiziert werden. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsBatchDeletion

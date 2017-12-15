@@ -19,7 +19,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-event-hubs-java'
       path: azure-eventhubs/src/main/java/com/microsoft/azure/eventhubs/ReceivePump.java
-      startLine: 85
+      startLine: 84
     package: com.microsoft.azure.eventhubs
     syntax:
       content: public interface IPartitionReceiver
@@ -37,7 +37,7 @@ items:
     source:
       remote: *ref_0
       path: azure-eventhubs/src/main/java/com/microsoft/azure/eventhubs/ReceivePump.java
-      startLine: 86
+      startLine: 85
     package: com.microsoft.azure.eventhubs
     syntax:
       content: public String getPartitionId()
@@ -57,7 +57,7 @@ items:
     source:
       remote: *ref_0
       path: azure-eventhubs/src/main/java/com/microsoft/azure/eventhubs/ReceivePump.java
-      startLine: 88
+      startLine: 87
     package: com.microsoft.azure.eventhubs
     syntax:
       content: public Iterable<EventData> receive(final int maxBatchSize)
@@ -103,8 +103,22 @@ references:
     fullName: com.microsoft.azure.eventhubs.EventData
     type: Class
     summary: |-
-      <p>Die Datenstruktur, die das Ereignis wird gesendet an und Empfangen von EventHubs kapseln. Jede Partition EventHubs visualisiert werden kann, als Datenstrom von <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Serialisieren eines empfangenen <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref> mit AMQP-Abschnitten als ApplicationProperties (mit primitiven Java-Typen) und Daten der Abschnitt wird nicht unterstützt. </p>
-      <p>So sieht wie AMQP-Nachricht-Abschnitten zugeordnet <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>. Hier wird der Verweis, der für AMQP 1.0-Spezifikation verwendet: <ulink url="http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf</ulink> <preformatted> ich.   <xref href="com.microsoft.azure.eventhubs._event_data.getProperties()" data-throw-if-not-resolved="false"></xref>- AMQPMessage.ApplicationProperties Teil Ii.  <xref href="com.microsoft.azure.eventhubs._event_data.getBytes()" data-throw-if-not-resolved="false"></xref> - AMQPMessage.Body Daten Abschnitt Iii verfügt. <xref href="com.microsoft.azure.eventhubs._event_data.getObject()" data-throw-if-not-resolved="false"></xref> - verfügt AMQPMessage.Body AMQPValue oder AMQPSequence Abschnitte </preformatted> bei der Verwendung von Clientbibliotheken, die von Microsoft Azure EventHubs freigegeben, Abschnitte (i) und (Ii) allein reichen. Abschnitt (Iii) wird verwendet, für erweiterte Szenarien, in denen die sendende Anwendung eines Drittanbieters AMQP-Bibliothek zum Senden der Nachricht an EventHubs verwendet und die empfangende Anwendung verwendet diese Clientbibliothek zum Empfangen von <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Die Datenstruktur, die das Ereignis wird gesendet an und Empfangen von EventHubs kapseln. Jede Partition EventHubs visualisiert werden kann, als Datenstrom von <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>. </p>
+      <p>Serialisieren eines empfangenen <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref> mit AMQP-Abschnitten als ApplicationProperties (mit primitiven Java-Typen) und Daten der Abschnitt wird nicht unterstützt. </p>
+      <p>So sieht wie AMQP-Nachricht-Abschnitten zugeordnet <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>. Hier wird der Verweis, der für AMQP 1.0-Spezifikation verwendet: <ulink url="http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf</ulink><pre>
+      i.   <xref uid="com.microsoft.azure.eventhubs._event_data.getProperties()" data-throw-if-not-resolved="false">getProperties()</xref> - AMQPMessage.ApplicationProperties section
+      ii.  <xref uid="com.microsoft.azure.eventhubs._event_data.getBytes()" data-throw-if-not-resolved="false">getBytes()</xref> - if AMQPMessage.Body has Data section
+      iii. <xref uid="com.microsoft.azure.eventhubs._event_data.getObject()" data-throw-if-not-resolved="false">getObject()</xref> - if AMQPMessage.Body has AMQPValue or AMQPSequence sections
+      </pre> Bei der Verwendung von Clientbibliotheken, die von Microsoft Azure EventHubs veröffentlicht wurden, sind die Abschnitte (i) und (Ii) allein ausreichend. Abschnitt (Iii) wird verwendet, für erweiterte Szenarien, in denen die sendende Anwendung eines Drittanbieters AMQP-Bibliothek zum Senden der Nachricht an EventHubs verwendet und die empfangende Anwendung verwendet diese Clientbibliothek zum Empfangen von <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>. </p>
     syntax:
       content: public class EventData
+  - uid: com.microsoft.azure.eventhubs._event_hub_exception
+    parent: com.microsoft.azure.eventhubs
+    href: com.microsoft.azure.eventhubs._event_hub_exception.yml
+    name: EventHubException
+    nameWithType: EventHubException
+    fullName: com.microsoft.azure.eventhubs.EventHubException
+    type: Class
+    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus Sequenzelement erzeugt. </p>'
+    syntax:
+      content: public class EventHubException

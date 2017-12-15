@@ -18,6 +18,7 @@ items:
       - 'microsoft.servicefabric.services.runtime._stateful_service_base.onOpenAsync(ReplicaOpenMode,CancellationToken)'
       - microsoft.servicefabric.services.runtime._stateful_service_base.runAsync(CancellationToken)
       - 'microsoft.servicefabric.services.runtime._stateful_service_base.setAddresses(Map<String, String>)'
+      - microsoft.servicefabric.services.runtime._stateful_service_base.setPartition(StatefulServicePartition)
       - 'microsoft.servicefabric.services.runtime._stateful_service_base.StatefulServiceBase(StatefulServiceContext,StateProviderReplica)'
     href: microsoft.servicefabric.services.runtime._stateful_service_base.yml
     langs:
@@ -56,14 +57,14 @@ items:
       startLine: 237
     package: microsoft.servicefabric.services.runtime
     summary: |-
-      <p>Führt eine Sicherung alle zuverlässige Status, die von diesem verwaltet <xref href="microsoft.servicefabric.services.runtime._stateful_service_base" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Führt eine Sicherung alle zuverlässige Status, die von diesem verwaltet <xref uid="microsoft.servicefabric.services.runtime._stateful_service_base" data-throw-if-not-resolved="false">StatefulServiceBase</xref>.</p>
       <p></p>
     syntax:
       content: public CompletableFuture<?> backupAsync(BackupDescription backupDescription)
       parameters:
         - id: backupDescription
           type: microsoft.servicefabric.data._backup_description
-          description: <p>Ein <ref refid="" kindref="compound">BackupDescription</ref> beschreiben die Anforderung für die Sicherung. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">BackupDescription</xref> beschreiben die Anforderung für die Sicherung. </p>
       return:
         type: 16409f84
         description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
@@ -84,14 +85,14 @@ items:
       startLine: 252
     package: microsoft.servicefabric.services.runtime
     summary: |-
-      <p>Führt eine Sicherung alle zuverlässige Status, die von diesem verwaltet <xref href="microsoft.servicefabric.services.runtime._stateful_service_base" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Führt eine Sicherung alle zuverlässige Status, die von diesem verwaltet <xref uid="microsoft.servicefabric.services.runtime._stateful_service_base" data-throw-if-not-resolved="false">StatefulServiceBase</xref>.</p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<?> backupAsync(BackupDescription backupDescription, Duration timeout)'
       parameters:
         - id: backupDescription
           type: microsoft.servicefabric.data._backup_description
-          description: <p>Ein <ref refid="" kindref="compound">BackupDescription</ref> beschreiben die Anforderung für die Sicherung. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">BackupDescription</xref> beschreiben die Anforderung für die Sicherung. </p>
         - id: timeout
           type: e02a2de0
           description: <p>Das Timeout für diesen Vorgang. </p>
@@ -145,7 +146,7 @@ items:
       content: 'protected Map<String, String> getAddresses()'
       return:
         type: 689c8cb5
-        description: <p>Ein <ref refid="" kindref="compound">Zuordnung</ref> Liste der Adressen als (ListenerName Endpunkt) mit Schlüssel / Wert-Paar. </p>
+        description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> Liste der Adressen als (ListenerName Endpunkt) mit Schlüssel / Wert-Paar. </p>
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base.getPartition()
     id: getPartition()
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -169,7 +170,7 @@ items:
       content: protected StatefulServicePartition getPartition()
       return:
         type: system.fabric._stateful_service_partition
-        description: '<p>Ein <ref refid="" kindref="compound">StatefulServicePartition</ref> , die die Partition, zu der dieser Dienst Replikat gehört, darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">StatefulServicePartition</xref> , die die Partition, zu der dieser Dienst Replikat gehört, darstellt. </p>'
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base.getServiceContext()
     id: getServiceContext()
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -193,7 +194,7 @@ items:
       content: public StatefulServiceContext getServiceContext()
       return:
         type: system.fabric._stateful_service_context
-        description: '<p>Ein <ref refid="" kindref="compound">StatefulServiceContext</ref> , beschreibt der Kontext. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">StatefulServiceContext</xref> , beschreibt der Kontext. </p>'
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base.getStateProviderReplica()
     id: getStateProviderReplica()
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -250,7 +251,7 @@ items:
       startLine: 159
     package: microsoft.servicefabric.services.runtime
     summary: |-
-      <p>Diese Methode wird aufgerufen, als der letzte Schritt vor dem Abschluss <xref href="system.fabric._stateful_service_replica.changeRoleAsync(ReplicaRole,CancellationToken)" data-throw-if-not-resolved="false"></xref> . Überschreiben Sie diese Methode, um benachrichtigt zu werden, dass ChangeRole für dieses Replikat interne Komponenten abgeschlossen wurde.</p>
+      <p>Diese Methode wird aufgerufen, als der letzte Schritt vor dem Abschluss <xref uid="system.fabric._stateful_service_replica.changeRoleAsync(ReplicaRole,CancellationToken)" data-throw-if-not-resolved="false">system.fabric.StatefulServiceReplica#changeRoleAsync (ReplicaRole, CancellationToken)</xref> . Überschreiben Sie diese Methode, um benachrichtigt zu werden, dass ChangeRole für dieses Replikat interne Komponenten abgeschlossen wurde.</p>
       <p></p>
     syntax:
       content: 'protected CompletableFuture<?> onChangeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
@@ -260,10 +261,10 @@ items:
           description: <p>für dieses Replikat Dienst. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 16409f84
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , ausstehenden Vorgang darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , ausstehenden Vorgang darstellt. </p>'
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base.onCloseAsync(CancellationToken)
     id: onCloseAsync(CancellationToken)
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -288,10 +289,10 @@ items:
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 16409f84
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , ausstehenden Vorgang darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , ausstehenden Vorgang darstellt. </p>'
   - uid: 'microsoft.servicefabric.services.runtime._stateful_service_base.onDataLossAsync(RestoreContext,CancellationToken)'
     id: 'onDataLossAsync(RestoreContext,CancellationToken)'
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -316,10 +317,10 @@ items:
       parameters:
         - id: context
           type: microsoft.servicefabric.data._restore_context
-          description: <p>Ein <ref refid="" kindref="compound">RestoreContext</ref> zum Wiederherstellen des Diensts verwendet werden. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">RestoreContext</xref> zum Wiederherstellen des Diensts verwendet werden. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. "True" gibt an, dass der Zustand wiederhergestellt wurde. False gibt an, dass das Replikat Zustand nicht geändert wurde. </p>'
@@ -350,10 +351,10 @@ items:
           description: <p>für dieses Replikat Dienst. </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 16409f84
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , ausstehenden Vorgang darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , ausstehenden Vorgang darstellt. </p>'
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base.runAsync(CancellationToken)
     id: runAsync(CancellationToken)
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -378,10 +379,10 @@ items:
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 16409f84
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , ausstehenden Vorgang darstellt. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , ausstehenden Vorgang darstellt. </p>'
   - uid: 'microsoft.servicefabric.services.runtime._stateful_service_base.setAddresses(Map<String, String>)'
     id: 'setAddresses(Map<String, String>)'
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -406,7 +407,32 @@ items:
       parameters:
         - id: addresses
           type: 689c8cb5
-          description: <p>Ein <ref refid="" kindref="compound">Zuordnung</ref> Liste der Adressen als (ListenerName Endpunkt) mit Schlüssel / Wert-Paar. </p>
+          description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> Liste der Adressen als (ListenerName Endpunkt) mit Schlüssel / Wert-Paar. </p>
+  - uid: microsoft.servicefabric.services.runtime._stateful_service_base.setPartition(StatefulServicePartition)
+    id: setPartition(StatefulServicePartition)
+    parent: microsoft.servicefabric.services.runtime._stateful_service_base
+    href: microsoft.servicefabric.services.runtime._stateful_service_base.yml
+    langs:
+      - java
+    name: setPartition(StatefulServicePartition partition)
+    nameWithType: StatefulServiceBase.setPartition(StatefulServicePartition partition)
+    fullName: void microsoft.servicefabric.services.runtime.StatefulServiceBase.setPartition(StatefulServicePartition partition)
+    overload: microsoft.servicefabric.services.runtime._stateful_service_base.setPartition*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/services/runtime/StatefulServiceBase.java
+      startLine: 110
+    package: microsoft.servicefabric.services.runtime
+    summary: |-
+      <p>Welche aktuellen Dienst Replikat gehört Dienstpartition.</p>
+      <p></p>
+    syntax:
+      content: protected void setPartition(StatefulServicePartition partition)
+      parameters:
+        - id: partition
+          type: system.fabric._stateful_service_partition
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">StatefulServicePartition</xref> , die die Partition, zu der dieser Dienst Replikat gehört, darstellt. </p>'
   - uid: 'microsoft.servicefabric.services.runtime._stateful_service_base.StatefulServiceBase(StatefulServiceContext,StateProviderReplica)'
     id: 'StatefulServiceBase(StatefulServiceContext,StateProviderReplica)'
     parent: microsoft.servicefabric.services.runtime._stateful_service_base
@@ -424,17 +450,17 @@ items:
       startLine: 47
     package: microsoft.servicefabric.services.runtime
     summary: |-
-      <p>Erstellt eine neue StatefulService an.</p>
+      <p>Erstellt ein neues <xref uid="microsoft.servicefabric.services.runtime._stateful_service" data-throw-if-not-resolved="false">StatefulService</xref>.</p>
       <p></p>
     syntax:
       content: 'protected StatefulServiceBase(StatefulServiceContext serviceContext, StateProviderReplica stateProviderReplica)'
       parameters:
         - id: serviceContext
           type: system.fabric._stateful_service_context
-          description: '<p>Ein <ref refid="" kindref="compound">StatefulServiceContext</ref> , beschreibt der Kontext. </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">StatefulServiceContext</xref> , beschreibt der Kontext. </p>'
         - id: stateProviderReplica
           type: microsoft.servicefabric.data._state_provider_replica
-          description: '<p>Ein <ref refid="" kindref="compound">StateProviderReplica</ref> , die ein Replikat des zuverlässigen Zustand Anbieter darstellt. </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">StateProviderReplica</xref> , die ein Replikat des zuverlässigen Zustand Anbieter darstellt. </p>'
 references:
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base.StatefulServiceBase*
     name: StatefulServiceBase
@@ -464,6 +490,11 @@ references:
     name: getPartition
     nameWithType: StatefulServiceBase.getPartition
     fullName: StatefulServicePartition microsoft.servicefabric.services.runtime.StatefulServiceBase.getPartition
+    package: microsoft.servicefabric.services.runtime
+  - uid: microsoft.servicefabric.services.runtime._stateful_service_base.setPartition*
+    name: setPartition
+    nameWithType: StatefulServiceBase.setPartition
+    fullName: void microsoft.servicefabric.services.runtime.StatefulServiceBase.setPartition
     package: microsoft.servicefabric.services.runtime
   - uid: 5618da2dmicrosoft.servicefabric.services.communication.runtime._service_replica_listenera08ddfce
     spec.java:
@@ -539,9 +570,19 @@ references:
     nameWithType: FabricActorService
     fullName: microsoft.servicefabric.actors.FabricActorService
     type: Class
-    summary: "<p>Stellt die Basisklasse für Microsoft Service Fabric-basierten zuverlässige Akteure Dienst dar. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Ableiten von dieser Klasse, die einen eigenen benutzerdefinierten Akteur-Dienst zu implementieren, wenn Sie alle Verhalten des Diensts für die Akteure außer Kraft setzen möchten. </p>"
+    summary: "<p>Stellt die Basisklasse für Microsoft Service Fabric-basierten zuverlässige Akteure Dienst dar. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Ableiten von dieser Klasse, die einen eigenen benutzerdefinierten Akteur-Dienst zu implementieren, wenn Sie alle Verhalten des Diensts für die Akteure außer Kraft setzen möchten. </p>"
     syntax:
       content: public class FabricActorService extends StatefulServiceBase implements ActorService
+  - uid: microsoft.servicefabric.services.runtime._stateful_service
+    parent: microsoft.servicefabric.services.runtime
+    href: microsoft.servicefabric.services.runtime._stateful_service.yml
+    name: StatefulService
+    nameWithType: StatefulService
+    fullName: microsoft.servicefabric.services.runtime.StatefulService
+    type: Class
+    summary: '<p>Stellt die Basisklasse dar, für Microsoft Service Fabric-basierte statusbehaftete zuverlässige Dienst die bietet eine <xref uid="microsoft.servicefabric.data._reliable_state_manager" data-throw-if-not-resolved="false">microsoft.servicefabric.data.ReliableStateManager</xref> Status Sie zum Manager-Dienst Ableiten von dieser Klasse implementiert eine Microsoft Service Fabric basierend statusbehaftete zuverlässige Dienst. </p>'
+    syntax:
+      content: public class StatefulService extends StatefulServiceBase
   - uid: microsoft.servicefabric.data._restore_context
     parent: microsoft.servicefabric.data
     href: microsoft.servicefabric.data._restore_context.yml
@@ -549,7 +590,7 @@ references:
     nameWithType: RestoreContext
     fullName: microsoft.servicefabric.data.RestoreContext
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.data._restore_context\" data-throw-if-not-resolved=\"false\"></xref>enthält die <xref href=\"microsoft.servicefabric.data._restore_context.restoreAsync(RestoreDescription)\" data-throw-if-not-resolved=\"false\"></xref> , die verwendet werden kann, um den Status des Replikats aus einer Sicherung wiederherzustellen. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.data._restore_context\" data-throw-if-not-resolved=\"false\">RestoreContext</xref> enthält die <xref uid=\"microsoft.servicefabric.data._restore_context.restoreAsync(RestoreDescription)\" data-throw-if-not-resolved=\"false\">RestoreContext#restoreAsync(RestoreDescription)</xref> , die verwendet werden kann, um den Status des Replikats aus einer Sicherung wiederherzustellen. </p>"
     syntax:
       content: public class RestoreContext
   - uid: system.fabric._stateful_service_context
@@ -606,7 +647,7 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax:
       content: public class CancellationToken
   - uid: system.fabric._replica_role
@@ -616,6 +657,7 @@ references:
     nameWithType: ReplicaRole
     fullName: system.fabric.ReplicaRole
     type: Enum
+    summary: <p>Definiert die replikatrolle </p>
     syntax:
       content: public enum ReplicaRole
   - uid: 'system.fabric._stateful_service_replica.changeRoleAsync(ReplicaRole,CancellationToken)'
@@ -625,19 +667,19 @@ references:
     nameWithType: 'StatefulServiceReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     fullName: 'CompletableFuture<String> system.fabric.StatefulServiceReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     type: Method
-    summary: "<p>Ändert die Rolle eines primären oder sekundären Replikats an.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die neue Rolle wird als Parameter angegeben. Wenn die Dienst-Übergänge in die neue Rolle, verfügt der Dienst eine Möglichkeit, ihre aktuellen abhöradresse zu aktualisieren. Die abhöradresse ist die Adresse, in denen Clients herstellen. Dies ermöglicht dem Dienst wird ein primäres Replikat, Anspruch nur einige Ressourcen wie z. B. Ports aus, bei der Kommunikation von Clients erwartet wird. </p>"
+    summary: "<p>Ändert die Rolle eines primären oder sekundären Replikats an.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die neue Rolle wird als Parameter angegeben. Wenn die Dienst-Übergänge in die neue Rolle, verfügt der Dienst eine Möglichkeit, ihre aktuellen abhöradresse zu aktualisieren. Die abhöradresse ist die Adresse, in denen Clients herstellen. Dies ermöglicht dem Dienst wird ein primäres Replikat, Anspruch nur einige Ressourcen wie z. B. Ports aus, bei der Kommunikation von Clients erwartet wird. </p>"
     syntax:
       content: 'public CompletableFuture<String> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
       parameters:
         - id: newRole
           type: system.fabric._replica_role
-          description: '<p>Die aktualisierte <xref href="system.fabric._replica_role" data-throw-if-not-resolved="false"></xref> , die dieses Replikat zum übergehen soll. </p>'
+          description: '<p>Die aktualisierte <xref uid="system.fabric._replica_role" data-throw-if-not-resolved="false">system.fabric.ReplicaRole</xref> , die dieses Replikat zum übergehen soll. </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 06be942d
-        description: '<p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref> des Typs <ref refid="" kindref="compound">java.lang.String</ref>, das ermittelt€™ s neue Adresse für die Verbindung, die über die Benennung von Service Fabric-Replikat zugeordnet werden soll. </p>'
+        description: '<p>Gibt <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> des Typs <xref uid="" data-throw-if-not-resolved="false">java.lang.String</xref>, das ermittelt€™ s neue Adresse für die Verbindung, die über die Benennung von Service Fabric-Replikat zugeordnet werden soll. </p>'
   - uid: microsoft.servicefabric.data._backup_description
     parent: microsoft.servicefabric.data
     href: microsoft.servicefabric.data._backup_description.yml
@@ -645,7 +687,7 @@ references:
     nameWithType: BackupDescription
     fullName: microsoft.servicefabric.data.BackupDescription
     type: Class
-    summary: <p>Ein <xref href="microsoft.servicefabric.data._backup_description" data-throw-if-not-resolved="false"></xref> enthält alle Informationen zum Sichern eines zustandsbehafteten dienstreplikats erforderlich. </p>
+    summary: <p>Ein <xref uid="microsoft.servicefabric.data._backup_description" data-throw-if-not-resolved="false">BackupDescription</xref> enthält alle Informationen zum Sichern eines zustandsbehafteten dienstreplikats erforderlich. </p>
     syntax:
       content: public class BackupDescription
   - uid: microsoft.servicefabric.services.runtime._stateful_service_base

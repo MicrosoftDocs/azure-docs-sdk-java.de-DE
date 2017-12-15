@@ -5,14 +5,30 @@ items:
     parent: com.microsoft.azure.management.compute
     children:
       - 'com.microsoft.azure.management.compute._virtual_machines.capture(String,String,String,String,boolean)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.captureAsync(String,String,String,String,boolean)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.captureAsync(String,String,String,String,boolean,ServiceCallback<String>)'
       - 'com.microsoft.azure.management.compute._virtual_machines.deallocate(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.deallocateAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.deallocateAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machines.generalize(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.generalizeAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.generalizeAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machines.migrateToManaged(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machines.powerOff(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.powerOffAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.powerOffAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machines.redeploy(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.redeployAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.redeployAsync(String,String,ServiceCallback<Void>)'
       - 'com.microsoft.azure.management.compute._virtual_machines.restart(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.restartAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.restartAsync(String,String,ServiceCallback<Void>)'
       - com.microsoft.azure.management.compute._virtual_machines.sizes()
       - 'com.microsoft.azure.management.compute._virtual_machines.start(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.startAsync(String,String)'
+      - 'com.microsoft.azure.management.compute._virtual_machines.startAsync(String,String,ServiceCallback<Void>)'
     href: com.microsoft.azure.management.compute._virtual_machines.yml
     langs:
       - java
@@ -23,10 +39,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 27
+      startLine: 32
     package: com.microsoft.azure.management.compute
     summary: <p>Einstiegspunkt für einen virtuellen Computer Verwaltungs-API. </p>
     syntax:
@@ -75,7 +91,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 104
+      startLine: 236
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Die virtuelle Maschine durch Kopieren virtueller Festplatten des virtuellen Computers erfasst, und gibt Vorlage als eine JSON-Zeichenfolge, die zum Erstellen von ähnlichen virtuellen Computern verwendet werden kann.</p>
@@ -101,6 +117,89 @@ items:
       return:
         type: '26831127'
         description: <p>die Vorlage als JSON-Zeichenfolge </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.captureAsync(String,String,String,String,boolean)'
+    id: 'captureAsync(String,String,String,String,boolean)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd)'
+    nameWithType: 'VirtualMachines.captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd)'
+    fullName: 'Observable<String> com.microsoft.azure.management.compute.VirtualMachines.captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.captureAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 249
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Erfasst die virtuelle Maschine durch Kopieren von virtuellen Festplatten des virtuellen Computers asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public Observable<String> captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: containerName
+          type: '26831127'
+          description: <p>Ziel-Containername zum Speichern von aufgezeichneten VHD </p>
+        - id: vhdPrefix
+          type: '26831127'
+          description: <p>Das Präfix für die virtuelle Festplatte halten erfasstes Abbild </p>
+        - id: overwriteVhd
+          type: 4fc6e284
+          description: '<p>ob zum Ziel VHD überschreibt, sofern vorhanden </p>'
+      return:
+        type: c4e15b74
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.captureAsync(String,String,String,String,boolean,ServiceCallback<String>)'
+    id: 'captureAsync(String,String,String,String,boolean,ServiceCallback<String>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+    nameWithType: 'VirtualMachines.captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+    fullName: 'ServiceFuture<String> com.microsoft.azure.management.compute.VirtualMachines.captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.captureAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 263
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Erfasst die virtuelle Maschine durch Kopieren von virtuellen Festplatten des virtuellen Computers asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<String> captureAsync(String groupName, String name, String containerName, String vhdPrefix, boolean overwriteVhd, ServiceCallback<String> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: containerName
+          type: '26831127'
+          description: <p>Ziel-Containername zum Speichern von aufgezeichneten VHD </p>
+        - id: vhdPrefix
+          type: '26831127'
+          description: <p>Das Präfix für die virtuelle Festplatte halten erfasstes Abbild </p>
+        - id: overwriteVhd
+          type: 4fc6e284
+          description: '<p>ob zum Ziel VHD überschreibt, sofern vorhanden </p>'
+        - id: callback
+          type: c68ef411
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: 3038ebf6
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machines.deallocate(String,String)'
     id: 'deallocate(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -115,7 +214,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 51
+      startLine: 56
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Der virtuelle Computer heruntergefahren, und die Serverressourcen freigegeben.</p>
@@ -129,6 +228,71 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.deallocateAsync(String,String)'
+    id: 'deallocateAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'deallocateAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.deallocateAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.deallocateAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.deallocateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 67
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Der virtuelle Computer heruntergefahren und asynchron die Serverressourcen freigegeben.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable deallocateAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.deallocateAsync(String,String,ServiceCallback<Void>)'
+    id: 'deallocateAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.deallocateAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 78
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Der virtuelle Computer heruntergefahren und asynchron die Serverressourcen freigegeben.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> deallocateAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machines.generalize(String,String)'
     id: 'generalize(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -143,7 +307,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 59
+      startLine: 86
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Generalisiert den virtuellen Computer an.</p>
@@ -157,6 +321,71 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.generalizeAsync(String,String)'
+    id: 'generalizeAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'generalizeAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.generalizeAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.generalizeAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.generalizeAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 96
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Die virtuelle Maschine asynchron generalisiert.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable generalizeAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.generalizeAsync(String,String,ServiceCallback<Void>)'
+    id: 'generalizeAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'generalizeAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.generalizeAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.generalizeAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.generalizeAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 107
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Die virtuelle Maschine asynchron generalisiert.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> generalizeAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machines.migrateToManaged(String,String)'
     id: 'migrateToManaged(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -171,7 +400,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 112
+      startLine: 271
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Migriert die virtuelle Maschine mit nicht verwalteten Datenträger zu verwalteten Datenträger zu verwenden.</p>
@@ -185,6 +414,71 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync(String,String)'
+    id: 'migrateToManagedAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'migrateToManagedAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.migrateToManagedAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.migrateToManagedAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 281
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Konvertiert (migriert) der virtuelle Computer mit nicht verwalteten Datenträger, asynchron verwalteten Datenträger zu verwenden.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable migrateToManagedAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync(String,String,ServiceCallback<Void>)'
+    id: 'migrateToManagedAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'migrateToManagedAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.migrateToManagedAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.migrateToManagedAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 292
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Konvertiert (migriert) der virtuelle Computer mit nicht verwalteten Datenträger, asynchron verwalteten Datenträger zu verwenden.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> migrateToManagedAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: <p>der Name der Ressourcengruppe </p>
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machines.powerOff(String,String)'
     id: 'powerOff(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -199,7 +493,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 67
+      startLine: 115
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Schaltet (beendet) eine virtuelle Maschine.</p>
@@ -213,6 +507,69 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.powerOffAsync(String,String)'
+    id: 'powerOffAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'powerOffAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.powerOffAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.powerOffAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.powerOffAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 125
+    package: com.microsoft.azure.management.compute
+    summary: <p>Schaltet (beendet) der virtuellen Maschine asynchron. </p>
+    syntax:
+      content: 'public Completable powerOffAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.powerOffAsync(String,String,ServiceCallback<Void>)'
+    id: 'powerOffAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.powerOffAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 136
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Schaltet (anhalten) der virtuellen Maschine asynchron.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> powerOffAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machines.redeploy(String,String)'
     id: 'redeploy(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -227,7 +584,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 91
+      startLine: 202
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Stellt einen virtuellen Computer an.</p>
@@ -241,6 +598,71 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.redeployAsync(String,String)'
+    id: 'redeployAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'redeployAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.redeployAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.redeployAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.redeployAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 212
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Stellt die virtuelle Maschine asynchron an.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable redeployAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.redeployAsync(String,String,ServiceCallback<Void>)'
+    id: 'redeployAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'redeployAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.redeployAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.redeployAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.redeployAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 223
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Stellt die virtuelle Maschine asynchron an.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> redeployAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: 'com.microsoft.azure.management.compute._virtual_machines.restart(String,String)'
     id: 'restart(String,String)'
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -255,7 +677,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 75
+      startLine: 144
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Startet einen virtuellen Computer neu.</p>
@@ -269,6 +691,71 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.restartAsync(String,String)'
+    id: 'restartAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'restartAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.restartAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.restartAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.restartAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 154
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Neustart der virtuellen Maschine asynchron an.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable restartAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.restartAsync(String,String,ServiceCallback<Void>)'
+    id: 'restartAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.restartAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 165
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Neustart der virtuellen Maschine asynchron an.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> restartAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
   - uid: com.microsoft.azure.management.compute._virtual_machines.sizes()
     id: sizes()
     parent: com.microsoft.azure.management.compute._virtual_machines
@@ -283,7 +770,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 43
+      startLine: 48
     package: com.microsoft.azure.management.compute
     syntax:
       content: public VirtualMachineSizes sizes()
@@ -304,7 +791,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
-      startLine: 83
+      startLine: 173
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Startet einen virtuellen Computer an.</p>
@@ -318,6 +805,69 @@ items:
         - id: name
           type: '26831127'
           description: <p>der Name des virtuellen Computers </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.startAsync(String,String)'
+    id: 'startAsync(String,String)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'startAsync(String groupName, String name)'
+    nameWithType: 'VirtualMachines.startAsync(String groupName, String name)'
+    fullName: 'Completable com.microsoft.azure.management.compute.VirtualMachines.startAsync(String groupName, String name)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.startAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 183
+    package: com.microsoft.azure.management.compute
+    summary: <p>Startet die virtuelle Maschine asynchron aus. </p>
+    syntax:
+      content: 'public Completable startAsync(String groupName, String name)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers</p>
+      return:
+        type: '56537e90'
+        description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
+  - uid: 'com.microsoft.azure.management.compute._virtual_machines.startAsync(String,String,ServiceCallback<Void>)'
+    id: 'startAsync(String,String,ServiceCallback<Void>)'
+    parent: com.microsoft.azure.management.compute._virtual_machines
+    href: com.microsoft.azure.management.compute._virtual_machines.yml
+    langs:
+      - java
+    name: 'startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    nameWithType: 'VirtualMachines.startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    fullName: 'ServiceFuture<Void> com.microsoft.azure.management.compute.VirtualMachines.startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+    overload: com.microsoft.azure.management.compute._virtual_machines.startAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachines.java
+      startLine: 194
+    package: com.microsoft.azure.management.compute
+    summary: |-
+      <p>Startet die virtuelle Maschine asynchron aus.</p>
+      <p></p>
+    syntax:
+      content: 'public ServiceFuture<Void> startAsync(String groupName, String name, ServiceCallback<Void> callback)'
+      parameters:
+        - id: groupName
+          type: '26831127'
+          description: '<p>der Name der Ressourcengruppe, die virtuelle Maschine wird </p>'
+        - id: name
+          type: '26831127'
+          description: <p>der Name des virtuellen Computers </p>
+        - id: callback
+          type: da7fd5ea
+          description: <p>der Rückruf auf Erfolg oder Fehler aufrufen </p>
+      return:
+        type: aa81d378
+        description: <p>ein Handle für die Anforderung abzubrechen </p>
 references:
   - uid: com.microsoft.azure.management.compute._virtual_machines.sizes*
     name: sizes
@@ -333,30 +883,72 @@ references:
     nameWithType: VirtualMachines.deallocate
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.deallocate
     package: com.microsoft.azure.management.compute
+  - uid: '56537e90'
+    spec.java:
+      - name: Completable
+        fullName: Completable
+  - uid: com.microsoft.azure.management.compute._virtual_machines.deallocateAsync*
+    name: deallocateAsync
+    nameWithType: VirtualMachines.deallocateAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.deallocateAsync
+    package: com.microsoft.azure.management.compute
+  - uid: da7fd5ea
+    spec.java:
+      - name: ServiceCallback<Void>
+        fullName: ServiceCallback<Void>
+  - uid: aa81d378
+    spec.java:
+      - name: ServiceFuture<Void>
+        fullName: ServiceFuture<Void>
   - uid: com.microsoft.azure.management.compute._virtual_machines.generalize*
     name: generalize
     nameWithType: VirtualMachines.generalize
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.generalize
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machines.generalizeAsync*
+    name: generalizeAsync
+    nameWithType: VirtualMachines.generalizeAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.generalizeAsync
     package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machines.powerOff*
     name: powerOff
     nameWithType: VirtualMachines.powerOff
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.powerOff
     package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machines.powerOffAsync*
+    name: powerOffAsync
+    nameWithType: VirtualMachines.powerOffAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.powerOffAsync
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machines.restart*
     name: restart
     nameWithType: VirtualMachines.restart
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.restart
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machines.restartAsync*
+    name: restartAsync
+    nameWithType: VirtualMachines.restartAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.restartAsync
     package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machines.start*
     name: start
     nameWithType: VirtualMachines.start
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.start
     package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machines.startAsync*
+    name: startAsync
+    nameWithType: VirtualMachines.startAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.startAsync
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._virtual_machines.redeploy*
     name: redeploy
     nameWithType: VirtualMachines.redeploy
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.redeploy
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machines.redeployAsync*
+    name: redeployAsync
+    nameWithType: VirtualMachines.redeployAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.redeployAsync
     package: com.microsoft.azure.management.compute
   - uid: 4fc6e284
     spec.java:
@@ -367,10 +959,32 @@ references:
     nameWithType: VirtualMachines.capture
     fullName: String com.microsoft.azure.management.compute.VirtualMachines.capture
     package: com.microsoft.azure.management.compute
+  - uid: c4e15b74
+    spec.java:
+      - name: Observable<String>
+        fullName: Observable<String>
+  - uid: com.microsoft.azure.management.compute._virtual_machines.captureAsync*
+    name: captureAsync
+    nameWithType: VirtualMachines.captureAsync
+    fullName: Observable<String> com.microsoft.azure.management.compute.VirtualMachines.captureAsync
+    package: com.microsoft.azure.management.compute
+  - uid: c68ef411
+    spec.java:
+      - name: ServiceCallback<String>
+        fullName: ServiceCallback<String>
+  - uid: 3038ebf6
+    spec.java:
+      - name: ServiceFuture<String>
+        fullName: ServiceFuture<String>
   - uid: com.microsoft.azure.management.compute._virtual_machines.migrateToManaged*
     name: migrateToManaged
     nameWithType: VirtualMachines.migrateToManaged
     fullName: void com.microsoft.azure.management.compute.VirtualMachines.migrateToManaged
+    package: com.microsoft.azure.management.compute
+  - uid: com.microsoft.azure.management.compute._virtual_machines.migrateToManagedAsync*
+    name: migrateToManagedAsync
+    nameWithType: VirtualMachines.migrateToManagedAsync
+    fullName: Completable com.microsoft.azure.management.compute.VirtualMachines.migrateToManagedAsync
     package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation.create(Creatable<ResourceT>...)
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation
@@ -501,8 +1115,8 @@ references:
     type: Method
     summary: |-
       <p>Startet eine Definition für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beachten Sie, dass die <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
+      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref>. </p>
+      <p>Beachten Sie, dass die <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
     syntax:
       content: public T define(String name)
       parameters:
@@ -520,7 +1134,7 @@ references:
     fullName: void com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteById(String id)
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public void deleteById(String id)
@@ -536,7 +1150,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByIdAsync(String id, ServiceCallback<Void> callback)'
@@ -558,7 +1172,7 @@ references:
     fullName: Completable com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public Completable deleteByIdAsync(String id)
@@ -567,7 +1181,7 @@ references:
           type: '26831127'
           description: <p>die Ressourcen-ID der Ressource löschen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.deleteByIds(Collection<String>)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
@@ -576,7 +1190,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(Collection<String> ids)
       parameters:
@@ -590,7 +1204,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(String...ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(String...ids)
       parameters:
@@ -604,7 +1218,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(Collection<String> ids)
       parameters:
@@ -621,7 +1235,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(String...ids)
       parameters:
@@ -639,7 +1253,7 @@ references:
     fullName: 'void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public void deleteByResourceGroup(String resourceGroupName, String name)'
@@ -658,7 +1272,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
@@ -683,7 +1297,7 @@ references:
     fullName: 'Completable com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public Completable deleteByResourceGroupAsync(String resourceGroupName, String name)'
@@ -695,7 +1309,7 @@ references:
           type: '26831127'
           description: <p>Der Name der Ressource </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id.getById(String)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id
@@ -705,7 +1319,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getById(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public T getById(String id)
@@ -724,7 +1338,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public Observable<T> getByIdAsync(String id)
@@ -743,7 +1357,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByIdAsync(String id, ServiceCallback<T> callback)'
@@ -765,7 +1379,7 @@ references:
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public T getByResourceGroup(String resourceGroupName, String name)'
@@ -787,7 +1401,7 @@ references:
     fullName: 'Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public Observable<T> getByResourceGroupAsync(String resourceGroupName, String name)'
@@ -809,7 +1423,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
@@ -837,7 +1451,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.list()
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
     href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
@@ -926,7 +1540,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist)</p>
       <p></p>
     syntax:
@@ -942,7 +1556,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsListingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -958,7 +1572,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -974,7 +1588,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage der Ressourcen-ID. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage der Ressourcen-ID. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -990,7 +1604,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsCreating<T>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Top-Level-Ressourcen. </p>
+      <p>Bietet Zugriff auf das Erstellen von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Top-Level-Ressourcen. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsCreating<T>
@@ -1005,7 +1619,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsDeletingById
@@ -1017,7 +1631,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsDeletingByResourceGroup
@@ -1029,13 +1643,13 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsBatchCreation<ResourceT>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
+      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsBatchCreation<ResourceT extends Indexable>
       typeParameters:
         - type: ab77b02a
-          description: <p>die oberste Ebene <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcentyp </p>
+          description: <p>die oberste Ebene <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcentyp </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection
     href: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.yml
@@ -1044,7 +1658,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch das IDs identifiziert werden. </p>
+      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch das IDs identifiziert werden. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsBatchDeletion

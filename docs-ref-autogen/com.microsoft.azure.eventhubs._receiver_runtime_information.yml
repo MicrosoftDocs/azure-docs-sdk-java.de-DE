@@ -25,7 +25,7 @@ items:
       path: azure-eventhubs/src/main/java/com/microsoft/azure/eventhubs/ReceiverRuntimeInformation.java
       startLine: 12
     package: com.microsoft.azure.eventhubs
-    summary: <p>Repräsentiert die zeitliche Empfänger Laufzeitinformationen für eine <xref href="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false"></xref>. Aktuelle empfangen <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false"></xref> Näherungswert für ausstehende Ereignisse finden (der noch nicht verarbeitet) verwendet werden können. </p>
+    summary: <p>Repräsentiert die zeitliche Empfänger Laufzeitinformationen für eine <xref uid="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false">PartitionReceiver</xref>. Aktuelle empfangen <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref> und <xref uid="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false">ReceiverRuntimeInformation</xref> Näherungswert für ausstehende Ereignisse finden (der noch nicht verarbeitet) verwendet werden können. </p>
     syntax: &ref_1
       content: public class ReceiverRuntimeInformation
     inheritance:
@@ -47,7 +47,7 @@ items:
       startLine: 61
     package: com.microsoft.azure.eventhubs
     summary: |-
-      <p>Abrufen der offset der <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>, d. h. am Ende des Streams Partition geschrieben wurden.</p>
+      <p>Abrufen der offset der <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>, d. h. am Ende des Streams Partition geschrieben wurden.</p>
       <p></p>
     syntax:
       content: public String getLastEnqueuedOffset()
@@ -71,7 +71,7 @@ items:
       startLine: 51
     package: com.microsoft.azure.eventhubs
     summary: |-
-      <p>Erhalten Sie in die Warteschlange eingereihten Zeit von der <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>, d. h. am Ende des Streams Partition geschrieben wurden.</p>
+      <p>Erhalten Sie in die Warteschlange eingereihten Zeit von der <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>, d. h. am Ende des Streams Partition geschrieben wurden.</p>
       <p></p>
     syntax:
       content: public Instant getLastEnqueuedTime()
@@ -95,7 +95,7 @@ items:
       startLine: 41
     package: com.microsoft.azure.eventhubs
     summary: |-
-      <p>Sequenznummer der Abrufen der <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>, d. h. am Ende des Streams Partition geschrieben wurden.</p>
+      <p>Sequenznummer der Abrufen der <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>, d. h. am Ende des Streams Partition geschrieben wurden.</p>
       <p></p>
     syntax:
       content: public long getLastSequenceNumber()
@@ -119,7 +119,7 @@ items:
       startLine: 31
     package: com.microsoft.azure.eventhubs
     summary: |-
-      <p>Abrufen von PartitionId der <xref href="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false"></xref> für die die <xref href="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false"></xref> wird zurückgegeben.</p>
+      <p>Abrufen von PartitionId der <xref uid="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false">PartitionReceiver</xref> für die die <xref uid="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false">ReceiverRuntimeInformation</xref> wird zurückgegeben.</p>
       <p></p>
     syntax:
       content: public String getPartitionId()
@@ -143,7 +143,7 @@ items:
       startLine: 71
     package: com.microsoft.azure.eventhubs
     summary: |-
-      <p>Abrufen den Zeitstempel zu der diese <xref href="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false"></xref> erstellt wurde.</p>
+      <p>Abrufen den Zeitstempel zu der diese <xref uid="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false">ReceiverRuntimeInformation</xref> erstellt wurde.</p>
       <p></p>
     syntax:
       content: public Instant getRetrievalTime()
@@ -227,10 +227,10 @@ references:
     type: Class
     summary: |-
       <p>Dies ist eine logische Darstellung des Empfangs aus einen Event Hub-Partition. </p>
-      <p>Ein <xref href="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false"></xref> ist an eine ConsumerGroup + EventHub Partition gebunden Kombination. <itemizedlist><listitem><p>Wenn Sie eine Epoche basiert <xref href="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false"></xref> (d. h. <xref href="com.microsoft.azure.eventhubs._partition_receiver.getEpoch()" data-throw-if-not-resolved="false"></xref> ! = 0) wird erstellt, EventHubs Dienst auch dafür nur 1 aktive Empfänger pro ConsumerGroup + Partition vorhanden ist Kombinationsfeld. Dies ist die empfohlene Vorgehensweise zum Erstellen einer <xref href="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false"></xref>. </p></listitem><listitem><p>Mehrere Empfänger pro ConsumerGroup + Partition kann Kombinationsfeld mit nicht-Epoche Empfänger erstellt werden. </p></listitem></itemizedlist></p>
+      <p>Ein <xref uid="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false">PartitionReceiver</xref> ist an eine ConsumerGroup + EventHub Partition gebunden Kombination. <itemizedlist><listitem><p>Wenn Sie eine Epoche basiert <xref uid="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false">PartitionReceiver</xref> (d. h. <xref uid="com.microsoft.azure.eventhubs._partition_receiver.getEpoch()" data-throw-if-not-resolved="false">PartitionReceiver.getEpoch</xref> ! = 0) wird erstellt, EventHubs Dienst auch dafür nur 1 aktive Empfänger pro ConsumerGroup + Partition vorhanden ist Kombinationsfeld. Dies ist die empfohlene Vorgehensweise zum Erstellen einer <xref uid="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false">PartitionReceiver</xref>. </p></listitem><listitem><p>Mehrere Empfänger pro ConsumerGroup + Partition kann Kombinationsfeld mit nicht-Epoche Empfänger erstellt werden. </p></listitem></itemizedlist></p>
       <p></p>
     syntax:
-      content: public class PartitionReceiver
+      content: public class PartitionReceiver extends ClientEntity implements IReceiverSettingsProvider
   - uid: com.microsoft.azure.eventhubs._receiver_runtime_information
     parent: com.microsoft.azure.eventhubs
     href: com.microsoft.azure.eventhubs._receiver_runtime_information.yml
@@ -238,7 +238,7 @@ references:
     nameWithType: ReceiverRuntimeInformation
     fullName: com.microsoft.azure.eventhubs.ReceiverRuntimeInformation
     type: Class
-    summary: <p>Repräsentiert die zeitliche Empfänger Laufzeitinformationen für eine <xref href="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false"></xref>. Aktuelle empfangen <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false"></xref> Näherungswert für ausstehende Ereignisse finden (der noch nicht verarbeitet) verwendet werden können. </p>
+    summary: <p>Repräsentiert die zeitliche Empfänger Laufzeitinformationen für eine <xref uid="com.microsoft.azure.eventhubs._partition_receiver" data-throw-if-not-resolved="false">PartitionReceiver</xref>. Aktuelle empfangen <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref> und <xref uid="com.microsoft.azure.eventhubs._receiver_runtime_information" data-throw-if-not-resolved="false">ReceiverRuntimeInformation</xref> Näherungswert für ausstehende Ereignisse finden (der noch nicht verarbeitet) verwendet werden können. </p>
     syntax: *ref_1
   - uid: com.microsoft.azure.eventhubs._event_data
     parent: com.microsoft.azure.eventhubs
@@ -248,8 +248,12 @@ references:
     fullName: com.microsoft.azure.eventhubs.EventData
     type: Class
     summary: |-
-      <p>Die Datenstruktur, die das Ereignis wird gesendet an und Empfangen von EventHubs kapseln. Jede Partition EventHubs visualisiert werden kann, als Datenstrom von <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Serialisieren eines empfangenen <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref> mit AMQP-Abschnitten als ApplicationProperties (mit primitiven Java-Typen) und Daten der Abschnitt wird nicht unterstützt. </p>
-      <p>So sieht wie AMQP-Nachricht-Abschnitten zugeordnet <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>. Hier wird der Verweis, der für AMQP 1.0-Spezifikation verwendet: <ulink url="http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf</ulink> <preformatted> ich.   <xref href="com.microsoft.azure.eventhubs._event_data.getProperties()" data-throw-if-not-resolved="false"></xref>- AMQPMessage.ApplicationProperties Teil Ii.  <xref href="com.microsoft.azure.eventhubs._event_data.getBytes()" data-throw-if-not-resolved="false"></xref> - AMQPMessage.Body Daten Abschnitt Iii verfügt. <xref href="com.microsoft.azure.eventhubs._event_data.getObject()" data-throw-if-not-resolved="false"></xref> - verfügt AMQPMessage.Body AMQPValue oder AMQPSequence Abschnitte </preformatted> bei der Verwendung von Clientbibliotheken, die von Microsoft Azure EventHubs freigegeben, Abschnitte (i) und (Ii) allein reichen. Abschnitt (Iii) wird verwendet, für erweiterte Szenarien, in denen die sendende Anwendung eines Drittanbieters AMQP-Bibliothek zum Senden der Nachricht an EventHubs verwendet und die empfangende Anwendung verwendet diese Clientbibliothek zum Empfangen von <xref href="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Die Datenstruktur, die das Ereignis wird gesendet an und Empfangen von EventHubs kapseln. Jede Partition EventHubs visualisiert werden kann, als Datenstrom von <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>. </p>
+      <p>Serialisieren eines empfangenen <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref> mit AMQP-Abschnitten als ApplicationProperties (mit primitiven Java-Typen) und Daten der Abschnitt wird nicht unterstützt. </p>
+      <p>So sieht wie AMQP-Nachricht-Abschnitten zugeordnet <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>. Hier wird der Verweis, der für AMQP 1.0-Spezifikation verwendet: <ulink url="http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf</ulink><pre>
+      i.   <xref uid="com.microsoft.azure.eventhubs._event_data.getProperties()" data-throw-if-not-resolved="false">getProperties()</xref> - AMQPMessage.ApplicationProperties section
+      ii.  <xref uid="com.microsoft.azure.eventhubs._event_data.getBytes()" data-throw-if-not-resolved="false">getBytes()</xref> - if AMQPMessage.Body has Data section
+      iii. <xref uid="com.microsoft.azure.eventhubs._event_data.getObject()" data-throw-if-not-resolved="false">getObject()</xref> - if AMQPMessage.Body has AMQPValue or AMQPSequence sections
+      </pre> Bei der Verwendung von Clientbibliotheken, die von Microsoft Azure EventHubs veröffentlicht wurden, sind die Abschnitte (i) und (Ii) allein ausreichend. Abschnitt (Iii) wird verwendet, für erweiterte Szenarien, in denen die sendende Anwendung eines Drittanbieters AMQP-Bibliothek zum Senden der Nachricht an EventHubs verwendet und die empfangende Anwendung verwendet diese Clientbibliothek zum Empfangen von <xref uid="com.microsoft.azure.eventhubs._event_data" data-throw-if-not-resolved="false">EventData</xref>. </p>
     syntax:
       content: public class EventData

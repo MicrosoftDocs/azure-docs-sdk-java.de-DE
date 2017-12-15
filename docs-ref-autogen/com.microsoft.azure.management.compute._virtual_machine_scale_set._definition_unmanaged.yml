@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachineScaleSet.java
-      startLine: 362
+      startLine: 392
     package: com.microsoft.azure.management.compute
     summary: <p>Vollständig nicht verwalteten Datenträger basieren VM Skalierung Satzdefinition. </p>
     syntax:
@@ -41,6 +41,8 @@ items:
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_o_s.withLatestLinuxImage(String,String,String)'
       - 'com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_o_s.withLatestWindowsImage(String,String,String)'
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._definition_stages._with_o_s.withLinuxCustomImage(String)
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity()
+      - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity(int)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02aa0c10eea52819e80425c65d47893c.withNewStorageAccount(String)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._de02aa0c10eea52819e80425c65d47893c.withNewStorageAccount(Creatable<StorageAccount>)
       - com.microsoft.azure.management.compute._virtual_machine_scale_set._ded7e6d5eac86cfe0cf83bc654f07f02a7.withOSDiskCaching(CachingTypes)
@@ -183,7 +185,7 @@ references:
       parameters:
         - id: adminPassword
           type: '26831127'
-          description: <p>das Administratorkennwort ein. Dadurch muss die Kriterien für befolgen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> VM mit Windows-Kennwort. </p>
+          description: <p>das Administratorkennwort ein. Dadurch muss die Kriterien für befolgen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> VM mit Windows-Kennwort. </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de43e39f3a3e2fb469ee47d445934834db
         description: '<p>die Phase, erstellt Windows-VM-Definition darstellt </p>'
@@ -427,6 +429,40 @@ references:
           description: <p>die Ressourcen-ID des benutzerdefinierten Images </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._deb4cb9b647306d32fa5c9ab1506c5754d
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity()
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.yml
+    name: withManagedServiceIdentity()
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity()
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de7d2f86c18d6f7983ff3cfbf5c72d911f
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.withManagedServiceIdentity(int)
+    parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336
+    href: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02b27d46dd3706b3b0802063c0448336.yml
+    name: withManagedServiceIdentity(int tokenPort)
+    nameWithType: VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachineScaleSet.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    type: Method
+    summary: |-
+      <p>Gibt an, die Dienstidentität verwaltet muss in der VM-Skalierungsgruppe aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity(int tokenPort)
+      parameters:
+        - id: tokenPort
+          type: f75371fa
+          description: '<p>der Port auf der VM-Skalierungsgruppe sammlungssatzinstanz, in dem Zugriffstoken verfügbar ist. </p>'
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de7d2f86c18d6f7983ff3cfbf5c72d911f
         description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02aa0c10eea52819e80425c65d47893c.withNewStorageAccount(String)
     parent: com.microsoft.azure.management.compute._virtual_machine_scale_set._de02aa0c10eea52819e80425c65d47893c
@@ -742,7 +778,7 @@ references:
       parameters:
         - id: rootPassword
           type: '26831127'
-          description: '<p>ein Kennwort, das die Komplexität Kriterien für die folgenden <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Linux VM Kennwörter </p>'
+          description: '<p>ein Kennwort, das die Komplexität Kriterien für die folgenden <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Linux VM Kennwörter </p>'
       return:
         type: com.microsoft.azure.management.compute._virtual_machine_scale_set._de8d5a0fbef6e202ba3c3dc3f94a691db7
         description: <p>die nächste Phase der definition </p>
@@ -946,13 +982,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>

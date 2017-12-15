@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 114
+      startLine: 124
     package: com.microsoft.azure.management.compute
     summary: <p>Die Gesamtheit der Definition des verwalteten Datenträger. </p>
     syntax:
@@ -32,6 +32,7 @@ items:
       - com.microsoft.azure.management.compute._disk._definition_stages._with_data_disk_from_vhd.fromVhd(String)
       - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
+      - com.microsoft.azure.management.compute._disk._definition_stages._with_availability_zone.withAvailabilityZone(AvailabilityZoneId)
       - com.microsoft.azure.management.compute._disk._definition_stages._with_data.withData()
       - com.microsoft.azure.management.compute._disk._definition_stages._with_linux_disk_source.withLinuxFromDisk(String)
       - com.microsoft.azure.management.compute._disk._definition_stages._with_linux_disk_source.withLinuxFromDisk(Disk)
@@ -217,6 +218,25 @@ references:
       return:
         type: '26831127'
         description: <p>Der Name der Ressource </p>
+  - uid: com.microsoft.azure.management.compute._disk._definition_stages._with_availability_zone.withAvailabilityZone(AvailabilityZoneId)
+    parent: com.microsoft.azure.management.compute._disk._definition_stages._with_availability_zone
+    href: com.microsoft.azure.management.compute._disk._definition_stages._with_availability_zone.yml
+    name: withAvailabilityZone(AvailabilityZoneId zoneId)
+    nameWithType: Disk.DefinitionStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    fullName: WithCreate com.microsoft.azure.management.compute.Disk.DefinitionStages.WithAvailabilityZone.withAvailabilityZone(AvailabilityZoneId zoneId)
+    type: Method
+    summary: |-
+      <p>Gibt die Verfügbarkeit Zone für den verwalteten Datenträger an.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withAvailabilityZone(AvailabilityZoneId zoneId)
+      parameters:
+        - id: zoneId
+          type: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+          description: <p>Der Zonenbezeichner. </p>
+      return:
+        type: com.microsoft.azure.management.compute._disk._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._disk._definition_stages._with_data.withData()
     parent: com.microsoft.azure.management.compute._disk._definition_stages._with_data
     href: com.microsoft.azure.management.compute._disk._definition_stages._with_data.yml
@@ -411,13 +431,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>

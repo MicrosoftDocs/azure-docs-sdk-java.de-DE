@@ -13,122 +13,154 @@ items:
     source:
       remote:
         path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/TxtRecordSets.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/TxtRecordSets.java
-      startLine: 16
+      startLine: 13
     package: com.microsoft.azure.management.dns
     summary: <p>Einstiegspunkt für TXT-Eintrag wird in einer DNS-Zone. </p>
     syntax:
-      content: 'public interface TxtRecordSets extends SupportsListing<TxtRecordSet>,SupportsGettingByName<TxtRecordSet>,HasParent<DnsZone>'
+      content: public interface TxtRecordSets extends DnsRecordSets<TxtRecordSet>
     inheritedMembers:
-      - com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_name.getByName(String)
-      - com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.list()
-      - com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.listAsync()
-      - com.microsoft.azure.management.resources.fluentcore.arm.models._has_parent.parent()
+      - com.microsoft.azure.management.dns._dns_record_sets.list(String)
+      - com.microsoft.azure.management.dns._dns_record_sets.list(int)
+      - 'com.microsoft.azure.management.dns._dns_record_sets.list(String,int)'
+      - com.microsoft.azure.management.dns._dns_record_sets.listAsync(String)
+      - com.microsoft.azure.management.dns._dns_record_sets.listAsync(int)
+      - 'com.microsoft.azure.management.dns._dns_record_sets.listAsync(String,int)'
 references:
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_name.getByName(String)
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_name
-    href: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_name.yml
-    name: getByName(String name)
-    nameWithType: SupportsGettingByName<T>.getByName(String name)
-    fullName: T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByName<T>.getByName(String name)
+  - uid: com.microsoft.azure.management.dns._dns_record_sets.list(String)
+    parent: com.microsoft.azure.management.dns._dns_record_sets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: list(String recordSetNameSuffix)
+    nameWithType: DnsRecordSets<RecordSetT>.list(String recordSetNameSuffix)
+    fullName: PagedList<RecordSetT> com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>.list(String recordSetNameSuffix)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource innerhalb der aktuellen Ressourcengruppe enthalten.</p>
+      <p>Listet alle für der Datensatz mit dem angegebenen Suffix festgelegt.</p>
       <p></p>
     syntax:
-      content: public T getByName(String name)
+      content: public PagedList<RecordSetT> list(String recordSetNameSuffix)
       parameters:
-        - id: name
+        - id: recordSetNameSuffix
           type: '26831127'
-          description: '<p>Der Name der Ressource. (Beachten Sie, dass dies nicht der Ressourcen-ID ist) </p>'
+          description: <p>das Namensuffix Datensatzgruppe </p>
       return:
-        type: 8ce1ecb9
-        description: <p>eine unveränderliche Darstellung der Ressource </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.list()
-    parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
-    href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
-    name: list()
-    nameWithType: SupportsListing<T>.list()
-    fullName: PagedList<T> com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>.list()
+        type: 73b12495
+        description: <p>Liste der Datensatzgruppen </p>
+  - uid: com.microsoft.azure.management.dns._dns_record_sets.list(int)
+    parent: com.microsoft.azure.management.dns._dns_record_sets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: list(int pageSize)
+    nameWithType: DnsRecordSets<RecordSetT>.list(int pageSize)
+    fullName: PagedList<RecordSetT> com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>.list(int pageSize)
     type: Method
     summary: |-
-      <p>Listet alle Ressourcen des angegebenen Typs in das aktuell ausgewählte Abonnement.</p>
+      <p>Listet alle der Datensatzgruppen mit der Anzahl von Einträgen auf den einzelnen Seiten begrenzt auf angegebene Größe an.</p>
       <p></p>
     syntax:
-      content: public PagedList<T> list()
+      content: public PagedList<RecordSetT> list(int pageSize)
+      parameters:
+        - id: pageSize
+          type: f75371fa
+          description: <p>die maximale Anzahl von Datensatzgruppen in einer Seite </p>
       return:
-        type: e5f90f8a
-        description: <p>Liste der Ressourcen </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.listAsync()
-    parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
-    href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
-    name: listAsync()
-    nameWithType: SupportsListing<T>.listAsync()
-    fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>.listAsync()
+        type: 73b12495
+        description: <p>Liste der Datensatzgruppen </p>
+  - uid: 'com.microsoft.azure.management.dns._dns_record_sets.list(String,int)'
+    parent: com.microsoft.azure.management.dns._dns_record_sets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: 'list(String recordSetNameSuffix, int pageSize)'
+    nameWithType: 'DnsRecordSets<RecordSetT>.list(String recordSetNameSuffix, int pageSize)'
+    fullName: 'PagedList<RecordSetT> com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>.list(String recordSetNameSuffix, int pageSize)'
     type: Method
     summary: |-
-      <p>Listet alle Ressourcen des angegebenen Typs in das aktuell ausgewählte Abonnement.</p>
+      <p>Listet alle Datensatz festgelegt, mit dem angegebenen Suffix auch schränkt die Anzahl von Einträgen pro Seite auf die angegebene Seitengröße.</p>
       <p></p>
     syntax:
-      content: public Observable<T> listAsync()
+      content: 'public PagedList<RecordSetT> list(String recordSetNameSuffix, int pageSize)'
+      parameters:
+        - id: recordSetNameSuffix
+          type: '26831127'
+          description: <p>das Namensuffix Datensatzgruppe </p>
+        - id: pageSize
+          type: f75371fa
+          description: <p>die maximale Anzahl von Datensatzgruppen in einer Seite </p>
       return:
-        type: c4094ba1
-        description: <p>Liste der Ressourcen </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_parent.parent()
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_parent
-    href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_parent.yml
-    name: parent()
-    nameWithType: HasParent<ParentT>.parent()
-    fullName: ParentT com.microsoft.azure.management.resources.fluentcore.arm.models.HasParent<ParentT>.parent()
+        type: 73b12495
+        description: <p>der Datensatzgruppen </p>
+  - uid: com.microsoft.azure.management.dns._dns_record_sets.listAsync(String)
+    parent: com.microsoft.azure.management.dns._dns_record_sets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: listAsync(String recordSetNameSuffix)
+    nameWithType: DnsRecordSets<RecordSetT>.listAsync(String recordSetNameSuffix)
+    fullName: Observable<RecordSetT> com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>.listAsync(String recordSetNameSuffix)
     type: Method
-    syntax:
-      content: public ParentT parent()
-      return:
-        type: 18a275b1
-        description: <p>das übergeordnete Element dieses untergeordneten Objekts </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
-    parent: com.microsoft.azure.management.resources.fluentcore.collection
-    href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
-    name: SupportsListing<T>
-    nameWithType: SupportsListing<T>
-    fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>
-    type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
-      <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist)</p>
+      <p>Listet alle für der Datensatz mit dem angegebenen Suffix festgelegt.</p>
       <p></p>
     syntax:
-      content: public interface SupportsListing<T>
-      typeParameters:
-        - type: 8ce1ecb9
-          description: <p>die fluent-Typ der Ressource </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_name
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.collection
-    href: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_name.yml
-    name: SupportsGettingByName<T>
-    nameWithType: SupportsGettingByName<T>
-    fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByName<T>
+      content: public Observable<RecordSetT> listAsync(String recordSetNameSuffix)
+      parameters:
+        - id: recordSetNameSuffix
+          type: '26831127'
+          description: <p>das Namensuffix Datensatzgruppe </p>
+      return:
+        type: 09e94ebc
+        description: '<p>Observable-Objekt, das Datensatzgruppen ausgibt. </p>'
+  - uid: com.microsoft.azure.management.dns._dns_record_sets.listAsync(int)
+    parent: com.microsoft.azure.management.dns._dns_record_sets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: listAsync(int pageSize)
+    nameWithType: DnsRecordSets<RecordSetT>.listAsync(int pageSize)
+    fullName: Observable<RecordSetT> com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>.listAsync(int pageSize)
+    type: Method
+    summary: |-
+      <p>Listet alle der Datensatzgruppen mit der Anzahl von Einträgen auf den einzelnen Seiten begrenzt auf angegebene Größe an.</p>
+      <p></p>
+    syntax:
+      content: public Observable<RecordSetT> listAsync(int pageSize)
+      parameters:
+        - id: pageSize
+          type: f75371fa
+          description: <p>die maximale Anzahl von Datensatzgruppen in einer Seite </p>
+      return:
+        type: 09e94ebc
+        description: '<p>Observable-Objekt, das Datensatzgruppen ausgibt. </p>'
+  - uid: 'com.microsoft.azure.management.dns._dns_record_sets.listAsync(String,int)'
+    parent: com.microsoft.azure.management.dns._dns_record_sets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: 'listAsync(String recordSetNameSuffix, int pageSize)'
+    nameWithType: 'DnsRecordSets<RecordSetT>.listAsync(String recordSetNameSuffix, int pageSize)'
+    fullName: 'Observable<RecordSetT> com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>.listAsync(String recordSetNameSuffix, int pageSize)'
+    type: Method
+    summary: |-
+      <p>Listet alle Datensatz festgelegt, mit dem angegebenen Suffix auch schränkt die Anzahl von Einträgen pro Seite auf die angegebene Seitengröße.</p>
+      <p></p>
+    syntax:
+      content: 'public Observable<RecordSetT> listAsync(String recordSetNameSuffix, int pageSize)'
+      parameters:
+        - id: recordSetNameSuffix
+          type: '26831127'
+          description: <p>das Namensuffix Datensatzgruppe </p>
+        - id: pageSize
+          type: f75371fa
+          description: <p>die maximale Anzahl von Datensatzgruppen in einer Seite </p>
+      return:
+        type: 09e94ebc
+        description: '<p>Observable-Objekt, das Datensatzgruppen ausgibt. </p>'
+  - uid: com.microsoft.azure.management.dns._dns_record_sets
+    parent: com.microsoft.azure.management.dns
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: DnsRecordSets<RecordSetT>
+    nameWithType: DnsRecordSets<RecordSetT>
+    fullName: com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen basierend auf seinen Namen innerhalb der aktuellen Ressourcengruppe enthalten. </p>
-      <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
+      <p>Die Basisschnittstelle für alle Datensatzgruppen.</p>
+      <p></p>
     syntax:
-      content: public interface SupportsGettingByName<T>
+      content: 'public interface DnsRecordSets<RecordSetT> extends SupportsListing<RecordSetT>,SupportsGettingByName<RecordSetT>,HasParent<DnsZone>'
       typeParameters:
-        - type: 8ce1ecb9
-          description: <p>Der Typ der Ressource-Auflistung </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_parent
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.models
-    href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_parent.yml
-    name: HasParent<ParentT>
-    nameWithType: HasParent<ParentT>
-    fullName: com.microsoft.azure.management.resources.fluentcore.arm.models.HasParent<ParentT>
-    type: Interface
-    summary: '<p>Eine Schnittstelle, die ein untergeordnetes Element, das eine sofort verfügbare übergeordnetes Element besitzt darstellt. </p>'
-    syntax:
-      content: public interface HasParent<ParentT>
-      typeParameters:
-        - type: 18a275b1
-          description: <p>der übergeordnete Typ </p>
+        - type: 94cbd096
+          description: <p>Der Typ der Datensatzgruppe </p>

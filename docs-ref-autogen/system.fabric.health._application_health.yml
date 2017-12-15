@@ -22,7 +22,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/ApplicationHealth.java
       startLine: 10
     package: system.fabric.health
-    summary: '<p>Die Integrität einer Anwendung beschrieben, wie Sie zurückgegeben<xref href="system.fabric._health_client.getApplicationHealthAsync(URI)" data-throw-if-not-resolved="false"></xref></p>'
+    summary: '<p>Die Integrität einer Anwendung beschrieben, wie vom <xref uid="system.fabric._health_client.getApplicationHealthAsync(URI)" data-throw-if-not-resolved="false">system.fabric.HealthClient#getApplicationHealthAsync</xref></p>'
     syntax:
       content: public class ApplicationHealth extends EntityHealth
     inheritance:
@@ -75,7 +75,7 @@ items:
     package: system.fabric.health
     summary: |-
       <p>Ruft den Integritätsstatus der bereitgestellten Anwendung für die aktuelle Anwendung, die im Health Store. </p>
-      <p>bereitgestellten Anwendungen für die aktuelle Anwendung im Health Store gefunden. Nur Anwendungen bereitgestellt, die berücksichtigen die <xref href="system.fabric._application_health_query_description.getDeployedApplicationHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle bereitgestellte Anwendungen zurückgegeben. </p>
+      <p>bereitgestellten Anwendungen für die aktuelle Anwendung im Health Store gefunden. Nur Anwendungen bereitgestellt, die berücksichtigen die <xref uid="system.fabric._application_health_query_description.getDeployedApplicationHealthStatesFilter()" data-throw-if-not-resolved="false">system.fabric.ApplicationHealthQueryDescription#getDeployedApplicationHealthStatesFilter</xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle bereitgestellte Anwendungen zurückgegeben. </p>
       <p>Alle bereitgestellte Anwendungen werden ausgewertet, um zu bestimmen, die Anwendungsintegrität aggregiert. </p>
       <p></p>
     syntax:
@@ -101,7 +101,7 @@ items:
     package: system.fabric.health
     summary: |-
       <p>Ruft die dienstintegritätszustände für die aktuelle Anwendung, die im Health Store. </p>
-      <p>Dienste nur dieser Hinsicht mit der <xref href="system.fabric._application_health_query_description.getServiceHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Dienste zurückgegeben. Alle Dienste werden ausgewertet, um zu bestimmen, die Anwendungsintegrität aggregiert. </p>
+      <p>Dienste nur dieser Hinsicht mit der <xref uid="system.fabric._application_health_query_description.getServiceHealthStatesFilter()" data-throw-if-not-resolved="false">system.fabric.ApplicationHealthQueryDescription#getServiceHealthStatesFilter</xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Dienste zurückgegeben. Alle Dienste werden ausgewertet, um zu bestimmen, die Anwendungsintegrität aggregiert. </p>
       <p></p>
     syntax:
       content: public List<ServiceHealthState> getServiceHealthState()
@@ -178,7 +178,7 @@ references:
       content: public HealthState getAggregatedHealthState()
       return:
         type: system.fabric.health._health_state
-        description: "<p>\r\n\r\n  <xref href=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\"></xref>der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState</xref> Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie, die der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt. </p>"
   - uid: system.fabric.health._entity_health.getHealthEvents()
     parent: system.fabric.health._entity_health
     href: system.fabric.health._entity_health.yml
@@ -186,7 +186,7 @@ references:
     nameWithType: EntityHealth.getHealthEvents()
     fullName: List<HealthEvent> system.fabric.health.EntityHealth.getHealthEvents()
     type: Method
-    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
+    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
     syntax:
       content: public List<HealthEvent> getHealthEvents()
       return:
@@ -244,7 +244,7 @@ references:
     nameWithType: HealthEvent
     fullName: system.fabric.health.HealthEvent
     type: Class
-    summary: '<p>Ein <xref href="system.fabric.health._health_event" data-throw-if-not-resolved="false"></xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
+    summary: '<p>Ein <xref uid="system.fabric.health._health_event" data-throw-if-not-resolved="false">HealthEvent</xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
     syntax:
       content: public class HealthEvent
   - uid: system.fabric.health._health_evaluation
@@ -264,12 +264,12 @@ references:
     nameWithType: ApplicationHealthQueryDescription.getServiceHealthStatesFilter()
     fullName: ServiceHealthStatesFilter system.fabric.ApplicationHealthQueryDescription.getServiceHealthStatesFilter()
     type: Method
-    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert. Wenn der Filter nicht angegeben ist, werden alle untergeordneten Objekte Dienst die Anwendung zurückgegeben. </p>"
+    summary: "<p>Ruft den Filter für <xref uid=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ServiceHealthState</xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert. Wenn der Filter nicht angegeben ist, werden alle untergeordneten Objekte Dienst die Anwendung zurückgegeben. </p>"
     syntax:
       content: public ServiceHealthStatesFilter getServiceHealthStatesFilter()
       return:
         type: system.fabric._service_health_states_filter
-        description: <p>Der Filter für <xref href="system.fabric.health._service_health_state" data-throw-if-not-resolved="false"></xref> untergeordneten Elemente. </p>
+        description: <p>Der Filter für <xref uid="system.fabric.health._service_health_state" data-throw-if-not-resolved="false">system.fabric.health.ServiceHealthState</xref> untergeordneten Elemente. </p>
   - uid: system.fabric._application_health_query_description.getDeployedApplicationHealthStatesFilter()
     parent: system.fabric._application_health_query_description
     href: system.fabric._application_health_query_description.yml
@@ -277,12 +277,12 @@ references:
     nameWithType: ApplicationHealthQueryDescription.getDeployedApplicationHealthStatesFilter()
     fullName: DeployedApplicationHealthStatesFilter system.fabric.ApplicationHealthQueryDescription.getDeployedApplicationHealthStatesFilter()
     type: Method
-    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._deployed_application_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert. Wenn der Filter nicht angegeben ist, werden alle bereitgestellten Anwendung untergeordneten Elemente der Anwendung zurückgegeben. </p>"
+    summary: "<p>Ruft den Filter für <xref uid=\"system.fabric.health._deployed_application_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.DeployedApplicationHealthState</xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente dienen zum Auswerten des integritätszustands der Anwendung aggregiert. Wenn der Filter nicht angegeben ist, werden alle bereitgestellten Anwendung untergeordneten Elemente der Anwendung zurückgegeben. </p>"
     syntax:
       content: public DeployedApplicationHealthStatesFilter getDeployedApplicationHealthStatesFilter()
       return:
         type: system.fabric._deployed_application_health_states_filter
-        description: <p>Der Filter für <xref href="system.fabric._deployed_application_health_states_filter" data-throw-if-not-resolved="false"></xref> untergeordneten Elemente. </p>
+        description: <p>Der Filter für <xref uid="system.fabric._deployed_application_health_states_filter" data-throw-if-not-resolved="false">system.fabric.DeployedApplicationHealthStatesFilter</xref> untergeordneten Elemente. </p>
   - uid: system.fabric._health_client.getApplicationHealthAsync(URI)
     parent: system.fabric._health_client
     href: system.fabric._health_client.yml

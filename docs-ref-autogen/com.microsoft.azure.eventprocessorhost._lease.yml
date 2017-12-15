@@ -31,7 +31,7 @@ items:
       path: azure-eventhubs-eph/src/main/java/com/microsoft/azure/eventprocessorhost/Lease.java
       startLine: 22
     package: com.microsoft.azure.eventprocessorhost
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref>Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. Es sei denn, Sie implementieren <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> sollte nicht für den Umgang mit Objekte dieser Klasse haben oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass ein <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> sollten keine Objekte dieser Klasse zu verarbeiten oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass eine <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. </p>"
     syntax: &ref_1
       content: public class Lease
     inheritance:
@@ -53,7 +53,7 @@ items:
       startLine: 74
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Epoche ist ein Konzept von ereignishubempfängern verwendet. Wenn ein Empfänger auf eine Partition mit einer höheren Epoche als vorhandener Empfänger erstellt wird, ist im Wesentlichen der vorherigen Empfänger erzwungen getrennt. Beim Versuch, einen Empfänger mit einer niedrigeren Epoche zu erstellen, die die vorhandene Empfänger fehl. Die <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref> führt der Epoche um, damit bei ein Host eine Lease stiehlt, einen Empfänger mit einer höheren Epoche erstellen können.</p>
+      <p>Epoche ist ein Konzept von ereignishubempfängern verwendet. Wenn ein Empfänger auf eine Partition mit einer höheren Epoche als vorhandener Empfänger erstellt wird, ist im Wesentlichen der vorherigen Empfänger erzwungen getrennt. Beim Versuch, einen Empfänger mit einer niedrigeren Epoche zu erstellen, die die vorhandene Empfänger fehl. Die <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref> führt der Epoche um, damit bei ein Host eine Lease stiehlt, einen Empfänger mit einer höheren Epoche erstellen können.</p>
       <p></p>
     syntax:
       content: public long getEpoch()
@@ -76,7 +76,7 @@ items:
       startLine: 106
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Der Besitzer eines Lease ist der Name des der <xref href="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false"></xref> die derzeit die Lease enthält.</p>
+      <p>Der Besitzer eines Lease ist der Name des der <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref> die derzeit die Lease enthält.</p>
       <p></p>
     syntax:
       content: public String getOwner()
@@ -99,7 +99,7 @@ items:
       startLine: 126
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Gibt die Id der Partition zurück, die von diesem <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref> ist. Unveränderliche also, dass sich keine entsprechenden Setter-Methode.</p>
+      <p>Gibt die Id der Partition zurück, die von diesem <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref> ist. Unveränderliche also, dass sich keine entsprechenden Setter-Methode.</p>
       <p></p>
     syntax:
       content: public String getPartitionId()
@@ -122,7 +122,7 @@ items:
       startLine: 138
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Die <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref> führt eine beliebige Zeichenfolge, die das "Token" aufgerufen. AzureStorageCheckpointLeaseManager verwendet diese zum Speichern der BLOB-Lease-ID, die von der Azure-Speicher-API verwendet. Andere Implementierungen von <xref href="com.microsoft.azure.eventprocessorhost._i_lease_manager" data-throw-if-not-resolved="false"></xref> können für eine andere Option verwenden.</p>
+      <p>Die <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref> führt eine beliebige Zeichenfolge, die das "Token" aufgerufen. AzureStorageCheckpointLeaseManager verwendet diese zum Speichern der BLOB-Lease-ID, die von der Azure-Speicher-API verwendet. Andere Implementierungen von <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager" data-throw-if-not-resolved="false">ILeaseManager</xref> können für eine andere Option verwenden.</p>
       <p></p>
     syntax:
       content: public String getToken()
@@ -169,7 +169,7 @@ items:
       startLine: 160
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Wenn eine Implementierung von <xref href="com.microsoft.azure.eventprocessorhost._i_lease_manager" data-throw-if-not-resolved="false"></xref> unterstützt das Konzept der Lease abläuft, und klicken Sie dann eine Klasse abgeleitet <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref> kann zum Überschreiben dieser Funktion können Sie die Lease zu überprüfen und zurückgeben, ob es abgelaufen ist.</p>
+      <p>Wenn eine Implementierung von <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager" data-throw-if-not-resolved="false">ILeaseManager</xref> unterstützt das Konzept der Lease abläuft, und klicken Sie dann eine Klasse abgeleitet <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref> kann zum Überschreiben dieser Funktion können Sie die Lease zu überprüfen und zurückgeben, ob es abgelaufen ist.</p>
       <p></p>
     syntax:
       content: public boolean isExpired()
@@ -215,7 +215,7 @@ items:
       startLine: 57
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Erstellen einer <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref> durch Duplizieren der angegebenen <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Erstellen einer <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref> durch Duplizieren der angegebenen <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref>.</p>
       <p></p>
     syntax:
       content: public Lease(Lease source)
@@ -239,7 +239,7 @@ items:
       startLine: 43
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Erstellen einer <xref href="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false"></xref> für die angegebene Partition.</p>
+      <p>Erstellen einer <xref uid="com.microsoft.azure.eventprocessorhost._lease" data-throw-if-not-resolved="false">Lease</xref> für die angegebene Partition.</p>
       <p></p>
     syntax:
       content: public Lease(String partitionId)
@@ -393,7 +393,7 @@ references:
     nameWithType: Lease
     fullName: com.microsoft.azure.eventprocessorhost.Lease
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref>Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. Es sei denn, Sie implementieren <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> sollte nicht für den Umgang mit Objekte dieser Klasse haben oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass ein <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> sollten keine Objekte dieser Klasse zu verarbeiten oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass eine <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. </p>"
     syntax: *ref_1
   - uid: com.microsoft.azure.eventprocessorhost._event_processor_host
     parent: com.microsoft.azure.eventprocessorhost

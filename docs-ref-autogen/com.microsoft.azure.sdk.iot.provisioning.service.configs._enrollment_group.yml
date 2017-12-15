@@ -1,0 +1,1183 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    id: _enrollment_group
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    children:
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup()
+      - 'com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup(String,Attestation)'
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getAttestation()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getCreatedDateTimeUtc()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEnrollmentGroupId()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEtag()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getInitialTwin()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getIotHubHostName()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getLastUpdatedDateTimeUtc()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getProvisioningStatus()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation(Attestation)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation(AttestationMechanism)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setCreatedDateTimeUtc(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEnrollmentGroupId(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEtag(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setInitialTwin(TwinState)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setIotHubHostName(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setLastUpdatedDateTimeUtc(String)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setProvisioningStatus(ProvisioningStatus)
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.toJsonElement()
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: EnrollmentGroup
+    nameWithType: EnrollmentGroup
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup
+    type: Class
+    source:
+      remote: &ref_0
+        path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+        branch: master
+        repo: 'https://github.com/Azure/azure-iot-sdk-java'
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 88
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Darstellung einer einzelnen Bereitstellung Registrierungsdienst Registrierung Gruppe mit einem JSON-Serialisierungsprogramm und Deserialisierungsprogramm.</p>
+      <p>Dieses Objekt wird zum Senden <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Informationen, die die Bereitstellung von service oder empfangen <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Informationen aus der Bereitstellung-Dienst.</p>
+      <p>Erstellt oder aktualisiert eine <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> dienstseitig Bereitstellung sollten Sie ausfüllen dieses Objekts und Aufrufen der öffentliche API <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createOrUpdateEnrollmentGroup(EnrollmentGroup)" data-throw-if-not-resolved="false">ProvisioningServiceClient#createOrUpdateEnrollmentGroup(EnrollmentGroup)</xref>. Die Mindestinformationen Bereitstellung Dienst erforderlich ist der <xref uid="" data-throw-if-not-resolved="false">EnrollmentGroupId</xref> und <xref uid="" data-throw-if-not-resolved="false">Nachweis</xref>.</p>
+      <p>Zum Bereitstellen eines Geräts mithilfe <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>, es muss ein X509 enthalten Chip mit einem SigningCertificate für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref> Mechanismus.</p>
+      <p>Der Inhalt dieser Klasse werden in einem JSON-Format serialisiert und als Textkörper der Rest-API an den bereitstellungs-Dienst gesendet.</p>
+      <p>Bei der Serialisierung ein <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> wird im folgenden Beispiel aussehen: <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]"
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled"
+
+          }
+
+          </code></pre></p>
+
+      <p>Der Inhalt dieser Klasse ausgefüllt werden kann, durch eine JSON, aus der Bereitstellung Dienst als Ergebnis des Empfangen einer <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Vorgang wie erstellen, aktualisieren oder Abfrage <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>.</p>
+      <p>Die folgenden JSON-Code ist ein Beispiel für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Antwort, die von der Bereitstellung Dienst empfangen. <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]",
+
+                          "info": {
+
+                              "subjectName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "sha1Thumbprint": "0000000000000000000000000000000000",
+
+                              "sha256Thumbprint": "validEnrollmentGroupId",
+
+                              "issuerName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "notBeforeUtc": "2017-11-14T12:34:18Z",
+
+                              "notAfterUtc": "2017-11-20T12:34:18Z",
+
+                              "serialNumber": "000000000000000000",
+
+                              "version": 3
+
+                          }
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled",
+
+              "createdDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "lastUpdatedDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "etag": "\"00000000-0000-0000-0000-00000000000\""
+
+          }
+
+          </code></pre></p>
+
+      <p></p>
+    syntax: &ref_1
+      content: public class EnrollmentGroup extends Serializable
+    inheritance:
+      - java.lang.Object
+      - java.io.Serializable
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable
+    inheritedMembers:
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.toJson()
+      - com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.toString()
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup()
+    id: EnrollmentGroup()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: EnrollmentGroup()
+    nameWithType: EnrollmentGroup.EnrollmentGroup()
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.EnrollmentGroup()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 608
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Leeren Konstruktor</p>
+      <p>Verwendet nur durch die Tools, die diese Klasse deserialisiert werden. </p>
+    syntax:
+      content: protected EnrollmentGroup()
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup(String,Attestation)'
+    id: 'EnrollmentGroup(String,Attestation)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: 'EnrollmentGroup(String enrollmentGroupId, Attestation attestation)'
+    nameWithType: 'EnrollmentGroup.EnrollmentGroup(String enrollmentGroupId, Attestation attestation)'
+    fullName: 'com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.EnrollmentGroup(String enrollmentGroupId, Attestation attestation)'
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 169
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>KONSTRUKTOR</p>
+      <p>Dieser Konstruktor erstellt eine Instanz der Gruppe "Registrierung" mit den minimalen Satz von Informationen, die vom Dienst Bereitstellung erforderlich sind.</p>
+      <p>Bei der Serialisierung ein <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> wird im folgenden Beispiel aussehen: <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]"
+
+                      }
+
+                  }
+
+              }
+
+          }
+
+          </code></pre></p>
+
+      <p></p>
+    syntax:
+      content: 'public EnrollmentGroup(String enrollmentGroupId, Attestation attestation)'
+      parameters:
+        - id: enrollmentGroupId
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit der eindeutigen Id für diese Gruppe für die Registrierung. </p>"
+        - id: attestation
+          type: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation
+          description: "<p>die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Nachweis</xref> Mechanismus, der sein<code>signedCertificate \r\n\r\n    </code> von <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation\" data-throw-if-not-resolved=\"false\">X509Attestation</xref>. </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn einer der angegebenen Parameter nicht korrekt ist. </p>
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup(String)
+    id: EnrollmentGroup(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: EnrollmentGroup(String json)
+    nameWithType: EnrollmentGroup.EnrollmentGroup(String json)
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.EnrollmentGroup(String json)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 219
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>KONSTRUKTOR</p>
+      <p>Dieser Konstruktor erstellt eine Instanz der Füllen der Klasse mit den Angaben in der JSON-Gruppe "Registrierung".</p>
+      <p>Die folgenden JSON-Code ist ein Beispiel für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Antwort, die von der Bereitstellung Dienst empfangen. <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]",
+
+                          "info": {
+
+                              "subjectName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "sha1Thumbprint": "0000000000000000000000000000000000",
+
+                              "sha256Thumbprint": "validEnrollmentGroupId",
+
+                              "issuerName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "notBeforeUtc": "2017-11-14T12:34:18Z",
+
+                              "notAfterUtc": "2017-11-20T12:34:18Z",
+
+                              "serialNumber": "000000000000000000",
+
+                              "version": 3
+
+                          }
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled"
+
+              "createdDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "lastUpdatedDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "etag": "\"00000000-0000-0000-0000-00000000000\""
+
+          }
+
+          </code></pre></p>
+
+      <p></p>
+    syntax:
+      content: public EnrollmentGroup(String json)
+      parameters:
+        - id: json
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit den vom Bereitstellung Dienst empfangenen JSON. </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: <p>Wenn die bereitgestellte JSON null oder leer bzw. ungültig ist. </p>
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getAttestation()
+    id: getAttestation()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getAttestation()
+    nameWithType: EnrollmentGroup.getAttestation()
+    fullName: Attestation com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getAttestation()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getAttestation*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 336
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für den Nachweis-Mechanismus.</p>
+      <p></p>
+    syntax:
+      content: public Attestation getAttestation()
+      return:
+        type: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation
+        description: "<p>Die<code>Attestation \r\n\r\n    </code> mit dem Nachweis-Inhalt. Er darf nicht<code>null \r\n\r\n    </code> . </p>"
+    exceptions:
+      - type: 407b0ee3
+        description: <p>Wenn der Typ des Mechanismus für die nachweisüberprüfung unbekannt ist. </p>
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getCreatedDateTimeUtc()
+    id: getCreatedDateTimeUtc()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getCreatedDateTimeUtc()
+    nameWithType: EnrollmentGroup.getCreatedDateTimeUtc()
+    fullName: Date com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getCreatedDateTimeUtc()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getCreatedDateTimeUtc*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 517
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für die CreatedDateTimeUtcDate.</p>
+      <p></p>
+    syntax:
+      content: public Date getCreatedDateTimeUtc()
+      return:
+        type: '12977444'
+        description: "<p>Die<code>Date \r\n\r\n    </code> mit dem CreatedDateTimeUtcDate-Inhalt. Es kann sein<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEnrollmentGroupId()
+    id: getEnrollmentGroupId()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getEnrollmentGroupId()
+    nameWithType: EnrollmentGroup.getEnrollmentGroupId()
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getEnrollmentGroupId()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEnrollmentGroupId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 302
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für die EnrollmentGroupId.</p>
+      <p></p>
+    syntax:
+      content: public String getEnrollmentGroupId()
+      return:
+        type: '26831127'
+        description: "<p>Die<code>String \r\n\r\n    </code> mit dem EnrollmentGroupId-Inhalt. Er darf nicht<code>null \r\n\r\n    </code> oder leer sein. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEtag()
+    id: getEtag()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getEtag()
+    nameWithType: EnrollmentGroup.getEtag()
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getEtag()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEtag*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 579
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für das Etag.</p>
+      <p></p>
+    syntax:
+      content: public String getEtag()
+      return:
+        type: '26831127'
+        description: "<p>Die<code>String \r\n\r\n    </code> mit dem Etag-Inhalt. Es kann sein<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getInitialTwin()
+    id: getInitialTwin()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getInitialTwin()
+    nameWithType: EnrollmentGroup.getInitialTwin()
+    fullName: TwinState com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getInitialTwin()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getInitialTwin*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 451
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für die InitialTwin.</p>
+      <p></p>
+    syntax:
+      content: public TwinState getInitialTwin()
+      return:
+        type: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_state
+        description: "<p>Die<code>TwinState \r\n\r\n    </code> mit dem InitialTwin-Inhalt. Seinen optionalen möglich<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getIotHubHostName()
+    id: getIotHubHostName()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getIotHubHostName()
+    nameWithType: EnrollmentGroup.getIotHubHostName()
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getIotHubHostName()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getIotHubHostName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 417
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für die IotHubHostName.</p>
+      <p></p>
+    syntax:
+      content: public String getIotHubHostName()
+      return:
+        type: '26831127'
+        description: "<p>Die<code>String \r\n\r\n    </code> mit dem IotHubHostName-Inhalt. Er darf nicht<code>null \r\n\r\n    </code> oder leer sein. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getLastUpdatedDateTimeUtc()
+    id: getLastUpdatedDateTimeUtc()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getLastUpdatedDateTimeUtc()
+    nameWithType: EnrollmentGroup.getLastUpdatedDateTimeUtc()
+    fullName: Date com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getLastUpdatedDateTimeUtc()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getLastUpdatedDateTimeUtc*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 548
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für die LastUpdatedDateTimeUtcDate.</p>
+      <p></p>
+    syntax:
+      content: public Date getLastUpdatedDateTimeUtc()
+      return:
+        type: '12977444'
+        description: "<p>Die<code>Date \r\n\r\n    </code> mit dem LastUpdatedDateTimeUtcDate-Inhalt. Es kann sein<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getProvisioningStatus()
+    id: getProvisioningStatus()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: getProvisioningStatus()
+    nameWithType: EnrollmentGroup.getProvisioningStatus()
+    fullName: ProvisioningStatus com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getProvisioningStatus()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getProvisioningStatus*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 484
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Getter für den ProvisioningStatus.</p>
+      <p></p>
+    syntax:
+      content: public ProvisioningStatus getProvisioningStatus()
+      return:
+        type: com.microsoft.azure.sdk.iot.provisioning.service.configs._provisioning_status
+        description: "<p>Die<code>ProvisioningStatus \r\n\r\n    </code> mit dem ProvisioningStatus-Inhalt. Sie können \"enabled\" oder \"disabled\". </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation(Attestation)
+    id: setAttestation(Attestation)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setAttestation(Attestation attestation)
+    nameWithType: EnrollmentGroup.setAttestation(Attestation attestation)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setAttestation(Attestation attestation)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 390
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>Der Setter für den Nachweis.</p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Der Nachweis</xref> Mechanismus ist obligatorischer Parameter, der den Mechanismus-Typ und die erforderlichen Zertifikate bereitstellt.</p>\n\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group\" data-throw-if-not-resolved=\"false\">EnrollmentGroup</xref> akzeptiert nur <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation\" data-throw-if-not-resolved=\"false\">X509Attestation</xref> mit der RootCertificates. Können Sie sie erstellen, anstatt die <b>PEM</b> Inhalt <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.createFromRootCertificates(String,String)\" data-throw-if-not-resolved=\"false\">X509Attestation #CreateFromRootCertificates(String, String)</xref></p>\n\n<p></p>"
+    syntax:
+      content: public void setAttestation(Attestation attestation)
+      parameters:
+        - id: attestation
+          type: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation
+          description: <p>die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation" data-throw-if-not-resolved="false">Nachweis</xref> mit dem neuen Nachweis-Mechanismus. Es soll so beschaffen sein <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref>. </p>
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn der angegebene Nachweis-Mechanismus ist<code>null \r\n\r\n    </code> oder ist ungültig. </p>"
+    see:
+      - type: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation
+        description: Nachweis
+      - type: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation
+        description: X509Attestation
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation(AttestationMechanism)
+    id: setAttestation(AttestationMechanism)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setAttestation(AttestationMechanism attestationMechanism)
+    nameWithType: EnrollmentGroup.setAttestation(AttestationMechanism attestationMechanism)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setAttestation(AttestationMechanism attestationMechanism)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 355
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>Der Setter für den Nachweis.</p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Der Nachweis</xref> Mechanismus ist obligatorischer Parameter, der den Mechanismus-Typ und die erforderlichen Schlüssel/Zertifikate bereitstellt</p>\n\n<p></p>\n<p></p>"
+    syntax:
+      content: protected void setAttestation(AttestationMechanism attestationMechanism)
+      parameters:
+        - id: attestationMechanism
+          type: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation_mechanism
+          description: "<p>die<code>AttestationMechanism \r\n\r\n    </code> mit dem neuen Nachweis-Mechanismus. Es kann sein <code>tpm</code> oder <code>x509</code>. </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn der angegebene Nachweis-Mechanismus ist<code>null \r\n\r\n    </code> . </p>"
+    see:
+      - type: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation_mechanism
+        description: AttestationMechanism
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setCreatedDateTimeUtc(String)
+    id: setCreatedDateTimeUtc(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setCreatedDateTimeUtc(String createdDateTimeUtc)
+    nameWithType: EnrollmentGroup.setCreatedDateTimeUtc(String createdDateTimeUtc)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setCreatedDateTimeUtc(String createdDateTimeUtc)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setCreatedDateTimeUtc*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 536
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für die CreatedDateTimeUtc.</p>
+      <p>Diesen Datums- und Uhrzeitwert wird durch die Bereitstellung Dienst bereitgestellt. Wenn die EnrollmentGroup noch nicht erstellt wurde, kann diese Zeichenfolge ein ungültiges Datum darstellen. In diesem Fall wird es ignoriert.</p>
+      <p>Beispiel für das erwartete Format: "2016-06-01T21:22:43.7996883Z" </p>
+      <p></p>
+    syntax:
+      content: protected void setCreatedDateTimeUtc(String createdDateTimeUtc)
+      parameters:
+        - id: createdDateTimeUtc
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit der neuen CreatedDateTimeUtc. Es kann sein<code>null \r\n\r\n    </code> , ist leer oder ungültig. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEnrollmentGroupId(String)
+    id: setEnrollmentGroupId(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setEnrollmentGroupId(String enrollmentGroupId)
+    nameWithType: EnrollmentGroup.setEnrollmentGroupId(String enrollmentGroupId)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setEnrollmentGroupId(String enrollmentGroupId)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEnrollmentGroupId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 321
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für die EnrollmentGroupId.</p>
+      <p>Eine gültige Anmeldung Gruppe Id folgt diesem Kriterium. Eine Zeichenfolge Groß-/Kleinschreibung (bis zu 128 Zeichen lang) alphanumerische ASCII-7-Bit-Zeichen<itemizedlist><listitem><p>{'-', ':', '.', '+', '', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. </p></listitem></itemizedlist></p>
+      <p></p>
+    syntax:
+      content: protected void setEnrollmentGroupId(String enrollmentGroupId)
+      parameters:
+        - id: enrollmentGroupId
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit der neuen EnrollmentGroupId. Er darf nicht<code>null \r\n\r\n    </code> , leer oder ungültig. </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn die bereitgestellten EnrollmentGroupId ist<code>null \r\n\r\n    </code> , leer oder ungültig. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEtag(String)
+    id: setEtag(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setEtag(String etag)
+    nameWithType: EnrollmentGroup.setEtag(String etag)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setEtag(String etag)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEtag*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 591
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für das Etag.</p>
+      <p></p>
+    syntax:
+      content: public void setEtag(String etag)
+      parameters:
+        - id: etag
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit dem neuen Etag. Er darf nicht<code>null \r\n\r\n    </code> , leer oder ungültig. </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn das angegebene Etag ist<code>null \r\n\r\n    </code> , leer oder ungültig. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setInitialTwin(TwinState)
+    id: setInitialTwin(TwinState)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setInitialTwin(TwinState initialTwin)
+    nameWithType: EnrollmentGroup.setInitialTwin(TwinState initialTwin)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setInitialTwin(TwinState initialTwin)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setInitialTwin*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 467
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für die InitialTwin.</p>
+      <p>Darüber werden zwei Vorbedingung für das Gerät bereitgestellt wurde. </p>
+      <p></p>
+    syntax:
+      content: public void setInitialTwin(TwinState initialTwin)
+      parameters:
+        - id: initialTwin
+          type: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_state
+          description: "<p>die<code>TwinState \r\n\r\n    </code> mit der neuen InitialTwin. Er darf nicht<code>null \r\n\r\n    </code> . </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn die bereitgestellten InitialTwin ist<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setIotHubHostName(String)
+    id: setIotHubHostName(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setIotHubHostName(String iotHubHostName)
+    nameWithType: EnrollmentGroup.setIotHubHostName(String iotHubHostName)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setIotHubHostName(String iotHubHostName)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setIotHubHostName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 437
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für die IotHubHostName.</p>
+      <p>Ein gültigen Iothub Hostnamen folgt diesem Kriterium. Eine Zeichenfolge Groß-/Kleinschreibung (bis zu 128 Zeichen lang) alphanumerische ASCII-7-Bit-Zeichen<itemizedlist><listitem><p>{'-', ':', '.', '+', '', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}. Ein gültiger Hostname hat mindestens 2 Teile, getrennt durch ".". </p></listitem></itemizedlist></p>
+      <p></p>
+    syntax:
+      content: public void setIotHubHostName(String iotHubHostName)
+      parameters:
+        - id: iotHubHostName
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit der neuen IotHubHostName. Er darf nicht<code>null \r\n\r\n    </code> , leer oder ungültig. </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn die bereitgestellten IotHubHostName ist<code>null \r\n\r\n    </code> , leer oder ungültig. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setLastUpdatedDateTimeUtc(String)
+    id: setLastUpdatedDateTimeUtc(String)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setLastUpdatedDateTimeUtc(String lastUpdatedDateTimeUtc)
+    nameWithType: EnrollmentGroup.setLastUpdatedDateTimeUtc(String lastUpdatedDateTimeUtc)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setLastUpdatedDateTimeUtc(String lastUpdatedDateTimeUtc)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setLastUpdatedDateTimeUtc*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 567
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für die LastUpdatedDateTimeUtc.</p>
+      <p>Diesen Datums- und Uhrzeitwert wird durch die Bereitstellung Dienst bereitgestellt. Wenn die EnrollmentGroup noch nicht erstellt wurde, kann diese Zeichenfolge ein ungültiges Datum darstellen. In diesem Fall wird es ignoriert.</p>
+      <p>Beispiel für das erwartete Format: "2016-06-01T21:22:43.7996883Z" </p>
+      <p></p>
+    syntax:
+      content: protected void setLastUpdatedDateTimeUtc(String lastUpdatedDateTimeUtc)
+      parameters:
+        - id: lastUpdatedDateTimeUtc
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit der neuen LastUpdatedDateTimeUtc. Es kann sein<code>null \r\n\r\n    </code> , ist leer oder ungültig. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setProvisioningStatus(ProvisioningStatus)
+    id: setProvisioningStatus(ProvisioningStatus)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: setProvisioningStatus(ProvisioningStatus provisioningStatus)
+    nameWithType: EnrollmentGroup.setProvisioningStatus(ProvisioningStatus provisioningStatus)
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setProvisioningStatus(ProvisioningStatus provisioningStatus)
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setProvisioningStatus*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 500
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: |-
+      <p>Der Setter für die ProvisioningStatus.</p>
+      <p>Es bietet Vorbedingung Status für das Gerät bereitgestellt wurde. </p>
+      <p></p>
+    syntax:
+      content: public void setProvisioningStatus(ProvisioningStatus provisioningStatus)
+      parameters:
+        - id: provisioningStatus
+          type: com.microsoft.azure.sdk.iot.provisioning.service.configs._provisioning_status
+          description: "<p>die<code>ProvisioningStatus \r\n\r\n    </code> mit der neuen ProvisioningStatus. Er darf nicht<code>null \r\n\r\n    </code> . </p>"
+    exceptions:
+      - type: 3c87bd19
+        description: "<p>Wenn die bereitgestellten ProvisioningStatus ist<code>null \r\n\r\n    </code> . </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.toJsonElement()
+    id: toJsonElement()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    langs:
+      - java
+    name: toJsonElement()
+    nameWithType: EnrollmentGroup.toJsonElement()
+    fullName: JsonElement com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.toJsonElement()
+    overload: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.toJsonElement*
+    type: Method
+    source:
+      remote: *ref_0
+      path: provisioning/provisioning-service-client/src/main/java/com/microsoft/azure/sdk/iot/provisioning/service/configs/EnrollmentGroup.java
+      startLine: 282
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    summary: "<p>serializer</p>\n<p>Erstellt eine<code>JsonElement \r\n\r\n    </code> , die den Inhalt darstellt, die Informationen in dieser Klasse und seiner Unterklassen in einem JSON-Format.</p>\n\n<p>Dies ist hilfreich, wenn der Aufrufer diese JSON mit JSON aus anderen Klassen, die eine konsolidierte JSON-Generierung integriert wird. </p>\n<p></p>"
+    syntax:
+      content: public JsonElement toJsonElement()
+      return:
+        type: 8585b2e7
+        description: "<p>Die<code>JsonElement \r\n\r\n    </code> mit dem Inhalt dieser Klasse. </p>"
+references:
+  - uid: 3c87bd19
+    spec.java:
+      - name: IllegalArgumentException
+        fullName: IllegalArgumentException
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.EnrollmentGroup*
+    name: EnrollmentGroup
+    nameWithType: EnrollmentGroup.EnrollmentGroup
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.EnrollmentGroup
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: 8585b2e7
+    spec.java:
+      - name: JsonElement
+        fullName: JsonElement
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.toJsonElement*
+    name: toJsonElement
+    nameWithType: EnrollmentGroup.toJsonElement
+    fullName: JsonElement com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.toJsonElement
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEnrollmentGroupId*
+    name: getEnrollmentGroupId
+    nameWithType: EnrollmentGroup.getEnrollmentGroupId
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getEnrollmentGroupId
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: 407b0ee3
+    spec.java:
+      - name: ProvisioningServiceClientException
+        fullName: ProvisioningServiceClientException
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getAttestation*
+    name: getAttestation
+    nameWithType: EnrollmentGroup.getAttestation
+    fullName: Attestation com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getAttestation
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setAttestation*
+    name: setAttestation
+    nameWithType: EnrollmentGroup.setAttestation
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setAttestation
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getIotHubHostName*
+    name: getIotHubHostName
+    nameWithType: EnrollmentGroup.getIotHubHostName
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getIotHubHostName
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setIotHubHostName*
+    name: setIotHubHostName
+    nameWithType: EnrollmentGroup.setIotHubHostName
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setIotHubHostName
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getInitialTwin*
+    name: getInitialTwin
+    nameWithType: EnrollmentGroup.getInitialTwin
+    fullName: TwinState com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getInitialTwin
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setInitialTwin*
+    name: setInitialTwin
+    nameWithType: EnrollmentGroup.setInitialTwin
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setInitialTwin
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getProvisioningStatus*
+    name: getProvisioningStatus
+    nameWithType: EnrollmentGroup.getProvisioningStatus
+    fullName: ProvisioningStatus com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getProvisioningStatus
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setProvisioningStatus*
+    name: setProvisioningStatus
+    nameWithType: EnrollmentGroup.setProvisioningStatus
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setProvisioningStatus
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: '12977444'
+    spec.java:
+      - name: Date
+        fullName: Date
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getCreatedDateTimeUtc*
+    name: getCreatedDateTimeUtc
+    nameWithType: EnrollmentGroup.getCreatedDateTimeUtc
+    fullName: Date com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getCreatedDateTimeUtc
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getLastUpdatedDateTimeUtc*
+    name: getLastUpdatedDateTimeUtc
+    nameWithType: EnrollmentGroup.getLastUpdatedDateTimeUtc
+    fullName: Date com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getLastUpdatedDateTimeUtc
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.getEtag*
+    name: getEtag
+    nameWithType: EnrollmentGroup.getEtag
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.getEtag
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEtag*
+    name: setEtag
+    nameWithType: EnrollmentGroup.setEtag
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setEtag
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setEnrollmentGroupId*
+    name: setEnrollmentGroupId
+    nameWithType: EnrollmentGroup.setEnrollmentGroupId
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setEnrollmentGroupId
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setCreatedDateTimeUtc*
+    name: setCreatedDateTimeUtc
+    nameWithType: EnrollmentGroup.setCreatedDateTimeUtc
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setCreatedDateTimeUtc
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.setLastUpdatedDateTimeUtc*
+    name: setLastUpdatedDateTimeUtc
+    nameWithType: EnrollmentGroup.setLastUpdatedDateTimeUtc
+    fullName: void com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup.setLastUpdatedDateTimeUtc
+    package: com.microsoft.azure.sdk.iot.provisioning.service.configs
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.toJson()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.yml
+    name: toJson()
+    nameWithType: Serializable.toJson()
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.Serializable.toJson()
+    type: Method
+    summary: "<p>serializer</p>\n<p>Erstellt eine<code>String \r\n\r\n    </code> , die den Inhalt darstellt, die Informationen in der untergeordneten Klasse und seiner Unterklassen in einem JSON-Format. </p>\n\n<p></p>"
+    syntax:
+      content: public String toJson()
+      return:
+        type: '26831127'
+        description: "<p>Die<code>String \r\n\r\n    </code> mit JSON. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.toString()
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.yml
+    name: toString()
+    nameWithType: Serializable.toString()
+    fullName: String com.microsoft.azure.sdk.iot.provisioning.service.configs.Serializable.toString()
+    type: Method
+    summary: |-
+      <p>Erstellt eine Schöndruck JSON mit dem Inhalt des untergeordneten Elements, Klasse und Unterklassen einzugeben.</p>
+      <p></p>
+    syntax:
+      content: public String toString()
+      return:
+        type: '26831127'
+        description: "<p>Die<code>String \r\n\r\n    </code> mit Schöndruck JSON. </p>"
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._serializable.yml
+    name: Serializable
+    nameWithType: Serializable
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.Serializable
+    type: Class
+    summary: |-
+      <p>Abstrakte Klasse mit dem Parser für die Bereitstellung Konfigurationen.</p>
+      <p></p>
+    syntax:
+      content: public class Serializable
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation_mechanism
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation_mechanism.yml
+    name: AttestationMechanism
+    nameWithType: AttestationMechanism
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.AttestationMechanism
+    type: Class
+    summary: |-
+      <p>Darstellung eines einzelnen Geräts Bereitstellung Diensts <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation" data-throw-if-not-resolved="false">Nachweis</xref> Mechanismus in der <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment" data-throw-if-not-resolved="false">IndividualEnrollment</xref> und <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>.</p>
+      <p>Es ist eine interne Klasse, die eines der Attestations in JSON-Format konvertiert. Konfigurieren den Nachweis Mechanismus finden Sie in der externen API <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation" data-throw-if-not-resolved="false">Nachweis</xref>.</p>
+      <p></p>
+    syntax:
+      content: public class AttestationMechanism
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_state
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_state.yml
+    name: TwinState
+    nameWithType: TwinState
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.TwinState
+    type: Class
+    summary: "<p>Darstellung eines einzelnen anfänglichen zwei-Status der Bereitstellung Device Registration Service.</p>\n<p>Die <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_state\" data-throw-if-not-resolved=\"false\">TwinState</xref> darf eine <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> von <b>Tags</b>, und eine <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_collection\" data-throw-if-not-resolved=\"false\">TwinCollection</xref> von <b>properties.desired </b>.</p>\n<p>Jede Entität in den Auflistungen darf eine zugeordnete <xref uid=\"\" data-throw-if-not-resolved=\"false\">TwinMetadata</xref>.</p>\n<p>Diese Metadaten werden vom Dienst bereitgestellt und enthält Informationen zu den zuletzt aktualisierten Datum und die Version.</p>\n<p>Beispielsweise folgender Ausdruck ist ein gültiger <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._twin_state\" data-throw-if-not-resolved=\"false\">TwinState</xref>, dargestellt als <code>initialTwin \r\n\r\n    </code> im Rest-API. <pre><code>{\n\n        \"initialTwin\": {\n\n            \"tags\":{\n\n                \"SpeedUnity\":\"MPH\",\n\n                \"$metadata\":{\n\n                    \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n\n                    \"$lastUpdatedVersion\":4,\n\n                    \"SpeedUnity\":{\n\n                        \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n\n                        \"$lastUpdatedVersion\":4\n\n                    }\n\n                },\n\n                \"$version\":4\n\n            }\n\n            \"properties\":{\n\n                \"desired\": {\n\n                    \"MaxSpeed\":{\n\n                        \"Value\":500,\n\n                        \"NewValue\":300\n\n                    },\n\n                    \"$metadata\":{\n\n                        \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n\n                        \"$lastUpdatedVersion\":4,\n\n                        \"MaxSpeed\":{\n\n                            \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n\n                            \"$lastUpdatedVersion\":4,\n\n                            \"Value\":{\n\n                                \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n\n                                \"$lastUpdatedVersion\":4\n\n                            },\n\n                            \"NewValue\":{\n\n                                \"$lastUpdated\":\"2017-09-21T02:07:44.238Z\",\n\n                                \"$lastUpdatedVersion\":4\n\n                            }\n\n                        }\n\n                    },\n\n                    \"$version\":4\n\n                }\n\n            }\n\n        }\n\n    }\n\n    </code></pre></p>\n\n<p></p>"
+    syntax:
+      content: public class TwinState
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._provisioning_status
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._provisioning_status.yml
+    name: ProvisioningStatus
+    nameWithType: ProvisioningStatus
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.ProvisioningStatus
+    type: Enum
+    summary: |-
+      <p>Der Bereitstellung Device Registration Service Bereitstellungsstatus.</p>
+      <p></p>
+    syntax:
+      content: public enum ProvisioningStatus
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation.yml
+    name: Attestation
+    nameWithType: Attestation
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.Attestation
+    type: Class
+    summary: |-
+      <p>Dies ist die abstrakte Klasse, die alle Mögliche Typen von Nachweis vereinheitlicht, der Registrierungsdienst für Bereitstellung unterstützt.</p>
+      <p>Jetzt die Bereitstellung Dienst unterstützt <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._tpm_attestation" data-throw-if-not-resolved="false">TpmAttestation</xref> oder <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref>.</p>
+      <p></p>
+    syntax:
+      content: public class Attestation
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group.yml
+    name: EnrollmentGroup
+    nameWithType: EnrollmentGroup
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.EnrollmentGroup
+    type: Class
+    summary: |-
+      <p>Darstellung einer einzelnen Bereitstellung Registrierungsdienst Registrierung Gruppe mit einem JSON-Serialisierungsprogramm und Deserialisierungsprogramm.</p>
+      <p>Dieses Objekt wird zum Senden <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Informationen, die die Bereitstellung von service oder empfangen <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Informationen aus der Bereitstellung-Dienst.</p>
+      <p>Erstellt oder aktualisiert eine <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> dienstseitig Bereitstellung sollten Sie ausfüllen dieses Objekts und Aufrufen der öffentliche API <xref uid="com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createOrUpdateEnrollmentGroup(EnrollmentGroup)" data-throw-if-not-resolved="false">ProvisioningServiceClient#createOrUpdateEnrollmentGroup(EnrollmentGroup)</xref>. Die Mindestinformationen Bereitstellung Dienst erforderlich ist der <xref uid="" data-throw-if-not-resolved="false">EnrollmentGroupId</xref> und <xref uid="" data-throw-if-not-resolved="false">Nachweis</xref>.</p>
+      <p>Zum Bereitstellen eines Geräts mithilfe <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>, es muss ein X509 enthalten Chip mit einem SigningCertificate für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref> Mechanismus.</p>
+      <p>Der Inhalt dieser Klasse werden in einem JSON-Format serialisiert und als Textkörper der Rest-API an den bereitstellungs-Dienst gesendet.</p>
+      <p>Bei der Serialisierung ein <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> wird im folgenden Beispiel aussehen: <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]"
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled"
+
+          }
+
+          </code></pre></p>
+
+      <p>Der Inhalt dieser Klasse ausgefüllt werden kann, durch eine JSON, aus der Bereitstellung Dienst als Ergebnis des Empfangen einer <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Vorgang wie erstellen, aktualisieren oder Abfrage <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref>.</p>
+      <p>Die folgenden JSON-Code ist ein Beispiel für die <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Antwort, die von der Bereitstellung Dienst empfangen. <pre><code>{
+
+              "enrollmentGroupId":"validEnrollmentGroupId",
+
+              "attestation":{
+
+                  "type":"x509",
+
+                  "signingCertificates":{
+
+                      "primary":{
+
+                          "certificate":"[valid certificate]",
+
+                          "info": {
+
+                              "subjectName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "sha1Thumbprint": "0000000000000000000000000000000000",
+
+                              "sha256Thumbprint": "validEnrollmentGroupId",
+
+                              "issuerName": "CN=ROOT_00000000-0000-0000-0000-000000000000, OU=Azure IoT, O=MSFT, C=US",
+
+                              "notBeforeUtc": "2017-11-14T12:34:18Z",
+
+                              "notAfterUtc": "2017-11-20T12:34:18Z",
+
+                              "serialNumber": "000000000000000000",
+
+                              "version": 3
+
+                          }
+
+                      }
+
+                  }
+
+              },
+
+              "iotHubHostName":"ContosoIoTHub.azure-devices.net",
+
+              "provisioningStatus":"enabled",
+
+              "createdDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "lastUpdatedDateTimeUtc": "2017-09-28T16:29:42.3447817Z",
+
+              "etag": "\"00000000-0000-0000-0000-00000000000\""
+
+          }
+
+          </code></pre></p>
+
+      <p></p>
+    syntax: *ref_1
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.yml
+    name: X509Attestation
+    nameWithType: X509Attestation
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.configs.X509Attestation
+    type: Class
+    summary: "<p>Darstellung eines einzelnen Geräts Bereitstellung Diensts X509 <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Nachweis</xref>.</p>\n<p>Der bereitstellungs-Dienst unterstützt Gerät Bezeichner Kompositionsmodul oder Datenwürfel AUFGETEILT, als Gerät Nachweis Mechanismus. Um AUFTEILUNGEN verwenden zu können, muss Benutzer die X509 bereitstellen Zertifikat. Diese Klasse bieten die Möglichkeit zum Erstellen einer neuen Nachweis für eine X509 Zertifikat und gibt es als eine abstrakte Schnittstelle <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._attestation\" data-throw-if-not-resolved=\"false\">Nachweis</xref>.</p>\n<p>Ein X509 Nachweis können enthält mindestens eine der 3 Typen des Zertifikats:</p>\n<p>\r\n\r\n  <variablelist>\r\n\r\n    <varlistentry>\r\n\r\n      <b>Client- oder Alias-Zertifikat:</b>\r\n\r\n    </varlistentry>\r\n\r\n    <listitem>\r\n\r\n      <p>Für diese Klasse als ClientCertificates aufgerufen wird, kann dieses Zertifikat ein einzelnes Gerät authentifizieren. </p>\r\n\r\n    </listitem>\r\n\r\n    <varlistentry>\r\n\r\n      <b>Signieren oder Stammzertifikats:</b>\r\n\r\n    </varlistentry>\r\n\r\n    <listitem>\r\n\r\n      <p>Für diese Klasse als RootCertificates aufgerufen wird, kann dieses Zertifikat mehrere Clientzertifikate zum Authentifizieren von mehreren Geräten erstellen. </p>\r\n\r\n    </listitem>\r\n\r\n    <varlistentry>\r\n\r\n      <b>Referenz der Zertifizierungsstelle:</b>\r\n\r\n    </varlistentry>\r\n\r\n    <listitem>\r\n\r\n      <p>Für diese Klasse als aufgerufen <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_c_a_references\" data-throw-if-not-resolved=\"false\">X509CAReferences</xref>, dies ist ein Verweis Zertifizierungsstelle für eine Vertrauensanbieter, die mehrere Clientzertifikate zum Authentifizieren von mehreren Geräten erstellen können. </p>\n\n    </listitem>\n\n  </variablelist>\n\n</p>\n<p>Die Bereitstellung Dienst ermöglicht Benutzern das Erstellen <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> und <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group\" data-throw-if-not-resolved=\"false\">EnrollmentGroup</xref>. Für alle Vorgänge über <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._individual_enrollment\" data-throw-if-not-resolved=\"false\">IndividualEnrollment</xref> mit <b>AUFTEILUNGEN</b>, Benutzer bereitstellen muss eine <b>ClientCertificates</b>, und für Vorgänge über <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group\" data-throw-if-not-resolved=\"false\">EnrollmentGroup </xref>, Benutzer bereitstellen muss eine <b>RootCertificates</b> oder ein <b> <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_c_a_references\" data-throw-if-not-resolved=\"false\">X509CAReferences</xref></b>.</p>\n<p>Für jeden dieser Typen von Zertifikaten kann Benutzer 2 Zertifikate, ein primäres und ein sekundäres Replikat bereitstellen. Nur die primäre ist obligatorisch ist, wird die sekundäre Datenbank ist optional.</p>\n<p>Der bereitstellungs-Dienst verarbeitet die bereitgestellten Zertifikate, aber nie erneut zurück. Statt, <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.getPrimaryX509CertificateInfo()\" data-throw-if-not-resolved=\"false\">getPrimaryX509CertificateInfo()</xref> und <xref uid=\"com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.getSecondaryX509CertificateInfo()\" data-throw-if-not-resolved=\"false\">getSecondaryX509CertificateInfo()</xref> die Zertifikatinformationen für den Zertifikaten zurück.</p>\n<p></p>"
+    syntax:
+      content: public class X509Attestation
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service.exceptions._provisioning_service_client_exception
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.exceptions
+    href: com.microsoft.azure.sdk.iot.provisioning.service.exceptions._provisioning_service_client_exception.yml
+    name: ProvisioningServiceClientException
+    nameWithType: ProvisioningServiceClientException
+    fullName: com.microsoft.azure.sdk.iot.provisioning.service.exceptions.ProvisioningServiceClientException
+    type: Class
+    summary: |-
+      <p>Übergeordnete Klasse für die Bereitstellung Registrierungsdienst Ausnahmen auf dem Client-Dienst.</p>
+      <p>
+
+        <pre>
+
+          <code>ProvisioningServiceClientException
+
+              |
+
+              +--&gt;ProvisioningServiceClientTransportException [any transport layer exception]
+
+              |
+
+              +--&gt;ProvisioningServiceClientServiceException [any exception reported in the http response]
+
+                      |
+
+                      |
+
+                      +--&gt;ProvisioningServiceClientBadUsageException [any http response 4xx]
+
+                      |        |
+
+                      |        +--&gt;ProvisioningServiceClientBadFormatException [400]
+
+                      |        +--&gt;ProvisioningServiceClientUnathorizedException [401]
+
+                      |        +--&gt;ProvisioningServiceClientNotFoundException [404]
+
+                      |        +--&gt;ProvisioningServiceClientPreconditionFailedException [412]
+
+                      |        +--&gt;ProvisioningServiceClientTooManyRequestsException [429]
+
+                      |
+
+                      +--&gt;ProvisioningServiceClientTransientException [any http response 5xx]
+
+                      |        |
+
+                      |        +--&gt;ProvisioningServiceClientInternalServerErrorException [500]
+
+                      |
+
+                      +--&gt;ProvisioningServiceClientUnknownException [any other http response &gt;300, but not 4xx or 5xx]
+
+          </code>
+
+        </pre>
+
+      </p>
+    syntax:
+      content: public class ProvisioningServiceClientException
+  - uid: 'com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.createFromRootCertificates(String,String)'
+    parent: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation
+    href: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation.yml
+    name: 'createFromRootCertificates(String primary, String secondary)'
+    nameWithType: 'X509Attestation.createFromRootCertificates(String primary, String secondary)'
+    fullName: 'static X509Attestation com.microsoft.azure.sdk.iot.provisioning.service.configs.X509Attestation.createFromRootCertificates(String primary, String secondary)'
+    type: Method
+    summary: |-
+      <p>Die Factory mit RootCertificates mit primären und sekundären Zertifikate.</p>
+      <p>Erstellt eine neue Instanz der dem <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref> mit den primären und sekundären Zertifikaten.</p>
+      <p></p>
+    syntax:
+      content: 'public static X509Attestation createFromRootCertificates(String primary, String secondary)'
+      parameters:
+        - id: primary
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit dem primären Zertifikat. Er darf nicht<code>null \r\n\r\n    </code> oder leer sein. </p>"
+        - id: secondary
+          type: '26831127'
+          description: "<p>die<code>String \r\n\r\n    </code> mit sekundären Zertifikats. Es kann sein<code>null \r\n\r\n    </code> oder ist leer (ignoriert). </p>"
+      return:
+        type: com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation
+        description: <p>die neue Instanz der <xref uid="com.microsoft.azure.sdk.iot.provisioning.service.configs._x509_attestation" data-throw-if-not-resolved="false">X509Attestation</xref>. </p>
+  - uid: com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.createOrUpdateEnrollmentGroup(EnrollmentGroup)
+    parent: com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client
+    href: com.microsoft.azure.sdk.iot.provisioning.service._provisioning_service_client.yml
+    name: createOrUpdateEnrollmentGroup(EnrollmentGroup enrollmentGroup)
+    nameWithType: ProvisioningServiceClient.createOrUpdateEnrollmentGroup(EnrollmentGroup enrollmentGroup)
+    fullName: EnrollmentGroup com.microsoft.azure.sdk.iot.provisioning.service.ProvisioningServiceClient.createOrUpdateEnrollmentGroup(EnrollmentGroup enrollmentGroup)
+    type: Method
+    summary: "<p>Erstellen Sie oder aktualisieren Sie einer Gruppe Anmeldungsdatensatz.</p>\n<p>Diese API erstellt eine neue Gruppe für die Registrierung oder war zu aktualisieren. Alle Enrollment-Gruppe in der Bereitstellung Device Registration Service enthält einen eindeutigen Bezeichner EnrollmentGroupId aufgerufen. Wenn diese API mit einem EnrollmentGroupId, die bereits vorhanden ist aufgerufen wird, wird die war EnrollmentGroup Informationen durch den neuen ersetzt. Andererseits, wenn die EnrollmentGroupId nicht beendet wird, wird sie erstellt werden.</p>\n<p>Um die Geräte Bereitstellung Dienst-API zu verwenden, müssen Sie das folgende Paket auf Ihre Anwendung einschließen. <pre><code>// Include the following imports to use the Device Provisioning Service APIs.\n    import com.microsoft.azure.sdk.iot.provisioning.service.*;\n    </code></pre></p>\n<p>\r\n  <b>Beispiel:</b>\r\n</p>\n<p>Der folgende Code erstellt eine neue EnrollmentGroup, die bei Bereitstellung mehrerer Geräte die ContosoHub.azure-devices.net. <pre><code>// EnrollmentGroup information.\n    private static final String PROVISIONING_CONNECTION_STRING = \"HostName=ContosoProvisioning.azure-devices-provisioning.net;\" +\n                                                                 \"SharedAccessKeyName=contosoprovisioningserviceowner;\" +\n                                                                 \"SharedAccessKey=0000000000000000000000000000000000000000000=\";\n    private static final String ENROLLMENT_GROUP_ID = \"enrollmentGroupId-1\";\n    private static final String IOTHUB_HOST_NAME = \"ContosoHub.azure-devices.net\";\n    private static String PUBLIC_CERTIFICATE_STRING =\n            \"-----BEGIN CERTIFICATE-----\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\\n\" +\n            \"-----END CERTIFICATE-----\\n\";\n    \n    public static void main(String[] args) throws IOException, URISyntaxException, ProvisioningServiceClientException\n    {\n        // Create a Device Provisioning Service Client.\n        DeviceProvisioningServiceClient deviceProvisioningServiceClient =\n            DeviceProvisioningServiceClient.createFromConnectionString(PROVISIONING_CONNECTION_STRING);\n    \n        // Create a new enrollmentGroup configurations.\n        Attestation attestation = X509Attestation.createFromSigningCertificates(PUBLIC_KEY_CERTIFICATE_STRING);\n        EnrollmentGroup enrollmentGroup =\n            new EnrollmentGroup(\n                enrollmentGroupId,\n                attestation);\n        enrollmentGroup.setIotHubHostName(IOTHUB_HOST_NAME);\n        enrollmentGroup.setProvisioningStatus(ProvisioningStatus.ENABLED);\n    \n        // Create a new enrollmentGroup.\n        EnrollmentGroup enrollmentGroupResult =  provisioningServiceClient.createOrUpdateEnrollmentGroup(enrollmentGroup);\n    }\n    </code></pre></p>\n<p></p>"
+    syntax:
+      content: public EnrollmentGroup createOrUpdateEnrollmentGroup(EnrollmentGroup enrollmentGroup)
+      parameters:
+        - id: enrollmentGroup
+          type: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+          description: '<p>die <xref uid="" data-throw-if-not-resolved="false">EnrollmentGroup</xref> -Objekt, das die IndividualEnrollment, die beschrieben der zu erstellenden aktualisiert. </p>'
+      return:
+        type: com.microsoft.azure.sdk.iot.provisioning.service.configs._enrollment_group
+        description: <p>Ein <xref uid="" data-throw-if-not-resolved="false">EnrollmentGroup</xref> Objekt mit dem Ergebnis des CREATE- oder Update angefordert. </p>

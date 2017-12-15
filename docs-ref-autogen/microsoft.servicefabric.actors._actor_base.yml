@@ -34,7 +34,7 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.actors/src/microsoft/servicefabric/actors/ActorBase.java
       startLine: 24
     package: microsoft.servicefabric.actors
-    summary: "<p>Stellt die Basisklasse für Akteure. <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref></p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Dies ist ein Basistyp für Akteur, bietet die Funktionalität, die durch Ableiten von Akteur implementiert Akteure gemeinsam ist <xref href=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\"></xref> der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>Stellt die Basisklasse für Akteure. <xref uid=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\">Akteur</xref></p>\n<p>\r\n\r\n  <b>Hinweise:</b>Dies ist ein Basistyp für Akteur, bietet die Funktionalität, die durch Ableiten von Akteur implementiert Akteure gemeinsam ist <xref uid=\"microsoft.servicefabric.actors._actor\" data-throw-if-not-resolved=\"false\">Akteur</xref> der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref uid=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\">ActorStateProvider</xref>. </p>"
     syntax:
       content: public class ActorBase
     inheritance:
@@ -62,7 +62,7 @@ items:
       content: public FabricActorService getActorService()
       return:
         type: microsoft.servicefabric.actors._fabric_actor_service
-        description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._fabric_actor_service\" data-throw-if-not-resolved=\"false\"></xref>Das hosting des Akteurs zustandsbehafteten dienstreplikats darstellt. Akteur. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.actors._fabric_actor_service\" data-throw-if-not-resolved=\"false\">microsoft.servicefabric.actors.FabricActorService</xref> , die den Akteur hosting zustandsbehafteten dienstreplikats darstellt. Akteur. </p>"
   - uid: microsoft.servicefabric.actors._actor_base.getApplicationName()
     id: getApplicationName()
     parent: microsoft.servicefabric.actors._actor_base
@@ -138,7 +138,7 @@ items:
       content: public ActorId getId()
       return:
         type: microsoft.servicefabric.actors._actor_id
-        description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>für die der Akteur. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\">Der Akteur-ID</xref> für den Akteur. </p>"
   - uid: microsoft.servicefabric.actors._actor_base.getReminder(String)
     id: getReminder(String)
     parent: microsoft.servicefabric.actors._actor_base
@@ -166,7 +166,7 @@ items:
           description: <p>Der Name der abzurufenden Erinnerung. </p>
       return:
         type: microsoft.servicefabric.actors._actor_reminder
-        description: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_reminder" data-throw-if-not-resolved="false"></xref> , eine Akteur Erinnerung darstellt. </p>'
+        description: '<p>Ein <xref uid="microsoft.servicefabric.actors._actor_reminder" data-throw-if-not-resolved="false">ActorReminder</xref> , die eine Akteur Erinnerung darstellt. </p>'
   - uid: microsoft.servicefabric.actors._actor_base.getServiceUri()
     id: getServiceUri()
     parent: microsoft.servicefabric.actors._actor_base
@@ -190,7 +190,7 @@ items:
       content: public URI getServiceUri()
       return:
         type: '62304784'
-        description: "<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">java.net.URI</ref> des Akteurs-Diensts, der dieser Akteur gehostet wird. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.net.URI</xref> des Akteurs-Diensts, der dieser Akteur gehostet wird. </p>"
   - uid: microsoft.servicefabric.actors._actor_base.onActivateAsync()
     id: onActivateAsync()
     parent: microsoft.servicefabric.actors._actor_base
@@ -263,11 +263,11 @@ items:
       parameters:
         - id: actorMethodContext
           type: microsoft.servicefabric.actors._actor_method_context
-          description: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false"></xref> beschreiben die Methode, die vom Akteur-Laufzeit, bevor Sie diese Methode aufgerufen wurde. </p>'
+          description: '<p>Ein <xref uid="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false">ActorMethodContext</xref> beschreiben die Methode, die vom Akteur-Laufzeit, bevor Sie diese Methode aufgerufen wurde. </p>'
       return:
         type: 16409f84
         description: |-
-          <p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , post, actor-Method-Vorgang darstellt. <verbatim>    &lt;b&gt;"Hinweise":&lt;/b&gt; diese Methode wird aufgerufen, indem Akteur zur Laufzeit vor:
+          <p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , post, actor-Method-Vorgang darstellt. <verbatim>    &lt;b&gt;"Hinweise":&lt;/b&gt; diese Methode wird aufgerufen, indem Akteur zur Laufzeit vor:
 
               &lt;ul&gt;
 
@@ -302,11 +302,11 @@ items:
       parameters:
         - id: actorMethodContext
           type: microsoft.servicefabric.actors._actor_method_context
-          description: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false"></xref> beschreiben die Methode, die vom Akteur Common Language Runtime nach Abschluss dieser Methode aufgerufen wird. </p>'
+          description: '<p>Ein <xref uid="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false">ActorMethodContext</xref> beschreiben die Methode, die vom Akteur Common Language Runtime nach Abschluss dieser Methode aufgerufen wird. </p>'
       return:
         type: 16409f84
         description: |-
-          <p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , actor--Methode Vorgang darstellt. <verbatim>    &lt;b&gt;"Hinweise":&lt;/b&gt;diese Methode wird aufgerufen, indem Akteur zur Laufzeit vor:
+          <p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , actor--Methode Vorgang darstellt. <verbatim>    &lt;b&gt;"Hinweise":&lt;/b&gt;diese Methode wird aufgerufen, indem Akteur zur Laufzeit vor:
 
               &lt;ul&gt;
 
@@ -347,13 +347,13 @@ items:
           description: <p>Status Erinnerung zugeordnet. </p>
         - id: dueTime
           type: e02a2de0
-          description: '<p>Ein <ref refid="" kindref="compound">java.time.Duration</ref> , das die Zeitspanne für die Verzögerung, die Erinnerung auslösen darstellt. Geben Sie (-1) Millisekunde an, um zu verhindern, dass Erinnerung ausgelöst. Geben Sie 0 (null) fest, um die Erinnerung sofort ausgelöst. </p>'
+          description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">java.time.Duration</xref> , das die Zeitspanne für die Verzögerung, die Erinnerung auslösen darstellt. Geben Sie (-1) Millisekunde an, um zu verhindern, dass Erinnerung ausgelöst. Geben Sie 0 (null) fest, um die Erinnerung sofort ausgelöst. </p>'
         - id: period
           type: e02a2de0
           description: '<p>Das Zeitintervall zwischen den Auslösen von Erinnerungen. Geben Sie (-1) Millisekunde an, um regelmäßige Auslösen von Ereignissen zu deaktivieren. </p>'
       return:
         type: 9cdf14d0microsoft.servicefabric.actors._actor_remindera08ddfce
-        description: '<p>Eine Aufgabe, die den asynchronen Registrierungsvorgang darstellt. Der Wert von TResult-Parameter ist ein <xref href="microsoft.servicefabric.actors._actor_reminder" data-throw-if-not-resolved="false"></xref> , die der Akteur Erinnerung, die registriert war darstellt. </p>'
+        description: '<p>Eine Aufgabe, die den asynchronen Registrierungsvorgang darstellt. Der Wert von TResult-Parameter ist ein <xref uid="microsoft.servicefabric.actors._actor_reminder" data-throw-if-not-resolved="false">ActorReminder</xref> , die der Akteur Erinnerung, die registriert war darstellt. </p>'
   - uid: 'microsoft.servicefabric.actors._actor_base.registerTimer(Function<Object, CompletableFuture<?>>,Object,Duration,Duration)'
     id: 'registerTimer(Function<Object, CompletableFuture<?>>,Object,Duration,Duration)'
     parent: microsoft.servicefabric.actors._actor_base
@@ -390,7 +390,7 @@ items:
           description: <p>Die Zeitspanne für nachfolgende Akteur Timer-Aufruf. </p>
       return:
         type: microsoft.servicefabric.actors._actor_timer
-        description: <p>Gibt <xref href="microsoft.servicefabric.actors._actor_timer" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Gibt <xref uid="microsoft.servicefabric.actors._actor_timer" data-throw-if-not-resolved="false">ActorTimer</xref> Objekt. </p>
   - uid: 'microsoft.servicefabric.actors._actor_base.registerTimer(Function<Object, CompletableFuture<?>>,String,Object,Duration,Duration)'
     id: 'registerTimer(Function<Object, CompletableFuture<?>>,String,Object,Duration,Duration)'
     parent: microsoft.servicefabric.actors._actor_base
@@ -418,7 +418,7 @@ items:
           description: '<p>Rückruf, der aufgerufen wird, wenn der Zeitgeber ausgelöst wird. </p>'
         - id: asyncCallbackFunctionName
           type: '26831127'
-          description: '<p>Name der AsyncCallBack-Funktion. Es kann verwendet werden, <xref href="microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false"></xref> und <xref href="microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false"></xref> So initiieren Sie eine Benutzeraufgabe auf vor und nach dem Aufruf dieser Funktion. Die Eigenschaft <xref href="microsoft.servicefabric.actors._actor_method_context.getMethodName()" data-throw-if-not-resolved="false"></xref> erhalten den Methodennamen. </p>'
+          description: '<p>Name der AsyncCallBack-Funktion. Es kann verwendet werden, <xref uid="microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false">ActorBase#onPreActorMethodAsync(ActorMethodContext)</xref> und <xref uid="microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false">ActorBase#onPostActorMethodAsync(ActorMethodContext)</xref> So initiieren Sie eine Benutzeraufgabe auf vor und nach dem Aufrufen dieser Funktion. Die Eigenschaft <xref uid="microsoft.servicefabric.actors._actor_method_context.getMethodName()" data-throw-if-not-resolved="false">ActorMethodContext#getMethodName()</xref> erhalten den Methodennamen. </p>'
         - id: state
           type: '79317049'
           description: <p>Status Zeitgeberrückruf übergeben. </p>
@@ -430,7 +430,7 @@ items:
           description: <p>Die Zeitspanne für nachfolgende Akteur Timer-Aufruf. </p>
       return:
         type: microsoft.servicefabric.actors._actor_timer
-        description: <p>Gibt <xref href="microsoft.servicefabric.actors._actor_timer" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Gibt <xref uid="microsoft.servicefabric.actors._actor_timer" data-throw-if-not-resolved="false">ActorTimer</xref> Objekt. </p>
   - uid: microsoft.servicefabric.actors._actor_base.unregisterReminderAsync(ActorReminder)
     id: unregisterReminderAsync(ActorReminder)
     parent: microsoft.servicefabric.actors._actor_base
@@ -483,7 +483,7 @@ items:
       parameters:
         - id: timer
           type: microsoft.servicefabric.actors._actor_timer
-          description: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_timer\" data-throw-if-not-resolved=\"false\"></xref>für Zeitgeber, der nicht aufgehoben werden muss. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.actors._actor_timer\" data-throw-if-not-resolved=\"false\">ActorTimer</xref> darstellt Zeitgeber, der nicht aufgehoben werden muss. </p>"
 references:
   - uid: '26831127'
     spec.java:
@@ -609,7 +609,7 @@ references:
     nameWithType: FabricActor
     fullName: microsoft.servicefabric.actors.FabricActor
     type: Class
-    summary: "<p>Stellt einen Akteur, der mehrere zuverlässige \"benannte\" Status zugeordnet aufweisen kann. <xref href=\"microsoft.servicefabric.actors._actor_base\" data-throw-if-not-resolved=\"false\"></xref></p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref href=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>Stellt einen Akteur, der mehrere zuverlässige \"benannte\" Status zugeordnet aufweisen kann. <xref uid=\"microsoft.servicefabric.actors._actor_base\" data-throw-if-not-resolved=\"false\">ActorBase</xref></p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der Zustand in den Garbage Collections der Akteur und Fail-Failover beibehalten wird. Speichern und Abrufen des Zustands wird von der Akteur-State-Anbieter bereitgestellt <xref uid=\"microsoft.servicefabric.actors._actor_state_provider\" data-throw-if-not-resolved=\"false\">ActorStateProvider</xref>. </p>"
     syntax:
       content: public class FabricActor
   - uid: microsoft.servicefabric.actors._actor_timer
@@ -619,7 +619,7 @@ references:
     nameWithType: ActorTimer
     fullName: microsoft.servicefabric.actors.ActorTimer
     type: Interface
-    summary: <p>Stellt Zeitgeber legen Sie für ein<xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref></p>
+    summary: <p>Stellt Zeitgeber legen Sie für eine <xref uid="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false">Akteur</xref></p>
     syntax:
       content: public interface ActorTimer
   - uid: microsoft.servicefabric.actors._actor_id
@@ -629,7 +629,7 @@ references:
     nameWithType: ActorId
     fullName: microsoft.servicefabric.actors.ActorId
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\"></xref>die Identität der Akteur innerhalb eines Diensts Akteur. Akteure können festgestellt werden, indem <ref refid=\"\" kindref=\"compound\">java.lang.String</ref>, <ref refid=\"\" kindref=\"compound\">java.util.UUID</ref> oder lang. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.actors._actor_id\" data-throw-if-not-resolved=\"false\">Der Akteur-ID</xref> ist die Identität der Akteur innerhalb eines Diensts Akteur. Akteure können festgestellt werden, indem <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.lang.String</xref>, <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.util.UUID</xref> oder lang. </p>"
     syntax:
       content: public class ActorId
   - uid: microsoft.servicefabric.actors._fabric_actor_service
@@ -639,7 +639,7 @@ references:
     nameWithType: FabricActorService
     fullName: microsoft.servicefabric.actors.FabricActorService
     type: Class
-    summary: "<p>Stellt die Basisklasse für Microsoft Service Fabric-basierten zuverlässige Akteure Dienst dar. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Ableiten von dieser Klasse, die einen eigenen benutzerdefinierten Akteur-Dienst zu implementieren, wenn Sie alle Verhalten des Diensts für die Akteure außer Kraft setzen möchten. </p>"
+    summary: "<p>Stellt die Basisklasse für Microsoft Service Fabric-basierten zuverlässige Akteure Dienst dar. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Ableiten von dieser Klasse, die einen eigenen benutzerdefinierten Akteur-Dienst zu implementieren, wenn Sie alle Verhalten des Diensts für die Akteure außer Kraft setzen möchten. </p>"
     syntax:
       content: public class FabricActorService
   - uid: microsoft.servicefabric.actors._actor_method_context
@@ -649,7 +649,7 @@ references:
     nameWithType: ActorMethodContext
     fullName: microsoft.servicefabric.actors.ActorMethodContext
     type: Class
-    summary: '<p>Ein <xref href="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false"></xref> enthält Informationen über die Methode, die vom Akteur Laufzeit aufgerufen wird, und wird als Argument übergeben <xref href="microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false"></xref> und <xref href="microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Ein <xref uid="microsoft.servicefabric.actors._actor_method_context" data-throw-if-not-resolved="false">ActorMethodContext</xref> enthält Informationen über die Methode, die vom Akteur Laufzeit aufgerufen wird, und wird als Argument übergeben <xref uid="microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false">ActorBase#onPreActorMethodAsync(ActorMethodContext)</xref> und <xref uid="microsoft.servicefabric.actors._actor_base.onPostActorMethodAsync(ActorMethodContext)" data-throw-if-not-resolved="false">ActorBase#onPostActorMethodAsync(ActorMethodContext)</xref>. </p>'
     syntax:
       content: public class ActorMethodContext
   - uid: microsoft.servicefabric.actors._actor_base.onPreActorMethodAsync(ActorMethodContext)
@@ -696,7 +696,7 @@ references:
     nameWithType: ActorReminder
     fullName: microsoft.servicefabric.actors.ActorReminder
     type: Interface
-    summary: <p>Kapselt die Erinnerung legen Sie für ein<xref href="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false"></xref></p>
+    summary: <p>Kapselt die Erinnerung legen Sie für eine <xref uid="microsoft.servicefabric.actors._actor" data-throw-if-not-resolved="false">Akteur</xref></p>
     syntax:
       content: public interface ActorReminder
   - uid: microsoft.servicefabric.actors._actor

@@ -25,7 +25,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServiceHealthStateFilter.java
       startLine: 18
     package: system.fabric
-    summary: "<p>Filter für <xref href=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\"></xref> Objekte. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Entität Health Status Block Abfragen können angeben, die eine Liste der Filter auf feine wählen Sie die Dienste, die in das Abfrageergebnis aufgenommen werden. Beachten Sie, dass alles, was die Dienste zur Bewertung des übergeordneten Elementen Integritätsstatus, unabhängig von der übergebene Filter aggregiert. </p>"
+    summary: "<p>Filter für <xref uid=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ServiceHealthState</xref> Objekte. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der Entität Health Status Block Abfragen können angeben, die eine Liste der Filter auf feine wählen Sie die Dienste, die in das Abfrageergebnis aufgenommen werden. Beachten Sie, dass alles, was die Dienste zur Bewertung des übergeordneten Elementen Integritätsstatus, unabhängig von der übergebene Filter aggregiert. </p>"
     syntax: &ref_1
       content: public class ServiceHealthStateFilter
     inheritance:
@@ -46,12 +46,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServiceHealthStateFilter.java
       startLine: 77
     package: system.fabric
-    summary: "<p>Ruft die Filter für den aggregierten Zustand des der <xref href=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\"></xref> Einträge in der Auflistung.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der Integrität statusfilterwert stammen von Membern oder bitweisen Kombination von Membern der <ref refid=\"\" kindref=\"compound\">HealthStateFilter</ref>. Für einen Dienst auf dem Filter entsprechen muss der aggregierte Integritätszustand der angegebenen Integrität Statusfilter übereinstimmen. </p>"
+    summary: "<p>Ruft die Filter für den aggregierten Zustand des der <xref uid=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ServiceHealthState</xref> Einträge in der Auflistung.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der Integrität statusfilterwert stammen von Membern oder bitweisen Kombination von Membern der <xref uid=\"\" data-throw-if-not-resolved=\"false\">HealthStateFilter</xref>. Für einen Dienst auf dem Filter entsprechen muss der aggregierte Integritätszustand der angegebenen Integrität Statusfilter übereinstimmen. </p>"
     syntax:
       content: public HealthStateFilter getHealthStateFilter()
       return:
         type: system.fabric.health._health_state_filter
-        description: <p>Der Filter für den aggregierten Zustand der <xref href="system.fabric.health._service_health_state" data-throw-if-not-resolved="false"></xref> Einträge in der Auflistung. </p>
+        description: <p>Der Filter für den aggregierten Zustand der <xref uid="system.fabric.health._service_health_state" data-throw-if-not-resolved="false">system.fabric.health.ServiceHealthState</xref> Einträge in der Auflistung. </p>
   - uid: system.fabric._service_health_state_filter.getPartitionFilters()
     id: getPartitionFilters()
     parent: system.fabric._service_health_state_filter
@@ -68,12 +68,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServiceHealthStateFilter.java
       startLine: 111
     package: system.fabric
-    summary: "<p>Ruft die Liste der <xref href=\"system.fabric._partition_health_state_filter\" data-throw-if-not-resolved=\"false\"></xref> auf untergeordnete Elemente Zustände Partition angewendet werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die Liste kann eine Partition Standardfilter und/oder Partition Filter für bestimmte Partitionen feine-Entitäten, die von der Abfrage zurückgegebenen enthalten. Alle Partitionen untergeordneten Elemente, die dem Filter entsprechen, werden als untergeordnete Elemente des Diensts zurückgegeben. Ohne Angabe werden die untergeordneten Elemente standardmäßig nicht zurückgegeben. </p>"
+    summary: "<p>Ruft die Liste der <xref uid=\"system.fabric._partition_health_state_filter\" data-throw-if-not-resolved=\"false\">PartitionHealthStateFilter</xref> auf untergeordnete Elemente Zustände Partition angewendet werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die Liste kann eine Partition Standardfilter und/oder Partition Filter für bestimmte Partitionen feine-Entitäten, die von der Abfrage zurückgegebenen enthalten. Alle Partitionen untergeordneten Elemente, die dem Filter entsprechen, werden als untergeordnete Elemente des Diensts zurückgegeben. Ohne Angabe werden die untergeordneten Elemente standardmäßig nicht zurückgegeben. </p>"
     syntax:
       content: public List<PartitionHealthStateFilter> getPartitionFilters()
       return:
         type: 5618da2dsystem.fabric._partition_health_state_filtera08ddfce
-        description: <p>Die Liste der <xref href="system.fabric._partition_health_state_filter" data-throw-if-not-resolved="false"></xref> auf untergeordnete Elemente Zustände Partition angewendet werden soll. </p>
+        description: <p>Die Liste der <xref uid="system.fabric._partition_health_state_filter" data-throw-if-not-resolved="false">PartitionHealthStateFilter</xref> auf untergeordnete Elemente Zustände Partition angewendet werden soll. </p>
   - uid: system.fabric._service_health_state_filter.getServiceNameFilter()
     id: getServiceNameFilter()
     parent: system.fabric._service_health_state_filter
@@ -90,7 +90,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServiceHealthStateFilter.java
       startLine: 45
     package: system.fabric
-    summary: "<p>Ruft den Namensfilter Dienst ab.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Wenn nicht angegeben, alle Dienste, die die übergeordnete Filter (sofern vorhanden) und der angegebenen Integrität Statusfilter entsprechen die Filterkriterien erfüllen. Andernfalls gilt der Filter nur für den angegebenen Dienst. Alle anderen Filter Member, wie die Integrität der Statusfilter, werden auf diesen Dienst angewendet. </p>"
+    summary: "<p>Ruft den Namensfilter Dienst ab.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Wenn nicht angegeben, alle Dienste, die die übergeordnete Filter (sofern vorhanden) und der angegebenen Integrität Statusfilter entsprechen die Filterkriterien erfüllen. Andernfalls gilt der Filter nur für den angegebenen Dienst. Alle anderen Filter Member, wie die Integrität der Statusfilter, werden auf diesen Dienst angewendet. </p>"
     syntax:
       content: public URI getServiceNameFilter()
       return:
@@ -130,13 +130,13 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServiceHealthStateFilter.java
       startLine: 94
     package: system.fabric
-    summary: "<p>Legt Filter für den aggregierten Zustand des der <xref href=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\"></xref> Einträge in der Auflistung.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der Integrität statusfilterwert stammen von Membern oder bitweisen Kombination von Membern der <ref refid=\"\" kindref=\"compound\">HealthStateFilter</ref>. Für einen Dienst auf dem Filter entsprechen muss der aggregierte Integritätszustand der angegebenen Integrität Statusfilter übereinstimmen. </p>"
+    summary: "<p>Legt Filter für den aggregierten Zustand des der <xref uid=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ServiceHealthState</xref> Einträge in der Auflistung.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der Integrität statusfilterwert stammen von Membern oder bitweisen Kombination von Membern der <xref uid=\"\" data-throw-if-not-resolved=\"false\">HealthStateFilter</xref>. Für einen Dienst auf dem Filter entsprechen muss der aggregierte Integritätszustand der angegebenen Integrität Statusfilter übereinstimmen. </p>"
     syntax:
       content: public void setHealthStateFilter(HealthStateFilter healthStateFilter)
       parameters:
         - id: healthStateFilter
           type: system.fabric.health._health_state_filter
-          description: <p>Der Filter für den aggregierten Zustand der <xref href="system.fabric.health._service_health_state" data-throw-if-not-resolved="false"></xref> Einträge in der Auflistung. </p>
+          description: <p>Der Filter für den aggregierten Zustand der <xref uid="system.fabric.health._service_health_state" data-throw-if-not-resolved="false">system.fabric.health.ServiceHealthState</xref> Einträge in der Auflistung. </p>
   - uid: system.fabric._service_health_state_filter.setServiceNameFilter(URI)
     id: setServiceNameFilter(URI)
     parent: system.fabric._service_health_state_filter
@@ -153,7 +153,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ServiceHealthStateFilter.java
       startLine: 61
     package: system.fabric
-    summary: "<p>Legt den Namensfilter Dienst fest.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Wenn nicht angegeben, alle Dienste, die die übergeordnete Filter (sofern vorhanden) und der angegebenen Integrität Statusfilter entsprechen die Filterkriterien erfüllen. Andernfalls gilt der Filter nur für den angegebenen Dienst. Alle anderen Filter Member, wie die Integrität der Statusfilter, werden auf diesen Dienst angewendet. </p>"
+    summary: "<p>Legt den Namensfilter Dienst fest.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Wenn nicht angegeben, alle Dienste, die die übergeordnete Filter (sofern vorhanden) und der angegebenen Integrität Statusfilter entsprechen die Filterkriterien erfüllen. Andernfalls gilt der Filter nur für den angegebenen Dienst. Alle anderen Filter Member, wie die Integrität der Statusfilter, werden auf diesen Dienst angewendet. </p>"
     syntax:
       content: public void setServiceNameFilter(URI serviceNameFilter)
       parameters:
@@ -212,7 +212,7 @@ references:
     nameWithType: PartitionHealthStateFilter
     fullName: system.fabric.PartitionHealthStateFilter
     type: Class
-    summary: "<p>Filter für <xref href=\"system.fabric.health._partition_health_state\" data-throw-if-not-resolved=\"false\"></xref> Objekte. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die Status-Segment integritätsabfragen können angeben, die eine Liste der Partition filtert feine wählen die Partitionen, die in das Abfrageergebnis aufgenommen werden. Beachten Sie, dass alle Partitionen zur Bewertung des Eltern Integritätsstatus, unabhängig von der übergebene Filter aggregiert. </p>"
+    summary: "<p>Filter für <xref uid=\"system.fabric.health._partition_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.PartitionHealthState</xref> Objekte. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die Status-Segment integritätsabfragen können angeben, die eine Liste der Partition filtert feine wählen die Partitionen, die in das Abfrageergebnis aufgenommen werden. Beachten Sie, dass alle Partitionen zur Bewertung des Eltern Integritätsstatus, unabhängig von der übergebene Filter aggregiert. </p>"
     syntax:
       content: public class PartitionHealthStateFilter
   - uid: system.fabric.health._health_state_filter
@@ -250,5 +250,5 @@ references:
     nameWithType: ServiceHealthStateFilter
     fullName: system.fabric.ServiceHealthStateFilter
     type: Class
-    summary: "<p>Filter für <xref href=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\"></xref> Objekte. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>der Entität Health Status Block Abfragen können angeben, die eine Liste der Filter auf feine wählen Sie die Dienste, die in das Abfrageergebnis aufgenommen werden. Beachten Sie, dass alles, was die Dienste zur Bewertung des übergeordneten Elementen Integritätsstatus, unabhängig von der übergebene Filter aggregiert. </p>"
+    summary: "<p>Filter für <xref uid=\"system.fabric.health._service_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ServiceHealthState</xref> Objekte. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>der Entität Health Status Block Abfragen können angeben, die eine Liste der Filter auf feine wählen Sie die Dienste, die in das Abfrageergebnis aufgenommen werden. Beachten Sie, dass alles, was die Dienste zur Bewertung des übergeordneten Elementen Integritätsstatus, unabhängig von der übergebene Filter aggregiert. </p>"
     syntax: *ref_1

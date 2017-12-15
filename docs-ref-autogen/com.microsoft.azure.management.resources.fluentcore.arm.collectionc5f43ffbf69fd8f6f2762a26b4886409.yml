@@ -15,7 +15,7 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/collection/SupportsGettingByNameAsync.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/collection/SupportsGettingByNameAsync.java
       startLine: 18
@@ -84,7 +84,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByName<T>.getByName(String name)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource innerhalb der aktuellen Ressourcengruppe enthalten.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource innerhalb der aktuellen Ressourcengruppe enthalten.</p>
       <p></p>
     syntax:
       content: public T getByName(String name)
@@ -103,7 +103,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByName<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen basierend auf seinen Namen innerhalb der aktuellen Ressourcengruppe enthalten. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen basierend auf seinen Namen innerhalb der aktuellen Ressourcengruppe enthalten. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsGettingByName<T>
@@ -129,7 +129,7 @@ references:
     type: Interface
     summary: <p>Einstiegspunkt für einen AD-Gruppe-Verwaltungs-API. </p>
     syntax:
-      content: 'public interface ActiveDirectoryGroups extends SupportsListing<ActiveDirectoryGroup>,SupportsGettingById<ActiveDirectoryGroup>,SupportsGettingByNameAsync<ActiveDirectoryGroup>,HasManager<GraphRbacManager>,HasInner<GroupsInner>'
+      content: 'public interface ActiveDirectoryGroups extends SupportsListing<ActiveDirectoryGroup>,SupportsGettingById<ActiveDirectoryGroup>,SupportsGettingByNameAsync<ActiveDirectoryGroup>,SupportsCreating<ActiveDirectoryGroup.DefinitionStages.Blank>,SupportsDeletingById,HasManager<GraphRbacManager>,HasInner<GroupsInner>'
   - uid: com.microsoft.azure.management.graphrbac._active_directory_users
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._active_directory_users.yml
@@ -139,7 +139,7 @@ references:
     type: Interface
     summary: <p>Einstiegspunkt für einen AD-Benutzer-Verwaltungs-API. </p>
     syntax:
-      content: 'public interface ActiveDirectoryUsers extends SupportsGettingById<ActiveDirectoryUser>,SupportsGettingByNameAsync<ActiveDirectoryUser>,SupportsListing<ActiveDirectoryUser>,HasManager<GraphRbacManager>,HasInner<UsersInner>'
+      content: 'public interface ActiveDirectoryUsers extends SupportsGettingById<ActiveDirectoryUser>,SupportsGettingByNameAsync<ActiveDirectoryUser>,SupportsListing<ActiveDirectoryUser>,SupportsCreating<ActiveDirectoryUser.DefinitionStages.Blank>,SupportsDeletingById,HasManager<GraphRbacManager>,HasInner<UsersInner>'
   - uid: com.microsoft.azure.management.graphrbac._service_principals
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._service_principals.yml
@@ -157,9 +157,19 @@ references:
     nameWithType: PacketCaptures
     fullName: com.microsoft.azure.management.network.PacketCaptures
     type: Interface
-    summary: <p>Einstiegspunkt für Paket erfasst Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Paket erfasst Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface PacketCaptures extends SupportsCreating<PacketCapture.DefinitionStages.WithTarget>,SupportsListing<PacketCapture>,SupportsGettingByNameAsync<PacketCapture>,SupportsDeletingByName,HasInner<PacketCapturesInner>'
+  - uid: com.microsoft.azure.management.network._virtual_network_gateway_connections
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._virtual_network_gateway_connections.yml
+    name: VirtualNetworkGatewayConnections
+    nameWithType: VirtualNetworkGatewayConnections
+    fullName: com.microsoft.azure.management.network.VirtualNetworkGatewayConnections
+    type: Interface
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-Gateways Verbindungen Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface VirtualNetworkGatewayConnections
   - uid: com.microsoft.azure.management.servicebus._authorization_rules
     parent: com.microsoft.azure.management.servicebus
     href: com.microsoft.azure.management.servicebus._authorization_rules.yml
@@ -182,7 +192,7 @@ references:
     nameWithType: Queues
     fullName: com.microsoft.azure.management.servicebus.Queues
     type: Interface
-    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Queues extends SupportsCreating<Queue.DefinitionStages.Blank>,SupportsListing<Queue>,SupportsGettingByNameAsync<Queue>,SupportsDeletingByName,HasManager<ServiceBusManager>,HasInner<QueuesInner>'
   - uid: com.microsoft.azure.management.servicebus._service_bus_subscriptions
@@ -192,7 +202,7 @@ references:
     nameWithType: ServiceBusSubscriptions
     fullName: com.microsoft.azure.management.servicebus.ServiceBusSubscriptions
     type: Interface
-    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface ServiceBusSubscriptions extends SupportsCreating<ServiceBusSubscription.DefinitionStages.Blank>,SupportsListing<ServiceBusSubscription>,SupportsGettingByNameAsync<ServiceBusSubscription>,SupportsDeletingByName,HasManager<ServiceBusManager>,HasInner<SubscriptionsInner>'
   - uid: com.microsoft.azure.management.servicebus._topics
@@ -202,6 +212,6 @@ references:
     nameWithType: Topics
     fullName: com.microsoft.azure.management.servicebus.Topics
     type: Interface
-    summary: <p>Einstiegspunkt für Service Bus-Thema Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Service Bus-Thema Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Topics

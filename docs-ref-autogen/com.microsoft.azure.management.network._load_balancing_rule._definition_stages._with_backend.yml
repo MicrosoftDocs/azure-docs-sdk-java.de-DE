@@ -4,101 +4,159 @@ items:
     id: _with_backend
     parent: com.microsoft.azure.management.network
     children:
-      - com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.withBackend(String)
+      - com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.toBackend(String)
     href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.yml
     langs:
       - java
-    name: LoadBalancingRule.DefinitionStages.WithBackend<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithBackend<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackend<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>
     type: Interface
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-      startLine: 104
+      startLine: 108
     package: com.microsoft.azure.management.network
     summary: '<p>Die Stufe der eine Regeldefinition an das Back-End, um die Regel mit zuzuordnen ermöglicht den Lastenausgleich. </p>'
     syntax:
-      content: public interface WithBackend<ParentT>
+      content: public interface WithBackend<ReturnT> extends LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>
       typeParameters:
-        - type: 18a275b1
-          description: <p>der übergeordnete Load Balancer-Typ </p>
-  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.withBackend(String)
-    id: withBackend(String)
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
+    inheritedMembers:
+      - com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.toExistingVirtualMachines(HasNetworkInterfaces...)
+      - com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.toExistingVirtualMachines(Collection<HasNetworkInterfaces>)
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.toBackend(String)
+    id: toBackend(String)
     parent: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend
     href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.yml
     langs:
       - java
-    name: withBackend(String backendName)
-    nameWithType: LoadBalancingRule.DefinitionStages.WithBackend<ParentT>.withBackend(String backendName)
-    fullName: WithBackendPort<ParentT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackend<ParentT>.withBackend(String backendName)
-    overload: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.withBackend*
+    name: toBackend(String backendName)
+    nameWithType: LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>.toBackend(String backendName)
+    fullName: WithBackendPort<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>.toBackend(String backendName)
+    overload: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.toBackend*
     type: Method
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-      startLine: 112
+      startLine: 116
     package: com.microsoft.azure.management.network
     summary: |-
-      <p>Ordnet die angegebene Back-End der diesem Lastenausgleichsmodul der lastenausgleichsregel zu. </p>
-      <p>Eine Backedn mit dem angegebenen Namen muss bereits für dieses Lastenausgleichsmodul vorhanden sein. </p>
+      <p>Gibt ein Back-End für dieses Lastenausgleichsmodul, den Netzwerkdatenverkehr zu senden. </p>
+      <p>Wenn ein Back-End mit dem angegebenen Namen für dieses Lastenausgleichsmodul noch nicht vorhanden ist, wird es automatisch erstellt. </p>
     syntax:
-      content: public WithBackendPort<ParentT> withBackend(String backendName)
+      content: public WithBackendPort<ReturnT> toBackend(String backendName)
       parameters:
         - id: backendName
           type: '26831127'
-          description: <p>der Name der ein vorhandenes Back-End </p>
+          description: <p>der Name des ein Back-End </p>
       return:
-        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_portda8a2936
+        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port5b94c421
         description: <p>die nächste Phase der definition </p>
 references:
-  - uid: 18a275b1
+  - uid: c1a5ebc4
     spec.java:
-      - name: ParentT
-        fullName: ParentT
+      - name: ReturnT
+        fullName: ReturnT
   - uid: '26831127'
     spec.java:
       - name: String
         fullName: String
-  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_portda8a2936
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port5b94c421
     spec.java:
       - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port
         name: LoadBalancingRule.DefinitionStages.WithBackendPort
         fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackendPort
         href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port.yml
-      - name: <ParentT>
-        fullName: <ParentT>
-  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.withBackend*
-    name: withBackend
-    nameWithType: LoadBalancingRule.DefinitionStages.WithBackend<ParentT>.withBackend
-    fullName: WithBackendPort<ParentT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackend<ParentT>.withBackend
+      - name: <ReturnT>
+        fullName: <ReturnT>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend.toBackend*
+    name: toBackend
+    nameWithType: LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>.toBackend
+    fullName: WithBackendPort<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>.toBackend
     package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.toExistingVirtualMachines(HasNetworkInterfaces...)
+    parent: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea
+    href: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.yml
+    name: toExistingVirtualMachines(HasNetworkInterfaces...vms)
+    nameWithType: LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>.toExistingVirtualMachines(HasNetworkInterfaces...vms)
+    fullName: WithBackendPort<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>.toExistingVirtualMachines(HasNetworkInterfaces...vms)
+    type: Method
+    summary: |-
+      <p>Fügt den angegebenen Satz von virtuellen Computern, vorausgesetzt, dass sie aus der gleichen verfügbarkeitsgruppe sind, um einen neuen Back-End-Adresspool mit dieser Regel für Lastenausgleich des zugeordnet werden soll. </p>
+      <p>Dadurch wird die Verweise auf die primären IP-Konfigurationen der primäre Netzwerkschnittstellen des angegebenen Satzes von virtuellen Computern hinzugefügt. </p>
+      <p>Wenn die virtuellen Computer nicht in derselben verfügbarkeitsgruppe befinden, werden sie nicht das Back-End zugeordnet werden. </p>
+      <p>Nur die virtuellen Computer wird das Lastenausgleichsmodul an, auf denen bereits eine vorhandene Netzwerkschnittstelle zugeordnet werden. Virtuelle Computer ohne eine Netzwerkschnittstelle wird übersprungen. </p>
+    syntax:
+      content: public WithBackendPort<ReturnT> toExistingVirtualMachines(HasNetworkInterfaces...vms)
+      parameters:
+        - id: vms
+          type: 6bb6a610
+          description: <p>vorhandene virtuelle Maschinen </p>
+      return:
+        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port5b94c421
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.toExistingVirtualMachines(Collection<HasNetworkInterfaces>)
+    parent: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea
+    href: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.yml
+    name: toExistingVirtualMachines(Collection<HasNetworkInterfaces> vms)
+    nameWithType: LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>.toExistingVirtualMachines(Collection<HasNetworkInterfaces> vms)
+    fullName: WithBackendPort<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>.toExistingVirtualMachines(Collection<HasNetworkInterfaces> vms)
+    type: Method
+    summary: |-
+      <p>Fügt den angegebenen Satz von virtuellen Computern, vorausgesetzt, dass sie aus der gleichen verfügbarkeitsgruppe sind, um einen neuen Back-End-Adresspool mit dieser Regel für Lastenausgleich des zugeordnet werden soll. </p>
+      <p>Dadurch wird die Verweise auf die primären IP-Konfigurationen der primäre Netzwerkschnittstellen des angegebenen Satzes von virtuellen Computern hinzugefügt. </p>
+      <p>Wenn die virtuellen Computer nicht in derselben verfügbarkeitsgruppe befinden, werden sie nicht das Back-End zugeordnet werden. </p>
+      <p>Nur die virtuellen Computer wird das Lastenausgleichsmodul an, auf denen bereits eine vorhandene Netzwerkschnittstelle zugeordnet werden. Virtuelle Computer ohne eine Netzwerkschnittstelle wird übersprungen. </p>
+    syntax:
+      content: public WithBackendPort<ReturnT> toExistingVirtualMachines(Collection<HasNetworkInterfaces> vms)
+      parameters:
+        - id: vms
+          type: 12ebb11acom.microsoft.azure.management.network.model._has_network_interfacesa08ddfce
+          description: <p>vorhandene virtuelle Maschinen </p>
+      return:
+        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port5b94c421
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancing_rule._definiti0b98ad9c3e671ce4aa4410b3bbafa9ea.yml
+    name: LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithVirtualMachine<ReturnT>
+    type: Interface
+    summary: '<p>Die Stufe der eine Regeldefinition ermöglichen, wählen Sie einer Gruppe von virtuellen Computern für den Lastenausgleich den Netzwerkdatenverkehr zwischen den Lastenausgleich. </p>'
+    syntax:
+      content: public interface WithVirtualMachine<ReturnT>
+      typeParameters:
+        - type: c1a5ebc4
+          description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definition
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definition.yml
-    name: LoadBalancingRule.Definition<ParentT>
-    nameWithType: LoadBalancingRule.Definition<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.Definition<ParentT>
+    name: LoadBalancingRule.Definition<ReturnT>
+    nameWithType: LoadBalancingRule.Definition<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.Definition<ReturnT>
     type: Interface
     summary: <p>Die gesamte eine Regeldefinition für den Lastenausgleich. </p>
     syntax:
-      content: 'public interface Definition<ParentT> extends LoadBalancingRule.DefinitionStages.Blank<ParentT>,LoadBalancingRule.DefinitionStages.WithAttach<ParentT>,LoadBalancingRule.DefinitionStages.WithProtocol<ParentT>,LoadBalancingRule.DefinitionStages.WithFrontendPort<ParentT>,LoadBalancingRule.DefinitionStages.WithFrontend<ParentT>,LoadBalancingRule.DefinitionStages.WithProbe<ParentT>,LoadBalancingRule.DefinitionStages.WithBackend<ParentT>,LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>'
+      content: 'public interface Definition<ReturnT> extends LoadBalancingRule.DefinitionStages.Blank<ReturnT>,LoadBalancingRule.DefinitionStages.WithAttach<ReturnT>,LoadBalancingRule.DefinitionStages.WithProtocol<ReturnT>,LoadBalancingRule.DefinitionStages.WithFrontendPort<ReturnT>,LoadBalancingRule.DefinitionStages.WithFrontend<ReturnT>,LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>,LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>'
       typeParameters:
-        - type: 18a275b1
-          description: <p>der Rückgabetyp der endgültigen<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port.yml
-    name: LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>
     type: Interface
     summary: <p>Die Phase einer für den Netzwerklastenausgleich Regeldefinition an den Back-End-Port zum Senden des Lastenausgleich Datenverkehrs zulassen. </p>
     syntax:
-      content: public interface WithBackendPort<ParentT>
+      content: public interface WithBackendPort<ReturnT>
       typeParameters:
-        - type: 18a275b1
+        - type: c1a5ebc4
           description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>

@@ -22,7 +22,7 @@ items:
         repo: 'https://github.com/azure/azure-data-lake-store-java'
       path: src/main/java/com/microsoft/azure/datalake/store/acl/AclAction.java
       startLine: 6
-    summary: '<p>Für ACLs verwendeten Objekte. Diese Objekte werden verwendet, wie Parameter der ACL ruft <xref href="com.microsoft.azure.datalake.store._core" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.datalake.store._a_d_l_store_client" data-throw-if-not-resolved="false"></xref> Klassen. </p>'
+    summary: '<p>Für ACLs verwendeten Objekte. Diese Objekte werden verwendet, wie Parameter der ACL ruft <xref uid="com.microsoft.azure.datalake.store._core" data-throw-if-not-resolved="false">com.microsoft.azure.datalake.store.Core</xref> und <xref uid="com.microsoft.azure.datalake.store._a_d_l_store_client" data-throw-if-not-resolved="false">com.microsoft.azure.datalake.store.ADLStoreClient</xref> Klassen. </p>'
     syntax:
       content: package com.microsoft.azure.datalake.store.acl
 references:
@@ -33,7 +33,7 @@ references:
     nameWithType: Core
     fullName: com.microsoft.azure.datalake.store.Core
     type: Class
-    summary: "<p>Protokoll. Core-Klasse implementiert die Aufrufe für die API auf. Es gibt eine Methode in <xref href=\"com.microsoft.azure.datalake.store._core\" data-throw-if-not-resolved=\"false\"></xref> für jedes REST-API, die vom Server unterstützt. </p>\n<p>Die Methoden in dieser Klasse sind eher auf niedrigerer Ebene, alle Details der zugrunde liegenden Vorgang bereitstellen. Zum Aufrufen von Methoden Instanziieren einer <xref href=\"com.microsoft.azure.datalake.store._request_options\" data-throw-if-not-resolved=\"false\"></xref> zuerst. Keine der Memberfunktionen Werte zuweisen, nach Bedarf (z. B. RetryPolicy). Erstellen Sie ein neues <xref href=\"com.microsoft.azure.datalake.store._operation_response\" data-throw-if-not-resolved=\"false\"></xref> Objekt. Die <xref href=\"com.microsoft.azure.datalake.store._operation_response\" data-throw-if-not-resolved=\"false\"></xref> wird verwendet, für die Übergabe der Ergebnisse des Funktionsaufrufs und Stats wieder aus dem Aufruf. </p>\n<p>Fehler stammende <xref href=\"com.microsoft.azure.datalake.store._core\" data-throw-if-not-resolved=\"false\"></xref> Methoden werden durch zurück übermittelt die <xref href=\"com.microsoft.azure.datalake.store._operation_response\" data-throw-if-not-resolved=\"false\"></xref> Parameter. </p>\n<p>\r\n\r\n  <bold>Threadsicherheit: </bold> alle statische Methoden in dieser Klasse sind threadsicher</p>"
+    summary: "<p>Protokoll. Core-Klasse implementiert die Aufrufe für die API auf. Es gibt eine Methode in <xref uid=\"com.microsoft.azure.datalake.store._core\" data-throw-if-not-resolved=\"false\">Core</xref> für jedes REST-API, die vom Server unterstützt. </p>\n<p>Die Methoden in dieser Klasse sind eher auf niedrigerer Ebene, alle Details der zugrunde liegenden Vorgang bereitstellen. Zum Aufrufen von Methoden Instanziieren einer <xref uid=\"com.microsoft.azure.datalake.store._request_options\" data-throw-if-not-resolved=\"false\">RequestOptions</xref> zuerst. Keine der Memberfunktionen Werte zuweisen, nach Bedarf (z. B. RetryPolicy). Erstellen Sie ein neues <xref uid=\"com.microsoft.azure.datalake.store._operation_response\" data-throw-if-not-resolved=\"false\">OperationResponse</xref> Objekt. Die <xref uid=\"com.microsoft.azure.datalake.store._operation_response\" data-throw-if-not-resolved=\"false\">OperationResponse</xref> wird verwendet, für die Übergabe der Ergebnisse des Funktionsaufrufs und Stats wieder aus dem Aufruf. </p>\n<p>Fehler stammende <xref uid=\"com.microsoft.azure.datalake.store._core\" data-throw-if-not-resolved=\"false\">Core</xref> Methoden werden durch zurück übermittelt die <xref uid=\"com.microsoft.azure.datalake.store._operation_response\" data-throw-if-not-resolved=\"false\">OperationResponse</xref> Parameter. </p>\n<p>\r\n\r\n  <b>Threadsicherheit: </b> alle statische Methoden in dieser Klasse sind threadsicher</p>"
     syntax:
       content: public class Core
   - uid: com.microsoft.azure.datalake.store._a_d_l_store_client
@@ -43,7 +43,7 @@ references:
     nameWithType: ADLStoreClient
     fullName: com.microsoft.azure.datalake.store.ADLStoreClient
     type: Class
-    summary: "<p>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">ADLStoreClient<sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> Klasse stellt einen Client zu Azure Data Lake dar. Es kann zum Ausführen von Operationen für Dateien und Verzeichnisse verwendet werden. </p>"
+    summary: "<p>\r\n\r\n  <code>ADLStoreClient \r\n\r\n    </code>Klasse stellt einen Client für Azure Data Lake dar. Es kann zum Ausführen von Operationen für Dateien und Verzeichnisse verwendet werden. </p>"
     syntax:
       content: public class ADLStoreClient
   - uid: com.microsoft.azure.datalake.store.acl._acl_action
@@ -63,10 +63,7 @@ references:
     nameWithType: AclEntry
     fullName: com.microsoft.azure.datalake.store.acl.AclEntry
     type: Class
-    summary: |-
-      <p>Einen ACL-Eintrag enthält. Ein ACL-Eintrag besteht aus einem Bereich (Zugriff oder Standard), den Typ der ACL (Benutzer, Gruppe, die andere oder Maskieren), den Namen des Benutzers oder der Gruppe diese ACL zugeordnet (kann leer sein, um die Standardberechtigungen für Benutzer und Gruppen angeben, und muss für die Maske Einträge leer sein), und die Aktion, die durch diese ACL-Eintrag zulässig. </p>
-      <p>Eine ACL für ein Objekt besteht aus einem<programlisting><codeline><highlight class="normal">Liste<sp> </sp> </highlight> </codeline> </programlisting> des Acl-Einträge. </p>
-      <p>Diese Klasse bietet auch eine Anzahl von Hilfsmethoden zum Konvertieren von ACL-Einträge und ACLs in und aus Zeichenfolgen zurück. </p>
+    summary: "<p>Einen ACL-Eintrag enthält. Ein ACL-Eintrag besteht aus einem Bereich (Zugriff oder Standard), den Typ der ACL (Benutzer, Gruppe, die andere oder Maskieren), den Namen des Benutzers oder der Gruppe diese ACL zugeordnet (kann leer sein, um die Standardberechtigungen für Benutzer und Gruppen angeben, und muss für die Maske Einträge leer sein), und die Aktion, die durch diese ACL-Eintrag zulässig. </p>\n<p>Eine ACL für ein Objekt besteht aus einem<code>List \r\n\r\n    </code> des Acl-Einträge. </p>\n\n<p>Diese Klasse bietet auch eine Anzahl von Hilfsmethoden zum Konvertieren von ACL-Einträge und ACLs in und aus Zeichenfolgen zurück. </p>"
     syntax:
       content: public class AclEntry
   - uid: com.microsoft.azure.datalake.store.acl._acl_scope
@@ -86,7 +83,7 @@ references:
     nameWithType: AclStatus
     fullName: com.microsoft.azure.datalake.store.acl.AclStatus
     type: Class
-    summary: '<p>Zurückgegebenes Objekt die <xref href="com.microsoft.azure.datalake.store._a_d_l_store_client.getAclStatus(String)" data-throw-if-not-resolved="false"></xref> GetAclStatus} Aufruf, mit den Informationen Acl und die Berechtigung für die jeweilige Datei bzw. das Verzeichnis an. </p>'
+    summary: '<p>Zurückgegebenes Objekt die <xref uid="com.microsoft.azure.datalake.store._a_d_l_store_client.getAclStatus(String)" data-throw-if-not-resolved="false">com.microsoft.azure.datalake.store.ADLStoreClient#getAclStatus(String)</xref> GetAclStatus} Aufruf, mit den Informationen Acl und die Berechtigung für die jeweilige Datei bzw. das Verzeichnis an. </p>'
     syntax:
       content: public class AclStatus
   - uid: com.microsoft.azure.datalake.store.acl._acl_type

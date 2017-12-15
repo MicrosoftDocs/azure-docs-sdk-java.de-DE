@@ -25,7 +25,7 @@ items:
     package: com.microsoft.azure.storage
     summary: |-
       <p>Stellt eine wiederholungsrichtlinie auf, die eine angegebene Anzahl an Wiederholungen unter Verwendung eines angegebenen festen Zeitintervalls zwischen den Wiederholungsversuchen ausführt.</p>
-      <p>Diese Klasse erweitert die <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Klasse und implementiert die <xref href="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false"></xref> Schnittstelle. </p>
+      <p>Diese Klasse erweitert die <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> -Klasse und implementiert die <xref uid="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false">RetryPolicyFactory</xref> Schnittstelle. </p>
     syntax: &ref_1
       content: public class RetryLinearRetry extends RetryPolicy implements RetryPolicyFactory
     inheritance:
@@ -33,16 +33,16 @@ items:
       - com.microsoft.azure.storage._retry_policy_factory
       - com.microsoft.azure.storage._retry_policy
     inheritedMembers:
-      - com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_BACKOFF()
-      - com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_RETRY_COUNT()
-      - com.microsoft.azure.storage._retry_policy.DEFAULT_MAX_BACKOFF()
-      - com.microsoft.azure.storage._retry_policy.DEFAULT_MIN_BACKOFF()
-      - com.microsoft.azure.storage._retry_policy.deltaBackoffIntervalInMs()
+      - com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_BACKOFF
+      - com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_RETRY_COUNT
+      - com.microsoft.azure.storage._retry_policy.DEFAULT_MAX_BACKOFF
+      - com.microsoft.azure.storage._retry_policy.DEFAULT_MIN_BACKOFF
+      - com.microsoft.azure.storage._retry_policy.deltaBackoffIntervalInMs
       - com.microsoft.azure.storage._retry_policy.evaluateLastAttemptAndSecondaryNotFound(RetryContext)
       - 'com.microsoft.azure.storage._retry_policy.evaluateRetryInfo(final RetryContext,final boolean,final long)'
-      - com.microsoft.azure.storage._retry_policy.lastPrimaryAttempt()
-      - com.microsoft.azure.storage._retry_policy.lastSecondaryAttempt()
-      - com.microsoft.azure.storage._retry_policy.maximumAttempts()
+      - com.microsoft.azure.storage._retry_policy.lastPrimaryAttempt
+      - com.microsoft.azure.storage._retry_policy.lastSecondaryAttempt
+      - com.microsoft.azure.storage._retry_policy.maximumAttempts
       - com.microsoft.azure.storage._retry_policy.RetryPolicy()
       - 'com.microsoft.azure.storage._retry_policy.RetryPolicy(final int,final int)'
   - uid: com.microsoft.azure.storage._retry_linear_retry.createInstance(final OperationContext)
@@ -69,10 +69,10 @@ items:
       parameters:
         - id: opContext
           type: 93de0ef9com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._retry_policy
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt, das die wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
     overridden: com.microsoft.azure.storage._retry_policy_factory.createInstance(OperationContext)
   - uid: 'com.microsoft.azure.storage._retry_linear_retry.evaluate(RetryContext,OperationContext)'
     id: 'evaluate(RetryContext,OperationContext)'
@@ -98,13 +98,13 @@ items:
       parameters:
         - id: retryContext
           type: com.microsoft.azure.storage._retry_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_context" data-throw-if-not-resolved="false"></xref> , ob die nächste Wiederholung sollte in der primären oder sekundären Speicherort erfolgen, und den Positionsmodus gibt der letzten Anforderung Ergebnisse, und Objekt-Wert, der die Anzahl von Wiederholungen angibt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_context" data-throw-if-not-resolved="false">RetryContext</xref> , ob die nächste Wiederholung sollte in der primären oder sekundären Speicherort erfolgen, und den Positionsmodus gibt der letzten Anforderung Ergebnisse, und Objekt-Wert, der die Anzahl von Wiederholungen angibt. </p>'
         - id: operationContext
           type: com.microsoft.azure.storage._operation_context
-          description: <p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> Objekt zum Nachverfolgen von des aktuellen Vorgangs. </p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> Objekt zum Nachverfolgen von des aktuellen Vorgangs. </p>
       return:
         type: com.microsoft.azure.storage._retry_info
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_info" data-throw-if-not-resolved="false"></xref> Objekt, das angibt, ob die nächste Wiederholung in der primären oder sekundären Speicherort erfolgt, und gibt den Positionsmodus an. Wenn <code>null</code>, der Vorgang wird nicht wiederholt werden. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_info" data-throw-if-not-resolved="false">RetryInfo</xref> Objekt, das angibt, ob die nächste Wiederholung in der primären oder sekundären Speicherort erfolgt, und gibt den Positionsmodus an. Wenn <code>null</code>, der Vorgang wird nicht wiederholt werden. </p>'
   - uid: com.microsoft.azure.storage._retry_linear_retry.RetryLinearRetry()
     id: RetryLinearRetry()
     parent: com.microsoft.azure.storage._retry_linear_retry
@@ -180,7 +180,7 @@ references:
     nameWithType: RetryLinearRetry.evaluate
     fullName: RetryInfo com.microsoft.azure.storage.RetryLinearRetry.evaluate
     package: com.microsoft.azure.storage
-  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_BACKOFF()
+  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_BACKOFF
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: DEFAULT_CLIENT_BACKOFF
@@ -192,7 +192,7 @@ references:
       content: public static final int DEFAULT_CLIENT_BACKOFF= 1000 * 30
       return:
         type: cd225469
-  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_RETRY_COUNT()
+  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_CLIENT_RETRY_COUNT
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: DEFAULT_CLIENT_RETRY_COUNT
@@ -204,7 +204,7 @@ references:
       content: public static final int DEFAULT_CLIENT_RETRY_COUNT= 3
       return:
         type: cd225469
-  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_MAX_BACKOFF()
+  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_MAX_BACKOFF
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: DEFAULT_MAX_BACKOFF
@@ -216,7 +216,7 @@ references:
       content: public static final int DEFAULT_MAX_BACKOFF= 1000 * 90
       return:
         type: cd225469
-  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_MIN_BACKOFF()
+  - uid: com.microsoft.azure.storage._retry_policy.DEFAULT_MIN_BACKOFF
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: DEFAULT_MIN_BACKOFF
@@ -228,7 +228,7 @@ references:
       content: public static final int DEFAULT_MIN_BACKOFF= 1000 * 3
       return:
         type: cd225469
-  - uid: com.microsoft.azure.storage._retry_policy.deltaBackoffIntervalInMs()
+  - uid: com.microsoft.azure.storage._retry_policy.deltaBackoffIntervalInMs
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: deltaBackoffIntervalInMs
@@ -255,7 +255,7 @@ references:
       parameters:
         - id: retryContext
           type: com.microsoft.azure.storage._retry_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_context" data-throw-if-not-resolved="false"></xref> , ob die nächste Wiederholung sollte in der primären oder sekundären Speicherort erfolgen, und den Positionsmodus gibt der letzten Anforderung Ergebnisse, und Objekt-Wert, der die Anzahl von Wiederholungen angibt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_context" data-throw-if-not-resolved="false">RetryContext</xref> , ob die nächste Wiederholung sollte in der primären oder sekundären Speicherort erfolgen, und den Positionsmodus gibt der letzten Anforderung Ergebnisse, und Objekt-Wert, der die Anzahl von Wiederholungen angibt. </p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn eine Anforderung an gesendet Clientfehler auf der sekundäre Standort 404 (Nichtgefunden). <code>false</code>andernfalls. </p>"
@@ -267,14 +267,14 @@ references:
     fullName: 'RetryInfo com.microsoft.azure.storage.RetryPolicy.evaluateRetryInfo(final RetryContext retryContext, final boolean secondaryNotFound, final long retryInterval)'
     type: Method
     summary: |-
-      <p>Bestimmt die <xref href="com.microsoft.azure.storage._retry_info" data-throw-if-not-resolved="false"></xref> Objekt, das angibt, ob die nächste Wiederholung in der primären oder sekundären Speicherort erfolgt, und gibt den Positionsmodus an.</p>
+      <p>Bestimmt die <xref uid="com.microsoft.azure.storage._retry_info" data-throw-if-not-resolved="false">RetryInfo</xref> Objekt, das angibt, ob die nächste Wiederholung in der primären oder sekundären Speicherort erfolgt, und gibt den Positionsmodus an.</p>
       <p></p>
     syntax:
       content: 'protected RetryInfo evaluateRetryInfo(final RetryContext retryContext, final boolean secondaryNotFound, final long retryInterval)'
       parameters:
         - id: retryContext
           type: 93de0ef9com.microsoft.azure.storage._retry_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_context" data-throw-if-not-resolved="false"></xref> , ob die nächste Wiederholung sollte in der primären oder sekundären Speicherort erfolgen, und den Positionsmodus gibt der letzten Anforderung Ergebnisse, und Objekt-Wert, der die Anzahl von Wiederholungen angibt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_context" data-throw-if-not-resolved="false">RetryContext</xref> , ob die nächste Wiederholung sollte in der primären oder sekundären Speicherort erfolgen, und den Positionsmodus gibt der letzten Anforderung Ergebnisse, und Objekt-Wert, der die Anzahl von Wiederholungen angibt.</p>'
         - id: secondaryNotFound
           type: 4dda0764
           description: '<p>Ein <code>boolean</code> darstellt, ob eine Anforderung an den sekundären Speicherort gesendet mit 404 (Nichtgefunden) fehlgeschlagen </p>'
@@ -283,8 +283,8 @@ references:
           description: <p>Backoff-Intervall. </p>
       return:
         type: com.microsoft.azure.storage._retry_info
-        description: '<p>Ein Verweis auf die <xref href="com.microsoft.azure.storage._retry_info" data-throw-if-not-resolved="false"></xref> Objekt, das angibt, ob die nächste Wiederholung in der primären oder sekundären Speicherort erfolgt, und gibt den Positionsmodus an. </p>'
-  - uid: com.microsoft.azure.storage._retry_policy.lastPrimaryAttempt()
+        description: '<p>Ein Verweis auf die <xref uid="com.microsoft.azure.storage._retry_info" data-throw-if-not-resolved="false">RetryInfo</xref> Objekt, das angibt, ob die nächste Wiederholung in der primären oder sekundären Speicherort erfolgt, und gibt den Positionsmodus an. </p>'
+  - uid: com.microsoft.azure.storage._retry_policy.lastPrimaryAttempt
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: lastPrimaryAttempt
@@ -296,7 +296,7 @@ references:
       content: protected Date lastPrimaryAttempt= null
       return:
         type: '12977444'
-  - uid: com.microsoft.azure.storage._retry_policy.lastSecondaryAttempt()
+  - uid: com.microsoft.azure.storage._retry_policy.lastSecondaryAttempt
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: lastSecondaryAttempt
@@ -308,7 +308,7 @@ references:
       content: protected Date lastSecondaryAttempt= null
       return:
         type: '12977444'
-  - uid: com.microsoft.azure.storage._retry_policy.maximumAttempts()
+  - uid: com.microsoft.azure.storage._retry_policy.maximumAttempts
     parent: com.microsoft.azure.storage._retry_policy
     href: com.microsoft.azure.storage._retry_policy.yml
     name: maximumAttempts
@@ -366,7 +366,7 @@ references:
     nameWithType: RetryPolicyFactory
     fullName: com.microsoft.azure.storage.RetryPolicyFactory
     type: Interface
-    summary: '<p>Stellt eine Wiederholung Richtlinie-Factory, die eine neue erstellt <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt pro Transaktion. </p>'
+    summary: '<p>Stellt eine Wiederholung Richtlinie-Factory, die eine neue erstellt <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt pro Transaktion. </p>'
     syntax:
       content: public interface RetryPolicyFactory
   - uid: com.microsoft.azure.storage._retry_linear_retry
@@ -378,7 +378,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt eine wiederholungsrichtlinie auf, die eine angegebene Anzahl an Wiederholungen unter Verwendung eines angegebenen festen Zeitintervalls zwischen den Wiederholungsversuchen ausführt.</p>
-      <p>Diese Klasse erweitert die <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Klasse und implementiert die <xref href="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false"></xref> Schnittstelle. </p>
+      <p>Diese Klasse erweitert die <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> -Klasse und implementiert die <xref uid="com.microsoft.azure.storage._retry_policy_factory" data-throw-if-not-resolved="false">RetryPolicyFactory</xref> Schnittstelle. </p>
     syntax: *ref_1
   - uid: com.microsoft.azure.storage._retry_policy_factory.createInstance(OperationContext)
     parent: com.microsoft.azure.storage._retry_policy_factory
@@ -388,17 +388,17 @@ references:
     fullName: RetryPolicy com.microsoft.azure.storage.RetryPolicyFactory.createInstance(OperationContext opContext)
     type: Method
     summary: |-
-      <p>Erstellt ein neues <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> -Objekt für den aktuellen Anforderungsversuch.</p>
+      <p>Erstellt ein neues <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt für den aktuellen Anforderungsversuch.</p>
       <p></p>
     syntax:
       content: public RetryPolicy createInstance(OperationContext opContext)
       parameters:
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage._retry_policy
-        description: '<p>Ein <xref href="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die neue wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> Objekt, das die neue wiederholungsrichtlinie für den aktuellen Anforderungsversuch darstellt. </p>'
   - uid: com.microsoft.azure.storage._operation_context
     parent: com.microsoft.azure.storage
     href: com.microsoft.azure.storage._operation_context.yml

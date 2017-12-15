@@ -20,7 +20,7 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-graph-rbac/src/main/java/com/microsoft/azure/management/graphrbac/RoleAssignment.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-graph-rbac/src/main/java/com/microsoft/azure/management/graphrbac/RoleAssignment.java
       startLine: 75
@@ -248,9 +248,9 @@ references:
     nameWithType: ActiveDirectoryUser
     fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryUser
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD-Benutzer. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD-Benutzer. </p>
     syntax:
-      content: 'public interface ActiveDirectoryUser extends HasInner<UserInner>,HasId,HasName,HasManager<GraphRbacManager>'
+      content: 'public interface ActiveDirectoryUser extends ActiveDirectoryObject,HasInner<UserInner>,Updatable<ActiveDirectoryUser.Update>'
   - uid: com.microsoft.azure.management.graphrbac._active_directory_group
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._active_directory_group.yml
@@ -258,9 +258,9 @@ references:
     nameWithType: ActiveDirectoryGroup
     fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryGroup
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD-Gruppe. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD-Gruppe. </p>
     syntax:
-      content: 'public interface ActiveDirectoryGroup extends HasId,HasName,HasInner<ADGroupInner>,HasManager<GraphRbacManager>'
+      content: 'public interface ActiveDirectoryGroup extends ActiveDirectoryObject,HasInner<ADGroupInner>,Updatable<ActiveDirectoryGroup.Update>'
   - uid: com.microsoft.azure.management.graphrbac._service_principal
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._service_principal.yml
@@ -268,6 +268,6 @@ references:
     nameWithType: ServicePrincipal
     fullName: com.microsoft.azure.management.graphrbac.ServicePrincipal
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD Dienstprinzipal. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD Dienstprinzipal. </p>
     syntax:
-      content: 'public interface ServicePrincipal extends Indexable,HasInner<ServicePrincipalInner>,HasId,HasName,HasManager<GraphRbacManager>'
+      content: 'public interface ServicePrincipal extends ActiveDirectoryObject,HasInner<ServicePrincipalInner>,Updatable<ServicePrincipal.Update>'

@@ -4,11 +4,17 @@ items:
     id: _virtual_machine_configuration
     parent: com.microsoft.azure.batch.protocol.models
     children:
+      - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.containerConfiguration()
+      - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.dataDisks()
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.imageReference()
+      - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.licenseType()
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.nodeAgentSKUId()
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.osDisk()
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.windowsConfiguration()
+      - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withContainerConfiguration(ContainerConfiguration)
+      - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withDataDisks(List<DataDisk>)
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withImageReference(ImageReference)
+      - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withLicenseType(String)
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withNodeAgentSKUId(String)
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withOsDisk(OSDisk)
       - com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withWindowsConfiguration(WindowsConfiguration)
@@ -25,13 +31,61 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-batch-sdk-for-java'
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 16
+      startLine: 17
     package: com.microsoft.azure.batch.protocol.models
     summary: <p>Die Konfiguration für die Serverknoten in einem Pool basierend auf den virtuellen Computern in Azure-Infrastruktur. </p>
     syntax: &ref_1
       content: public class VirtualMachineConfiguration
     inheritance:
       - java.lang.Object
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.containerConfiguration()
+    id: containerConfiguration()
+    parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+    href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml
+    langs:
+      - java
+    name: containerConfiguration()
+    nameWithType: VirtualMachineConfiguration.containerConfiguration()
+    fullName: ContainerConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.containerConfiguration()
+    overload: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.containerConfiguration*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
+      startLine: 211
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Ruft den ContainerConfiguration-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ContainerConfiguration containerConfiguration()
+      return:
+        type: com.microsoft.azure.batch.protocol.models._container_configuration
+        description: <p>der Wert containerConfiguration </p>
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.dataDisks()
+    id: dataDisks()
+    parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+    href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml
+    langs:
+      - java
+    name: dataDisks()
+    nameWithType: VirtualMachineConfiguration.dataDisks()
+    fullName: List<DataDisk> com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.dataDisks()
+    overload: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.dataDisks*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
+      startLine: 171
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Ruft den DataDisks-Wert.</p>
+      <p></p>
+    syntax:
+      content: public List<DataDisk> dataDisks()
+      return:
+        type: 5618da2dcom.microsoft.azure.batch.protocol.models._data_diska08ddfce
+        description: <p>der Wert dataDisks </p>
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.imageReference()
     id: imageReference()
     parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
@@ -46,7 +100,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 62
+      startLine: 91
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert ImageReference.</p>
@@ -56,6 +110,30 @@ items:
       return:
         type: com.microsoft.azure.batch.protocol.models._image_reference
         description: <p>der Wert imageReference </p>
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.licenseType()
+    id: licenseType()
+    parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+    href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml
+    langs:
+      - java
+    name: licenseType()
+    nameWithType: VirtualMachineConfiguration.licenseType()
+    fullName: String com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.licenseType()
+    overload: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.licenseType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
+      startLine: 191
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Ruft den LicenseType-Wert.</p>
+      <p></p>
+    syntax:
+      content: public String licenseType()
+      return:
+        type: '26831127'
+        description: <p>der Wert licenseType </p>
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.nodeAgentSKUId()
     id: nodeAgentSKUId()
     parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
@@ -70,7 +148,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 102
+      startLine: 131
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den NodeAgentSKUId-Wert.</p>
@@ -94,7 +172,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 82
+      startLine: 111
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Betriebssystemdatenträger-Wert.</p>
@@ -118,7 +196,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 122
+      startLine: 151
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den WindowsConfiguration-Wert.</p>
@@ -128,6 +206,62 @@ items:
       return:
         type: com.microsoft.azure.batch.protocol.models._windows_configuration
         description: <p>der Wert windowsConfiguration </p>
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withContainerConfiguration(ContainerConfiguration)
+    id: withContainerConfiguration(ContainerConfiguration)
+    parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+    href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml
+    langs:
+      - java
+    name: withContainerConfiguration(ContainerConfiguration containerConfiguration)
+    nameWithType: VirtualMachineConfiguration.withContainerConfiguration(ContainerConfiguration containerConfiguration)
+    fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withContainerConfiguration(ContainerConfiguration containerConfiguration)
+    overload: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withContainerConfiguration*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
+      startLine: 221
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Legen Sie den ContainerConfiguration-Wert.</p>
+      <p></p>
+    syntax:
+      content: public VirtualMachineConfiguration withContainerConfiguration(ContainerConfiguration containerConfiguration)
+      parameters:
+        - id: containerConfiguration
+          type: com.microsoft.azure.batch.protocol.models._container_configuration
+          description: <p>Der festzulegende Wert containerConfiguration </p>
+      return:
+        type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withDataDisks(List<DataDisk>)
+    id: withDataDisks(List<DataDisk>)
+    parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+    href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml
+    langs:
+      - java
+    name: withDataDisks(List<DataDisk> dataDisks)
+    nameWithType: VirtualMachineConfiguration.withDataDisks(List<DataDisk> dataDisks)
+    fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withDataDisks(List<DataDisk> dataDisks)
+    overload: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withDataDisks*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
+      startLine: 181
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Legen Sie den DataDisks-Wert.</p>
+      <p></p>
+    syntax:
+      content: public VirtualMachineConfiguration withDataDisks(List<DataDisk> dataDisks)
+      parameters:
+        - id: dataDisks
+          type: 5618da2dcom.microsoft.azure.batch.protocol.models._data_diska08ddfce
+          description: <p>Der festzulegende Wert dataDisks </p>
+      return:
+        type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withImageReference(ImageReference)
     id: withImageReference(ImageReference)
     parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
@@ -142,7 +276,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 72
+      startLine: 101
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den ImageReference-Wert.</p>
@@ -155,7 +289,35 @@ items:
           description: <p>Der festzulegende Wert imageReference </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withLicenseType(String)
+    id: withLicenseType(String)
+    parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+    href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml
+    langs:
+      - java
+    name: withLicenseType(String licenseType)
+    nameWithType: VirtualMachineConfiguration.withLicenseType(String licenseType)
+    fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withLicenseType(String licenseType)
+    overload: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withLicenseType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
+      startLine: 201
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Legen Sie den LicenseType-Wert.</p>
+      <p></p>
+    syntax:
+      content: public VirtualMachineConfiguration withLicenseType(String licenseType)
+      parameters:
+        - id: licenseType
+          type: '26831127'
+          description: <p>Der festzulegende Wert licenseType </p>
+      return:
+        type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withNodeAgentSKUId(String)
     id: withNodeAgentSKUId(String)
     parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
@@ -170,7 +332,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 112
+      startLine: 141
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den NodeAgentSKUId-Wert.</p>
@@ -183,7 +345,7 @@ items:
           description: <p>Der festzulegende Wert nodeAgentSKUId </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withOsDisk(OSDisk)
     id: withOsDisk(OSDisk)
     parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
@@ -198,7 +360,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 92
+      startLine: 121
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Betriebssystemdatenträger-Wert.</p>
@@ -211,7 +373,7 @@ items:
           description: <p>Der festzulegende Wert Betriebssystemdatenträger </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withWindowsConfiguration(WindowsConfiguration)
     id: withWindowsConfiguration(WindowsConfiguration)
     parent: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
@@ -226,7 +388,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/VirtualMachineConfiguration.java
-      startLine: 132
+      startLine: 161
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den WindowsConfiguration-Wert.</p>
@@ -239,7 +401,7 @@ items:
           description: <p>Der festzulegende Wert windowsConfiguration </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._virtual_machine_configuration" data-throw-if-not-resolved="false">VirtualMachineConfiguration</xref> Objekt selbst. </p>
 references:
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.imageReference*
     name: imageReference
@@ -285,6 +447,46 @@ references:
     nameWithType: VirtualMachineConfiguration.withWindowsConfiguration
     fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withWindowsConfiguration
     package: com.microsoft.azure.batch.protocol.models
+  - uid: 5618da2dcom.microsoft.azure.batch.protocol.models._data_diska08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.batch.protocol.models._data_disk
+        name: DataDisk
+        fullName: com.microsoft.azure.batch.protocol.models.DataDisk
+        href: com.microsoft.azure.batch.protocol.models._data_disk.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.dataDisks*
+    name: dataDisks
+    nameWithType: VirtualMachineConfiguration.dataDisks
+    fullName: List<DataDisk> com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.dataDisks
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withDataDisks*
+    name: withDataDisks
+    nameWithType: VirtualMachineConfiguration.withDataDisks
+    fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withDataDisks
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.licenseType*
+    name: licenseType
+    nameWithType: VirtualMachineConfiguration.licenseType
+    fullName: String com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.licenseType
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withLicenseType*
+    name: withLicenseType
+    nameWithType: VirtualMachineConfiguration.withLicenseType
+    fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withLicenseType
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.containerConfiguration*
+    name: containerConfiguration
+    nameWithType: VirtualMachineConfiguration.containerConfiguration
+    fullName: ContainerConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.containerConfiguration
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.withContainerConfiguration*
+    name: withContainerConfiguration
+    nameWithType: VirtualMachineConfiguration.withContainerConfiguration
+    fullName: VirtualMachineConfiguration com.microsoft.azure.batch.protocol.models.VirtualMachineConfiguration.withContainerConfiguration
+    package: com.microsoft.azure.batch.protocol.models
   - uid: com.microsoft.azure.batch.protocol.models._image_reference
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._image_reference.yml
@@ -292,7 +494,7 @@ references:
     nameWithType: ImageReference
     fullName: com.microsoft.azure.batch.protocol.models.ImageReference
     type: Class
-    summary: '<p>Ein Verweis auf ein Azure-virtuelle Computer-Marketplace-Image. Um die Liste der alle von Azure Batch überprüft ImageReferences zu erhalten, finden Sie unter den Vorgang "Liste unterstützter Knoten Agent SKUs". </p>'
+    summary: '<p>Ein Verweis auf ein Azure-virtuelle Computer-Marketplace-Image oder ein benutzerdefiniertes Image des virtuellen Azure-Computer. Zum Abrufen aller Azure Marketplace-Image-Verweise, die vom Azure Batch überprüft wurden, finden Sie unter "Liste Knoten Agent-SKUs" Vorgang. </p>'
     syntax:
       content: public class ImageReference
   - uid: com.microsoft.azure.batch.protocol.models._o_s_disk
@@ -302,7 +504,7 @@ references:
     nameWithType: OSDisk
     fullName: com.microsoft.azure.batch.protocol.models.OSDisk
     type: Class
-    summary: <p>Ein Verweis auf ein Betriebssystem-Datenträger-Image. </p>
+    summary: <p>Einstellungen für den Betriebssystemdatenträger des virtuellen Computers. </p>
     syntax:
       content: public class OSDisk
   - uid: com.microsoft.azure.batch.protocol.models._windows_configuration
@@ -315,6 +517,26 @@ references:
     summary: <p>Windows-betriebssystemeinstellungen an den virtuellen Computer angewendet wurde. </p>
     syntax:
       content: public class WindowsConfiguration
+  - uid: com.microsoft.azure.batch.protocol.models._data_disk
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._data_disk.yml
+    name: DataDisk
+    nameWithType: DataDisk
+    fullName: com.microsoft.azure.batch.protocol.models.DataDisk
+    type: Class
+    summary: '<p>Einstellungen auf, die von den Datenträgern zugeordnet, um die Serverknoten im Pool verwendet werden. </p>'
+    syntax:
+      content: public class DataDisk
+  - uid: com.microsoft.azure.batch.protocol.models._container_configuration
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._container_configuration.yml
+    name: ContainerConfiguration
+    nameWithType: ContainerConfiguration
+    fullName: com.microsoft.azure.batch.protocol.models.ContainerConfiguration
+    type: Class
+    summary: <p>Die Konfiguration für Anwendungspools Container aktiviert werden soll. </p>
+    syntax:
+      content: public class ContainerConfiguration
   - uid: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._virtual_machine_configuration.yml

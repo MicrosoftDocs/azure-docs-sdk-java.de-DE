@@ -132,7 +132,7 @@ items:
       startLine: 41
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Nicht verwendet werden, indem <xref href="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false"></xref>, aber eine einfache Funktion, für die Tests verwenden.</p>
+      <p>Nicht verwendet werden, indem <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, aber eine einfache Funktion, für die Tests verwenden.</p>
       <p></p>
     syntax:
       content: public Future<Boolean> deleteCheckpointStore()
@@ -269,6 +269,52 @@ references:
     fullName: Future<Void> com.microsoft.azure.eventprocessorhost.ICheckpointManager.deleteCheckpoint
     package: com.microsoft.azure.eventprocessorhost
   - uid: com.microsoft.azure.eventprocessorhost._azure_storage_checkpoint_lease_manager
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    parent: com.microsoft.azure.eventprocessorhost
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: InMemoryCheckpointManager
+    nameWithType: InMemoryCheckpointManager
+    fullName: com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager
+    type: Class
+    syntax:
+      content: public class InMemoryCheckpointManager
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.checkpointStoreExists()
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: checkpointStoreExists()
+    nameWithType: InMemoryCheckpointManager.checkpointStoreExists()
+    fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.checkpointStoreExists()
+    type: Method
+    syntax:
+      content: public Future<Boolean> checkpointStoreExists()
+      return:
+        type: ec0e250a
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.createCheckpointStoreIfNotExists()
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: createCheckpointStoreIfNotExists()
+    nameWithType: InMemoryCheckpointManager.createCheckpointStoreIfNotExists()
+    fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.createCheckpointStoreIfNotExists()
+    type: Method
+    syntax:
+      content: public Future<Boolean> createCheckpointStoreIfNotExists()
+      return:
+        type: ec0e250a
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.deleteCheckpointStore()
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: deleteCheckpointStore()
+    nameWithType: InMemoryCheckpointManager.deleteCheckpointStore()
+    fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.deleteCheckpointStore()
+    type: Method
+    summary: |-
+      <p>Nicht verwendet werden, indem <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, aber eine einfache Funktion, für die Tests verwenden.</p>
+      <p></p>
+    syntax:
+      content: public Future<Boolean> deleteCheckpointStore()
+      return:
+        type: ec0e250a
+        description: '<p>True, wenn der Prüfpunkt Speicher erfolgreich, "false" ist dies nicht der gelöscht wurde </p>'
   - uid: com.microsoft.azure.eventprocessorhost._event_processor_host
     parent: com.microsoft.azure.eventprocessorhost
     href: com.microsoft.azure.eventprocessorhost._event_processor_host.yml
@@ -285,9 +331,53 @@ references:
     nameWithType: Checkpoint
     fullName: com.microsoft.azure.eventprocessorhost.Checkpoint
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\"></xref>Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref href=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\"></xref>. Es sei denn, Sie implementieren <xref href=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\"></xref> Sie sollten keine Objekte dieser Klasse direkt behandeln. </p>\n\n<p>Ein <xref href=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\"></xref> ist im Prinzip nur ein Tupel. Er verfügt über eine feste Partitions-Id, zum Zeitpunkt der Erstellung festgelegt und unveränderlich danach und ordnet, die einen Offset/SequenceNumber-Paar gibt eine Position in der Nachrichten in dieser Partition an. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\">Prüfpunkt</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\">ICheckpointManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\">ICheckpointManager</xref> Sie sollten keine Objekte dieser Klasse direkt behandeln. </p>\n\n<p>Ein <xref uid=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\">Prüfpunkt</xref> ist im Prinzip nur ein Tupel. Er verfügt über eine feste Partitions-Id, zum Zeitpunkt der Erstellung festgelegt und unveränderlich danach und ordnet, die einen Offset/SequenceNumber-Paar gibt eine Position in der Nachrichten in dieser Partition an. </p>"
     syntax:
       content: public class Checkpoint
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.getCheckpoint(String)
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: getCheckpoint(String partitionId)
+    nameWithType: InMemoryCheckpointManager.getCheckpoint(String partitionId)
+    fullName: Future<Checkpoint> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.getCheckpoint(String partitionId)
+    type: Method
+    syntax:
+      content: public Future<Checkpoint> getCheckpoint(String partitionId)
+      parameters:
+        - id: partitionId
+          type: '26831127'
+      return:
+        type: 9b3030f6com.microsoft.azure.eventprocessorhost._checkpointa08ddfce
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.createCheckpointIfNotExists(String)
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: createCheckpointIfNotExists(String partitionId)
+    nameWithType: InMemoryCheckpointManager.createCheckpointIfNotExists(String partitionId)
+    fullName: Future<Checkpoint> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.createCheckpointIfNotExists(String partitionId)
+    type: Method
+    syntax:
+      content: public Future<Checkpoint> createCheckpointIfNotExists(String partitionId)
+      parameters:
+        - id: partitionId
+          type: '26831127'
+      return:
+        type: 9b3030f6com.microsoft.azure.eventprocessorhost._checkpointa08ddfce
+  - uid: 'com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.updateCheckpoint(Lease,Checkpoint)'
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: 'updateCheckpoint(Lease lease, Checkpoint checkpoint)'
+    nameWithType: 'InMemoryCheckpointManager.updateCheckpoint(Lease lease, Checkpoint checkpoint)'
+    fullName: 'Future<Void> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.updateCheckpoint(Lease lease, Checkpoint checkpoint)'
+    type: Method
+    syntax:
+      content: 'public Future<Void> updateCheckpoint(Lease lease, Checkpoint checkpoint)'
+      parameters:
+        - id: lease
+          type: com.microsoft.azure.eventprocessorhost._lease
+        - id: checkpoint
+          type: com.microsoft.azure.eventprocessorhost._checkpoint
+      return:
+        type: 075d0a89
   - uid: com.microsoft.azure.eventprocessorhost._lease
     parent: com.microsoft.azure.eventprocessorhost
     href: com.microsoft.azure.eventprocessorhost._lease.yml
@@ -295,6 +385,34 @@ references:
     nameWithType: Lease
     fullName: com.microsoft.azure.eventprocessorhost.Lease
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref>Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. Es sei denn, Sie implementieren <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> sollte nicht für den Umgang mit Objekte dieser Klasse haben oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass ein <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> sollten keine Objekte dieser Klasse zu verarbeiten oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass eine <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. </p>"
     syntax:
       content: public class Lease
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.updateCheckpoint(Checkpoint)
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: updateCheckpoint(Checkpoint checkpoint)
+    nameWithType: InMemoryCheckpointManager.updateCheckpoint(Checkpoint checkpoint)
+    fullName: Future<Void> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.updateCheckpoint(Checkpoint checkpoint)
+    type: Method
+    syntax:
+      content: public Future<Void> updateCheckpoint(Checkpoint checkpoint)
+      parameters:
+        - id: checkpoint
+          type: com.microsoft.azure.eventprocessorhost._checkpoint
+      return:
+        type: 075d0a89
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.deleteCheckpoint(String)
+    parent: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: deleteCheckpoint(String partitionId)
+    nameWithType: InMemoryCheckpointManager.deleteCheckpoint(String partitionId)
+    fullName: Future<Void> com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager.deleteCheckpoint(String partitionId)
+    type: Method
+    syntax:
+      content: public Future<Void> deleteCheckpoint(String partitionId)
+      parameters:
+        - id: partitionId
+          type: '26831127'
+      return:
+        type: 075d0a89

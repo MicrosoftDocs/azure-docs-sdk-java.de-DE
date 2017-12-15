@@ -4,9 +4,9 @@ items:
     id: _blob_container_public_access_type
     parent: com.microsoft.azure.storage.blob
     children:
-      - com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()
-      - com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()
-      - com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()
+      - com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB
+      - com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER
+      - com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF
       - com.microsoft.azure.storage.blob._blob_container_public_access_type.parse(final String)
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     langs:
@@ -26,7 +26,7 @@ items:
     summary: |-
       <p>Gibt die Ebene des öffentlichen Zugriffs, der für den Container zulässig ist. </p>
       <p>Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p>
-      <p>Die <xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()" data-throw-if-not-resolved="false"></xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
+      <p>Die <xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false">BlobContainerPublicAccessType</xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #OFF</xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #BLOB</xref>, die anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #CONTAINER</xref>, die anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
     syntax: &ref_1
       content: public enum BlobContainerPublicAccessType
     inheritance:
@@ -34,8 +34,8 @@ items:
       - java.lang.Enum<BlobContainerPublicAccessType>
     inheritedMembers:
       - com.microsoft.azure.storage.blob._blob_container_public_access_type_1ae3abdcc64ab1c165b742f2de3330ae94
-  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()
-    id: BLOB()
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB
+    id: BLOB
     parent: com.microsoft.azure.storage.blob._blob_container_public_access_type
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     langs:
@@ -52,8 +52,8 @@ items:
     summary: '<p>Gibt die öffentlichen Zugriff auf blobebene. Clients kann nicht die Inhalte und Metadaten von Blobs in diesem Container lesen, aber lesen containermetadaten oder Auflisten der Blobs im Container. </p>'
     syntax: &ref_3
       content: public BLOB
-  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()
-    id: CONTAINER()
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER
+    id: CONTAINER
     parent: com.microsoft.azure.storage.blob._blob_container_public_access_type
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     langs:
@@ -70,8 +70,8 @@ items:
     summary: '<p>Gibt die öffentlichen Zugriff auf Containerebene. Clients können Blob-Inhalte und Metadaten sowie containermetadaten lesen, und Sie können die Blobs im Container auflisten. </p>'
     syntax: &ref_4
       content: public CONTAINER
-  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()
-    id: OFF()
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF
+    id: 'OFF'
     parent: com.microsoft.azure.storage.blob._blob_container_public_access_type
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     langs:
@@ -115,7 +115,7 @@ items:
           description: '<p>Ein <code>String</code> enthält die Stufe des öffentlichen Zugriffs, zu analysieren.</p>'
       return:
         type: com.microsoft.azure.storage.blob._blob_container_public_access_type
-        description: '<p>Ein <code><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref></code> Wert, der die öffentliche Zugriffsebene für den Container darstellt. </p>'
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false">BlobContainerPublicAccessType</xref></code> Wert, der die öffentliche Zugriffsebene für den Container darstellt. </p>'
 references:
   - uid: 3d93591e
     spec.java:
@@ -137,9 +137,9 @@ references:
     summary: |-
       <p>Gibt die Ebene des öffentlichen Zugriffs, der für den Container zulässig ist. </p>
       <p>Die Einstellung für öffentlichen Zugriff gibt an, ob der Container und seine Blobs über eine anonyme Anforderung gelesen werden können. </p>
-      <p>Die <xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false"></xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()" data-throw-if-not-resolved="false"></xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref href="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()" data-throw-if-not-resolved="false"></xref>, der anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
+      <p>Die <xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type" data-throw-if-not-resolved="false">BlobContainerPublicAccessType</xref> Enumeration stellt drei Ebenen von anonymen Lesezugriff bereit:<itemizedlist><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #OFF</xref>, die verhindert, dass anonymen Zugriffs. </p></listitem><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #BLOB</xref>, die anonyme Lesezugriff auf Blob-Ressourcen, jedoch nicht auf die containermetadaten oder der Liste der Blobs im Container ermöglicht. </p></listitem><listitem><p><xref uid="com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER" data-throw-if-not-resolved="false">BlobContainerPublicAccessType #CONTAINER</xref>, die anonyme Lesezugriff auf Blob-Ressourcen, die containermetadaten und die Liste der Blobs im Container ermöglicht. </p></listitem></itemizedlist>Weitere Informationen zum Verwalten des anonymen Zugriffs auf Blob-Dienstressourcen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224644&amp;clcid=0x409">Einstellung Access Control für Container</ulink>. </p>
     syntax: *ref_1
-  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF()
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.OFF
     parent: com.microsoft.azure.storage.blob._blob_container_public_access_type
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     name: 'OFF'
@@ -148,7 +148,7 @@ references:
     type: Field
     summary: <p>Gibt keinen öffentlichen Zugriff an. Nur der Kontobesitzer kann Ressourcen in diesem Container zugreifen. </p>
     syntax: *ref_2
-  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB()
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.BLOB
     parent: com.microsoft.azure.storage.blob._blob_container_public_access_type
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     name: BLOB
@@ -157,7 +157,7 @@ references:
     type: Field
     summary: '<p>Gibt die öffentlichen Zugriff auf blobebene. Clients kann nicht die Inhalte und Metadaten von Blobs in diesem Container lesen, aber lesen containermetadaten oder Auflisten der Blobs im Container. </p>'
     syntax: *ref_3
-  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER()
+  - uid: com.microsoft.azure.storage.blob._blob_container_public_access_type.CONTAINER
     parent: com.microsoft.azure.storage.blob._blob_container_public_access_type
     href: com.microsoft.azure.storage.blob._blob_container_public_access_type.yml
     name: CONTAINER

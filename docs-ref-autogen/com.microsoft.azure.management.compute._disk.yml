@@ -4,6 +4,7 @@ items:
     id: _disk
     parent: com.microsoft.azure.management.compute
     children:
+      - com.microsoft.azure.management.compute._disk.availabilityZones()
       - com.microsoft.azure.management.compute._disk.creationMethod()
       - com.microsoft.azure.management.compute._disk.grantAccess(int)
       - com.microsoft.azure.management.compute._disk.grantAccessAsync(int)
@@ -27,12 +28,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 26
+      startLine: 30
     package: com.microsoft.azure.management.compute
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> verwalteten Datenträger. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> verwalteten Datenträger. </p>
     syntax:
       content: 'public interface Disk extends GroupableResource<ComputeManager, DiskInner>,Refreshable<Disk>,Updatable<Disk.Update>'
     inheritedMembers:
@@ -49,6 +50,27 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.arm.models._resource.tags()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._resource.type()
       - com.microsoft.azure.management.resources.fluentcore.model._updatable.update()
+  - uid: com.microsoft.azure.management.compute._disk.availabilityZones()
+    id: availabilityZones()
+    parent: com.microsoft.azure.management.compute._disk
+    href: com.microsoft.azure.management.compute._disk.yml
+    langs:
+      - java
+    name: availabilityZones()
+    nameWithType: Disk.availabilityZones()
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.compute.Disk.availabilityZones()
+    overload: com.microsoft.azure.management.compute._disk.availabilityZones*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
+      startLine: 74
+    package: com.microsoft.azure.management.compute
+    syntax:
+      content: public Set<AvailabilityZoneId> availabilityZones()
+      return:
+        type: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+        description: '<p>die Verfügbarkeit Zonen zugewiesen, auf den Datenträger </p>'
   - uid: com.microsoft.azure.management.compute._disk.creationMethod()
     id: creationMethod()
     parent: com.microsoft.azure.management.compute._disk
@@ -63,7 +85,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 38
+      startLine: 42
     package: com.microsoft.azure.management.compute
     syntax:
       content: public DiskCreateOption creationMethod()
@@ -84,7 +106,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 72
+      startLine: 82
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Gewährt den Zugriff auf den Datenträger.</p>
@@ -112,7 +134,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 80
+      startLine: 90
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Gewährt Zugriff auf den Datenträger asynchron auf.</p>
@@ -140,7 +162,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 89
+      startLine: 99
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Gewährt Zugriff auf den Datenträger asynchron auf.</p>
@@ -171,7 +193,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 43
+      startLine: 47
     package: com.microsoft.azure.management.compute
     syntax:
       content: public boolean isAttachedToVirtualMachine()
@@ -192,7 +214,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 59
+      startLine: 63
     package: com.microsoft.azure.management.compute
     syntax:
       content: public OperatingSystemTypes osType()
@@ -213,7 +235,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 94
+      startLine: 104
     package: com.microsoft.azure.management.compute
     summary: <p>Hebt den Zugriff auf den Datenträger gewährt. </p>
     syntax:
@@ -232,7 +254,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 101
+      startLine: 111
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Hebt den Zugriff auf den Datenträger asynchron gewährt.</p>
@@ -240,7 +262,7 @@ items:
     syntax:
       content: public Completable revokeAccessAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.compute._disk.revokeAccessAsync(ServiceCallback<Void>)
     id: revokeAccessAsync(ServiceCallback<Void>)
@@ -256,7 +278,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 109
+      startLine: 119
     package: com.microsoft.azure.management.compute
     summary: |-
       <p>Hebt den Zugriff auf den Datenträger asynchron gewährt.</p>
@@ -284,7 +306,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 54
+      startLine: 58
     package: com.microsoft.azure.management.compute
     syntax:
       content: public int sizeInGB()
@@ -305,7 +327,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 33
+      startLine: 37
     package: com.microsoft.azure.management.compute
     syntax:
       content: public DiskSkuTypes sku()
@@ -326,7 +348,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 64
+      startLine: 68
     package: com.microsoft.azure.management.compute
     syntax:
       content: public CreationSource source()
@@ -347,7 +369,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/Disk.java
-      startLine: 49
+      startLine: 53
     package: com.microsoft.azure.management.compute
     syntax:
       content: public String virtualMachineId()
@@ -402,6 +424,21 @@ references:
     nameWithType: Disk.source
     fullName: CreationSource com.microsoft.azure.management.compute.Disk.source
     package: com.microsoft.azure.management.compute
+  - uid: b398a0f1com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_ida08ddfce
+    spec.java:
+      - name: Set<
+        fullName: Set<
+      - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+        name: AvailabilityZoneId
+        fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+        href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.compute._disk.availabilityZones*
+    name: availabilityZones
+    nameWithType: Disk.availabilityZones
+    fullName: Set<AvailabilityZoneId> com.microsoft.azure.management.compute.Disk.availabilityZones
+    package: com.microsoft.azure.management.compute
   - uid: com.microsoft.azure.management.compute._disk.grantAccess*
     name: grantAccess
     nameWithType: Disk.grantAccess
@@ -429,7 +466,7 @@ references:
     nameWithType: Disk.revokeAccess
     fullName: void com.microsoft.azure.management.compute.Disk.revokeAccess
     package: com.microsoft.azure.management.compute
-  - uid: 56537e90
+  - uid: '56537e90'
     spec.java:
       - name: Completable
         fullName: Completable
@@ -469,7 +506,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -514,7 +551,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -529,7 +566,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -605,7 +642,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -664,7 +701,7 @@ references:
     nameWithType: DiskSkuTypes
     fullName: com.microsoft.azure.management.compute.DiskSkuTypes
     type: Class
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._disk_sku_types" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._disk_sku_types" data-throw-if-not-resolved="false">DiskSkuTypes</xref>. </p>
     syntax:
       content: public class DiskSkuTypes
   - uid: com.microsoft.azure.management.compute._disk_create_option
@@ -674,7 +711,7 @@ references:
     nameWithType: DiskCreateOption
     fullName: com.microsoft.azure.management.compute.DiskCreateOption
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._disk_create_option" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._disk_create_option" data-throw-if-not-resolved="false">DiskCreateOption</xref>. </p>
     syntax:
       content: public enum DiskCreateOption
   - uid: com.microsoft.azure.management.compute._operating_system_types
@@ -684,7 +721,7 @@ references:
     nameWithType: OperatingSystemTypes
     fullName: com.microsoft.azure.management.compute.OperatingSystemTypes
     type: Enum
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.compute._operating_system_types" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.compute._operating_system_types" data-throw-if-not-resolved="false">OperatingSystemTypes</xref>. </p>
     syntax:
       content: public enum OperatingSystemTypes
   - uid: com.microsoft.azure.management.compute._creation_source
@@ -697,6 +734,16 @@ references:
     summary: '<p>Die Quelle, aus der verwalteten Datenträger oder einer Momentaufnahme erstellt wird. </p>'
     syntax:
       content: public class CreationSource
+  - uid: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id
+    parent: com.microsoft.azure.management.resources.fluentcore.arm
+    href: com.microsoft.azure.management.resources.fluentcore.arm._availability_zone_id.yml
+    name: AvailabilityZoneId
+    nameWithType: AvailabilityZoneId
+    fullName: com.microsoft.azure.management.resources.fluentcore.arm.AvailabilityZoneId
+    type: Class
+    summary: <p>Verfügbarkeit Zeitzonenbezeichnern. </p>
+    syntax:
+      content: public class AvailabilityZoneId extends ExpandableStringEnum<AvailabilityZoneId>
   - uid: com.microsoft.azure.management._azure
     parent: com.microsoft.azure.management
     href: com.microsoft.azure.management._azure.yml
@@ -704,6 +751,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

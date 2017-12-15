@@ -19,8 +19,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageHandler.java
-      startLine: 4
+      startLine: 10
     package: com.microsoft.azure.servicebus
+    summary: '<p>Definiert den Vertrag für die Registrierung des Rückrufs <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerMessageHandler(IMessageHandler)</xref> und <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerMessageHandler(IMessageHandler)</xref> für <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> und <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>. </p>'
     syntax:
       content: public interface IMessageHandler
   - uid: 'com.microsoft.azure.servicebus._i_message_handler.notifyException(Throwable,ExceptionPhase)'
@@ -37,15 +38,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageHandler.java
-      startLine: 8
+      startLine: 26
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Empfangen die Ausnahmen, die übergeben von Datapump während der Verarbeitung von Nachrichten.</p>
+      <p></p>
     syntax:
       content: 'public void notifyException(Throwable exception, ExceptionPhase phase)'
       parameters:
         - id: exception
           type: a04fafd7
+          description: <p>Diese Ausnahme in Datapump empfangen wurde. </p>
         - id: phase
           type: com.microsoft.azure.servicebus._exception_phase
+          description: <p>Phase der Ausnahme. </p>
   - uid: com.microsoft.azure.servicebus._i_message_handler.onMessageAsync(IMessage)
     id: onMessageAsync(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_handler
@@ -60,15 +66,20 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageHandler.java
-      startLine: 6
+      startLine: 18
     package: com.microsoft.azure.servicebus
+    summary: |-
+      <p>Der Rückruf für Nachrichtensystem Übergabe empfangenen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>s.</p>
+      <p></p>
     syntax:
       content: public CompletableFuture<Void> onMessageAsync(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
+          description: <p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>
       return:
         type: db03ee24
+        description: <p>CompletableFuture für die Message-Handler. </p>
 references:
   - uid: db03ee24
     spec.java:
@@ -95,8 +106,20 @@ references:
     nameWithType: IMessage
     fullName: com.microsoft.azure.servicebus.IMessage
     type: Interface
+    summary: |-
+      <p>Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</p>
+      <p></p>
     syntax:
       content: public interface IMessage
+  - uid: com.microsoft.azure.servicebus._message
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._message.yml
+    name: Message
+    nameWithType: Message
+    fullName: com.microsoft.azure.servicebus.Message
+    type: Class
+    syntax:
+      content: public class Message
   - uid: com.microsoft.azure.servicebus._exception_phase
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._exception_phase.yml
@@ -104,5 +127,26 @@ references:
     nameWithType: ExceptionPhase
     fullName: com.microsoft.azure.servicebus.ExceptionPhase
     type: Enum
+    summary: |-
+      <p>Die Enumeration zur Darstellung der Phase in einer Nachrichtensystem oder Sitzung Datapump an dem eine Ausnahme aufgetreten ist.</p>
+      <p></p>
     syntax:
       content: public enum ExceptionPhase
+  - uid: com.microsoft.azure.servicebus._queue_client
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._queue_client.yml
+    name: QueueClient
+    nameWithType: QueueClient
+    fullName: com.microsoft.azure.servicebus.QueueClient
+    type: Class
+    syntax:
+      content: public class QueueClient
+  - uid: com.microsoft.azure.servicebus._subscription_client
+    parent: com.microsoft.azure.servicebus
+    href: com.microsoft.azure.servicebus._subscription_client.yml
+    name: SubscriptionClient
+    nameWithType: SubscriptionClient
+    fullName: com.microsoft.azure.servicebus.SubscriptionClient
+    type: Class
+    syntax:
+      content: public class SubscriptionClient

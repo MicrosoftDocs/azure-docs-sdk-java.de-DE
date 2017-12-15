@@ -13,16 +13,14 @@ items:
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/NetworkInterface.java
-      startLine: 531
+      startLine: 566
     package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Die Vorlage für eine Update-Vorgang mit den Einstellungen aus, die geändert werden können. </p>
-      <p>Rufen Sie <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref> beim Übernehmen der Änderungen an der Ressource im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: '<p>Die Vorlage für eine Update-Vorgang mit den Einstellungen aus, die geändert werden können. </p>'
     syntax:
-      content: 'public interface Update extends Appliable<NetworkInterface>,Resource.UpdateWithTags<Update>,NetworkInterface.UpdateStages.WithPrimaryNetworkSubnet,NetworkInterface.UpdateStages.WithPrimaryPrivateIP,NetworkInterface.UpdateStages.WithPrimaryPublicIPAddress,NetworkInterface.UpdateStages.WithNetworkSecurityGroup,NetworkInterface.UpdateStages.WithIPForwarding,NetworkInterface.UpdateStages.WithDnsServer,NetworkInterface.UpdateStages.WithIPConfiguration,NetworkInterface.UpdateStages.WithLoadBalancer'
+      content: 'public interface Update extends Appliable<NetworkInterface>,Resource.UpdateWithTags<Update>,NetworkInterface.UpdateStages.WithPrimaryNetworkSubnet,NetworkInterface.UpdateStages.WithPrimaryPrivateIP,NetworkInterface.UpdateStages.WithPrimaryPublicIPAddress,NetworkInterface.UpdateStages.WithNetworkSecurityGroup,NetworkInterface.UpdateStages.WithIPForwarding,NetworkInterface.UpdateStages.WithDnsServer,NetworkInterface.UpdateStages.WithIPConfiguration,NetworkInterface.UpdateStages.WithLoadBalancer,NetworkInterface.UpdateStages.WithAcceleratedNetworking'
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()
       - com.microsoft.azure.management.resources.fluentcore.model._appliable.applyAsync()
@@ -41,7 +39,9 @@ items:
       - com.microsoft.azure.management.network._network_interface._update_staac62d19c5bc0689af61d36c26fd3ca47.withNewPrimaryPublicIPAddress(Creatable<PublicIPAddress>)
       - com.microsoft.azure.management.network._network_interface._update_staac62d19c5bc0689af61d36c26fd3ca47.withNewPrimaryPublicIPAddress()
       - com.microsoft.azure.management.network._network_interface._update_staac62d19c5bc0689af61d36c26fd3ca47.withNewPrimaryPublicIPAddress(String)
+      - com.microsoft.azure.management.network._network_interface._update_stac1b32786935c1673346ad51c8adc0504.withoutAcceleratedNetworking()
       - com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server.withoutDnsServer(String)
+      - com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_configuration.withoutIPConfiguration(String)
       - com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_forwarding.withoutIPForwarding()
       - com.microsoft.azure.management.network._network_interface._update_stages._with_load_balancer.withoutLoadBalancerBackends()
       - com.microsoft.azure.management.network._network_interface._update_stages._with_load_balancer.withoutLoadBalancerInboundNatRules()
@@ -121,7 +121,7 @@ references:
           description: <p>Namen für die IP-Konfiguration </p>
       return:
         type: aaefe18e
-        description: <p>die erste Phase der Definition eines sekundäre IP-Konfiguration </p>
+        description: <p>die erste Phase des Updates </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
     parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
     href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
@@ -152,7 +152,7 @@ references:
           description: <p>Name der IP-Konfiguration </p>
       return:
         type: 7071c9cf
-        description: <p>die erste Phase eines Updates der IP-Konfiguration </p>
+        description: <p>die erste Phase des Updates </p>
   - uid: com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server.withAzureDnsServer()
     parent: com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server
     href: com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server.yml
@@ -161,7 +161,7 @@ references:
     fullName: Update com.microsoft.azure.management.network.NetworkInterface.UpdateStages.WithDnsServer.withAzureDnsServer()
     type: Method
     summary: |-
-      <p>Gibt an, dass die standardmäßige verwendet <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> DNS-Server für die Netzwerkschnittstelle. </p>
+      <p>Gibt an, dass die standardmäßige verwendet <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> DNS-Server für die Netzwerkschnittstelle. </p>
       <p>Mithilfe von Azure-DNS-wird Server diese Netzwerkschnittstelle zugeordneten benutzerdefinierten DNS-Servern entfernt.</p>
       <p></p>
     syntax:
@@ -357,6 +357,19 @@ references:
       return:
         type: com.microsoft.azure.management.network._network_interface._update
         description: <p>die nächste Phase der Network-Interface-update </p>
+  - uid: com.microsoft.azure.management.network._network_interface._update_stac1b32786935c1673346ad51c8adc0504.withoutAcceleratedNetworking()
+    parent: com.microsoft.azure.management.network._network_interface._update_stac1b32786935c1673346ad51c8adc0504
+    href: com.microsoft.azure.management.network._network_interface._update_stac1b32786935c1673346ad51c8adc0504.yml
+    name: withoutAcceleratedNetworking()
+    nameWithType: NetworkInterface.UpdateStages.WithAcceleratedNetworking.withoutAcceleratedNetworking()
+    fullName: Update com.microsoft.azure.management.network.NetworkInterface.UpdateStages.WithAcceleratedNetworking.withoutAcceleratedNetworking()
+    type: Method
+    summary: <p>Deaktiviert die beschleunigte Netzwerken. </p>
+    syntax:
+      content: public Update withoutAcceleratedNetworking()
+      return:
+        type: com.microsoft.azure.management.network._network_interface._update
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server.withoutDnsServer(String)
     parent: com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server
     href: com.microsoft.azure.management.network._network_interface._update_stages._with_dns_server.yml
@@ -376,6 +389,23 @@ references:
       return:
         type: com.microsoft.azure.management.network._network_interface._update
         description: <p>die nächste Phase der Network-Interface-update </p>
+  - uid: com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_configuration.withoutIPConfiguration(String)
+    parent: com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_configuration
+    href: com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_configuration.yml
+    name: withoutIPConfiguration(String name)
+    nameWithType: NetworkInterface.UpdateStages.WithIPConfiguration.withoutIPConfiguration(String name)
+    fullName: Update com.microsoft.azure.management.network.NetworkInterface.UpdateStages.WithIPConfiguration.withoutIPConfiguration(String name)
+    type: Method
+    summary: <p>Entfernt die angegebene IP-Konfiguration. </p>
+    syntax:
+      content: public Update withoutIPConfiguration(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name einer vorhandenen IP-Konfiguration </p>
+      return:
+        type: com.microsoft.azure.management.network._network_interface._update
+        description: <p>die nächste Phase des Updates </p>
   - uid: com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_forwarding.withoutIPForwarding()
     parent: com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_forwarding
     href: com.microsoft.azure.management.network._network_interface._update_stages._with_i_p_forwarding.yml
@@ -544,13 +574,13 @@ references:
     nameWithType: 'Resource.UpdateWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.UpdateWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase des Ressource-Updates </p>
@@ -664,13 +694,13 @@ references:
     summary: <p>Die Phase des Netzwerk-Schnittstelle Updates ermöglicht es einem Lastenausgleichsmodul zugeordnet ist. </p>
     syntax:
       content: public interface WithLoadBalancer
-  - uid: com.microsoft.azure.management._azure
-    parent: com.microsoft.azure.management
-    href: com.microsoft.azure.management._azure.yml
-    name: Azure
-    nameWithType: Azure
-    fullName: com.microsoft.azure.management.Azure
-    type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+  - uid: com.microsoft.azure.management.network._network_interface._update_stac1b32786935c1673346ad51c8adc0504
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._network_interface._update_stac1b32786935c1673346ad51c8adc0504.yml
+    name: NetworkInterface.UpdateStages.WithAcceleratedNetworking
+    nameWithType: NetworkInterface.UpdateStages.WithAcceleratedNetworking
+    fullName: com.microsoft.azure.management.network.NetworkInterface.UpdateStages.WithAcceleratedNetworking
+    type: Interface
+    summary: '<p>Die Phase der netzwerkschnittstellendefinition um zu deaktivieren, sodass beschleunigt Netzwerk. </p>'
     syntax:
-      content: public class Azure
+      content: public interface WithAcceleratedNetworking

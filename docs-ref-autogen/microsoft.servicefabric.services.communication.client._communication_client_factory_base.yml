@@ -32,7 +32,7 @@ items:
       startLine: 40
     package: microsoft.servicefabric.services.communication.client
     summary: |-
-      <p>Stellt die grundlegende Implementierung der <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false"></xref> zum Erstellen von Kommunikation von Clients zum Kommunizieren mit Service Fabric-Dienste verwendet. Erweitern der <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory_base" data-throw-if-not-resolved="false"></xref> Klasse, um die Kommunikation von Clients benutzerdefinierte transportimplementierungen erstellen. Diese Klasse verwaltet einen Cache der Kommunikation zwischen Clients und versucht, die Clients für Anforderungen an den gleichen Dienstendpunkt wiederverwenden.</p>
+      <p>Stellt die basisimplementierung <xref uid="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false">CommunicationClientFactory</xref> zum Erstellen von Kommunikation von Clients zum Kommunizieren mit Service Fabric-Dienste verwendet. Erweitern der <xref uid="microsoft.servicefabric.services.communication.client._communication_client_factory_base" data-throw-if-not-resolved="false">CommunicationClientFactoryBase</xref> Klasse, um die Kommunikation von Clients benutzerdefinierte transportimplementierungen erstellen. Diese Klasse verwaltet einen Cache der Kommunikation zwischen Clients und versucht, die Clients für Anforderungen an den gleichen Dienstendpunkt wiederverwenden.</p>
       <p></p>
     syntax: &ref_1
       content: public class CommunicationClientFactoryBase<T extends CommunicationClient> implements CommunicationClientFactory<T>
@@ -168,15 +168,10 @@ items:
       parameters:
         - id: previousRsp
           type: system.fabric._resolved_service_partition
-          description: <p>vorherige <ref refid="" kindref="compound">ResolvedServicePartition</ref></p>
+          description: <p>vorherige <xref uid="" data-throw-if-not-resolved="false">ResolvedServicePartition</xref></p>
         - id: targetReplicaSelector
           type: microsoft.servicefabric.services.communication.client._target_replica_selector
-          description: |-
-            <p>
-
-              <xref href="microsoft.servicefabric.services.communication.client._target_replica_selector" data-throw-if-not-resolved="false"></xref>
-
-            </p>
+          description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.services.communication.client._target_replica_selector\" data-throw-if-not-resolved=\"false\">TargetReplicaSelector</xref>\r\n\r\n</p>"
         - id: listenerName
           type: '26831127'
           description: <p>Name des Listeners </p>
@@ -185,7 +180,7 @@ items:
           description: <p>wiederholungseinstellungen </p>
       return:
         type: 0e01833a
-        description: '<p>Eine CompletableFuture, die ausstehenden Vorgang darstellt. Das Ergebnis der Aufgabe ist die <xref href="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false"></xref>(<xref href="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false"></xref>) Objekt. </p>'
+        description: '<p>Eine CompletableFuture, die ausstehenden Vorgang darstellt. Das Ergebnis der Aufgabe ist die <xref uid="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false">CommunicationClient</xref>(<xref uid="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false">CommunicationClient</xref>) Objekt. </p>'
   - uid: 'microsoft.servicefabric.services.communication.client._communication_client_factory_base.getClientAsync(URI,ServicePartitionKey,TargetReplicaSelector,String,OperationRetrySettings)'
     id: 'getClientAsync(URI,ServicePartitionKey,TargetReplicaSelector,String,OperationRetrySettings)'
     parent: microsoft.servicefabric.services.communication.client._communication_client_factory_base
@@ -216,12 +211,7 @@ items:
           description: '<p>Schlüssel, die Partition zum Auflösen identifiziert </p>'
         - id: targetReplicaSelector
           type: microsoft.servicefabric.services.communication.client._target_replica_selector
-          description: |-
-            <p>
-
-              <xref href="microsoft.servicefabric.services.communication.client._target_replica_selector" data-throw-if-not-resolved="false"></xref>
-
-            </p>
+          description: "<p>\r\n\r\n  <xref uid=\"microsoft.servicefabric.services.communication.client._target_replica_selector\" data-throw-if-not-resolved=\"false\">TargetReplicaSelector</xref>\r\n\r\n</p>"
         - id: listenerName
           type: '26831127'
           description: <p>Name des Listeners </p>
@@ -230,7 +220,7 @@ items:
           description: <p>wiederholungseinstellungen </p>
       return:
         type: 0e01833a
-        description: '<p>Eine CompletableFuture, die ausstehenden Vorgang darstellt. Das Ergebnis der Aufgabe ist die <xref href="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false"></xref>(<xref href="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false"></xref>) Objekt. </p>'
+        description: '<p>Eine CompletableFuture, die ausstehenden Vorgang darstellt. Das Ergebnis der Aufgabe ist die <xref uid="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false">CommunicationClient</xref>(<xref uid="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false">CommunicationClient</xref>) Objekt. </p>'
   - uid: microsoft.servicefabric.services.communication.client._communication_client_factory_base.getExceptionHandlers()
     id: getExceptionHandlers()
     parent: microsoft.servicefabric.services.communication.client._communication_client_factory_base
@@ -296,7 +286,7 @@ items:
       startLine: 76
     package: microsoft.servicefabric.services.communication.client
     summary: |-
-      <p>Ruft den ablaufverfolgungsbezeichner ab, das eine Instanz eines identifiziert die <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false"></xref>. Dies wird als eine Korrelations-ID für die Ablaufverfolgung-Protokollierung verwendet.</p>
+      <p>Ruft den ablaufverfolgungsbezeichner ab, das eine Instanz eines identifiziert die <xref uid="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false">CommunicationClientFactory</xref>. Dies wird als eine Korrelations-ID für die Ablaufverfolgung-Protokollierung verwendet.</p>
       <p></p>
     syntax:
       content: protected String getTraceId()
@@ -320,7 +310,7 @@ items:
       startLine: 248
     package: microsoft.servicefabric.services.communication.client
     summary: |-
-      <p>Behandelt die Ausnahmen, die bei der <xref href="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false"></xref> beim Senden einer Nachricht an den Dienst</p>
+      <p>Behandelt die Ausnahmen, die bei der <xref uid="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false">CommunicationClient</xref> beim Senden einer Nachricht an den Dienst</p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<OperationRetryControl> reportOperationExceptionAsync(T client, ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings)'
@@ -336,7 +326,7 @@ items:
           description: <p>wiederholungseinstellungen </p>
       return:
         type: 9cdf14d0microsoft.servicefabric.services.communication.client._operation_retry_controla08ddfce
-        description: '<p>Eine CompletableFuture, die ausstehenden Vorgang darstellt. Das Ergebnis des Vorgangs ist ein <xref href="microsoft.servicefabric.services.communication.client._operation_retry_control" data-throw-if-not-resolved="false"></xref> -Objekt, das bestimmt, wie die wiederholungsrichtlinie für diese Ausnahme ausgelöst. </p>'
+        description: '<p>Eine CompletableFuture, die ausstehenden Vorgang darstellt. Das Ergebnis des Vorgangs ist ein <xref uid="microsoft.servicefabric.services.communication.client._operation_retry_control" data-throw-if-not-resolved="false">OperationRetryControl</xref> -Objekt, das bestimmt, wie die wiederholungsrichtlinie für diese Ausnahme ausgelöst. </p>'
   - uid: 'microsoft.servicefabric.services.communication.client._communication_client_factory_base.validateClient(String,T)'
     id: 'validateClient(String,T)'
     parent: microsoft.servicefabric.services.communication.client._communication_client_factory_base
@@ -498,7 +488,7 @@ references:
     fullName: 'CompletableFuture<OperationRetryControl> microsoft.servicefabric.services.communication.client.CommunicationClientFactory<TCommunicationClient extends CommunicationClient>.reportOperationExceptionAsync(TCommunicationClient client, ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings)'
     type: Method
     summary: |-
-      <p>Behandelt die Ausnahmen, die bei der <xref href="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false"></xref> beim Senden einer Nachricht an den Dienst</p>
+      <p>Behandelt die Ausnahmen, die bei der <xref uid="microsoft.servicefabric.services.communication.client._communication_client" data-throw-if-not-resolved="false">CommunicationClient</xref> beim Senden einer Nachricht an den Dienst</p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<OperationRetryControl> reportOperationExceptionAsync(TCommunicationClient client, ExceptionInformation exceptionInformation, OperationRetrySettings retrySettings)'
@@ -514,7 +504,7 @@ references:
           description: '<p>Gibt die wiederholungsrichtlinie, die für die gemeldeten Ausnahmebehandlung verwendet werden soll. </p>'
       return:
         type: 9cdf14d0microsoft.servicefabric.services.communication.client._operation_retry_controla08ddfce
-        description: '<p>Ein <ref refid="" kindref="compound">CompletableFuture</ref> , ausstehenden Vorgang darstellt. Das Ergebnis des Vorgangs ist ein <xref href="microsoft.servicefabric.services.communication.client._operation_retry_control" data-throw-if-not-resolved="false"></xref> -Objekt, das auf die wiederholungsrichtlinie für diese Ausnahme hin. </p>'
+        description: '<p>Ein <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> , ausstehenden Vorgang darstellt. Das Ergebnis des Vorgangs ist ein <xref uid="microsoft.servicefabric.services.communication.client._operation_retry_control" data-throw-if-not-resolved="false">OperationRetryControl</xref> -Objekt, das auf die wiederholungsrichtlinie für diese Ausnahme hin. </p>'
   - uid: microsoft.servicefabric.services.communication.client._communication_client_factory
     parent: microsoft.servicefabric.services.communication.client
     href: microsoft.servicefabric.services.communication.client._communication_client_factory.yml
@@ -656,6 +646,6 @@ references:
     fullName: microsoft.servicefabric.services.communication.client.CommunicationClientFactoryBase<T>
     type: Class
     summary: |-
-      <p>Stellt die grundlegende Implementierung der <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false"></xref> zum Erstellen von Kommunikation von Clients zum Kommunizieren mit Service Fabric-Dienste verwendet. Erweitern der <xref href="microsoft.servicefabric.services.communication.client._communication_client_factory_base" data-throw-if-not-resolved="false"></xref> Klasse, um die Kommunikation von Clients benutzerdefinierte transportimplementierungen erstellen. Diese Klasse verwaltet einen Cache der Kommunikation zwischen Clients und versucht, die Clients für Anforderungen an den gleichen Dienstendpunkt wiederverwenden.</p>
+      <p>Stellt die basisimplementierung <xref uid="microsoft.servicefabric.services.communication.client._communication_client_factory" data-throw-if-not-resolved="false">CommunicationClientFactory</xref> zum Erstellen von Kommunikation von Clients zum Kommunizieren mit Service Fabric-Dienste verwendet. Erweitern der <xref uid="microsoft.servicefabric.services.communication.client._communication_client_factory_base" data-throw-if-not-resolved="false">CommunicationClientFactoryBase</xref> Klasse, um die Kommunikation von Clients benutzerdefinierte transportimplementierungen erstellen. Diese Klasse verwaltet einen Cache der Kommunikation zwischen Clients und versucht, die Clients für Anforderungen an den gleichen Dienstendpunkt wiederverwenden.</p>
       <p></p>
     syntax: *ref_1

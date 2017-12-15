@@ -8,9 +8,7 @@ items:
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.defineTcpProbe(String)
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.updateHttpProbe(String)
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.updateTcpProbe(String)
-      - com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withHttpProbe(String)
       - com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withoutProbe(String)
-      - com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withTcpProbe(int)
     href: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.yml
     langs:
       - java
@@ -21,10 +19,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 413
+      startLine: 344
     package: com.microsoft.azure.management.network
     summary: '<p>Die Phase des Load Balancers aktualisieren zum Hinzufügen, entfernen oder Ändern von Tests ermöglicht. </p>'
     syntax:
@@ -43,11 +41,11 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 439
+      startLine: 352
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Beginn der Definition eine neue HTTP-Test zum Lastenausgleich hinzufügen. </p>
-      <p>Die Definition muss mit einem Aufruf von abgeschlossen werden<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+      <p>Die Definition abgeschlossen werden muss, mit einem Aufruf von <xref uid="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false">LoadBalancerHttpProbe.DefinitionStages.WithAttach#attach()</xref></p>
     syntax:
       content: public LoadBalancerHttpProbe.UpdateDefinitionStages.Blank<Update> defineHttpProbe(String name)
       parameters:
@@ -71,11 +69,11 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 448
+      startLine: 361
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Beginn der Definition eine neue TCP-Überprüfung zum Lastenausgleich hinzufügen. </p>
-      <p>Die Definition muss mit einem Aufruf von abgeschlossen werden<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+      <p>Die Definition abgeschlossen werden muss, mit einem Aufruf von <xref uid="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false">LoadBalancerHttpProbe.DefinitionStages.WithAttach#attach()</xref></p>
     syntax:
       content: public LoadBalancerTcpProbe.UpdateDefinitionStages.Blank<Update> defineTcpProbe(String name)
       parameters:
@@ -99,7 +97,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 469
+      startLine: 382
     package: com.microsoft.azure.management.network
     summary: <p>Startet die Beschreibung der Aktualisierung einer vorhandenen HTTP-Test für dieses Lastenausgleichsmodul. </p>
     syntax:
@@ -125,7 +123,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 462
+      startLine: 375
     package: com.microsoft.azure.management.network
     summary: <p>Startet die Beschreibung der Aktualisierung einer vorhandenen TCP-Überprüfung für dieses Lastenausgleichsmodul. </p>
     syntax:
@@ -137,34 +135,6 @@ items:
       return:
         type: a28b03e3
         description: <p>die erste Phase des Test-Updates </p>
-  - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withHttpProbe(String)
-    id: withHttpProbe(String)
-    parent: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe
-    href: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.yml
-    langs:
-      - java
-    name: withHttpProbe(String requestPath)
-    nameWithType: LoadBalancer.UpdateStages.WithProbe.withHttpProbe(String requestPath)
-    fullName: Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithProbe.withHttpProbe(String requestPath)
-    overload: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withHttpProbe*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 430
-    package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Fügt einen HTTP-Test überprüfen in regelmäßigen Abständen über Port 80 für eine Antwort "HTTP 200" aus dem angegebenen Pfad. </p>
-      <p>Der Test wird ein automatisch generierter Name zugewiesen. </p>
-    syntax:
-      content: public Update withHttpProbe(String requestPath)
-      parameters:
-        - id: requestPath
-          type: '26831127'
-          description: <p>der Pfad für den Prüfpunkt aufzurufenden </p>
-      return:
-        type: com.microsoft.azure.management.network._load_balancer._update
-        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withoutProbe(String)
     id: withoutProbe(String)
     parent: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe
@@ -179,7 +149,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 455
+      startLine: 368
     package: com.microsoft.azure.management.network
     summary: '<p>Den angegebene Prüfpunkt entfernt aus dem Lastenausgleich, sofern vorhanden. </p>'
     syntax:
@@ -191,53 +161,11 @@ items:
       return:
         type: com.microsoft.azure.management.network._load_balancer._update
         description: <p>die nächste Phase des Updates </p>
-  - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withTcpProbe(int)
-    id: withTcpProbe(int)
-    parent: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe
-    href: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.yml
-    langs:
-      - java
-    name: withTcpProbe(int port)
-    nameWithType: LoadBalancer.UpdateStages.WithProbe.withTcpProbe(int port)
-    fullName: Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithProbe.withTcpProbe(int port)
-    overload: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withTcpProbe*
-    type: Method
-    source:
-      remote: *ref_0
-      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 421
-    package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Fügt eine Überprüfung des angegebenen Ports TCP-Überprüfung. </p>
-      <p>Der Test wird mit einem automatisch generierten Namen benannt. </p>
-    syntax:
-      content: public Update withTcpProbe(int port)
-      parameters:
-        - id: port
-          type: f75371fa
-          description: <p>die Portnummer für den Prüfpunkt überwachen </p>
-      return:
-        type: com.microsoft.azure.management.network._load_balancer._update
-        description: <p>die nächste Phase der definition </p>
 references:
-  - uid: f75371fa
-    spec.java:
-      - name: int
-        fullName: int
-  - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withTcpProbe*
-    name: withTcpProbe
-    nameWithType: LoadBalancer.UpdateStages.WithProbe.withTcpProbe
-    fullName: Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithProbe.withTcpProbe
-    package: com.microsoft.azure.management.network
   - uid: '26831127'
     spec.java:
       - name: String
         fullName: String
-  - uid: com.microsoft.azure.management.network._load_balancer._update_stages._with_probe.withHttpProbe*
-    name: withHttpProbe
-    nameWithType: LoadBalancer.UpdateStages.WithProbe.withHttpProbe
-    fullName: Update com.microsoft.azure.management.network.LoadBalancer.UpdateStages.WithProbe.withHttpProbe
-    package: com.microsoft.azure.management.network
   - uid: efc5b0c7com.microsoft.azure.management.network._load_balancer._updatea08ddfce
     spec.java:
       - name: LoadBalancerHttpProbe.UpdateDefinitionStages.Blank<
@@ -298,11 +226,9 @@ references:
     nameWithType: LoadBalancer.Update
     fullName: com.microsoft.azure.management.network.LoadBalancer.Update
     type: Interface
-    summary: |-
-      <p>Die Vorlage für eine Load Balancer Updatevorgang, enthält alle Einstellungen, die geändert werden können. </p>
-      <p>Rufen Sie <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref> beim Übernehmen der Änderungen an der Ressource im <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: '<p>Die Vorlage für eine Load Balancer Updatevorgang, enthält alle Einstellungen, die geändert werden können. </p>'
     syntax:
-      content: 'public interface Update extends Appliable<LoadBalancer>,Resource.UpdateWithTags<Update>,LoadBalancer.UpdateStages.WithProbe,LoadBalancer.UpdateStages.WithBackend,LoadBalancer.UpdateStages.WithLoadBalancingRule,LoadBalancer.UpdateStages.WithInternetFrontend,LoadBalancer.UpdateStages.WithInternalFrontend,LoadBalancer.UpdateStages.WithNetworkSubnet,LoadBalancer.UpdateStages.WithInboundNatRule,LoadBalancer.UpdateStages.WithInboundNatPool'
+      content: 'public interface Update extends Appliable<LoadBalancer>,Resource.UpdateWithTags<Update>,LoadBalancer.UpdateStages.WithProbe,LoadBalancer.UpdateStages.WithBackend,LoadBalancer.UpdateStages.WithLoadBalancingRule,LoadBalancer.UpdateStages.WithPublicFrontend,LoadBalancer.UpdateStages.WithPrivateFrontend,LoadBalancer.UpdateStages.WithInboundNatRule,LoadBalancer.UpdateStages.WithInboundNatPool'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()
     parent: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition
     href: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.yml

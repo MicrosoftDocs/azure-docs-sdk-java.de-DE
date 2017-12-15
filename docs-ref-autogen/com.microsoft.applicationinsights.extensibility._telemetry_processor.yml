@@ -20,7 +20,24 @@ items:
       path: core/src/main/java/com/microsoft/applicationinsights/extensibility/TelemetryProcessor.java
       startLine: 51
     package: com.microsoft.applicationinsights.extensibility
-    summary: "<p>Ruft die Methode eine <ref refid=\"\" kindref=\"compound\">Telemetrie</ref> -Instanz, die gesendet werden kann. Dies ist die Möglichkeit, genehmigen oder ablehnen. Rückgabe von \"false\" bedeutet, dass die Telemetrie nicht gesendet werden, wird während \"True\" bedeutet, dass die Genehmigung.</p>\n<p>Die Telemetrie möglicherweise andere Filter durchlaufen, obwohl dessen senden, die verweigert, möglicherweise.</p>\n<p>Dieser Prozessor aktivieren, Sie es in der ApplicationInsights.xml wie folgt hinzufügen müssen:</p>\n<p>\r\n  <preformatted>\r\n    <programlisting>\r\n      <codeline>\r\n        <highlight class=\"normal\">&lt;TelemetryProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;CustomProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;Prozessor<sp></sp>type=\"full.path.to.Filter\"&gt; </highlight> \r\n      </codeline> \r\n      <codeline> \r\n        <highlight class=\"normal\"> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> &lt;Hinzufügen<sp></sp>Name = \"Eigenschaft\"<sp></sp>Wert = \"StringValue\" /&gt; </highlight> \r\n      </codeline> \r\n      <codeline> \r\n        <highlight class=\"normal\"> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> \r\n          <sp> </sp> &lt;/Processor&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>\r\n          <sp></sp>&lt;/CustomProcessors&gt;</highlight>\r\n      </codeline>\r\n      <codeline>\r\n        <highlight class=\"normal\">&lt;/TelemetryProcessors&gt; </highlight> \r\n      </codeline> \r\n    </programlisting>*</preformatted>\r\n</p>\n<p>Beachten Sie, dass die Klasse definiert eine Eigenschaft mit dem Namen \"Property\", der zu konfiguriert ist. Jede Eigenschaft, die Sie konfigurieren möchten muss eine öffentliche 'SetX'-Methode, z. B. \"SetProperty\" in diesem Beispiel verfügen <bold>'SetX'-Methoden ausgelöste Ausnahmen werden abgefangen werden, durch das Framework, die den Filter ignoriert werden kann</bold></p>\n<p>Gupele erstellt am 7/26/2016. </p>"
+    summary: |-
+      <p>Ruft die Methode eine <xref uid="" data-throw-if-not-resolved="false">Telemetrie</xref> -Instanz, die gesendet werden kann. Dies ist die Möglichkeit, genehmigen oder ablehnen. Rückgabe von "false" bedeutet, dass die Telemetrie nicht gesendet werden, wird während "True" bedeutet, dass die Genehmigung.</p>
+      <p>Die Telemetrie möglicherweise andere Filter durchlaufen, obwohl dessen senden, die verweigert, möglicherweise.</p>
+      <p>Dieser Prozessor aktivieren, Sie es in der ApplicationInsights.xml wie folgt hinzufügen müssen:</p>
+      <p>
+        <pre>
+          <code>&lt;TelemetryProcessors&gt;
+              &lt;CustomProcessors&gt;
+                  &lt;Processor type="full.path.to.Filter"&gt;
+                      &lt;Add name="Property" value="stringValue"/&gt;
+                  &lt;/Processor&gt;
+              &lt;/CustomProcessors&gt;
+          &lt;/TelemetryProcessors&gt;
+          </code> 
+      *</pre>
+      </p>
+      <p>Beachten Sie, dass die Klasse definiert eine Eigenschaft mit dem Namen "Property", der zu konfiguriert ist. Jede Eigenschaft, die Sie konfigurieren möchten muss eine öffentliche 'SetX'-Methode, z. B. "SetProperty" in diesem Beispiel verfügen <b>'SetX'-Methoden ausgelöste Ausnahmen werden abgefangen werden, durch das Framework, die den Filter ignoriert werden kann</b></p>
+      <p>Gupele erstellt am 7/26/2016. </p>
     syntax:
       content: public interface TelemetryProcessor
   - uid: com.microsoft.applicationinsights.extensibility._telemetry_processor.process(Telemetry)

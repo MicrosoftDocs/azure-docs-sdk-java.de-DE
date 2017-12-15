@@ -1,0 +1,87 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.elasticdb.query.exception
+    id: exception
+    children:
+      - com.microsoft.azure.elasticdb.query.exception._multi_shard_aggregate_exception
+      - com.microsoft.azure.elasticdb.query.exception._multi_shard_exception
+      - com.microsoft.azure.elasticdb.query.exception._multi_shard_partial_read_exception
+      - com.microsoft.azure.elasticdb.query.exception._multi_shard_result_set_closed_exception
+      - com.microsoft.azure.elasticdb.query.exception._multi_shard_result_set_internal_exception
+      - com.microsoft.azure.elasticdb.query.exception._multi_shard_schema_mismatch_exception
+    href: com.microsoft.azure.elasticdb.query.exception.yml
+    langs:
+      - java
+    name: com.microsoft.azure.elasticdb.query.exception
+    nameWithType: com.microsoft.azure.elasticdb.query.exception
+    fullName: com.microsoft.azure.elasticdb.query.exception
+    type: Namespace
+    source:
+      remote:
+        path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/exception/MultiShardAggregateException.java
+        branch: master
+        repo: 'https://github.com/Microsoft/elastic-db-tools-for-java'
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/exception/MultiShardAggregateException.java
+    syntax:
+      content: package com.microsoft.azure.elasticdb.query.exception
+references:
+  - uid: com.microsoft.azure.elasticdb.query.exception._multi_shard_aggregate_exception
+    parent: com.microsoft.azure.elasticdb.query.exception
+    href: com.microsoft.azure.elasticdb.query.exception._multi_shard_aggregate_exception.yml
+    name: MultiShardAggregateException
+    nameWithType: MultiShardAggregateException
+    fullName: com.microsoft.azure.elasticdb.query.exception.MultiShardAggregateException
+    type: Class
+    summary: '<p>Stellt eine oder mehrere Ausnahme aufgetretene beim Ausführen einer Abfrage über eine shardgruppe Fehler dar. Das Feld "InnerExceptions" sammelt diese Ausnahmen aus, und eine der "InnerExceptions" zur weiteren Überprüfung oder Verarbeitung durchlaufen kann. Zweck: Öffentlichen Typ, der Fehler kommuniziert, die über mehrere Shards hinweg aufgetreten sind. </p>'
+    syntax:
+      content: public class MultiShardAggregateException
+  - uid: com.microsoft.azure.elasticdb.query.exception._multi_shard_exception
+    parent: com.microsoft.azure.elasticdb.query.exception
+    href: com.microsoft.azure.elasticdb.query.exception._multi_shard_exception.yml
+    name: MultiShardException
+    nameWithType: MultiShardException
+    fullName: com.microsoft.azure.elasticdb.query.exception.MultiShardException
+    type: Class
+    summary: '<p>DEVNOTE: Kapseln Sie SMM ShardLocation jetzt, da Shard serialisierbar Unterstützung für die Serialisierung des ShardLocation ist nicht in die funktioniert ist. Ein <xref uid="com.microsoft.azure.elasticdb.query.exception._multi_shard_exception" data-throw-if-not-resolved="false">MultiShardException</xref> stellt eine Ausnahme, die bei Ausführung von Vorgängen für einen Shard dar. Es bietet Informationen zu sowohl die Identität des Shards und die aufgetretene Ausnahme. Je nach Art der Ausnahme kann eine führen Sie erneut die Abfrage mit mehreren Shard, führen Sie eine separate Abfrage direkt auf den shardingmechanismus auf, die die Ausnahme ergab ausgerichtet oder schließlich führen Sie die Abfrage manuell für den Shard mit einem gemeinsamen Tool wie SSMS. </p>'
+    syntax:
+      content: public class MultiShardException
+  - uid: com.microsoft.azure.elasticdb.query.exception._multi_shard_partial_read_exception
+    parent: com.microsoft.azure.elasticdb.query.exception
+    href: com.microsoft.azure.elasticdb.query.exception._multi_shard_partial_read_exception.yml
+    name: MultiShardPartialReadException
+    nameWithType: MultiShardPartialReadException
+    fullName: com.microsoft.azure.elasticdb.query.exception.MultiShardPartialReadException
+    type: Class
+    summary: '<p>Die MultiShardResultSet löst diese Ausnahme aus, wenn eine Ausnahme Lesen von Daten aus einer zugrunde liegenden Shards erreicht wurde. Dies gibt an, dass nicht alle Zeilen aus der entsprechenden shardingmechanismus erfolgreich abgerufen wurden. Benutzer können dann die Schritte erforderlich, um zu entscheiden, ob Sie die Abfrage erneut ausführen, oder zum Fortsetzen der Arbeit mit den Zeilen, die bereits abgerufen wurden. Diese Ausnahme wird nur mit der Richtlinie Teilergebnisse ausgelöst. Zweck: Benutzerdefinierte Ausnahme auslösen, wenn die MultiShardResultSet eine Ausnahme während eines Aufrufs einer zugrunde liegenden ResultSets::Next() trifft. Die alle Fall wissen Sie, besteht darin, dass wir nicht alle Ergebnisse aus dieser Shard zu lesen sind, müssen wir also irgendwie Benachrichtigung des Benutzers. </p>'
+    syntax:
+      content: public class MultiShardPartialReadException extends MultiShardException
+  - uid: com.microsoft.azure.elasticdb.query.exception._multi_shard_result_set_closed_exception
+    parent: com.microsoft.azure.elasticdb.query.exception
+    href: com.microsoft.azure.elasticdb.query.exception._multi_shard_result_set_closed_exception.yml
+    name: MultiShardResultSetClosedException
+    nameWithType: MultiShardResultSetClosedException
+    fullName: com.microsoft.azure.elasticdb.query.exception.MultiShardResultSetClosedException
+    type: Class
+    summary: '<p>Benutzerdefinierte Ausnahme auslösen, wenn die MultiShardResultSet geschlossen wird und der Benutzer versucht, einen Vorgang auf der Reader geschlossen ausführen. Zweck: Benutzerdefinierte Ausnahme auslösen, wenn die MultiShardResultSet geschlossen wird und der Benutzer versucht, einen Vorgang ausführen. </p>'
+    syntax:
+      content: public class MultiShardResultSetClosedException
+  - uid: com.microsoft.azure.elasticdb.query.exception._multi_shard_result_set_internal_exception
+    parent: com.microsoft.azure.elasticdb.query.exception
+    href: com.microsoft.azure.elasticdb.query.exception._multi_shard_result_set_internal_exception.yml
+    name: MultiShardResultSetInternalException
+    nameWithType: MultiShardResultSetInternalException
+    fullName: com.microsoft.azure.elasticdb.query.exception.MultiShardResultSetInternalException
+    type: Class
+    summary: '<p>Benutzerdefinierte Ausnahme wird ausgelöst, wenn die MultiShardResultSet in einem ungültigen Zustand befindet. Wenn Sie diese Ausnahme wiederholt auftritt, wenden Sie sich an den Microsoft-Kundensupport. Zweck: Benutzerdefinierte Ausnahme auslösen, wenn die MultiShardResultSet in einem ungültigen Zustand ist. Dieser Fehler sollte nicht für den Benutzer erleichtern. </p>'
+    syntax:
+      content: public class MultiShardResultSetInternalException
+  - uid: com.microsoft.azure.elasticdb.query.exception._multi_shard_schema_mismatch_exception
+    parent: com.microsoft.azure.elasticdb.query.exception
+    href: com.microsoft.azure.elasticdb.query.exception._multi_shard_schema_mismatch_exception.yml
+    name: MultiShardSchemaMismatchException
+    nameWithType: MultiShardSchemaMismatchException
+    fullName: com.microsoft.azure.elasticdb.query.exception.MultiShardSchemaMismatchException
+    type: Class
+    summary: '<p>Benutzerdefinierte Ausnahme wird ausgelöst, wenn das Schema für mindestens eine der Einbeziehung in die gesamte Abfrage Shards nicht das erwartete Schema für die Abfrage mit mehreren Shard als Ganzes entspricht. Zweck: Benutzerdefinierte Ausnahme auslösen, wenn das Schema aus einem ResultSet aus einem bestimmten Shard nicht das erwartete Schema für die Anzahl der Verzweigungen Abfrage als Ganzes entspricht. </p>'
+    syntax:
+      content: public class MultiShardSchemaMismatchException extends MultiShardException

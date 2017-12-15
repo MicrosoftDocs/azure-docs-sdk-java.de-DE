@@ -42,7 +42,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/StatelessServiceInstance.java
       startLine: 61
     package: system.fabric
-    summary: "<p>Wird dieser Instanz durch Aufruf der synchronen Methode nicht ordnungsgemäß beendet. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Beispiele für geordnete und ungeordnete Abbrüche Beendigung sind Lease Verlust und als Antwort auf den Dienst, die Verwendung von <xref href=\"system.fabric._service_partition.reportFault(FaultType)\" data-throw-if-not-resolved=\"false\"></xref> Bericht eine <ref refid=\"\" kindref=\"compound\">system.fabric.FaultType#Permanent</ref> Fehler. Wenn die Dienstinstanz diese Methode empfängt, sollten sie sofort freigeben und bereinigen Sie alle Verweise und zurückgeben. </p>"
+    summary: "<p>Wird dieser Instanz durch Aufruf der synchronen Methode nicht ordnungsgemäß beendet. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>Beispiele für geordnete und ungeordnete Abbrüche Beendigung sind Lease Verlust und als Antwort auf den Dienst, die Verwendung von <xref uid=\"system.fabric._service_partition.reportFault(FaultType)\" data-throw-if-not-resolved=\"false\">system.fabric.ServicePartition#reportFault(FaultType)</xref> Bericht eine <xref uid=\"\" data-throw-if-not-resolved=\"false\"> system.fabric.FaultType#Permanent</xref> Fehler. Wenn die Dienstinstanz diese Methode empfängt, sollten sie sofort freigeben und bereinigen Sie alle Verweise und zurückgeben. </p>"
     syntax:
       content: public void abort()
   - uid: system.fabric._stateless_service_instance.closeAsync(CancellationToken)
@@ -69,10 +69,10 @@ items:
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 16409f84
-        description: <p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref>. </p>
+        description: <p>Gibt <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref>. </p>
   - uid: system.fabric._stateless_service_instance.initialize(StatelessServiceInitializationParameters)
     id: initialize(StatelessServiceInitializationParameters)
     parent: system.fabric._stateless_service_instance
@@ -97,7 +97,7 @@ items:
       parameters:
         - id: initializationParameters
           type: system.fabric._stateless_service_initialization_parameters
-          description: <p>Die <xref href="system.fabric._stateless_service_initialization_parameters" data-throw-if-not-resolved="false"></xref> für diesen Dienst. </p>
+          description: <p>Die <xref uid="system.fabric._stateless_service_initialization_parameters" data-throw-if-not-resolved="false">system.fabric.StatelessServiceInitializationParameters</xref> für diesen Dienst. </p>
   - uid: 'system.fabric._stateless_service_instance.openAsync(StatelessServicePartition,CancellationToken)'
     id: 'openAsync(StatelessServicePartition,CancellationToken)'
     parent: system.fabric._stateless_service_instance
@@ -114,19 +114,19 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/StatelessServiceInstance.java
       startLine: 40
     package: system.fabric
-    summary: "<p>Wird eine initialisierten-Dienstinstanz geöffnet, sodass es von Clients kontaktiert werden kann.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>öffnen eine zustandslose Instanzdienst gibt an, dass der Dienst jetzt aufgelöst werden kann und durch den Dienst für Clients sichtbar ist. Die Zeichenfolge, die zurückgegeben wird, ist die Adresse dieser Dienstinstanz. Die Adresse der Dienstname über naming Service Fabric zugeordnet und für Clients, die den Dienst über beheben zurückgegeben <ref refid=\"\" kindref=\"compound\">system.fabric.ServiceManagementClient#resolveServicePartitionAsync(java.net.URI)</ref></p>"
+    summary: "<p>Wird eine initialisierten-Dienstinstanz geöffnet, sodass es von Clients kontaktiert werden kann.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>öffnen eine zustandslose Instanzdienst gibt an, dass der Dienst jetzt aufgelöst werden kann und durch den Dienst für Clients sichtbar ist. Die Zeichenfolge, die zurückgegeben wird, ist die Adresse dieser Dienstinstanz. Die Adresse der Dienstname über naming Service Fabric zugeordnet und für Clients, die den Dienst über beheben zurückgegeben <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.ServiceManagementClient#resolveServicePartitionAsync(java.net.URI)</xref></p>"
     syntax:
       content: 'public CompletableFuture<String> openAsync(StatelessServicePartition partition, CancellationToken cancellationToken)'
       parameters:
         - id: partition
           type: system.fabric._stateless_service_partition
-          description: '<p>Die <xref href="system.fabric._stateless_service_partition" data-throw-if-not-resolved="false"></xref> , die dieser Instanz zugeordnet ist </p>'
+          description: '<p>Die <xref uid="system.fabric._stateless_service_partition" data-throw-if-not-resolved="false">system.fabric.StatelessServicePartition</xref> , die dieser Instanz zugeordnet ist </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref href=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\"></xref>Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
       return:
         type: 06be942d
-        description: <p>Gibt <ref refid="" kindref="compound">CompletableFuture</ref> des Typs <ref refid="" kindref="compound">java.lang.String</ref>. </p>
+        description: <p>Gibt <xref uid="" data-throw-if-not-resolved="false">CompletableFuture</xref> des Typs <xref uid="" data-throw-if-not-resolved="false">java.lang.String</xref>. </p>
 references:
   - uid: system.fabric._stateless_service_instance.initialize*
     name: initialize
@@ -174,7 +174,7 @@ references:
     nameWithType: StatelessServicePartition
     fullName: system.fabric.StatelessServicePartition
     type: Interface
-    summary: "<p>Stellt eine Partition, die einer zustandslosen Dienstinstanz zugeordnet ist. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>bereitgestellt, um eines zustandslosen Diensts als Parameter an die <xref href=\"system.fabric._service_partition\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>Stellt eine Partition, die einer zustandslosen Dienstinstanz zugeordnet ist. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>bereitgestellt, um eines zustandslosen Diensts als Parameter an die <xref uid=\"system.fabric._service_partition\" data-throw-if-not-resolved=\"false\">system.fabric.ServicePartition</xref>. </p>"
     syntax:
       content: public interface StatelessServicePartition
   - uid: system.fabric._cancellation_token
@@ -184,7 +184,7 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref href="system.fabric._cancellation_token" data-throw-if-not-resolved="false"></xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref href="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false"></xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref href="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false"></xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref href="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false"></xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
     syntax:
       content: public class CancellationToken
   - uid: system.fabric._service_partition.reportFault(FaultType)
@@ -194,10 +194,10 @@ references:
     nameWithType: ServicePartition.reportFault(FaultType faultType)
     fullName: void system.fabric.ServicePartition.reportFault(FaultType faultType)
     type: Method
-    summary: "<p>Meldet die Last für einen Satz von Metriken für den Lastenausgleich. Die Auslastung kann zu einem beliebigen Zeitpunkt über gemeldet werden die <ref refid=\"\" kindref=\"compound\">java.util.Collection</ref> von <xref href=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\"></xref> Methode und stellt eine oder mehrere Eigenschaften von der <xref href=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\"></xref> Methode.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>ein Fehler wird i. d. r. gemeldet, wenn der Dienstcode erkennt einige ausstellen, von denen nicht wiederhergestellt werden kann. </p>"
+    summary: "<p>Meldet die Last für einen Satz von Metriken für den Lastenausgleich. Die Auslastung kann zu einem beliebigen Zeitpunkt über gemeldet werden die <xref uid=\"\" data-throw-if-not-resolved=\"false\">java.util.Collection</xref> von <xref uid=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\">LoadMetric</xref> Methode und stellt eine oder mehrere Eigenschaften von der <xref uid=\"system.fabric._load_metric\" data-throw-if-not-resolved=\"false\">system.fabric.LoadMetric</xref> Methode .</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>ein Fehler wird i. d. r. gemeldet, wenn der Dienstcode erkennt einige ausstellen, von denen nicht wiederhergestellt werden kann. </p>"
     syntax:
       content: public void reportFault(FaultType faultType)
       parameters:
         - id: faultType
           type: system.fabric._fault_type
-          description: '<p>Die <xref href="system.fabric._load_metric" data-throw-if-not-resolved="false"></xref> , die der Dienst aufgetreten sind. </p>'
+          description: '<p>Die <xref uid="system.fabric._load_metric" data-throw-if-not-resolved="false">system.fabric.LoadMetric</xref> , die der Dienst aufgetreten sind. </p>'

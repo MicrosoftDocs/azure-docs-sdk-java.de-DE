@@ -7,9 +7,11 @@ items:
       - com.microsoft.azure.documentdb._partition_key_range.equals(Object)
       - com.microsoft.azure.documentdb._partition_key_range.getMaxExclusive()
       - com.microsoft.azure.documentdb._partition_key_range.getMinInclusive()
+      - com.microsoft.azure.documentdb._partition_key_range.getParents()
       - com.microsoft.azure.documentdb._partition_key_range.hashCode()
-      - com.microsoft.azure.documentdb._partition_key_range.MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY()
-      - com.microsoft.azure.documentdb._partition_key_range.MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY()
+      - com.microsoft.azure.documentdb._partition_key_range.MASTER_PARTITION_KEY_RANGE_ID
+      - com.microsoft.azure.documentdb._partition_key_range.MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY
+      - com.microsoft.azure.documentdb._partition_key_range.MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY
       - com.microsoft.azure.documentdb._partition_key_range.PartitionKeyRange()
       - com.microsoft.azure.documentdb._partition_key_range.PartitionKeyRange(JSONObject)
       - 'com.microsoft.azure.documentdb._partition_key_range.PartitionKeyRange(String,String,String)'
@@ -30,7 +32,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-documentdb-java-pr'
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 9
+      startLine: 13
     package: com.microsoft.azure.documentdb
     summary: <p>Stellen Sie eine partitionsschlüsselbereichs in der Azure DocumentDB-Datenbankdienst dar. </p>
     syntax:
@@ -60,10 +62,12 @@ items:
       - com.microsoft.azure.documentdb._resource.getTimestamp()
       - com.microsoft.azure.documentdb._json_serializable.has(String)
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable()
+      - 'com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String,ObjectMapper)'
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String)
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable(JSONObject)
       - com.microsoft.azure.documentdb._json_serializable.remove(String)
       - com.microsoft.azure.documentdb._resource.Resource()
+      - 'com.microsoft.azure.documentdb._resource.Resource(String,ObjectMapper)'
       - com.microsoft.azure.documentdb._resource.Resource(String)
       - com.microsoft.azure.documentdb._resource.Resource(JSONObject)
       - com.microsoft.azure.documentdb._resource.setId(String)
@@ -86,7 +90,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 70
+      startLine: 75
     package: com.microsoft.azure.documentdb
     syntax:
       content: public boolean equals(Object obj)
@@ -109,7 +113,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 57
+      startLine: 62
     package: com.microsoft.azure.documentdb
     syntax:
       content: public String getMaxExclusive()
@@ -129,12 +133,34 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 49
+      startLine: 54
     package: com.microsoft.azure.documentdb
     syntax:
       content: public String getMinInclusive()
       return:
         type: '26831127'
+  - uid: com.microsoft.azure.documentdb._partition_key_range.getParents()
+    id: getParents()
+    parent: com.microsoft.azure.documentdb._partition_key_range
+    href: com.microsoft.azure.documentdb._partition_key_range.yml
+    langs:
+      - java
+    name: getParents()
+    nameWithType: PartitionKeyRange.getParents()
+    fullName: Collection<String> com.microsoft.azure.documentdb.PartitionKeyRange.getParents()
+    overload: com.microsoft.azure.documentdb._partition_key_range.getParents*
+    type: Method
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
+      startLine: 104
+    package: com.microsoft.azure.documentdb
+    summary: '<p>Wird intern verwendet, um anzugeben, die ID des übergeordneten Bereichs </p>'
+    syntax:
+      content: public Collection<String> getParents()
+      return:
+        type: 0248867e
+        description: <p>eine Liste Partition Schlüsselbereich-ID </p>
   - uid: com.microsoft.azure.documentdb._partition_key_range.hashCode()
     id: hashCode()
     parent: com.microsoft.azure.documentdb._partition_key_range
@@ -149,14 +175,33 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 83
+      startLine: 88
     package: com.microsoft.azure.documentdb
     syntax:
       content: public int hashCode()
       return:
         type: f75371fa
-  - uid: com.microsoft.azure.documentdb._partition_key_range.MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY()
-    id: MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY()
+  - uid: com.microsoft.azure.documentdb._partition_key_range.MASTER_PARTITION_KEY_RANGE_ID
+    id: MASTER_PARTITION_KEY_RANGE_ID
+    parent: com.microsoft.azure.documentdb._partition_key_range
+    href: com.microsoft.azure.documentdb._partition_key_range.yml
+    langs:
+      - java
+    name: MASTER_PARTITION_KEY_RANGE_ID
+    nameWithType: PartitionKeyRange.MASTER_PARTITION_KEY_RANGE_ID
+    fullName: final String com.microsoft.azure.documentdb.PartitionKeyRange.MASTER_PARTITION_KEY_RANGE_ID
+    type: Field
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
+      startLine: 16
+    package: com.microsoft.azure.documentdb
+    syntax:
+      content: public static final String MASTER_PARTITION_KEY_RANGE_ID= "M"
+      return:
+        type: 3d93591e
+  - uid: com.microsoft.azure.documentdb._partition_key_range.MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY
+    id: MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY
     parent: com.microsoft.azure.documentdb._partition_key_range
     href: com.microsoft.azure.documentdb._partition_key_range.yml
     langs:
@@ -168,14 +213,14 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 11
+      startLine: 15
     package: com.microsoft.azure.documentdb
     syntax:
       content: public static final String MAXIMUM_EXCLUSIVE_EFFECTIVE_PARTITION_KEY= "FF"
       return:
         type: 3d93591e
-  - uid: com.microsoft.azure.documentdb._partition_key_range.MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY()
-    id: MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY()
+  - uid: com.microsoft.azure.documentdb._partition_key_range.MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY
+    id: MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY
     parent: com.microsoft.azure.documentdb._partition_key_range
     href: com.microsoft.azure.documentdb._partition_key_range.yml
     langs:
@@ -187,7 +232,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 10
+      startLine: 14
     package: com.microsoft.azure.documentdb
     syntax:
       content: public static final String MINIMUM_INCLUSIVE_EFFECTIVE_PARTITION_KEY= ""
@@ -207,7 +252,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 16
+      startLine: 21
     package: com.microsoft.azure.documentdb
     summary: <p>Initialisieren Sie ein Partition-Schlüsselbereich-Objekt. </p>
     syntax:
@@ -226,7 +271,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 38
+      startLine: 43
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Initialisieren Sie ein Partition-Schlüsselbereich-Objekt aus Json-Objekt.</p>
@@ -251,7 +296,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 42
+      startLine: 47
     package: com.microsoft.azure.documentdb
     syntax:
       content: 'public PartitionKeyRange(String id, String minInclusive, String maxExclusive)'
@@ -276,7 +321,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 27
+      startLine: 32
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Initialisieren Sie ein Partition-Schlüsselbereich-Objekt aus Json-Zeichenfolge.</p>
@@ -301,7 +346,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 61
+      startLine: 66
     package: com.microsoft.azure.documentdb
     syntax:
       content: public void setMaxExclusive(String maxExclusive)
@@ -322,7 +367,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 53
+      startLine: 58
     package: com.microsoft.azure.documentdb
     syntax:
       content: public void setMinInclusive(String minInclusive)
@@ -343,7 +388,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/PartitionKeyRange.java
-      startLine: 65
+      startLine: 70
     package: com.microsoft.azure.documentdb
     syntax:
       content: public Range<String> toRange()
@@ -421,6 +466,15 @@ references:
     name: hashCode
     nameWithType: PartitionKeyRange.hashCode
     fullName: int com.microsoft.azure.documentdb.PartitionKeyRange.hashCode
+    package: com.microsoft.azure.documentdb
+  - uid: 0248867e
+    spec.java:
+      - name: Collection<String>
+        fullName: Collection<String>
+  - uid: com.microsoft.azure.documentdb._partition_key_range.getParents*
+    name: getParents
+    nameWithType: PartitionKeyRange.getParents
+    fullName: Collection<String> com.microsoft.azure.documentdb.PartitionKeyRange.getParents
     package: com.microsoft.azure.documentdb
   - uid: com.microsoft.azure.documentdb._json_serializable.get(String)
     parent: com.microsoft.azure.documentdb._json_serializable
@@ -733,6 +787,25 @@ references:
     type: Constructor
     syntax:
       content: protected JsonSerializable()
+  - uid: 'com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String,ObjectMapper)'
+    parent: com.microsoft.azure.documentdb._json_serializable
+    href: com.microsoft.azure.documentdb._json_serializable.yml
+    name: 'JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    nameWithType: 'JsonSerializable.JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    fullName: 'com.microsoft.azure.documentdb.JsonSerializable.JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    type: Constructor
+    summary: |-
+      <p>Der Konstruktor.</p>
+      <p></p>
+    syntax:
+      content: 'protected JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+      parameters:
+        - id: jsonString
+          type: '26831127'
+          description: '<p>die Json-Zeichenfolge, die stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierten Zuordnungen </p>
   - uid: com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -748,7 +821,7 @@ references:
       parameters:
         - id: jsonString
           type: '26831127'
-          description: '<p>die Json-Zeichenfolge, die stellt die <xref href="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>die Json-Zeichenfolge, die stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
   - uid: com.microsoft.azure.documentdb._json_serializable.JsonSerializable(JSONObject)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -764,7 +837,7 @@ references:
       parameters:
         - id: jsonObject
           type: 2b3125a5
-          description: '<p>Das Json-Objekt, das stellt die <xref href="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>Das Json-Objekt, das stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
   - uid: com.microsoft.azure.documentdb._json_serializable.remove(String)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -791,6 +864,25 @@ references:
     summary: <p>Der Konstruktor. </p>
     syntax:
       content: protected Resource()
+  - uid: 'com.microsoft.azure.documentdb._resource.Resource(String,ObjectMapper)'
+    parent: com.microsoft.azure.documentdb._resource
+    href: com.microsoft.azure.documentdb._resource.yml
+    name: 'Resource(String jsonString, ObjectMapper objectMapper)'
+    nameWithType: 'Resource.Resource(String jsonString, ObjectMapper objectMapper)'
+    fullName: 'com.microsoft.azure.documentdb.Resource.Resource(String jsonString, ObjectMapper objectMapper)'
+    type: Constructor
+    summary: |-
+      <p>Der Konstruktor.</p>
+      <p></p>
+    syntax:
+      content: 'protected Resource(String jsonString, ObjectMapper objectMapper)'
+      parameters:
+        - id: jsonString
+          type: '26831127'
+          description: '<p>die Json-Zeichenfolge, die Ressource darstellt. </p>'
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierten Zuordnungen </p>
   - uid: com.microsoft.azure.documentdb._resource.Resource(String)
     parent: com.microsoft.azure.documentdb._resource
     href: com.microsoft.azure.documentdb._resource.yml
@@ -895,7 +987,7 @@ references:
     type: Method
     summary: |-
       <p>Ruft die einfache Darstellung der Eigenschaftensammlung ab.</p>
-      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref href="com.microsoft.azure.documentdb._json_serializable.toJson()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref uid="com.microsoft.azure.documentdb._json_serializable.toJson()" data-throw-if-not-resolved="false">toJson()</xref>.</p>
       <p></p>
     syntax:
       content: public String toString()
@@ -909,7 +1001,7 @@ references:
     nameWithType: JsonSerializable.toString(int indentFactor)
     fullName: String com.microsoft.azure.documentdb.JsonSerializable.toString(int indentFactor)
     type: Method
-    summary: "<p>Ruft eine formatierte Darstellung des Eigenschaftenbehälters.</p>\n<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000019\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref href=\"com.microsoft.azure.documentdb._json_serializable.toJson(SerializationFormattingPolicy)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
+    summary: "<p>Ruft eine formatierte Darstellung des Eigenschaftenbehälters.</p>\n<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000043\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref uid=\"com.microsoft.azure.documentdb._json_serializable.toJson(SerializationFormattingPolicy)\" data-throw-if-not-resolved=\"false\">toJson(SerializationFormattingPolicy)</xref>.</p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
     syntax:
       content: public String toString(int indentFactor)
       parameters:

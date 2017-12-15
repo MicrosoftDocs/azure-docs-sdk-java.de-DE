@@ -24,7 +24,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/Operation.java
       startLine: 16
     package: system.fabric
-    summary: "<p>\r\n\r\n  <bold>Hinweise:</bold>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">system.fabric.Operation</ref> ist die Basisschnittstelle, die Änderungen beschreibt, die an ein sekundäres Replikat übermittelt werden. Sie enthalten die <ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</ref> und identifizieren Sie die Sequenznummer und andere Informationen. </p>"
+    summary: "<p>\r\n\r\n  <b>Hinweise:</b>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.Operation</xref> ist die Basisschnittstelle, die Änderungen beschreibt, die an ein sekundäres Replikat übermittelt werden. Sie enthalten die <xref uid=\"system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</xref> und identifizieren Sie die Sequenznummer und andere Informationen. </p>"
     syntax:
       content: public interface Operation
   - uid: system.fabric._operation.acknowledge()
@@ -43,7 +43,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/Operation.java
       startLine: 77
     package: system.fabric
-    summary: "<p>Bestätigt, dass dieser Vorgang erfolgreich auf das sekundäre Replikat angewendet wurde. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>Dienste sollten diese Methode aufrufen, wenn sie gewonnen haben eine <ref refid=\"\" kindref=\"compound\">system.fabric.Operation</ref> aus dem Replicator und erfolgreich auf ihren lokalen Speicher angewendet. Beim Aufrufen dieser Methode für persistente Dienste obligatorisch ist da die <xref href=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\"></xref> aufgehoben wird, zusätzliche Objekte, die implementieren <ref refid=\"\" kindref=\"compound\">system.fabric.Operation</ref>. Für Dienste volatile Vorgänge Replikator implizit bestätigt, wenn sie empfangen werden, es sei denn, sie andernfalls konfiguriert sind, durch Festlegen des Werts <xref href=\"system.fabric._replicator_settings.isRequireServiceAck()\" data-throw-if-not-resolved=\"false\"></xref> auf \"true\". Ein Vorgang muss durch ein Quorum der Replikate bestätigt werden, bevor das primäre Replikat empfängt die <ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</ref> Vorgangsantworten abgeschlossen. </p>"
+    summary: "<p>Bestätigt, dass dieser Vorgang erfolgreich auf das sekundäre Replikat angewendet wurde. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>Dienste sollten diese Methode aufrufen, wenn sie gewonnen haben eine <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.Operation</xref> aus dem Replicator und erfolgreich auf ihren lokalen Speicher angewendet. Beim Aufrufen dieser Methode für persistente Dienste obligatorisch ist da die <xref uid=\"system.fabric._fabric_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> aufgehoben wird, zusätzliche Objekte, die implementieren <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.Operation</xref>. Für Dienste volatile Vorgänge Replikator implizit bestätigt, wenn sie empfangen werden, es sei denn, sie andernfalls konfiguriert sind, durch Festlegen des Werts <xref uid=\"system.fabric._replicator_settings.isRequireServiceAck()\" data-throw-if-not-resolved=\"false\">system.fabric.ReplicatorSettings#isRequireServiceAck()</xref> auf \"true\". Ein Vorgang muss durch ein Quorum der Replikate bestätigt werden, bevor das primäre Replikat empfängt die <xref uid=\"system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</xref> Vorgangsantworten abgeschlossen. </p>"
     syntax:
       content: public void acknowledge()
   - uid: system.fabric._operation.getAtomicGroupId()
@@ -63,7 +63,7 @@ items:
       startLine: 52
     package: system.fabric
     summary: |-
-      <p>Gibt die atomare Gruppe an, wenn dieses Objekt, die implementiert <ref refid="" kindref="compound">system.fabric.Operation</ref> unteilbare Gruppe gehört. Atomische-Gruppen sind nur verfügbar, wenn ein Dienst ein Teil der Gruppe "Datenzugriffsdienst" ist.</p>
+      <p>Gibt die atomare Gruppe an, wenn dieses Objekt, die implementiert <xref uid="" data-throw-if-not-resolved="false">system.fabric.Operation</xref> unteilbare Gruppe gehört. Atomische-Gruppen sind nur verfügbar, wenn ein Dienst ein Teil der Gruppe "Datenzugriffsdienst" ist.</p>
       <p></p>
     syntax:
       content: public long getAtomicGroupId()
@@ -87,13 +87,13 @@ items:
       startLine: 59
     package: system.fabric
     summary: |-
-      <p>Ruft die <xref href="system.fabric._operation_data" data-throw-if-not-resolved="false"></xref> , die vom primären Replikat bereitgestellt werden.</p>
+      <p>Ruft die <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">system.fabric.OperationData</xref> , die vom primären Replikat bereitgestellt werden.</p>
       <p></p>
     syntax:
       content: public OperationData getData()
       return:
         type: system.fabric._operation_data
-        description: <p>Gibt <xref href="system.fabric._operation_data" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Gibt <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">system.fabric.OperationData</xref>. </p>
   - uid: system.fabric._operation.getOperationType()
     id: getOperationType()
     parent: system.fabric._operation
@@ -110,12 +110,12 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/Operation.java
       startLine: 28
     package: system.fabric
-    summary: "<p>Ruft den Typ dieses Vorgangs ab.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>der <xref href=\"system.fabric._operation_type\" data-throw-if-not-resolved=\"false\"></xref> gibt den Typ des Vorgangs an. \"Normal\"-Vorgänge sind diejenigen, die im Rahmen des Streams für das Kopieren oder die Replikation von nicht-gruppierten Services gesendet werden. Andere Arten von Vorgängen Steuerelement Vorgänge dar, die für Dienstgruppen spezifisch sind. </p>"
+    summary: "<p>Ruft den Typ dieses Vorgangs ab.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>der <xref uid=\"system.fabric._operation_type\" data-throw-if-not-resolved=\"false\">system.fabric.OperationType</xref> gibt den Typ des Vorgangs an. \"Normal\"-Vorgänge sind diejenigen, die im Rahmen des Streams für das Kopieren oder die Replikation von nicht-gruppierten Services gesendet werden. Andere Arten von Vorgängen Steuerelement Vorgänge dar, die für Dienstgruppen spezifisch sind. </p>"
     syntax:
       content: public OperationType getOperationType()
       return:
         type: system.fabric._operation_type
-        description: <p>Gibt <xref href="system.fabric._operation_type" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Gibt <xref uid="system.fabric._operation_type" data-throw-if-not-resolved="false">system.fabric.OperationType</xref>. </p>
   - uid: system.fabric._operation.getSequenceNumber()
     id: getSequenceNumber()
     parent: system.fabric._operation
@@ -132,7 +132,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/Operation.java
       startLine: 43
     package: system.fabric
-    summary: "<p>Ruft die Sequenznummer dieses Vorgangs ab.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>die Sequenznummer wird bereitgestellt, als Teil der <xref href=\"system.fabric._operation.getSequenceNumber()\" data-throw-if-not-resolved=\"false\"></xref> für Vorgänge, die von der Replikationsstream empfangen (<ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#getReplicationStream()</ref>) die Sequenznummer ist identisch, die das primäre Replikat, die von erhält <ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</ref> Methode. </p>"
+    summary: "<p>Ruft die Sequenznummer dieses Vorgangs ab.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>die Sequenznummer wird bereitgestellt, als Teil der <xref uid=\"system.fabric._operation.getSequenceNumber()\" data-throw-if-not-resolved=\"false\">system.fabric.Operation#getSequenceNumber()</xref> für Vorgänge, die von der Replikationsstream empfangen (<xref uid=\"system.fabric._state_replicator.getReplicationStream()\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator# getReplicationStream()</xref>) die Sequenznummer ist identisch, die das primäre Replikat, die von erhält <xref uid=\"system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator#replicateAsync (OperationData, SequenceNumber, system.fabric.CancellationToken)</xref> Methode. </p>"
     syntax: &ref_1
       content: public long getSequenceNumber()
       return:
@@ -185,8 +185,44 @@ references:
     nameWithType: Operation.getSequenceNumber()
     fullName: long system.fabric.Operation.getSequenceNumber()
     type: Method
-    summary: "<p>Ruft die Sequenznummer dieses Vorgangs ab.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>die Sequenznummer wird bereitgestellt, als Teil der <xref href=\"system.fabric._operation.getSequenceNumber()\" data-throw-if-not-resolved=\"false\"></xref> für Vorgänge, die von der Replikationsstream empfangen (<ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#getReplicationStream()</ref>) die Sequenznummer ist identisch, die das primäre Replikat, die von erhält <ref refid=\"\" kindref=\"compound\">system.fabric.StateReplicator#replicateAsync (OperationData SequenceNumber, system.fabric.CancellationToken)</ref> Methode. </p>"
+    summary: "<p>Ruft die Sequenznummer dieses Vorgangs ab.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>die Sequenznummer wird bereitgestellt, als Teil der <xref uid=\"system.fabric._operation.getSequenceNumber()\" data-throw-if-not-resolved=\"false\">system.fabric.Operation#getSequenceNumber()</xref> für Vorgänge, die von der Replikationsstream empfangen (<xref uid=\"system.fabric._state_replicator.getReplicationStream()\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator# getReplicationStream()</xref>) die Sequenznummer ist identisch, die das primäre Replikat, die von erhält <xref uid=\"system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator#replicateAsync (OperationData, SequenceNumber, system.fabric.CancellationToken)</xref> Methode. </p>"
     syntax: *ref_1
+  - uid: system.fabric._state_replicator.getReplicationStream()
+    parent: system.fabric._state_replicator
+    href: system.fabric._state_replicator.yml
+    name: getReplicationStream()
+    nameWithType: StateReplicator.getReplicationStream()
+    fullName: OperationStream system.fabric.StateReplicator.getReplicationStream()
+    type: Method
+    summary: <p>Ruft die replikationsdatenstrom ab. </p>
+    syntax:
+      content: public OperationStream getReplicationStream()
+      return:
+        type: system.fabric._operation_stream
+        description: '<p>Implementiert die ReplicationStream <xref uid="system.fabric._operation_stream" data-throw-if-not-resolved="false">OperationStream</xref>. Enthält die ReplicationStream <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">OperationData</xref> Objekten implementiert, <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref>. Die Objekte werden vom primären Replikat über bereitgestellt <xref uid="system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)" data-throw-if-not-resolved="false">StateReplicator #ReplicateAsync(OperationData, SequenceNumber, CancellationToken)</xref>. Im Allgemeinen sollte ein sekundäres Replikat senden <xref uid="" data-throw-if-not-resolved="false">OperationStream#getOperationAsync(CancellationToken)</xref>. Service Fabric Services dazu nicht notwendig, in der Regel Dienste sollten alle übertragen <xref uid="system.fabric._operation_data" data-throw-if-not-resolved="false">OperationData</xref> Objekten aus der Kopie zuerst zu streamen, übertragen und dann Vorgänge aus dem replikationsdatenstrom. Die Übertragung von beide Kopien parallel wird unterstützt, aber erhöht die Komplexität des Anwendens der Zustand ordnungsgemäß aktualisiert und wird nur für erweiterte Dienste empfohlen. Der Datenstrom ist leer, wenn das zurückgegebene <xref uid="system.fabric._operation" data-throw-if-not-resolved="false">Vorgang</xref> Methode ist null. </p>'
+  - uid: 'system.fabric._state_replicator.replicateAsync(OperationData,SequenceNumber,CancellationToken)'
+    parent: system.fabric._state_replicator
+    href: system.fabric._state_replicator.yml
+    name: 'replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+    nameWithType: 'StateReplicator.replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+    fullName: 'CompletableFuture<SequenceNumber> system.fabric.StateReplicator.replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+    type: Method
+    summary: '<p>Zustandsänderungen aus dem primären Replikat an die sekundären Replikate repliziert und empfängt eine Quorum-Bestätigung, dass diese Änderungen angewendet wurden. </p>'
+    syntax:
+      content: 'public CompletableFuture<SequenceNumber> replicateAsync(OperationData operationData, SequenceNumber sequenceNumber, CancellationToken cancellationToken)'
+      parameters:
+        - id: operationData
+          type: system.fabric._operation_data
+          description: '<p>Stellt die Änderung des Zustands, die das primäre Replikat repliziert werden sollen. </p>'
+        - id: sequenceNumber
+          type: system.fabric._sequence_number
+          description: '<p>Lange, die LSN des Vorgangs. Beachten Sie, dass dies der gleiche Wert zurückgegeben, von der Aufgabe. Bereitstellen als Out-Parameter ist nützlich für Dienste, die vorzubereitenden lokalen Schreibzugriffs auf übertragen, wenn die Aufgabe abgeschlossen ist. </p>'
+        - id: cancellationToken
+          type: system.fabric._cancellation_token
+          description: '<p>Ein Schreibvorgang Quorum der Replikate, die verloren gegangen sein. Es kann verwendet werden, um eine Benachrichtigung zu senden, dass der Vorgang abgebrochen werden soll. Beachten Sie, dass der Abbruch advisory ist und weiterhin der Vorgang abgeschlossen werden kann, selbst wenn er abgebrochen wird. </p>'
+      return:
+        type: 9cdf14d0system.fabric._sequence_numbera08ddfce
+        description: '<p>Gibt die completable Zukunft vom Typ long, die LSN des Vorgangs zurück. </p>'
   - uid: system.fabric._operation_data
     parent: system.fabric
     href: system.fabric._operation_data.yml
@@ -203,7 +239,7 @@ references:
     nameWithType: FabricReplicator
     fullName: system.fabric.FabricReplicator
     type: Class
-    summary: "<p>Repliziert den Status für hohe Verfügbarkeit und Zuverlässigkeit. </p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>stellt die Standardimplementierung von der <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\"></xref>, und <xref href=\"system.fabric._primary_replicator\" data-throw-if-not-resolved=\"false\"></xref> Schnittstellen, die Benutzerdienste werden, zusammen mit ihrer Implementierung von verwendet können der <xref href=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\"></xref> Schnittstelle. Eine Instanz von der <ref refid=\"\" kindref=\"compound\">system.fabric.FabricReplicator</ref> Klasse abgerufen wird, über die <xref href=\"system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)\" data-throw-if-not-resolved=\"false\"></xref> -Methode, die in umgewandelt werden kann <xref href=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\"></xref> für die Verwendung. </p>"
+    summary: "<p>Repliziert den Status für hohe Verfügbarkeit und Zuverlässigkeit. </p>\n<p>\r\n\r\n  <b>Hinweise:</b>stellt die Standardimplementierung von der <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref>, <xref uid=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\">system.fabric.Replicator</xref>, und <xref uid=\"system.fabric._primary_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.PrimaryReplicator </xref> Schnittstellen, die Benutzerdienste werden, zusammen mit ihrer Implementierung von verwendet können der <xref uid=\"system.fabric._state_provider\" data-throw-if-not-resolved=\"false\">system.fabric.StateProvider</xref> Schnittstelle. Eine Instanz von der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricReplicator</xref> Klasse abgerufen wird, über die <xref uid=\"system.fabric._stateful_service_partition.createReplicator(StateProvider,ReplicatorSettings)\" data-throw-if-not-resolved=\"false\">system.fabric.StatefulServicePartition#createReplicator (system.fabric.StateProvider, system.fabric.ReplicatorSettings) </xref> -Methode, die in umgewandelt werden kann <xref uid=\"system.fabric._state_replicator\" data-throw-if-not-resolved=\"false\">system.fabric.StateReplicator</xref> für die Verwendung. </p>"
     syntax:
       content: public class FabricReplicator implements Replicator
   - uid: system.fabric._replicator_settings.isRequireServiceAck()
@@ -213,7 +249,7 @@ references:
     nameWithType: ReplicatorSettings.isRequireServiceAck()
     fullName: boolean system.fabric.ReplicatorSettings.isRequireServiceAck()
     type: Method
-    summary: "<p>Verhindert, dass die optimistische Bestätigung von Vorgängen in nicht persistente Dienste durch das anfordern, die der Dienst ruft <xref href=\"system.fabric._operation.acknowledge()\" data-throw-if-not-resolved=\"false\"></xref> , bevor er den nächsten Vorgang ruft.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>nicht persistenter Dienste, die explizite Bestätigung erforderlich ist können diese Eigenschaft auf \"true\" festlegen, um zu verhindern, dass bei der optimistischen Bestätigung der Vorgänge von den <xref href=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\"></xref>. Diese Einstellung wirkt sich nicht bei beständigen Diensten aus. Der Standardwert ist „false“. </p>"
+    summary: "<p>Verhindert, dass die optimistische Bestätigung von Vorgängen in nicht persistente Dienste durch das anfordern, die der Dienst ruft <xref uid=\"system.fabric._operation.acknowledge()\" data-throw-if-not-resolved=\"false\">system.fabric.Operation#acknowledge()</xref> , bevor er den nächsten Vorgang ruft.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>nicht persistenter Dienste, die explizite Bestätigung erforderlich ist können diese Eigenschaft auf \"true\" festlegen, um zu verhindern, dass bei der optimistischen Bestätigung der Vorgänge von der <xref uid=\"system.fabric._replicator\" data-throw-if-not-resolved=\"false\">Replikator</xref>. Diese Einstellung wirkt sich nicht bei beständigen Diensten aus. Der Standardwert ist „false“. </p>"
     syntax:
       content: public boolean isRequireServiceAck()
       return:

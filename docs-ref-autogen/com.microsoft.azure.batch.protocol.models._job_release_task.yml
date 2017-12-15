@@ -5,6 +5,7 @@ items:
     parent: com.microsoft.azure.batch.protocol.models
     children:
       - com.microsoft.azure.batch.protocol.models._job_release_task.commandLine()
+      - com.microsoft.azure.batch.protocol.models._job_release_task.containerSettings()
       - com.microsoft.azure.batch.protocol.models._job_release_task.environmentSettings()
       - com.microsoft.azure.batch.protocol.models._job_release_task.id()
       - com.microsoft.azure.batch.protocol.models._job_release_task.maxWallClockTime()
@@ -12,6 +13,7 @@ items:
       - com.microsoft.azure.batch.protocol.models._job_release_task.retentionTime()
       - com.microsoft.azure.batch.protocol.models._job_release_task.userIdentity()
       - com.microsoft.azure.batch.protocol.models._job_release_task.withCommandLine(String)
+      - com.microsoft.azure.batch.protocol.models._job_release_task.withContainerSettings(TaskContainerSettings)
       - com.microsoft.azure.batch.protocol.models._job_release_task.withEnvironmentSettings(List<EnvironmentSetting>)
       - com.microsoft.azure.batch.protocol.models._job_release_task.withId(String)
       - com.microsoft.azure.batch.protocol.models._job_release_task.withMaxWallClockTime(Period)
@@ -31,9 +33,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-batch-sdk-for-java'
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 18
+      startLine: 34
     package: com.microsoft.azure.batch.protocol.models
-    summary: '<p>Ein Auftrag Version der auszuführende Task nach Auftragsabschluss auf einem beliebigen Computeknoten, in dem der Auftrag ausgeführt wurde. </p>'
+    summary: '<p>Ein Auftrag Version der auszuführende Task nach Auftragsabschluss auf einem beliebigen Computeknoten, in dem der Auftrag ausgeführt wurde. Der Auftrag Release-Task ausgeführt wird, wenn der Auftrag beendet wird, aufgrund eines der folgenden: der Benutzer ruft API Auftrag beendet oder der Auftrags-API löschen, während der Auftrag noch aktiv ist, den Auftrag maximale Wand Uhr zeitbeschränkung erreicht ist und der Auftrag immer noch aktiv ist , oder der Auftrags-Auftrags-Manager-Aufgabe abgeschlossen und der Auftrag wird so konfiguriert, dass um nach Abschluss der Auftrags-Manager zu beenden. Der Auftrag Version Taskausführung auf jedem Computeknoten, in dem Aufgaben des Auftrags ausgeführt wurden und der Auftrag zur Vorbereitung Task ausgeführt und abgeschlossen werden. Wenn Sie ein reimaging, einen Serverknoten durchführen, nachdem sie den Auftrag zur Vorbereitung Task ausgeführt wurde, sodass der Auftrag beendet, ohne weitere Aufgaben des Auftrags auf, mit denen Knoten berechnet (und daher die Vorbereitung des Auftrags Aufgabe wird nicht erneut ausgeführt), wird die Auftrag Version Aufgabe nicht auf diesem Knoten ausgeführt. Wenn Compute-Knoten neu gestartet, während die Aufgabe Auftrag Version noch ausgeführt wird, wird der Task Auftrag Version beim Start des Compute-Knotens erneut ausgeführt. Der Auftrag ist nicht als abgeschlossen gekennzeichnet, bis alle Aufgaben der Version des Auftrags abgeschlossen ist. Der Task Auftrag freigeben, die im Hintergrund ausgeführt werden. Sie beansprucht keinen Planung Slot; d. h. es nicht für den MaxTasksPerNode-Grenzwert für den Pool angegeben gezählt. </p>'
     syntax: &ref_1
       content: public class JobReleaseTask
     inheritance:
@@ -52,7 +54,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 114
+      startLine: 141
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert für die Befehlszeile.</p>
@@ -62,6 +64,30 @@ items:
       return:
         type: '26831127'
         description: <p>der Wert für die Befehlszeile </p>
+  - uid: com.microsoft.azure.batch.protocol.models._job_release_task.containerSettings()
+    id: containerSettings()
+    parent: com.microsoft.azure.batch.protocol.models._job_release_task
+    href: com.microsoft.azure.batch.protocol.models._job_release_task.yml
+    langs:
+      - java
+    name: containerSettings()
+    nameWithType: JobReleaseTask.containerSettings()
+    fullName: TaskContainerSettings com.microsoft.azure.batch.protocol.models.JobReleaseTask.containerSettings()
+    overload: com.microsoft.azure.batch.protocol.models._job_release_task.containerSettings*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
+      startLine: 161
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Ruft den ContainerSettings-Wert.</p>
+      <p></p>
+    syntax:
+      content: public TaskContainerSettings containerSettings()
+      return:
+        type: com.microsoft.azure.batch.protocol.models._task_container_settings
+        description: <p>der Wert containerSettings </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.environmentSettings()
     id: environmentSettings()
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -76,7 +102,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 154
+      startLine: 201
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den EnvironmentSettings-Wert.</p>
@@ -100,7 +126,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 94
+      startLine: 121
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Id-Wert.</p>
@@ -124,7 +150,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 174
+      startLine: 221
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den MaxWallClockTime-Wert.</p>
@@ -132,7 +158,7 @@ items:
     syntax:
       content: public Period maxWallClockTime()
       return:
-        type: 6e600119
+        type: '6e600119'
         description: <p>der Wert maxWallClockTime </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.resourceFiles()
     id: resourceFiles()
@@ -148,7 +174,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 134
+      startLine: 181
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den ResourceFiles-Wert.</p>
@@ -172,7 +198,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 194
+      startLine: 241
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den RetentionTime-Wert.</p>
@@ -180,7 +206,7 @@ items:
     syntax:
       content: public Period retentionTime()
       return:
-        type: 6e600119
+        type: '6e600119'
         description: <p>der Wert retentionTime </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.userIdentity()
     id: userIdentity()
@@ -196,7 +222,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 214
+      startLine: 261
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den UserIdentity-Wert.</p>
@@ -220,7 +246,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 124
+      startLine: 151
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Wert für die Befehlszeile.</p>
@@ -233,7 +259,35 @@ items:
           description: <p>Der festzulegende Wert commandLine </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withContainerSettings(TaskContainerSettings)
+    id: withContainerSettings(TaskContainerSettings)
+    parent: com.microsoft.azure.batch.protocol.models._job_release_task
+    href: com.microsoft.azure.batch.protocol.models._job_release_task.yml
+    langs:
+      - java
+    name: withContainerSettings(TaskContainerSettings containerSettings)
+    nameWithType: JobReleaseTask.withContainerSettings(TaskContainerSettings containerSettings)
+    fullName: JobReleaseTask com.microsoft.azure.batch.protocol.models.JobReleaseTask.withContainerSettings(TaskContainerSettings containerSettings)
+    overload: com.microsoft.azure.batch.protocol.models._job_release_task.withContainerSettings*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
+      startLine: 171
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Legen Sie den ContainerSettings-Wert.</p>
+      <p></p>
+    syntax:
+      content: public JobReleaseTask withContainerSettings(TaskContainerSettings containerSettings)
+      parameters:
+        - id: containerSettings
+          type: com.microsoft.azure.batch.protocol.models._task_container_settings
+          description: <p>Der festzulegende Wert containerSettings </p>
+      return:
+        type: com.microsoft.azure.batch.protocol.models._job_release_task
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withEnvironmentSettings(List<EnvironmentSetting>)
     id: withEnvironmentSettings(List<EnvironmentSetting>)
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -248,7 +302,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 164
+      startLine: 211
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den EnvironmentSettings-Wert.</p>
@@ -261,7 +315,7 @@ items:
           description: <p>Der festzulegende Wert environmentSettings </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withId(String)
     id: withId(String)
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -276,7 +330,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 104
+      startLine: 131
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Id-Wert.</p>
@@ -289,7 +343,7 @@ items:
           description: <p>die Id-Wert festlegen </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withMaxWallClockTime(Period)
     id: withMaxWallClockTime(Period)
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -304,7 +358,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 184
+      startLine: 231
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den MaxWallClockTime-Wert.</p>
@@ -313,11 +367,11 @@ items:
       content: public JobReleaseTask withMaxWallClockTime(Period maxWallClockTime)
       parameters:
         - id: maxWallClockTime
-          type: 6e600119
+          type: '6e600119'
           description: <p>Der festzulegende Wert maxWallClockTime </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withResourceFiles(List<ResourceFile>)
     id: withResourceFiles(List<ResourceFile>)
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -332,7 +386,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 144
+      startLine: 191
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den ResourceFiles-Wert.</p>
@@ -345,7 +399,7 @@ items:
           description: <p>Der festzulegende Wert resourceFiles </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withRetentionTime(Period)
     id: withRetentionTime(Period)
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -360,7 +414,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 204
+      startLine: 251
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den RetentionTime-Wert.</p>
@@ -369,11 +423,11 @@ items:
       content: public JobReleaseTask withRetentionTime(Period retentionTime)
       parameters:
         - id: retentionTime
-          type: 6e600119
+          type: '6e600119'
           description: <p>Der festzulegende Wert retentionTime </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withUserIdentity(UserIdentity)
     id: withUserIdentity(UserIdentity)
     parent: com.microsoft.azure.batch.protocol.models._job_release_task
@@ -388,7 +442,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobReleaseTask.java
-      startLine: 224
+      startLine: 271
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den UserIdentity-Wert.</p>
@@ -401,7 +455,7 @@ items:
           description: <p>Der festzulegende Wert userIdentity </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_release_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_release_task" data-throw-if-not-resolved="false">JobReleaseTask</xref> Objekt selbst. </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -426,6 +480,16 @@ references:
     name: withCommandLine
     nameWithType: JobReleaseTask.withCommandLine
     fullName: JobReleaseTask com.microsoft.azure.batch.protocol.models.JobReleaseTask.withCommandLine
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._job_release_task.containerSettings*
+    name: containerSettings
+    nameWithType: JobReleaseTask.containerSettings
+    fullName: TaskContainerSettings com.microsoft.azure.batch.protocol.models.JobReleaseTask.containerSettings
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._job_release_task.withContainerSettings*
+    name: withContainerSettings
+    nameWithType: JobReleaseTask.withContainerSettings
+    fullName: JobReleaseTask com.microsoft.azure.batch.protocol.models.JobReleaseTask.withContainerSettings
     package: com.microsoft.azure.batch.protocol.models
   - uid: 5618da2dcom.microsoft.azure.batch.protocol.models._resource_filea08ddfce
     spec.java:
@@ -467,7 +531,7 @@ references:
     nameWithType: JobReleaseTask.withEnvironmentSettings
     fullName: JobReleaseTask com.microsoft.azure.batch.protocol.models.JobReleaseTask.withEnvironmentSettings
     package: com.microsoft.azure.batch.protocol.models
-  - uid: 6e600119
+  - uid: '6e600119'
     spec.java:
       - name: Period
         fullName: Period
@@ -501,6 +565,16 @@ references:
     nameWithType: JobReleaseTask.withUserIdentity
     fullName: JobReleaseTask com.microsoft.azure.batch.protocol.models.JobReleaseTask.withUserIdentity
     package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._task_container_settings
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._task_container_settings.yml
+    name: TaskContainerSettings
+    nameWithType: TaskContainerSettings
+    fullName: com.microsoft.azure.batch.protocol.models.TaskContainerSettings
+    type: Class
+    summary: <p>Die Container-Einstellungen für eine Aufgabe. </p>
+    syntax:
+      content: public class TaskContainerSettings
   - uid: com.microsoft.azure.batch.protocol.models._resource_file
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._resource_file.yml
@@ -518,7 +592,7 @@ references:
     nameWithType: Files
     fullName: com.microsoft.azure.batch.protocol.Files
     type: Interface
-    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref href="com.microsoft.azure.batch.protocol._files" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref uid="com.microsoft.azure.batch.protocol._files" data-throw-if-not-resolved="false">Dateien</xref>. </p>'
     syntax:
       content: public interface Files
   - uid: com.microsoft.azure.batch.protocol.models._environment_setting
@@ -548,5 +622,5 @@ references:
     nameWithType: JobReleaseTask
     fullName: com.microsoft.azure.batch.protocol.models.JobReleaseTask
     type: Class
-    summary: '<p>Ein Auftrag Version der auszuführende Task nach Auftragsabschluss auf einem beliebigen Computeknoten, in dem der Auftrag ausgeführt wurde. </p>'
+    summary: '<p>Ein Auftrag Version der auszuführende Task nach Auftragsabschluss auf einem beliebigen Computeknoten, in dem der Auftrag ausgeführt wurde. Der Auftrag Release-Task ausgeführt wird, wenn der Auftrag beendet wird, aufgrund eines der folgenden: der Benutzer ruft API Auftrag beendet oder der Auftrags-API löschen, während der Auftrag noch aktiv ist, den Auftrag maximale Wand Uhr zeitbeschränkung erreicht ist und der Auftrag immer noch aktiv ist , oder der Auftrags-Auftrags-Manager-Aufgabe abgeschlossen und der Auftrag wird so konfiguriert, dass um nach Abschluss der Auftrags-Manager zu beenden. Der Auftrag Version Taskausführung auf jedem Computeknoten, in dem Aufgaben des Auftrags ausgeführt wurden und der Auftrag zur Vorbereitung Task ausgeführt und abgeschlossen werden. Wenn Sie ein reimaging, einen Serverknoten durchführen, nachdem sie den Auftrag zur Vorbereitung Task ausgeführt wurde, sodass der Auftrag beendet, ohne weitere Aufgaben des Auftrags auf, mit denen Knoten berechnet (und daher die Vorbereitung des Auftrags Aufgabe wird nicht erneut ausgeführt), wird die Auftrag Version Aufgabe nicht auf diesem Knoten ausgeführt. Wenn Compute-Knoten neu gestartet, während die Aufgabe Auftrag Version noch ausgeführt wird, wird der Task Auftrag Version beim Start des Compute-Knotens erneut ausgeführt. Der Auftrag ist nicht als abgeschlossen gekennzeichnet, bis alle Aufgaben der Version des Auftrags abgeschlossen ist. Der Task Auftrag freigeben, die im Hintergrund ausgeführt werden. Sie beansprucht keinen Planung Slot; d. h. es nicht für den MaxTasksPerNode-Grenzwert für den Pool angegeben gezählt. </p>'
     syntax: *ref_1

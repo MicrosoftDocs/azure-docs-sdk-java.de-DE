@@ -9,6 +9,7 @@ items:
       - com.microsoft.azure.batch.protocol.models._job_manager_task.authenticationTokenSettings()
       - com.microsoft.azure.batch.protocol.models._job_manager_task.commandLine()
       - com.microsoft.azure.batch.protocol.models._job_manager_task.constraints()
+      - com.microsoft.azure.batch.protocol.models._job_manager_task.containerSettings()
       - com.microsoft.azure.batch.protocol.models._job_manager_task.displayName()
       - com.microsoft.azure.batch.protocol.models._job_manager_task.environmentSettings()
       - com.microsoft.azure.batch.protocol.models._job_manager_task.id()
@@ -22,6 +23,7 @@ items:
       - com.microsoft.azure.batch.protocol.models._job_manager_task.withAuthenticationTokenSettings(AuthenticationTokenSettings)
       - com.microsoft.azure.batch.protocol.models._job_manager_task.withCommandLine(String)
       - com.microsoft.azure.batch.protocol.models._job_manager_task.withConstraints(TaskConstraints)
+      - com.microsoft.azure.batch.protocol.models._job_manager_task.withContainerSettings(TaskContainerSettings)
       - com.microsoft.azure.batch.protocol.models._job_manager_task.withDisplayName(String)
       - com.microsoft.azure.batch.protocol.models._job_manager_task.withEnvironmentSettings(List<EnvironmentSetting>)
       - com.microsoft.azure.batch.protocol.models._job_manager_task.withId(String)
@@ -43,9 +45,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-batch-sdk-for-java'
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 16
+      startLine: 29
     package: com.microsoft.azure.batch.protocol.models
-    summary: <p>Gibt Details einer Auftrags-Manager-Aufgabe an. </p>
+    summary: '<p>Gibt Details einer Auftrags-Manager-Aufgabe an. Die Auftrags-Manager-Aufgabe wird automatisch gestartet, wenn der Auftrag erstellt wird. Der Batch-Dienst versucht, die Auftrags-Manager-Aufgabe vor alle anderen Aufgaben im Auftrag zu planen. Wenn ein Pool verkleinert wird, versucht der Batch-Dienst Serverknoten beizubehalten, Auftrags-Manager-Aufgaben ausgeführt werden, so lange als möglich (d. h. Knoten ausgeführten ''normale'' Aufgaben vor dem Knoten ausgeführten Auftrags-Manager-Tasks entfernt werden). Wenn eine Auftrags-Manager-Aufgabe fehlschlägt und neu gestartet werden muss, versucht das System mit der höchsten Priorität zu planen. Wenn keine im Leerlauf Knoten vorhanden sind, kann das System Beenden eines aktiven Aufgaben im Pool und an die Warteschlange zurückgegeben werden, um Platz für die Auftrags-Manager-Aufgabe, neu zu starten. Beachten Sie, dass eine Auftrags-Manager-Aufgabe in einem Auftrag keine Priorität über Aufgaben in anderen Aufträgen verfügt. Über Aufträge hinweg werden nur Prioritäten auf Auftragsebene berücksichtigt. Z. B. wenn ein Auftrags-Manager in einem Auftrag Priorität 0 neu gestartet werden muss, wird es nicht Aufgaben eines Auftrags Priorität 1 versetzen. </p>'
     syntax: &ref_1
       content: public class JobManagerTask
     inheritance:
@@ -64,7 +66,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 393
+      startLine: 440
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den AllowLowPriorityNode-Wert.</p>
@@ -88,7 +90,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 353
+      startLine: 400
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den ApplicationPackageReferences-Wert.</p>
@@ -112,7 +114,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 373
+      startLine: 420
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den AuthenticationTokenSettings-Wert.</p>
@@ -136,7 +138,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 193
+      startLine: 220
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert für die Befehlszeile.</p>
@@ -160,7 +162,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 273
+      startLine: 320
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert der Einschränkungen.</p>
@@ -170,6 +172,30 @@ items:
       return:
         type: com.microsoft.azure.batch.protocol.models._task_constraints
         description: <p>der Wert von Einschränkungen </p>
+  - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.containerSettings()
+    id: containerSettings()
+    parent: com.microsoft.azure.batch.protocol.models._job_manager_task
+    href: com.microsoft.azure.batch.protocol.models._job_manager_task.yml
+    langs:
+      - java
+    name: containerSettings()
+    nameWithType: JobManagerTask.containerSettings()
+    fullName: TaskContainerSettings com.microsoft.azure.batch.protocol.models.JobManagerTask.containerSettings()
+    overload: com.microsoft.azure.batch.protocol.models._job_manager_task.containerSettings*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
+      startLine: 240
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Ruft den ContainerSettings-Wert.</p>
+      <p></p>
+    syntax:
+      content: public TaskContainerSettings containerSettings()
+      return:
+        type: com.microsoft.azure.batch.protocol.models._task_container_settings
+        description: <p>der Wert containerSettings </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.displayName()
     id: displayName()
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -184,7 +210,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 173
+      startLine: 200
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert "DisplayName".</p>
@@ -208,7 +234,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 253
+      startLine: 300
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den EnvironmentSettings-Wert.</p>
@@ -232,7 +258,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 153
+      startLine: 180
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Id-Wert.</p>
@@ -256,7 +282,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 293
+      startLine: 340
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den KillJobOnCompletion-Wert.</p>
@@ -280,7 +306,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 233
+      startLine: 280
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den Wert für die Dateien.</p>
@@ -304,7 +330,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 213
+      startLine: 260
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den ResourceFiles-Wert.</p>
@@ -328,7 +354,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 333
+      startLine: 380
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den RunExclusive-Wert.</p>
@@ -352,7 +378,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 313
+      startLine: 360
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Ruft den UserIdentity-Wert.</p>
@@ -376,7 +402,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 403
+      startLine: 450
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den AllowLowPriorityNode-Wert.</p>
@@ -389,7 +415,7 @@ items:
           description: <p>Der festzulegende Wert allowLowPriorityNode </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withApplicationPackageReferences(List<ApplicationPackageReference>)
     id: withApplicationPackageReferences(List<ApplicationPackageReference>)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -404,7 +430,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 363
+      startLine: 410
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den ApplicationPackageReferences-Wert.</p>
@@ -417,7 +443,7 @@ items:
           description: <p>Der festzulegende Wert applicationPackageReferences </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withAuthenticationTokenSettings(AuthenticationTokenSettings)
     id: withAuthenticationTokenSettings(AuthenticationTokenSettings)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -432,7 +458,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 383
+      startLine: 430
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den AuthenticationTokenSettings-Wert.</p>
@@ -445,7 +471,7 @@ items:
           description: <p>Der festzulegende Wert authenticationTokenSettings </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withCommandLine(String)
     id: withCommandLine(String)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -460,7 +486,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 203
+      startLine: 230
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Wert für die Befehlszeile.</p>
@@ -473,7 +499,7 @@ items:
           description: <p>Der festzulegende Wert commandLine </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withConstraints(TaskConstraints)
     id: withConstraints(TaskConstraints)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -488,7 +514,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 283
+      startLine: 330
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Wert für die Einschränkungen.</p>
@@ -501,7 +527,35 @@ items:
           description: <p>Der festzulegende Wert Einschränkungen </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withContainerSettings(TaskContainerSettings)
+    id: withContainerSettings(TaskContainerSettings)
+    parent: com.microsoft.azure.batch.protocol.models._job_manager_task
+    href: com.microsoft.azure.batch.protocol.models._job_manager_task.yml
+    langs:
+      - java
+    name: withContainerSettings(TaskContainerSettings containerSettings)
+    nameWithType: JobManagerTask.withContainerSettings(TaskContainerSettings containerSettings)
+    fullName: JobManagerTask com.microsoft.azure.batch.protocol.models.JobManagerTask.withContainerSettings(TaskContainerSettings containerSettings)
+    overload: com.microsoft.azure.batch.protocol.models._job_manager_task.withContainerSettings*
+    type: Method
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
+      startLine: 250
+    package: com.microsoft.azure.batch.protocol.models
+    summary: |-
+      <p>Legen Sie den ContainerSettings-Wert.</p>
+      <p></p>
+    syntax:
+      content: public JobManagerTask withContainerSettings(TaskContainerSettings containerSettings)
+      parameters:
+        - id: containerSettings
+          type: com.microsoft.azure.batch.protocol.models._task_container_settings
+          description: <p>Der festzulegende Wert containerSettings </p>
+      return:
+        type: com.microsoft.azure.batch.protocol.models._job_manager_task
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withDisplayName(String)
     id: withDisplayName(String)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -516,7 +570,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 183
+      startLine: 210
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den DisplayName-Wert.</p>
@@ -529,7 +583,7 @@ items:
           description: <p>Der festzulegende Wert displayName </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withEnvironmentSettings(List<EnvironmentSetting>)
     id: withEnvironmentSettings(List<EnvironmentSetting>)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -544,7 +598,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 263
+      startLine: 310
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den EnvironmentSettings-Wert.</p>
@@ -557,7 +611,7 @@ items:
           description: <p>Der festzulegende Wert environmentSettings </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withId(String)
     id: withId(String)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -572,7 +626,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 163
+      startLine: 190
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Id-Wert.</p>
@@ -585,7 +639,7 @@ items:
           description: <p>die Id-Wert festlegen </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withKillJobOnCompletion(Boolean)
     id: withKillJobOnCompletion(Boolean)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -600,7 +654,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 303
+      startLine: 350
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den KillJobOnCompletion-Wert.</p>
@@ -613,7 +667,7 @@ items:
           description: <p>Der festzulegende Wert killJobOnCompletion </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withOutputFiles(List<OutputFile>)
     id: withOutputFiles(List<OutputFile>)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -628,7 +682,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 243
+      startLine: 290
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den Wert für die Dateien.</p>
@@ -641,7 +695,7 @@ items:
           description: <p>Der festzulegende Wert Dateien </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withResourceFiles(List<ResourceFile>)
     id: withResourceFiles(List<ResourceFile>)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -656,7 +710,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 223
+      startLine: 270
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den ResourceFiles-Wert.</p>
@@ -669,7 +723,7 @@ items:
           description: <p>Der festzulegende Wert resourceFiles </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withRunExclusive(Boolean)
     id: withRunExclusive(Boolean)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -684,7 +738,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 343
+      startLine: 390
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den RunExclusive-Wert.</p>
@@ -697,7 +751,7 @@ items:
           description: <p>Der festzulegende Wert runExclusive </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withUserIdentity(UserIdentity)
     id: withUserIdentity(UserIdentity)
     parent: com.microsoft.azure.batch.protocol.models._job_manager_task
@@ -712,7 +766,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/batch/protocol/models/JobManagerTask.java
-      startLine: 323
+      startLine: 370
     package: com.microsoft.azure.batch.protocol.models
     summary: |-
       <p>Legen Sie den UserIdentity-Wert.</p>
@@ -725,7 +779,7 @@ items:
           description: <p>Der festzulegende Wert userIdentity </p>
       return:
         type: com.microsoft.azure.batch.protocol.models._job_manager_task
-        description: <p>die <xref href="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.batch.protocol.models._job_manager_task" data-throw-if-not-resolved="false">JobManagerTask</xref> Objekt selbst. </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -760,6 +814,16 @@ references:
     name: withCommandLine
     nameWithType: JobManagerTask.withCommandLine
     fullName: JobManagerTask com.microsoft.azure.batch.protocol.models.JobManagerTask.withCommandLine
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.containerSettings*
+    name: containerSettings
+    nameWithType: JobManagerTask.containerSettings
+    fullName: TaskContainerSettings com.microsoft.azure.batch.protocol.models.JobManagerTask.containerSettings
+    package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._job_manager_task.withContainerSettings*
+    name: withContainerSettings
+    nameWithType: JobManagerTask.withContainerSettings
+    fullName: JobManagerTask com.microsoft.azure.batch.protocol.models.JobManagerTask.withContainerSettings
     package: com.microsoft.azure.batch.protocol.models
   - uid: 5618da2dcom.microsoft.azure.batch.protocol.models._resource_filea08ddfce
     spec.java:
@@ -905,6 +969,16 @@ references:
     nameWithType: JobManagerTask.withAllowLowPriorityNode
     fullName: JobManagerTask com.microsoft.azure.batch.protocol.models.JobManagerTask.withAllowLowPriorityNode
     package: com.microsoft.azure.batch.protocol.models
+  - uid: com.microsoft.azure.batch.protocol.models._task_container_settings
+    parent: com.microsoft.azure.batch.protocol.models
+    href: com.microsoft.azure.batch.protocol.models._task_container_settings.yml
+    name: TaskContainerSettings
+    nameWithType: TaskContainerSettings
+    fullName: com.microsoft.azure.batch.protocol.models.TaskContainerSettings
+    type: Class
+    summary: <p>Die Container-Einstellungen für eine Aufgabe. </p>
+    syntax:
+      content: public class TaskContainerSettings
   - uid: com.microsoft.azure.batch.protocol.models._resource_file
     parent: com.microsoft.azure.batch.protocol.models
     href: com.microsoft.azure.batch.protocol.models._resource_file.yml
@@ -922,7 +996,7 @@ references:
     nameWithType: Files
     fullName: com.microsoft.azure.batch.protocol.Files
     type: Interface
-    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref href="com.microsoft.azure.batch.protocol._files" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Eine Instanz dieser Klasse bietet Zugriff auf alle Vorgänge, die in definierten <xref uid="com.microsoft.azure.batch.protocol._files" data-throw-if-not-resolved="false">Dateien</xref>. </p>'
     syntax:
       content: public interface Files
   - uid: com.microsoft.azure.batch.protocol.models._output_file
@@ -992,5 +1066,5 @@ references:
     nameWithType: JobManagerTask
     fullName: com.microsoft.azure.batch.protocol.models.JobManagerTask
     type: Class
-    summary: <p>Gibt Details einer Auftrags-Manager-Aufgabe an. </p>
+    summary: '<p>Gibt Details einer Auftrags-Manager-Aufgabe an. Die Auftrags-Manager-Aufgabe wird automatisch gestartet, wenn der Auftrag erstellt wird. Der Batch-Dienst versucht, die Auftrags-Manager-Aufgabe vor alle anderen Aufgaben im Auftrag zu planen. Wenn ein Pool verkleinert wird, versucht der Batch-Dienst Serverknoten beizubehalten, Auftrags-Manager-Aufgaben ausgeführt werden, so lange als möglich (d. h. Knoten ausgeführten ''normale'' Aufgaben vor dem Knoten ausgeführten Auftrags-Manager-Tasks entfernt werden). Wenn eine Auftrags-Manager-Aufgabe fehlschlägt und neu gestartet werden muss, versucht das System mit der höchsten Priorität zu planen. Wenn keine im Leerlauf Knoten vorhanden sind, kann das System Beenden eines aktiven Aufgaben im Pool und an die Warteschlange zurückgegeben werden, um Platz für die Auftrags-Manager-Aufgabe, neu zu starten. Beachten Sie, dass eine Auftrags-Manager-Aufgabe in einem Auftrag keine Priorität über Aufgaben in anderen Aufträgen verfügt. Über Aufträge hinweg werden nur Prioritäten auf Auftragsebene berücksichtigt. Z. B. wenn ein Auftrags-Manager in einem Auftrag Priorität 0 neu gestartet werden muss, wird es nicht Aufgaben eines Auftrags Priorität 1 versetzen. </p>'
     syntax: *ref_1

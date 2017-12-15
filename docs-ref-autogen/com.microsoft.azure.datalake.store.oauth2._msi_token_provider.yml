@@ -4,6 +4,8 @@ items:
     id: _msi_token_provider
     parent: com.microsoft.azure.datalake.store.oauth2
     children:
+      - com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider()
+      - com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider(int)
       - 'com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider(int,String)'
       - com.microsoft.azure.datalake.store.oauth2._msi_token_provider.refreshToken()
     href: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.yml
@@ -29,7 +31,49 @@ items:
       - com.microsoft.azure.datalake.store.oauth2._access_token_provider
     inheritedMembers:
       - com.microsoft.azure.datalake.store.oauth2._access_token_provider.getToken()
-      - com.microsoft.azure.datalake.store.oauth2._access_token_provider.token()
+      - com.microsoft.azure.datalake.store.oauth2._access_token_provider.token
+  - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider()
+    id: MsiTokenProvider()
+    parent: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
+    href: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.yml
+    langs:
+      - java
+    name: MsiTokenProvider()
+    nameWithType: MsiTokenProvider.MsiTokenProvider()
+    fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider.MsiTokenProvider()
+    overload: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/MsiTokenProvider.java
+      startLine: 26
+    package: com.microsoft.azure.datalake.store.oauth2
+    summary: '<p>Erstellt einen Tokenanbieter, der Token abruft, aus der MSI-Token-Dienst ausführen auf einer Azure-IaaS-VM an. Dies funktioniert nur auf einer Azure-VM mit der MSI-Extansion aktiviert. </p>'
+    syntax:
+      content: public MsiTokenProvider()
+  - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider(int)
+    id: MsiTokenProvider(int)
+    parent: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
+    href: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.yml
+    langs:
+      - java
+    name: MsiTokenProvider(int localPort)
+    nameWithType: MsiTokenProvider.MsiTokenProvider(int localPort)
+    fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider.MsiTokenProvider(int localPort)
+    overload: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: src/main/java/com/microsoft/azure/datalake/store/oauth2/MsiTokenProvider.java
+      startLine: 36
+    package: com.microsoft.azure.datalake.store.oauth2
+    summary: '<p>Erstellt einen Tokenanbieter, der Token abruft, aus der MSI-Token-Dienst ausführen auf einer Azure-IaaS-VM an. Dies funktioniert nur auf einer Azure-VM mit der MSI-Extansion aktiviert. </p>'
+    syntax:
+      content: public MsiTokenProvider(int localPort)
+      parameters:
+        - id: localPort
+          type: f75371fa
+          description: '<p>Port auf "localhost" für den MSI-token-Dienst. (gibt den Port an, der in der Bereitstellungsvorlage festgelegt wurde). Wenn 0 oder eine negative Zahl angegeben wird, gehen Sie davon aus Standardportnummer 50342. </p>'
   - uid: 'com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider(int,String)'
     id: 'MsiTokenProvider(int,String)'
     parent: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
@@ -44,18 +88,18 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/MsiTokenProvider.java
-      startLine: 28
+      startLine: 47
     package: com.microsoft.azure.datalake.store.oauth2
-    summary: '<p>Erstellt einen Tokenanbieter, der Token abruft, aus der MSI-Token-Dienst ausführen auf einer Azure-IaaS-VM </p>'
+    summary: '<p>Erstellt einen Tokenanbieter, der Token abruft, aus der MSI-Token-Dienst ausführen auf einer Azure-IaaS-VM an. Dies funktioniert nur auf einer Azure-VM mit der MSI-Extansion aktiviert. </p>'
     syntax:
       content: 'public MsiTokenProvider(int localPort, String tenantGuid)'
       parameters:
         - id: localPort
           type: f75371fa
-          description: '<p>Port auf "localhost" für den MSI-token-Dienst. (der Port, der in der Bereitstellungsvorlage eingerichtet wurde) </p>'
+          description: '<p>Port auf "localhost" für den MSI-token-Dienst. (gibt den Port an, der in der Bereitstellungsvorlage festgelegt wurde). Wenn 0 oder eine negative Zahl angegeben wird, gehen Sie davon aus Standardportnummer 50342. </p>'
         - id: tenantGuid
           type: '26831127'
-          description: <p>AAD-Mandanten-ID (<programlisting><codeline><highlight class="normal">Guid<sp> </sp> </highlight> </codeline> </programlisting> ) </p>
+          description: "<p>(optional) AAD-Mandanten-ID<code>guid \r\n\r\n    </code> . Kann<code>null \r\n\r\n    </code> . </p>"
   - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.refreshToken()
     id: refreshToken()
     parent: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
@@ -70,13 +114,18 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/MsiTokenProvider.java
-      startLine: 34
+      startLine: 53
     package: com.microsoft.azure.datalake.store.oauth2
     syntax:
       content: protected AzureADToken refreshToken()
       return:
         type: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
 references:
+  - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider*
+    name: MsiTokenProvider
+    nameWithType: MsiTokenProvider.MsiTokenProvider
+    fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider.MsiTokenProvider
+    package: com.microsoft.azure.datalake.store.oauth2
   - uid: f75371fa
     spec.java:
       - name: int
@@ -85,11 +134,6 @@ references:
     spec.java:
       - name: String
         fullName: String
-  - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.MsiTokenProvider*
-    name: MsiTokenProvider
-    nameWithType: MsiTokenProvider.MsiTokenProvider
-    fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider.MsiTokenProvider
-    package: com.microsoft.azure.datalake.store.oauth2
   - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider.refreshToken*
     name: refreshToken
     nameWithType: MsiTokenProvider.refreshToken
@@ -103,14 +147,14 @@ references:
     fullName: synchronized AzureADToken com.microsoft.azure.datalake.store.oauth2.AccessTokenProvider.getToken()
     type: Method
     summary: |-
-      <p>Gibt die <xref href="com.microsoft.azure.datalake.store.oauth2._azure_a_d_token" data-throw-if-not-resolved="false"></xref> zwischengespeichert (oder abzurufenden), von dieser Instanz.</p>
+      <p>Gibt die <xref uid="com.microsoft.azure.datalake.store.oauth2._azure_a_d_token" data-throw-if-not-resolved="false">AzureADToken</xref> zwischengespeichert (oder abzurufenden), von dieser Instanz.</p>
       <p></p>
     syntax:
       content: public synchronized AzureADToken getToken()
       return:
         type: cffad4f2com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\"></xref>das Zugriffstoken enthält </p>"
-  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.token()
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> , die das Zugriffstoken enthält. </p>"
+  - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.token
     parent: com.microsoft.azure.datalake.store.oauth2._access_token_provider
     href: com.microsoft.azure.datalake.store.oauth2._access_token_provider.yml
     name: token

@@ -21,7 +21,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/ServiceHealth.java
       startLine: 10
     package: system.fabric.health
-    summary: '<p>Die Integrität eines Diensts beschreibt, wie vom <xref href="system.fabric._health_client.getServiceHealthAsync(ServiceHealthQueryDescription)" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Die Integrität eines Diensts beschreibt, wie vom <xref uid="system.fabric._health_client.getServiceHealthAsync(ServiceHealthQueryDescription)" data-throw-if-not-resolved="false">system.fabric.HealthClient#getServiceHealthAsync(ServiceHealthQueryDescription)</xref>. </p>'
     syntax:
       content: public class ServiceHealth extends EntityHealth
     inheritance:
@@ -48,7 +48,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/ServiceHealth.java
       startLine: 52
     package: system.fabric.health
-    summary: "<p>Ruft den Integritätsstatus Partition für den aktuellen Dienst ab.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold>nur Partitionen dieser Hinsicht mit der <xref href=\"system.fabric._service_health_query_description.getPartitionHealthStatesFilter()\" data-throw-if-not-resolved=\"false\"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Partitionen zurückgegeben. Alle Partitionen werden ausgewertet, um die aggregierten Integrität zu ermitteln. </p>"
+    summary: "<p>Ruft den Integritätsstatus Partition für den aktuellen Dienst ab.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>nur Partitionen dieser Hinsicht mit der <xref uid=\"system.fabric._service_health_query_description.getPartitionHealthStatesFilter()\" data-throw-if-not-resolved=\"false\">system.fabric.ServiceHealthQueryDescription#getPartitionHealthStatesFilter()</xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Partitionen zurückgegeben. Alle Partitionen werden ausgewertet, um die aggregierten Integrität zu ermitteln. </p>"
     syntax:
       content: public List<PartitionHealthState> getPartitionHealthState()
       return:
@@ -133,7 +133,7 @@ references:
       content: public HealthState getAggregatedHealthState()
       return:
         type: system.fabric.health._health_state
-        description: "<p>\r\n\r\n  <xref href=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\"></xref>der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState</xref> Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie, die der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt. </p>"
   - uid: system.fabric.health._entity_health.getHealthEvents()
     parent: system.fabric.health._entity_health
     href: system.fabric.health._entity_health.yml
@@ -141,7 +141,7 @@ references:
     nameWithType: EntityHealth.getHealthEvents()
     fullName: List<HealthEvent> system.fabric.health.EntityHealth.getHealthEvents()
     type: Method
-    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
+    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
     syntax:
       content: public List<HealthEvent> getHealthEvents()
       return:
@@ -189,7 +189,7 @@ references:
     nameWithType: HealthEvent
     fullName: system.fabric.health.HealthEvent
     type: Class
-    summary: '<p>Ein <xref href="system.fabric.health._health_event" data-throw-if-not-resolved="false"></xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
+    summary: '<p>Ein <xref uid="system.fabric.health._health_event" data-throw-if-not-resolved="false">HealthEvent</xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
     syntax:
       content: public class HealthEvent
   - uid: system.fabric.health._health_evaluation
@@ -209,12 +209,12 @@ references:
     nameWithType: ServiceHealthQueryDescription.getPartitionHealthStatesFilter()
     fullName: PartitionHealthStatesFilter system.fabric.ServiceHealthQueryDescription.getPartitionHealthStatesFilter()
     type: Method
-    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._partition_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente werden zum Auswerten der aggregierten integritätszustands verwendet werden. Wenn der Filter nicht angegeben ist, werden alle untergeordneten Elemente für Partition zurückgegeben. </p>"
+    summary: "<p>Ruft den Filter für <xref uid=\"system.fabric.health._partition_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.PartitionHealthState</xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> nur untergeordnete Elemente, die dem Filter entsprechen zurückgegeben werden. Alle untergeordneten Elemente werden zum Auswerten der aggregierten integritätszustands verwendet werden. Wenn der Filter nicht angegeben ist, werden alle untergeordneten Elemente für Partition zurückgegeben. </p>"
     syntax:
       content: public PartitionHealthStatesFilter getPartitionHealthStatesFilter()
       return:
         type: system.fabric._partition_health_states_filter
-        description: '<p>Die <xref href="system.fabric._partition_health_states_filter" data-throw-if-not-resolved="false"></xref> verwendet, um den Integritätsstatus für die zurückgegebene Partition zu filtern. </p>'
+        description: '<p>Die <xref uid="system.fabric._partition_health_states_filter" data-throw-if-not-resolved="false">system.fabric.PartitionHealthStatesFilter</xref> verwendet, um den Integritätsstatus für die zurückgegebene Partition zu filtern. </p>'
   - uid: system.fabric._health_client.getServiceHealthAsync(ServiceHealthQueryDescription)
     parent: system.fabric._health_client
     href: system.fabric._health_client.yml

@@ -4,6 +4,8 @@ items:
     id: _feed_options
     parent: com.microsoft.azure.documentdb
     children:
+      - com.microsoft.azure.documentdb._feed_options.FeedOptions()
+      - com.microsoft.azure.documentdb._feed_options.FeedOptions(FeedOptions)
       - com.microsoft.azure.documentdb._feed_options.getDisableRUPerMinuteUsage()
       - com.microsoft.azure.documentdb._feed_options.getEmitVerboseTracesInQuery()
       - com.microsoft.azure.documentdb._feed_options.getEnableCrossPartitionQuery()
@@ -20,6 +22,7 @@ items:
       - com.microsoft.azure.documentdb._feed_options.setMaxBufferedItemCount(int)
       - com.microsoft.azure.documentdb._feed_options.setMaxDegreeOfParallelism(int)
       - com.microsoft.azure.documentdb._feed_options.setPartitionKey(PartitionKey)
+      - com.microsoft.azure.documentdb._feed_options.setPartitionKeyRangeIdInternal(String)
       - com.microsoft.azure.documentdb._feed_options.setSessionToken(String)
     href: com.microsoft.azure.documentdb._feed_options.yml
     langs:
@@ -37,16 +40,56 @@ items:
       startLine: 9
     package: com.microsoft.azure.documentdb
     summary: '<p>Gibt die Optionen, die feed-Methoden (enumerationsvorgängen) in der Azure DocumentDB-Datenbankdienst zugeordnet. </p>'
-    syntax:
+    syntax: &ref_1
       content: public class FeedOptions extends FeedOptionsBase
     inheritance:
       - java.lang.Object
       - com.microsoft.azure.documentdb._feed_options_base
     inheritedMembers:
+      - com.microsoft.azure.documentdb._feed_options_base.FeedOptionsBase()
       - com.microsoft.azure.documentdb._feed_options_base.getPageSize()
       - com.microsoft.azure.documentdb._feed_options_base.getRequestContinuation()
       - com.microsoft.azure.documentdb._feed_options_base.setPageSize(Integer)
       - com.microsoft.azure.documentdb._feed_options_base.setRequestContinuation(String)
+  - uid: com.microsoft.azure.documentdb._feed_options.FeedOptions()
+    id: FeedOptions()
+    parent: com.microsoft.azure.documentdb._feed_options
+    href: com.microsoft.azure.documentdb._feed_options.yml
+    langs:
+      - java
+    name: FeedOptions()
+    nameWithType: FeedOptions.FeedOptions()
+    fullName: com.microsoft.azure.documentdb.FeedOptions.FeedOptions()
+    overload: com.microsoft.azure.documentdb._feed_options.FeedOptions*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
+      startLine: 20
+    package: com.microsoft.azure.documentdb
+    syntax:
+      content: public FeedOptions()
+  - uid: com.microsoft.azure.documentdb._feed_options.FeedOptions(FeedOptions)
+    id: FeedOptions(FeedOptions)
+    parent: com.microsoft.azure.documentdb._feed_options
+    href: com.microsoft.azure.documentdb._feed_options.yml
+    langs:
+      - java
+    name: FeedOptions(FeedOptions options)
+    nameWithType: FeedOptions.FeedOptions(FeedOptions options)
+    fullName: com.microsoft.azure.documentdb.FeedOptions.FeedOptions(FeedOptions options)
+    overload: com.microsoft.azure.documentdb._feed_options.FeedOptions*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
+      startLine: 22
+    package: com.microsoft.azure.documentdb
+    syntax:
+      content: public FeedOptions(FeedOptions options)
+      parameters:
+        - id: options
+          type: com.microsoft.azure.documentdb._feed_options
   - uid: com.microsoft.azure.documentdb._feed_options.getDisableRUPerMinuteUsage()
     id: getDisableRUPerMinuteUsage()
     parent: com.microsoft.azure.documentdb._feed_options
@@ -61,7 +104,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 207
+      startLine: 222
     package: com.microsoft.azure.documentdb
     summary: <p>Ruft DisableRUPerMinuteUsage-Option für die aktuelle Abfrage in den Azure DocumentDB-Datenbank-Dienst ab. </p>
     syntax:
@@ -83,7 +126,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 85
+      startLine: 100
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft die Option zum Zulassen von Abfragen zum Ausgeben von ausführlicher ablaufverfolgungen für die Untersuchung hinzufügen.</p>
@@ -107,7 +150,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 128
+      startLine: 143
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft die Option aus, um Abfragen für alle Partitionen der Auflistung ausgeführt werden.</p>
@@ -131,7 +174,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 64
+      startLine: 79
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft ab, wurde die Option zur Überprüfung auf die Abfragen als Indizierung zustellbaren konnte nicht, auf den angeforderten abgewählt.</p>
@@ -155,7 +198,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 173
+      startLine: 188
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft ab, der die maximale Anzahl von Elementen, die möglich Clientseite während gepuffert parallele abfrageausführung.</p>
@@ -179,7 +222,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 151
+      startLine: 166
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft die Anzahl der gleichzeitigen Vorgänge Clientseite ausgeführt, während der parallelen abfrageausführung ab.</p>
@@ -203,7 +246,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 106
+      startLine: 121
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft den Partitionsschlüssel zur Identifizierung der Zielpartition für die aktuelle Anforderung ab.</p>
@@ -227,7 +270,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 25
+      startLine: 40
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft die PartitionKeyRangeId ab.</p>
@@ -251,7 +294,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 44
+      startLine: 59
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Ruft die Sitzung token für die Verwendung mit sitzungskonsistenz.</p>
@@ -275,7 +318,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 199
+      startLine: 214
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt die DisableRUPerMinuteUsage-Option für die aktuelle Abfrage in den Azure DocumentDB-Datenbank-Dienst fest.</p>
@@ -301,7 +344,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 96
+      startLine: 111
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt fest, die Option zum Zulassen von Abfragen zum Ausgeben von ausführlicher ablaufverfolgungen für die Untersuchung hinzufügen.</p>
@@ -326,7 +369,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 140
+      startLine: 155
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt die Option aus, um Abfragen für alle Partitionen der Auflistung ausgeführt werden.</p>
@@ -351,7 +394,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 75
+      startLine: 90
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt fest, wurde die Option zur Überprüfung auf die Abfragen als Indizierung zustellbaren konnte nicht, auf den angeforderten abgewählt.</p>
@@ -376,7 +419,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 184
+      startLine: 199
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt fest, die die maximale Anzahl von Elementen, die möglich Clientseite während gepuffert parallele abfrageausführung.</p>
@@ -401,7 +444,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 162
+      startLine: 177
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt die Anzahl der gleichzeitigen Vorgänge Clientseite ausgeführt, während der parallelen abfrageausführung.</p>
@@ -426,7 +469,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 117
+      startLine: 132
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt den Partitionsschlüssel verwendet, um die aktuelle Anforderung Zielpartition zu identifizieren.</p>
@@ -437,6 +480,31 @@ items:
         - id: partitionkey
           type: com.microsoft.azure.documentdb._partition_key
           description: <p>der Wert für den Partitionsschlüssel. </p>
+  - uid: com.microsoft.azure.documentdb._feed_options.setPartitionKeyRangeIdInternal(String)
+    id: setPartitionKeyRangeIdInternal(String)
+    parent: com.microsoft.azure.documentdb._feed_options
+    href: com.microsoft.azure.documentdb._feed_options.yml
+    langs:
+      - java
+    name: setPartitionKeyRangeIdInternal(String partitionKeyRangeId)
+    nameWithType: FeedOptions.setPartitionKeyRangeIdInternal(String partitionKeyRangeId)
+    fullName: void com.microsoft.azure.documentdb.FeedOptions.setPartitionKeyRangeIdInternal(String partitionKeyRangeId)
+    overload: com.microsoft.azure.documentdb._feed_options.setPartitionKeyRangeIdInternal*
+    type: Method
+    source:
+      remote: *ref_0
+      path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
+      startLine: 50
+    package: com.microsoft.azure.documentdb
+    summary: |-
+      <p>Legt die PartitionKeyRangeId fest.</p>
+      <p></p>
+    syntax:
+      content: public void setPartitionKeyRangeIdInternal(String partitionKeyRangeId)
+      parameters:
+        - id: partitionKeyRangeId
+          type: '26831127'
+          description: <p>die PartitionKeyRangeId. </p>
   - uid: com.microsoft.azure.documentdb._feed_options.setSessionToken(String)
     id: setSessionToken(String)
     parent: com.microsoft.azure.documentdb._feed_options
@@ -451,7 +519,7 @@ items:
     source:
       remote: *ref_0
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/FeedOptions.java
-      startLine: 54
+      startLine: 69
     package: com.microsoft.azure.documentdb
     summary: |-
       <p>Legt das Sitzungstoken für die Verwendung mit sitzungskonsistenz fest.</p>
@@ -463,6 +531,11 @@ items:
           type: '26831127'
           description: <p>das Sitzungstoken. </p>
 references:
+  - uid: com.microsoft.azure.documentdb._feed_options.FeedOptions*
+    name: FeedOptions
+    nameWithType: FeedOptions.FeedOptions
+    fullName: com.microsoft.azure.documentdb.FeedOptions.FeedOptions
+    package: com.microsoft.azure.documentdb
   - uid: '26831127'
     spec.java:
       - name: String
@@ -471,6 +544,11 @@ references:
     name: getPartitionKeyRangeIdInternal
     nameWithType: FeedOptions.getPartitionKeyRangeIdInternal
     fullName: String com.microsoft.azure.documentdb.FeedOptions.getPartitionKeyRangeIdInternal
+    package: com.microsoft.azure.documentdb
+  - uid: com.microsoft.azure.documentdb._feed_options.setPartitionKeyRangeIdInternal*
+    name: setPartitionKeyRangeIdInternal
+    nameWithType: FeedOptions.setPartitionKeyRangeIdInternal
+    fullName: void com.microsoft.azure.documentdb.FeedOptions.setPartitionKeyRangeIdInternal
     package: com.microsoft.azure.documentdb
   - uid: com.microsoft.azure.documentdb._feed_options.getSessionToken*
     name: getSessionToken
@@ -564,6 +642,15 @@ references:
     nameWithType: FeedOptions.getDisableRUPerMinuteUsage
     fullName: Boolean com.microsoft.azure.documentdb.FeedOptions.getDisableRUPerMinuteUsage
     package: com.microsoft.azure.documentdb
+  - uid: com.microsoft.azure.documentdb._feed_options_base.FeedOptionsBase()
+    parent: com.microsoft.azure.documentdb._feed_options_base
+    href: com.microsoft.azure.documentdb._feed_options_base.yml
+    name: FeedOptionsBase()
+    nameWithType: FeedOptionsBase.FeedOptionsBase()
+    fullName: com.microsoft.azure.documentdb.FeedOptionsBase.FeedOptionsBase()
+    type: Constructor
+    syntax:
+      content: protected FeedOptionsBase()
   - uid: com.microsoft.azure.documentdb._feed_options_base.getPageSize()
     parent: com.microsoft.azure.documentdb._feed_options_base
     href: com.microsoft.azure.documentdb._feed_options_base.yml
@@ -646,3 +733,12 @@ references:
     summary: '<p>Stellt einen Partition-Schlüsselwert in der Azure DocumentDB-Datenbankdienst dar. Ein Partitionsschlüssel identifiziert die Partition, in dem das Dokument in gespeichert ist. </p>'
     syntax:
       content: public class PartitionKey
+  - uid: com.microsoft.azure.documentdb._feed_options
+    parent: com.microsoft.azure.documentdb
+    href: com.microsoft.azure.documentdb._feed_options.yml
+    name: FeedOptions
+    nameWithType: FeedOptions
+    fullName: com.microsoft.azure.documentdb.FeedOptions
+    type: Class
+    summary: '<p>Gibt die Optionen, die feed-Methoden (enumerationsvorgängen) in der Azure DocumentDB-Datenbankdienst zugeordnet. </p>'
+    syntax: *ref_1

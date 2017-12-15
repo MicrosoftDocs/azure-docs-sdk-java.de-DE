@@ -4,6 +4,7 @@ items:
     id: _traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1
     parent: com.microsoft.azure.management.trafficmanager
     children:
+      - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withGeographicBasedRouting()
       - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withPerformanceBasedRouting()
       - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withPriorityBasedRouting()
       - com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withTrafficRoutingMethod(TrafficRoutingMethod)
@@ -18,14 +19,38 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-      startLine: 126
+      startLine: 127
     package: com.microsoft.azure.management.trafficmanager
     summary: <p>Die Phase der Traffic Manager-Profildefinition ermöglicht die datenverkehrrouting-Methode für das Profil an. </p>
     syntax:
       content: public interface WithTrafficRoutingMethod
+  - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withGeographicBasedRouting()
+    id: withGeographicBasedRouting()
+    parent: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1
+    href: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.yml
+    langs:
+      - java
+    name: withGeographicBasedRouting()
+    nameWithType: TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withGeographicBasedRouting()
+    fullName: WithEndpoint com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withGeographicBasedRouting()
+    overload: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withGeographicBasedRouting*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
+      startLine: 160
+    package: com.microsoft.azure.management.trafficmanager
+    summary: |-
+      <p>Gibt an, dass Endbenutzer-Datenverkehrs an den Endpunkt weitergeleitet werden soll, die bei der geografischen Region Benutzer bedienen.</p>
+      <p></p>
+    syntax:
+      content: public WithEndpoint withGeographicBasedRouting()
+      return:
+        type: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_12d7929fa86a4f74630986ea330df77e4
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withPerformanceBasedRouting()
     id: withPerformanceBasedRouting()
     parent: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1
@@ -40,10 +65,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-      startLine: 150
+      startLine: 151
     package: com.microsoft.azure.management.trafficmanager
     summary: |-
-      <p>Gibt an, dass Endbenutzer-Datenverkehrs basierend auf dem geografischen Standort des Endpunkts in der Nähe Benutzer weitergeleitet werden soll.</p>
+      <p>Gibt an, dass Endbenutzer-Datenverkehrs basierend auf den nächsten verfügbaren Endpunkt im Hinblick auf die niedrigste Netzwerklatenz weitergeleitet werden soll.</p>
       <p></p>
     syntax:
       content: public WithEndpoint withPerformanceBasedRouting()
@@ -64,10 +89,10 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-      startLine: 134
+      startLine: 135
     package: com.microsoft.azure.management.trafficmanager
     summary: |-
-      <p>Gibt an, dass Endbenutzer-Datenverkehrs an den Endpunkt, d. h. basierend auf seiner Priorität weitergeleitet werden soll Verwenden Sie den Endpunkt mit der höchsten Priorität und ist er nicht verfügbaren Fallback auf den Endpunkt mit höchster Priorität weiter.</p>
+      <p>Gibt an, dass Endbenutzer Datenverkehr sollen, an den Endpunkt weitergeleitet werden, d. h. basierend auf seiner Priorität verwenden Sie den Endpunkt mit der höchsten Priorität und ist er nicht verfügbaren Fallback auf den Endpunkt mit höchster Priorität weiter.</p>
       <p></p>
     syntax:
       content: public WithEndpoint withPriorityBasedRouting()
@@ -88,7 +113,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-      startLine: 158
+      startLine: 168
     package: com.microsoft.azure.management.trafficmanager
     summary: |-
       <p>Geben Sie die datenverkehrrouting-Methode für das Profil ein.</p>
@@ -116,7 +141,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-trafficmanager/src/main/java/com/microsoft/azure/management/trafficmanager/TrafficManagerProfile.java
-      startLine: 142
+      startLine: 143
     package: com.microsoft.azure.management.trafficmanager
     summary: |-
       <p>Gibt an, dass Endbenutzer-Datenverkehrs an die Endpunkte basierend auf der an den Endpunkt zugewiesenen Gewichtung verteilt werden sollen.</p>
@@ -141,6 +166,11 @@ references:
     name: withPerformanceBasedRouting
     nameWithType: TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withPerformanceBasedRouting
     fullName: WithEndpoint com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withPerformanceBasedRouting
+    package: com.microsoft.azure.management.trafficmanager
+  - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withGeographicBasedRouting*
+    name: withGeographicBasedRouting
+    nameWithType: TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withGeographicBasedRouting
+    fullName: WithEndpoint com.microsoft.azure.management.trafficmanager.TrafficManagerProfile.DefinitionStages.WithTrafficRoutingMethod.withGeographicBasedRouting
     package: com.microsoft.azure.management.trafficmanager
   - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profile_1356d69408172965b502b0f76c7dc04c1.withTrafficRoutingMethod*
     name: withTrafficRoutingMethod
@@ -173,7 +203,7 @@ references:
     name: TrafficRoutingMethod
     nameWithType: TrafficRoutingMethod
     fullName: com.microsoft.azure.management.trafficmanager.TrafficRoutingMethod
-    type: Enum
-    summary: <p>Mögliche Verteilermethoden von Traffic Manager-Profil unterstützt. </p>
+    type: Class
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.trafficmanager._traffic_routing_method" data-throw-if-not-resolved="false">TrafficRoutingMethod</xref>. </p>
     syntax:
-      content: public enum TrafficRoutingMethod
+      content: public class TrafficRoutingMethod

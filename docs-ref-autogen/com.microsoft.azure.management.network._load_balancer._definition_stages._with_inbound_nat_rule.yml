@@ -15,10 +15,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 354
+      startLine: 287
     package: com.microsoft.azure.management.network
     summary: '<p>Die Stufe der einen Load Balancer-Definition, die zum Erstellen einer neuen NAT-Eingangsregel ermöglicht. </p>'
     syntax:
@@ -37,11 +37,9 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancer.java
-      startLine: 362
+      startLine: 293
     package: com.microsoft.azure.management.network
-    summary: |-
-      <p>Beginn der Definition einer neuen NAT-Eingangsregel zum Lastenausgleich hinzufügen. </p>
-      <p>Die Definition muss mit einem Aufruf von abgeschlossen werden<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+    summary: <p>Beginn der Definition einer neuen NAT-Eingangsregel zum Lastenausgleich hinzufügen. </p>
     syntax:
       content: public LoadBalancerInboundNatRule.DefinitionStages.Blank<WithCreateAndInboundNatRule> defineInboundNatRule(String name)
       parameters:
@@ -91,26 +89,13 @@ references:
     summary: <p>Die Phase einer Last des Lastenausgleichsmoduls Definition ermöglichen das Lastenausgleichsmodul "oder" Starten konfigurieren optionale NAT-Eingangsregeln oder eines Pools erstellen. </p>
     syntax:
       content: 'public interface WithCreateAndNatChoice extends LoadBalancer.DefinitionStages.WithCreate,LoadBalancer.DefinitionStages.WithInboundNatRule,LoadBalancer.DefinitionStages.WithInboundNatPool'
-  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe_or_nat
+  - uid: com.microsoft.azure.management.network._load_balancer._definition_stages._with_l_b_rule_or_nat
     parent: com.microsoft.azure.management.network
-    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_probe_or_nat.yml
-    name: LoadBalancer.DefinitionStages.WithProbeOrNat
-    nameWithType: LoadBalancer.DefinitionStages.WithProbeOrNat
-    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithProbeOrNat
+    href: com.microsoft.azure.management.network._load_balancer._definition_stages._with_l_b_rule_or_nat.yml
+    name: LoadBalancer.DefinitionStages.WithLBRuleOrNat
+    nameWithType: LoadBalancer.DefinitionStages.WithLBRuleOrNat
+    fullName: com.microsoft.azure.management.network.LoadBalancer.DefinitionStages.WithLBRuleOrNat
     type: Interface
-    summary: '<p>Die Stufe der einen Load Balancer-Definition, die einen Prüfpunkt oder eine Regel für eingehende NAT oder Pool hinzufügen können. </p>'
+    summary: <p>Die Phase der einen Load Balancer-Definition ermöglicht eine Last Blanacing hinzufügen Regel oder ein NAT-Eingangsregel oder Pool. </p>
     syntax:
-      content: public interface WithProbeOrNat
-  - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()
-    parent: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition
-    href: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.yml
-    name: attach()
-    nameWithType: Attachable.InDefinition<ParentT>.attach()
-    fullName: ParentT com.microsoft.azure.management.resources.fluentcore.model.Attachable<ParentT>.InDefinition<ParentT>.attach()
-    type: Method
-    summary: <p>Fügt die Definition der untergeordneten an die übergeordnete Ressource Definition an. </p>
-    syntax:
-      content: public ParentT attach()
-      return:
-        type: 18a275b1
-        description: <p>die nächste Phase der der Definition des übergeordneten </p>
+      content: public interface WithLBRuleOrNat

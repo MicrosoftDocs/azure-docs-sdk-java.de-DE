@@ -4,11 +4,22 @@ items:
     id: _iot_hub_transport_message
     parent: com.microsoft.azure.sdk.iot.device.transport
     children:
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getDeviceOperationType()
       - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getIotHubMethod()
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getMethodName()
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getRequestId()
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getStatus()
       - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getUriPath()
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getVersion()
+      - 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.IotHubTransportMessage(byte [],MessageType)'
       - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.IotHubTransportMessage(String)
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setDeviceOperationType(DeviceOperations)
       - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setIotHubMethod(IotHubMethod)
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setMethodName(String)
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setRequestId(String)
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setStatus(String)
       - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setUriPath(String)
+      - com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setVersion(String)
     href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
     langs:
       - java
@@ -22,20 +33,21 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-iot-sdk-java'
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
-      startLine: 11
+      startLine: 15
     package: com.microsoft.azure.sdk.iot.device.transport
-    summary: '<p>Erweitert <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref>, Hinzufügen von Elementen der Transport. </p>'
+    summary: '<p>Erweitert <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref>, Hinzufügen von Elementen der Transport. </p>'
     syntax:
       content: public class IotHubTransportMessage extends Message
     inheritance:
       - java.lang.Object
       - com.microsoft.azure.sdk.iot.device._message
     inheritedMembers:
-      - com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET()
+      - com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET
       - com.microsoft.azure.sdk.iot.device._message.getBodyStream()
       - com.microsoft.azure.sdk.iot.device._message.getBytes()
       - com.microsoft.azure.sdk.iot.device._message.getCorrelationId()
       - com.microsoft.azure.sdk.iot.device._message.getDeliveryAcknowledgement()
+      - com.microsoft.azure.sdk.iot.device._message.getIotHubConnectionString()
       - com.microsoft.azure.sdk.iot.device._message.getMessageId()
       - com.microsoft.azure.sdk.iot.device._message.getMessageType()
       - com.microsoft.azure.sdk.iot.device._message.getProperties()
@@ -50,9 +62,32 @@ items:
       - com.microsoft.azure.sdk.iot.device._message.setAbsoluteExpiryTime(long)
       - com.microsoft.azure.sdk.iot.device._message.setCorrelationId(String)
       - com.microsoft.azure.sdk.iot.device._message.setExpiryTime(long)
+      - com.microsoft.azure.sdk.iot.device._message.setIotHubConnectionString(IotHubConnectionString)
       - com.microsoft.azure.sdk.iot.device._message.setMessageId(String)
       - com.microsoft.azure.sdk.iot.device._message.setMessageType(MessageType)
       - 'com.microsoft.azure.sdk.iot.device._message.setProperty(String,String)'
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getDeviceOperationType()
+    id: getDeviceOperationType()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: getDeviceOperationType()
+    nameWithType: IotHubTransportMessage.getDeviceOperationType()
+    fullName: DeviceOperations com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getDeviceOperationType()
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getDeviceOperationType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 160
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Für den Vorgang Gerätetyp Getter-Methode </p>
+    syntax:
+      content: public DeviceOperations getDeviceOperationType()
+      return:
+        type: com.microsoft.azure.sdk.iot.device._device_twin._device_operations
+        description: <p>der DeviceOperations Eum-Wert mit dem aktuellen Vorgangstyp. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getIotHubMethod()
     id: getIotHubMethod()
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
@@ -67,7 +102,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
-      startLine: 57
+      startLine: 221
     package: com.microsoft.azure.sdk.iot.device.transport
     summary: <p>Getter-Methode für die IoT Hub-Methode </p>
     syntax:
@@ -75,6 +110,72 @@ items:
       return:
         type: com.microsoft.azure.sdk.iot.device._iot_hub_method
         description: '<p>die IoT Hub-Methode (POST, GET). </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getMethodName()
+    id: getMethodName()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: getMethodName()
+    nameWithType: IotHubTransportMessage.getMethodName()
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getMethodName()
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getMethodName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 189
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Getter-Methode für den Methodennamen des Gerätevorgangs-Methode </p>
+    syntax:
+      content: public String getMethodName()
+      return:
+        type: '26831127'
+        description: <p>Der Methodenname des Gerätevorgangs-Methode. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getRequestId()
+    id: getRequestId()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: getRequestId()
+    nameWithType: IotHubTransportMessage.getRequestId()
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getRequestId()
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getRequestId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 112
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Get-Accessor für die Anforderungs-id </p>
+    syntax:
+      content: public String getRequestId()
+      return:
+        type: '26831127'
+        description: '<p>die Zeichenfolge, die die Anforderungs-Id enthält. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getStatus()
+    id: getStatus()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: getStatus()
+    nameWithType: IotHubTransportMessage.getStatus()
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getStatus()
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getStatus*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 136
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Für den Status der getter-Methode </p>
+    syntax:
+      content: public String getStatus()
+      return:
+        type: '26831127'
+        description: '<p>die Zeichenfolge, die den Anforderungsstatus enthält. </p>'
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getUriPath()
     id: getUriPath()
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
@@ -89,14 +190,62 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
-      startLine: 67
+      startLine: 231
     package: com.microsoft.azure.sdk.iot.device.transport
     summary: <p>Getter-Methode für den URI-Pfad </p>
     syntax:
       content: public String getUriPath()
       return:
         type: '26831127'
-        description: <p>die Zeichenfolge mit dem URI-Pfad. </p>
+        description: <p>Die Zeichenfolge mit dem URI-Pfad. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getVersion()
+    id: getVersion()
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: getVersion()
+    nameWithType: IotHubTransportMessage.getVersion()
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getVersion()
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getVersion*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 88
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Für die Nachrichtenversion Getter-Methode </p>
+    syntax:
+      content: public String getVersion()
+      return:
+        type: '26831127'
+        description: '<p>die Zeichenfolge, die mit der Version. </p>'
+  - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.IotHubTransportMessage(byte [],MessageType)'
+    id: 'IotHubTransportMessage(byte [],MessageType)'
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: 'IotHubTransportMessage(byte[] data, MessageType messageType)'
+    nameWithType: 'IotHubTransportMessage.IotHubTransportMessage(byte[] data, MessageType messageType)'
+    fullName: 'com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.IotHubTransportMessage(byte[] data, MessageType messageType)'
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.IotHubTransportMessage*
+    type: Constructor
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 38
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Konstruktor mit Binärdaten und Nachrichtentyp </p>
+    syntax:
+      content: 'public IotHubTransportMessage(byte[] data, MessageType messageType)'
+      parameters:
+        - id: data
+          type: ccd9418d
+          description: <p>Das Bytearray der Nachricht. </p>
+        - id: messageType
+          type: com.microsoft.azure.sdk.iot.device._message_type
+          description: <p>Den Nachrichtentyp der Nachricht. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.IotHubTransportMessage(String)
     id: IotHubTransportMessage(String)
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
@@ -111,7 +260,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
-      startLine: 27
+      startLine: 60
     package: com.microsoft.azure.sdk.iot.device.transport
     summary: <p>Der Konstruktor. </p>
     syntax:
@@ -119,7 +268,30 @@ items:
       parameters:
         - id: body
           type: '26831127'
-          description: <p>Der Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. Intern wird es in ein Bytearray mit UTF-8-Codierung serialisiert. </p>
+          description: <p>Der Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. Intern wird es in ein Bytearray mit UTF-8-Codierung serialisiert. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setDeviceOperationType(DeviceOperations)
+    id: setDeviceOperationType(DeviceOperations)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: setDeviceOperationType(DeviceOperations deviceOperationType)
+    nameWithType: IotHubTransportMessage.setDeviceOperationType(DeviceOperations deviceOperationType)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setDeviceOperationType(DeviceOperations deviceOperationType)
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setDeviceOperationType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 148
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Setter-Methode für den Vorgang Gerätetyp </p>
+    syntax:
+      content: public void setDeviceOperationType(DeviceOperations deviceOperationType)
+      parameters:
+        - id: deviceOperationType
+          type: com.microsoft.azure.sdk.iot.device._device_twin._device_operations
+          description: <p>Der DeviceOperations Enum-Wert. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setIotHubMethod(IotHubMethod)
     id: setIotHubMethod(IotHubMethod)
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
@@ -134,7 +306,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
-      startLine: 37
+      startLine: 201
     package: com.microsoft.azure.sdk.iot.device.transport
     summary: <p>Setter für die IoT Hub-Methode </p>
     syntax:
@@ -143,6 +315,75 @@ items:
         - id: iotHubMethod
           type: com.microsoft.azure.sdk.iot.device._iot_hub_method
           description: '<p>Die Enumeration, die den IoT Hub-Methode enthält. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setMethodName(String)
+    id: setMethodName(String)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: setMethodName(String methodName)
+    nameWithType: IotHubTransportMessage.setMethodName(String methodName)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setMethodName(String methodName)
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setMethodName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 172
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Setter-Methode für den Methodennamen des Gerätevorgangs-Methode </p>
+    syntax:
+      content: public void setMethodName(String methodName)
+      parameters:
+        - id: methodName
+          type: '26831127'
+          description: '<p>Die Zeichenfolge, die den Methodennamen des Methodenvorgangs Gerät enthält. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setRequestId(String)
+    id: setRequestId(String)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: setRequestId(String id)
+    nameWithType: IotHubTransportMessage.setRequestId(String id)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setRequestId(String id)
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setRequestId*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 100
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Setter für die Nachrichten-id </p>
+    syntax:
+      content: public void setRequestId(String id)
+      parameters:
+        - id: id
+          type: '26831127'
+          description: '<p>Die Zeichenfolge, die die Id enthält. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setStatus(String)
+    id: setStatus(String)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: setStatus(String status)
+    nameWithType: IotHubTransportMessage.setStatus(String status)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setStatus(String status)
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setStatus*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 124
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Setter-Methode für den status </p>
+    syntax:
+      content: public void setStatus(String status)
+      parameters:
+        - id: status
+          type: '26831127'
+          description: '<p>Die Zeichenfolge, die den Status enthält. </p>'
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setUriPath(String)
     id: setUriPath(String)
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
@@ -157,7 +398,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
-      startLine: 47
+      startLine: 211
     package: com.microsoft.azure.sdk.iot.device.transport
     summary: <p>Setter für die URI-Pfad </p>
     syntax:
@@ -166,15 +407,92 @@ items:
         - id: uriPath
           type: '26831127'
           description: <p>Die Zeichenfolge mit dem URI-Pfad. </p>
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setVersion(String)
+    id: setVersion(String)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.yml
+    langs:
+      - java
+    name: setVersion(String version)
+    nameWithType: IotHubTransportMessage.setVersion(String version)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setVersion(String version)
+    overload: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setVersion*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/IotHubTransportMessage.java
+      startLine: 76
+    package: com.microsoft.azure.sdk.iot.device.transport
+    summary: <p>Setter für die Nachrichtenversion </p>
+    syntax:
+      content: public void setVersion(String version)
+      parameters:
+        - id: version
+          type: '26831127'
+          description: '<p>Die Zeichenfolge, die mit der Version. </p>'
 references:
-  - uid: '26831127'
+  - uid: ccd9418d
     spec.java:
-      - name: String
-        fullName: String
+      - name: 'byte []'
+        fullName: 'byte []'
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.IotHubTransportMessage*
     name: IotHubTransportMessage
     nameWithType: IotHubTransportMessage.IotHubTransportMessage
     fullName: com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.IotHubTransportMessage
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setVersion*
+    name: setVersion
+    nameWithType: IotHubTransportMessage.setVersion
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setVersion
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getVersion*
+    name: getVersion
+    nameWithType: IotHubTransportMessage.getVersion
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getVersion
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setRequestId*
+    name: setRequestId
+    nameWithType: IotHubTransportMessage.setRequestId
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setRequestId
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getRequestId*
+    name: getRequestId
+    nameWithType: IotHubTransportMessage.getRequestId
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getRequestId
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setStatus*
+    name: setStatus
+    nameWithType: IotHubTransportMessage.setStatus
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setStatus
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getStatus*
+    name: getStatus
+    nameWithType: IotHubTransportMessage.getStatus
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getStatus
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setDeviceOperationType*
+    name: setDeviceOperationType
+    nameWithType: IotHubTransportMessage.setDeviceOperationType
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setDeviceOperationType
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getDeviceOperationType*
+    name: getDeviceOperationType
+    nameWithType: IotHubTransportMessage.getDeviceOperationType
+    fullName: DeviceOperations com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getDeviceOperationType
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setMethodName*
+    name: setMethodName
+    nameWithType: IotHubTransportMessage.setMethodName
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.setMethodName
+    package: com.microsoft.azure.sdk.iot.device.transport
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.getMethodName*
+    name: getMethodName
+    nameWithType: IotHubTransportMessage.getMethodName
+    fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getMethodName
     package: com.microsoft.azure.sdk.iot.device.transport
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport_message.setIotHubMethod*
     name: setIotHubMethod
@@ -196,7 +514,7 @@ references:
     nameWithType: IotHubTransportMessage.getUriPath
     fullName: String com.microsoft.azure.sdk.iot.device.transport.IotHubTransportMessage.getUriPath
     package: com.microsoft.azure.sdk.iot.device.transport
-  - uid: com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET()
+  - uid: com.microsoft.azure.sdk.iot.device._message.DEFAULT_IOTHUB_MESSAGE_CHARSET
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
     name: DEFAULT_IOTHUB_MESSAGE_CHARSET
@@ -231,7 +549,7 @@ references:
       content: 'public byte [] getBytes()'
       return:
         type: ccd9418d
-        description: '<p>Eine Kopie dieser <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Text, als ein Bytearray. </p>'
+        description: '<p>Eine Kopie dieser <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Text, als ein Bytearray. </p>'
   - uid: com.microsoft.azure.sdk.iot.device._message.getCorrelationId()
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -258,6 +576,19 @@ references:
       return:
         type: '26831127'
         description: <p>der Wert der Übermittlung-Bestätigung </p>
+  - uid: com.microsoft.azure.sdk.iot.device._message.getIotHubConnectionString()
+    parent: com.microsoft.azure.sdk.iot.device._message
+    href: com.microsoft.azure.sdk.iot.device._message.yml
+    name: getIotHubConnectionString()
+    nameWithType: Message.getIotHubConnectionString()
+    fullName: IotHubConnectionString com.microsoft.azure.sdk.iot.device.Message.getIotHubConnectionString()
+    type: Method
+    summary: <p>Getter-Methode für die IotHubConnectionString-Eigenschaft </p>
+    syntax:
+      content: public IotHubConnectionString getIotHubConnectionString()
+      return:
+        type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string
+        description: <p>der Wert iotHubConnectionString </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.getMessageId()
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -278,12 +609,12 @@ references:
     nameWithType: Message.getMessageType()
     fullName: MessageType com.microsoft.azure.sdk.iot.device.Message.getMessageType()
     type: Method
-    summary: <p>Get-Accessor für die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typ </p>
+    summary: <p>Get-Accessor für die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typ </p>
     syntax:
       content: public MessageType getMessageType()
       return:
         type: com.microsoft.azure.sdk.iot.device._message_type
-        description: <p>die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typwert </p>
+        description: <p>die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typwert </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.getProperties()
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -306,7 +637,7 @@ references:
     nameWithType: Message.getProperty(String name)
     fullName: String com.microsoft.azure.sdk.iot.device.Message.getProperty(String name)
     type: Method
-    summary: <p>Ruft die Werte der Eigenschaften dieses benutzerdefinierten <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Ruft die Werte der Eigenschaften dieses benutzerdefinierten <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>
     syntax:
       content: public String getProperty(String name)
       parameters:
@@ -378,7 +709,7 @@ references:
       parameters:
         - id: stream
           type: f03846a9
-          description: '<p>Ein Datenstrom, geben Sie den Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. </p>'
+          description: '<p>Ein Datenstrom, geben Sie den Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. </p>'
   - uid: 'com.microsoft.azure.sdk.iot.device._message.Message(byte [])'
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -392,7 +723,7 @@ references:
       parameters:
         - id: body
           type: ccd9418d
-          description: <p>Der Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. </p>
+          description: <p>Der Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.Message(String)
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -406,7 +737,7 @@ references:
       parameters:
         - id: body
           type: '26831127'
-          description: <p>Der Text des neuen <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Instanz. Intern wird es in ein Bytearray mit UTF-8-Codierung serialisiert. </p>
+          description: <p>Der Text des neuen <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Instanz. Intern wird es in ein Bytearray mit UTF-8-Codierung serialisiert. </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.setAbsoluteExpiryTime(long)
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -449,6 +780,20 @@ references:
         - id: timeOut
           type: 0364520f
           description: '<p>Der Timeout für die Nachricht, in Millisekunden, nach der aktuellen Uhrzeit. </p>'
+  - uid: com.microsoft.azure.sdk.iot.device._message.setIotHubConnectionString(IotHubConnectionString)
+    parent: com.microsoft.azure.sdk.iot.device._message
+    href: com.microsoft.azure.sdk.iot.device._message.yml
+    name: setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+    nameWithType: Message.setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+    fullName: void com.microsoft.azure.sdk.iot.device.Message.setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+    type: Method
+    summary: <p>Setter-Methode für den IotHubConnectionString-Typ </p>
+    syntax:
+      content: public void setIotHubConnectionString(IotHubConnectionString iotHubConnectionString)
+      parameters:
+        - id: iotHubConnectionString
+          type: com.microsoft.azure.sdk.iot.device._iot_hub_connection_string
+          description: <p>Der festzulegende Wert iotHubConnectionString </p>
   - uid: com.microsoft.azure.sdk.iot.device._message.setMessageId(String)
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -470,13 +815,13 @@ references:
     nameWithType: Message.setMessageType(MessageType type)
     fullName: void com.microsoft.azure.sdk.iot.device.Message.setMessageType(MessageType type)
     type: Method
-    summary: <p>Setter für die <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typ </p>
+    summary: <p>Setter für die <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typ </p>
     syntax:
       content: public void setMessageType(MessageType type)
       parameters:
         - id: type
           type: com.microsoft.azure.sdk.iot.device._message_type
-          description: <p>Die Enumeration mit den <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> Typwert </p>
+          description: <p>Die Enumeration mit den <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> Typwert </p>
   - uid: 'com.microsoft.azure.sdk.iot.device._message.setProperty(String,String)'
     parent: com.microsoft.azure.sdk.iot.device._message
     href: com.microsoft.azure.sdk.iot.device._message.yml
@@ -484,7 +829,7 @@ references:
     nameWithType: 'Message.setProperty(String name, String value)'
     fullName: 'void com.microsoft.azure.sdk.iot.device.Message.setProperty(String name, String value)'
     type: Method
-    summary: '<p>Fügt ein, oder legt ihn fest benutzerdefinierten Eigenschaften dieses <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Fügt ein, oder legt ihn fest benutzerdefinierten Eigenschaften dieses <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>'
     syntax:
       content: 'public void setProperty(String name, String value)'
       parameters:
@@ -513,3 +858,22 @@ references:
     summary: <p>Generische IoT Hub-Methode. </p>
     syntax:
       content: public enum IotHubMethod
+  - uid: com.microsoft.azure.sdk.iot.device._device_twin._device_operations
+    parent: com.microsoft.azure.sdk.iot.device._device_twin
+    href: com.microsoft.azure.sdk.iot.device._device_twin._device_operations.yml
+    name: DeviceOperations
+    nameWithType: DeviceOperations
+    fullName: com.microsoft.azure.sdk.iot.device.DeviceTwin.DeviceOperations
+    type: Enum
+    syntax:
+      content: public enum DeviceOperations
+  - uid: com.microsoft.azure.sdk.iot.device._message_type
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._message_type.yml
+    name: MessageType
+    nameWithType: MessageType
+    fullName: com.microsoft.azure.sdk.iot.device.MessageType
+    type: Enum
+    summary: <p>Der Nachrichtentyp IoTHub </p>
+    syntax:
+      content: public enum MessageType

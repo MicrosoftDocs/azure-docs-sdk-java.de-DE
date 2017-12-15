@@ -13,10 +13,10 @@ items:
     source:
       remote:
         path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-compute/src/main/java/com/microsoft/azure/management/compute/VirtualMachine.java
-      startLine: 398
+      startLine: 480
     package: com.microsoft.azure.management.compute
     summary: <p>Vollständig nicht verwalteten Datenträger basieren VM-Definition. </p>
     syntax:
@@ -31,6 +31,10 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
       - com.microsoft.azure.management.compute._virtual_machine._definition_scf9bdd44a2e16d0fcfd219b7943558e8.withAdminPassword(String)
       - com.microsoft.azure.management.compute._virtual_machine._definition_s465c0ecb78deb1cd582fbf2d5c059111.withAdminUsername(String)
+      - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics()
+      - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics(Creatable<StorageAccount>)
+      - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics(StorageAccount)
+      - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics(String)
       - com.microsoft.azure.management.compute._virtual_machine._definition_sc83569daf5e0514ca0490580b2d9044a.withComputerName(String)
       - com.microsoft.azure.management.compute._virtual_machine._definition_sc83569daf5e0514ca0490580b2d9044a.withCustomData(String)
       - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_availability_set.withExistingAvailabilitySet(AvailabilitySet)
@@ -43,6 +47,8 @@ items:
       - 'com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_o_s.withLatestLinuxImage(String,String,String)'
       - 'com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_o_s.withLatestWindowsImage(String,String,String)'
       - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_o_s.withLinuxCustomImage(String)
+      - com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef.withManagedServiceIdentity()
+      - com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef.withManagedServiceIdentity(int)
       - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_availability_set.withNewAvailabilitySet(String)
       - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_availability_set.withNewAvailabilitySet(Creatable<AvailabilitySet>)
       - com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_network.withNewPrimaryNetwork(Creatable<Network>)
@@ -58,6 +64,7 @@ items:
       - com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075.withOSDiskEncryptionSettings(DiskEncryptionSettings)
       - com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075.withOSDiskName(String)
       - com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075.withOSDiskSizeInGB(Integer)
+      - com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075.withOSDiskSizeInGB(int)
       - 'com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_unmanaged_create.withOSDiskVhdLocation(String,String)'
       - com.microsoft.azure.management.compute._virtual_machine._definition_sc310c06cbd699c5c771c45eaf3c5ba77.withoutAutoUpdate()
       - com.microsoft.azure.management.compute._virtual_machine._definition_se8a47d81fcf187a695063bd29281b998.withoutPrimaryPublicIPAddress()
@@ -213,7 +220,7 @@ references:
       parameters:
         - id: adminPassword
           type: '26831127'
-          description: '<p>ein Kennwort, die die Kriterien für die folgenden <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Windows-VM-Kennwörter. </p>'
+          description: '<p>ein Kennwort, die die Kriterien für die folgenden <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Windows-VM-Kennwörter. </p>'
       return:
         type: com.microsoft.azure.management.compute._virtual_machine._definition_sc310c06cbd699c5c771c45eaf3c5ba77
         description: <p>die nächste Phase der definition </p>
@@ -235,6 +242,78 @@ references:
           description: <p>ein Benutzername erforderliche Benennungskonvention für Windows-Benutzernamen </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine._definition_scf9bdd44a2e16d0fcfd219b7943558e8
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics()
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.yml
+    name: withBootDiagnostics()
+    nameWithType: VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics()
+    fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics()
+    type: Method
+    summary: |-
+      <p>Gibt an, dass diese startdiagnoseeinstellungen muss auf dem virtuellen Computer aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withBootDiagnostics()
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics(Creatable<StorageAccount>)
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.yml
+    name: withBootDiagnostics(Creatable<StorageAccount> creatable)
+    nameWithType: VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics(Creatable<StorageAccount> creatable)
+    fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics(Creatable<StorageAccount> creatable)
+    type: Method
+    summary: |-
+      <p>Gibt an, dass diese startdiagnoseeinstellungen muss auf dem virtuellen Computer aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withBootDiagnostics(Creatable<StorageAccount> creatable)
+      parameters:
+        - id: creatable
+          type: com.microsoft.azure.management.resources.fluentcore.model._creatable78504a52com.microsoft.azure.management.storage._storage_accounta08ddfce
+          description: <p>das Speicherkonto erstellt und zum Speichern der startdiagnoseeinstellungen </p>
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics(StorageAccount)
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.yml
+    name: withBootDiagnostics(StorageAccount storageAccount)
+    nameWithType: VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics(StorageAccount storageAccount)
+    fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics(StorageAccount storageAccount)
+    type: Method
+    summary: |-
+      <p>Gibt an, dass diese startdiagnoseeinstellungen muss auf dem virtuellen Computer aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withBootDiagnostics(StorageAccount storageAccount)
+      parameters:
+        - id: storageAccount
+          type: com.microsoft.azure.management.storage._storage_account
+          description: '<p>ein vorhandenes Speicherkonto werden verwendet, um die startdiagnoseeinstellungen zu speichern </p>'
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.withBootDiagnostics(String)
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_boot_diagnostics.yml
+    name: withBootDiagnostics(String storageAccountBlobEndpointUri)
+    nameWithType: VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics(String storageAccountBlobEndpointUri)
+    fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithBootDiagnostics.withBootDiagnostics(String storageAccountBlobEndpointUri)
+    type: Method
+    summary: |-
+      <p>Gibt an, dass diese startdiagnoseeinstellungen muss auf dem virtuellen Computer aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withBootDiagnostics(String storageAccountBlobEndpointUri)
+      parameters:
+        - id: storageAccountBlobEndpointUri
+          type: '26831127'
+          description: <p>ein Speicherkonto-BLOB-Endpunkt zum Speichern der startdiagnoseeinstellungen </p>
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_create
         description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine._definition_sc83569daf5e0514ca0490580b2d9044a.withComputerName(String)
     parent: com.microsoft.azure.management.compute._virtual_machine._definition_sc83569daf5e0514ca0490580b2d9044a
@@ -482,6 +561,40 @@ references:
       return:
         type: com.microsoft.azure.management.compute._virtual_machine._definition_s52a2e017478d44add60a83999871f77d
         description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef.withManagedServiceIdentity()
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef.yml
+    name: withManagedServiceIdentity()
+    nameWithType: VirtualMachine.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity()
+    type: Method
+    summary: |-
+      <p>Gibt an, dass verwaltete Dienstidentität muss auf dem virtuellen Computer aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity()
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_s2c1f044a75a5d9f2faffdfd8d0828536
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef.withManagedServiceIdentity(int)
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_s6a28880883457a93afa88893abf976ef.yml
+    name: withManagedServiceIdentity(int tokenPort)
+    nameWithType: VirtualMachine.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    fullName: WithRoleAndScopeOrCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithManagedServiceIdentity.withManagedServiceIdentity(int tokenPort)
+    type: Method
+    summary: |-
+      <p>Gibt an, dass verwaltete Dienstidentität muss auf dem virtuellen Computer aktiviert werden.</p>
+      <p></p>
+    syntax:
+      content: public WithRoleAndScopeOrCreate withManagedServiceIdentity(int tokenPort)
+      parameters:
+        - id: tokenPort
+          type: f75371fa
+          description: '<p>der Port auf dem virtuellen Computer, auf dem Zugriffstoken verfügbar ist. </p>'
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_s2c1f044a75a5d9f2faffdfd8d0828536
+        description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_availability_set.withNewAvailabilitySet(String)
     parent: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_availability_set
     href: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_availability_set.yml
@@ -719,7 +832,7 @@ references:
     fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithOSDiskSettings.withOSDiskEncryptionSettings(DiskEncryptionSettings settings)
     type: Method
     summary: |-
-      <p>Gibt an, die verschlüsselungseinstellungen für das Betriebssystem <xref href="com.microsoft.azure.management.compute._disk" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Gibt an, die verschlüsselungseinstellungen für das Betriebssystem <xref uid="com.microsoft.azure.management.compute._disk" data-throw-if-not-resolved="false">Datenträger</xref>.</p>
       <p></p>
     syntax:
       content: public WithCreate withOSDiskEncryptionSettings(DiskEncryptionSettings settings)
@@ -738,7 +851,7 @@ references:
     fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithOSDiskSettings.withOSDiskName(String name)
     type: Method
     summary: |-
-      <p>Gibt den Namen für das Betriebssystem <xref href="com.microsoft.azure.management.compute._disk" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Gibt den Namen für das Betriebssystem <xref uid="com.microsoft.azure.management.compute._disk" data-throw-if-not-resolved="false">Datenträger</xref>.</p>
       <p></p>
     syntax:
       content: public WithCreate withOSDiskName(String name)
@@ -757,13 +870,32 @@ references:
     fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithOSDiskSettings.withOSDiskSizeInGB(Integer size)
     type: Method
     summary: |-
-      <p>Gibt die Größe des der <xref href="com.microsoft.azure.management.compute._o_s_disk" data-throw-if-not-resolved="false"></xref> in GB.</p>
+      <p>Gibt die Größe des der <xref uid="com.microsoft.azure.management.compute._o_s_disk" data-throw-if-not-resolved="false">Betriebssystemdatenträger</xref> in GB.</p>
       <p></p>
     syntax:
       content: public WithCreate withOSDiskSizeInGB(Integer size)
       parameters:
         - id: size
           type: 08effaa0
+          description: <p>die VHD-Größe </p>
+      return:
+        type: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_create
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075.withOSDiskSizeInGB(int)
+    parent: com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075
+    href: com.microsoft.azure.management.compute._virtual_machine._definition_s96e6d122c4685cc038cfd62eb3c8f075.yml
+    name: withOSDiskSizeInGB(int size)
+    nameWithType: VirtualMachine.DefinitionStages.WithOSDiskSettings.withOSDiskSizeInGB(int size)
+    fullName: WithCreate com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithOSDiskSettings.withOSDiskSizeInGB(int size)
+    type: Method
+    summary: |-
+      <p>Gibt die Größe des der <xref uid="com.microsoft.azure.management.compute._o_s_disk" data-throw-if-not-resolved="false">Betriebssystemdatenträger</xref> in GB.</p>
+      <p></p>
+    syntax:
+      content: public WithCreate withOSDiskSizeInGB(int size)
+      parameters:
+        - id: size
+          type: f75371fa
           description: <p>die VHD-Größe </p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine._definition_stages._with_create
@@ -963,7 +1095,7 @@ references:
       parameters:
         - id: rootPassword
           type: '26831127'
-          description: '<p>ein Kennwort, das die Komplexität Kriterien für die folgenden <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Linux VM Kennwörter. </p>'
+          description: '<p>ein Kennwort, das die Komplexität Kriterien für die folgenden <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Linux VM Kennwörter. </p>'
       return:
         type: com.microsoft.azure.management.compute._virtual_machine._definition_s4f6824f285810733460625589d802e51
         description: <p>die nächste Phase der definition </p>
@@ -1061,7 +1193,7 @@ references:
       parameters:
         - id: osDiskUrl
           type: '26831127'
-          description: <p>die URL für das Betriebssystem-Datenträger in OsDiskUrl die <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Speicherkonto </p>
+          description: <p>die URL für das Betriebssystem-Datenträger in OsDiskUrl der <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Speicherkonto </p>
         - id: osType
           type: com.microsoft.azure.management.compute._operating_system_types
           description: <p>der Betriebssystemtyp </p>
@@ -1224,13 +1356,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -1288,7 +1420,7 @@ references:
       parameters:
         - id: listener
           type: com.microsoft.azure.management.compute._win_r_m_listener
-          description: <p>die<xref href="com.microsoft.azure.management.compute._win_r_m_listener" data-throw-if-not-resolved="false"></xref></p>
+          description: <p>die <xref uid="com.microsoft.azure.management.compute._win_r_m_listener" data-throw-if-not-resolved="false">WinRMListener</xref></p>
       return:
         type: com.microsoft.azure.management.compute._virtual_machine._definition_sc310c06cbd699c5c771c45eaf3c5ba77
         description: '<p>die Phase, erstellt Windows-VM-Definition darstellt </p>'
@@ -1449,6 +1581,6 @@ references:
     nameWithType: VirtualMachine.DefinitionStages.WithUnmanagedCreate
     fullName: com.microsoft.azure.management.compute.VirtualMachine.DefinitionStages.WithUnmanagedCreate
     type: Interface
-    summary: '<p>Die Phase einer virtuellen Maschine-Definition enthält alle minimale erforderlichen Eingaben für den virtuellen Computer erstellt werden und optional zugelassen wird, nicht verwalteten Datenträger und die Einstellungen speziell für nicht verwalteten Betriebssystemdatenträger angegeben werden. </p>'
+    summary: '<p>Die Phase einer virtuellen Maschine-Definition enthält alle minimale erforderlichen Eingaben für den virtuellen Computer mithilfe von Storage-Konto (nicht verwalteten basierend BS-Datenträger erstellt werden und optional zugelassen wird, nicht verwalteten Datenträger und die Einstellungen speziell für nicht verwalteten Betriebssystemdatenträger angegeben werden. </p>'
     syntax:
       content: public interface WithUnmanagedCreate

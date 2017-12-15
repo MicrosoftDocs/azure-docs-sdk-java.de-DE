@@ -21,7 +21,7 @@ items:
         branch: master
         repo: 'https://github.com/azure/azure-data-lake-store-java'
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AzureADAuthenticator.java
-      startLine: 26
+      startLine: 27
     package: com.microsoft.azure.datalake.store.oauth2
     summary: '<p>Diese Klasse stellt Hilfsmethoden zum Abrufen von AAD-Token. Auch wenn es bequem, ist es nicht notwendig, diese Methoden verwenden, um die Token zu erhalten. Kunden können jede andere Methode verwenden (z. B. mithilfe des adal4j-Clients) zum Abrufen von Token. </p>'
     syntax:
@@ -42,17 +42,26 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AzureADAuthenticator.java
-      startLine: 62
+      startLine: 73
     package: com.microsoft.azure.datalake.store.oauth2
+    summary: |-
+      <p>Ruft AAD-token aus dem lokalen virtuellen Computer VM-Erweiterung ab. Dies funktioniert nur in einer Azure-VM mit der MSI-Erweiterung aktiviert.</p>
+      <p></p>
     syntax:
       content: 'public static AzureADToken getTokenFromMsi(int localPort, String tenantGuid)'
       parameters:
         - id: localPort
           type: f75371fa
+          description: '<p>der Port, an dem die MSI-Erweiterung ausgeführt wird. Wenn 0 oder eine negative Zahl angegeben wird, gehen Sie davon aus Standardportnummer 50342. </p>'
         - id: tenantGuid
           type: '26831127'
+          description: "<p>(optional) Die Guid des AAD-Mandanten. Kann<code>null \r\n\r\n    </code> . </p>"
       return:
         type: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> abgerufen, mit den Anmeldeinformationen </p>"
+    exceptions:
+      - type: cbf33bbe
+        description: '<p>IOException auslöst, wenn ein Fehler vorliegt, das Token abrufen </p>'
   - uid: 'com.microsoft.azure.datalake.store.oauth2._azure_a_d_authenticator.getTokenUsingClientCreds(String,String,String)'
     id: 'getTokenUsingClientCreds(String,String,String)'
     parent: com.microsoft.azure.datalake.store.oauth2._azure_a_d_authenticator
@@ -67,11 +76,11 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AzureADAuthenticator.java
-      startLine: 48
+      startLine: 49
     package: com.microsoft.azure.datalake.store.oauth2
     summary: |-
       <p>Ruft den Azure Active Directory token mit dem Benutzer-ID und Kennwort von einem Dienstprinzipal (d. h. Web-App in Azure Active Directory) ab. </p>
-      <p>Azure Active Directory-D ermöglicht Benutzern das Einrichten einer Web-app als einen Dienstprinzipal. Benutzer erhalten Dienstschlüssel für Dienstprinzipalname optional bei AAD. Diese Methode ruft ein Token mithilfe eines dienstprinzipals Client-ID und Schlüssel ab. Darüber hinaus benötigt den token-Endpunkt zugeordneten Verzeichnis des Benutzers. </p>
+      <p>Azure Active Directory ermöglicht Benutzern das Einrichten einer Web-app als einen Dienstprinzipal. Benutzer erhalten Dienstschlüssel für Dienstprinzipalname optional bei AAD. Diese Methode ruft ein Token mithilfe eines dienstprinzipals Client-ID und Schlüssel ab. Darüber hinaus benötigt den token-Endpunkt zugeordneten Verzeichnis des Benutzers. </p>
       <p></p>
     syntax:
       content: 'public static AzureADToken getTokenUsingClientCreds(String authEndpoint, String clientId, String clientSecret)'
@@ -87,7 +96,7 @@ items:
           description: <p>Der geheime Schlüssel der Client-Web-app </p>
       return:
         type: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\"></xref>mit den Anmeldeinformationen abgerufen </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> abgerufen, mit den Anmeldeinformationen </p>"
     exceptions:
       - type: cbf33bbe
         description: '<p>IOException auslöst, wenn ein Fehler vorliegt, eine Verbindung mit Azure AD </p>'
@@ -105,7 +114,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AzureADAuthenticator.java
-      startLine: 82
+      startLine: 100
     package: com.microsoft.azure.datalake.store.oauth2
     summary: |-
       <p>Ruft Aktualisierungstoken von Azure Active Directory-Token verwenden</p>
@@ -121,7 +130,7 @@ items:
           description: <p>Das Aktualisierungstoken </p>
       return:
         type: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\"></xref>Mithilfe des aktualisierungstokens abgerufen </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> abgerufen, mithilfe des aktualisierungstokens </p>"
     exceptions:
       - type: cbf33bbe
         description: '<p>IOException auslöst, wenn ein Fehler vorliegt, eine Verbindung mit Azure AD </p>'
@@ -139,7 +148,7 @@ items:
     source:
       remote: *ref_0
       path: src/main/java/com/microsoft/azure/datalake/store/oauth2/AzureADAuthenticator.java
-      startLine: 111
+      startLine: 129
     package: com.microsoft.azure.datalake.store.oauth2
     summary: |-
       <p>Ruft den Azure Active Directory token mit Benutzernamen und Kennwort des Benutzers ab. Dies funktioniert nur, wenn die Identität, die direkt mit "microsoftonline.com" authentifiziert werden kann. Es wahrscheinlich funktioniert nicht, wenn die Domäne verbunden ist, und/oder Multi-Factor Authentication oder einer anderen Form der strengen Authentifizierung für den Benutzer konfiguriert ist. </p>
@@ -159,7 +168,7 @@ items:
           description: <p>das Kennwort des Benutzers </p>
       return:
         type: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
-        description: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\"></xref>Mithilfe der Anmeldeinformationen des Benutzers abgerufen </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> mithilfe der Anmeldeinformationen des Benutzers abgerufen </p>"
     exceptions:
       - type: cbf33bbe
         description: '<p>IOException auslöst, wenn ein Fehler vorliegt, eine Verbindung mit Azure AD </p>'

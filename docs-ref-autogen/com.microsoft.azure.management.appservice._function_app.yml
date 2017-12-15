@@ -4,8 +4,15 @@ items:
     id: _function_app
     parent: com.microsoft.azure.management.appservice
     children:
+      - 'com.microsoft.azure.management.appservice._function_app.addFunctionKey(String,String,String)'
+      - 'com.microsoft.azure.management.appservice._function_app.addFunctionKeyAsync(String,String,String)'
+      - com.microsoft.azure.management.appservice._function_app.deploymentSlots()
       - com.microsoft.azure.management.appservice._function_app.getMasterKey()
       - com.microsoft.azure.management.appservice._function_app.getMasterKeyAsync()
+      - com.microsoft.azure.management.appservice._function_app.listFunctionKeys(String)
+      - com.microsoft.azure.management.appservice._function_app.listFunctionKeysAsync(String)
+      - 'com.microsoft.azure.management.appservice._function_app.removeFunctionKey(String,String)'
+      - 'com.microsoft.azure.management.appservice._function_app.removeFunctionKeyAsync(String,String)'
       - com.microsoft.azure.management.appservice._function_app.storageAccount()
       - com.microsoft.azure.management.appservice._function_app.syncTriggers()
       - com.microsoft.azure.management.appservice._function_app.syncTriggersAsync()
@@ -19,12 +26,12 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-      startLine: 24
+      startLine: 26
     package: com.microsoft.azure.management.appservice
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> App-Funktion. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> App-Funktion. </p>
     syntax:
       content: 'public interface FunctionApp extends WebAppBase,Refreshable<FunctionApp>,Updatable<FunctionApp.Update>'
     inheritedMembers:
@@ -42,6 +49,7 @@ items:
       - com.microsoft.azure.management.appservice._web_app_base.containerSize()
       - com.microsoft.azure.management.appservice._web_app_base.defaultDocuments()
       - com.microsoft.azure.management.appservice._web_app_base.defaultHostName()
+      - com.microsoft.azure.management.appservice._web_app_base.deploy()
       - com.microsoft.azure.management.appservice._web_app_base.enabled()
       - com.microsoft.azure.management.appservice._web_app_base.enabledHostNames()
       - com.microsoft.azure.management.appservice._web_app_base.gatewaySiteName()
@@ -104,6 +112,91 @@ items:
       - 'com.microsoft.azure.management.appservice._web_app_base.verifyDomainOwnership(String,String)'
       - 'com.microsoft.azure.management.appservice._web_app_base.verifyDomainOwnershipAsync(String,String)'
       - com.microsoft.azure.management.appservice._web_app_base.webSocketsEnabled()
+  - uid: 'com.microsoft.azure.management.appservice._function_app.addFunctionKey(String,String,String)'
+    id: 'addFunctionKey(String,String,String)'
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: 'addFunctionKey(String functionName, String keyName, String keyValue)'
+    nameWithType: 'FunctionApp.addFunctionKey(String functionName, String keyName, String keyValue)'
+    fullName: 'NameValuePair com.microsoft.azure.management.appservice.FunctionApp.addFunctionKey(String functionName, String keyName, String keyValue)'
+    overload: com.microsoft.azure.management.appservice._function_app.addFunctionKey*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 74
+    package: com.microsoft.azure.management.appservice
+    summary: <p>Fügt einen Schlüssel an eine Funktion in dieser Funktion app an. </p>
+    syntax:
+      content: 'public NameValuePair addFunctionKey(String functionName, String keyName, String keyValue)'
+      parameters:
+        - id: functionName
+          type: '26831127'
+          description: <p>der Name der Funktion </p>
+        - id: keyName
+          type: '26831127'
+          description: <p>der Name des hinzuzufügenden Schlüssels </p>
+        - id: keyValue
+          type: '26831127'
+          description: '<p>Dies ist optional. Wenn nicht angegeben ist, wird ein Wert generiert. </p>'
+      return:
+        type: com.microsoft.azure.management.appservice._name_value_pair
+        description: <p>die hinzugefügten Funktionstaste </p>
+  - uid: 'com.microsoft.azure.management.appservice._function_app.addFunctionKeyAsync(String,String,String)'
+    id: 'addFunctionKeyAsync(String,String,String)'
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: 'addFunctionKeyAsync(String functionName, String keyName, String keyValue)'
+    nameWithType: 'FunctionApp.addFunctionKeyAsync(String functionName, String keyName, String keyValue)'
+    fullName: 'Observable<NameValuePair> com.microsoft.azure.management.appservice.FunctionApp.addFunctionKeyAsync(String functionName, String keyName, String keyValue)'
+    overload: com.microsoft.azure.management.appservice._function_app.addFunctionKeyAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 83
+    package: com.microsoft.azure.management.appservice
+    summary: <p>Fügt einen Schlüssel an eine Funktion in dieser Funktion app an. </p>
+    syntax:
+      content: 'public Observable<NameValuePair> addFunctionKeyAsync(String functionName, String keyName, String keyValue)'
+      parameters:
+        - id: functionName
+          type: '26831127'
+          description: <p>der Name der Funktion </p>
+        - id: keyName
+          type: '26831127'
+          description: <p>der Name des hinzuzufügenden Schlüssels </p>
+        - id: keyValue
+          type: '26831127'
+          description: '<p>Dies ist optional. Wenn nicht angegeben ist, wird ein Wert generiert. </p>'
+      return:
+        type: c2d0e8c6com.microsoft.azure.management.appservice._name_value_paira08ddfce
+        description: <p>die hinzugefügten Funktionstaste </p>
+  - uid: com.microsoft.azure.management.appservice._function_app.deploymentSlots()
+    id: deploymentSlots()
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: deploymentSlots()
+    nameWithType: FunctionApp.deploymentSlots()
+    fullName: FunctionDeploymentSlots com.microsoft.azure.management.appservice.FunctionApp.deploymentSlots()
+    overload: com.microsoft.azure.management.appservice._function_app.deploymentSlots*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 36
+    package: com.microsoft.azure.management.appservice
+    syntax:
+      content: public FunctionDeploymentSlots deploymentSlots()
+      return:
+        type: com.microsoft.azure.management.appservice._function_deployment_slots
+        description: <p>der Einstiegspunkt für die Bereitstellung Slot Verwaltungs-API unter der Funktion-app </p>
   - uid: com.microsoft.azure.management.appservice._function_app.getMasterKey()
     id: getMasterKey()
     parent: com.microsoft.azure.management.appservice._function_app
@@ -118,7 +211,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-      startLine: 37
+      startLine: 46
     package: com.microsoft.azure.management.appservice
     syntax:
       content: public String getMasterKey()
@@ -139,13 +232,120 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-      startLine: 42
+      startLine: 51
     package: com.microsoft.azure.management.appservice
     syntax:
       content: public Observable<String> getMasterKeyAsync()
       return:
         type: c4e15b74
         description: <p>der Hauptschlüssel für die Funktion-app </p>
+  - uid: com.microsoft.azure.management.appservice._function_app.listFunctionKeys(String)
+    id: listFunctionKeys(String)
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: listFunctionKeys(String functionName)
+    nameWithType: FunctionApp.listFunctionKeys(String functionName)
+    fullName: 'Map<String, String> com.microsoft.azure.management.appservice.FunctionApp.listFunctionKeys(String functionName)'
+    overload: com.microsoft.azure.management.appservice._function_app.listFunctionKeys*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 58
+    package: com.microsoft.azure.management.appservice
+    summary: <p>Abgerufen Sie mit der Taste für eine bestimmte Funktion werden. </p>
+    syntax:
+      content: 'public Map<String, String> listFunctionKeys(String functionName)'
+      parameters:
+        - id: functionName
+          type: '26831127'
+          description: <p>der Name der Funktion </p>
+      return:
+        type: 689c8cb5
+        description: <p>mit der Taste </p>
+  - uid: com.microsoft.azure.management.appservice._function_app.listFunctionKeysAsync(String)
+    id: listFunctionKeysAsync(String)
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: listFunctionKeysAsync(String functionName)
+    nameWithType: FunctionApp.listFunctionKeysAsync(String functionName)
+    fullName: 'Observable<Map<String, String>> com.microsoft.azure.management.appservice.FunctionApp.listFunctionKeysAsync(String functionName)'
+    overload: com.microsoft.azure.management.appservice._function_app.listFunctionKeysAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 65
+    package: com.microsoft.azure.management.appservice
+    summary: <p>Abgerufen Sie mit der Taste für eine bestimmte Funktion werden. </p>
+    syntax:
+      content: 'public Observable<Map<String, String>> listFunctionKeysAsync(String functionName)'
+      parameters:
+        - id: functionName
+          type: '26831127'
+          description: <p>der Name der Funktion </p>
+      return:
+        type: 462502ed
+        description: <p>mit der Taste </p>
+  - uid: 'com.microsoft.azure.management.appservice._function_app.removeFunctionKey(String,String)'
+    id: 'removeFunctionKey(String,String)'
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: 'removeFunctionKey(String functionName, String keyName)'
+    nameWithType: 'FunctionApp.removeFunctionKey(String functionName, String keyName)'
+    fullName: 'void com.microsoft.azure.management.appservice.FunctionApp.removeFunctionKey(String functionName, String keyName)'
+    overload: com.microsoft.azure.management.appservice._function_app.removeFunctionKey*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 90
+    package: com.microsoft.azure.management.appservice
+    summary: <p>Entfernt einen Schlüssel an eine Funktion in dieser Funktion app an. </p>
+    syntax:
+      content: 'public void removeFunctionKey(String functionName, String keyName)'
+      parameters:
+        - id: functionName
+          type: '26831127'
+          description: <p>der Name der Funktion </p>
+        - id: keyName
+          type: '26831127'
+          description: <p>der Name des zu entfernenden Schlüssels </p>
+  - uid: 'com.microsoft.azure.management.appservice._function_app.removeFunctionKeyAsync(String,String)'
+    id: 'removeFunctionKeyAsync(String,String)'
+    parent: com.microsoft.azure.management.appservice._function_app
+    href: com.microsoft.azure.management.appservice._function_app.yml
+    langs:
+      - java
+    name: 'removeFunctionKeyAsync(String functionName, String keyName)'
+    nameWithType: 'FunctionApp.removeFunctionKeyAsync(String functionName, String keyName)'
+    fullName: 'Completable com.microsoft.azure.management.appservice.FunctionApp.removeFunctionKeyAsync(String functionName, String keyName)'
+    overload: com.microsoft.azure.management.appservice._function_app.removeFunctionKeyAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
+      startLine: 98
+    package: com.microsoft.azure.management.appservice
+    summary: <p>Entfernt einen Schlüssel an eine Funktion in dieser Funktion app an. </p>
+    syntax:
+      content: 'public Completable removeFunctionKeyAsync(String functionName, String keyName)'
+      parameters:
+        - id: functionName
+          type: '26831127'
+          description: <p>der Name der Funktion </p>
+        - id: keyName
+          type: '26831127'
+          description: <p>der Name des zu entfernenden Schlüssels </p>
+      return:
+        type: '56537e90'
+        description: <p>die completable des Vorgangs </p>
   - uid: com.microsoft.azure.management.appservice._function_app.storageAccount()
     id: storageAccount()
     parent: com.microsoft.azure.management.appservice._function_app
@@ -160,7 +360,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-      startLine: 32
+      startLine: 41
     package: com.microsoft.azure.management.appservice
     syntax:
       content: public StorageAccount storageAccount()
@@ -181,7 +381,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-      startLine: 47
+      startLine: 103
     package: com.microsoft.azure.management.appservice
     summary: <p>Wird der Trigger für die Funktion-app synchronisiert. </p>
     syntax:
@@ -200,15 +400,20 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-appservice/src/main/java/com/microsoft/azure/management/appservice/FunctionApp.java
-      startLine: 53
+      startLine: 109
     package: com.microsoft.azure.management.appservice
     summary: <p>Wird der Trigger für die Funktion-app synchronisiert. </p>
     syntax:
       content: public Completable syncTriggersAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>für den Vorgang completable </p>
 references:
+  - uid: com.microsoft.azure.management.appservice._function_app.deploymentSlots*
+    name: deploymentSlots
+    nameWithType: FunctionApp.deploymentSlots
+    fullName: FunctionDeploymentSlots com.microsoft.azure.management.appservice.FunctionApp.deploymentSlots
+    package: com.microsoft.azure.management.appservice
   - uid: com.microsoft.azure.management.appservice._function_app.storageAccount*
     name: storageAccount
     nameWithType: FunctionApp.storageAccount
@@ -232,15 +437,63 @@ references:
     nameWithType: FunctionApp.getMasterKeyAsync
     fullName: Observable<String> com.microsoft.azure.management.appservice.FunctionApp.getMasterKeyAsync
     package: com.microsoft.azure.management.appservice
+  - uid: 689c8cb5
+    spec.java:
+      - name: 'Map<String, String>'
+        fullName: 'Map<String, String>'
+  - uid: com.microsoft.azure.management.appservice._function_app.listFunctionKeys*
+    name: listFunctionKeys
+    nameWithType: FunctionApp.listFunctionKeys
+    fullName: 'Map<String, String> com.microsoft.azure.management.appservice.FunctionApp.listFunctionKeys'
+    package: com.microsoft.azure.management.appservice
+  - uid: 462502ed
+    spec.java:
+      - name: 'Observable<Map<String, String>>'
+        fullName: 'Observable<Map<String, String>>'
+  - uid: com.microsoft.azure.management.appservice._function_app.listFunctionKeysAsync*
+    name: listFunctionKeysAsync
+    nameWithType: FunctionApp.listFunctionKeysAsync
+    fullName: 'Observable<Map<String, String>> com.microsoft.azure.management.appservice.FunctionApp.listFunctionKeysAsync'
+    package: com.microsoft.azure.management.appservice
+  - uid: com.microsoft.azure.management.appservice._function_app.addFunctionKey*
+    name: addFunctionKey
+    nameWithType: FunctionApp.addFunctionKey
+    fullName: NameValuePair com.microsoft.azure.management.appservice.FunctionApp.addFunctionKey
+    package: com.microsoft.azure.management.appservice
+  - uid: c2d0e8c6com.microsoft.azure.management.appservice._name_value_paira08ddfce
+    spec.java:
+      - name: Observable<
+        fullName: Observable<
+      - uid: com.microsoft.azure.management.appservice._name_value_pair
+        name: NameValuePair
+        fullName: com.microsoft.azure.management.appservice.NameValuePair
+        href: com.microsoft.azure.management.appservice._name_value_pair.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.appservice._function_app.addFunctionKeyAsync*
+    name: addFunctionKeyAsync
+    nameWithType: FunctionApp.addFunctionKeyAsync
+    fullName: Observable<NameValuePair> com.microsoft.azure.management.appservice.FunctionApp.addFunctionKeyAsync
+    package: com.microsoft.azure.management.appservice
+  - uid: com.microsoft.azure.management.appservice._function_app.removeFunctionKey*
+    name: removeFunctionKey
+    nameWithType: FunctionApp.removeFunctionKey
+    fullName: void com.microsoft.azure.management.appservice.FunctionApp.removeFunctionKey
+    package: com.microsoft.azure.management.appservice
+  - uid: '56537e90'
+    spec.java:
+      - name: Completable
+        fullName: Completable
+  - uid: com.microsoft.azure.management.appservice._function_app.removeFunctionKeyAsync*
+    name: removeFunctionKeyAsync
+    nameWithType: FunctionApp.removeFunctionKeyAsync
+    fullName: Completable com.microsoft.azure.management.appservice.FunctionApp.removeFunctionKeyAsync
+    package: com.microsoft.azure.management.appservice
   - uid: com.microsoft.azure.management.appservice._function_app.syncTriggers*
     name: syncTriggers
     nameWithType: FunctionApp.syncTriggers
     fullName: void com.microsoft.azure.management.appservice.FunctionApp.syncTriggers
     package: com.microsoft.azure.management.appservice
-  - uid: 56537e90
-    spec.java:
-      - name: Completable
-        fullName: Completable
   - uid: com.microsoft.azure.management.appservice._function_app.syncTriggersAsync*
     name: syncTriggersAsync
     nameWithType: FunctionApp.syncTriggersAsync
@@ -287,7 +540,7 @@ references:
           type: '26831127'
           description: <p>die zielslot zum Anwenden von Konfigurationen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.appServicePlanId()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -421,6 +674,19 @@ references:
       return:
         type: '26831127'
         description: <p>Standard-Hostname der Web-app </p>
+  - uid: com.microsoft.azure.management.appservice._web_app_base.deploy()
+    parent: com.microsoft.azure.management.appservice._web_app_base
+    href: com.microsoft.azure.management.appservice._web_app_base.yml
+    name: deploy()
+    nameWithType: WebAppBase.deploy()
+    fullName: WebDeployment.DefinitionStages.WithPackageUri com.microsoft.azure.management.appservice.WebAppBase.deploy()
+    type: Method
+    summary: '<p>Erste Schritt geben Sie die Parameter, um eine webbereitstellung (MS-Deploy) für die Web-app zu machen. </p>'
+    syntax:
+      content: public WebDeployment.DefinitionStages.WithPackageUri deploy()
+      return:
+        type: c3bed9d0
+        description: '<p>eine Phase, um die webbereitstellung erstellen </p>'
   - uid: com.microsoft.azure.management.appservice._web_app_base.enabled()
     parent: com.microsoft.azure.management.appservice._web_app_base
     href: com.microsoft.azure.management.appservice._web_app_base.yml
@@ -588,7 +854,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.isDefaultContainer()
     parent: com.microsoft.azure.management.appservice._web_app_base
     href: com.microsoft.azure.management.appservice._web_app_base.yml
@@ -825,7 +1091,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refresh()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public T refresh()
@@ -840,7 +1106,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.model.Refreshable<T>.refreshAsync()
     type: Method
     summary: |-
-      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Aktualisiert die Ressource zur Synchronisierung mit <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>.</p>
       <p></p>
     syntax:
       content: public Observable<T> refreshAsync()
@@ -928,7 +1194,7 @@ references:
     syntax:
       content: public Completable resetSlotConfigurationsAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_resource_group.resourceGroupName()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_resource_group
@@ -963,7 +1229,7 @@ references:
     syntax:
       content: public Completable restartAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.scmSiteAlsoStopped()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -998,7 +1264,7 @@ references:
     syntax:
       content: public Completable startAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.state()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -1033,7 +1299,7 @@ references:
     syntax:
       content: public Completable stopAsync()
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.swap(String)
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -1064,7 +1330,7 @@ references:
           type: '26831127'
           description: <p>der zielslot für den Tauschvorgang. Verwenden Sie "Produktion" für den produktionsslot zu übergeben. </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._resource.tags()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._resource
@@ -1101,7 +1367,7 @@ references:
       content: public Set<String> trafficManagerHostNames()
       return:
         type: df32358c
-        description: <p>Liste der <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Traffic Manager Hostnamen zugeordnet Web-app </p>
+        description: <p>Liste der <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Traffic Manager Hostnamen zugeordnet Web-app </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._resource.type()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._resource
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._resource.yml
@@ -1123,7 +1389,7 @@ references:
     type: Method
     summary: |-
       <p>Startet ein Update für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators Muster, die zum Aktualisieren von Ressourcen für die oberer Ebenen in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
       <p></p>
     syntax:
       content: public T update()
@@ -1177,7 +1443,7 @@ references:
           type: '26831127'
           description: <p>Das Überprüfungstoken Domäne für die zertifikatreihenfolge </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.appservice._web_app_base.webSocketsEnabled()
     parent: com.microsoft.azure.management.appservice._web_app_base
@@ -1198,7 +1464,7 @@ references:
     nameWithType: WebAppBase
     fullName: com.microsoft.azure.management.appservice.WebAppBase
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Bereitstellung oder Web-App-Slot. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Bereitstellung oder Web-App-Slot. </p>
     syntax:
       content: public interface WebAppBase
   - uid: com.microsoft.azure.management.resources.fluentcore.model._refreshable
@@ -1231,6 +1497,16 @@ references:
       typeParameters:
         - type: 8ce1ecb9
           description: <p>die fluent-Typ der Ressource </p>
+  - uid: com.microsoft.azure.management.appservice._function_deployment_slots
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._function_deployment_slots.yml
+    name: FunctionDeploymentSlots
+    nameWithType: FunctionDeploymentSlots
+    fullName: com.microsoft.azure.management.appservice.FunctionDeploymentSlots
+    type: Interface
+    summary: '<p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Slot für die app-Bereitstellung, Verwaltungs-API-Funktion. </p>'
+    syntax:
+      content: public interface FunctionDeploymentSlots
   - uid: com.microsoft.azure.management.storage._storage_account
     parent: com.microsoft.azure.management.storage
     href: com.microsoft.azure.management.storage._storage_account.yml
@@ -1238,9 +1514,19 @@ references:
     nameWithType: StorageAccount
     fullName: com.microsoft.azure.management.storage.StorageAccount
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Speicherkonto. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Speicherkonto. </p>
     syntax:
       content: public interface StorageAccount
+  - uid: com.microsoft.azure.management.appservice._name_value_pair
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._name_value_pair.yml
+    name: NameValuePair
+    nameWithType: NameValuePair
+    fullName: com.microsoft.azure.management.appservice.NameValuePair
+    type: Class
+    summary: <p>Name-Wert-Paar. </p>
+    syntax:
+      content: public class NameValuePair
   - uid: com.microsoft.azure.management._azure
     parent: com.microsoft.azure.management
     href: com.microsoft.azure.management._azure.yml
@@ -1248,6 +1534,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

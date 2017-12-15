@@ -17,8 +17,11 @@ items:
       - com.microsoft.azure.eventprocessorhost._i_event_processor
       - com.microsoft.azure.eventprocessorhost._i_event_processor_factory
       - com.microsoft.azure.eventprocessorhost._i_lease_manager
+      - com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+      - com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
       - com.microsoft.azure.eventprocessorhost._lease
       - com.microsoft.azure.eventprocessorhost._lease_lost_exception
+      - com.microsoft.azure.eventprocessorhost._logging_utils
       - com.microsoft.azure.eventprocessorhost._partition_context
       - com.microsoft.azure.eventprocessorhost._partition_manager_options
     href: com.microsoft.azure.eventprocessorhost.yml
@@ -54,7 +57,7 @@ references:
     nameWithType: Checkpoint
     fullName: com.microsoft.azure.eventprocessorhost.Checkpoint
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\"></xref>Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref href=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\"></xref>. Es sei denn, Sie implementieren <xref href=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\"></xref> Sie sollten keine Objekte dieser Klasse direkt behandeln. </p>\n\n<p>Ein <xref href=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\"></xref> ist im Prinzip nur ein Tupel. Er verfügt über eine feste Partitions-Id, zum Zeitpunkt der Erstellung festgelegt und unveränderlich danach und ordnet, die einen Offset/SequenceNumber-Paar gibt eine Position in der Nachrichten in dieser Partition an. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\">Prüfpunkt</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\">ICheckpointManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_checkpoint_manager\" data-throw-if-not-resolved=\"false\">ICheckpointManager</xref> Sie sollten keine Objekte dieser Klasse direkt behandeln. </p>\n\n<p>Ein <xref uid=\"com.microsoft.azure.eventprocessorhost._checkpoint\" data-throw-if-not-resolved=\"false\">Prüfpunkt</xref> ist im Prinzip nur ein Tupel. Er verfügt über eine feste Partitions-Id, zum Zeitpunkt der Erstellung festgelegt und unveränderlich danach und ordnet, die einen Offset/SequenceNumber-Paar gibt eine Position in der Nachrichten in dieser Partition an. </p>"
     syntax:
       content: public class Checkpoint
   - uid: com.microsoft.azure.eventprocessorhost._close_reason
@@ -109,7 +112,7 @@ references:
     nameWithType: ExceptionReceivedEventArgs
     fullName: com.microsoft.azure.eventprocessorhost.ExceptionReceivedEventArgs
     type: Class
-    summary: '<p>Als Argument übergeben wird, um die allgemeine Ausnahme-Handler, der über festgelegt werden kann <xref href="com.microsoft.azure.eventprocessorhost._event_processor_options" data-throw-if-not-resolved="false"></xref>. </p>'
+    summary: '<p>Als Argument übergeben wird, um die allgemeine Ausnahme-Handler, der über festgelegt werden kann <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_options" data-throw-if-not-resolved="false">EventProcessorOptions</xref>. </p>'
     syntax:
       content: public class ExceptionReceivedEventArgs
   - uid: com.microsoft.azure.eventprocessorhost._i_checkpoint_manager
@@ -128,7 +131,7 @@ references:
     nameWithType: IEventProcessor
     fullName: com.microsoft.azure.eventprocessorhost.IEventProcessor
     type: Interface
-    summary: "<p>Schnittstelle, die vom Prozessor Ereignisklassen implementiert werden muss.</p>\n<p>Keine Instanz einer Ereignisklasse-Prozessor verarbeitet nur Ereignisse aus einer Partition einen Event Hub. Ein <xref href=\"com.microsoft.azure.eventprocessorhost._partition_context\" data-throw-if-not-resolved=\"false\"></xref> wird mit jedem Aufruf der Ereignisprozessor bereitgestellt, da einige Parameter geändert werden konnte, aber es wird immer die gleiche Partition sein. </p>\n<p>Obwohl <xref href=\"com.microsoft.azure.eventprocessorhost._event_processor_host\" data-throw-if-not-resolved=\"false\"></xref> ist eine Multithreadanwendung, Aufrufe an eine bestimmte Instanz einer Prozessor Ereignisklasse werden serialisiert, mit Ausnahme von <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onError(PartitionContext,Throwable)\" data-throw-if-not-resolved=\"false\"></xref>. <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onOpen(PartitionContext)\" data-throw-if-not-resolved=\"false\"></xref>zuerst aufgerufen wird, klicken Sie dann <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onEvents(PartitionContext,Iterable&lt;EventData&gt;)\" data-throw-if-not-resolved=\"false\"></xref> wird nicht oder mehrmals aufgerufen werden. Wenn der Ereignisprozessor muss, ob heruntergefahren werden, da Fehler an einer Stelle, oder die Lease für die Partition verloren gegangen oder weil der gesamte Prozessor Host heruntergefahren wird <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onClose(PartitionContext,CloseReason)\" data-throw-if-not-resolved=\"false\"></xref> wird aufgerufen, nachdem der letzte <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onEvents(PartitionContext,Iterable&lt;EventData&gt;)\" data-throw-if-not-resolved=\"false\"></xref> aufrufen, gibt. </p>\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onError(PartitionContext,Throwable)\" data-throw-if-not-resolved=\"false\"></xref>kann aufgerufen werden, während <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onEvents(PartitionContext,Iterable&lt;EventData&gt;)\" data-throw-if-not-resolved=\"false\"></xref> oder <xref href=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onClose(PartitionContext,CloseReason)\" data-throw-if-not-resolved=\"false\"></xref> ausgeführt wird. Keine Synchronisierung wird ausgeführt, um zu vermeiden, möglicherweise Deadlocks. </p>"
+    summary: "<p>Schnittstelle, die vom Prozessor Ereignisklassen implementiert werden muss.</p>\n<p>Keine Instanz einer Ereignisklasse-Prozessor verarbeitet nur Ereignisse aus einer Partition einen Event Hub. Ein <xref uid=\"com.microsoft.azure.eventprocessorhost._partition_context\" data-throw-if-not-resolved=\"false\">PartitionContext</xref> wird mit jedem Aufruf der Ereignisprozessor bereitgestellt, da einige Parameter geändert werden konnte, aber es wird immer die gleiche Partition sein. </p>\n<p>Obwohl <xref uid=\"com.microsoft.azure.eventprocessorhost._event_processor_host\" data-throw-if-not-resolved=\"false\">EventProcessorHost</xref> ist eine Multithreadanwendung, Aufrufe an eine bestimmte Instanz einer Prozessor Ereignisklasse werden serialisiert, mit Ausnahme von <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onError(PartitionContext,Throwable)\" data-throw-if-not-resolved=\"false\">onError()</xref>. <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onOpen(PartitionContext)\" data-throw-if-not-resolved=\"false\">onOpen()</xref> zuerst aufgerufen wird, klicken Sie dann <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onEvents(PartitionContext,Iterable&lt;EventData&gt;)\" data-throw-if-not-resolved=\"false\">onEvents()</xref> wird nicht oder mehrmals aufgerufen werden. Wenn der Ereignisprozessor muss, ob heruntergefahren werden, da Fehler an einer Stelle, oder die Lease für die Partition verloren gegangen oder weil der gesamte Prozessor Host heruntergefahren wird <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onClose(PartitionContext,CloseReason)\" data-throw-if-not-resolved=\"false\">onClose()</xref> wird aufgerufen, nachdem der letzte <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onEvents(PartitionContext,Iterable&lt;EventData&gt;)\" data-throw-if-not-resolved=\"false\">onEvents()</xref> aufrufen, gibt. </p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onError(PartitionContext,Throwable)\" data-throw-if-not-resolved=\"false\">onError()</xref> kann aufgerufen werden, während <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onEvents(PartitionContext,Iterable&lt;EventData&gt;)\" data-throw-if-not-resolved=\"false\">onEvents()</xref> oder <xref uid=\"com.microsoft.azure.eventprocessorhost._i_event_processor.onClose(PartitionContext,CloseReason)\" data-throw-if-not-resolved=\"false\">onClose()</xref> ausgeführt wird. Keine Synchronisierung wird ausgeführt, um zu vermeiden, möglicherweise Deadlocks. </p>"
     syntax:
       content: public interface IEventProcessor
   - uid: com.microsoft.azure.eventprocessorhost._i_event_processor_factory
@@ -146,7 +149,7 @@ references:
       content: public interface IEventProcessorFactory<T extends IEventProcessor>
       typeParameters:
         - type: 8ce1ecb9
-          description: '<p>Der Typ des Prozessors Ereignisobjekten, die von dieser Factory implementieren muss, erstellt<xref href="com.microsoft.azure.eventprocessorhost._i_event_processor" data-throw-if-not-resolved="false"></xref></p>'
+          description: '<p>Der Typ des Prozessors Ereignisobjekten von dieser Factory implementieren muss, erzeugten <xref uid="com.microsoft.azure.eventprocessorhost._i_event_processor" data-throw-if-not-resolved="false">IEventProcessor</xref></p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager
     parent: com.microsoft.azure.eventprocessorhost
     href: com.microsoft.azure.eventprocessorhost._i_lease_manager.yml
@@ -156,6 +159,24 @@ references:
     type: Interface
     syntax:
       content: public interface ILeaseManager
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager
+    parent: com.microsoft.azure.eventprocessorhost
+    href: com.microsoft.azure.eventprocessorhost._in_memory_checkpoint_manager.yml
+    name: InMemoryCheckpointManager
+    nameWithType: InMemoryCheckpointManager
+    fullName: com.microsoft.azure.eventprocessorhost.InMemoryCheckpointManager
+    type: Class
+    syntax:
+      content: public class InMemoryCheckpointManager implements ICheckpointManager
+  - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
+    parent: com.microsoft.azure.eventprocessorhost
+    href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
+    name: InMemoryLeaseManager
+    nameWithType: InMemoryLeaseManager
+    fullName: com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager
+    type: Class
+    syntax:
+      content: public class InMemoryLeaseManager implements ILeaseManager
   - uid: com.microsoft.azure.eventprocessorhost._lease
     parent: com.microsoft.azure.eventprocessorhost
     href: com.microsoft.azure.eventprocessorhost._lease.yml
@@ -163,7 +184,7 @@ references:
     nameWithType: Lease
     fullName: com.microsoft.azure.eventprocessorhost.Lease
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref>Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. Es sei denn, Sie implementieren <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> sollte nicht für den Umgang mit Objekte dieser Klasse haben oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass ein <xref href=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\"></xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref href=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\"></xref>. </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> sollten keine Objekte dieser Klasse zu verarbeiten oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass eine <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. </p>"
     syntax:
       content: public class Lease
   - uid: com.microsoft.azure.eventprocessorhost._lease_lost_exception
@@ -175,6 +196,16 @@ references:
     type: Class
     syntax:
       content: public class LeaseLostException
+  - uid: com.microsoft.azure.eventprocessorhost._logging_utils
+    parent: com.microsoft.azure.eventprocessorhost
+    href: com.microsoft.azure.eventprocessorhost._logging_utils.yml
+    name: LoggingUtils
+    nameWithType: LoggingUtils
+    fullName: com.microsoft.azure.eventprocessorhost.LoggingUtils
+    type: Class
+    summary: <p>Zentralisieren der Nachricht protokollgenerierung </p>
+    syntax:
+      content: public class LoggingUtils
   - uid: com.microsoft.azure.eventprocessorhost._partition_context
     parent: com.microsoft.azure.eventprocessorhost
     href: com.microsoft.azure.eventprocessorhost._partition_context.yml

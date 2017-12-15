@@ -19,9 +19,9 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-service-bus-java'
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/RetryExponential.java
-      startLine: 13
+      startLine: 14
     package: com.microsoft.azure.servicebus.primitives
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\"></xref>die Implementierung, in denen die Verzögerung zwischen den Wiederholungsversuchen auf einer exponentiellen Weise anwächst. <xref href=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\"></xref>kann festgelegt werden, auf die Clientvorgänge mit <xref href=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\"></xref>. RetryIntervals wird mithilfe einer RetryFactor also eine Funktion der DeltaBackOff (MaximumBackoff - MinimumBackoff) berechnet werden und MaximumRetryCount </p>"
+    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\">Die RetryPolicy</xref> Implementierung, in denen die Verzögerung zwischen den Wiederholungsversuchen auf einer exponentiellen Weise wächst. <xref uid=\"com.microsoft.azure.servicebus.primitives._retry_policy\" data-throw-if-not-resolved=\"false\">Die RetryPolicy</xref> kann festgelegt werden, auf die Clientvorgänge mit <xref uid=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\">ConnectionStringBuilder</xref>. RetryIntervals wird mithilfe einer RetryFactor also eine Funktion der DeltaBackOff (MaximumBackoff - MinimumBackoff) berechnet werden und MaximumRetryCount </p>"
     syntax:
       content: public class RetryExponential extends RetryPolicy
     inheritance:
@@ -51,7 +51,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/RetryExponential.java
-      startLine: 31
+      startLine: 32
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: 'protected Duration onGetNextRetryInterval(final String clientId, final Exception lastException, final Duration remainingTime, final int baseWaitTimeSecs)'
@@ -80,7 +80,7 @@ items:
     source:
       remote: *ref_0
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/primitives/RetryExponential.java
-      startLine: 20
+      startLine: 21
     package: com.microsoft.azure.servicebus.primitives
     syntax:
       content: 'public RetryExponential(final Duration minimumBackoff, final Duration maximumBackoff, final int maximumRetryCount, final String name)'
@@ -131,10 +131,12 @@ references:
     nameWithType: RetryPolicy.getDefault()
     fullName: static RetryPolicy com.microsoft.azure.servicebus.primitives.RetryPolicy.getDefault()
     type: Method
+    summary: '<p>Wiederholen Sie die Richtlinie, die einzelnen aufeinander folgenden Fehler exponentiell zunehmenden Wiederholungsintervalle bietet. Diese Richtlinie ist geeignet für die meisten Clientanwendungen verwenden von und ist auch die Standardrichtlinie, wenn keine wiederholungsrichtlinie angegeben wird. </p>'
     syntax:
       content: public static RetryPolicy getDefault()
       return:
         type: com.microsoft.azure.servicebus.primitives._retry_policy
+        description: '<p>eine wiederholungsrichtlinie auf, die sich exponentiell zunehmenden Wiederholungsintervalle bereitstellt. </p>'
   - uid: 'com.microsoft.azure.servicebus.primitives._retry_policy.getNextRetryInterval(String,Exception,Duration)'
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -143,23 +145,23 @@ references:
     fullName: 'Duration com.microsoft.azure.servicebus.primitives.RetryPolicy.getNextRetryInterval(String clientId, Exception lastException, Duration remainingTime)'
     type: Method
     summary: |-
-      <p>Ruft das Intervall, nach dem NextRetry erfolgen soll.</p>
+      <p>Ruft das Intervall, nach dem NextRetry soll basierend auf die letzte Ausnahme ist aufgetreten versucht werden, und die verbleibende Zeit bis zum Timeout des Vorgangs ab.</p>
       <p></p>
     syntax:
       content: 'public Duration getNextRetryInterval(String clientId, Exception lastException, Duration remainingTime)'
       parameters:
         - id: clientId
           type: '26831127'
-          description: <p>clientId </p>
+          description: '<p>die ID des Absender oder Empfänger oder Client-Objekts, das die Ausnahme aufgetreten. </p>'
         - id: lastException
           type: 8a99d4b0
-          description: <p>LastException </p>
+          description: <p>letzte ermittelte Ausnahme </p>
         - id: remainingTime
           type: e02a2de0
-          description: '<p>Verbleibende Zeit, um einen Wiederholungsversuch </p>'
+          description: '<p>Verbleibende Zeit, bevor ein Timeout für den Vorgang zu wiederholen </p>'
       return:
         type: e02a2de0
-        description: '<p>Gibt die Dauer "null" zurück, wenn nicht zulässig </p>'
+        description: '<p>Dauer, die nach dem der Vorgang wird wiederholt. Gibt Null zurück, wenn sollten der Vorgang nicht wiederholt. </p>'
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy.getNoRetry()
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -167,10 +169,12 @@ references:
     nameWithType: RetryPolicy.getNoRetry()
     fullName: static RetryPolicy com.microsoft.azure.servicebus.primitives.RetryPolicy.getNoRetry()
     type: Method
+    summary: '<p>Ruft eine wiederholungsrichtlinie auf, die alle Vorgänge, die effektiv deaktiviert Wiederholungen Wiederholen nicht ab. Clients können diese wiederholungsrichtlinie verwenden, für den Fall, dass sie keinen Vorgang automatisch wiederholt werden soll. </p>'
     syntax:
       content: public static RetryPolicy getNoRetry()
       return:
         type: com.microsoft.azure.servicebus.primitives._retry_policy
+        description: '<p>eine wiederholungsrichtlinie auf, die alle Vorgänge Wiederholen nicht </p>'
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy.getRetryCount(String)
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -192,11 +196,13 @@ references:
     nameWithType: RetryPolicy.incrementRetryCount(String clientId)
     fullName: void com.microsoft.azure.servicebus.primitives.RetryPolicy.incrementRetryCount(String clientId)
     type: Method
+    summary: '<p>Erhöht die Anzahl der aufeinander folgenden wiederholen Versuche, die von einem Client. </p>'
     syntax:
       content: public void incrementRetryCount(String clientId)
       parameters:
         - id: clientId
           type: '26831127'
+          description: '<p>ID des Clients, und wiederholen Sie dann einen fehlgeschlagenen Vorgang </p>'
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy.isRetryableException(Exception)
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -204,13 +210,16 @@ references:
     nameWithType: RetryPolicy.isRetryableException(Exception exception)
     fullName: static boolean com.microsoft.azure.servicebus.primitives.RetryPolicy.isRetryableException(Exception exception)
     type: Method
+    summary: '<p>Bestimmt, ob eine Ausnahme mit möglichem Wiederholungsversuch ist. Es sollten nur vorübergehende Ausnahmen, die wiederholt werden. </p>'
     syntax:
       content: public static boolean isRetryableException(Exception exception)
       parameters:
         - id: exception
           type: 8a99d4b0
+          description: '<p>Ausnahme von einem Vorgang, ist er mit möglichem Wiederholungsversuch bestimmt werden soll. </p>'
       return:
         type: 4fc6e284
+        description: '<p>"true" Wenn die Ausnahme mit möglichem Wiederholungsversuch (z. B. ServerBusy oder anderer vorübergehender Ausnahme), andernfalls "false" zurückgegeben </p>'
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy.resetRetryCount(String)
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -218,11 +227,13 @@ references:
     nameWithType: RetryPolicy.resetRetryCount(String clientId)
     fullName: void com.microsoft.azure.servicebus.primitives.RetryPolicy.resetRetryCount(String clientId)
     type: Method
+    summary: '<p>Setzt die Anzahl der Wiederholungsversuche, die von einem Client an. Diese Methode wird vom Client aufgerufen, wenn wiederholte Operation erfolgreich ausgeführt wird. </p>'
     syntax:
       content: public void resetRetryCount(String clientId)
       parameters:
         - id: clientId
           type: '26831127'
+          description: '<p>ID des Clients, mit dem nur einen fehlgeschlagenen Vorgang wiederholt und erfolgreich ausgeführt wurde. </p>'
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy.RetryPolicy(final String)
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -230,11 +241,13 @@ references:
     nameWithType: RetryPolicy.RetryPolicy(final String name)
     fullName: com.microsoft.azure.servicebus.primitives.RetryPolicy.RetryPolicy(final String name)
     type: Constructor
+    summary: <p>Erstellt eine Instanz des <xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> mit dem angegebenen Namen. </p>
     syntax:
       content: protected RetryPolicy(final String name)
       parameters:
         - id: name
           type: 3d93591e
+          description: <p>Name der Richtlinie </p>
   - uid: com.microsoft.azure.servicebus.primitives._retry_policy.toString()
     parent: com.microsoft.azure.servicebus.primitives._retry_policy
     href: com.microsoft.azure.servicebus.primitives._retry_policy.yml
@@ -253,6 +266,7 @@ references:
     nameWithType: RetryPolicy
     fullName: com.microsoft.azure.servicebus.primitives.RetryPolicy
     type: Class
+    summary: '<p>Stellt eine Abstraktion einer Richtlinie für die Wiederholung Messagingvorgänge ausgeführt wird, wenn eine Ausnahme aufgetreten ist. Einige Ausnahmen, die von einem Absender oder Empfänger gefundene können vorübergehende wie ServerBusy und der Vorgang erfolgreich ist, wenn wiederholt werden. Clients können angeben, die eine Wiederholung Richtlinie mit <xref uid="com.microsoft.azure.servicebus.primitives._connection_string_builder" data-throw-if-not-resolved="false">ConnectionStringBuilder</xref> unterstützt Absender und Empfänger, um den fehlgeschlagenen Vorgang vor dem Auslösen der Ausnahme an die Clientanwendung automatisch zu wiederholen. Benutzer sollten diese Klasse nicht implementiert, sollte stattdessen eine der bereitgestellten Implementierungen über <xref uid="com.microsoft.azure.servicebus.primitives._retry_policy.getDefault()" data-throw-if-not-resolved="false">GetDefault</xref> oder <xref uid="com.microsoft.azure.servicebus.primitives._retry_policy.getNoRetry()" data-throw-if-not-resolved="false">GetNoRetry</xref>. </p>'
     syntax:
       content: public class RetryPolicy
   - uid: com.microsoft.azure.servicebus.primitives._connection_string_builder
@@ -262,6 +276,24 @@ references:
     nameWithType: ConnectionStringBuilder
     fullName: com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder
     type: Class
-    summary: "<p>\r\n\r\n  <xref href=\"com.microsoft.azure.servicebus.primitives._connection_string_builder\" data-throw-if-not-resolved=\"false\"></xref>kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>\n\n<p>Beispielcode: <preformatted> <programlisting> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>ConnectionStringBuilder<sp></sp>ConnectionStringBuilder<sp></sp>=<sp></sp>neue<sp></sp>ConnectionStringBuilder (</highlight></codeline><codeline><highlight class=\"normal\"><sp></sp><sp></sp><sp></sp><sp></sp>\"ServiceBusNamespaceName\",<sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>\"ServiceBusEntityName\",<sp></sp>//<sp></sp>\"eventhubname\"<sp></sp>oder<sp></sp>QueueName<sp></sp>oder<sp></sp>Name_des_themas<sp></sp></highlight></codeline><codeline><highlight class=\"normal\"><sp></sp><sp></sp><sp></sp><sp></sp>\"SharedAccessSignatureKeyName\",<sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> <sp> </sp> <sp> </sp> <sp> </sp>\"SharedAccessSignatureKey\");</highlight> </codeline> <codeline> <highlight class=\"normal\"> <sp> </sp> </highlight> </codeline> <codeline> <highlight class=\"normal\">Zeichenfolge<sp></sp>\"ConnectionString\"<sp></sp>=<sp></sp>connectionStringBuilder.toString();</highlight></codeline></programlisting></preformatted></p>\n<p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste \";\". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, die die Service Bus-Namespace enthält </p></listitem><listitem><p>EntityPath - der Pfad zu der Servicebus-Entität (Warteschlange/Thema/Eventhub/Abonnement/Consumergroup/Partition) </p></listitem><listitem><p>SharedAccessKeyName - der entsprechenden freigegebenen Zugriffsrichtlinie im Schlüsselnamen für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem></itemizedlist></p>"
+    summary: |-
+      <p>Diese Klasse kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>
+      <p>Beispielcode: <pre><code>ConnectionStringBuilder connectionStringBuilder = new ConnectionStringBuilder(
+
+                                                   "ServiceBusNamespaceName", 
+
+                                                   "ServiceBusEntityName", // QueueName or TopicName or SubscriptionPath
+
+                                                   "SharedAccessSignatureKeyName", 
+
+                                                   "SharedAccessSignatureKey");
+
+           
+
+          String connectionString = connectionStringBuilder.toString();
+
+          </code></pre></p>
+
+      <p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste ";". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, an den Service Bus-Namespace verweist. </p></listitem><listitem><p>EntityPath - Pfad zu der Servicebus-Entität (Warteschlange/Thema/Abonnement /). Für Warteschlangen und Themen ist es nur die Namen der Entität. Für Abonnements Pfad ist &lt;Name_des_themas&gt;/Subscriptions /&lt;SubscriptionName&gt; </p></listitem><listitem><p>SharedAccessKeyName - Key-Name auf den entsprechenden freigegebenen Zugriffsrichtlinie für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel-Wert für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem><listitem><p>SharedAccessSignatureToken - können anstelle einer Schlüsselnamen und einen Schlüsselwert, Clients eine bereits generierte SAS-Token bereitstellen. </p></listitem><listitem><p>OperationTimeout - Standardtimeout für alle Absender, Empfänger und Clients, die aus dieser Verbindungszeichenfolge erstellte verwendet werden. </p></listitem><listitem><p><xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">Die RetryPolicy</xref> - Name der Richtlinie versuchen Sie es erneut. </p></listitem></itemizedlist></p>
     syntax:
       content: public class ConnectionStringBuilder

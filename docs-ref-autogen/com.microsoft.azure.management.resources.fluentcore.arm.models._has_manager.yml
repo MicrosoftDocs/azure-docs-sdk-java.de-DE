@@ -15,7 +15,7 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/models/HasManager.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/models/HasManager.java
       startLine: 14
@@ -104,7 +104,7 @@ references:
     nameWithType: DeploymentSlots
     fullName: com.microsoft.azure.management.appservice.DeploymentSlots
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> web-app-Bereitstellung Slot Verwaltungs-API. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> web-app-Bereitstellung Slot Verwaltungs-API. </p>
     syntax:
       content: 'public interface DeploymentSlots extends SupportsCreating<DeploymentSlot.DefinitionStages.Blank>,SupportsListing<DeploymentSlot>,SupportsGettingByName<DeploymentSlot>,SupportsGettingById<DeploymentSlot>,SupportsDeletingById,SupportsDeletingByName,HasManager<AppServiceManager>,HasParent<WebApp>'
   - uid: com.microsoft.azure.management.appservice._function_apps
@@ -117,6 +117,16 @@ references:
     summary: <p>Einstiegspunkt für Web-app-Verwaltungs-API. </p>
     syntax:
       content: 'public interface FunctionApps extends SupportsCreating<FunctionApp.DefinitionStages.Blank>,SupportsDeletingById,SupportsListing<FunctionApp>,SupportsListingByResourceGroup<FunctionApp>,SupportsGettingByResourceGroup<FunctionApp>,SupportsGettingById<FunctionApp>,SupportsDeletingByResourceGroup,HasManager<AppServiceManager>,HasInner<WebAppsInner>'
+  - uid: com.microsoft.azure.management.appservice._function_deployment_slots
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._function_deployment_slots.yml
+    name: FunctionDeploymentSlots
+    nameWithType: FunctionDeploymentSlots
+    fullName: com.microsoft.azure.management.appservice.FunctionDeploymentSlots
+    type: Interface
+    summary: '<p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Slot für die app-Bereitstellung, Verwaltungs-API-Funktion. </p>'
+    syntax:
+      content: 'public interface FunctionDeploymentSlots extends SupportsCreating<FunctionDeploymentSlot.DefinitionStages.Blank>,SupportsListing<FunctionDeploymentSlot>,SupportsGettingByName<FunctionDeploymentSlot>,SupportsGettingById<FunctionDeploymentSlot>,SupportsDeletingById,SupportsDeletingByName,HasManager<AppServiceManager>,HasParent<FunctionApp>'
   - uid: com.microsoft.azure.management.appservice._web_apps
     parent: com.microsoft.azure.management.appservice
     href: com.microsoft.azure.management.appservice._web_apps.yml
@@ -134,7 +144,7 @@ references:
     nameWithType: BatchAccounts
     fullName: com.microsoft.azure.management.batch.BatchAccounts
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Batch-Konto-Verwaltungs-API. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Batch-Konto-Verwaltungs-API. </p>
     syntax:
       content: 'public interface BatchAccounts extends SupportsCreating<BatchAccount.DefinitionStages.Blank>,SupportsListing<BatchAccount>,SupportsListingByResourceGroup<BatchAccount>,SupportsGettingByResourceGroup<BatchAccount>,SupportsGettingById<BatchAccount>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<BatchAccount>,SupportsBatchDeletion,HasManager<BatchManager>,HasInner<BatchAccountsInner>'
   - uid: com.microsoft.azure.management.cdn._cdn_profiles
@@ -174,7 +184,7 @@ references:
     nameWithType: Disks
     fullName: com.microsoft.azure.management.compute.Disks
     type: Interface
-    summary: <p>Einstiegspunkt für verwaltete Datenträgerverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für verwaltete Datenträgerverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Disks extends SupportsCreating<Disk.DefinitionStages.Blank>,SupportsListing<Disk>,SupportsListingByResourceGroup<Disk>,SupportsGettingByResourceGroup<Disk>,SupportsGettingById<Disk>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<Disk>,SupportsBatchDeletion,HasManager<ComputeManager>,HasInner<DisksInner>'
   - uid: com.microsoft.azure.management.compute._snapshots
@@ -184,7 +194,7 @@ references:
     nameWithType: Snapshots
     fullName: com.microsoft.azure.management.compute.Snapshots
     type: Interface
-    summary: <p>Einstiegspunkt für verwalteten Momentaufnahme-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für verwalteten Momentaufnahme-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Snapshots
   - uid: com.microsoft.azure.management.compute._virtual_machine_custom_images
@@ -217,6 +227,26 @@ references:
     summary: <p>Der Einstiegspunkt für VM Scale Set-API. </p>
     syntax:
       content: public interface VirtualMachineScaleSets
+  - uid: com.microsoft.azure.management.containerinstance._container_groups
+    parent: com.microsoft.azure.management.containerinstance
+    href: com.microsoft.azure.management.containerinstance._container_groups.yml
+    name: ContainerGroups
+    nameWithType: ContainerGroups
+    fullName: com.microsoft.azure.management.containerinstance.ContainerGroups
+    type: Interface
+    summary: <p>Einstiegspunkt für den Container Instanz-API. </p>
+    syntax:
+      content: 'public interface ContainerGroups extends SupportsCreating<ContainerGroup.DefinitionStages.Blank>,HasManager<ContainerInstanceManager>,HasInner<ContainerGroupsInner>,SupportsBatchCreation<ContainerGroup>,SupportsGettingByResourceGroup<ContainerGroup>,SupportsGettingById<ContainerGroup>,SupportsDeletingByResourceGroup,SupportsDeletingById,SupportsBatchDeletion,SupportsListingByResourceGroup<ContainerGroup>,SupportsListing<ContainerGroup>'
+  - uid: com.microsoft.azure.management.cosmosdb._cosmos_d_b_accounts
+    parent: com.microsoft.azure.management.cosmosdb
+    href: com.microsoft.azure.management.cosmosdb._cosmos_d_b_accounts.yml
+    name: CosmosDBAccounts
+    nameWithType: CosmosDBAccounts
+    fullName: com.microsoft.azure.management.cosmosdb.CosmosDBAccounts
+    type: Interface
+    summary: <p>Einstiegspunkt für einen Cosmos-DB-Verwaltungs-API. </p>
+    syntax:
+      content: 'public interface CosmosDBAccounts extends SupportsCreating<CosmosDBAccount.DefinitionStages.Blank>,HasManager<CosmosDBManager>,HasInner<DatabaseAccountsInner>,SupportsBatchCreation<CosmosDBAccount>,SupportsGettingById<CosmosDBAccount>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsListing<CosmosDBAccount>,SupportsListingByResourceGroup<CosmosDBAccount>,SupportsGettingByResourceGroup<CosmosDBAccount>'
   - uid: com.microsoft.azure.management.dns._dns_zones
     parent: com.microsoft.azure.management.dns
     href: com.microsoft.azure.management.dns._dns_zones.yml
@@ -224,19 +254,9 @@ references:
     nameWithType: DnsZones
     fullName: com.microsoft.azure.management.dns.DnsZones
     type: Interface
-    summary: <p>Einstiegspunkt für DNS-Zone Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für DNS-Zone Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface DnsZones extends SupportsCreating<DnsZone.DefinitionStages.Blank>,SupportsListing<DnsZone>,SupportsListingByResourceGroup<DnsZone>,SupportsGettingByResourceGroup<DnsZone>,SupportsGettingById<DnsZone>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<DnsZone>,SupportsBatchDeletion,HasManager<DnsZoneManager>,HasInner<ZonesInner>'
-  - uid: com.microsoft.azure.management.graphrbac._active_directory_application
-    parent: com.microsoft.azure.management.graphrbac
-    href: com.microsoft.azure.management.graphrbac._active_directory_application.yml
-    name: ActiveDirectoryApplication
-    nameWithType: ActiveDirectoryApplication
-    fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryApplication
-    type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD-Anwendung. </p>
-    syntax:
-      content: 'public interface ActiveDirectoryApplication extends Indexable,HasInner<ApplicationInner>,HasId,HasName,HasManager<GraphRbacManager>,Updatable<ActiveDirectoryApplication.Update>'
   - uid: com.microsoft.azure.management.graphrbac._active_directory_applications
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._active_directory_applications.yml
@@ -247,16 +267,6 @@ references:
     summary: <p>Einstiegspunkt für einen Application Management-API. </p>
     syntax:
       content: 'public interface ActiveDirectoryApplications extends SupportsListing<ActiveDirectoryApplication>,SupportsGettingById<ActiveDirectoryApplication>,SupportsGettingByNameAsync<ActiveDirectoryApplication>,SupportsCreating<ActiveDirectoryApplication.DefinitionStages.Blank>,SupportsBatchCreation<ActiveDirectoryApplication>,SupportsDeletingById,HasManager<GraphRbacManager>,HasInner<ApplicationsInner>'
-  - uid: com.microsoft.azure.management.graphrbac._active_directory_group
-    parent: com.microsoft.azure.management.graphrbac
-    href: com.microsoft.azure.management.graphrbac._active_directory_group.yml
-    name: ActiveDirectoryGroup
-    nameWithType: ActiveDirectoryGroup
-    fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryGroup
-    type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD-Gruppe. </p>
-    syntax:
-      content: 'public interface ActiveDirectoryGroup extends HasId,HasName,HasInner<ADGroupInner>,HasManager<GraphRbacManager>'
   - uid: com.microsoft.azure.management.graphrbac._active_directory_groups
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._active_directory_groups.yml
@@ -266,17 +276,17 @@ references:
     type: Interface
     summary: <p>Einstiegspunkt für einen AD-Gruppe-Verwaltungs-API. </p>
     syntax:
-      content: 'public interface ActiveDirectoryGroups extends SupportsListing<ActiveDirectoryGroup>,SupportsGettingById<ActiveDirectoryGroup>,SupportsGettingByNameAsync<ActiveDirectoryGroup>,HasManager<GraphRbacManager>,HasInner<GroupsInner>'
-  - uid: com.microsoft.azure.management.graphrbac._active_directory_user
+      content: 'public interface ActiveDirectoryGroups extends SupportsListing<ActiveDirectoryGroup>,SupportsGettingById<ActiveDirectoryGroup>,SupportsGettingByNameAsync<ActiveDirectoryGroup>,SupportsCreating<ActiveDirectoryGroup.DefinitionStages.Blank>,SupportsDeletingById,HasManager<GraphRbacManager>,HasInner<GroupsInner>'
+  - uid: com.microsoft.azure.management.graphrbac._active_directory_object
     parent: com.microsoft.azure.management.graphrbac
-    href: com.microsoft.azure.management.graphrbac._active_directory_user.yml
-    name: ActiveDirectoryUser
-    nameWithType: ActiveDirectoryUser
-    fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryUser
+    href: com.microsoft.azure.management.graphrbac._active_directory_object.yml
+    name: ActiveDirectoryObject
+    nameWithType: ActiveDirectoryObject
+    fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryObject
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD-Benutzer. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD-Objekt. </p>
     syntax:
-      content: 'public interface ActiveDirectoryUser extends HasInner<UserInner>,HasId,HasName,HasManager<GraphRbacManager>'
+      content: 'public interface ActiveDirectoryObject extends Indexable,HasId,HasName,HasManager<GraphRbacManager>'
   - uid: com.microsoft.azure.management.graphrbac._active_directory_users
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._active_directory_users.yml
@@ -286,7 +296,7 @@ references:
     type: Interface
     summary: <p>Einstiegspunkt für einen AD-Benutzer-Verwaltungs-API. </p>
     syntax:
-      content: 'public interface ActiveDirectoryUsers extends SupportsGettingById<ActiveDirectoryUser>,SupportsGettingByNameAsync<ActiveDirectoryUser>,SupportsListing<ActiveDirectoryUser>,HasManager<GraphRbacManager>,HasInner<UsersInner>'
+      content: 'public interface ActiveDirectoryUsers extends SupportsGettingById<ActiveDirectoryUser>,SupportsGettingByNameAsync<ActiveDirectoryUser>,SupportsListing<ActiveDirectoryUser>,SupportsCreating<ActiveDirectoryUser.DefinitionStages.Blank>,SupportsDeletingById,HasManager<GraphRbacManager>,HasInner<UsersInner>'
   - uid: com.microsoft.azure.management.graphrbac._role_assignment
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._role_assignment.yml
@@ -294,7 +304,7 @@ references:
     nameWithType: RoleAssignment
     fullName: com.microsoft.azure.management.graphrbac.RoleAssignment
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD rollenzuweisung. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD rollenzuweisung. </p>
     syntax:
       content: public interface RoleAssignment
   - uid: com.microsoft.azure.management.graphrbac._role_assignments
@@ -314,7 +324,7 @@ references:
     nameWithType: RoleDefinition
     fullName: com.microsoft.azure.management.graphrbac.RoleDefinition
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD Rollendefinition. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD Rollendefinition. </p>
     syntax:
       content: public interface RoleDefinition
   - uid: com.microsoft.azure.management.graphrbac._role_definitions
@@ -327,16 +337,6 @@ references:
     summary: <p>Einstiegspunkt für einen Rolle Definition Verwaltungs-API. </p>
     syntax:
       content: public interface RoleDefinitions
-  - uid: com.microsoft.azure.management.graphrbac._service_principal
-    parent: com.microsoft.azure.management.graphrbac
-    href: com.microsoft.azure.management.graphrbac._service_principal.yml
-    name: ServicePrincipal
-    nameWithType: ServicePrincipal
-    fullName: com.microsoft.azure.management.graphrbac.ServicePrincipal
-    type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD Dienstprinzipal. </p>
-    syntax:
-      content: public interface ServicePrincipal
   - uid: com.microsoft.azure.management.graphrbac._service_principals
     parent: com.microsoft.azure.management.graphrbac
     href: com.microsoft.azure.management.graphrbac._service_principals.yml
@@ -364,7 +364,7 @@ references:
     nameWithType: ApplicationGateways
     fullName: com.microsoft.azure.management.network.ApplicationGateways
     type: Interface
-    summary: <p>Einstiegspunkt für die Anwendung Gateway-Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für die Anwendung Gateway-Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface ApplicationGateways extends SupportsCreating<ApplicationGateway.DefinitionStages.Blank>,SupportsListing<ApplicationGateway>,SupportsListingByResourceGroup<ApplicationGateway>,SupportsGettingByResourceGroup<ApplicationGateway>,SupportsGettingById<ApplicationGateway>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<ApplicationGateway>,SupportsBatchDeletion,HasManager<NetworkManager>,HasInner<ApplicationGatewaysInner>'
   - uid: com.microsoft.azure.management.network._load_balancers
@@ -374,9 +374,19 @@ references:
     nameWithType: LoadBalancers
     fullName: com.microsoft.azure.management.network.LoadBalancers
     type: Interface
-    summary: <p>Einstiegspunkt zum Laden des Lastenausgleichsmoduls dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt zum Laden des Lastenausgleichsmoduls dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface LoadBalancers
+  - uid: com.microsoft.azure.management.network._local_network_gateways
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._local_network_gateways.yml
+    name: LocalNetworkGateways
+    nameWithType: LocalNetworkGateways
+    fullName: com.microsoft.azure.management.network.LocalNetworkGateways
+    type: Interface
+    summary: <p>Einstiegspunkt zum lokalen Netzwerk-Gateways Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface LocalNetworkGateways
   - uid: com.microsoft.azure.management.network._network_interface_base
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._network_interface_base.yml
@@ -397,6 +407,16 @@ references:
     summary: <p>Einstiegspunkt für einen netzwerkverwaltung-Schnittstelle. </p>
     syntax:
       content: public interface NetworkInterfaces
+  - uid: com.microsoft.azure.management.network._network_peerings
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._network_peerings.yml
+    name: NetworkPeerings
+    nameWithType: NetworkPeerings
+    fullName: com.microsoft.azure.management.network.NetworkPeerings
+    type: Interface
+    summary: <p>Einstiegspunkt für einen Netzwerk-peering-Verwaltungs-API. </p>
+    syntax:
+      content: public interface NetworkPeerings
   - uid: com.microsoft.azure.management.network._networks
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._networks.yml
@@ -404,7 +424,7 @@ references:
     nameWithType: Networks
     fullName: com.microsoft.azure.management.network.Networks
     type: Interface
-    summary: <p>Einstiegspunkt für virtuelles Netzwerk-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Networks
   - uid: com.microsoft.azure.management.network._network_security_groups
@@ -424,7 +444,7 @@ references:
     nameWithType: NetworkWatchers
     fullName: com.microsoft.azure.management.network.NetworkWatchers
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false"></xref> Watcher-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management.network._network" data-throw-if-not-resolved="false">Netzwerk</xref> Watcher-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface NetworkWatchers
   - uid: com.microsoft.azure.management.network._public_i_p_addresses
@@ -457,6 +477,16 @@ references:
     summary: <p>Der Einstiegspunkt für die virtuelle Maschine Scale Set Netzwerk Schnittstelle Verwaltungs-API. </p>
     syntax:
       content: public interface VirtualMachineScaleSetNetworkInterfaces
+  - uid: com.microsoft.azure.management.network._virtual_network_gateways
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._virtual_network_gateways.yml
+    name: VirtualNetworkGateways
+    nameWithType: VirtualNetworkGateways
+    fullName: com.microsoft.azure.management.network.VirtualNetworkGateways
+    type: Interface
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-Gateways Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface VirtualNetworkGateways
   - uid: com.microsoft.azure.management.redis._redis_caches
     parent: com.microsoft.azure.management.redis
     href: com.microsoft.azure.management.redis._redis_caches.yml
@@ -474,7 +504,7 @@ references:
     nameWithType: Deployment
     fullName: com.microsoft.azure.management.resources.Deployment
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Bereitstellung. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Bereitstellung. </p>
     syntax:
       content: 'public interface Deployment extends Indexable,Refreshable<Deployment>,Updatable<Deployment.Update>,HasInner<DeploymentExtendedInner>,HasManager<ResourceManager>,HasName'
   - uid: com.microsoft.azure.management.resources._deployments
@@ -484,7 +514,7 @@ references:
     nameWithType: Deployments
     fullName: com.microsoft.azure.management.resources.Deployments
     type: Interface
-    summary: <p>Einstiegspunkt für vorlagenbereitstellung in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für vorlagenbereitstellung in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Deployments extends SupportsCreating<Deployment.DefinitionStages.Blank>,SupportsListing<Deployment>,SupportsListingByResourceGroup<Deployment>,SupportsGettingByName<Deployment>,SupportsGettingByResourceGroup<Deployment>,SupportsGettingById<Deployment>,SupportsDeletingById,SupportsDeletingByResourceGroup,HasManager<ResourceManager>'
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._independent_child
@@ -510,7 +540,16 @@ references:
     summary: <p>Einstiegspunkt für einen generischen Ressourcen Verwaltungs-API. </p>
     syntax:
       content: 'public interface GenericResources extends SupportsListing<GenericResource>,SupportsListingByResourceGroup<GenericResource>,SupportsListingInResourceGroupByTag<GenericResource>,SupportsGettingById<GenericResource>,SupportsCreating<GenericResource.DefinitionStages.Blank>,SupportsDeletingById,HasManager<ResourceManager>'
-  - uid: com.microsoft.azure.management.resources.implementation._deployments_impl
+  - uid: com.microsoft.azure.management.search._search_services
+    parent: com.microsoft.azure.management.search
+    href: com.microsoft.azure.management.search._search_services.yml
+    name: SearchServices
+    nameWithType: SearchServices
+    fullName: com.microsoft.azure.management.search.SearchServices
+    type: Interface
+    summary: <p>Einstiegspunkt für die Suche dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: public interface SearchServices
   - uid: com.microsoft.azure.management.servicebus._authorization_rules
     parent: com.microsoft.azure.management.servicebus
     href: com.microsoft.azure.management.servicebus._authorization_rules.yml
@@ -533,7 +572,7 @@ references:
     nameWithType: Queues
     fullName: com.microsoft.azure.management.servicebus.Queues
     type: Interface
-    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Queues
   - uid: com.microsoft.azure.management.servicebus._service_bus_namespaces
@@ -543,7 +582,7 @@ references:
     nameWithType: ServiceBusNamespaces
     fullName: com.microsoft.azure.management.servicebus.ServiceBusNamespaces
     type: Interface
-    summary: <p>Einstiegspunkt für Service Bus-Namespace API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Service Bus-Namespace API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface ServiceBusNamespaces
   - uid: com.microsoft.azure.management.servicebus._service_bus_operations
@@ -563,7 +602,7 @@ references:
     nameWithType: ServiceBusSubscriptions
     fullName: com.microsoft.azure.management.servicebus.ServiceBusSubscriptions
     type: Interface
-    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für service Bus-Warteschlange dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface ServiceBusSubscriptions
   - uid: com.microsoft.azure.management.servicebus._topics
@@ -573,7 +612,7 @@ references:
     nameWithType: Topics
     fullName: com.microsoft.azure.management.servicebus.Topics
     type: Interface
-    summary: <p>Einstiegspunkt für Service Bus-Thema Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für Service Bus-Thema Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface Topics
   - uid: com.microsoft.azure.management.sql._recommended_elastic_pool
@@ -583,7 +622,7 @@ references:
     nameWithType: RecommendedElasticPool
     fullName: com.microsoft.azure.management.sql.RecommendedElasticPool
     type: Interface
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> SQL empfohlen ElasticPool. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> SQL empfohlen ElasticPool. </p>
     syntax:
       content: public interface RecommendedElasticPool
   - uid: com.microsoft.azure.management.sql._sql_databases
@@ -636,6 +675,16 @@ references:
     summary: <p>Einstiegspunkt für Konten speicherverwaltungs-API. </p>
     syntax:
       content: public interface StorageAccounts
+  - uid: com.microsoft.azure.management.trafficmanager._geographic_hierarchies
+    parent: com.microsoft.azure.management.trafficmanager
+    href: com.microsoft.azure.management.trafficmanager._geographic_hierarchies.yml
+    name: GeographicHierarchies
+    nameWithType: GeographicHierarchies
+    fullName: com.microsoft.azure.management.trafficmanager.GeographicHierarchies
+    type: Interface
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> traffic Manager geografischen Hierarchie dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
+    syntax:
+      content: 'public interface GeographicHierarchies extends HasManager<TrafficManager>,HasInner<GeographicHierarchiesInner>'
   - uid: com.microsoft.azure.management.trafficmanager._traffic_manager_profiles
     parent: com.microsoft.azure.management.trafficmanager
     href: com.microsoft.azure.management.trafficmanager._traffic_manager_profiles.yml
@@ -643,18 +692,6 @@ references:
     nameWithType: TrafficManagerProfiles
     fullName: com.microsoft.azure.management.trafficmanager.TrafficManagerProfiles
     type: Interface
-    summary: <p>Einstiegspunkt für das traffic Manager-Profil dienstverwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für das traffic Manager-Profil dienstverwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public interface TrafficManagerProfiles
-  - uid: com.microsoft.azure.management.resources.implementation._deployment_impl.manager()
-    parent: com.microsoft.azure.management.resources.implementation._deployment_impl
-    href: com.microsoft.azure.management.resources.implementation._deployment_impl.yml
-    name: manager()
-    nameWithType: DeploymentImpl.manager()
-    fullName: ResourceManager com.microsoft.azure.management.resources.implementation.DeploymentImpl.manager()
-    type: Method
-    syntax:
-      content: public ResourceManager manager()
-      return:
-        type: com.microsoft.azure.management.resources.implementation._resource_manager
-        description: <p>der Manager-Client dieses Ressourcentyps </p>

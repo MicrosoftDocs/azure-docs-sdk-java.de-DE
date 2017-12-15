@@ -15,10 +15,10 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsRecordSet.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsRecordSet.java
-      startLine: 626
+      startLine: 720
     package: com.microsoft.azure.management.dns
     summary: |-
       <p>Die Phase des Datensatzes festgelegt Definition ermöglicht Gültigkeitsdauer (TTL) für die Datensätze in diesem Datensatz Satz an.</p>
@@ -27,7 +27,7 @@ items:
       content: public interface WithTtl<ParentT>
       typeParameters:
         - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref></p>
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.dns._dns_record_set._update_definition_stages._with_ttl.withTimeToLive(long)
     id: withTimeToLive(long)
     parent: com.microsoft.azure.management.dns._dns_record_set._update_definition_stages._with_ttl
@@ -42,7 +42,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsRecordSet.java
-      startLine: 633
+      startLine: 727
     package: com.microsoft.azure.management.dns
     summary: |-
       <p>Gibt die Gültigkeitsdauer (TTL) für die Datensätze im Recordset.</p>
@@ -87,22 +87,9 @@ references:
     type: Interface
     summary: |-
       <p>Die letzte Phase der DNS-Zone Ressourceneintragssatz Definition. </p>
-      <p>In dieser Phase können Sie alle verbleibenden optionalen Einstellungen angegeben, oder die DNS-Zone Ressourceneintragssatz Definition angefügt werden kann, um übergeordnete Traffic Manager-Profil Definition verwendet <xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>In dieser Phase können Sie alle verbleibenden optionalen Einstellungen angegeben, oder die DNS-Zone Ressourceneintragssatz Definition angefügt werden kann, um übergeordnete Traffic Manager-Profil Definition verwendet <xref uid="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false">DnsRecordSet.UpdateDefinitionStages.WithAttach#attach()</xref>. </p>
     syntax:
-      content: 'public interface WithAttach<ParentT> extends Attachable<ParentT>.InUpdate,DnsRecordSet.UpdateDefinitionStages.WithMetadata<ParentT>,DnsRecordSet.UpdateDefinitionStages.WithTtl<ParentT>'
+      content: 'public interface WithAttach<ParentT> extends Attachable<ParentT>.InUpdate,DnsRecordSet.UpdateDefinitionStages.WithTtl<ParentT>,DnsRecordSet.UpdateDefinitionStages.WithMetadata<ParentT>,DnsRecordSet.UpdateDefinitionStages.WithETagCheck<ParentT>'
       typeParameters:
         - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()" data-throw-if-not-resolved="false"></xref></p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.attach()
-    parent: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update
-    href: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_update.yml
-    name: attach()
-    nameWithType: Attachable.InUpdate<ParentT>.attach()
-    fullName: ParentT com.microsoft.azure.management.resources.fluentcore.model.Attachable<ParentT>.InUpdate<ParentT>.attach()
-    type: Method
-    summary: <p>Fügt die Definition der untergeordneten an die übergeordnete Ressource Update an. </p>
-    syntax:
-      content: public ParentT attach()
-      return:
-        type: 18a275b1
-        description: <p>die nächste Phase der der Definition des übergeordneten </p>
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>

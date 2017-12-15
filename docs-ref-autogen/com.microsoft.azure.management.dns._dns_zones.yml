@@ -3,6 +3,11 @@ items:
   - uid: com.microsoft.azure.management.dns._dns_zones
     id: _dns_zones
     parent: com.microsoft.azure.management.dns
+    children:
+      - 'com.microsoft.azure.management.dns._dns_zones.deleteById(String,String)'
+      - 'com.microsoft.azure.management.dns._dns_zones.deleteByIdAsync(String,String)'
+      - 'com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupName(String,String,String)'
+      - 'com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupNameAsync(String,String,String)'
     href: com.microsoft.azure.management.dns._dns_zones.yml
     langs:
       - java
@@ -11,14 +16,14 @@ items:
     fullName: com.microsoft.azure.management.dns.DnsZones
     type: Interface
     source:
-      remote:
+      remote: &ref_0
         path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZones.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZones.java
-      startLine: 26
+      startLine: 28
     package: com.microsoft.azure.management.dns
-    summary: <p>Einstiegspunkt für DNS-Zone Verwaltungs-API in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für DNS-Zone Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface DnsZones extends SupportsCreating<DnsZone.DefinitionStages.Blank>,SupportsListing<DnsZone>,SupportsListingByResourceGroup<DnsZone>,SupportsGettingByResourceGroup<DnsZone>,SupportsGettingById<DnsZone>,SupportsDeletingById,SupportsDeletingByResourceGroup,SupportsBatchCreation<DnsZone>,SupportsBatchDeletion,HasManager<DnsZoneManager>,HasInner<ZonesInner>'
     inheritedMembers:
@@ -51,7 +56,159 @@ items:
       - com.microsoft.azure.management.resources.fluentcore.arm.collectiondcedd7c35acb6def31f119e1aca84c40.listByResourceGroup(String)
       - com.microsoft.azure.management.resources.fluentcore.arm.collectiondcedd7c35acb6def31f119e1aca84c40.listByResourceGroupAsync(String)
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager.manager()
+  - uid: 'com.microsoft.azure.management.dns._dns_zones.deleteById(String,String)'
+    id: 'deleteById(String,String)'
+    parent: com.microsoft.azure.management.dns._dns_zones
+    href: com.microsoft.azure.management.dns._dns_zones.yml
+    langs:
+      - java
+    name: 'deleteById(String id, String eTagValue)'
+    nameWithType: 'DnsZones.deleteById(String id, String eTagValue)'
+    fullName: 'void com.microsoft.azure.management.dns.DnsZones.deleteById(String id, String eTagValue)'
+    overload: com.microsoft.azure.management.dns._dns_zones.deleteById*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZones.java
+      startLine: 75
+    package: com.microsoft.azure.management.dns
+    summary: |-
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
+      <p></p>
+    syntax:
+      content: 'public void deleteById(String id, String eTagValue)'
+      parameters:
+        - id: id
+          type: '26831127'
+          description: <p>die Ressourcen-ID der Ressource löschen </p>
+        - id: eTagValue
+          type: '26831127'
+          description: '<p>der ETag-Wert, auf dem IfMatch-Header für den parallelitätsschutz festlegen </p>'
+  - uid: 'com.microsoft.azure.management.dns._dns_zones.deleteByIdAsync(String,String)'
+    id: 'deleteByIdAsync(String,String)'
+    parent: com.microsoft.azure.management.dns._dns_zones
+    href: com.microsoft.azure.management.dns._dns_zones.yml
+    langs:
+      - java
+    name: 'deleteByIdAsync(String id, String eTagValue)'
+    nameWithType: 'DnsZones.deleteByIdAsync(String id, String eTagValue)'
+    fullName: 'Completable com.microsoft.azure.management.dns.DnsZones.deleteByIdAsync(String id, String eTagValue)'
+    overload: com.microsoft.azure.management.dns._dns_zones.deleteByIdAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZones.java
+      startLine: 58
+    package: com.microsoft.azure.management.dns
+    summary: |-
+      <p>Löschen Sie die Zone aus asynchron <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
+      <p></p>
+    syntax:
+      content: 'public Completable deleteByIdAsync(String id, String eTagValue)'
+      parameters:
+        - id: id
+          type: '26831127'
+          description: <p>die Ressourcen-ID der Ressource löschen </p>
+        - id: eTagValue
+          type: '26831127'
+          description: '<p>der ETag-Wert, auf dem IfMatch-Header für den parallelitätsschutz festlegen </p>'
+      return:
+        type: '56537e90'
+        description: <p>Rufen Sie eine Darstellung der verzögerten Berechnung dieses löschen </p>
+  - uid: 'com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupName(String,String,String)'
+    id: 'deleteByResourceGroupName(String,String,String)'
+    parent: com.microsoft.azure.management.dns._dns_zones
+    href: com.microsoft.azure.management.dns._dns_zones.yml
+    langs:
+      - java
+    name: 'deleteByResourceGroupName(String resourceGroupName, String zoneName, String eTagValue)'
+    nameWithType: 'DnsZones.deleteByResourceGroupName(String resourceGroupName, String zoneName, String eTagValue)'
+    fullName: 'void com.microsoft.azure.management.dns.DnsZones.deleteByResourceGroupName(String resourceGroupName, String zoneName, String eTagValue)'
+    overload: com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZones.java
+      startLine: 67
+    package: com.microsoft.azure.management.dns
+    summary: |-
+      <p>Löscht die Zone aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p></p>
+    syntax:
+      content: 'public void deleteByResourceGroupName(String resourceGroupName, String zoneName, String eTagValue)'
+      parameters:
+        - id: resourceGroupName
+          type: '26831127'
+          description: <p>die Ressourcengruppe der Ressource ist Teil des </p>
+        - id: zoneName
+          type: '26831127'
+          description: <p>der Name der zone </p>
+        - id: eTagValue
+          type: '26831127'
+          description: '<p>der ETag-Wert, auf dem IfMatch-Header für den parallelitätsschutz festlegen </p>'
+  - uid: 'com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupNameAsync(String,String,String)'
+    id: 'deleteByResourceGroupNameAsync(String,String,String)'
+    parent: com.microsoft.azure.management.dns._dns_zones
+    href: com.microsoft.azure.management.dns._dns_zones.yml
+    langs:
+      - java
+    name: 'deleteByResourceGroupNameAsync(String resourceGroupName, String zoneName, String eTagValue)'
+    nameWithType: 'DnsZones.deleteByResourceGroupNameAsync(String resourceGroupName, String zoneName, String eTagValue)'
+    fullName: 'Completable com.microsoft.azure.management.dns.DnsZones.deleteByResourceGroupNameAsync(String resourceGroupName, String zoneName, String eTagValue)'
+    overload: com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupNameAsync*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-dns/src/main/java/com/microsoft/azure/management/dns/DnsZones.java
+      startLine: 49
+    package: com.microsoft.azure.management.dns
+    summary: |-
+      <p>Löscht asynchron auf die Zone aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p></p>
+    syntax:
+      content: 'public Completable deleteByResourceGroupNameAsync(String resourceGroupName, String zoneName, String eTagValue)'
+      parameters:
+        - id: resourceGroupName
+          type: '26831127'
+          description: <p>die Ressourcengruppe der Ressource ist Teil des </p>
+        - id: zoneName
+          type: '26831127'
+          description: <p>der Name der zone </p>
+        - id: eTagValue
+          type: '26831127'
+          description: '<p>der ETag-Wert, auf dem IfMatch-Header für den parallelitätsschutz festlegen </p>'
+      return:
+        type: '56537e90'
+        description: <p>Rufen Sie eine Darstellung der verzögerten Berechnung dieses löschen </p>
 references:
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
+  - uid: '56537e90'
+    spec.java:
+      - name: Completable
+        fullName: Completable
+  - uid: com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupNameAsync*
+    name: deleteByResourceGroupNameAsync
+    nameWithType: DnsZones.deleteByResourceGroupNameAsync
+    fullName: Completable com.microsoft.azure.management.dns.DnsZones.deleteByResourceGroupNameAsync
+    package: com.microsoft.azure.management.dns
+  - uid: com.microsoft.azure.management.dns._dns_zones.deleteByIdAsync*
+    name: deleteByIdAsync
+    nameWithType: DnsZones.deleteByIdAsync
+    fullName: Completable com.microsoft.azure.management.dns.DnsZones.deleteByIdAsync
+    package: com.microsoft.azure.management.dns
+  - uid: com.microsoft.azure.management.dns._dns_zones.deleteByResourceGroupName*
+    name: deleteByResourceGroupName
+    nameWithType: DnsZones.deleteByResourceGroupName
+    fullName: void com.microsoft.azure.management.dns.DnsZones.deleteByResourceGroupName
+    package: com.microsoft.azure.management.dns
+  - uid: com.microsoft.azure.management.dns._dns_zones.deleteById*
+    name: deleteById
+    nameWithType: DnsZones.deleteById
+    fullName: void com.microsoft.azure.management.dns.DnsZones.deleteById
+    package: com.microsoft.azure.management.dns
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation.create(Creatable<ResourceT>...)
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation
     href: com.microsoft.azure.management.resources.fluentcore.collection._supports_batch_creation.yml
@@ -181,8 +338,8 @@ references:
     type: Method
     summary: |-
       <p>Startet eine Definition für eine neue Ressource. </p>
-      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> ist <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Beachten Sie, dass die <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
+      <p>Dies ist der Anfang des Generators zum Erstellen von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref>. </p>
+      <p>Beachten Sie, dass die <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> Methode ist nur verfügbar, in der Phase der Definition der Ressource, die den minimalen Satz von Eingabeparametern angegeben wurde. Wenn Sie nicht sehen <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">Creatable#create()</xref> zwischen den verfügbaren Methoden es bedeutet, dass die erforderlichen eingabeeinstellungen noch nicht angegeben. Eingabeeinstellungen beginnen in der Regel mit dem Wort "mit", z. B.: und die nächste Phase der Ressourcendefinition als eine Schnittstelle in das Format "fluent-Benutzeroberfläche" zurückgegeben. </p>
     syntax:
       content: public T define(String name)
       parameters:
@@ -200,7 +357,7 @@ references:
     fullName: void com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteById(String id)
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public void deleteById(String id)
@@ -216,7 +373,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByIdAsync(String id, ServiceCallback<Void> callback)'
@@ -238,7 +395,7 @@ references:
     fullName: Completable com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById.deleteByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID</p>
       <p></p>
     syntax:
       content: public Completable deleteByIdAsync(String id)
@@ -247,7 +404,7 @@ references:
           type: '26831127'
           description: <p>die Ressourcen-ID der Ressource löschen </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.deleteByIds(Collection<String>)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
@@ -256,7 +413,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(Collection<String> ids)
       parameters:
@@ -270,7 +427,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIds(String...ids)
     fullName: void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIds(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public void deleteByIds(String...ids)
       parameters:
@@ -284,7 +441,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(Collection<String> ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(Collection<String> ids)
       parameters:
@@ -301,7 +458,7 @@ references:
     nameWithType: SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     fullName: Observable<String> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion.deleteByIdsAsync(String...ids)
     type: Method
-    summary: <p>Löscht die angegebenen Ressourcen aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> asynchron und parallel. </p>
+    summary: <p>Löscht die angegebenen Ressourcen aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> asynchron und parallel. </p>
     syntax:
       content: public Observable<String> deleteByIdsAsync(String...ids)
       parameters:
@@ -319,7 +476,7 @@ references:
     fullName: 'void com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Löscht eine Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Löscht eine Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public void deleteByResourceGroup(String resourceGroupName, String name)'
@@ -338,7 +495,7 @@ references:
     fullName: 'ServiceFuture<Void> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<Void> deleteByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<Void> callback)'
@@ -363,7 +520,7 @@ references:
     fullName: 'Completable com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup.deleteByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Asynchron Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
+      <p>Asynchron Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird.</p>
       <p></p>
     syntax:
       content: 'public Completable deleteByResourceGroupAsync(String resourceGroupName, String name)'
@@ -375,7 +532,7 @@ references:
           type: '26831127'
           description: <p>Der Name der Ressource </p>
       return:
-        type: 56537e90
+        type: '56537e90'
         description: <p>eine Darstellung der verzögerten Berechnung dieses Aufrufs </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id.getById(String)
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_getting_by_id
@@ -385,7 +542,7 @@ references:
     fullName: T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getById(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public T getById(String id)
@@ -404,7 +561,7 @@ references:
     fullName: Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id)
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: public Observable<T> getByIdAsync(String id)
@@ -423,7 +580,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>.getByIdAsync(String id, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf die Ressourcen-Id.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf die Ressourcen-Id.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByIdAsync(String id, ServiceCallback<T> callback)'
@@ -445,7 +602,7 @@ references:
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroup(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public T getByResourceGroup(String resourceGroupName, String name)'
@@ -467,7 +624,7 @@ references:
     fullName: 'Observable<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public Observable<T> getByResourceGroupAsync(String resourceGroupName, String name)'
@@ -489,7 +646,7 @@ references:
     fullName: 'ServiceFuture<T> com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>.getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
     type: Method
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource und der Name der Ressourcengruppe.</p>
       <p></p>
     syntax:
       content: 'public ServiceFuture<T> getByResourceGroupAsync(String resourceGroupName, String name, ServiceCallback<T> callback)'
@@ -517,7 +674,7 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.list()
     parent: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing
     href: com.microsoft.azure.management.resources.fluentcore.collection._supports_listing.yml
@@ -606,7 +763,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsCreating<T>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Top-Level-Ressourcen. </p>
+      <p>Bietet Zugriff auf das Erstellen von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Top-Level-Ressourcen. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsCreating<T>
@@ -621,7 +778,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsListing<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einem Abonnement. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist)</p>
       <p></p>
     syntax:
@@ -637,7 +794,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsListingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf die Auflistung <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
+      <p>Ermöglicht den Zugriff auf die Auflistung <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen eines bestimmten Typs in einer bestimmten Ressourcengruppe. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -653,7 +810,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingByResourceGroup<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage einer Gruppe von Name und Ressource. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -669,7 +826,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsGettingById<T>
     type: Interface
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressource auf Grundlage der Ressourcen-ID. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressource auf Grundlage der Ressourcen-ID. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.)</p>
       <p></p>
     syntax:
@@ -685,7 +842,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsDeletingById
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, identifizieren sie die Ressourcen-ID </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, identifizieren sie die Ressourcen-ID </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsDeletingById
@@ -697,7 +854,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsDeletingByResourceGroup
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
+      <p>Bietet Zugriff auf das Löschen einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch den Namen und die Ressourcengruppe identifiziert wird. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsDeletingByResourceGroup
@@ -709,13 +866,13 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.collection.SupportsBatchCreation<ResourceT>
     type: Interface
     summary: |-
-      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
+      <p>Bereitstellen des Zugriffs für das Erstellen eines Batches von <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen für die oberen Ebenen des gleichen Typs. </p>
       <p>(Hinweis: Diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist) </p>
     syntax:
       content: public interface SupportsBatchCreation<ResourceT extends Indexable>
       typeParameters:
         - type: ab77b02a
-          description: <p>die oberste Ebene <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcentyp </p>
+          description: <p>die oberste Ebene <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcentyp </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion
     parent: com.microsoft.azure.management.resources.fluentcore.arm.collection
     href: com.microsoft.azure.management.resources.fluentcore.arm.collection._supports_batch_deletion.yml
@@ -724,7 +881,7 @@ references:
     fullName: com.microsoft.azure.management.resources.fluentcore.arm.collection.SupportsBatchDeletion
     type: Interface
     summary: |-
-      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>, durch das IDs identifiziert werden. </p>
+      <p>Bietet Zugriff auf mehrere Ressourcen aus löschen <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>, durch das IDs identifiziert werden. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsBatchDeletion
@@ -763,6 +920,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

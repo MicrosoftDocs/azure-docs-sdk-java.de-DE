@@ -15,13 +15,13 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/collection/SupportsGettingByName.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-resources/src/main/java/com/microsoft/azure/management/resources/fluentcore/arm/collection/SupportsGettingByName.java
       startLine: 19
     package: com.microsoft.azure.management.resources.fluentcore.arm.collection
     summary: |-
-      <p>Ermöglicht den Zugriff auf einen bestimmten erste <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> Ressourcen basierend auf seinen Namen innerhalb der aktuellen Ressourcengruppe enthalten. </p>
+      <p>Ermöglicht den Zugriff auf das Abrufen eines bestimmtes <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Ressourcen basierend auf seinen Namen innerhalb der aktuellen Ressourcengruppe enthalten. </p>
       <p>(Beachten Sie, dass diese Schnittstelle keine Implementierung durch Benutzercode vorgesehen ist.) </p>
     syntax:
       content: public interface SupportsGettingByName<T>
@@ -45,7 +45,7 @@ items:
       startLine: 26
     package: com.microsoft.azure.management.resources.fluentcore.arm.collection
     summary: |-
-      <p>Ruft die Informationen zu einer Ressource aus <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> basierend auf den Namen der Ressource innerhalb der aktuellen Ressourcengruppe enthalten.</p>
+      <p>Ruft die Informationen zu einer Ressource aus <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> basierend auf den Namen der Ressource innerhalb der aktuellen Ressourcengruppe enthalten.</p>
       <p></p>
     syntax:
       content: public T getByName(String name)
@@ -77,89 +77,44 @@ references:
     nameWithType: DeploymentSlots
     fullName: com.microsoft.azure.management.appservice.DeploymentSlots
     type: Interface
-    summary: <p>Einstiegspunkt für <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> web-app-Bereitstellung Slot Verwaltungs-API. </p>
+    summary: <p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> web-app-Bereitstellung Slot Verwaltungs-API. </p>
     syntax:
       content: 'public interface DeploymentSlots extends SupportsCreating<DeploymentSlot.DefinitionStages.Blank>,SupportsListing<DeploymentSlot>,SupportsGettingByName<DeploymentSlot>,SupportsGettingById<DeploymentSlot>,SupportsDeletingById,SupportsDeletingByName,HasManager<AppServiceManager>,HasParent<WebApp>'
-  - uid: com.microsoft.azure.management.dns._aaaa_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._aaaa_record_sets.yml
-    name: AaaaRecordSets
-    nameWithType: AaaaRecordSets
-    fullName: com.microsoft.azure.management.dns.AaaaRecordSets
+  - uid: com.microsoft.azure.management.appservice._function_deployment_slots
+    parent: com.microsoft.azure.management.appservice
+    href: com.microsoft.azure.management.appservice._function_deployment_slots.yml
+    name: FunctionDeploymentSlots
+    nameWithType: FunctionDeploymentSlots
+    fullName: com.microsoft.azure.management.appservice.FunctionDeploymentSlots
     type: Interface
-    summary: '<p>Einstiegspunkt für AAAA-Eintrag legt fest, in einer DNS-Zone. </p>'
+    summary: '<p>Einstiegspunkt für <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> Slot für die app-Bereitstellung, Verwaltungs-API-Funktion. </p>'
     syntax:
-      content: 'public interface AaaaRecordSets extends SupportsListing<AaaaRecordSet>,SupportsGettingByName<AaaaRecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._a_record_sets
+      content: 'public interface FunctionDeploymentSlots extends SupportsCreating<FunctionDeploymentSlot.DefinitionStages.Blank>,SupportsListing<FunctionDeploymentSlot>,SupportsGettingByName<FunctionDeploymentSlot>,SupportsGettingById<FunctionDeploymentSlot>,SupportsDeletingById,SupportsDeletingByName,HasManager<AppServiceManager>,HasParent<FunctionApp>'
+  - uid: com.microsoft.azure.management.dns._dns_record_sets
     parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._a_record_sets.yml
-    name: ARecordSets
-    nameWithType: ARecordSets
-    fullName: com.microsoft.azure.management.dns.ARecordSets
+    href: com.microsoft.azure.management.dns._dns_record_sets.yml
+    name: DnsRecordSets<RecordSetT>
+    nameWithType: DnsRecordSets<RecordSetT>
+    fullName: com.microsoft.azure.management.dns.DnsRecordSets<RecordSetT>
     type: Interface
-    summary: <p>Einstiegspunkt für einen Datensatz in einer DNS-Zone legt sie fest. </p>
+    summary: |-
+      <p>Die Basisschnittstelle für alle Datensatzgruppen.</p>
+      <p></p>
     syntax:
-      content: 'public interface ARecordSets extends SupportsListing<ARecordSet>,SupportsGettingByName<ARecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._c_name_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._c_name_record_sets.yml
-    name: CNameRecordSets
-    nameWithType: CNameRecordSets
-    fullName: com.microsoft.azure.management.dns.CNameRecordSets
+      content: 'public interface DnsRecordSets<RecordSetT> extends SupportsListing<RecordSetT>,SupportsGettingByName<RecordSetT>,HasParent<DnsZone>'
+      typeParameters:
+        - type: 94cbd096
+          description: <p>Der Typ der Datensatzgruppe </p>
+  - uid: com.microsoft.azure.management.network._virtual_network_gateway_connections
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._virtual_network_gateway_connections.yml
+    name: VirtualNetworkGatewayConnections
+    nameWithType: VirtualNetworkGatewayConnections
+    fullName: com.microsoft.azure.management.network.VirtualNetworkGatewayConnections
     type: Interface
-    summary: '<p>Einstiegspunkt für CNAME-Eintrag legt fest, in einer DNS-Zone. </p>'
+    summary: <p>Einstiegspunkt für virtuelles Netzwerk-Gateways Verbindungen Verwaltungs-API in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
-      content: 'public interface CNameRecordSets extends SupportsListing<CNameRecordSet>,SupportsGettingByName<CNameRecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._m_x_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._m_x_record_sets.yml
-    name: MXRecordSets
-    nameWithType: MXRecordSets
-    fullName: com.microsoft.azure.management.dns.MXRecordSets
-    type: Interface
-    summary: <p>Einstiegspunkt MX-Eintrag wird in eine <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> DNS-Zone. </p>
-    syntax:
-      content: 'public interface MXRecordSets extends SupportsListing<MXRecordSet>,SupportsGettingByName<MXRecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._n_s_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._n_s_record_sets.yml
-    name: NSRecordSets
-    nameWithType: NSRecordSets
-    fullName: com.microsoft.azure.management.dns.NSRecordSets
-    type: Interface
-    summary: <p>Einstiegspunkt für Namenservereintrag legt einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> DNS-Zone. </p>
-    syntax:
-      content: 'public interface NSRecordSets extends SupportsListing<NSRecordSet>,SupportsGettingByName<NSRecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._ptr_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._ptr_record_sets.yml
-    name: PtrRecordSets
-    nameWithType: PtrRecordSets
-    fullName: com.microsoft.azure.management.dns.PtrRecordSets
-    type: Interface
-    summary: '<p>Einstiegspunkt für PTR-Eintrag legt fest, in einer DNS-Zone. </p>'
-    syntax:
-      content: 'public interface PtrRecordSets extends SupportsListing<PtrRecordSet>,SupportsGettingByName<PtrRecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._srv_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._srv_record_sets.yml
-    name: SrvRecordSets
-    nameWithType: SrvRecordSets
-    fullName: com.microsoft.azure.management.dns.SrvRecordSets
-    type: Interface
-    summary: '<p>Einstiegspunkt für den SRV-Eintrag legt fest, in einer DNS-Zone. </p>'
-    syntax:
-      content: 'public interface SrvRecordSets extends SupportsListing<SrvRecordSet>,SupportsGettingByName<SrvRecordSet>,HasParent<DnsZone>'
-  - uid: com.microsoft.azure.management.dns._txt_record_sets
-    parent: com.microsoft.azure.management.dns
-    href: com.microsoft.azure.management.dns._txt_record_sets.yml
-    name: TxtRecordSets
-    nameWithType: TxtRecordSets
-    fullName: com.microsoft.azure.management.dns.TxtRecordSets
-    type: Interface
-    summary: <p>Einstiegspunkt für TXT-Eintrag wird in einer DNS-Zone. </p>
-    syntax:
-      content: public interface TxtRecordSets
+      content: public interface VirtualNetworkGatewayConnections
   - uid: com.microsoft.azure.management.resources._deployments
     parent: com.microsoft.azure.management.resources
     href: com.microsoft.azure.management.resources._deployments.yml
@@ -167,7 +122,7 @@ references:
     nameWithType: Deployments
     fullName: com.microsoft.azure.management.resources.Deployments
     type: Interface
-    summary: <p>Einstiegspunkt für vorlagenbereitstellung in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Einstiegspunkt für vorlagenbereitstellung in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: 'public interface Deployments extends SupportsCreating<Deployment.DefinitionStages.Blank>,SupportsListing<Deployment>,SupportsListingByResourceGroup<Deployment>,SupportsGettingByName<Deployment>,SupportsGettingByResourceGroup<Deployment>,SupportsGettingById<Deployment>,SupportsDeletingById,SupportsDeletingByResourceGroup,HasManager<ResourceManager>'
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.collectionc5f43ffbf69fd8f6f2762a26b4886409
@@ -222,6 +177,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure

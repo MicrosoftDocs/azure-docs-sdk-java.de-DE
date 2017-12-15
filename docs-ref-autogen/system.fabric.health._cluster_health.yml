@@ -21,7 +21,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/health/ClusterHealth.java
       startLine: 11
     package: system.fabric.health
-    summary: '<p>Die Integrität des Clusters dar, der vom <xref href="system.fabric._health_client.getClusterHealthAsync(ClusterHealthQueryDescription)" data-throw-if-not-resolved="false"></xref> . Enthält den Integritätsstatus des Clusters aggregiert und Integritätsstatus für die Cluster-Anwendung und Knoten. </p>'
+    summary: '<p>Die Integrität des Clusters dar, der vom <xref uid="system.fabric._health_client.getClusterHealthAsync(ClusterHealthQueryDescription)" data-throw-if-not-resolved="false">system.fabric.HealthClient#getClusterHealthAsync(system.fabric.ClusterHealthQueryDescription)</xref> . Enthält den Integritätsstatus des Clusters aggregiert und Integritätsstatus für die Cluster-Anwendung und Knoten. </p>'
     syntax:
       content: public class ClusterHealth extends EntityHealth
     inheritance:
@@ -55,7 +55,7 @@ items:
       content: public List<ApplicationHealthState> getApplicationHealthStates()
       return:
         type: 5618da2dsystem.fabric.health._application_health_statea08ddfce
-        description: '<p>Die Clusteranwendungen wie im Health Store. Nur Anwendungen, die berücksichtigen die <xref href="system.fabric._cluster_health_query_description.getApplicationHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Anwendungen zurückgegeben. Alle Anwendungen werden ausgewertet, um zu bestimmen, den Clusterzustand aggregiert. </p>'
+        description: '<p>Die Clusteranwendungen wie im Health Store. Nur Anwendungen, die berücksichtigen die <xref uid="system.fabric._cluster_health_query_description.getApplicationHealthStatesFilter()" data-throw-if-not-resolved="false">system.fabric.ClusterHealthQueryDescription#getApplicationHealthStatesFilter()</xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Anwendungen zurückgegeben. Alle Anwendungen werden ausgewertet, um zu bestimmen, den Clusterzustand aggregiert. </p>'
   - uid: system.fabric.health._cluster_health.getNodeHealthStates()
     id: getNodeHealthStates()
     parent: system.fabric.health._cluster_health
@@ -80,7 +80,7 @@ items:
       content: public List<NodeHealthState> getNodeHealthStates()
       return:
         type: 5618da2dsystem.fabric.health._node_health_statea08ddfce
-        description: '<p>Die Clusterknoten im Health Store als gefunden. Nur Knoten, deren berücksichtigen die <xref href="system.fabric._cluster_health_query_description.getNodeHealthStatesFilter()" data-throw-if-not-resolved="false"></xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Knoten zurückgegeben. </p>'
+        description: '<p>Die Clusterknoten im Health Store als gefunden. Nur Knoten, deren berücksichtigen die <xref uid="system.fabric._cluster_health_query_description.getNodeHealthStatesFilter()" data-throw-if-not-resolved="false">system.fabric.ClusterHealthQueryDescription#getNodeHealthStatesFilter()</xref> (falls angegeben) werden zurückgegeben. Wenn der Filter nicht angegeben ist, werden alle Knoten zurückgegeben. </p>'
 references:
   - uid: 5618da2dsystem.fabric.health._node_health_statea08ddfce
     spec.java:
@@ -142,7 +142,7 @@ references:
       content: public HealthState getAggregatedHealthState()
       return:
         type: system.fabric.health._health_state
-        description: "<p>\r\n\r\n  <xref href=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\"></xref>der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie. </p>"
+        description: "<p>\r\n\r\n  <xref uid=\"system.fabric.health._health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.HealthState</xref> Ereignisse auf die Entität und seine untergeordneten Elemente gemeldet, (sofern vorhanden) und des gewünschten Integritätsrichtlinie, die der aggregierte Integritätszustand berechnet vom Health Manager basierend auf darstellt. </p>"
   - uid: system.fabric.health._entity_health.getHealthEvents()
     parent: system.fabric.health._entity_health
     href: system.fabric.health._entity_health.yml
@@ -150,7 +150,7 @@ references:
     nameWithType: EntityHealth.getHealthEvents()
     fullName: List<HealthEvent> system.fabric.health.EntityHealth.getHealthEvents()
     type: Method
-    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
+    summary: "<p>Ruft die integritätsereignisse für die Entität gemeldet.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>die integritätsereignisse werden basierend auf Integritätsberichte gesendet in Health Store erstellt. Diese enthalten zusätzliche Metadaten, die vom Health Store hinzugefügt. </p>"
     syntax:
       content: public List<HealthEvent> getHealthEvents()
       return:
@@ -208,7 +208,7 @@ references:
     nameWithType: HealthEvent
     fullName: system.fabric.health.HealthEvent
     type: Class
-    summary: '<p>Ein <xref href="system.fabric.health._health_event" data-throw-if-not-resolved="false"></xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
+    summary: '<p>Ein <xref uid="system.fabric.health._health_event" data-throw-if-not-resolved="false">HealthEvent</xref> Objekt ist eine Struktur, die die Zustandsinformationen enthält, die verwendet wird, beim Melden der Integrität für eine Entität über ReportHealth-API </p>'
     syntax:
       content: public class HealthEvent
   - uid: system.fabric.health._health_evaluation
@@ -228,12 +228,12 @@ references:
     nameWithType: ClusterHealthQueryDescription.getNodeHealthStatesFilter()
     fullName: NodeHealthStatesFilter system.fabric.ClusterHealthQueryDescription.getNodeHealthStatesFilter()
     type: Method
-    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._node_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>werden nur die Knoten, die dem Filter entsprechen zurückgegeben werden. Alle Knoten dienen zum Auswerten des integritätszustands der Cluster aggregiert. Wenn der Filter nicht angegeben ist, werden alle Knoten des Clusters zurückgegeben. </p>"
+    summary: "<p>Ruft den Filter für <xref uid=\"system.fabric.health._node_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.NodeHealthState</xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>werden nur die Knoten, die dem Filter entsprechen zurückgegeben werden. Alle Knoten dienen zum Auswerten des integritätszustands der Cluster aggregiert. Wenn der Filter nicht angegeben ist, werden alle Knoten des Clusters zurückgegeben. </p>"
     syntax:
       content: public NodeHealthStatesFilter getNodeHealthStatesFilter()
       return:
         type: system.fabric._node_health_states_filter
-        description: <p>Der Filter für <xref href="system.fabric.health._node_health_state" data-throw-if-not-resolved="false"></xref> untergeordneten Elemente. </p>
+        description: <p>Der Filter für <xref uid="system.fabric.health._node_health_state" data-throw-if-not-resolved="false">system.fabric.health.NodeHealthState</xref> untergeordneten Elemente. </p>
   - uid: system.fabric._cluster_health_query_description.getApplicationHealthStatesFilter()
     parent: system.fabric._cluster_health_query_description
     href: system.fabric._cluster_health_query_description.yml
@@ -241,12 +241,12 @@ references:
     nameWithType: ClusterHealthQueryDescription.getApplicationHealthStatesFilter()
     fullName: ApplicationHealthStatesFilter system.fabric.ClusterHealthQueryDescription.getApplicationHealthStatesFilter()
     type: Method
-    summary: "<p>Ruft den Filter für <xref href=\"system.fabric.health._application_health_state\" data-throw-if-not-resolved=\"false\"></xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>nur Anwendungen, die dem Filter entsprechen zurückgegeben werden. Alle Anwendungen dienen zum Auswerten des integritätszustands der Cluster aggregiert. Wenn der Filter nicht angegeben ist, werden alle Clusteranwendungen zurückgegeben. </p>"
+    summary: "<p>Ruft den Filter für <xref uid=\"system.fabric.health._application_health_state\" data-throw-if-not-resolved=\"false\">system.fabric.health.ApplicationHealthState</xref> untergeordneten Elemente. Nur untergeordnete Elemente, die dem Filter entsprechen, werden zurückgegeben.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>nur Anwendungen, die dem Filter entsprechen zurückgegeben werden. Alle Anwendungen dienen zum Auswerten des integritätszustands der Cluster aggregiert. Wenn der Filter nicht angegeben ist, werden alle Clusteranwendungen zurückgegeben. </p>"
     syntax:
       content: public ApplicationHealthStatesFilter getApplicationHealthStatesFilter()
       return:
         type: system.fabric._application_health_states_filter
-        description: <p>Der Filter für <xref href="system.fabric.health._application_health_state" data-throw-if-not-resolved="false"></xref> untergeordneten Elemente. </p>
+        description: <p>Der Filter für <xref uid="system.fabric.health._application_health_state" data-throw-if-not-resolved="false">system.fabric.health.ApplicationHealthState</xref> untergeordneten Elemente. </p>
   - uid: system.fabric._health_client.getClusterHealthAsync(ClusterHealthQueryDescription)
     parent: system.fabric._health_client
     href: system.fabric._health_client.yml

@@ -4,15 +4,19 @@ items:
     id: _cloud_file_share
     parent: com.microsoft.azure.storage.file
     children:
+      - com.microsoft.azure.storage.file._cloud_file_share.assertNoSnapshot()
       - com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final StorageUri)
       - 'com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final StorageUri,final StorageCredentials)'
-      - 'com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final String,final CloudFileClient)'
+      - 'com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final String,String,final CloudFileClient)'
       - com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final URI)
       - 'com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final URI,final StorageCredentials)'
       - com.microsoft.azure.storage.file._cloud_file_share.create()
       - 'com.microsoft.azure.storage.file._cloud_file_share.create(FileRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.file._cloud_file_share.createIfNotExists()
       - 'com.microsoft.azure.storage.file._cloud_file_share.createIfNotExists(FileRequestOptions,OperationContext)'
+      - com.microsoft.azure.storage.file._cloud_file_share.createSnapshot()
+      - 'com.microsoft.azure.storage.file._cloud_file_share.createSnapshot(final AccessCondition,FileRequestOptions,OperationContext)'
+      - 'com.microsoft.azure.storage.file._cloud_file_share.createSnapshot(final HashMap<String, String>,final AccessCondition,FileRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.file._cloud_file_share.delete()
       - 'com.microsoft.azure.storage.file._cloud_file_share.delete(AccessCondition,FileRequestOptions,OperationContext)'
       - 'com.microsoft.azure.storage.file._cloud_file_share.delete(DeleteShareSnapshotsOption,AccessCondition,FileRequestOptions,OperationContext)'
@@ -30,12 +34,15 @@ items:
       - com.microsoft.azure.storage.file._cloud_file_share.getMetadata()
       - com.microsoft.azure.storage.file._cloud_file_share.getName()
       - com.microsoft.azure.storage.file._cloud_file_share.getProperties()
+      - com.microsoft.azure.storage.file._cloud_file_share.getQualifiedUri()
       - com.microsoft.azure.storage.file._cloud_file_share.getRootDirectoryReference()
       - com.microsoft.azure.storage.file._cloud_file_share.getServiceClient()
+      - com.microsoft.azure.storage.file._cloud_file_share.getSnapshot()
       - com.microsoft.azure.storage.file._cloud_file_share.getStats()
       - 'com.microsoft.azure.storage.file._cloud_file_share.getStats(FileRequestOptions,OperationContext)'
       - com.microsoft.azure.storage.file._cloud_file_share.getStorageUri()
       - com.microsoft.azure.storage.file._cloud_file_share.getUri()
+      - com.microsoft.azure.storage.file._cloud_file_share.isSnapshot()
       - 'com.microsoft.azure.storage.file._cloud_file_share.setMetadata(final HashMap<String, String>)'
       - com.microsoft.azure.storage.file._cloud_file_share.setProperties(final FileShareProperties)
       - com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()
@@ -61,11 +68,30 @@ items:
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Stellt eine Freigabe in der Microsoft Azure-Dateidienst dar. </p>
-      <p>Freigaben enthalten die Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekte und Verzeichnisse enthalten Dateien. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+      <p>Freigaben enthalten die Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekte und Verzeichnisse enthalten Dateien. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
     syntax: &ref_1
       content: public class CloudFileShare
     inheritance:
       - java.lang.Object
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.assertNoSnapshot()
+    id: assertNoSnapshot()
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: assertNoSnapshot()
+    nameWithType: CloudFileShare.assertNoSnapshot()
+    fullName: void com.microsoft.azure.storage.file.CloudFileShare.assertNoSnapshot()
+    overload: com.microsoft.azure.storage.file._cloud_file_share.assertNoSnapshot*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 1064
+    package: com.microsoft.azure.storage.file
+    summary: '<p>Bestätigt, dass die Freigabe nicht um eine Momentaufnahme ist. </p>'
+    syntax:
+      content: protected void assertNoSnapshot()
   - uid: com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final StorageUri)
     id: CloudFileShare(final StorageUri)
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -90,7 +116,7 @@ items:
       parameters:
         - id: storageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das den absoluten URI der Freigabe darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das den absoluten URI der Freigabe darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -108,32 +134,32 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 177
+      startLine: 179
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Erstellt eine Instanz der Klasse unter Verwendung des angegebenen <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> und Anmeldeinformationen.</p>
+      <p>Erstellt eine Instanz der Klasse unter Verwendung des angegebenen <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> und Anmeldeinformationen.</p>
       <p></p>
     syntax:
       content: 'public CloudFileShare(final StorageUri storageUri, final StorageCredentials credentials)'
       parameters:
         - id: storageUri
           type: 93de0ef9com.microsoft.azure.storage._storage_uri
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> Objekt, das die absoluten darstellt <xref href="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false"></xref> der Freigabe. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die absoluten darstellt <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> der Freigabe. </p>'
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das zum Authentifizieren des Zugriffs verwendet. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das zum Authentifizieren des Zugriffs verwendet. </p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
-  - uid: 'com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final String,final CloudFileClient)'
-    id: 'CloudFileShare(final String,final CloudFileClient)'
+  - uid: 'com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare(final String,String,final CloudFileClient)'
+    id: 'CloudFileShare(final String,String,final CloudFileClient)'
     parent: com.microsoft.azure.storage.file._cloud_file_share
     href: com.microsoft.azure.storage.file._cloud_file_share.yml
     langs:
       - java
-    name: 'CloudFileShare(final String shareName, final CloudFileClient client)'
-    nameWithType: 'CloudFileShare.CloudFileShare(final String shareName, final CloudFileClient client)'
-    fullName: 'com.microsoft.azure.storage.file.CloudFileShare.CloudFileShare(final String shareName, final CloudFileClient client)'
+    name: 'CloudFileShare(final String shareName, String snapshotID, final CloudFileClient client)'
+    nameWithType: 'CloudFileShare.CloudFileShare(final String shareName, String snapshotID, final CloudFileClient client)'
+    fullName: 'com.microsoft.azure.storage.file.CloudFileShare.CloudFileShare(final String shareName, String snapshotID, final CloudFileClient client)'
     overload: com.microsoft.azure.storage.file._cloud_file_share.CloudFileShare*
     type: Constructor
     source:
@@ -145,14 +171,17 @@ items:
       <p>Erstellt eine Instanz der Klasse mit dem angegebenen Namen und den Client.</p>
       <p></p>
     syntax:
-      content: 'protected CloudFileShare(final String shareName, final CloudFileClient client)'
+      content: 'public CloudFileShare(final String shareName, String snapshotID, final CloudFileClient client)'
       parameters:
         - id: shareName
           type: 3d93591e
           description: '<p>Ein <code>String</code> der den Namen der Freigabe, die Benennungsregeln freigeben Sicherheitsprinzipalobjekte darstellt. Der Freigabename muss keine Trennzeichen Pfad (/) enthalten. Freigabenamen müssen Kleinbuchstaben, 3 bis 63 Zeichen lang sein und müssen mit einem Buchstaben oder einer Ziffer beginnen. Freigabenamen darf nur Buchstaben, Zahlen und Bindestriche (-) enthalten. </p>'
+        - id: snapshotID
+          type: '26831127'
+          description: '<p>Ein <code>String</code> , die die Version der Momentaufnahme darstellt, sofern zutreffend. </p>'
         - id: client
           type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_client
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref> Objekt, das die zugeordneten Dienstclient darstellt und, die den Endpunkt für den Dateidienst angibt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref> Objekt, das die zugeordneten Dienstclient darstellt und, die den Endpunkt für den Dateidienst angibt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -200,7 +229,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 161
+      startLine: 163
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt eine Instanz der Klasse mit dem angegebenen URI und Anmeldeinformationen.</p>
@@ -213,7 +242,7 @@ items:
           description: '<p>Ein <code>java.net.URI</code> Objekt, das den absoluten URI der Freigabe darstellt. </p>'
         - id: credentials
           type: 93de0ef9com.microsoft.azure.storage._storage_credentials
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false"></xref> Objekt, das zum Authentifizieren des Zugriffs verwendet.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_credentials" data-throw-if-not-resolved="false">StorageCredentials</xref> Objekt, das zum Authentifizieren des Zugriffs verwendet. </p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -231,7 +260,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 197
+      startLine: 199
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt die Freigabe.</p>
@@ -255,7 +284,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 217
+      startLine: 219
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt die Freigabe mit dem angegebenen Kontext von Optionen und den Vorgang.</p>
@@ -265,10 +294,10 @@ items:
       parameters:
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -286,7 +315,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 290
+      startLine: 292
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt die Freigabe aus, wenn er nicht vorhanden ist.</p>
@@ -313,7 +342,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 312
+      startLine: 314
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Erstellt die Freigabe aus, wenn sie mit dem mithilfe des angegebenen Anforderungskontexts Optionen und der Vorgang noch nicht vorhanden ist.</p>
@@ -323,13 +352,117 @@ items:
       parameters:
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn die Freigabe noch nicht vorhanden war und erstellt wurde; andernfalls <code>false</code>.</p>"
+    exceptions:
+      - type: com.microsoft.azure.storage._storage_exception
+        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.createSnapshot()
+    id: createSnapshot()
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: createSnapshot()
+    nameWithType: CloudFileShare.createSnapshot()
+    fullName: final CloudFileShare com.microsoft.azure.storage.file.CloudFileShare.createSnapshot()
+    overload: com.microsoft.azure.storage.file._cloud_file_share.createSnapshot*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 730
+    package: com.microsoft.azure.storage.file
+    summary: |-
+      <p>Erstellt eine Momentaufnahme der Freigabe.</p>
+      <p></p>
+    syntax:
+      content: public final CloudFileShare createSnapshot()
+      return:
+        type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref></code> Objekt, das die Momentaufnahme der Freigabe darstellt.</p>'
+    exceptions:
+      - type: com.microsoft.azure.storage._storage_exception
+        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+  - uid: 'com.microsoft.azure.storage.file._cloud_file_share.createSnapshot(final AccessCondition,FileRequestOptions,OperationContext)'
+    id: 'createSnapshot(final AccessCondition,FileRequestOptions,OperationContext)'
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: 'createSnapshot(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+    nameWithType: 'CloudFileShare.createSnapshot(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+    fullName: 'final CloudFileShare com.microsoft.azure.storage.file.CloudFileShare.createSnapshot(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+    overload: com.microsoft.azure.storage.file._cloud_file_share.createSnapshot*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 755
+    package: com.microsoft.azure.storage.file
+    summary: |-
+      <p>Erstellt eine Momentaufnahme der Dateifreigabe mit dem angegebenen Anforderungsoptionen und Vorgangskontext.</p>
+      <p></p>
+    syntax:
+      content: 'public final CloudFileShare createSnapshot(final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+      parameters:
+        - id: accessCondition
+          type: 93de0ef9com.microsoft.azure.storage._access_condition
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+        - id: options
+          type: com.microsoft.azure.storage.file._file_request_options
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
+        - id: opContext
+          type: com.microsoft.azure.storage._operation_context
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+      return:
+        type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref></code> Objekt, das die Momentaufnahme der Dateifreigabe darstellt.</p>'
+    exceptions:
+      - type: com.microsoft.azure.storage._storage_exception
+        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+  - uid: 'com.microsoft.azure.storage.file._cloud_file_share.createSnapshot(final HashMap<String, String>,final AccessCondition,FileRequestOptions,OperationContext)'
+    id: 'createSnapshot(final HashMap<String, String>,final AccessCondition,FileRequestOptions,OperationContext)'
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: 'createSnapshot(final HashMap<String, String> metadata, final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+    nameWithType: 'CloudFileShare.createSnapshot(final HashMap<String, String> metadata, final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+    fullName: 'final CloudFileShare com.microsoft.azure.storage.file.CloudFileShare.createSnapshot(final HashMap<String, String> metadata, final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+    overload: com.microsoft.azure.storage.file._cloud_file_share.createSnapshot*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 782
+    package: com.microsoft.azure.storage.file
+    summary: |-
+      <p>Erstellt eine Momentaufnahme der Dateifreigabe mit dem angegebenen Anforderungsoptionen und Vorgangskontext.</p>
+      <p></p>
+    syntax:
+      content: 'public final CloudFileShare createSnapshot(final HashMap<String, String> metadata, final AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+      parameters:
+        - id: metadata
+          type: 496ce5ae
+          description: <p>Eine Auflistung von Name-Wert-Paare definieren die Metadaten der Momentaufnahme oder Null. </p>
+        - id: accessCondition
+          type: 93de0ef9com.microsoft.azure.storage._access_condition
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Dateifreigabe darstellt. </p>'
+        - id: options
+          type: com.microsoft.azure.storage.file._file_request_options
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
+        - id: opContext
+          type: com.microsoft.azure.storage._operation_context
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+      return:
+        type: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
+        description: '<p>Ein <code><xref uid="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false">CloudFileShare</xref></code> Objekt, das die Momentaufnahme der Dateifreigabe darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -347,7 +480,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 343
+      startLine: 345
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Freigabe.</p>
@@ -371,7 +504,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 365
+      startLine: 367
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Freigabe unter Verwendung des angegebenen Anforderungsoptionen und Vorgangskontext.</p>
@@ -381,13 +514,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -405,27 +538,27 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 395
+      startLine: 397
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Freigabe unter Verwendung der angegebenen Momentaufnahme Anforderungsoptionen und Vorgangskontext. </p>
-      <p>Eine Freigabe, die Momentaufnahmen kann nicht gelöscht werden, es sei denn, die Momentaufnahmen werden ebenfalls gelöscht. Wenn eine Freigabe Momentaufnahmen verfügt, verwenden die <xref href="com.microsoft.azure.storage.file._delete_share_snapshots_option.INCLUDE_SNAPSHOTS()" data-throw-if-not-resolved="false"></xref> Wert im Parameter für die Momentaufnahmen beim Löschen der Basis Freigabe eingeschlossen werden sollen.</p>
+      <p>Eine Freigabe, die Momentaufnahmen kann nicht gelöscht werden, es sei denn, die Momentaufnahmen werden ebenfalls gelöscht. Wenn eine Freigabe Momentaufnahmen verfügt, verwenden die <xref uid="com.microsoft.azure.storage.file._delete_share_snapshots_option.INCLUDE_SNAPSHOTS" data-throw-if-not-resolved="false">DeleteShareSnapshotsOption #INCLUDE_SNAPSHOTS</xref> Wert im Parameter für die Momentaufnahmen beim Löschen der Basis Freigabe eingeschlossen werden sollen.</p>
       <p></p>
     syntax:
-      content: 'protected void delete(DeleteShareSnapshotsOption deleteSnapshotsOption, AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+      content: 'public void delete(DeleteShareSnapshotsOption deleteSnapshotsOption, AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: deleteSnapshotsOption
           type: com.microsoft.azure.storage.file._delete_share_snapshots_option
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._delete_share_snapshots_option" data-throw-if-not-resolved="false"></xref> -Objekt, das angibt, ob nur Momentaufnahmen, oder die Freigabe und die zugehörigen Momentaufnahmen löschen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._delete_share_snapshots_option" data-throw-if-not-resolved="false">DeleteShareSnapshotsOption</xref> -Objekt, das angibt, ob nur Momentaufnahmen, oder die Freigabe und die zugehörigen Momentaufnahmen löschen. </p>'
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -443,7 +576,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 450
+      startLine: 452
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Freigabe an, falls vorhanden.</p>
@@ -470,7 +603,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 475
+      startLine: 477
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löschen die Freigabe aus, wenn mithilfe des angegebenen Anforderungskontexts Optionen und Vorgang vorhanden.</p>
@@ -480,13 +613,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn die Freigabe vorhanden war und gelöscht wurde; andernfalls <code>false</code>.</p>"
@@ -507,27 +640,27 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 508
+      startLine: 510
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Löscht die Freigabe an, falls vorhanden, mit dem angegebenen Optionen für Momentaufnahme- und der Anforderung und den Vorgangskontext. </p>
-      <p>Eine Freigabe, die Momentaufnahmen kann nicht gelöscht werden, es sei denn, die Momentaufnahmen werden ebenfalls gelöscht. Wenn eine Freigabe Momentaufnahmen verfügt, verwenden die <xref href="com.microsoft.azure.storage.file._delete_share_snapshots_option.INCLUDE_SNAPSHOTS()" data-throw-if-not-resolved="false"></xref> Wert im Parameter für die Momentaufnahmen beim Löschen der Basis Freigabe eingeschlossen werden sollen.</p>
+      <p>Eine Freigabe, die Momentaufnahmen kann nicht gelöscht werden, es sei denn, die Momentaufnahmen werden ebenfalls gelöscht. Wenn eine Freigabe Momentaufnahmen verfügt, verwenden die <xref uid="com.microsoft.azure.storage.file._delete_share_snapshots_option.INCLUDE_SNAPSHOTS" data-throw-if-not-resolved="false">DeleteShareSnapshotsOption #INCLUDE_SNAPSHOTS</xref> Wert im Parameter für die Momentaufnahmen beim Löschen der Basis Freigabe eingeschlossen werden sollen.</p>
       <p></p>
     syntax:
-      content: 'protected boolean deleteIfExists(DeleteShareSnapshotsOption deleteSnapshotsOption, AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
+      content: 'public boolean deleteIfExists(DeleteShareSnapshotsOption deleteSnapshotsOption, AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: deleteSnapshotsOption
           type: com.microsoft.azure.storage.file._delete_share_snapshots_option
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._delete_share_snapshots_option" data-throw-if-not-resolved="false"></xref> -Objekt, das angibt, ob nur Momentaufnahmen, oder die Freigabe und die zugehörigen Momentaufnahmen löschen. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._delete_share_snapshots_option" data-throw-if-not-resolved="false">DeleteShareSnapshotsOption</xref> -Objekt, das angibt, ob nur Momentaufnahmen, oder die Freigabe und die zugehörigen Momentaufnahmen löschen. </p>'
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn die Freigabe vorhanden war und gelöscht wurde; andernfalls <code>false</code>.</p>"
@@ -548,7 +681,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 540
+      startLine: 542
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Freigabe Attribute, die Metadaten und Eigenschaften umfassen.</p>
@@ -572,7 +705,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 563
+      startLine: 565
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Freigabe Attribute, die Metadaten und Eigenschaften mit den angegebenen Optionen und Vorgang Anforderungskontext umfassen.</p>
@@ -582,13 +715,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -606,7 +739,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 628
+      startLine: 630
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die berechtigungseinstellungen für die Freigabe.</p>
@@ -615,7 +748,7 @@ items:
       content: public FileSharePermissions downloadPermissions()
       return:
         type: com.microsoft.azure.storage.file._file_share_permissions
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false"></xref> -Objekt, das die Freigabe Berechtigungen darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false">FileSharePermissions</xref> -Objekt, das die Freigabe Berechtigungen darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -633,7 +766,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 652
+      startLine: 654
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die berechtigungseinstellungen für die Freigabe unter Verwendung des angegebenen Anforderungsoptionen und Vorgangskontext.</p>
@@ -643,16 +776,16 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage.file._file_share_permissions
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false"></xref> -Objekt, das die Freigabe Berechtigungen darstellt.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false">FileSharePermissions</xref> -Objekt, das die Freigabe Berechtigungen darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -670,7 +803,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 947
+      startLine: 949
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt einen Wert, der angibt, ob die Freigabe vorhanden ist.</p>
@@ -697,7 +830,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 972
+      startLine: 974
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt einen Wert, der angibt, ob die Freigabe vorhanden ist, mithilfe des angegebenen Anforderungskontexts Optionen und der Vorgang, zurück.</p>
@@ -707,13 +840,13 @@ items:
       parameters:
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 4fc6e284
         description: "<p>\r\n\r\n  <code>true</code>Wenn die Freigabe vorhanden, andernfalls ist <code>false</code>.</p>"
@@ -734,17 +867,17 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1084
+      startLine: 1086
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Bestätigt, dass die Freigabe nicht um eine Momentaufnahme ist. Gibt eine SAS für die Freigabe zurück. Hinweis Diese Version enthält keine das führende "?".</p>
+      <p>Gibt eine SAS für die Freigabe zurück. Hinweis Diese Version enthält keine das führende "?".</p>
       <p></p>
     syntax:
       content: 'public String generateSharedAccessSignature(final SharedAccessFilePolicy policy, final String groupPolicyIdentifier)'
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_policy
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false">SharedAccessFilePolicy</xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: <p>Ein <code>String</code> der die Zugriffsrichtlinie auf Freigabeebene darstellt.</p>
@@ -770,7 +903,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1110
+      startLine: 1112
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt eine SAS für die Freigabe zurück. Hinweis Diese Version enthält keine das führende "?".</p>
@@ -780,16 +913,16 @@ items:
       parameters:
         - id: policy
           type: 93de0ef9com.microsoft.azure.storage.file._shared_access_file_policy
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false"></xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._shared_access_file_policy" data-throw-if-not-resolved="false">SharedAccessFilePolicy</xref> Objekt, das die Zugriffsrichtlinie für die SAS-Signatur darstellt. </p>'
         - id: groupPolicyIdentifier
           type: 3d93591e
           description: <p>Ein <code>String</code> der die Zugriffsrichtlinie auf Freigabeebene darstellt. </p>
         - id: ipRange
           type: 93de0ef9com.microsoft.azure.storage._i_p_range
-          description: <p>Ein <xref href="com.microsoft.azure.storage._i_p_range" data-throw-if-not-resolved="false"></xref> Objekt mit dem Bereich der zulässigen IP-Adressen. </p>
+          description: <p>Ein <xref uid="com.microsoft.azure.storage._i_p_range" data-throw-if-not-resolved="false">"iprange"</xref> Objekt mit dem Bereich der zulässigen IP-Adressen. </p>
         - id: protocols
           type: 93de0ef9com.microsoft.azure.storage._shared_access_protocols
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._shared_access_protocols" data-throw-if-not-resolved="false"></xref> , die die zulässigen Internetprotokolle darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._shared_access_protocols" data-throw-if-not-resolved="false">SharedAccessProtocols</xref> , die die zulässigen Internetprotokolle darstellt.</p>'
       return:
         type: '26831127'
         description: <p>Ein <code>String</code> die eine SAS für die Freigabe darstellt.</p>
@@ -812,10 +945,10 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1559
+      startLine: 1561
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Gibt die Metadaten für die Freigabe zurück. Dieser Wert wird mit den Metadaten der Freigabe durch einen Aufruf von initialisiert <xref href="com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes()" data-throw-if-not-resolved="false"></xref>, und wird festgelegt, auf die Freigabe mit einem Aufruf von <xref href="com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Gibt die Metadaten für die Freigabe zurück. Dieser Wert wird mit den Metadaten der Freigabe durch einen Aufruf von initialisiert <xref uid="com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes()" data-throw-if-not-resolved="false">DownloadAttributes</xref>, und wird festgelegt, auf die Freigabe mit einem Aufruf von <xref uid="com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()" data-throw-if-not-resolved="false">UploadMetadata</xref>.</p>
       <p></p>
     syntax:
       content: 'public HashMap<String, String> getMetadata()'
@@ -836,21 +969,16 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1549
+      startLine: 1551
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Gibt zurück, dass die Momentaufnahme oder eine SAS URI für diese Freigabe qualifiziert.</p>
+      <p>Gibt den Namen der Freigabe zurück.</p>
       <p></p>
     syntax:
       content: public String getName()
       return:
         type: '26831127'
-        description: '<p>Ein <code>java.net.URI</code> Objekt, das der Snapshot oder eine SAS darstellt.</p>'
-    exceptions:
-      - type: com.microsoft.azure.storage._storage_exception
-        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
-      - type: '44102508'
-        description: <p>Wenn Sie der Ressourcen-URI ist ungültig. Gibt den Namen der Freigabe zurück.</p>
+        description: '<p>Ein <code>String</code> , die den Namen der Freigabe darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getProperties()
     id: getProperties()
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -865,7 +993,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1568
+      startLine: 1570
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt die Eigenschaften für die Freigabe zurück.</p>
@@ -874,7 +1002,36 @@ items:
       content: public FileShareProperties getProperties()
       return:
         type: com.microsoft.azure.storage.file._file_share_properties
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_share_properties" data-throw-if-not-resolved="false"></xref> Objekt, das die Eigenschaften für die Freigabe darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_share_properties" data-throw-if-not-resolved="false">FileShareProperties</xref> Objekt, das die Eigenschaften für die Freigabe darstellt. </p>'
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.getQualifiedUri()
+    id: getQualifiedUri()
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: getQualifiedUri()
+    nameWithType: CloudFileShare.getQualifiedUri()
+    fullName: final URI com.microsoft.azure.storage.file.CloudFileShare.getQualifiedUri()
+    overload: com.microsoft.azure.storage.file._cloud_file_share.getQualifiedUri*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 1538
+    package: com.microsoft.azure.storage.file
+    summary: |-
+      <p>Gibt zurück, dass die Momentaufnahme oder eine SAS URI für diese Freigabe qualifiziert.</p>
+      <p></p>
+    syntax:
+      content: public final URI getQualifiedUri()
+      return:
+        type: bac42120
+        description: '<p>Ein <code>java.net.URI</code> Objekt, das der Snapshot oder eine SAS darstellt.</p>'
+    exceptions:
+      - type: com.microsoft.azure.storage._storage_exception
+        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
+      - type: '44102508'
+        description: <p>Wenn Sie der Ressourcen-URI ist ungültig. </p>
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getRootDirectoryReference()
     id: getRootDirectoryReference()
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -889,16 +1046,16 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1430
+      startLine: 1432
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Gibt einen Verweis auf ein <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekt, das das Stammverzeichnis der Datei innerhalb dieser Freigabe darstellt.</p>
+      <p>Gibt einen Verweis auf eine <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekt, das das Stammverzeichnis der Datei innerhalb dieser Freigabe darstellt.</p>
       <p></p>
     syntax:
       content: public CloudFileDirectory getRootDirectoryReference()
       return:
         type: com.microsoft.azure.storage.file._cloud_file_directory
-        description: <p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Verweis auf das Stammverzeichnis für diese Freigabe. </p>
+        description: <p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Verweis auf das Stammverzeichnis für diese Freigabe. </p>
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
       - type: '44102508'
@@ -916,7 +1073,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1484
+      startLine: 1486
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt den File-Dienstclient dieser Freigabe zugeordnet.</p>
@@ -925,7 +1082,31 @@ items:
       content: public CloudFileClient getServiceClient()
       return:
         type: com.microsoft.azure.storage.file._cloud_file_client
-        description: '<p>Ein <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref> Objekt, das den Dienstclient dieser Freigabe zugeordnet darstellt. </p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref> -Objekt, das den Dienstclient diese Freigabe zugeordnet darstellt. </p>'
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.getSnapshot()
+    id: getSnapshot()
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: getSnapshot()
+    nameWithType: CloudFileShare.getSnapshot()
+    fullName: final String com.microsoft.azure.storage.file.CloudFileShare.getSnapshot()
+    overload: com.microsoft.azure.storage.file._cloud_file_share.getSnapshot*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 1504
+    package: com.microsoft.azure.storage.file
+    summary: |-
+      <p>Gibt die SnapshotID für diese Freigabe zurück.</p>
+      <p></p>
+    syntax:
+      content: public final String getSnapshot()
+      return:
+        type: 3d93591e
+        description: <p>Die SnapshotID für diese Freigabe als Zeichenfolge. </p>
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getStats()
     id: getStats()
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -940,23 +1121,17 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 858
+      startLine: 860
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Erstellt eine Momentaufnahme der Freigabe.</p>
+      <p>Fragt den Dienst für diese Freigabe <xref uid="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false">ShareStats</xref>.</p>
       <p></p>
     syntax:
       content: public ShareStats getStats()
       return:
         type: com.microsoft.azure.storage.file._share_stats
-        description: '<p>Ein <code><xref href="com.microsoft.azure.storage.file._cloud_file_share" data-throw-if-not-resolved="false"></xref></code> Objekt, das die Momentaufnahme der Freigabe darstellt.</p>'
+        description: <p>Ein <xref uid="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false">ShareStats</xref> Objekt für den angegebenen Speicherdienst.</p>
     exceptions:
-      - type: com.microsoft.azure.storage._storage_exception
-        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. Erstellt eine Momentaufnahme der Dateifreigabe mit dem angegebenen Anforderungsoptionen und Vorgangskontext.</p>
-      - type: com.microsoft.azure.storage._storage_exception
-        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. Erstellt eine Momentaufnahme der Dateifreigabe mit dem angegebenen Anforderungsoptionen und Vorgangskontext.</p>
-      - type: com.microsoft.azure.storage._storage_exception
-        description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. Fragt den Dienst für diese Freigabe <xref href="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false"></xref>.</p>
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
   - uid: 'com.microsoft.azure.storage.file._cloud_file_share.getStats(FileRequestOptions,OperationContext)'
@@ -973,23 +1148,23 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 880
+      startLine: 882
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Fragt den Dienst für diese Freigabe <xref href="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Fragt den Dienst für diese Freigabe <xref uid="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false">ShareStats</xref>.</p>
       <p></p>
     syntax:
       content: 'public ShareStats getStats(FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet (<xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: com.microsoft.azure.storage.file._share_stats
-        description: <p>Ein <xref href="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false"></xref> Objekt für den angegebenen Speicherdienst.</p>
+        description: <p>Ein <xref uid="com.microsoft.azure.storage.file._share_stats" data-throw-if-not-resolved="false">ShareStats</xref> Objekt für den angegebenen Speicherdienst.</p>
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1007,16 +1182,16 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1522
+      startLine: 1524
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Gibt die SnapshotID für diese Freigabe zurück.</p>
+      <p>Gibt die Liste der URIs für alle Speicherorte.</p>
       <p></p>
     syntax:
       content: public StorageUri getStorageUri()
       return:
         type: com.microsoft.azure.storage._storage_uri
-        description: '<p>Die SnapshotID für diese Freigabe als Zeichenfolge. Gibt an, ob diese Freigabe eine Momentaufnahme ist.</p>'
+        description: '<p>Ein <xref uid="com.microsoft.azure.storage._storage_uri" data-throw-if-not-resolved="false">StorageUri</xref> Objekt, das die Liste der URIs für alle Speicherorte darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getUri()
     id: getUri()
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -1031,7 +1206,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1493
+      startLine: 1495
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Gibt den URI für diese Freigabe zurück.</p>
@@ -1041,6 +1216,30 @@ items:
       return:
         type: '62304784'
         description: <p>Der absolute URI zur Freigabe. </p>
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.isSnapshot()
+    id: isSnapshot()
+    parent: com.microsoft.azure.storage.file._cloud_file_share
+    href: com.microsoft.azure.storage.file._cloud_file_share.yml
+    langs:
+      - java
+    name: isSnapshot()
+    nameWithType: CloudFileShare.isSnapshot()
+    fullName: final boolean com.microsoft.azure.storage.file.CloudFileShare.isSnapshot()
+    overload: com.microsoft.azure.storage.file._cloud_file_share.isSnapshot*
+    type: Method
+    source:
+      remote: *ref_0
+      path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
+      startLine: 1515
+    package: com.microsoft.azure.storage.file
+    summary: |-
+      <p>Gibt an, ob diese Freigabe eine Momentaufnahme ist.</p>
+      <p></p>
+    syntax:
+      content: public final boolean isSnapshot()
+      return:
+        type: 4dda0764
+        description: "<p>\r\n\r\n  <code>true</code>Wenn die Freigabe einer Momentaufnahme, andernfalls ist <code>false</code>.</p>"
   - uid: 'com.microsoft.azure.storage.file._cloud_file_share.setMetadata(final HashMap<String, String>)'
     id: 'setMetadata(final HashMap<String, String>)'
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -1055,10 +1254,10 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1580
+      startLine: 1582
     package: com.microsoft.azure.storage.file
     summary: |-
-      <p>Festlegen der Metadaten-Auflistung von Name-Wert-Paaren, die für die Freigabe mit festgelegt werden, ein <xref href="com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()" data-throw-if-not-resolved="false"></xref> aufrufen. Diese Auflistung überschreibt alle vorhandenen freigabemetadaten. Wenn dies auf eine leere Auflistung festgelegt ist, werden die Metadaten der Freigabe gelöscht werden, auf ein <xref href="com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()" data-throw-if-not-resolved="false"></xref> aufrufen.</p>
+      <p>Festlegen der Metadaten-Auflistung von Name-Wert-Paaren, die für die Freigabe mit festgelegt werden, ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()" data-throw-if-not-resolved="false">UploadMetadata</xref> aufrufen. Diese Auflistung überschreibt alle vorhandenen freigabemetadaten. Wenn dies auf eine leere Auflistung festgelegt ist, werden die Metadaten der Freigabe gelöscht werden, auf ein <xref uid="com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()" data-throw-if-not-resolved="false">UploadMetadata</xref> aufrufen.</p>
       <p></p>
     syntax:
       content: 'public void setMetadata(final HashMap<String, String> metadata)'
@@ -1080,17 +1279,17 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1591
+      startLine: 1593
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Legt die Eigenschaften für die Freigabe.</p>
       <p></p>
     syntax:
-      content: protected void setProperties(final FileShareProperties properties)
+      content: public void setProperties(final FileShareProperties properties)
       parameters:
         - id: properties
           type: 93de0ef9com.microsoft.azure.storage.file._file_share_properties
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_share_properties" data-throw-if-not-resolved="false"></xref> Objekt, das die Eigenschaften zugewiesen wird, auf die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_share_properties" data-throw-if-not-resolved="false">FileShareProperties</xref> Objekt, das die Eigenschaften zugewiesen wird, auf die Freigabe darstellt. </p>'
   - uid: com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()
     id: uploadMetadata()
     parent: com.microsoft.azure.storage.file._cloud_file_share
@@ -1105,7 +1304,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1151
+      startLine: 1153
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Metadaten der Freigabe hoch.</p>
@@ -1129,7 +1328,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1173
+      startLine: 1175
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Metadaten der Freigabe, die unter Verwendung des angegebenen Anforderungsoptionen und Vorgangskontext hoch.</p>
@@ -1139,13 +1338,13 @@ items:
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1163,7 +1362,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1326
+      startLine: 1328
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt die Freigabeberechtigungen für hoch.</p>
@@ -1173,7 +1372,7 @@ items:
       parameters:
         - id: permissions
           type: 93de0ef9com.microsoft.azure.storage.file._file_share_permissions
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false"></xref> Objekt, das die Berechtigungen zum Hochladen darstellt.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false">FileSharePermissions</xref> Objekt, das die Berechtigungen zum Hochladen darstellt.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1191,7 +1390,7 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1350
+      startLine: 1352
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Lädt das mit dem angegebenen Anforderungsoptionen und Vorgangskontext Freigabeberechtigungen hoch.</p>
@@ -1201,16 +1400,16 @@ items:
       parameters:
         - id: permissions
           type: 93de0ef9com.microsoft.azure.storage.file._file_share_permissions
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false"></xref> Objekt, das die Berechtigungen zum Hochladen darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_share_permissions" data-throw-if-not-resolved="false">FileSharePermissions</xref> Objekt, das die Berechtigungen zum Hochladen darstellt. </p>'
         - id: accessCondition
           type: 93de0ef9com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
     exceptions:
       - type: com.microsoft.azure.storage._storage_exception
         description: <p>Wenn ein Speicher-Dienstfehler ist aufgetreten. </p>
@@ -1228,11 +1427,11 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1237
+      startLine: 1239
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Aktualisiert die Freigabeeigenschaften über den Speicherdienst. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes()" data-throw-if-not-resolved="false"></xref> die aktuellen Werte für die Freigabe Eigenschaften und Metadaten aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes()" data-throw-if-not-resolved="false">CloudFileShare #downloadAttributes</xref> die aktuellen Werte für die Freigabe Eigenschaften und Metadaten aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
       <p></p>
     syntax:
       content: public final void uploadProperties()
@@ -1255,24 +1454,24 @@ items:
     source:
       remote: *ref_0
       path: microsoft-azure-storage/src/com/microsoft/azure/storage/file/CloudFileShare.java
-      startLine: 1262
+      startLine: 1264
     package: com.microsoft.azure.storage.file
     summary: |-
       <p>Aktualisiert die Verwendung von Anforderungsoptionen und Vorgangskontext Freigabeeigenschaften. </p>
-      <p>Verwendung <xref href="com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes()" data-throw-if-not-resolved="false"></xref> die aktuellen Werte für die Freigabe Eigenschaften und Metadaten aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
+      <p>Verwendung <xref uid="com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes()" data-throw-if-not-resolved="false">CloudFileShare #downloadAttributes</xref> die aktuellen Werte für die Freigabe Eigenschaften und Metadaten aus dem Microsoft Azure Storage-Dienst abgerufen.</p>
       <p></p>
     syntax:
       content: 'public final void uploadProperties(AccessCondition accessCondition, FileRequestOptions options, OperationContext opContext)'
       parameters:
         - id: accessCondition
           type: com.microsoft.azure.storage._access_condition
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false"></xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._access_condition" data-throw-if-not-resolved="false">AccessCondition</xref> -Objekt, das die zugriffsbedingungen für die Freigabe darstellt. </p>'
         - id: options
           type: com.microsoft.azure.storage.file._file_request_options
-          description: '<p>Ein <xref href="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false"></xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref href="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false"></xref>). </p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage.file._file_request_options" data-throw-if-not-resolved="false">FileRequestOptions</xref> Objekt, das zusätzlichen Optionen für die Anforderung angibt. Angeben von <code>null</code> die Standardoptionen für die Anforderung aus der zugeordneten Dienstclient verwendet ( <xref uid="com.microsoft.azure.storage.file._cloud_file_client" data-throw-if-not-resolved="false">CloudFileClient</xref>). </p>'
         - id: opContext
           type: com.microsoft.azure.storage._operation_context
-          description: '<p>Ein <xref href="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false"></xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
+          description: '<p>Ein <xref uid="com.microsoft.azure.storage._operation_context" data-throw-if-not-resolved="false">OperationContext</xref> -Objekt, das den Kontext für den aktuellen Vorgang darstellt. Dieses Objekt dient zum Nachverfolgen von Anforderungen an den Speicherdienst und um zusätzliche Laufzeitinformationen zum Vorgang bereitzustellen.</p>'
       return:
         type: 3f6357ce
     exceptions:
@@ -1287,6 +1486,10 @@ references:
     spec.java:
       - name: final String
         fullName: final String
+  - uid: '26831127'
+    spec.java:
+      - name: String
+        fullName: String
   - uid: 93de0ef9com.microsoft.azure.storage.file._cloud_file_client
     spec.java:
       - name: 'final '
@@ -1299,33 +1502,6 @@ references:
     name: CloudFileShare
     nameWithType: CloudFileShare.CloudFileShare
     fullName: com.microsoft.azure.storage.file.CloudFileShare.CloudFileShare
-    package: com.microsoft.azure.storage.file
-  - uid: com.microsoft.azure.storage.file._cloud_file_share.delete*
-    name: delete
-    nameWithType: CloudFileShare.delete
-    fullName: void com.microsoft.azure.storage.file.CloudFileShare.delete
-    package: com.microsoft.azure.storage.file
-  - uid: 4fc6e284
-    spec.java:
-      - name: boolean
-        fullName: boolean
-  - uid: com.microsoft.azure.storage.file._cloud_file_share.deleteIfExists*
-    name: deleteIfExists
-    nameWithType: CloudFileShare.deleteIfExists
-    fullName: boolean com.microsoft.azure.storage.file.CloudFileShare.deleteIfExists
-    package: com.microsoft.azure.storage.file
-  - uid: 93de0ef9com.microsoft.azure.storage.file._file_share_properties
-    spec.java:
-      - name: 'final '
-        fullName: 'final '
-      - uid: com.microsoft.azure.storage.file._file_share_properties
-        name: FileShareProperties
-        fullName: com.microsoft.azure.storage.file.FileShareProperties
-        href: com.microsoft.azure.storage.file._file_share_properties.yml
-  - uid: com.microsoft.azure.storage.file._cloud_file_share.setProperties*
-    name: setProperties
-    nameWithType: CloudFileShare.setProperties
-    fullName: void com.microsoft.azure.storage.file.CloudFileShare.setProperties
     package: com.microsoft.azure.storage.file
   - uid: bac42120
     spec.java:
@@ -1352,10 +1528,24 @@ references:
     nameWithType: CloudFileShare.create
     fullName: void com.microsoft.azure.storage.file.CloudFileShare.create
     package: com.microsoft.azure.storage.file
+  - uid: 4fc6e284
+    spec.java:
+      - name: boolean
+        fullName: boolean
   - uid: com.microsoft.azure.storage.file._cloud_file_share.createIfNotExists*
     name: createIfNotExists
     nameWithType: CloudFileShare.createIfNotExists
     fullName: boolean com.microsoft.azure.storage.file.CloudFileShare.createIfNotExists
+    package: com.microsoft.azure.storage.file
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.delete*
+    name: delete
+    nameWithType: CloudFileShare.delete
+    fullName: void com.microsoft.azure.storage.file.CloudFileShare.delete
+    package: com.microsoft.azure.storage.file
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.deleteIfExists*
+    name: deleteIfExists
+    nameWithType: CloudFileShare.deleteIfExists
+    fullName: boolean com.microsoft.azure.storage.file.CloudFileShare.deleteIfExists
     package: com.microsoft.azure.storage.file
   - uid: com.microsoft.azure.storage.file._cloud_file_share.downloadAttributes*
     name: downloadAttributes
@@ -1367,6 +1557,31 @@ references:
     nameWithType: CloudFileShare.downloadPermissions
     fullName: FileSharePermissions com.microsoft.azure.storage.file.CloudFileShare.downloadPermissions
     package: com.microsoft.azure.storage.file
+  - uid: 93de0ef9com.microsoft.azure.storage.file._cloud_file_share
+    spec.java:
+      - name: 'final '
+        fullName: 'final '
+      - uid: com.microsoft.azure.storage.file._cloud_file_share
+        name: CloudFileShare
+        fullName: com.microsoft.azure.storage.file.CloudFileShare
+        href: com.microsoft.azure.storage.file._cloud_file_share.yml
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.createSnapshot*
+    name: createSnapshot
+    nameWithType: CloudFileShare.createSnapshot
+    fullName: final CloudFileShare com.microsoft.azure.storage.file.CloudFileShare.createSnapshot
+    package: com.microsoft.azure.storage.file
+  - uid: 93de0ef9com.microsoft.azure.storage._access_condition
+    spec.java:
+      - name: 'final '
+        fullName: 'final '
+      - uid: com.microsoft.azure.storage._access_condition
+        name: AccessCondition
+        fullName: com.microsoft.azure.storage.AccessCondition
+        href: com.microsoft.azure.storage._access_condition.yml
+  - uid: 496ce5ae
+    spec.java:
+      - name: 'final HashMap<String, String>'
+        fullName: 'final HashMap<String, String>'
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getStats*
     name: getStats
     nameWithType: CloudFileShare.getStats
@@ -1377,14 +1592,6 @@ references:
     nameWithType: CloudFileShare.exists
     fullName: boolean com.microsoft.azure.storage.file.CloudFileShare.exists
     package: com.microsoft.azure.storage.file
-  - uid: 93de0ef9com.microsoft.azure.storage._access_condition
-    spec.java:
-      - name: 'final '
-        fullName: 'final '
-      - uid: com.microsoft.azure.storage._access_condition
-        name: AccessCondition
-        fullName: com.microsoft.azure.storage.AccessCondition
-        href: com.microsoft.azure.storage._access_condition.yml
   - uid: e333ca4f
     spec.java:
       - name: InvalidKeyException
@@ -1397,10 +1604,6 @@ references:
         name: SharedAccessFilePolicy
         fullName: com.microsoft.azure.storage.file.SharedAccessFilePolicy
         href: com.microsoft.azure.storage.file._shared_access_file_policy.yml
-  - uid: '26831127'
-    spec.java:
-      - name: String
-        fullName: String
   - uid: com.microsoft.azure.storage.file._cloud_file_share.generateSharedAccessSignature*
     name: generateSharedAccessSignature
     nameWithType: CloudFileShare.generateSharedAccessSignature
@@ -1468,10 +1671,29 @@ references:
     nameWithType: CloudFileShare.getUri
     fullName: URI com.microsoft.azure.storage.file.CloudFileShare.getUri
     package: com.microsoft.azure.storage.file
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.getSnapshot*
+    name: getSnapshot
+    nameWithType: CloudFileShare.getSnapshot
+    fullName: final String com.microsoft.azure.storage.file.CloudFileShare.getSnapshot
+    package: com.microsoft.azure.storage.file
+  - uid: 4dda0764
+    spec.java:
+      - name: final boolean
+        fullName: final boolean
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.isSnapshot*
+    name: isSnapshot
+    nameWithType: CloudFileShare.isSnapshot
+    fullName: final boolean com.microsoft.azure.storage.file.CloudFileShare.isSnapshot
+    package: com.microsoft.azure.storage.file
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getStorageUri*
     name: getStorageUri
     nameWithType: CloudFileShare.getStorageUri
     fullName: StorageUri com.microsoft.azure.storage.file.CloudFileShare.getStorageUri
+    package: com.microsoft.azure.storage.file
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.getQualifiedUri*
+    name: getQualifiedUri
+    nameWithType: CloudFileShare.getQualifiedUri
+    fullName: final URI com.microsoft.azure.storage.file.CloudFileShare.getQualifiedUri
     package: com.microsoft.azure.storage.file
   - uid: com.microsoft.azure.storage.file._cloud_file_share.getName*
     name: getName
@@ -1492,14 +1714,28 @@ references:
     nameWithType: CloudFileShare.getProperties
     fullName: FileShareProperties com.microsoft.azure.storage.file.CloudFileShare.getProperties
     package: com.microsoft.azure.storage.file
-  - uid: 496ce5ae
-    spec.java:
-      - name: 'final HashMap<String, String>'
-        fullName: 'final HashMap<String, String>'
   - uid: com.microsoft.azure.storage.file._cloud_file_share.setMetadata*
     name: setMetadata
     nameWithType: CloudFileShare.setMetadata
     fullName: void com.microsoft.azure.storage.file.CloudFileShare.setMetadata
+    package: com.microsoft.azure.storage.file
+  - uid: 93de0ef9com.microsoft.azure.storage.file._file_share_properties
+    spec.java:
+      - name: 'final '
+        fullName: 'final '
+      - uid: com.microsoft.azure.storage.file._file_share_properties
+        name: FileShareProperties
+        fullName: com.microsoft.azure.storage.file.FileShareProperties
+        href: com.microsoft.azure.storage.file._file_share_properties.yml
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.setProperties*
+    name: setProperties
+    nameWithType: CloudFileShare.setProperties
+    fullName: void com.microsoft.azure.storage.file.CloudFileShare.setProperties
+    package: com.microsoft.azure.storage.file
+  - uid: com.microsoft.azure.storage.file._cloud_file_share.assertNoSnapshot*
+    name: assertNoSnapshot
+    nameWithType: CloudFileShare.assertNoSnapshot
+    fullName: void com.microsoft.azure.storage.file.CloudFileShare.assertNoSnapshot
     package: com.microsoft.azure.storage.file
   - uid: com.microsoft.azure.storage._storage_uri
     parent: com.microsoft.azure.storage
@@ -1552,28 +1788,18 @@ references:
     type: Class
     summary: |-
       <p>Stellt eine Freigabe in der Microsoft Azure-Dateidienst dar. </p>
-      <p>Freigaben enthalten die Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekte und Verzeichnisse enthalten Dateien. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
+      <p>Freigaben enthalten die Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekte und Verzeichnisse enthalten Dateien. Verzeichnisse können auch Unterverzeichnisse enthalten. </p>
     syntax: *ref_1
-  - uid: com.microsoft.azure.storage.file._delete_share_snapshots_option
-    parent: com.microsoft.azure.storage.file
-    href: com.microsoft.azure.storage.file._delete_share_snapshots_option.yml
-    name: DeleteShareSnapshotsOption
-    nameWithType: DeleteShareSnapshotsOption
-    fullName: com.microsoft.azure.storage.file.DeleteShareSnapshotsOption
-    type: Enum
-    summary: '<p>Gibt an, dass die Optionen, die beim Aufrufen des Löschvorgangs Vorgang freigeben. </p>'
-    syntax:
-      content: public enum DeleteShareSnapshotsOption
-  - uid: com.microsoft.azure.storage._access_condition
+  - uid: com.microsoft.azure.storage._storage_credentials
     parent: com.microsoft.azure.storage
-    href: com.microsoft.azure.storage._access_condition.yml
-    name: AccessCondition
-    nameWithType: AccessCondition
-    fullName: com.microsoft.azure.storage.AccessCondition
+    href: com.microsoft.azure.storage._storage_credentials.yml
+    name: StorageCredentials
+    nameWithType: StorageCredentials
+    fullName: com.microsoft.azure.storage.StorageCredentials
     type: Class
-    summary: <p>Stellt einen Satz von zugriffsbedingungen für Vorgänge mit den Speicherdiensten verwendet werden soll. </p>
+    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref uid="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false">StorageCredentialsAccountAndKey</xref> und <xref uid="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false">StorageCredentialsSharedAccessSignature</xref> Klassen. </p>
     syntax:
-      content: public class AccessCondition
+      content: public class StorageCredentials
   - uid: com.microsoft.azure.storage.file._file_request_options
     parent: com.microsoft.azure.storage.file
     href: com.microsoft.azure.storage.file._file_request_options.yml
@@ -1594,7 +1820,27 @@ references:
     summary: '<p>Stellt die aktuelle logische Operation dar. Eine logische Operation möglicherweise eine 1: n-Beziehung mit mehreren einzelnen physischen Anforderungen. </p>'
     syntax:
       content: public class OperationContext
-  - uid: com.microsoft.azure.storage.file._delete_share_snapshots_option.INCLUDE_SNAPSHOTS()
+  - uid: com.microsoft.azure.storage._access_condition
+    parent: com.microsoft.azure.storage
+    href: com.microsoft.azure.storage._access_condition.yml
+    name: AccessCondition
+    nameWithType: AccessCondition
+    fullName: com.microsoft.azure.storage.AccessCondition
+    type: Class
+    summary: <p>Stellt einen Satz von zugriffsbedingungen für Vorgänge mit den Speicherdiensten verwendet werden soll. </p>
+    syntax:
+      content: public class AccessCondition
+  - uid: com.microsoft.azure.storage.file._delete_share_snapshots_option
+    parent: com.microsoft.azure.storage.file
+    href: com.microsoft.azure.storage.file._delete_share_snapshots_option.yml
+    name: DeleteShareSnapshotsOption
+    nameWithType: DeleteShareSnapshotsOption
+    fullName: com.microsoft.azure.storage.file.DeleteShareSnapshotsOption
+    type: Enum
+    summary: '<p>Gibt an, dass die Optionen, die beim Aufrufen des Löschvorgangs Vorgang freigeben. </p>'
+    syntax:
+      content: public enum DeleteShareSnapshotsOption
+  - uid: com.microsoft.azure.storage.file._delete_share_snapshots_option.INCLUDE_SNAPSHOTS
     parent: com.microsoft.azure.storage.file._delete_share_snapshots_option
     href: com.microsoft.azure.storage.file._delete_share_snapshots_option.yml
     name: INCLUDE_SNAPSHOTS
@@ -1604,16 +1850,6 @@ references:
     summary: '<p>Gibt an, das Blob und die zugehörigen Momentaufnahmen löschen. </p>'
     syntax:
       content: public INCLUDE_SNAPSHOTS
-  - uid: com.microsoft.azure.storage._storage_credentials
-    parent: com.microsoft.azure.storage
-    href: com.microsoft.azure.storage._storage_credentials.yml
-    name: StorageCredentials
-    nameWithType: StorageCredentials
-    fullName: com.microsoft.azure.storage.StorageCredentials
-    type: Class
-    summary: <p>Stellt einen Satz von Anmeldeinformationen zum Authentifizieren des Zugriffs auf ein Microsoft Azure Storage-Konto verwendet. Dies ist die Basisklasse für die <xref href="com.microsoft.azure.storage._storage_credentials_account_and_key" data-throw-if-not-resolved="false"></xref> und <xref href="com.microsoft.azure.storage._storage_credentials_shared_access_signature" data-throw-if-not-resolved="false"></xref> Klassen. </p>
-    syntax:
-      content: public class StorageCredentials
   - uid: com.microsoft.azure.storage.file._file_share_permissions
     parent: com.microsoft.azure.storage.file
     href: com.microsoft.azure.storage.file._file_share_permissions.yml
@@ -1623,7 +1859,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt die Berechtigungen für eine Freigabe dar. </p>
-      <p>Die Freigabeberechtigungen für umfassen die Zugriffsrichtlinien, dargestellt durch die <xref href="com.microsoft.azure.storage._permissions.getSharedAccessPolicies()" data-throw-if-not-resolved="false"></xref> Methode. Diese Einstellung verweist auf eine Auflistung der freigegebenen Zugriffsrichtlinien für die Freigabe. Eine SAS-Richtlinie kann verwendet werden, um die Startzeit, Ablaufzeit und Berechtigungen für eine oder mehrere SAS zu steuern. Eine shared Access Signature bietet delegierten Zugriff auf die Freigabe von Ressourcen. Weitere Informationen zum Verwalten von Freigabeberechtigungen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224643">Verwalten des Zugriffs auf Freigaben und Dateien</ulink>. </p>
+      <p>Die Freigabeberechtigungen für umfassen die Zugriffsrichtlinien, dargestellt durch die <xref uid="com.microsoft.azure.storage._permissions.getSharedAccessPolicies()" data-throw-if-not-resolved="false">GetSharedAccessPolicies</xref> Methode. Diese Einstellung verweist auf eine Auflistung der freigegebenen Zugriffsrichtlinien für die Freigabe. Eine SAS-Richtlinie kann verwendet werden, um die Startzeit, Ablaufzeit und Berechtigungen für eine oder mehrere SAS zu steuern. Eine shared Access Signature bietet delegierten Zugriff auf die Freigabe von Ressourcen. Weitere Informationen zum Verwalten von Freigabeberechtigungen finden Sie unter <ulink url="http://go.microsoft.com/fwlink/?LinkID=224643">Verwalten des Zugriffs auf Freigaben und Dateien</ulink>. </p>
     syntax:
       content: public class FileSharePermissions
   - uid: com.microsoft.azure.storage.file._share_stats
@@ -1686,7 +1922,7 @@ references:
     type: Class
     summary: |-
       <p>Stellt ein virtuelles Verzeichnis mit Dateien dar. </p>
-      <p>Verzeichnisse, die als gekapselt sind <xref href="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false"></xref> Objekte, halten Sie Dateien und können auch Unterverzeichnisse enthalten. </p>
+      <p>Verzeichnisse, die als gekapselt sind <xref uid="com.microsoft.azure.storage.file._cloud_file_directory" data-throw-if-not-resolved="false">CloudFileDirectory</xref> Objekte, halten Sie Dateien und können auch Unterverzeichnisse enthalten. </p>
     syntax:
       content: public class CloudFileDirectory implements ListFileItem
   - uid: com.microsoft.azure.storage.file._cloud_file_share.uploadMetadata()

@@ -50,6 +50,7 @@ items:
       - com.microsoft.azure.documentdb._json_serializable.getString(String)
       - com.microsoft.azure.documentdb._json_serializable.has(String)
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable()
+      - 'com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String,ObjectMapper)'
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String)
       - com.microsoft.azure.documentdb._json_serializable.JsonSerializable(JSONObject)
       - com.microsoft.azure.documentdb._json_serializable.remove(String)
@@ -98,8 +99,11 @@ items:
       startLine: 97
     package: com.microsoft.azure.documentdb
     summary: |-
-      <p>Gibt eine Instanz des <xref href="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false"></xref> -Klasse mit angegebenen <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Hier ist ein Beispiel zum Erstellen <xref href="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false"></xref> Instanz übergeben der <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref>: <preformatted> <programlisting> <codeline> <highlight class="normal">HashIndex<sp></sp>HashIndex<sp></sp>=<sp></sp>Index.Hash(DataType.String);</highlight></codeline></programlisting></preformatted></p>
+      <p>Gibt eine Instanz des <xref uid="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false">HashIndex</xref> -Klasse mit angegebenen <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref>. </p>
+      <p>Hier ist ein Beispiel zum Erstellen <xref uid="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false">HashIndex</xref> Instanz übergeben der <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref>: <pre><code>HashIndex hashIndex = Index.Hash(DataType.String);
+
+          </code></pre></p>
+
       <p></p>
     syntax: &ref_1
       content: public static HashIndex Hash(DataType dataType)
@@ -109,7 +113,7 @@ items:
           description: <p>Gibt den Zieldatentyp für den Index Pfadangabe. </p>
       return:
         type: com.microsoft.azure.documentdb._hash_index
-        description: <p>eine Instanz von <xref href="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false"></xref> Typ. </p>
+        description: <p>eine Instanz von <xref uid="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false">HashIndex</xref> Typ. </p>
   - uid: 'com.microsoft.azure.documentdb._index.Hash(DataType,int)'
     id: 'Hash(DataType,int)'
     parent: com.microsoft.azure.documentdb._index
@@ -126,7 +130,7 @@ items:
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/Index.java
       startLine: 112
     package: com.microsoft.azure.documentdb
-    summary: "<p>Gibt eine Instanz des <xref href=\"com.microsoft.azure.documentdb._hash_index\" data-throw-if-not-resolved=\"false\"></xref> -Klasse mit angegebenen <xref href=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\"></xref> und Genauigkeit. </p>\n<p>Hier ist ein Beispiel zum Erstellen <xref href=\"com.microsoft.azure.documentdb._hash_index\" data-throw-if-not-resolved=\"false\"></xref> Instanz übergeben der <xref href=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\"></xref> und Genauigkeit: </p>\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.documentdb._hash_index\" data-throw-if-not-resolved=\"false\"></xref>HashIndex = <xref href=\"com.microsoft.azure.documentdb._index.Hash(DataType)\" data-throw-if-not-resolved=\"false\"></xref>(<xref href=\"com.microsoft.azure.documentdb._data_type.String()\" data-throw-if-not-resolved=\"false\"></xref>, 3);</p>\n\n<p></p>"
+    summary: "<p>Gibt eine Instanz des <xref uid=\"com.microsoft.azure.documentdb._hash_index\" data-throw-if-not-resolved=\"false\">HashIndex</xref> -Klasse mit angegebenen <xref uid=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\">DataType</xref> und Genauigkeit. </p>\n<p>Hier ist ein Beispiel zum Erstellen <xref uid=\"com.microsoft.azure.documentdb._hash_index\" data-throw-if-not-resolved=\"false\">HashIndex</xref> Instanz übergeben der <xref uid=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\">DataType</xref> und Genauigkeit: </p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.documentdb._hash_index\" data-throw-if-not-resolved=\"false\">HashIndex</xref> HashIndex = <xref uid=\"com.microsoft.azure.documentdb._index.Hash(DataType)\" data-throw-if-not-resolved=\"false\">Index.Hash</xref>(<xref uid=\"com.microsoft.azure.documentdb._data_type.String\" data-throw-if-not-resolved=\"false\">DataType.String</xref>, 3);</p>\n\n<p></p>"
     syntax:
       content: 'public static HashIndex Hash(DataType dataType, int precision)'
       parameters:
@@ -138,7 +142,7 @@ items:
           description: '<p>Gibt die Genauigkeit für den Datentyp dieses Index zugeordnet ist, verwendet werden. </p>'
       return:
         type: com.microsoft.azure.documentdb._hash_index
-        description: <p>eine Instanz von <xref href="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false"></xref> Typ. </p>
+        description: <p>eine Instanz von <xref uid="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false">HashIndex</xref> Typ. </p>
   - uid: com.microsoft.azure.documentdb._index.Index(IndexKind)
     id: Index(IndexKind)
     parent: com.microsoft.azure.documentdb._index
@@ -237,8 +241,11 @@ items:
       startLine: 59
     package: com.microsoft.azure.documentdb
     summary: |-
-      <p>Gibt eine Instanz des <xref href="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false"></xref> -Klasse mit angegebenen <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Hier ist ein Beispiel zum Erstellen <xref href="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false"></xref> Instanz übergeben der <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref>: <preformatted> <programlisting> <codeline> <highlight class="normal">RangeIndex<sp></sp>RangeIndex<sp></sp>=<sp></sp>Index.Range(DataType.Number);</highlight></codeline></programlisting></preformatted></p>
+      <p>Gibt eine Instanz des <xref uid="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false">RangeIndex</xref> -Klasse mit angegebenen <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref>. </p>
+      <p>Hier ist ein Beispiel zum Erstellen <xref uid="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false">RangeIndex</xref> Instanz übergeben der <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref>: <pre><code>RangeIndex rangeIndex = Index.Range(DataType.Number);
+
+          </code></pre></p>
+
       <p></p>
     syntax:
       content: public static RangeIndex Range(DataType dataType)
@@ -248,7 +255,7 @@ items:
           description: <p>der Datentyp. </p>
       return:
         type: com.microsoft.azure.documentdb._range_index
-        description: <p>eine Instanz von <xref href="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false"></xref> Typ. </p>
+        description: <p>eine Instanz von <xref uid="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false">RangeIndex</xref> Typ. </p>
   - uid: 'com.microsoft.azure.documentdb._index.Range(DataType,int)'
     id: 'Range(DataType,int)'
     parent: com.microsoft.azure.documentdb._index
@@ -266,8 +273,11 @@ items:
       startLine: 79
     package: com.microsoft.azure.documentdb
     summary: |-
-      <p>Gibt eine Instanz des <xref href="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false"></xref> -Klasse mit angegebenen <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref> und Genauigkeit. </p>
-      <p>Hier ist ein Beispiel zum Erstellen <xref href="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false"></xref> Instanz übergeben der <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref> und Genauigkeit: <preformatted> <programlisting> <codeline> <highlight class="normal">RangeIndex<sp></sp>RangeIndex<sp></sp>=<sp></sp>Index.Range (DataType.Number,<sp></sp>-1);</highlight></codeline></programlisting></preformatted></p>
+      <p>Gibt eine Instanz des <xref uid="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false">RangeIndex</xref> -Klasse mit angegebenen <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref> und Genauigkeit. </p>
+      <p>Hier ist ein Beispiel zum Erstellen <xref uid="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false">RangeIndex</xref> Instanz übergeben der <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref> und Genauigkeit: <pre><code>RangeIndex rangeIndex = Index.Range(DataType.Number, -1);
+
+          </code></pre></p>
+
       <p></p>
     syntax:
       content: 'public static RangeIndex Range(DataType dataType, int precision)'
@@ -280,7 +290,7 @@ items:
           description: '<p>Gibt die Genauigkeit für den Datentyp dieses Index zugeordnet ist, verwendet werden. </p>'
       return:
         type: com.microsoft.azure.documentdb._range_index
-        description: <p>eine Instanz von <xref href="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false"></xref> Typ. </p>
+        description: <p>eine Instanz von <xref uid="com.microsoft.azure.documentdb._range_index" data-throw-if-not-resolved="false">RangeIndex</xref> Typ. </p>
   - uid: com.microsoft.azure.documentdb._index.Spatial(DataType)
     id: Spatial(DataType)
     parent: com.microsoft.azure.documentdb._index
@@ -297,7 +307,7 @@ items:
       path: DocumentDB/src/main/java/com/microsoft/azure/documentdb/Index.java
       startLine: 126
     package: com.microsoft.azure.documentdb
-    summary: "<p>Gibt eine Instanz des <xref href=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\"></xref> -Klasse mit angegebenen <xref href=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\"></xref>. </p>\n<p>Hier ist ein Beispiel zum Erstellen <xref href=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\"></xref> Instanz übergeben der <xref href=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\"></xref>: </p>\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\"></xref>SpatialIndex = <xref href=\"com.microsoft.azure.documentdb._index.Spatial(DataType)\" data-throw-if-not-resolved=\"false\"></xref>(<xref href=\"com.microsoft.azure.documentdb._data_type.Point()\" data-throw-if-not-resolved=\"false\"></xref>);</p>\n\n<p></p>"
+    summary: "<p>Gibt eine Instanz des <xref uid=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\">SpatialIndex</xref> -Klasse mit angegebenen <xref uid=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\">DataType</xref>. </p>\n<p>Hier ist ein Beispiel zum Erstellen <xref uid=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\">SpatialIndex</xref> Instanz übergeben der <xref uid=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\">DataType</xref>: </p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\">SpatialIndex</xref> SpatialIndex = <xref uid=\"com.microsoft.azure.documentdb._index.Spatial(DataType)\" data-throw-if-not-resolved=\"false\">Index.Spatial</xref>(<xref uid=\"com.microsoft.azure.documentdb._data_type.Point\" data-throw-if-not-resolved=\"false\">DataType.Point</xref>);</p>\n\n<p></p>"
     syntax: &ref_2
       content: public static SpatialIndex Spatial(DataType dataType)
       parameters:
@@ -306,7 +316,7 @@ items:
           description: <p>Gibt den Zieldatentyp für den Index Pfadangabe. </p>
       return:
         type: com.microsoft.azure.documentdb._spatial_index
-        description: <p>eine Instanz von <xref href="com.microsoft.azure.documentdb._spatial_index" data-throw-if-not-resolved="false"></xref> Typ. </p>
+        description: <p>eine Instanz von <xref uid="com.microsoft.azure.documentdb._spatial_index" data-throw-if-not-resolved="false">SpatialIndex</xref> Typ. </p>
 references:
   - uid: com.microsoft.azure.documentdb._index.Index*
     name: Index
@@ -581,6 +591,25 @@ references:
     type: Constructor
     syntax:
       content: protected JsonSerializable()
+  - uid: 'com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String,ObjectMapper)'
+    parent: com.microsoft.azure.documentdb._json_serializable
+    href: com.microsoft.azure.documentdb._json_serializable.yml
+    name: 'JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    nameWithType: 'JsonSerializable.JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    fullName: 'com.microsoft.azure.documentdb.JsonSerializable.JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+    type: Constructor
+    summary: |-
+      <p>Der Konstruktor.</p>
+      <p></p>
+    syntax:
+      content: 'protected JsonSerializable(String jsonString, ObjectMapper objectMapper)'
+      parameters:
+        - id: jsonString
+          type: '26831127'
+          description: '<p>die Json-Zeichenfolge, die stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
+        - id: objectMapper
+          type: 7db3dbca
+          description: <p>die benutzerdefinierten Zuordnungen </p>
   - uid: com.microsoft.azure.documentdb._json_serializable.JsonSerializable(String)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -596,7 +625,7 @@ references:
       parameters:
         - id: jsonString
           type: '26831127'
-          description: '<p>die Json-Zeichenfolge, die stellt die <xref href="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>die Json-Zeichenfolge, die stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
   - uid: com.microsoft.azure.documentdb._json_serializable.JsonSerializable(JSONObject)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -612,7 +641,7 @@ references:
       parameters:
         - id: jsonObject
           type: 2b3125a5
-          description: '<p>Das Json-Objekt, das stellt die <xref href="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false"></xref>. </p>'
+          description: '<p>Das Json-Objekt, das stellt die <xref uid="com.microsoft.azure.documentdb._json_serializable" data-throw-if-not-resolved="false">JsonSerializable</xref>. </p>'
   - uid: com.microsoft.azure.documentdb._json_serializable.remove(String)
     parent: com.microsoft.azure.documentdb._json_serializable
     href: com.microsoft.azure.documentdb._json_serializable.yml
@@ -669,7 +698,7 @@ references:
     type: Method
     summary: |-
       <p>Ruft die einfache Darstellung der Eigenschaftensammlung ab.</p>
-      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref href="com.microsoft.azure.documentdb._json_serializable.toJson()" data-throw-if-not-resolved="false"></xref>.</p>
+      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref uid="com.microsoft.azure.documentdb._json_serializable.toJson()" data-throw-if-not-resolved="false">toJson()</xref>.</p>
       <p></p>
     syntax:
       content: public String toString()
@@ -683,7 +712,7 @@ references:
     nameWithType: JsonSerializable.toString(int indentFactor)
     fullName: String com.microsoft.azure.documentdb.JsonSerializable.toString(int indentFactor)
     type: Method
-    summary: "<p>Ruft eine formatierte Darstellung des Eigenschaftenbehälters.</p>\n<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000019\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref href=\"com.microsoft.azure.documentdb._json_serializable.toJson(SerializationFormattingPolicy)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
+    summary: "<p>Ruft eine formatierte Darstellung des Eigenschaftenbehälters.</p>\n<p>\r\n\r\n  <xrefsect id=\"deprecated_1_deprecated000043\">\r\n\r\n    <xreftitle>Als veraltet markiert</xreftitle>\r\n\r\n    <xrefdescription>\r\n\r\n      <p>Für die ordnungsgemäße Konvertierung in Json und der Einschluss von die standardmäßige Werte verwenden <xref uid=\"com.microsoft.azure.documentdb._json_serializable.toJson(SerializationFormattingPolicy)\" data-throw-if-not-resolved=\"false\">toJson(SerializationFormattingPolicy)</xref>.</p>\n\n    </xrefdescription>\n\n  </xrefsect>\n\n</p>"
     syntax:
       content: public String toString(int indentFactor)
       parameters:
@@ -761,11 +790,14 @@ references:
     fullName: static HashIndex com.microsoft.azure.documentdb.Index.Hash(DataType dataType)
     type: Method
     summary: |-
-      <p>Gibt eine Instanz des <xref href="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false"></xref> -Klasse mit angegebenen <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref>. </p>
-      <p>Hier ist ein Beispiel zum Erstellen <xref href="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false"></xref> Instanz übergeben der <xref href="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false"></xref>: <preformatted> <programlisting> <codeline> <highlight class="normal">HashIndex<sp></sp>HashIndex<sp></sp>=<sp></sp>Index.Hash(DataType.String);</highlight></codeline></programlisting></preformatted></p>
+      <p>Gibt eine Instanz des <xref uid="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false">HashIndex</xref> -Klasse mit angegebenen <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref>. </p>
+      <p>Hier ist ein Beispiel zum Erstellen <xref uid="com.microsoft.azure.documentdb._hash_index" data-throw-if-not-resolved="false">HashIndex</xref> Instanz übergeben der <xref uid="com.microsoft.azure.documentdb._data_type" data-throw-if-not-resolved="false">DataType</xref>: <pre><code>HashIndex hashIndex = Index.Hash(DataType.String);
+
+          </code></pre></p>
+
       <p></p>
     syntax: *ref_1
-  - uid: com.microsoft.azure.documentdb._data_type.String()
+  - uid: com.microsoft.azure.documentdb._data_type.String
     parent: com.microsoft.azure.documentdb._data_type
     href: com.microsoft.azure.documentdb._data_type.yml
     name: String
@@ -782,9 +814,9 @@ references:
     nameWithType: Index.Spatial(DataType dataType)
     fullName: static SpatialIndex com.microsoft.azure.documentdb.Index.Spatial(DataType dataType)
     type: Method
-    summary: "<p>Gibt eine Instanz des <xref href=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\"></xref> -Klasse mit angegebenen <xref href=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\"></xref>. </p>\n<p>Hier ist ein Beispiel zum Erstellen <xref href=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\"></xref> Instanz übergeben der <xref href=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\"></xref>: </p>\n<p>\r\n\r\n  <xref href=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\"></xref>SpatialIndex = <xref href=\"com.microsoft.azure.documentdb._index.Spatial(DataType)\" data-throw-if-not-resolved=\"false\"></xref>(<xref href=\"com.microsoft.azure.documentdb._data_type.Point()\" data-throw-if-not-resolved=\"false\"></xref>);</p>\n\n<p></p>"
+    summary: "<p>Gibt eine Instanz des <xref uid=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\">SpatialIndex</xref> -Klasse mit angegebenen <xref uid=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\">DataType</xref>. </p>\n<p>Hier ist ein Beispiel zum Erstellen <xref uid=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\">SpatialIndex</xref> Instanz übergeben der <xref uid=\"com.microsoft.azure.documentdb._data_type\" data-throw-if-not-resolved=\"false\">DataType</xref>: </p>\n<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.documentdb._spatial_index\" data-throw-if-not-resolved=\"false\">SpatialIndex</xref> SpatialIndex = <xref uid=\"com.microsoft.azure.documentdb._index.Spatial(DataType)\" data-throw-if-not-resolved=\"false\">Index.Spatial</xref>(<xref uid=\"com.microsoft.azure.documentdb._data_type.Point\" data-throw-if-not-resolved=\"false\">DataType.Point</xref>);</p>\n\n<p></p>"
     syntax: *ref_2
-  - uid: com.microsoft.azure.documentdb._data_type.Point()
+  - uid: com.microsoft.azure.documentdb._data_type.Point
     parent: com.microsoft.azure.documentdb._data_type
     href: com.microsoft.azure.documentdb._data_type.yml
     name: Point

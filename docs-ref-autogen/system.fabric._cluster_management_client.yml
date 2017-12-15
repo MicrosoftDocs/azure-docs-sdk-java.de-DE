@@ -80,7 +80,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 402
     package: system.fabric
-    summary: "<p>Aktiviert einen Service Fabric-Clusterknoten, der derzeit deaktiviert ist.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>, sobald der aktiviert, der Knoten wird er wieder zum geeigneten Ziel zum Platzieren neuer Replikate, und alle geschlossenen Replikate auf dem Knoten werden geöffnet. Nach Abschluss dieser API impliziert dies, dass die Absicht, aktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Aktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <ref refid=\"\" kindref=\"compound\">system.fabric.QueryClient#getNodeListAsync()</ref> API </p>"
+    summary: "<p>Aktiviert einen Service Fabric-Clusterknoten, der momentan deaktiviert ist.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>, sobald der aktiviert, der Knoten wird er wieder zum geeigneten Ziel zum Platzieren neuer Replikate, und alle geschlossenen Replikate auf dem Knoten werden geöffnet. Nach Abschluss dieser API impliziert dies, dass die Absicht, aktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Aktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.QueryClient#getNodeListAsync()</xref> API </p>"
     syntax: &ref_2
       content: public CompletableFuture<Boolean> activateNodeAsync(String nodeName)
       parameters:
@@ -106,7 +106,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 424
     package: system.fabric
-    summary: "<p>Aktiviert einen Service Fabric-Clusterknoten, der derzeit deaktiviert ist.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>, sobald der aktiviert, der Knoten wird er wieder zum geeigneten Ziel zum Platzieren neuer Replikate, und alle geschlossenen Replikate auf dem Knoten werden geöffnet. Nach Abschluss dieser API impliziert dies, dass die Absicht, aktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Aktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <ref refid=\"\" kindref=\"compound\">system.fabric.QueryClient#getNodeListAsync()</ref> API </p>"
+    summary: "<p>Aktiviert einen Service Fabric-Clusterknoten, der momentan deaktiviert ist.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>, sobald der aktiviert, der Knoten wird er wieder zum geeigneten Ziel zum Platzieren neuer Replikate, und alle geschlossenen Replikate auf dem Knoten werden geöffnet. Nach Abschluss dieser API impliziert dies, dass die Absicht, aktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Aktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.QueryClient#getNodeListAsync()</xref> API </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> activateNodeAsync(String nodeName, Duration timeout)'
       parameters:
@@ -115,7 +115,7 @@ items:
           description: <p>Der Knoten aktiviert werden. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die asynchrone Bestätigung der Anforderung darstellt. </p>'
@@ -174,6 +174,7 @@ items:
           description: '<p>Der relative Pfad sowie der Dateiname des Ziels in den imagespeicher besitzen. Dieser Parameter ist erforderlich, wenn Ziel Code relativer Pfad angegeben wird. </p>'
     exceptions:
       - type: 8a99d4b0
+        description: '<p>Für den Fall, dass die angegebenen Dateien oder Verzeichnisse fehlen. </p>'
   - uid: 'system.fabric._cluster_management_client.deactivateNodeAsync(String,NodeDeactivationIntent)'
     id: 'deactivateNodeAsync(String,NodeDeactivationIntent)'
     parent: system.fabric._cluster_management_client
@@ -190,7 +191,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 319
     package: system.fabric
-    summary: "<p>Definieren Sie einen bestimmten Knoten mit dem angegebenen deaktiviert.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Abschluss dieser API impliziert, dass die Absicht, deaktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Deaktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <ref refid=\"\" kindref=\"compound\">system.fabric.QueryClient#getNodeListAsync()</ref> API einmal die Deaktivierung wird ausgeführt, und die deaktivierungsabsicht \"erhöht\" aber nicht verringert werden kann (z. B. ein Knoten mit deaktiviert wurde die <ref refid=\"\" kindref=\"compound\">system.fabric.NodeDeactivationIntent#Pause</ref> Absicht kann weiter mit deaktiviert werden <ref refid=\"\" kindref=\"compound\">system.fabric.NodeDeactivationIntent#Restart</ref>, aber nicht umgekehrt. Knoten können erneut aktiviert werden, über <xref href=\"system.fabric._cluster_management_client.activateNodeAsync(String)\" data-throw-if-not-resolved=\"false\"></xref> jedes Mal, wenn nach der Deaktivierung werden. Wenn die Deaktivierung nicht abgeschlossen ist. wird dies die Deaktivierung dadurch abgebrochen. Ein Knoten, der ausfällt und wieder hochgefahren während der Deaktivierung müssen immer noch reaktiviert werden, bevor Dienste auf diesem Knoten platziert werden. Service Fabric stellt sicher, dass diese Deaktivierung einer \"sicheren\" Prozess ist. Er führt mehrere sicherheitsüberprüfungen (finden Sie unter <xref href=\"system.fabric._safety_check_kind\" data-throw-if-not-resolved=\"false\"></xref>), stellen Sie sicher, dass kein Verlust der Verfügbarkeit oder Daten vorhanden ist </p>"
+    summary: "<p>Definieren Sie einen bestimmten Knoten mit dem angegebenen deaktiviert.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Abschluss dieser API impliziert, dass die Absicht, deaktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Deaktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.QueryClient#getNodeListAsync()</xref> API einmal die Deaktivierung wird ausgeführt, und die deaktivierungsabsicht \"erhöht\" aber nicht verringert werden kann (z. B. ein Knoten mit deaktiviert wurde die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.NodeDeactivationIntent#Pause</xref> Absicht kann weiter mit deaktiviert werden <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.NodeDeactivationIntent#Restart</xref>, aber nicht umgekehrt. Knoten können erneut aktiviert werden, über <xref uid=\"system.fabric._cluster_management_client.activateNodeAsync(String)\" data-throw-if-not-resolved=\"false\">system.fabric.ClusterManagementClient#activateNodeAsync(String)</xref> jedes Mal, wenn nach der Deaktivierung werden. Wenn die Deaktivierung nicht abgeschlossen ist. wird dies die Deaktivierung dadurch abgebrochen. Ein Knoten, der ausfällt und wieder hochgefahren während der Deaktivierung müssen immer noch reaktiviert werden, bevor Dienste auf diesem Knoten platziert werden. Service Fabric stellt sicher, dass diese Deaktivierung einer \"sicheren\" Prozess ist. Er führt mehrere sicherheitsüberprüfungen (finden Sie unter <xref uid=\"system.fabric._safety_check_kind\" data-throw-if-not-resolved=\"false\">system.fabric.SafetyCheckKind</xref>), stellen Sie sicher, dass kein Verlust der Verfügbarkeit oder Daten vorhanden ist </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> deactivateNodeAsync(String nodeName, NodeDeactivationIntent nodeDeactivationIntent)'
       parameters:
@@ -199,7 +200,7 @@ items:
           description: <p>Der Name des Knotens zu deaktivieren. </p>
         - id: nodeDeactivationIntent
           type: system.fabric._node_deactivation_intent
-          description: <p>Die <xref href="system.fabric._node_deactivation_intent" data-throw-if-not-resolved="false"></xref> zur Deaktivierung des Knotens. </p>
+          description: <p>Die <xref uid="system.fabric._node_deactivation_intent" data-throw-if-not-resolved="false">system.fabric.NodeDeactivationIntent</xref> zur Deaktivierung des Knotens. </p>
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die asynchrone Bestätigung der Anforderung darstellt. </p>'
@@ -219,7 +220,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 355
     package: system.fabric
-    summary: "<p>Definieren Sie einen bestimmten Knoten mit dem angegebenen deaktiviert.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Abschluss dieser API impliziert, dass die Absicht, deaktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Deaktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <ref refid=\"\" kindref=\"compound\">system.fabric.QueryClient#getNodeListAsync()</ref> API einmal die Deaktivierung wird ausgeführt, und die deaktivierungsabsicht \"erhöht\" aber nicht verringert werden kann (z. B. ein Knoten mit deaktiviert wurde die <ref refid=\"\" kindref=\"compound\">system.fabric.NodeDeactivationIntent#Pause</ref> Absicht kann weiter mit deaktiviert werden <ref refid=\"\" kindref=\"compound\">system.fabric.NodeDeactivationIntent#Restart</ref>, aber nicht umgekehrt. Knoten können erneut aktiviert werden, über <xref href=\"system.fabric._cluster_management_client.activateNodeAsync(String)\" data-throw-if-not-resolved=\"false\"></xref> jedes Mal, wenn nach der Deaktivierung werden. Wenn die Deaktivierung nicht abgeschlossen ist. wird dies die Deaktivierung dadurch abgebrochen. Ein Knoten, der ausfällt und wieder hochgefahren während der Deaktivierung müssen immer noch reaktiviert werden, bevor Dienste auf diesem Knoten platziert werden. Service Fabric stellt sicher, dass diese Deaktivierung einer \"sicheren\" Prozess ist. Er führt mehrere sicherheitsüberprüfungen (finden Sie unter <xref href=\"system.fabric._safety_check_kind\" data-throw-if-not-resolved=\"false\"></xref>), stellen Sie sicher, dass kein Verlust der Verfügbarkeit oder Daten vorhanden ist </p>"
+    summary: "<p>Definieren Sie einen bestimmten Knoten mit dem angegebenen deaktiviert.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Abschluss dieser API impliziert, dass die Absicht, deaktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Deaktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.QueryClient#getNodeListAsync()</xref> API einmal die Deaktivierung wird ausgeführt, und die deaktivierungsabsicht \"erhöht\" aber nicht verringert werden kann (z. B. ein Knoten mit deaktiviert wurde die <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.NodeDeactivationIntent#Pause</xref> Absicht kann weiter mit deaktiviert werden <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.NodeDeactivationIntent#Restart</xref>, aber nicht umgekehrt. Knoten können erneut aktiviert werden, über <xref uid=\"system.fabric._cluster_management_client.activateNodeAsync(String)\" data-throw-if-not-resolved=\"false\">system.fabric.ClusterManagementClient#activateNodeAsync(String)</xref> jedes Mal, wenn nach der Deaktivierung werden. Wenn die Deaktivierung nicht abgeschlossen ist. wird dies die Deaktivierung dadurch abgebrochen. Ein Knoten, der ausfällt und wieder hochgefahren während der Deaktivierung müssen immer noch reaktiviert werden, bevor Dienste auf diesem Knoten platziert werden. Service Fabric stellt sicher, dass diese Deaktivierung einer \"sicheren\" Prozess ist. Er führt mehrere sicherheitsüberprüfungen (finden Sie unter <xref uid=\"system.fabric._safety_check_kind\" data-throw-if-not-resolved=\"false\">system.fabric.SafetyCheckKind</xref>), stellen Sie sicher, dass kein Verlust der Verfügbarkeit oder Daten vorhanden ist </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> deactivateNodeAsync(String nodeName, NodeDeactivationIntent nodeDeactivationIntent, Duration timeout)'
       parameters:
@@ -228,13 +229,13 @@ items:
           description: <p>Der Name des Knotens zu deaktivieren. </p>
         - id: nodeDeactivationIntent
           type: system.fabric._node_deactivation_intent
-          description: <p>Die <xref href="system.fabric._node_deactivation_intent" data-throw-if-not-resolved="false"></xref> zur Deaktivierung des Knotens. </p>
+          description: <p>Die <xref uid="system.fabric._node_deactivation_intent" data-throw-if-not-resolved="false">system.fabric.NodeDeactivationIntent</xref> zur Deaktivierung des Knotens. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
-        description: <p>Die deaktivierten Knoten mit dem angegebenen <xref href="system.fabric._node_deactivation_intent" data-throw-if-not-resolved="false"></xref>. </p>
+        description: <p>Die deaktivierten Knoten mit dem angegebenen <xref uid="system.fabric._node_deactivation_intent" data-throw-if-not-resolved="false">system.fabric.NodeDeactivationIntent</xref>. </p>
   - uid: system.fabric._cluster_management_client.getClusterManifestAsync()
     id: getClusterManifestAsync()
     parent: system.fabric._cluster_management_client
@@ -261,7 +262,7 @@ items:
         description: <p>Service Fabric-Cluster XML-Manifestdatei als Zeichenfolge. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.getClusterManifestAsync(Duration)
     id: getClusterManifestAsync(Duration)
     parent: system.fabric._cluster_management_client
@@ -286,13 +287,13 @@ items:
       parameters:
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 06be942d
         description: <p>Service Fabric-Cluster XML-Manifestdatei als Zeichenfolge. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.getFabricUpgradeProgressAsync()
     id: getFabricUpgradeProgressAsync()
     parent: system.fabric._cluster_management_client
@@ -319,7 +320,7 @@ items:
         description: <p>Der Fortschritt einer Service Fabric-Aktualisierungsprozess. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.getFabricUpgradeProgressAsync(Duration)
     id: getFabricUpgradeProgressAsync(Duration)
     parent: system.fabric._cluster_management_client
@@ -344,13 +345,13 @@ items:
       parameters:
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 9cdf14d0system.fabric._fabric_upgrade_progressa08ddfce
         description: <p>Der Fortschritt einer Service Fabric-Aktualisierungsprozess. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.moveNextFabricUpgradeDomainAsync(FabricUpgradeProgress)
     id: moveNextFabricUpgradeDomainAsync(FabricUpgradeProgress)
     parent: system.fabric._cluster_management_client
@@ -367,7 +368,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 655
     package: system.fabric
-    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>ähnelt<xref href=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>ähnelt <xref uid=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\">system.fabric.ApplicationManagementClient#moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)</xref></p>"
     syntax:
       content: public CompletableFuture<Boolean> moveNextFabricUpgradeDomainAsync(FabricUpgradeProgress fabricUpgradeProgress)
       parameters:
@@ -379,7 +380,7 @@ items:
         description: <p>Der upgradedomäne im Cluster. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: 'system.fabric._cluster_management_client.moveNextFabricUpgradeDomainAsync(FabricUpgradeProgress,Duration)'
     id: 'moveNextFabricUpgradeDomainAsync(FabricUpgradeProgress,Duration)'
     parent: system.fabric._cluster_management_client
@@ -396,7 +397,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 679
     package: system.fabric
-    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>ähnelt<xref href=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p>\r\n\r\n  <b>Hinweise:</b>ähnelt <xref uid=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\">system.fabric.ApplicationManagementClient#moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)</xref></p>"
     syntax:
       content: 'public CompletableFuture<Boolean> moveNextFabricUpgradeDomainAsync(FabricUpgradeProgress fabricUpgradeProgress, Duration timeout)'
       parameters:
@@ -405,13 +406,13 @@ items:
           description: <p>Das Fabric aktualisieren Prozessobjekt verwendet. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Der upgradedomäne im Cluster. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.moveNextFabricUpgradeDomainAsync(String)
     id: moveNextFabricUpgradeDomainAsync(String)
     parent: system.fabric._cluster_management_client
@@ -428,7 +429,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 718
     package: system.fabric
-    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p></p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>ähnelt<xref href=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p></p>\n<p>\r\n\r\n  <b>Hinweise:</b>ähnelt <xref uid=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\">system.fabric.ApplicationManagementClient#moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)</xref></p>"
     syntax:
       content: public CompletableFuture<Boolean> moveNextFabricUpgradeDomainAsync(String nextUpgradeDomain)
       parameters:
@@ -440,7 +441,7 @@ items:
         description: <p>Der upgradedomäne im Cluster. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt.</p>
   - uid: 'system.fabric._cluster_management_client.moveNextFabricUpgradeDomainAsync(String,Duration)'
     id: 'moveNextFabricUpgradeDomainAsync(String,Duration)'
     parent: system.fabric._cluster_management_client
@@ -457,7 +458,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 743
     package: system.fabric
-    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p></p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>ähnelt<xref href=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\"></xref></p>"
+    summary: "<p>Weist die Dienst-Fabric die nächste upgradedomäne im Cluster zu aktualisieren, wenn die aktuelle upgradedomäne abgeschlossen wurde.</p>\n<p></p>\n<p>\r\n\r\n  <b>Hinweise:</b>ähnelt <xref uid=\"system.fabric._application_management_client.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)\" data-throw-if-not-resolved=\"false\">system.fabric.ApplicationManagementClient#moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress)</xref></p>"
     syntax:
       content: 'public CompletableFuture<Boolean> moveNextFabricUpgradeDomainAsync(String nextUpgradeDomain, Duration timeout)'
       parameters:
@@ -466,13 +467,13 @@ items:
           description: <p>Das Fabric aktualisieren Prozessobjekt verwendet. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Der upgradedomäne im Cluster. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt.</p>
   - uid: 'system.fabric._cluster_management_client.provisionFabricAsync(String,String)'
     id: 'provisionFabricAsync(String,String)'
     parent: system.fabric._cluster_management_client
@@ -489,7 +490,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 473
     package: system.fabric
-    summary: "<p>Stellt die Service Fabric.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold> * ist ein null-Wert für die PatchFilePath oder den Parameter clustermanifestfilepath-Element zulässig. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dies wird die Patch-Datei und/oder clustermanifestdatei den Speicherort des Image hochladen. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. Clustermanifestprüfung erfolgt im Kontext dieses Aufrufs. </p>"
+    summary: "<p>Stellt die Service Fabric.</p>\n<p>\r\n\r\n  <b>Hinweise:</b> * ist ein null-Wert für die PatchFilePath oder den Parameter clustermanifestfilepath-Element zulässig. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dies wird die Patch-Datei und/oder clustermanifestdatei den Speicherort des Image hochladen. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. Clustermanifestprüfung erfolgt im Kontext dieses Aufrufs. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> provisionFabricAsync(String codeFilePath, String clusterManifestFilepath)'
       parameters:
@@ -504,7 +505,7 @@ items:
         description: <p>Die bereitgestellte Service Fabric. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: 'system.fabric._cluster_management_client.provisionFabricAsync(String,String,Duration)'
     id: 'provisionFabricAsync(String,String,Duration)'
     parent: system.fabric._cluster_management_client
@@ -521,7 +522,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 511
     package: system.fabric
-    summary: "<p>Stellt die Service Fabric.</p>\n<p>\r\n\r\n  <bold>Hinweise:</bold> * ist ein null-Wert für die PatchFilePath oder den Parameter clustermanifestfilepath-Element zulässig. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dies wird die Patch-Datei und/oder clustermanifestdatei den Speicherort des Image hochladen. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. Clustermanifestprüfung erfolgt im Kontext dieses Aufrufs. </p>"
+    summary: "<p>Stellt die Service Fabric.</p>\n<p>\r\n\r\n  <b>Hinweise:</b> * ist ein null-Wert für die PatchFilePath oder den Parameter clustermanifestfilepath-Element zulässig. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dies wird die Patch-Datei und/oder clustermanifestdatei den Speicherort des Image hochladen. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. Clustermanifestprüfung erfolgt im Kontext dieses Aufrufs. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> provisionFabricAsync(String codeFilePath, String clusterManifestFilepath, Duration timeout)'
       parameters:
@@ -533,13 +534,13 @@ items:
           description: '<p>Der Pfad zum clustermanifest. Ein null-Wert ist zulässig, entweder die </p>'
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Die bereitgestellte Service Fabric. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.recoverPartitionAsync(UUID)
     id: recoverPartitionAsync(UUID)
     parent: system.fabric._cluster_management_client
@@ -556,7 +557,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 910
     package: system.fabric
-    summary: "<p>Zeigt die Service Fabric-Cluster an, dass eine bestimmte Partition Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Zeigt die Service Fabric-Cluster an, dass eine bestimmte Partition Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: public CompletableFuture<Boolean> recoverPartitionAsync(UUID partitionId)
       parameters:
@@ -582,7 +583,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 930
     package: system.fabric
-    summary: "<p>Zeigt die Service Fabric-Cluster an, dass eine bestimmte Partition Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Zeigt die Service Fabric-Cluster an, dass eine bestimmte Partition Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> recoverPartitionAsync(UUID partitionId, Duration timeout)'
       parameters:
@@ -591,7 +592,7 @@ items:
           description: <p>Die Partitions-Id her </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die Bestätigung der Absicht darstellt. </p>'
@@ -611,7 +612,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 262
     package: system.fabric
-    summary: "<p>Zeigt die Service Fabric-Cluster an, dass alle Dienste (einschließlich Systemdienste) Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Zeigt die Service Fabric-Cluster an, dass alle Dienste (einschließlich Systemdienste) Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: public CompletableFuture<Boolean> recoverPartitionsAsync()
       return:
@@ -633,13 +634,13 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 280
     package: system.fabric
-    summary: "<p>Zeigt die Service Fabric-Cluster an, dass alle Dienste (einschließlich Systemdienste) Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Zeigt die Service Fabric-Cluster an, dass alle Dienste (einschließlich Systemdienste) Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: public CompletableFuture<Boolean> recoverPartitionsAsync(Duration timeout)
       parameters:
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die Bestätigung der Absicht darstellt. </p>'
@@ -659,7 +660,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 965
     package: system.fabric
-    summary: "<p>Service Fabric-Cluster zeigt, dass es sich bei den angegebenen Dienst Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Service Fabric-Cluster zeigt, dass es sich bei den angegebenen Dienst Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: public CompletableFuture<Boolean> recoverServicePartitionsAsync(URI serviceName)
       parameters:
@@ -685,7 +686,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 985
     package: system.fabric
-    summary: "<p>Service Fabric-Cluster zeigt, dass es sich bei den angegebenen Dienst Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Service Fabric-Cluster zeigt, dass es sich bei den angegebenen Dienst Wiederherstellung durchführen, der derzeit in quorumsverlust feststeckt versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> recoverServicePartitionsAsync(URI serviceName, Duration timeout)'
       parameters:
@@ -694,7 +695,7 @@ items:
           description: <p>Der Name des Diensts wiederhergestellt. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die Bestätigung der Absicht darstellt. </p>'
@@ -714,7 +715,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 1018
     package: system.fabric
-    summary: "<p>Zeigt die Service Fabric-Cluster an, dass Systemdienste Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Zeigt die Service Fabric-Cluster an, dass Systemdienste Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: public CompletableFuture<Boolean> recoverSystemPartitionsAsync()
       return:
@@ -736,13 +737,13 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 1036
     package: system.fabric
-    summary: "<p>Zeigt die Service Fabric-Cluster an, dass Systemdienste Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
+    summary: "<p>Zeigt die Service Fabric-Cluster an, dass Systemdienste Wiederherstellung durchführen, der derzeit in quorumsverlust hängen versucht werden soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dieser Vorgang sollte nur ausgeführt werden, wenn bekannt ist, dass die Replikate, die ausgefallen sind, nicht wiederhergestellt werden. Eine falsche Verwendung dieser API kann dazu führen, dass Daten verloren gehen. </p>"
     syntax:
       content: public CompletableFuture<Boolean> recoverSystemPartitionsAsync(Duration timeout)
       parameters:
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die Bestätigung der Absicht darstellt. </p>'
@@ -777,6 +778,7 @@ items:
           description: <p>Der relative Pfad der Service Fabric-MSI-Datei im ImageStore. </p>
     exceptions:
       - type: 8a99d4b0
+        description: '<p>Für den Fall, dass die angegebenen Dateien oder Verzeichnisse fehlen. </p>'
   - uid: system.fabric._cluster_management_client.removeNodeStateAsync(String)
     id: removeNodeStateAsync(String)
     parent: system.fabric._cluster_management_client
@@ -844,7 +846,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 228
     package: system.fabric
-    summary: "<p>Gibt an, dass die persistenten Daten eines Knotens (z. B. aufgrund von Fehler auf dem Datenträger, oder reimaging usw.) verloren gegangen ist und diesem Service Fabric alle Dienste oder Statusangaben auf diesem Knoten als verloren und können nicht wiederhergestellt behandeln soll.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>nach ein Knoten ausfällt, Service Fabric wird Nachverfolgen von Replikaten von permanenten Diensten auf diesem Knoten da auf diesen Status auf diesem Knoten sind. In Fällen, in dem der Administrator bekannt ist und, dass der persistente Zustand auf einem Knoten dauerhaft verloren gegangen ist, die <xref href=\"system.fabric._cluster_management_client.removeNodeStateAsync(String)\" data-throw-if-not-resolved=\"false\"></xref> Methode aufgerufen werden... Service Fabric zu benachrichtigen, die der Zustand auf dem Knoten ist nicht mehr vorhanden (oder der Knoten mit dem Status er hatte nie zurückkehren kann). Dies weist Service Fabric beim Warten auf diesem Knoten (und alle beibehaltenen Replikate auf diesem Knoten) wiederherstellen zu beenden. Hinweis: Diese API muss aufgerufen werden, nachdem sie ermittelt haben, dass der Zustand auf diesem Knoten ausgefallen ist. Wenn diese API aufgerufen wird, und klicken Sie dann der Knoten wieder mit seinen Status intakt ist es nicht definiertes Verhalten </p>"
+    summary: "<p>Gibt an, dass die persistenten Daten eines Knotens (z. B. aufgrund von Fehler auf dem Datenträger, oder reimaging usw.) verloren gegangen ist und diesem Service Fabric alle Dienste oder Statusangaben auf diesem Knoten als verloren und können nicht wiederhergestellt behandeln soll.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>nach ein Knoten ausfällt, Service Fabric wird Nachverfolgen von Replikaten von permanenten Diensten auf diesem Knoten da auf diesen Status auf diesem Knoten sind. In Fällen, in dem der Administrator bekannt ist und, dass der persistente Zustand auf einem Knoten dauerhaft verloren gegangen ist, die <xref uid=\"system.fabric._cluster_management_client.removeNodeStateAsync(String)\" data-throw-if-not-resolved=\"false\">system.fabric.ClusterManagementClient#removeNodeStateAsync(String)</xref> Methode aufgerufen werden... Service Fabric benachrichtigen der Zustand auf den Knoten ist nicht mehr vorhanden (oder der Knoten mit dem Status, den sie hatte nie zurückkehren kann). Dies weist Service Fabric beim Warten auf diesem Knoten (und alle beibehaltenen Replikate auf diesem Knoten) wiederherstellen zu beenden. Hinweis: Diese API muss aufgerufen werden, nachdem sie ermittelt haben, dass der Zustand auf diesem Knoten ausgefallen ist. Wenn diese API aufgerufen wird, und klicken Sie dann der Knoten wieder mit seinen Status intakt ist es nicht definiertes Verhalten </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> removeNodeStateAsync(String nodeName, Duration timeout)'
       parameters:
@@ -853,7 +855,7 @@ items:
           description: <p>Der Name des Knotens der dauerhaft verloren gegangen ist. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: '<p>Eine Aufgabe, die den Vorgang darstellt. </p>'
@@ -964,7 +966,7 @@ items:
       parameters:
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Das Rollback Service Fabric so aktualisieren Sie den Vorgang. </p>
@@ -984,7 +986,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 1267
     package: system.fabric
-    summary: "<p>Schaltet, ob der Cluster Resource Balancer eine Warnung der Integrität meldet, wenn sie ein Replikat platzieren kann.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Wenn diese Methode mit dem Wert \"false\" zweimal aufgerufen wird, löscht Sie aus dem Arbeitsspeicher der Berichte, die potenziell ausgegeben werden. Wenn diese Methode mit dem Wert \"true\" aufgerufen wird, meldet der Cluster Resource Balancer Integrität Warnung, wenn sie ein Replikat platzieren kann. Wenn solche Health-Warnungen, integritätsprüfungen für eine überwachte Upgrades blockiert werden kann die Umschaltfläche deaktiviert. </p>"
+    summary: "<p>Schaltet, ob der Cluster Resource Balancer eine Warnung der Integrität meldet, wenn sie ein Replikat platzieren kann.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Wenn diese Methode mit dem Wert \"false\" zweimal aufgerufen wird, löscht Sie aus dem Arbeitsspeicher der Berichte, die potenziell ausgegeben werden. Wenn diese Methode mit dem Wert \"true\" aufgerufen wird, meldet der Cluster Resource Balancer Integrität Warnung, wenn sie ein Replikat platzieren kann. Wenn solche Health-Warnungen, integritätsprüfungen für eine überwachte Upgrades blockiert werden kann die Umschaltfläche deaktiviert. </p>"
     syntax:
       content: public CompletableFuture<Boolean> toggleVerboseServicePlacementHealthReportingAsync(boolean enabled)
       parameters:
@@ -1010,7 +1012,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 1292
     package: system.fabric
-    summary: "<p>Schaltet, ob der Cluster Resource Balancer eine Warnung der Integrität meldet, wenn sie ein Replikat platzieren kann.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Wenn diese Methode mit dem Wert \"false\" zweimal aufgerufen wird, löscht Sie aus dem Arbeitsspeicher der Berichte, die potenziell ausgegeben werden. Wenn diese Methode mit dem Wert \"true\" aufgerufen wird, meldet der Cluster Resource Balancer Integrität Warnung, wenn sie ein Replikat platzieren kann. Wenn solche Health-Warnungen, integritätsprüfungen für eine überwachte Upgrades blockiert werden kann die Umschaltfläche deaktiviert. </p>"
+    summary: "<p>Schaltet, ob der Cluster Resource Balancer eine Warnung der Integrität meldet, wenn sie ein Replikat platzieren kann.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Wenn diese Methode mit dem Wert \"false\" zweimal aufgerufen wird, löscht Sie aus dem Arbeitsspeicher der Berichte, die potenziell ausgegeben werden. Wenn diese Methode mit dem Wert \"true\" aufgerufen wird, meldet der Cluster Resource Balancer Integrität Warnung, wenn sie ein Replikat platzieren kann. Wenn solche Health-Warnungen, integritätsprüfungen für eine überwachte Upgrades blockiert werden kann die Umschaltfläche deaktiviert. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> toggleVerboseServicePlacementHealthReportingAsync(boolean enabled, Duration timeout)'
       parameters:
@@ -1039,7 +1041,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 794
     package: system.fabric
-    summary: "<p>Unprovisions des Dienst-Fabrics.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> ein null-Wert für den Parameter Codeversion- oder ConfigVersion-Parameter zulässig ist. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dadurch wird die Patch-Datei und/oder clustermanifestdatei aus der Image-Speicherort gelöscht. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. </p>"
+    summary: "<p>Unprovisions des Dienst-Fabrics.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> ein null-Wert für den Parameter Codeversion- oder ConfigVersion-Parameter zulässig ist. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dadurch wird die Patch-Datei und/oder clustermanifestdatei aus der Image-Speicherort gelöscht. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> unprovisionFabricAsync(String codeVersion, String configVersion)'
       parameters:
@@ -1054,7 +1056,7 @@ items:
         description: <p>Die nicht bereitgestellten Service Fabric. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: 'system.fabric._cluster_management_client.unprovisionFabricAsync(String,String,Duration)'
     id: 'unprovisionFabricAsync(String,String,Duration)'
     parent: system.fabric._cluster_management_client
@@ -1071,7 +1073,7 @@ items:
       path: src/prod/src/java/system.fabric/src/system/fabric/ClusterManagementClient.java
       startLine: 826
     package: system.fabric
-    summary: "<p>Unprovisions des Dienst-Fabrics.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold> ein null-Wert für den Parameter Codeversion- oder ConfigVersion-Parameter zulässig ist. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dadurch wird die Patch-Datei und/oder clustermanifestdatei aus der Image-Speicherort gelöscht. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. </p>"
+    summary: "<p>Unprovisions des Dienst-Fabrics.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> ein null-Wert für den Parameter Codeversion- oder ConfigVersion-Parameter zulässig ist. Ein null-Wert kann nicht für beide Parameter verwendet werden. Dadurch wird die Patch-Datei und/oder clustermanifestdatei aus der Image-Speicherort gelöscht. Der Speicherort des Bilds wird als eine Konfigurationseinstellung im clustermanifest angegeben, die bei der Erstellung des Clusters bereitgestellt wurde. </p>"
     syntax:
       content: 'public CompletableFuture<Boolean> unprovisionFabricAsync(String codeVersion, String configVersion, Duration timeout)'
       parameters:
@@ -1083,13 +1085,13 @@ items:
           description: '<p>Die Konfigurationsversion Bereitstellung. Ein null-Wert ist zulässig, entweder die </p>'
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Die nicht bereitgestellten Service Fabric. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: system.fabric._cluster_management_client.updateFabricUpgradeAsync(FabricUpgradeUpdateDescription)
     id: updateFabricUpgradeAsync(FabricUpgradeUpdateDescription)
     parent: system.fabric._cluster_management_client
@@ -1145,7 +1147,7 @@ items:
           description: <p>Beschreibung der neuen Upgrade Parameter angewendet. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Das aktuelle clusterupgrade. </p>
@@ -1179,7 +1181,7 @@ items:
         description: <p>Die aktualisierten Service Fabric. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
   - uid: 'system.fabric._cluster_management_client.upgradeFabricAsync(FabricUpgradeDescription,Duration)'
     id: 'upgradeFabricAsync(FabricUpgradeDescription,Duration)'
     parent: system.fabric._cluster_management_client
@@ -1207,13 +1209,13 @@ items:
           description: <p>Die Beschreibung des Upgrades. </p>
         - id: timeout
           type: e02a2de0
-          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <ref refid="" kindref="compound">java.util.concurrent.TimeoutException</ref></p>'
+          description: '<p>Die Zeitspanne, die die maximale Zeitdauer definiert können diesen Vorgang fortzusetzen, vor der Rückgabe eine <xref uid="" data-throw-if-not-resolved="false">java.util.concurrent.TimeoutException</xref></p>'
       return:
         type: 7e53ac82
         description: <p>Die aktualisierten Service Fabric. </p>
     exceptions:
       - type: system.fabric.exception._fabric_object_closed_exception
-        description: <p>Die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> verwenden und instanziieren Sie ein neues Objekt <xref href="system.fabric._fabric_client" data-throw-if-not-resolved="false"></xref> Objekt. </p>
+        description: <p>Die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt befindet sich im Zustand "geschlossen". Löschen Sie die <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> verwenden und instanziieren Sie ein neues Objekt <xref uid="system.fabric._fabric_client" data-throw-if-not-resolved="false">system.fabric.FabricClient</xref> Objekt. </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -1364,7 +1366,7 @@ references:
     nameWithType: FabricClient
     fullName: system.fabric.FabricClient
     type: Class
-    summary: "<p>Erstellt und verwaltet Service Fabric-Dienste oder andere Einrichtungen weitergeben. </p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>es wird dringend empfohlen, dass Sie so weit wie möglich FabricClients freigeben. Grund hierfür ist die <xref href=\"system.fabric._fabric_client\" data-throw-if-not-resolved=\"false\"></xref> verwendet mehrere Optimierungen, wie z. B. das Zwischenspeichern und Batchverarbeitung, die Sie nicht anderweitig vollständig zu nutzen. </p>"
+    summary: "<p>Erstellt und verwaltet Service Fabric-Dienste oder andere Einrichtungen weitergeben. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>es wird dringend empfohlen, dass Sie so weit wie möglich FabricClients freigeben. Grund hierfür ist die <xref uid=\"system.fabric._fabric_client\" data-throw-if-not-resolved=\"false\">FabricClient</xref> verwendet mehrere Optimierungen, wie z. B. das Zwischenspeichern und Batchverarbeitung, die Sie nicht anderweitig vollständig zu nutzen. </p>"
     syntax:
       content: public class FabricClient
   - uid: system.fabric.interop._native_async_callback
@@ -1415,7 +1417,7 @@ references:
     nameWithType: FabricUpgradeUpdateDescription
     fullName: system.fabric.FabricUpgradeUpdateDescription
     type: Class
-    summary: '<p>So ändern Sie die Upgrade-Parameter, beschreibt das Verhalten Cluster-Upgrades verwendet. Sieh<xref href="system.fabric._cluster_management_client.updateFabricUpgradeAsync(FabricUpgradeUpdateDescription)" data-throw-if-not-resolved="false"></xref></p>'
+    summary: '<p>So ändern Sie die Upgrade-Parameter, beschreibt das Verhalten Cluster-Upgrades verwendet. Finden Sie unter <xref uid="system.fabric._cluster_management_client.updateFabricUpgradeAsync(FabricUpgradeUpdateDescription)" data-throw-if-not-resolved="false">system.fabric.ClusterManagementClient#updateFabricUpgradeAsync(system.fabric.FabricUpgradeUpdateDescription)</xref></p>'
     syntax:
       content: public class FabricUpgradeUpdateDescription
   - uid: system.fabric._cluster_management_client.removeNodeStateAsync(String)
@@ -1436,7 +1438,7 @@ references:
     nameWithType: ClusterManagementClient.activateNodeAsync(String nodeName)
     fullName: CompletableFuture<Boolean> system.fabric.ClusterManagementClient.activateNodeAsync(String nodeName)
     type: Method
-    summary: "<p>Aktiviert einen Service Fabric-Clusterknoten, der derzeit deaktiviert ist.</p>\n<p>\r\n\r\n  <bold>Beschreibung:</bold>, sobald der aktiviert, der Knoten wird er wieder zum geeigneten Ziel zum Platzieren neuer Replikate, und alle geschlossenen Replikate auf dem Knoten werden geöffnet. Nach Abschluss dieser API impliziert dies, dass die Absicht, aktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Aktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <ref refid=\"\" kindref=\"compound\">system.fabric.QueryClient#getNodeListAsync()</ref> API </p>"
+    summary: "<p>Aktiviert einen Service Fabric-Clusterknoten, der momentan deaktiviert ist.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>, sobald der aktiviert, der Knoten wird er wieder zum geeigneten Ziel zum Platzieren neuer Replikate, und alle geschlossenen Replikate auf dem Knoten werden geöffnet. Nach Abschluss dieser API impliziert dies, dass die Absicht, aktivieren Sie vom System registriert wurde. Es bedeutet nicht, dass die Aktivierung abgeschlossen ist. Der Status des Vorgangs kann bestimmt werden, mithilfe der <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.QueryClient#getNodeListAsync()</xref> API </p>"
     syntax: *ref_2
   - uid: system.fabric._safety_check_kind
     parent: system.fabric
@@ -1463,7 +1465,7 @@ references:
     nameWithType: ApplicationManagementClient.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress upgradeProgress)
     fullName: CompletableFuture<Boolean> system.fabric.ApplicationManagementClient.moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress upgradeProgress)
     type: Method
-    summary: "<p>Weist die Service Fabric Anwendungsinstanz in die nächste upgradedomäne aktualisiert.</p>\n<p>\r\n\r\n  <ref refid=\"\" kindref=\"compound\">system.fabric.FabricErrorCode#ApplicationNotFound</ref> : die Anwendung ist nicht vorhanden. </p>\n\n<p>\r\n\r\n  <bold>Beschreibung:</bold>Service Fabric würde nur auf die nächste upgradedomäne verschieben, wenn er die upgradedomäne abgeschlossen wurde, sie wird zurzeit aktualisiert. </p>"
+    summary: "<p>Weist die Service Fabric Anwendungsinstanz in die nächste upgradedomäne aktualisiert.</p>\n<p>\r\n\r\n  <xref uid=\"\" data-throw-if-not-resolved=\"false\">system.fabric.FabricErrorCode#ApplicationNotFound</xref> : die Anwendung ist nicht vorhanden. </p>\n\n<p>\r\n\r\n  <b>Beschreibung:</b>Service Fabric würde nur auf die nächste upgradedomäne verschieben, wenn er die upgradedomäne abgeschlossen wurde, sie wird zurzeit aktualisiert. </p>"
     syntax:
       content: public CompletableFuture<Boolean> moveNextApplicationUpgradeDomainAsync(ApplicationUpgradeProgress upgradeProgress)
       parameters:

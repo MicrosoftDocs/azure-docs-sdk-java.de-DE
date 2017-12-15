@@ -6,26 +6,26 @@ items:
     href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_attach.yml
     langs:
       - java
-    name: LoadBalancingRule.DefinitionStages.WithAttach<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithAttach<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithAttach<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithAttach<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithAttach<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithAttach<ReturnT>
     type: Interface
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/LoadBalancingRule.java
-      startLine: 131
+      startLine: 176
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Der abschließenden Phase des NLB-Regeldefinition. </p>
-      <p>Zu diesem Zeitpunkt alle verbleibenden optionalen Einstellungen angegeben werden können oder Lastenausgleich Regeldefinition angefügt werden kann, mit dem übergeordneten Load Balancer Definition <xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref>. </p>
+      <p>Zu diesem Zeitpunkt alle verbleibenden Einstellungen an optionalen können angegeben werden, oder Lastenausgleich Regeldefinition an der Definition des übergeordneten Load Balancer angefügt werden kann. </p>
     syntax:
-      content: 'public interface WithAttach<ParentT> extends Attachable<ParentT>.InDefinition,LoadBalancingRule.DefinitionStages.WithFloatingIP<ParentT>,LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ParentT>,LoadBalancingRule.DefinitionStages.WithLoadDistribution<ParentT>'
+      content: 'public interface WithAttach<ReturnT> extends Attachable<ParentT>.InDefinition<ReturnT>,LoadBalancingRule.DefinitionStages.WithFloatingIP<ReturnT>,LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ReturnT>,LoadBalancingRule.DefinitionStages.WithLoadDistribution<ReturnT>,LoadBalancingRule.DefinitionStages.WithProbe<ReturnT>'
       typeParameters:
-        - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()
       - com.microsoft.azure.management.network.model._has_floating_i_p._deb38c8ea43811c0e325ee17d45a5a7f6d.withFloatingIP(boolean)
@@ -33,11 +33,12 @@ items:
       - com.microsoft.azure.management.network.model._has_floating_i_p._deb38c8ea43811c0e325ee17d45a5a7f6d.withFloatingIPEnabled()
       - com.microsoft.azure.management.network._load_balancing_rule._definitic018bbe2c7d73a8ca5d8016c6c7d0c8f.withIdleTimeoutInMinutes(int)
       - com.microsoft.azure.management.network._load_balancing_rule._definiti5f81f612ab29bafc188bf03672fcd214.withLoadDistribution(LoadDistribution)
+      - com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_probe.withProbe(String)
 references:
-  - uid: 18a275b1
+  - uid: c1a5ebc4
     spec.java:
-      - name: ParentT
-        fullName: ParentT
+      - name: ReturnT
+        fullName: ReturnT
   - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()
     parent: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition
     href: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.yml
@@ -98,35 +99,52 @@ references:
     parent: com.microsoft.azure.management.network._load_balancing_rule._definitic018bbe2c7d73a8ca5d8016c6c7d0c8f
     href: com.microsoft.azure.management.network._load_balancing_rule._definitic018bbe2c7d73a8ca5d8016c6c7d0c8f.yml
     name: withIdleTimeoutInMinutes(int minutes)
-    nameWithType: LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ParentT>.withIdleTimeoutInMinutes(int minutes)
-    fullName: WithAttach<ParentT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ParentT>.withIdleTimeoutInMinutes(int minutes)
+    nameWithType: LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ReturnT>.withIdleTimeoutInMinutes(int minutes)
+    fullName: WithAttach<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ReturnT>.withIdleTimeoutInMinutes(int minutes)
     type: Method
     summary: '<p>Gibt die Anzahl von Minuten, bevor eine Verbindung im Leerlauf geschlossen wird. </p>'
     syntax:
-      content: public WithAttach<ParentT> withIdleTimeoutInMinutes(int minutes)
+      content: public WithAttach<ReturnT> withIdleTimeoutInMinutes(int minutes)
       parameters:
         - id: minutes
           type: f75371fa
           description: <p>die gewünschte Anzahl von Minuten </p>
       return:
-        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_attachda8a2936
+        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_attach5b94c421
         description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definiti5f81f612ab29bafc188bf03672fcd214.withLoadDistribution(LoadDistribution)
     parent: com.microsoft.azure.management.network._load_balancing_rule._definiti5f81f612ab29bafc188bf03672fcd214
     href: com.microsoft.azure.management.network._load_balancing_rule._definiti5f81f612ab29bafc188bf03672fcd214.yml
     name: withLoadDistribution(LoadDistribution loadDistribution)
-    nameWithType: LoadBalancingRule.DefinitionStages.WithLoadDistribution<ParentT>.withLoadDistribution(LoadDistribution loadDistribution)
-    fullName: WithAttach<ParentT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithLoadDistribution<ParentT>.withLoadDistribution(LoadDistribution loadDistribution)
+    nameWithType: LoadBalancingRule.DefinitionStages.WithLoadDistribution<ReturnT>.withLoadDistribution(LoadDistribution loadDistribution)
+    fullName: WithAttach<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithLoadDistribution<ReturnT>.withLoadDistribution(LoadDistribution loadDistribution)
     type: Method
     summary: <p>Gibt den lastenverteilungsmodus an. </p>
     syntax:
-      content: public WithAttach<ParentT> withLoadDistribution(LoadDistribution loadDistribution)
+      content: public WithAttach<ReturnT> withLoadDistribution(LoadDistribution loadDistribution)
       parameters:
         - id: loadDistribution
           type: com.microsoft.azure.management.network._load_distribution
           description: <p>eine unterstützte lastenverteilungsmodus </p>
       return:
-        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_attachda8a2936
+        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_attach5b94c421
+        description: <p>die nächste Phase der definition </p>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_probe.withProbe(String)
+    parent: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_probe
+    href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_probe.yml
+    name: withProbe(String name)
+    nameWithType: LoadBalancingRule.DefinitionStages.WithProbe<ReturnT>.withProbe(String name)
+    fullName: WithAttach<ReturnT> com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithProbe<ReturnT>.withProbe(String name)
+    type: Method
+    summary: '<p>Die lastenausgleichsregel den angegebenen vorhandenen HTTP oder TCP-Prüfpunkt auf, der diesem Lastenausgleichsmodul zugeordnet. </p>'
+    syntax:
+      content: public WithAttach<ReturnT> withProbe(String name)
+      parameters:
+        - id: name
+          type: '26831127'
+          description: <p>der Name einer vorhandenen HTTP oder TCP-Probe </p>
+      return:
+        type: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_attach5b94c421
         description: <p>die nächste Phase der definition </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition
     parent: com.microsoft.azure.management.resources.fluentcore.model
@@ -144,65 +162,78 @@ references:
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_floating_i_p
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_floating_i_p.yml
-    name: LoadBalancingRule.DefinitionStages.WithFloatingIP<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithFloatingIP<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithFloatingIP<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithFloatingIP<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithFloatingIP<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithFloatingIP<ReturnT>
     type: Interface
     summary: '<p>Die Phase einer für den Netzwerklastenausgleich Regeldefinition festlegen, dass um die floating-IP-Funktionalität zu aktivieren. </p>'
     syntax:
-      content: public interface WithFloatingIP<ParentT>
+      content: public interface WithFloatingIP<ReturnT>
       typeParameters:
-        - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definitic018bbe2c7d73a8ca5d8016c6c7d0c8f
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definitic018bbe2c7d73a8ca5d8016c6c7d0c8f.yml
-    name: LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithIdleTimeoutInMinutes<ReturnT>
     type: Interface
     summary: <p>Die Stufe der eine Regeldefinition an das Verbindungstimeout für Verbindungen im Leerlauf ermöglicht den Lastenausgleich. </p>
     syntax:
-      content: public interface WithIdleTimeoutInMinutes<ParentT>
+      content: public interface WithIdleTimeoutInMinutes<ReturnT>
       typeParameters:
-        - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definiti5f81f612ab29bafc188bf03672fcd214
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definiti5f81f612ab29bafc188bf03672fcd214.yml
-    name: LoadBalancingRule.DefinitionStages.WithLoadDistribution<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithLoadDistribution<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithLoadDistribution<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithLoadDistribution<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithLoadDistribution<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithLoadDistribution<ReturnT>
     type: Interface
     summary: <p>Die Stufe der eine Regeldefinition an die lastverteilung ermöglicht den Lastenausgleich. </p>
     syntax:
-      content: public interface WithLoadDistribution<ParentT>
+      content: public interface WithLoadDistribution<ReturnT>
       typeParameters:
-        - type: 18a275b1
-          description: <p>der Rückgabetyp der<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
+  - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_probe
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_probe.yml
+    name: LoadBalancingRule.DefinitionStages.WithProbe<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithProbe<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithProbe<ReturnT>
+    type: Interface
+    summary: <p>Die Phase einer für den Netzwerklastenausgleich Regeldefinition taktmonitoren Geben Sie die Überprüfung der Regel zugeordnet werden soll. </p>
+    syntax:
+      content: public interface WithProbe<ReturnT>
+      typeParameters:
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definition
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definition.yml
-    name: LoadBalancingRule.Definition<ParentT>
-    nameWithType: LoadBalancingRule.Definition<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.Definition<ParentT>
+    name: LoadBalancingRule.Definition<ReturnT>
+    nameWithType: LoadBalancingRule.Definition<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.Definition<ReturnT>
     type: Interface
     summary: <p>Die gesamte eine Regeldefinition für den Lastenausgleich. </p>
     syntax:
-      content: 'public interface Definition<ParentT> extends LoadBalancingRule.DefinitionStages.Blank<ParentT>,LoadBalancingRule.DefinitionStages.WithAttach<ParentT>,LoadBalancingRule.DefinitionStages.WithProtocol<ParentT>,LoadBalancingRule.DefinitionStages.WithFrontendPort<ParentT>,LoadBalancingRule.DefinitionStages.WithFrontend<ParentT>,LoadBalancingRule.DefinitionStages.WithProbe<ParentT>,LoadBalancingRule.DefinitionStages.WithBackend<ParentT>,LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>'
+      content: 'public interface Definition<ReturnT> extends LoadBalancingRule.DefinitionStages.Blank<ReturnT>,LoadBalancingRule.DefinitionStages.WithAttach<ReturnT>,LoadBalancingRule.DefinitionStages.WithProtocol<ReturnT>,LoadBalancingRule.DefinitionStages.WithFrontendPort<ReturnT>,LoadBalancingRule.DefinitionStages.WithFrontend<ReturnT>,LoadBalancingRule.DefinitionStages.WithBackend<ReturnT>,LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>'
       typeParameters:
-        - type: 18a275b1
-          description: <p>der Rückgabetyp der endgültigen<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+        - type: c1a5ebc4
+          description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>
   - uid: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._load_balancing_rule._definition_stages._with_backend_port.yml
-    name: LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>
-    nameWithType: LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>
-    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackendPort<ParentT>
+    name: LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>
+    nameWithType: LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>
+    fullName: com.microsoft.azure.management.network.LoadBalancingRule.DefinitionStages.WithBackendPort<ReturnT>
     type: Interface
     summary: <p>Die Phase einer für den Netzwerklastenausgleich Regeldefinition an den Back-End-Port zum Senden des Lastenausgleich Datenverkehrs zulassen. </p>
     syntax:
-      content: public interface WithBackendPort<ParentT>
+      content: public interface WithBackendPort<ReturnT>
       typeParameters:
-        - type: 18a275b1
+        - type: c1a5ebc4
           description: <p>die Phase der Definition des übergeordneten wieder nach dem Anfügen dieser definition </p>

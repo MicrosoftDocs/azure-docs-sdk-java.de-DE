@@ -13,12 +13,12 @@ items:
     source:
       remote:
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Network.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/Network.java
-      startLine: 155
+      startLine: 175
     package: com.microsoft.azure.management.network
-    summary: '<p>Die Phase der öffentlichen IP-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden, einschließlich des Hinzufügens von Subnetzen. </p>'
+    summary: '<p>Die Phase der öffentlichen IP-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref uid="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false">WithCreate#create()</xref>), sondern auch für andere optionalen Einstellungen angegeben werden, einschließlich des Hinzufügens von Subnetzen . </p>'
     syntax:
       content: 'public interface WithCreateAndSubnet extends Network.DefinitionStages.WithCreate,Network.DefinitionStages.WithSubnet'
     inheritedMembers:
@@ -93,7 +93,7 @@ references:
     type: Method
     summary: |-
       <p>Beginn der Definition ein neues Subnetz im virtuellen Netzwerk hinzufügen. </p>
-      <p>Die Definition muss mit einem Aufruf von abgeschlossen werden<xref href="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false"></xref></p>
+      <p>Die Definition abgeschlossen werden muss, mit einem Aufruf von <xref uid="com.microsoft.azure.management.resources.fluentcore.model._attachable._in_definition.attach()" data-throw-if-not-resolved="false">Subnet.DefinitionStages.WithAttach#attach()</xref></p>
     syntax:
       content: public Subnet.DefinitionStages.Blank<WithCreateAndSubnet> defineSubnet(String name)
       parameters:
@@ -202,7 +202,7 @@ references:
       parameters:
         - id: nameCidrPairs
           type: 689c8cb5
-          description: '<p>eine <ref refid="" kindref="compound">Zuordnung</ref> CIDR-Adressen für die Subnetze, indiziert, durch den Namen aller Subnetze definiert werden </p>'
+          description: '<p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> CIDR-Adressen für die Subnetze, indiziert, durch den Namen aller Subnetze definiert werden </p>'
       return:
         type: e82fae57
         description: <p>die nächste Phase der definition </p>
@@ -233,13 +233,13 @@ references:
     nameWithType: 'Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     fullName: 'T com.microsoft.azure.management.resources.fluentcore.arm.models.Resource.DefinitionWithTags<T>.withTags(Map<String, String> tags)'
     type: Method
-    summary: '<p>Gibt an, Tags für die Ressource als eine <ref refid="" kindref="compound">Zuordnung</ref>. </p>'
+    summary: '<p>Gibt an, Tags für die Ressource als eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref>. </p>'
     syntax:
       content: 'public T withTags(Map<String, String> tags)'
       parameters:
         - id: tags
           type: 689c8cb5
-          description: <p>eine <ref refid="" kindref="compound">Zuordnung</ref> von Tags </p>
+          description: <p>eine <xref uid="" data-throw-if-not-resolved="false">Zuordnung</xref> von Tags </p>
       return:
         type: 8ce1ecb9
         description: <p>die nächste Phase der definition </p>
@@ -251,8 +251,8 @@ references:
     fullName: com.microsoft.azure.management.network.Network.DefinitionStages.WithCreate
     type: Interface
     summary: |-
-      <p>Die Phase des virtuellen Netzwerks-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden (über <xref href="com.microsoft.azure.management.resources.fluentcore.model._creatable.create()" data-throw-if-not-resolved="false"></xref>), sondern auch für andere optionalen Einstellungen angegeben werden, mit Ausnahme von Subnetze hinzufügen,. </p>
-      <p>Subnetze können nur über die Berechtigung hinzugefügt, nachdem der Adressraum explizit angegeben wird (siehe <xref href="com.microsoft.azure.management.network._network._definition_stages._with_create.withAddressSpace(String)" data-throw-if-not-resolved="false"></xref>). </p>
+      <p>Die Phase des virtuellen Netzwerks-Definition enthält alle minimale erforderlichen Eingaben für die Ressource erstellt werden, sondern auch für andere optionalen Einstellungen angegeben werden, mit Ausnahme von Subnetze hinzufügen,. </p>
+      <p>Subnetze können nur über die Berechtigung hinzugefügt werden, nachdem der Adressraum explizit angegeben wird. </p>
     syntax:
       content: 'public interface WithCreate extends Creatable<Network>,Resource.DefinitionWithTags<WithCreate>'
   - uid: com.microsoft.azure.management.network._network._definition_stages._with_subnet

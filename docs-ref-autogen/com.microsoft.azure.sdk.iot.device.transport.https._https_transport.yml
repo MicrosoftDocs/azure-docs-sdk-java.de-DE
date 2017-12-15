@@ -11,6 +11,7 @@ items:
       - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.HttpsTransport(DeviceClientConfig)
       - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.invokeCallbacks()
       - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.isEmpty()
+      - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.multiplexOpen(List<DeviceClient>)
       - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.open()
       - 'com.microsoft.azure.sdk.iot.device.transport.https._https_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
       - com.microsoft.azure.sdk.iot.device.transport.https._https_transport.sendMessages()
@@ -27,7 +28,7 @@ items:
         branch: master
         repo: 'https://github.com/Azure/azure-iot-sdk-java'
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 28
+      startLine: 29
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Eine HTTPS-Übertragung. Enthält Funktionen zum Hinzufügen von Nachrichten und Senden von Nachrichten im Batchmodus für einen IoT Hub. Puffer nicht gesendete Nachrichten, bis sie durch einen IoT Hub empfangen werden. Ein Transport bei der Erstellung gebunden ist, den folgenden Parametern: IoT Hub-Namen, Geräte-ID, Geräteschlüssel und Nachricht gültige Sekunden. </p>
@@ -52,7 +53,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 135
+      startLine: 146
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
@@ -87,7 +88,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 161
+      startLine: 172
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Fügt eine Nachricht an die Warteschlange Transport.</p>
@@ -122,11 +123,9 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 96
+      startLine: 107
     package: com.microsoft.azure.sdk.iot.device.transport.https
-    summary: |-
-      <p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<programlisting><codeline><highlight class="normal">close()<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
-      <p></p>
+    summary: "<p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<code>close() \r\n\r\n    </code> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>\n\n<p></p>"
     syntax:
       content: public void close()
     overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.close()
@@ -147,7 +146,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 279
+      startLine: 299
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Ruft die Nachrichtenrückruf auf, wenn eine Nachricht gefunden wird, und antwortet mit dem IoT Hub auf wie die verarbeitete Nachricht durch den IoT Hub behandelt werden sollen. </p>
@@ -158,7 +157,7 @@ items:
     overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.handleMessage()
     exceptions:
       - type: cbf33bbe
-        description: '<p>Wenn der Server konnte nicht erreicht werden oder wenn die Antwort sendet IoT Hub meldungsergebnis keinen Statuscode <ref refid="" kindref="compound">IotHubStatusCode #OK_EMPTY</ref>. </p>'
+        description: '<p>Wenn der Server konnte nicht erreicht werden oder wenn die Antwort sendet IoT Hub meldungsergebnis keinen Statuscode <xref uid="" data-throw-if-not-resolved="false">IotHubStatusCode #OK_EMPTY</xref>. </p>'
       - type: 12fe80de
         description: <p>Wenn der Transport nicht geöffnet wurde oder bereits geschlossen wird. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.HttpsTransport(DeviceClientConfig)
@@ -175,10 +174,10 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 56
+      startLine: 61
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
-      <p>Erstellt eine Instanz aus der angegebenen <xref href="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false"></xref> Objekt.</p>
+      <p>Erstellt eine Instanz aus der angegebenen <xref uid="com.microsoft.azure.sdk.iot.device._device_client_config" data-throw-if-not-resolved="false">DeviceClientConfig</xref> Objekt.</p>
       <p></p>
     syntax:
       content: public HttpsTransport(DeviceClientConfig config)
@@ -200,7 +199,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 233
+      startLine: 253
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Ruft die Rückrufe für alle abgeschlossenen Anforderungen.</p>
@@ -225,7 +224,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 319
+      startLine: 357
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Zurück, andernfalls True, wenn der Transport keine weiteren Nachrichten mehr verarbeiten, und "false".</p>
@@ -236,6 +235,35 @@ items:
         type: 4fc6e284
         description: '<p>"true", wenn der Transport keine weiteren Nachrichten zur Handle und "false", andernfalls hat. </p>'
     overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.isEmpty()
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.multiplexOpen(List<DeviceClient>)
+    id: multiplexOpen(List<DeviceClient>)
+    parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
+    href: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.yml
+    langs:
+      - java
+    name: multiplexOpen(List<DeviceClient> deviceClientList)
+    nameWithType: HttpsTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    overload: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.multiplexOpen*
+    type: Method
+    source:
+      remote: *ref_0
+      path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
+      startLine: 95
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+    summary: |-
+      <p>Stellt einen Kanal-Usingmultiplexing Kommunikation mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void multiplexOpen(List<DeviceClient> deviceClientList)
+      parameters:
+        - id: deviceClientList
+          type: 5618da2dcom.microsoft.azure.sdk.iot.device._device_clienta08ddfce
+          description: <p>die Liste der Clients verwenden denselben Transport. </p>
+    overridden: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.multiplexOpen(List<DeviceClient>)
+    exceptions:
+      - type: cbf33bbe
+        description: <p>Wenn ein Kommunikationskanal hergestellt werden kann. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.open()
     id: open()
     parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
@@ -250,7 +278,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 75
+      startLine: 80
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Stellt einen Kommunikationskanal mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
@@ -275,7 +303,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 334
+      startLine: 370
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Registriert einen Rückruf ausgeführt werden, sobald die Https-Verbindung verloren geht oder hergestellt wird.</p>
@@ -288,11 +316,11 @@ items:
           description: <p>der Rückruf aufgerufen werden. </p>
         - id: callbackContext
           type: '79317049'
-          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <programlisting> <codeline> <highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> Wenn kein Rückruf bereitgestellt wird. </p>'
+          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann null sein </p>'
     overridden: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
     exceptions:
-      - type: b1c38b44
-        description: '<p>Um diese Funktionalität ist nicht verfügbar, da HTTPS zustandslos ist, zu melden. </p>'
+      - type: 3c87bd19
+        description: <p>Wenn der bereitgestellte Rückruf null ist. </p>
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.sendMessages()
     id: sendMessages()
     parent: com.microsoft.azure.sdk.iot.device.transport.https._https_transport
@@ -307,7 +335,7 @@ items:
     source:
       remote: *ref_0
       path: device/iot-device-client/src/main/java/com/microsoft/azure/sdk/iot/device/transport/https/HttpsTransport.java
-      startLine: 182
+      startLine: 193
     package: com.microsoft.azure.sdk.iot.device.transport.https
     summary: |-
       <p>Sendet alle Nachrichten in der Warteschlange Transport als Batchanforderung.</p>
@@ -334,6 +362,21 @@ references:
     name: open
     nameWithType: HttpsTransport.open
     fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.open
+    package: com.microsoft.azure.sdk.iot.device.transport.https
+  - uid: 5618da2dcom.microsoft.azure.sdk.iot.device._device_clienta08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.sdk.iot.device._device_client
+        name: DeviceClient
+        fullName: com.microsoft.azure.sdk.iot.device.DeviceClient
+        href: com.microsoft.azure.sdk.iot.device._device_client.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.multiplexOpen*
+    name: multiplexOpen
+    nameWithType: HttpsTransport.multiplexOpen
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.multiplexOpen
     package: com.microsoft.azure.sdk.iot.device.transport.https
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.close*
     name: close
@@ -377,10 +420,10 @@ references:
     nameWithType: HttpsTransport.isEmpty
     fullName: boolean com.microsoft.azure.sdk.iot.device.transport.https.HttpsTransport.isEmpty
     package: com.microsoft.azure.sdk.iot.device.transport.https
-  - uid: b1c38b44
+  - uid: 3c87bd19
     spec.java:
-      - name: UnsupportedOperationException
-        fullName: UnsupportedOperationException
+      - name: IllegalArgumentException
+        fullName: IllegalArgumentException
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_transport.registerConnectionStateCallback*
     name: registerConnectionStateCallback
     nameWithType: HttpsTransport.registerConnectionStateCallback
@@ -406,6 +449,18 @@ references:
     summary: <p>Der Status der HTTPS-Transport. </p>
     syntax:
       content: protected enum HttpsTransportState
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback.yml
+    name: IotHubConnectionStateCallback
+    nameWithType: IotHubConnectionStateCallback
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionStateCallback
+    type: Interface
+    summary: |-
+      <p>Eine Schnittstelle für ein IoT Hub-Verbindung-Status-Rückruf.</p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="" data-throw-if-not-resolved="false">IotHubConnectionStateCallback #Execute(IotHubConnectionState, Object)</xref> übergibt den Verbindungsstatus (nach unten, Erfolg usw.). </p>
+    syntax:
+      content: public interface IotHubConnectionStateCallback
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection
     parent: com.microsoft.azure.sdk.iot.device.transport.https
     href: com.microsoft.azure.sdk.iot.device.transport.https._https_iot_hub_connection.yml
@@ -458,6 +513,36 @@ references:
       <p></p>
     syntax:
       content: public void open()
+  - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.multiplexOpen(List<DeviceClient>)
+    parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
+    href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
+    name: multiplexOpen(List<DeviceClient> deviceClientList)
+    nameWithType: IotHubTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.multiplexOpen(List<DeviceClient> deviceClientList)
+    type: Method
+    summary: |-
+      <p>Stellt einen Kanal-Usingmultiplexing Kommunikation mit IoT Hub her. Wenn ein Kanal bereits geöffnet ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
+      <p></p>
+    syntax:
+      content: public void multiplexOpen(List<DeviceClient> deviceClientList)
+      parameters:
+        - id: deviceClientList
+          type: 5618da2dcom.microsoft.azure.sdk.iot.device._device_clienta08ddfce
+          description: <p>die Liste der Clients verwenden denselben Transport. </p>
+  - uid: com.microsoft.azure.sdk.iot.device._device_client
+    parent: com.microsoft.azure.sdk.iot.device
+    href: com.microsoft.azure.sdk.iot.device._device_client.yml
+    name: DeviceClient
+    nameWithType: DeviceClient
+    fullName: com.microsoft.azure.sdk.iot.device.DeviceClient
+    type: Class
+    summary: |-
+      <p>Die öffentliche API. Können ein einzelnes logisches oder physisches Gerät für die Verbindung an einen IoT Hub. Der IoT Hub-Client unterstützt sendet keine Ereignisse an und Empfangen von Nachrichten von einem IoT Hub. </p>
+      <p>Zur Unterstützung dieser Workflows wird die Clientbibliothek Geben Sie die folgenden Abstraktionen: einer Nachricht mit seiner Nutzlast und die zugeordneten Eigenschaften aus. und einen Client, der Nachrichten sendet und empfängt. </p>
+      <p>Der Client puffert Nachrichten, während das Netzwerk ausgefallen ist und erneut gesendet, wenn das Netzwerk wieder online geschaltet wird. Nachrichten zur Verbesserung der Kommunikationseffizienz (nur für HTTPS) als auch batches. </p>
+      <p>Der Client unterstützt HTTPS 1.1 und 1.0 AMQPS Transporte. </p>
+    syntax:
+      content: public class DeviceClient
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.close()
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
     href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
@@ -465,9 +550,7 @@ references:
     nameWithType: IotHubTransport.close()
     fullName: void com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.close()
     type: Method
-    summary: |-
-      <p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<programlisting><codeline><highlight class="normal">close()<sp> </sp> </highlight> </codeline> </programlisting> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>
-      <p></p>
+    summary: "<p>Schließt alle Ressourcen, die zur Kommunikation mit IoT Hub verwendet. Einmal<code>close() \r\n\r\n    </code> wird aufgerufen, der Transport ist nicht mehr verwendbar. Wenn der Transport bereits geschlossen ist, wird die Funktion keine weiteren Aktionen erforderlich.</p>\n\n<p></p>"
     syntax:
       content: public void close()
   - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubEventCallback,Object)'
@@ -510,7 +593,7 @@ references:
     type: Interface
     summary: |-
       <p>Eine Schnittstelle für einen Ereignisrückruf IoT Hub.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="com.microsoft.azure.sdk.iot.device._iot_hub_event_callback.execute(IotHubStatusCode,Object)" data-throw-if-not-resolved="false">IotHubEventCallback #Execute(IotHubStatusCode, Object)</xref> beim Empfang einer Antwort von einem IoT Hub. </p>
     syntax:
       content: public interface IotHubEventCallback
   - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.addMessage(Message,IotHubResponseCallback,Object)'
@@ -544,7 +627,7 @@ references:
     type: Interface
     summary: |-
       <p>Eine Schnittstelle für ein IoT Hub-Antwort-Rückruf.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref href="com.microsoft.azure.sdk.iot.device._iot_hub_response_callback.execute(ResponseMessage,Object)" data-throw-if-not-resolved="false"></xref> beim Empfang einer Antwort von einem IoT Hub. </p>
+      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <xref uid="com.microsoft.azure.sdk.iot.device._iot_hub_response_callback.execute(ResponseMessage,Object)" data-throw-if-not-resolved="false">IotHubResponseCallback #Execute(ResponseMessage, Object)</xref> beim Empfang einer Antwort von einem IoT Hub. </p>
     syntax:
       content: public interface IotHubResponseCallback
   - uid: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.sendMessages()
@@ -589,14 +672,12 @@ references:
     nameWithType: IotHubTransport.isEmpty()
     fullName: boolean com.microsoft.azure.sdk.iot.device.transport.IotHubTransport.isEmpty()
     type: Method
-    summary: |-
-      <p>Gibt<programlisting><codeline><highlight class="normal">"true"<sp> </sp> </highlight> </codeline> </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class="normal">"false"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls.</p>
-      <p></p>
+    summary: "<p>Gibt<code>true \r\n\r\n    </code> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<code>false \r\n\r\n    </code> andernfalls.</p>\n\n<p></p>"
     syntax:
       content: public boolean isEmpty()
       return:
         type: 4fc6e284
-        description: "<p>\r\n\r\n  <programlisting>\r\n\r\n    <codeline>\r\n\r\n      <highlight class=\"normal\">\"true\"<sp> </sp> </highlight> \r\n\r\n    </codeline> \r\n\r\n  </programlisting> verfügt der Transport keine weiteren Nachrichten mehr verarbeiten, und<programlisting><codeline><highlight class=\"normal\">\"false\"<sp> </sp> </highlight> </codeline> </programlisting> andernfalls. </p>"
+        description: "<p>\r\n\r\n  <code>true \r\n\r\n    </code>Wenn der Transport keine weiteren Nachrichten mehr verarbeiten, hat und<code>false \r\n\r\n    </code> andernfalls. </p>"
   - uid: 'com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.registerConnectionStateCallback(IotHubConnectionStateCallback,Object)'
     parent: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport
     href: com.microsoft.azure.sdk.iot.device.transport._iot_hub_transport.yml
@@ -615,19 +696,17 @@ references:
           description: <p>der Rückruf aufgerufen werden. </p>
         - id: callbackContext
           type: '79317049'
-          description: '<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <programlisting> <codeline> <highlight class="normal">null<sp> </sp> </highlight> </codeline> </programlisting> Wenn kein Rückruf bereitgestellt wird. </p>'
-  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback
+          description: "<p>Ein Kontext, der an den Rückruf übergeben werden. Kann <code>null \r\n\r\n    </code> Wenn kein Rückruf bereitgestellt wird. </p>"
+  - uid: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state
     parent: com.microsoft.azure.sdk.iot.device
-    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state_callback.yml
-    name: IotHubConnectionStateCallback
-    nameWithType: IotHubConnectionStateCallback
-    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionStateCallback
-    type: Interface
-    summary: |-
-      <p>Eine Schnittstelle für ein IoT Hub-Verbindung-Status-Rückruf.</p>
-      <p>Entwicklern werden erwartet, dass eine Implementierung dieser Schnittstelle zu erstellen und der Transport angerufen <ref refid="" kindref="compound">IotHubConnectionStateCallback #Execute(IotHubConnectionState, Object)</ref> übergibt den Verbindungsstatus (nach unten, Erfolg usw.). </p>
+    href: com.microsoft.azure.sdk.iot.device._iot_hub_connection_state.yml
+    name: IotHubConnectionState
+    nameWithType: IotHubConnectionState
+    fullName: com.microsoft.azure.sdk.iot.device.IotHubConnectionState
+    type: Enum
+    summary: <p>Der Statuswert der IoT Hub-Verbindung. </p>
     syntax:
-      content: public interface IotHubConnectionStateCallback
+      content: public enum IotHubConnectionState
   - uid: com.microsoft.azure.sdk.iot.device.transport.https._https_message
     parent: com.microsoft.azure.sdk.iot.device.transport.https
     href: com.microsoft.azure.sdk.iot.device.transport.https._https_message.yml
@@ -638,6 +717,18 @@ references:
     summary: <p>Eine HTTPS-Nachricht. Eine HTTPS-Nachricht aus einer einfachen IoT Hub-Nachricht durch die Eigenschaftennamen zeichnet sich mit "- app - Iothub" dem Präfix und nach der expliziten Spezifikation des Content-Type. </p>
     syntax:
       content: public interface HttpsMessage
+  - uid: com.microsoft.azure.sdk.iot.device.exceptions._iot_hub_size_exceeded_exception
+    parent: com.microsoft.azure.sdk.iot.device.exceptions
+    href: com.microsoft.azure.sdk.iot.device.exceptions._iot_hub_size_exceeded_exception.yml
+    name: IotHubSizeExceededException
+    nameWithType: IotHubSizeExceededException
+    fullName: com.microsoft.azure.sdk.iot.device.exceptions.IotHubSizeExceededException
+    type: Class
+    summary: |-
+      <p>Erstellen Sie Ausnahmen für IotHub Größe überschritten</p>
+      <p>Diese Ausnahme wird Throw sein, wenn eine Funktion zum Hinzufügen von Inhalt in einem Puffer versucht oder Nachricht und der endgültigen Datenbankgröße die maximale Größe von dem IotHub akzeptabel überschreitet. </p>
+    syntax:
+      content: public class IotHubSizeExceededException
   - uid: com.microsoft.azure.sdk.iot.device._response_message
     parent: com.microsoft.azure.sdk.iot.device
     href: com.microsoft.azure.sdk.iot.device._response_message.yml
@@ -645,6 +736,6 @@ references:
     nameWithType: ResponseMessage
     fullName: com.microsoft.azure.sdk.iot.device.ResponseMessage
     type: Class
-    summary: <p>Erweitern <xref href="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false"></xref> zur Unterstützung von Statusantwort </p>
+    summary: <p>Erweitern <xref uid="com.microsoft.azure.sdk.iot.device._message" data-throw-if-not-resolved="false">Nachricht</xref> zur Unterstützung von Statusantwort </p>
     syntax:
       content: public class ResponseMessage

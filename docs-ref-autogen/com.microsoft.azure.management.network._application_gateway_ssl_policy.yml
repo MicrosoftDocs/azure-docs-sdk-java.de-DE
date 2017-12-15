@@ -4,8 +4,16 @@ items:
     id: _application_gateway_ssl_policy
     parent: com.microsoft.azure.management.network
     children:
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.cipherSuites()
       - com.microsoft.azure.management.network._application_gateway_ssl_policy.disabledSslProtocols()
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.minProtocolVersion()
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.policyName()
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.policyType()
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.withCipherSuites(List<ApplicationGatewaySslCipherSuite>)
       - com.microsoft.azure.management.network._application_gateway_ssl_policy.withDisabledSslProtocols(List<ApplicationGatewaySslProtocol>)
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.withMinProtocolVersion(ApplicationGatewaySslProtocol)
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyName(ApplicationGatewaySslPolicyName)
+      - com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyType(ApplicationGatewaySslPolicyType)
     href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
     langs:
       - java
@@ -16,16 +24,40 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
       startLine: 16
     package: com.microsoft.azure.management.network
-    summary: <p>Anwendungsgateway SSL-Richtlinie. </p>
+    summary: <p>Application Gateway Ssl-Richtlinie. </p>
     syntax: &ref_1
       content: public class ApplicationGatewaySslPolicy
     inheritance:
       - java.lang.Object
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.cipherSuites()
+    id: cipherSuites()
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: cipherSuites()
+    nameWithType: ApplicationGatewaySslPolicy.cipherSuites()
+    fullName: List<ApplicationGatewaySslCipherSuite> com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.cipherSuites()
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.cipherSuites*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 116
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Ruft den CipherSuites-Wert.</p>
+      <p></p>
+    syntax:
+      content: public List<ApplicationGatewaySslCipherSuite> cipherSuites()
+      return:
+        type: 5618da2dcom.microsoft.azure.management.network._application_gateway_ssl_cipher_suitea08ddfce
+        description: <p>der Wert cipherSuites </p>
   - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.disabledSslProtocols()
     id: disabledSslProtocols()
     parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
@@ -40,7 +72,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
-      startLine: 29
+      startLine: 56
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Ruft den DisabledSslProtocols-Wert.</p>
@@ -50,6 +82,106 @@ items:
       return:
         type: 5618da2dcom.microsoft.azure.management.network._application_gateway_ssl_protocola08ddfce
         description: <p>der Wert disabledSslProtocols </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.minProtocolVersion()
+    id: minProtocolVersion()
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: minProtocolVersion()
+    nameWithType: ApplicationGatewaySslPolicy.minProtocolVersion()
+    fullName: ApplicationGatewaySslProtocol com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.minProtocolVersion()
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.minProtocolVersion*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 136
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Ruft den MinProtocolVersion-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslProtocol minProtocolVersion()
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_protocol
+        description: <p>der Wert minProtocolVersion </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.policyName()
+    id: policyName()
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: policyName()
+    nameWithType: ApplicationGatewaySslPolicy.policyName()
+    fullName: ApplicationGatewaySslPolicyName com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.policyName()
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.policyName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 96
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Ruft den PolicyName-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslPolicyName policyName()
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_policy_name
+        description: <p>Der Richtlinienname-Wert </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.policyType()
+    id: policyType()
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: policyType()
+    nameWithType: ApplicationGatewaySslPolicy.policyType()
+    fullName: ApplicationGatewaySslPolicyType com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.policyType()
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.policyType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 76
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Ruft den PolicyType-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslPolicyType policyType()
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_policy_type
+        description: <p>der Wert policyType </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withCipherSuites(List<ApplicationGatewaySslCipherSuite>)
+    id: withCipherSuites(List<ApplicationGatewaySslCipherSuite>)
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: withCipherSuites(List<ApplicationGatewaySslCipherSuite> cipherSuites)
+    nameWithType: ApplicationGatewaySslPolicy.withCipherSuites(List<ApplicationGatewaySslCipherSuite> cipherSuites)
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withCipherSuites(List<ApplicationGatewaySslCipherSuite> cipherSuites)
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.withCipherSuites*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 126
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Legen Sie den CipherSuites-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslPolicy withCipherSuites(List<ApplicationGatewaySslCipherSuite> cipherSuites)
+      parameters:
+        - id: cipherSuites
+          type: 5618da2dcom.microsoft.azure.management.network._application_gateway_ssl_cipher_suitea08ddfce
+          description: <p>Der festzulegende Wert cipherSuites </p>
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_policy
+        description: <p>die <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicy</xref> Objekt selbst. </p>
   - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withDisabledSslProtocols(List<ApplicationGatewaySslProtocol>)
     id: withDisabledSslProtocols(List<ApplicationGatewaySslProtocol>)
     parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
@@ -64,7 +196,7 @@ items:
     source:
       remote: *ref_0
       path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
-      startLine: 39
+      startLine: 66
     package: com.microsoft.azure.management.network
     summary: |-
       <p>Legen Sie den DisabledSslProtocols-Wert.</p>
@@ -77,7 +209,91 @@ items:
           description: <p>Der festzulegende Wert disabledSslProtocols </p>
       return:
         type: com.microsoft.azure.management.network._application_gateway_ssl_policy
-        description: <p>die <xref href="com.microsoft.azure.management.network._application_gateway_ssl_policy" data-throw-if-not-resolved="false"></xref> Objekt selbst. </p>
+        description: <p>die <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicy</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withMinProtocolVersion(ApplicationGatewaySslProtocol)
+    id: withMinProtocolVersion(ApplicationGatewaySslProtocol)
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: withMinProtocolVersion(ApplicationGatewaySslProtocol minProtocolVersion)
+    nameWithType: ApplicationGatewaySslPolicy.withMinProtocolVersion(ApplicationGatewaySslProtocol minProtocolVersion)
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withMinProtocolVersion(ApplicationGatewaySslProtocol minProtocolVersion)
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.withMinProtocolVersion*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 146
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Legen Sie den MinProtocolVersion-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslPolicy withMinProtocolVersion(ApplicationGatewaySslProtocol minProtocolVersion)
+      parameters:
+        - id: minProtocolVersion
+          type: com.microsoft.azure.management.network._application_gateway_ssl_protocol
+          description: <p>Der festzulegende Wert minProtocolVersion </p>
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_policy
+        description: <p>die <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicy</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyName(ApplicationGatewaySslPolicyName)
+    id: withPolicyName(ApplicationGatewaySslPolicyName)
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: withPolicyName(ApplicationGatewaySslPolicyName policyName)
+    nameWithType: ApplicationGatewaySslPolicy.withPolicyName(ApplicationGatewaySslPolicyName policyName)
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withPolicyName(ApplicationGatewaySslPolicyName policyName)
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyName*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 106
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Legen Sie den PolicyName-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslPolicy withPolicyName(ApplicationGatewaySslPolicyName policyName)
+      parameters:
+        - id: policyName
+          type: com.microsoft.azure.management.network._application_gateway_ssl_policy_name
+          description: <p>Der festzulegende Wert policyName </p>
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_policy
+        description: <p>die <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicy</xref> Objekt selbst. </p>
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyType(ApplicationGatewaySslPolicyType)
+    id: withPolicyType(ApplicationGatewaySslPolicyType)
+    parent: com.microsoft.azure.management.network._application_gateway_ssl_policy
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
+    langs:
+      - java
+    name: withPolicyType(ApplicationGatewaySslPolicyType policyType)
+    nameWithType: ApplicationGatewaySslPolicy.withPolicyType(ApplicationGatewaySslPolicyType policyType)
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withPolicyType(ApplicationGatewaySslPolicyType policyType)
+    overload: com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyType*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-network/src/main/java/com/microsoft/azure/management/network/ApplicationGatewaySslPolicy.java
+      startLine: 86
+    package: com.microsoft.azure.management.network
+    summary: |-
+      <p>Legen Sie den PolicyType-Wert.</p>
+      <p></p>
+    syntax:
+      content: public ApplicationGatewaySslPolicy withPolicyType(ApplicationGatewaySslPolicyType policyType)
+      parameters:
+        - id: policyType
+          type: com.microsoft.azure.management.network._application_gateway_ssl_policy_type
+          description: <p>Der festzulegende Wert policyType </p>
+      return:
+        type: com.microsoft.azure.management.network._application_gateway_ssl_policy
+        description: <p>die <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicy</xref> Objekt selbst. </p>
 references:
   - uid: 5618da2dcom.microsoft.azure.management.network._application_gateway_ssl_protocola08ddfce
     spec.java:
@@ -99,6 +315,56 @@ references:
     nameWithType: ApplicationGatewaySslPolicy.withDisabledSslProtocols
     fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withDisabledSslProtocols
     package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.policyType*
+    name: policyType
+    nameWithType: ApplicationGatewaySslPolicy.policyType
+    fullName: ApplicationGatewaySslPolicyType com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.policyType
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyType*
+    name: withPolicyType
+    nameWithType: ApplicationGatewaySslPolicy.withPolicyType
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withPolicyType
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.policyName*
+    name: policyName
+    nameWithType: ApplicationGatewaySslPolicy.policyName
+    fullName: ApplicationGatewaySslPolicyName com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.policyName
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withPolicyName*
+    name: withPolicyName
+    nameWithType: ApplicationGatewaySslPolicy.withPolicyName
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withPolicyName
+    package: com.microsoft.azure.management.network
+  - uid: 5618da2dcom.microsoft.azure.management.network._application_gateway_ssl_cipher_suitea08ddfce
+    spec.java:
+      - name: List<
+        fullName: List<
+      - uid: com.microsoft.azure.management.network._application_gateway_ssl_cipher_suite
+        name: ApplicationGatewaySslCipherSuite
+        fullName: com.microsoft.azure.management.network.ApplicationGatewaySslCipherSuite
+        href: com.microsoft.azure.management.network._application_gateway_ssl_cipher_suite.yml
+      - name: '>'
+        fullName: '>'
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.cipherSuites*
+    name: cipherSuites
+    nameWithType: ApplicationGatewaySslPolicy.cipherSuites
+    fullName: List<ApplicationGatewaySslCipherSuite> com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.cipherSuites
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withCipherSuites*
+    name: withCipherSuites
+    nameWithType: ApplicationGatewaySslPolicy.withCipherSuites
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withCipherSuites
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.minProtocolVersion*
+    name: minProtocolVersion
+    nameWithType: ApplicationGatewaySslPolicy.minProtocolVersion
+    fullName: ApplicationGatewaySslProtocol com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.minProtocolVersion
+    package: com.microsoft.azure.management.network
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy.withMinProtocolVersion*
+    name: withMinProtocolVersion
+    nameWithType: ApplicationGatewaySslPolicy.withMinProtocolVersion
+    fullName: ApplicationGatewaySslPolicy com.microsoft.azure.management.network.ApplicationGatewaySslPolicy.withMinProtocolVersion
+    package: com.microsoft.azure.management.network
   - uid: com.microsoft.azure.management.network._application_gateway_ssl_protocol
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._application_gateway_ssl_protocol.yml
@@ -106,9 +372,39 @@ references:
     nameWithType: ApplicationGatewaySslProtocol
     fullName: com.microsoft.azure.management.network.ApplicationGatewaySslProtocol
     type: Class
-    summary: <p>Definiert Werte für <xref href="com.microsoft.azure.management.network._application_gateway_ssl_protocol" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_protocol" data-throw-if-not-resolved="false">ApplicationGatewaySslProtocol</xref>. </p>
     syntax:
       content: public class ApplicationGatewaySslProtocol
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy_type
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy_type.yml
+    name: ApplicationGatewaySslPolicyType
+    nameWithType: ApplicationGatewaySslPolicyType
+    fullName: com.microsoft.azure.management.network.ApplicationGatewaySslPolicyType
+    type: Class
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy_type" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicyType</xref>. </p>
+    syntax:
+      content: public class ApplicationGatewaySslPolicyType
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy_name
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._application_gateway_ssl_policy_name.yml
+    name: ApplicationGatewaySslPolicyName
+    nameWithType: ApplicationGatewaySslPolicyName
+    fullName: com.microsoft.azure.management.network.ApplicationGatewaySslPolicyName
+    type: Class
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_policy_name" data-throw-if-not-resolved="false">ApplicationGatewaySslPolicyName</xref>. </p>
+    syntax:
+      content: public class ApplicationGatewaySslPolicyName
+  - uid: com.microsoft.azure.management.network._application_gateway_ssl_cipher_suite
+    parent: com.microsoft.azure.management.network
+    href: com.microsoft.azure.management.network._application_gateway_ssl_cipher_suite.yml
+    name: ApplicationGatewaySslCipherSuite
+    nameWithType: ApplicationGatewaySslCipherSuite
+    fullName: com.microsoft.azure.management.network.ApplicationGatewaySslCipherSuite
+    type: Class
+    summary: <p>Definiert Werte für <xref uid="com.microsoft.azure.management.network._application_gateway_ssl_cipher_suite" data-throw-if-not-resolved="false">ApplicationGatewaySslCipherSuite</xref>. </p>
+    syntax:
+      content: public class ApplicationGatewaySslCipherSuite
   - uid: com.microsoft.azure.management.network._application_gateway_ssl_policy
     parent: com.microsoft.azure.management.network
     href: com.microsoft.azure.management.network._application_gateway_ssl_policy.yml
@@ -116,5 +412,5 @@ references:
     nameWithType: ApplicationGatewaySslPolicy
     fullName: com.microsoft.azure.management.network.ApplicationGatewaySslPolicy
     type: Class
-    summary: <p>Anwendungsgateway SSL-Richtlinie. </p>
+    summary: <p>Application Gateway Ssl-Richtlinie. </p>
     syntax: *ref_1

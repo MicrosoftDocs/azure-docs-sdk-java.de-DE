@@ -1,0 +1,107 @@
+### YamlMime:ManagedReference
+items:
+  - uid: com.microsoft.azure.elasticdb.query.multishard
+    id: multishard
+    children:
+      - com.microsoft.azure.elasticdb.query.multishard._global_constants
+      - com.microsoft.azure.elasticdb.query.multishard._labeled_result_set
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_query_transient_error_detection_strategy
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_result_set
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement
+      - com.microsoft.azure.elasticdb.query.multishard._multi_shard_utils
+      - com.microsoft.azure.elasticdb.query.multishard._shard_execution_event_args
+    href: com.microsoft.azure.elasticdb.query.multishard.yml
+    langs:
+      - java
+    name: com.microsoft.azure.elasticdb.query.multishard
+    nameWithType: com.microsoft.azure.elasticdb.query.multishard
+    fullName: com.microsoft.azure.elasticdb.query.multishard
+    type: Namespace
+    source:
+      remote:
+        path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/GlobalConstants.java
+        branch: master
+        repo: 'https://github.com/Microsoft/elastic-db-tools-for-java'
+      path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/query/multishard/GlobalConstants.java
+    syntax:
+      content: package com.microsoft.azure.elasticdb.query.multishard
+references:
+  - uid: com.microsoft.azure.elasticdb.query.multishard._global_constants
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._global_constants.yml
+    name: GlobalConstants
+    nameWithType: GlobalConstants
+    fullName: com.microsoft.azure.elasticdb.query.multishard.GlobalConstants
+    type: Class
+    syntax:
+      content: public class GlobalConstants
+  - uid: com.microsoft.azure.elasticdb.query.multishard._labeled_result_set
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._labeled_result_set.yml
+    name: LabeledResultSet
+    nameWithType: LabeledResultSet
+    fullName: com.microsoft.azure.elasticdb.query.multishard.LabeledResultSet
+    type: Class
+    summary: '<p>Einfache, unveränderliche Klasse für affiliating ein ResultSet mit zusätzlichen Informationen im Zusammenhang mit dem Reader (z. B.-Anweisung, Shard, Ausnahmen, die aufgetreten usw.) nützlich beim Ersetzen von ResultSets asynchron grabbing. Zweck: Halber-Klasse, die ein ResultSet zusammen mit einer Zeichenfolge Bezeichnung für den Shard enthält, die die zugrunde liegende ResultSet Daten stammen. Hinweis: Dies ist nützlich zum Zusammenhalten von ResultSet und die Bezeichnung für die Ausführung asynchron. </p>'
+    syntax:
+      content: public class LabeledResultSet
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection.yml
+    name: MultiShardConnection
+    nameWithType: MultiShardConnection
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardConnection
+    type: Class
+    summary: '<p>Stellt eine Verbindung mit einem Satz von Shards, und bietet die Möglichkeit zum Verarbeiten von Abfragen in der shardgruppe. Zweck: Verbindungen mit dem angegebenen Satz von Shards erstellt und steuert die ihre Lebensdauer Hinweise: Diese Klasse ist nicht threadsicher. </p>'
+    syntax:
+      content: public class MultiShardConnection
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_query_transient_error_detection_strategy
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_query_transient_error_detection_strategy.yml
+    name: MultiShardQueryTransientErrorDetectionStrategy
+    nameWithType: MultiShardQueryTransientErrorDetectionStrategy
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardQueryTransientErrorDetectionStrategy
+    type: Class
+    summary: '<p>Stellt die Erkennungslogik vorübergehender Fehler für vorübergehende Fehler, die Abfrage Shard durchgestrichen spezifisch sind. </p>'
+    syntax:
+      content: public class MultiShardQueryTransientErrorDetectionStrategy implements ITransientErrorDetectionStrategy
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_result_set
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_result_set.yml
+    name: MultiShardResultSet
+    nameWithType: MultiShardResultSet
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardResultSet
+    type: Class
+    syntax:
+      content: public class MultiShardResultSet
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement.yml
+    name: MultiShardStatement
+    nameWithType: MultiShardStatement
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardStatement
+    type: Class
+    summary: '<p>Ergänzt die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection" data-throw-if-not-resolved="false">MultiShardConnection</xref> mit ein Command-Objekt, das die Triaden der Verbindung, der Anweisung und ResultSet ähnelt. Die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> T-SQL-Command-Anweisung als Eingabe akzeptiert und führt den Befehl über die Auflistung von Shards, die gemäß dem entsprechenden <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection" data-throw-if-not-resolved="false">MultiShardConnection</xref>. Die Ergebnisse der Verarbeitung der <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_statement" data-throw-if-not-resolved="false">MultiShardStatement</xref> werden über die Execute-Methoden zur Verfügung gestellt und die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_result_set" data-throw-if-not-resolved="false">MultiShardResultSet</xref>. Zweck: Ergänzt die <xref uid="com.microsoft.azure.elasticdb.query.multishard._multi_shard_connection" data-throw-if-not-resolved="false">MultiShardConnection</xref> und abstrahiert die Arbeit des Ausführens eines bestimmten Befehls für mehrere Shards Hinweise: Diese Klasse ist nicht threadsicher. Seit der Sync-API, die intern die asynchrone API aufruft, wird die Zeichenfolgeneigenschaft Verbindungen mit Shards mit Verbindung "Context Connection = True" werden nicht unterstützt. Transaktionssemantik werden nicht unterstützt. </p>'
+    syntax:
+      content: public class MultiShardStatement
+  - uid: com.microsoft.azure.elasticdb.query.multishard._multi_shard_utils
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._multi_shard_utils.yml
+    name: MultiShardUtils
+    nameWithType: MultiShardUtils
+    fullName: com.microsoft.azure.elasticdb.query.multishard.MultiShardUtils
+    type: Class
+    summary: '<p>Zweck: Verschiedene Hilfsprogramme von anderen Klassen in diesem Projekt verwendet. </p>'
+    syntax:
+      content: public class MultiShardUtils
+  - uid: com.microsoft.azure.elasticdb.query.multishard._shard_execution_event_args
+    parent: com.microsoft.azure.elasticdb.query.multishard
+    href: com.microsoft.azure.elasticdb.query.multishard._shard_execution_event_args.yml
+    name: ShardExecutionEventArgs
+    nameWithType: ShardExecutionEventArgs
+    fullName: com.microsoft.azure.elasticdb.query.multishard.ShardExecutionEventArgs
+    type: Class
+    summary: <p>Eingabe pro Shard-Ereignishandler übergeben werden soll. </p>
+    syntax:
+      content: public class ShardExecutionEventArgs

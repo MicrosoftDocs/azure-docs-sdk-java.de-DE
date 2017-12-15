@@ -7,6 +7,7 @@ items:
       - com.microsoft.azure.management.graphrbac._active_directory_user.mail()
       - com.microsoft.azure.management.graphrbac._active_directory_user.mailNickname()
       - com.microsoft.azure.management.graphrbac._active_directory_user.signInName()
+      - com.microsoft.azure.management.graphrbac._active_directory_user.usageLocation()
       - com.microsoft.azure.management.graphrbac._active_directory_user.userPrincipalName()
     href: com.microsoft.azure.management.graphrbac._active_directory_user.yml
     langs:
@@ -18,19 +19,21 @@ items:
     source:
       remote: &ref_0
         path: azure-mgmt-graph-rbac/src/main/java/com/microsoft/azure/management/graphrbac/ActiveDirectoryUser.java
-        branch: 880e2022bf46b71f481107effb7c878a9ae065dd
+        branch: v1.3.0
         repo: 'https://github.com/Azure/azure-sdk-for-java'
       path: azure-mgmt-graph-rbac/src/main/java/com/microsoft/azure/management/graphrbac/ActiveDirectoryUser.java
-      startLine: 22
+      startLine: 23
     package: com.microsoft.azure.management.graphrbac
-    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> AD-Benutzer. </p>
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD-Benutzer. </p>
     syntax:
-      content: 'public interface ActiveDirectoryUser extends HasInner<UserInner>,HasId,HasName,HasManager<GraphRbacManager>'
+      content: 'public interface ActiveDirectoryUser extends ActiveDirectoryObject,HasInner<UserInner>,Updatable<ActiveDirectoryUser.Update>'
     inheritedMembers:
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.id()
       - com.microsoft.azure.management.resources.fluentcore.model._has_inner.inner()
+      - com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager.manager()
       - com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.name()
+      - com.microsoft.azure.management.resources.fluentcore.model._updatable.update()
   - uid: com.microsoft.azure.management.graphrbac._active_directory_user.mail()
     id: mail()
     parent: com.microsoft.azure.management.graphrbac._active_directory_user
@@ -51,7 +54,7 @@ items:
       content: public String mail()
       return:
         type: '26831127'
-        description: '<p>Ruft ab, oder legt ihn fest Benutzer e-Mail-Nachrichten. </p>'
+        description: <p>Benutzer e-Mail-Nachrichten </p>
   - uid: com.microsoft.azure.management.graphrbac._active_directory_user.mailNickname()
     id: mailNickname()
     parent: com.microsoft.azure.management.graphrbac._active_directory_user
@@ -72,7 +75,7 @@ items:
       content: public String mailNickname()
       return:
         type: '26831127'
-        description: <p>Die e-Mail-Alias für den Benutzer. </p>
+        description: <p>der e-Mail-Alias für den Benutzer </p>
   - uid: com.microsoft.azure.management.graphrbac._active_directory_user.signInName()
     id: signInName()
     parent: com.microsoft.azure.management.graphrbac._active_directory_user
@@ -93,7 +96,28 @@ items:
       content: public String signInName()
       return:
         type: '26831127'
-        description: '<p>Ruft ab, oder legt ihn fest SignIn-Benutzername. </p>'
+        description: <p>Benutzername für Anmeldung </p>
+  - uid: com.microsoft.azure.management.graphrbac._active_directory_user.usageLocation()
+    id: usageLocation()
+    parent: com.microsoft.azure.management.graphrbac._active_directory_user
+    href: com.microsoft.azure.management.graphrbac._active_directory_user.yml
+    langs:
+      - java
+    name: usageLocation()
+    nameWithType: ActiveDirectoryUser.usageLocation()
+    fullName: CountryIsoCode com.microsoft.azure.management.graphrbac.ActiveDirectoryUser.usageLocation()
+    overload: com.microsoft.azure.management.graphrbac._active_directory_user.usageLocation*
+    type: Method
+    source:
+      remote: *ref_0
+      path: azure-mgmt-graph-rbac/src/main/java/com/microsoft/azure/management/graphrbac/ActiveDirectoryUser.java
+      startLine: 51
+    package: com.microsoft.azure.management.graphrbac
+    syntax:
+      content: public CountryIsoCode usageLocation()
+      return:
+        type: com.microsoft.azure.management.resources.fluentcore.arm._country_iso_code
+        description: <p>der Ort der Verwendung des Benutzers </p>
   - uid: com.microsoft.azure.management.graphrbac._active_directory_user.userPrincipalName()
     id: userPrincipalName()
     parent: com.microsoft.azure.management.graphrbac._active_directory_user
@@ -114,7 +138,7 @@ items:
       content: public String userPrincipalName()
       return:
         type: '26831127'
-        description: '<p>Ruft ab, oder legt ihn fest Benutzerprinzipalnamen. </p>'
+        description: <p>Benutzerprinzipalname </p>
 references:
   - uid: '26831127'
     spec.java:
@@ -140,6 +164,11 @@ references:
     nameWithType: ActiveDirectoryUser.mailNickname
     fullName: String com.microsoft.azure.management.graphrbac.ActiveDirectoryUser.mailNickname
     package: com.microsoft.azure.management.graphrbac
+  - uid: com.microsoft.azure.management.graphrbac._active_directory_user.usageLocation*
+    name: usageLocation
+    nameWithType: ActiveDirectoryUser.usageLocation
+    fullName: CountryIsoCode com.microsoft.azure.management.graphrbac.ActiveDirectoryUser.usageLocation
+    package: com.microsoft.azure.management.graphrbac
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.id()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.yml
@@ -163,7 +192,19 @@ references:
       content: public T inner()
       return:
         type: 8ce1ecb9
-        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref> REST-API </p>
+        description: <p>umschlossene innere Objekt bietet direkten Zugriff auf die zugrunde liegende automatisch generierte API-Implementierung basierend auf <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> REST-API </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.model._indexable.key()
+    parent: com.microsoft.azure.management.resources.fluentcore.model._indexable
+    href: com.microsoft.azure.management.resources.fluentcore.model._indexable.yml
+    name: key()
+    nameWithType: Indexable.key()
+    fullName: String com.microsoft.azure.management.resources.fluentcore.model.Indexable.key()
+    type: Method
+    syntax:
+      content: public String key()
+      return:
+        type: '26831127'
+        description: <p>der Schlüssel des Indexes. </p>
   - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager.manager()
     parent: com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager
     href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager.yml
@@ -188,6 +229,32 @@ references:
       return:
         type: '26831127'
         description: <p>Der Name der Ressource </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.model._updatable.update()
+    parent: com.microsoft.azure.management.resources.fluentcore.model._updatable
+    href: com.microsoft.azure.management.resources.fluentcore.model._updatable.yml
+    name: update()
+    nameWithType: Updatable<T>.update()
+    fullName: T com.microsoft.azure.management.resources.fluentcore.model.Updatable<T>.update()
+    type: Method
+    summary: |-
+      <p>Startet ein Update für eine neue Ressource. </p>
+      <p>Dies ist der Anfang des Generators zum Aktualisieren von Ressourcen für die oberer Ebenen im Muster <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. Die letzte Methode in Bezug auf die Fertigstellung und starten die eigentliche Ressource Erstellung verarbeiten <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> ist <xref uid="com.microsoft.azure.management.resources.fluentcore.model._appliable.apply()" data-throw-if-not-resolved="false">Appliable#apply()</xref>.</p>
+      <p></p>
+    syntax:
+      content: public T update()
+      return:
+        type: 8ce1ecb9
+        description: <p>die Phase der neuen Ressource aktualisieren </p>
+  - uid: com.microsoft.azure.management.graphrbac._active_directory_object
+    parent: com.microsoft.azure.management.graphrbac
+    href: com.microsoft.azure.management.graphrbac._active_directory_object.yml
+    name: ActiveDirectoryObject
+    nameWithType: ActiveDirectoryObject
+    fullName: com.microsoft.azure.management.graphrbac.ActiveDirectoryObject
+    type: Interface
+    summary: <p>Eine unveränderliche clientseitige Darstellung einer <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref> AD-Objekt. </p>
+    syntax:
+      content: 'public interface ActiveDirectoryObject extends Indexable,HasId,HasName,HasManager<GraphRbacManager>'
   - uid: com.microsoft.azure.management.resources.fluentcore.model._has_inner
     parent: com.microsoft.azure.management.resources.fluentcore.model
     href: com.microsoft.azure.management.resources.fluentcore.model._has_inner.yml
@@ -203,39 +270,31 @@ references:
       typeParameters:
         - type: 8ce1ecb9
           description: <p>Der Typ des inneren Objekts. </p>
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.models
-    href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_id.yml
-    name: HasId
-    nameWithType: HasId
-    fullName: com.microsoft.azure.management.resources.fluentcore.arm.models.HasId
+  - uid: com.microsoft.azure.management.resources.fluentcore.model._updatable
+    parent: com.microsoft.azure.management.resources.fluentcore.model
+    href: com.microsoft.azure.management.resources.fluentcore.model._updatable.yml
+    name: Updatable<T>
+    nameWithType: Updatable<T>
+    fullName: com.microsoft.azure.management.resources.fluentcore.model.Updatable<T>
     type: Interface
-    summary: '<p>Eine Schnittstelle, die ein Modell, einen Ressourcengruppennamen hat, darstellt. </p>'
+    summary: |-
+      <p>Die Basisklasse für die Ressource, die aktualisiert werden können.</p>
+      <p></p>
     syntax:
-      content: public interface HasId
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_name
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.models
-    href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_name.yml
-    name: HasName
-    nameWithType: HasName
-    fullName: com.microsoft.azure.management.resources.fluentcore.arm.models.HasName
-    type: Interface
-    summary: '<p>Eine Schnittstelle, die ein Modell mit dem Namen darstellt. </p>'
-    syntax:
-      content: public interface HasName
-  - uid: com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager
-    parent: com.microsoft.azure.management.resources.fluentcore.arm.models
-    href: com.microsoft.azure.management.resources.fluentcore.arm.models._has_manager.yml
-    name: HasManager<ManagerT>
-    nameWithType: HasManager<ManagerT>
-    fullName: com.microsoft.azure.management.resources.fluentcore.arm.models.HasManager<ManagerT>
-    type: Interface
-    summary: '<p>Eine Schnittstelle, ein Modell, das einen Verwaltungsclient verfügbar macht. </p>'
-    syntax:
-      content: public interface HasManager<ManagerT>
+      content: public interface Updatable<T>
       typeParameters:
-        - type: 8b0aab42
-          description: <p>Typ des Client-Managers </p>
+        - type: 8ce1ecb9
+          description: <p>die fluent-Typ der Ressource </p>
+  - uid: com.microsoft.azure.management.resources.fluentcore.arm._country_iso_code
+    parent: com.microsoft.azure.management.resources.fluentcore.arm
+    href: com.microsoft.azure.management.resources.fluentcore.arm._country_iso_code.yml
+    name: CountryIsoCode
+    nameWithType: CountryIsoCode
+    fullName: com.microsoft.azure.management.resources.fluentcore.arm.CountryIsoCode
+    type: Class
+    summary: '<p>Definiert Werte für die Landeskennzahl in ISO-standard. Beispiel: die Landeskennzahl Großbritannien ist "GB". </p>'
+    syntax:
+      content: public class CountryIsoCode
   - uid: com.microsoft.azure.management._azure
     parent: com.microsoft.azure.management
     href: com.microsoft.azure.management._azure.yml
@@ -243,6 +302,6 @@ references:
     nameWithType: Azure
     fullName: com.microsoft.azure.management.Azure
     type: Class
-    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref href="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false"></xref>. </p>
+    summary: <p>Der Einstiegspunkt für den Zugriff auf Ressourcen Verwaltungs-APIs in <xref uid="com.microsoft.azure.management._azure" data-throw-if-not-resolved="false">Azure</xref>. </p>
     syntax:
       content: public class Azure
