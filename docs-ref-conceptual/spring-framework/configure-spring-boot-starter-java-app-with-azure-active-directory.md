@@ -80,7 +80,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Hinzufügen einer neuen App-Registrierung][directory-04]
 
-1. Klicken Sie auf **Registrierung einer neuen Anwendung**, geben Sie unter **Name** den Namen Ihrer Anwendung an, geben Sie für die **Anmelde-URL** den Wert „http://localhost:8080“ an, und klicken Sie anschließend auf **Erstellen**.
+1. Klicken Sie auf **Registrierung einer neuen Anwendung**, geben Sie unter **Name** den Namen Ihrer Anwendung an, geben Sie für die **Anmelde-URL** den Wert „ http://localhost:8080 “ an, und klicken Sie anschließend auf **Erstellen**.
 
    ![Erstellen einer neuen App-Registrierung][directory-05]
 
