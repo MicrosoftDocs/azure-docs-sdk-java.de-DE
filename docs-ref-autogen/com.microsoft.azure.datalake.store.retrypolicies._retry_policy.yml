@@ -21,8 +21,8 @@ items:
       startLine: 14
     package: com.microsoft.azure.datalake.store.retrypolicies
     summary: |-
-      <p>die <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll. </p>
-      <p>Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien. </p>
+      <p><span data-ttu-id="3554b-101">die <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll.</span><span class="sxs-lookup"><span data-stu-id="3554b-101">the <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> controls whether a failed request should be retried, and how long to wait before retrying.</span></span> </p>
+      <p><span data-ttu-id="3554b-102">Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien.</span><span class="sxs-lookup"><span data-stu-id="3554b-102">Implementations of this interface implement different retry policies.</span></span> </p>
     syntax: &ref_1
       content: public interface RetryPolicy
   - uid: 'com.microsoft.azure.datalake.store.retrypolicies._retry_policy.shouldRetry(int,Exception)'
@@ -41,19 +41,19 @@ items:
       path: src/main/java/com/microsoft/azure/datalake/store/retrypolicies/RetryPolicy.java
       startLine: 27
     package: com.microsoft.azure.datalake.store.retrypolicies
-    summary: "<p>boolescher Wert, der angibt, ob eine fehlerhafte Anforderung wiederholt werden soll. Implementierungen können entscheiden, ob Sie wiederholen den HTTP-Antwortcode und keine Ausnahmen aus den letzten vergeblichen Versuch verwenden. </p>\n<p>Wenn die wiederholungsrichtlinie für eine Wartezeit vor dem nächsten Versuch, erfordert die<code>shouldRetry \r\n\r\n    </code> Methode geeigneten Zeitpunkt vor dem Antworten wieder warten soll. d. h. für Wartevorgänge kein expliziter Vertrag ist allerdings handelt es sich implizit in die Zeit, bis die<code>shouldRetry \r\n\r\n    </code> -Methode zurückgegeben. </p>\n\n<p></p>"
+    summary: "<p><span data-ttu-id=\"3554b-103\">boolescher Wert, der angibt, ob eine fehlerhafte Anforderung wiederholt werden soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-103\">boolean indicating whether a failed request should be retried.</span></span> <span data-ttu-id=\"3554b-104\">Implementierungen können entscheiden, ob Sie wiederholen den HTTP-Antwortcode und keine Ausnahmen aus den letzten vergeblichen Versuch verwenden.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-104\">Implementations can use the HTTP response code and any exceptions from the last failure to decide whether to retry.</span></span> </p>\n<p><span data-ttu-id=\"3554b-105\">Wenn die wiederholungsrichtlinie für eine Wartezeit vor dem nächsten Versuch, erfordert die<code>shouldRetry \r\n\r\n    </code> Methode geeigneten Zeitpunkt vor dem Antworten wieder warten soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-105\">If the retry policy requires a wait before the next try, then the<code>shouldRetry \r\n\r\n    </code> method should wait for the appropriate time before responding back.</span></span> <span data-ttu-id=\"3554b-106\">d. h. für Wartevorgänge kein expliziter Vertrag ist allerdings handelt es sich implizit in die Zeit, bis die<code>shouldRetry \r\n\r\n    </code> -Methode zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-106\">i.e., there is not an explicit contract for waits, but it is implicit in the time taken by the<code>shouldRetry \r\n\r\n    </code> method to return.</span></span> </p>\n\n<p></p>"
     syntax:
       content: 'public boolean shouldRetry(int httpResponseCode, Exception lastException)'
       parameters:
         - id: httpResponseCode
           type: f75371fa
-          description: <p>der HTTP-Antwortcode empfangen </p>
+          description: <p><span data-ttu-id="3554b-107">der HTTP-Antwortcode empfangen</span><span class="sxs-lookup"><span data-stu-id="3554b-107">the HTTP response code received</span></span> </p>
         - id: lastException
           type: 8a99d4b0
-          description: '<p>alle Ausnahmen, die beim Verarbeiten der letzten Anforderung aufgetreten </p>'
+          description: '<p><span data-ttu-id="3554b-108">alle Ausnahmen, die beim Verarbeiten der letzten Anforderung aufgetreten</span><span class="sxs-lookup"><span data-stu-id="3554b-108">any exceptions encountered while processing the last request</span></span> </p>'
       return:
         type: 4fc6e284
-        description: '<p>boolescher Wert, der angibt, ob die Anforderung wiederholt werden soll </p>'
+        description: '<p><span data-ttu-id="3554b-109">boolescher Wert, der angibt, ob die Anforderung wiederholt werden soll</span><span class="sxs-lookup"><span data-stu-id="3554b-109">boolean indicating whether the request should be retried</span></span> </p>'
 references:
   - uid: f75371fa
     spec.java:
@@ -80,26 +80,26 @@ references:
     fullName: com.microsoft.azure.datalake.store.retrypolicies.ExponentialBackoffPolicy
     type: Class
     summary: |-
-      <p>implementiert verschiedene wiederholen Sie Ihre Entscheidungen basierend auf den Fehler.</p>
+      <p><span data-ttu-id="3554b-110">implementiert verschiedene wiederholen Sie Ihre Entscheidungen basierend auf den Fehler.</span><span class="sxs-lookup"><span data-stu-id="3554b-110">implements different retry decisions based on the error.</span></span></p>
       <p>
 
         <itemizedlist>
 
           <listitem>
 
-            <p>Führen Sie für Nonretryable Fehler (3xx, die meisten 4xx und einige Rückgabecodes 5xx) keine Wiederholung. </p>
+            <p><span data-ttu-id="3554b-111">Führen Sie für Nonretryable Fehler (3xx, die meisten 4xx und einige Rückgabecodes 5xx) keine Wiederholung.</span><span class="sxs-lookup"><span data-stu-id="3554b-111">For nonretryable errors (3xx, most 4xx, and some 5xx return codes), do no retry.</span></span> </p>
 
           </listitem>
 
           <listitem>
 
-            <p>Führen Sie für die Einschränkung Fehler, ein erneuter Versuch mit exponenzieller Wartezeit </p>
+            <p><span data-ttu-id="3554b-112">Führen Sie für die Einschränkung Fehler, ein erneuter Versuch mit exponenzieller Wartezeit</span><span class="sxs-lookup"><span data-stu-id="3554b-112">For throttling error, do a retry with exponential backoff</span></span> </p>
 
           </listitem>
 
           <listitem>
 
-            <p>Führen Sie bei allen anderen Fehlern ein erneuter Versuch mit linearen Wartezeit </p>
+            <p><span data-ttu-id="3554b-113">Führen Sie bei allen anderen Fehlern ein erneuter Versuch mit linearen Wartezeit</span><span class="sxs-lookup"><span data-stu-id="3554b-113">for all other errors, do a retry with linear backoff</span></span> </p>
 
           </listitem>
 
@@ -116,8 +116,8 @@ references:
     fullName: com.microsoft.azure.datalake.store.retrypolicies.NoRetryPolicy
     type: Class
     summary: |-
-      <p>Keine Wiederholung jemals. Gibt immer "false" zeigt an, dass diese Erequest nicht wiederholt werden sollte zurück.</p>
-      <p>Dies sollte verwendet werden, und wiederholen Sie dann ist nicht sicher und at-Most-Once-Semantik mit dem Aufruf der Benutzer möchte. Dies ist nützlich für nicht idempotente-Methoden, in dem der Fehler vom letzten Aufruf zurückgegebene abschließend Erfolg oder Fehler des Aufrufs gibt keine. Z. B. wenn ein Anfügen erfolgreich ausgeführt wird, auf dem Back-End ein Timeout auftritt, Anfügen wiederholen sie dann die Daten zweimal, um die Datei. </p>
+      <p><span data-ttu-id="3554b-114">Keine Wiederholung jemals.</span><span class="sxs-lookup"><span data-stu-id="3554b-114">No retry ever.</span></span> <span data-ttu-id="3554b-115">Gibt immer "false" zeigt an, dass diese Erequest nicht wiederholt werden sollte zurück.</span><span class="sxs-lookup"><span data-stu-id="3554b-115">Always returns false, indicating that erequest should not be retried.</span></span></p>
+      <p><span data-ttu-id="3554b-116">Dies sollte verwendet werden, und wiederholen Sie dann ist nicht sicher und at-Most-Once-Semantik mit dem Aufruf der Benutzer möchte.</span><span class="sxs-lookup"><span data-stu-id="3554b-116">This should be used when retrying is not safe, and user wants at-most-once semantics with the call.</span></span> <span data-ttu-id="3554b-117">Dies ist nützlich für nicht idempotente-Methoden, in dem der Fehler vom letzten Aufruf zurückgegebene abschließend Erfolg oder Fehler des Aufrufs gibt keine.</span><span class="sxs-lookup"><span data-stu-id="3554b-117">This is useful for non-idempotent methods, where the error returned by the last call does not conclusively indicate success or failure of the call.</span></span> <span data-ttu-id="3554b-118">Z. B. wenn ein Anfügen erfolgreich ausgeführt wird, auf dem Back-End ein Timeout auftritt, Anfügen wiederholen sie dann die Daten zweimal, um die Datei.</span><span class="sxs-lookup"><span data-stu-id="3554b-118">For example, if an append times out but succeeds on the back-end , then retrying it may append the data twice to the file.</span></span> </p>
     syntax:
       content: public class NoRetryPolicy implements RetryPolicy
   - uid: 'com.microsoft.azure.datalake.store.retrypolicies._no_retry_policy.shouldRetry(int,Exception)'
@@ -127,19 +127,19 @@ references:
     nameWithType: 'NoRetryPolicy.shouldRetry(int httpResponseCode, Exception lastException)'
     fullName: 'boolean com.microsoft.azure.datalake.store.retrypolicies.NoRetryPolicy.shouldRetry(int httpResponseCode, Exception lastException)'
     type: Method
-    summary: "<p>boolescher Wert, der angibt, ob eine fehlerhafte Anforderung wiederholt werden soll. Implementierungen können entscheiden, ob Sie wiederholen den HTTP-Antwortcode und keine Ausnahmen aus den letzten vergeblichen Versuch verwenden. </p>\n<p>Wenn die wiederholungsrichtlinie für eine Wartezeit vor dem nächsten Versuch, erfordert die<code>shouldRetry \r\n\r\n    </code> Methode geeigneten Zeitpunkt vor dem Antworten wieder warten soll. d. h. für Wartevorgänge kein expliziter Vertrag ist allerdings handelt es sich implizit in die Zeit, bis die<code>shouldRetry \r\n\r\n    </code> -Methode zurückgegeben. </p>\n\n<p></p>"
+    summary: "<p><span data-ttu-id=\"3554b-119\">boolescher Wert, der angibt, ob eine fehlerhafte Anforderung wiederholt werden soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-119\">boolean indicating whether a failed request should be retried.</span></span> <span data-ttu-id=\"3554b-120\">Implementierungen können entscheiden, ob Sie wiederholen den HTTP-Antwortcode und keine Ausnahmen aus den letzten vergeblichen Versuch verwenden.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-120\">Implementations can use the HTTP response code and any exceptions from the last failure to decide whether to retry.</span></span> </p>\n<p><span data-ttu-id=\"3554b-121\">Wenn die wiederholungsrichtlinie für eine Wartezeit vor dem nächsten Versuch, erfordert die<code>shouldRetry \r\n\r\n    </code> Methode geeigneten Zeitpunkt vor dem Antworten wieder warten soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-121\">If the retry policy requires a wait before the next try, then the<code>shouldRetry \r\n\r\n    </code> method should wait for the appropriate time before responding back.</span></span> <span data-ttu-id=\"3554b-122\">d. h. für Wartevorgänge kein expliziter Vertrag ist allerdings handelt es sich implizit in die Zeit, bis die<code>shouldRetry \r\n\r\n    </code> -Methode zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-122\">i.e., there is not an explicit contract for waits, but it is implicit in the time taken by the<code>shouldRetry \r\n\r\n    </code> method to return.</span></span> </p>\n\n<p></p>"
     syntax:
       content: 'public boolean shouldRetry(int httpResponseCode, Exception lastException)'
       parameters:
         - id: httpResponseCode
           type: f75371fa
-          description: <p>der HTTP-Antwortcode empfangen </p>
+          description: <p><span data-ttu-id="3554b-123">der HTTP-Antwortcode empfangen</span><span class="sxs-lookup"><span data-stu-id="3554b-123">the HTTP response code received</span></span> </p>
         - id: lastException
           type: 8a99d4b0
-          description: '<p>alle Ausnahmen, die beim Verarbeiten der letzten Anforderung aufgetreten </p>'
+          description: '<p><span data-ttu-id="3554b-124">alle Ausnahmen, die beim Verarbeiten der letzten Anforderung aufgetreten</span><span class="sxs-lookup"><span data-stu-id="3554b-124">any exceptions encountered while processing the last request</span></span> </p>'
       return:
         type: 4fc6e284
-        description: '<p>boolescher Wert, der angibt, ob die Anforderung wiederholt werden soll </p>'
+        description: '<p><span data-ttu-id="3554b-125">boolescher Wert, der angibt, ob die Anforderung wiederholt werden soll</span><span class="sxs-lookup"><span data-stu-id="3554b-125">boolean indicating whether the request should be retried</span></span> </p>'
   - uid: 'com.microsoft.azure.datalake.store.retrypolicies._exponential_backoff_policy.shouldRetry(int,Exception)'
     parent: com.microsoft.azure.datalake.store.retrypolicies._exponential_backoff_policy
     href: com.microsoft.azure.datalake.store.retrypolicies._exponential_backoff_policy.yml
@@ -147,19 +147,19 @@ references:
     nameWithType: 'ExponentialBackoffPolicy.shouldRetry(int httpResponseCode, Exception lastException)'
     fullName: 'boolean com.microsoft.azure.datalake.store.retrypolicies.ExponentialBackoffPolicy.shouldRetry(int httpResponseCode, Exception lastException)'
     type: Method
-    summary: "<p>boolescher Wert, der angibt, ob eine fehlerhafte Anforderung wiederholt werden soll. Implementierungen können entscheiden, ob Sie wiederholen den HTTP-Antwortcode und keine Ausnahmen aus den letzten vergeblichen Versuch verwenden. </p>\n<p>Wenn die wiederholungsrichtlinie für eine Wartezeit vor dem nächsten Versuch, erfordert die<code>shouldRetry \r\n\r\n    </code> Methode geeigneten Zeitpunkt vor dem Antworten wieder warten soll. d. h. für Wartevorgänge kein expliziter Vertrag ist allerdings handelt es sich implizit in die Zeit, bis die<code>shouldRetry \r\n\r\n    </code> -Methode zurückgegeben. </p>\n\n<p></p>"
+    summary: "<p><span data-ttu-id=\"3554b-126\">boolescher Wert, der angibt, ob eine fehlerhafte Anforderung wiederholt werden soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-126\">boolean indicating whether a failed request should be retried.</span></span> <span data-ttu-id=\"3554b-127\">Implementierungen können entscheiden, ob Sie wiederholen den HTTP-Antwortcode und keine Ausnahmen aus den letzten vergeblichen Versuch verwenden.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-127\">Implementations can use the HTTP response code and any exceptions from the last failure to decide whether to retry.</span></span> </p>\n<p><span data-ttu-id=\"3554b-128\">Wenn die wiederholungsrichtlinie für eine Wartezeit vor dem nächsten Versuch, erfordert die<code>shouldRetry \r\n\r\n    </code> Methode geeigneten Zeitpunkt vor dem Antworten wieder warten soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-128\">If the retry policy requires a wait before the next try, then the<code>shouldRetry \r\n\r\n    </code> method should wait for the appropriate time before responding back.</span></span> <span data-ttu-id=\"3554b-129\">d. h. für Wartevorgänge kein expliziter Vertrag ist allerdings handelt es sich implizit in die Zeit, bis die<code>shouldRetry \r\n\r\n    </code> -Methode zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3554b-129\">i.e., there is not an explicit contract for waits, but it is implicit in the time taken by the<code>shouldRetry \r\n\r\n    </code> method to return.</span></span> </p>\n\n<p></p>"
     syntax:
       content: 'public boolean shouldRetry(int httpResponseCode, Exception lastException)'
       parameters:
         - id: httpResponseCode
           type: f75371fa
-          description: <p>der HTTP-Antwortcode empfangen </p>
+          description: <p><span data-ttu-id="3554b-130">der HTTP-Antwortcode empfangen</span><span class="sxs-lookup"><span data-stu-id="3554b-130">the HTTP response code received</span></span> </p>
         - id: lastException
           type: 8a99d4b0
-          description: '<p>alle Ausnahmen, die beim Verarbeiten der letzten Anforderung aufgetreten </p>'
+          description: '<p><span data-ttu-id="3554b-131">alle Ausnahmen, die beim Verarbeiten der letzten Anforderung aufgetreten</span><span class="sxs-lookup"><span data-stu-id="3554b-131">any exceptions encountered while processing the last request</span></span> </p>'
       return:
         type: 4fc6e284
-        description: '<p>boolescher Wert, der angibt, ob die Anforderung wiederholt werden soll </p>'
+        description: '<p><span data-ttu-id="3554b-132">boolescher Wert, der angibt, ob die Anforderung wiederholt werden soll</span><span class="sxs-lookup"><span data-stu-id="3554b-132">boolean indicating whether the request should be retried</span></span> </p>'
   - uid: com.microsoft.azure.datalake.store.retrypolicies._retry_policy
     parent: com.microsoft.azure.datalake.store.retrypolicies
     href: com.microsoft.azure.datalake.store.retrypolicies._retry_policy.yml
@@ -168,6 +168,6 @@ references:
     fullName: com.microsoft.azure.datalake.store.retrypolicies.RetryPolicy
     type: Interface
     summary: |-
-      <p>die <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll. </p>
-      <p>Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien. </p>
+      <p><span data-ttu-id="3554b-133">die <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll.</span><span class="sxs-lookup"><span data-stu-id="3554b-133">the <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> controls whether a failed request should be retried, and how long to wait before retrying.</span></span> </p>
+      <p><span data-ttu-id="3554b-134">Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien.</span><span class="sxs-lookup"><span data-stu-id="3554b-134">Implementations of this interface implement different retry policies.</span></span> </p>
     syntax: *ref_1

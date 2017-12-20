@@ -38,7 +38,7 @@ items:
       path: elastic-db-tools/src/main/java/com/microsoft/azure/elasticdb/shard/recovery/RecoveryManager.java
       startLine: 48
     package: com.microsoft.azure.elasticdb.shard.recovery
-    summary: '<p>Verwaltet unterschiedliche Recovery Aufgaben im Zusammenhang mit für eine shardzuordnungs-Manager. Er erleichtert das Auflösen von Probleme mit beschädigten Daten zwischen Shards Zuordnung Informationen lokal gespeichert werden, auf die Shards und in der globalen Shard Map-Manager-Datenbank. Es wird auch mit bestimmten "leider" Recovery-Szenarien, in der Wiederherstellung der shardzuordnungen von datenbanksicherungen oder Datenbankkopien erforderlich ist. Beachten Sie, dass einige der Wiederherstellungsmethoden nicht behebbaren Datenverlust bei nicht ordnungsgemäßer verursachen können. Es wird empfohlen, Sicherungen oder Kopien aller Datenbanken, die in Wiederherstellungsvorgänge einbezogen werden. </p>'
+    summary: '<p><span data-ttu-id="ad4bd-101">Verwaltet unterschiedliche Recovery Aufgaben im Zusammenhang mit für eine shardzuordnungs-Manager.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-101">Manages various recovery related tasks for a shard map manager.</span></span> <span data-ttu-id="ad4bd-102">Er erleichtert das Auflösen von Probleme mit beschädigten Daten zwischen Shards Zuordnung Informationen lokal gespeichert werden, auf die Shards und in der globalen Shard Map-Manager-Datenbank.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-102">It helps resolving data corruption issues between shard map information stored locally on the shards and in the global shard map manager database.</span></span> <span data-ttu-id="ad4bd-103">Es wird auch mit bestimmten "leider" Recovery-Szenarien, in der Wiederherstellung der shardzuordnungen von datenbanksicherungen oder Datenbankkopien erforderlich ist.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-103">It also helps with certain ''oops'' recovery scenarios where reconstruction of shard maps from database backups or database copies is necessary.</span></span> <span data-ttu-id="ad4bd-104">Beachten Sie, dass einige der Wiederherstellungsmethoden nicht behebbaren Datenverlust bei nicht ordnungsgemäßer verursachen können.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-104">Note that some of the recovery methods can cause unrecoverable data loss when not used properly.</span></span> <span data-ttu-id="ad4bd-105">Es wird empfohlen, Sicherungen oder Kopien aller Datenbanken, die in Wiederherstellungsvorgänge einbezogen werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-105">It is recommend to take backups or copies of all databases that participate in recovery operations.</span></span> </p>'
     syntax:
       content: public class RecoveryManager
     inheritance:
@@ -60,14 +60,14 @@ items:
       startLine: 123
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Fügt einen Shard an die shardzuordnungs-Manager an. Frühere Versionen von Zuordnungen für die gleiche shardzuordnung werden automatisch aktualisiert werden, wenn neuere Versionen auf den Shard anzufügenden gefunden werden. Nach dem Anfügen eines Shards, sollte DetectMappingDifferences (ShardLocation, String) aufgerufen werden, dass eine Überprüfung auf Inkonsistenzen, die manuelle konfliktauflösung erforderlich machen.</p>
+      <p><span data-ttu-id="ad4bd-106">Fügt einen Shard an die shardzuordnungs-Manager an.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-106">Attaches a shard to the shard map manager.</span></span> <span data-ttu-id="ad4bd-107">Frühere Versionen von Zuordnungen für die gleiche shardzuordnung werden automatisch aktualisiert werden, wenn neuere Versionen auf den Shard anzufügenden gefunden werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-107">Earlier versions of mappings for the same shard map will automatically be updated if more recent versions are found on the shard to be attached.</span></span> <span data-ttu-id="ad4bd-108">Nach dem Anfügen eines Shards, sollte DetectMappingDifferences (ShardLocation, String) aufgerufen werden, dass eine Überprüfung auf Inkonsistenzen, die manuelle konfliktauflösung erforderlich machen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-108">After attaching a shard, DetectMappingDifferences(ShardLocation, string) should be called to check for any inconsistencies that warrant manual conflict resolution.</span></span></p>
       <p></p>
     syntax:
       content: public void attachShard(ShardLocation location)
       parameters:
         - id: location
           type: com.microsoft.azure.elasticdb.shard.base._shard_location
-          description: '<p>Der Speicherort des betreffenden Shards angefügt wird. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-109">Der Speicherort des betreffenden Shards angefügt wird.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-109">Location of the shard being attached.</span></span> <span data-ttu-id="ad4bd-110">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-110">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-111">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-111">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.attachShard(ShardLocation,String)'
     id: 'attachShard(ShardLocation,String)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -85,17 +85,17 @@ items:
       startLine: 139
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Fügt einen Shard an die shardzuordnungs-Manager an. Frühere Versionen von Zuordnungen für die gleiche shardzuordnung werden automatisch aktualisiert werden, wenn neuere Versionen auf den Shard anzufügenden gefunden werden. Shard Speicherort wird auf neueste Version des lokalen Speichers im Rahmen dieses Vorgangs aktualisiert werden. Nach dem Anfügen eines Shards, sollte DetectMappingDifferences (ShardLocation, String) aufgerufen werden, dass eine Überprüfung auf Inkonsistenzen, die manuelle konfliktauflösung erforderlich machen.</p>
+      <p><span data-ttu-id="ad4bd-112">Fügt einen Shard an die shardzuordnungs-Manager an.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-112">Attaches a shard to the shard map manager.</span></span> <span data-ttu-id="ad4bd-113">Frühere Versionen von Zuordnungen für die gleiche shardzuordnung werden automatisch aktualisiert werden, wenn neuere Versionen auf den Shard anzufügenden gefunden werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-113">Earlier versions of mappings for the same shard map will automatically be updated if more recent versions are found on the shard to be attached.</span></span> <span data-ttu-id="ad4bd-114">Shard Speicherort wird auf neueste Version des lokalen Speichers im Rahmen dieses Vorgangs aktualisiert werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-114">Shard location will be upgraded to latest version of local store as part of this operation.</span></span> <span data-ttu-id="ad4bd-115">Nach dem Anfügen eines Shards, sollte DetectMappingDifferences (ShardLocation, String) aufgerufen werden, dass eine Überprüfung auf Inkonsistenzen, die manuelle konfliktauflösung erforderlich machen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-115">After attaching a shard, DetectMappingDifferences(ShardLocation, string) should be called to check for any inconsistencies that warrant manual conflict resolution.</span></span></p>
       <p></p>
     syntax:
       content: 'public void attachShard(ShardLocation location, String shardMapName)'
       parameters:
         - id: location
           type: com.microsoft.azure.elasticdb.shard.base._shard_location
-          description: <p>Der Speicherort des betreffenden Shards angefügt wird. </p>
+          description: <p><span data-ttu-id="ad4bd-116">Der Speicherort des betreffenden Shards angefügt wird.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-116">Location of the shard being attached.</span></span> </p>
         - id: shardMapName
           type: '26831127'
-          description: '<p>Optionale Zeichenfolge, die auf den Namen der shardzuordnung filtern. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-117">Optionale Zeichenfolge, die auf den Namen der shardzuordnung filtern.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-117">Optional string to filter on the shard map name.</span></span> <span data-ttu-id="ad4bd-118">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-118">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-119">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-119">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard(ShardLocation)
     id: detachShard(ShardLocation)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -113,14 +113,14 @@ items:
       startLine: 183
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Trennt den angegebenen Shard aus der shardzuordnungs-Manager. Auf den Shard zu löschenden zeigen Mappings werden von dieser Methode automatisch entfernt werden.</p>
+      <p><span data-ttu-id="ad4bd-120">Trennt den angegebenen Shard aus der shardzuordnungs-Manager.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-120">Detaches the given shard from the shard map manager.</span></span> <span data-ttu-id="ad4bd-121">Auf den Shard zu löschenden zeigen Mappings werden von dieser Methode automatisch entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-121">Mappings pointing to the shard to be deleted will automatically be removed by this method.</span></span></p>
       <p></p>
     syntax:
       content: public void detachShard(ShardLocation location)
       parameters:
         - id: location
           type: com.microsoft.azure.elasticdb.shard.base._shard_location
-          description: '<p>Der Speicherort des betreffenden Shards getrennt wird. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-122">Der Speicherort des betreffenden Shards getrennt wird.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-122">Location of the shard being detached.</span></span> <span data-ttu-id="ad4bd-123">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-123">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-124">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-124">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detachShard(ShardLocation,String)'
     id: 'detachShard(ShardLocation,String)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -138,17 +138,17 @@ items:
       startLine: 196
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Trennt den angegebenen Shard aus der shardzuordnungs-Manager. Auf den Shard zu löschenden zeigen Mappings werden von dieser Methode automatisch entfernt werden.</p>
+      <p><span data-ttu-id="ad4bd-125">Trennt den angegebenen Shard aus der shardzuordnungs-Manager.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-125">Detaches the given shard from the shard map manager.</span></span> <span data-ttu-id="ad4bd-126">Auf den Shard zu löschenden zeigen Mappings werden von dieser Methode automatisch entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-126">Mappings pointing to the shard to be deleted will automatically be removed by this method.</span></span></p>
       <p></p>
     syntax:
       content: 'public void detachShard(ShardLocation location, String shardMapName)'
       parameters:
         - id: location
           type: com.microsoft.azure.elasticdb.shard.base._shard_location
-          description: <p>Der Speicherort des betreffenden Shards getrennt wird. </p>
+          description: <p><span data-ttu-id="ad4bd-127">Der Speicherort des betreffenden Shards getrennt wird.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-127">Location of the shard being detached.</span></span> </p>
         - id: shardMapName
           type: '26831127'
-          description: '<p>Optionale Zeichenfolge, die auf den Namen der shardzuordnung filtern. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-128">Optionale Zeichenfolge, die auf den Namen der shardzuordnung filtern.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-128">Optional string to filter on shard map name.</span></span> <span data-ttu-id="ad4bd-129">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-129">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-130">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-130">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences(ShardLocation)
     id: detectMappingDifferences(ShardLocation)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -166,17 +166,17 @@ items:
       startLine: 523
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Listet die Unterschiede in den Zuordnungen zwischen der globalen Shard Map-Manager-Datenbank und der lokalen Shard-Datenbank in den angegebenen Shard-Speicherort.</p>
+      <p><span data-ttu-id="ad4bd-131">Listet die Unterschiede in den Zuordnungen zwischen der globalen Shard Map-Manager-Datenbank und der lokalen Shard-Datenbank in den angegebenen Shard-Speicherort.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-131">Enumerates differences in the mappings between the global shard map manager database and the local shard database in the specified shard location.</span></span></p>
       <p></p>
     syntax:
       content: public List<RecoveryToken> detectMappingDifferences(ShardLocation location)
       parameters:
         - id: location
           type: com.microsoft.azure.elasticdb.shard.base._shard_location
-          description: <p>Speicherort des Shard für das Erkennen von Inkonsistenzen. </p>
+          description: <p><span data-ttu-id="ad4bd-132">Speicherort des Shard für das Erkennen von Inkonsistenzen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-132">Location of shard for which to detect inconsistencies.</span></span> </p>
       return:
         type: 5618da2dcom.microsoft.azure.elasticdb.shard.recovery._recovery_tokena08ddfce
-        description: <p>Die Auflistung von Token für die weitere Auflösung Aufgaben verwendet werden soll (Siehe ResolveMappingDifferences). </p>
+        description: <p><span data-ttu-id="ad4bd-133">Die Auflistung von Token für die weitere Auflösung Aufgaben verwendet werden soll (Siehe ResolveMappingDifferences).</span><span class="sxs-lookup"><span data-stu-id="ad4bd-133">Collection of tokens to be used for further resolution tasks (see ResolveMappingDifferences).</span></span> </p>
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.detectMappingDifferences(ShardLocation,String)'
     id: 'detectMappingDifferences(ShardLocation,String)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -194,20 +194,20 @@ items:
       startLine: 537
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Listet die Unterschiede in den Zuordnungen zwischen der globalen Shard Map-Manager-Datenbank und der lokalen Shard-Datenbank in den angegebenen Shard-Speicherort.</p>
+      <p><span data-ttu-id="ad4bd-134">Listet die Unterschiede in den Zuordnungen zwischen der globalen Shard Map-Manager-Datenbank und der lokalen Shard-Datenbank in den angegebenen Shard-Speicherort.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-134">Enumerates differences in the mappings between the global shard map manager database and the local shard database in the specified shard location.</span></span></p>
       <p></p>
     syntax:
       content: 'public List<RecoveryToken> detectMappingDifferences(ShardLocation location, String shardMapName)'
       parameters:
         - id: location
           type: com.microsoft.azure.elasticdb.shard.base._shard_location
-          description: <p>Speicherort des Shard für das Erkennen von Inkonsistenzen. </p>
+          description: <p><span data-ttu-id="ad4bd-135">Speicherort des Shard für das Erkennen von Inkonsistenzen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-135">Location of shard for which to detect inconsistencies.</span></span> </p>
         - id: shardMapName
           type: '26831127'
-          description: <p>Optionaler Parameter zum Angeben einer bestimmten shardzuordnung. </p>
+          description: <p><span data-ttu-id="ad4bd-136">Optionaler Parameter zum Angeben einer bestimmten shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-136">Optional parameter to specify a particular shard map.</span></span> </p>
       return:
         type: 5618da2dcom.microsoft.azure.elasticdb.shard.recovery._recovery_tokena08ddfce
-        description: <p>Die Auflistung von Token für die weitere Auflösung Aufgaben verwendet werden soll (Siehe ResolveMappingDifferences). </p>
+        description: <p><span data-ttu-id="ad4bd-137">Die Auflistung von Token für die weitere Auflösung Aufgaben verwendet werden soll (Siehe ResolveMappingDifferences).</span><span class="sxs-lookup"><span data-stu-id="ad4bd-137">Collection of tokens to be used for further resolution tasks (see ResolveMappingDifferences).</span></span> </p>
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getMappingDifferences(RecoveryToken)
     id: getMappingDifferences(RecoveryToken)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -225,17 +225,17 @@ items:
       startLine: 222
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Gibt ein Wörterbuch von Bereichsposition-Schlüssel-Wert-Paaren zurück. Der Speicherort zurückgegeben wird ein Enumerator, der angibt, ob eine bestimmte Bereich-(oder) vorhanden, nur in der lokalen shardzuordnung, nur in der globalen shardzuordnung oder beides handelt. Bereiche, die nicht in einer shardzuordnung enthalten darf keine Unterschiede enthalten, damit diese Bereiche nicht angezeigt werden.</p>
+      <p><span data-ttu-id="ad4bd-138">Gibt ein Wörterbuch von Bereichsposition-Schlüssel-Wert-Paaren zurück.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-138">Returns a dictionary of range-to-location key-value pairs.</span></span> <span data-ttu-id="ad4bd-139">Der Speicherort zurückgegeben wird ein Enumerator, der angibt, ob eine bestimmte Bereich-(oder) vorhanden, nur in der lokalen shardzuordnung, nur in der globalen shardzuordnung oder beides handelt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-139">The location returned is an enumerator stating whether a given range (or point) is present only in the local shard map, only in the global shard map, or both.</span></span> <span data-ttu-id="ad4bd-140">Bereiche, die nicht in einer shardzuordnung enthalten darf keine Unterschiede enthalten, damit diese Bereiche nicht angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-140">Ranges not contained in either shard map cannot contain differences so those ranges are not shown.</span></span></p>
       <p></p>
     syntax:
       content: 'public Map<ShardRange, MappingLocation> getMappingDifferences(RecoveryToken token)'
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+          description: '<p><span data-ttu-id="ad4bd-141">Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-141">Recovery token returned from DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
       return:
         type: 6110eba5com.microsoft.azure.elasticdb.shard.base._shard_rangeb33c76fccom.microsoft.azure.elasticdb.shard.recovery._mapping_locationa08ddfce
-        description: '<p>Der Satz von Bereichen und ihre entsprechenden <xref uid="com.microsoft.azure.elasticdb.shard.recovery._mapping_location" data-throw-if-not-resolved="false">MappingLocation</xref>. Diese Methode geht davon aus einem vorherigen Aufruf von DetectMappingDifferences (ShardLocation Zeichenfolge), die die Wiederherstellung tokenparameter bereitstellt. Das Ergebnis dieser Methode wird in der Regel bei nachfolgenden Aufrufen verwendet, z. B. ResolveMappingDifferences oder RebuildMappingsOnShard Inkonsistenzen aufzulösen. </p>'
+        description: '<p><span data-ttu-id="ad4bd-142">Der Satz von Bereichen und ihre entsprechenden <xref uid="com.microsoft.azure.elasticdb.shard.recovery._mapping_location" data-throw-if-not-resolved="false">MappingLocation</xref>.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-142">The set of ranges and their corresponding <xref uid="com.microsoft.azure.elasticdb.shard.recovery._mapping_location" data-throw-if-not-resolved="false">MappingLocation</xref>.</span></span> <span data-ttu-id="ad4bd-143">Diese Methode geht davon aus einem vorherigen Aufruf von DetectMappingDifferences (ShardLocation Zeichenfolge), die die Wiederherstellung tokenparameter bereitstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-143">This method assumes a previous call to DetectMappingDifferences(ShardLocation, string) that provides the recovery token parameter.</span></span> <span data-ttu-id="ad4bd-144">Das Ergebnis dieser Methode wird in der Regel bei nachfolgenden Aufrufen verwendet, z. B. ResolveMappingDifferences oder RebuildMappingsOnShard Inkonsistenzen aufzulösen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-144">The result of this method is typically used in subsequent calls to resolve inconsistencies such as ResolveMappingDifferences or RebuildMappingsOnShard.</span></span> </p>'
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>)'
     id: 'getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -253,20 +253,20 @@ items:
       startLine: 287
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Ruft ab, Shard Map-Typ und Name basiert auf dem Token von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</p>
+      <p><span data-ttu-id="ad4bd-145">Ruft ab, Shard Map-Typ und Name basiert auf dem Token von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-145">Retrieves shard map type and name based on the token returned from DetectMappingDifferences(ShardLocation, string).</span></span></p>
       <p></p>
     syntax:
       content: 'public void getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName)'
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+          description: '<p><span data-ttu-id="ad4bd-146">Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-146">Recovery token returned from DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
         - id: mapType
           type: 2695f77dcom.microsoft.azure.elasticdb.shard.map._shard_map_typea08ddfce
-          description: <p>Der Ausgabetyp ShardMap (Bereichs- oder Listen). </p>
+          description: <p><span data-ttu-id="ad4bd-147">Der Ausgabetyp ShardMap (Bereichs- oder Listen).</span><span class="sxs-lookup"><span data-stu-id="ad4bd-147">Output ShardMap type (Range or List).</span></span> </p>
         - id: shardMapName
           type: 4f397241
-          description: <p>Der Ausgabename der shardzuordnung. </p>
+          description: <p><span data-ttu-id="ad4bd-148">Der Ausgabename der shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-148">Output name of shard map.</span></span> </p>
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>,ReferenceObjectHelper<ShardLocation>)'
     id: 'getShardInfo(RecoveryToken,ReferenceObjectHelper<ShardMapType>,ReferenceObjectHelper<String>,ReferenceObjectHelper<ShardLocation>)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -284,23 +284,23 @@ items:
       startLine: 249
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Ruft ab Shard Typ, Name und Shard Standorte der Karte basiert auf dem Token von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</p>
+      <p><span data-ttu-id="ad4bd-149">Ruft ab Shard Typ, Name und Shard Standorte der Karte basiert auf dem Token von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-149">Retrieves shard map type, name and shard location based on the token returned from DetectMappingDifferences(ShardLocation, string).</span></span></p>
       <p></p>
     syntax:
       content: 'public void getShardInfo(RecoveryToken token, ReferenceObjectHelper<ShardMapType> mapType, ReferenceObjectHelper<String> shardMapName, ReferenceObjectHelper<ShardLocation> shardLocation)'
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+          description: '<p><span data-ttu-id="ad4bd-150">Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-150">Recovery token returned from DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
         - id: mapType
           type: 2695f77dcom.microsoft.azure.elasticdb.shard.map._shard_map_typea08ddfce
-          description: <p>Ausgaben Shard Map-Typ (Bereichs- oder Listen). </p>
+          description: <p><span data-ttu-id="ad4bd-151">Ausgaben Shard Map-Typ (Bereichs- oder Listen).</span><span class="sxs-lookup"><span data-stu-id="ad4bd-151">Outputs shard map type (Range or List).</span></span> </p>
         - id: shardMapName
           type: 4f397241
-          description: <p>Namen der shardzuordnung Ausgaben. </p>
+          description: <p><span data-ttu-id="ad4bd-152">Namen der shardzuordnung Ausgaben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-152">Outputs shard map name.</span></span> </p>
         - id: shardLocation
           type: 2695f77dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
-          description: <p>Ausgaben Shard-Speicherort </p>
+          description: <p><span data-ttu-id="ad4bd-153">Ausgaben Shard-Speicherort</span><span class="sxs-lookup"><span data-stu-id="ad4bd-153">Outputs shard location</span></span> </p>
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardLocation(RecoveryToken)
     id: getShardLocation(RecoveryToken)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -318,17 +318,17 @@ items:
       startLine: 360
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Gibt den Shard-Speicherort, der die lokale shardzuordnung von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</p>
+      <p><span data-ttu-id="ad4bd-154">Gibt den Shard-Speicherort, der die lokale shardzuordnung von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-154">Returns the shard location of the local shard map processed by DetectMappingDifferences(ShardLocation, string).</span></span></p>
       <p></p>
     syntax:
       content: public ShardLocation getShardLocation(RecoveryToken token)
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken Merry DetectMappingDifferences (ShardLocation, String) </p>'
+          description: '<p><span data-ttu-id="ad4bd-155">Wiederherstellungstoken Merry DetectMappingDifferences (ShardLocation, String)</span><span class="sxs-lookup"><span data-stu-id="ad4bd-155">Recovery token returned from DetectMappingDifferences(ShardLocation, string)</span></span> </p>'
       return:
         type: com.microsoft.azure.elasticdb.shard.base._shard_location
-        description: '<p>Der Speicherort des betreffenden Shards auf den Satz der Zuordnung der Unterschiede festgestellt in DetectMappingDifferences (ShardLocation, String) entspricht. </p>'
+        description: '<p><span data-ttu-id="ad4bd-156">Der Speicherort des betreffenden Shards auf den Satz der Zuordnung der Unterschiede festgestellt in DetectMappingDifferences (ShardLocation, String) entspricht.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-156">Location of the shard corresponding to the set of mapping differences detected in DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapName(RecoveryToken)
     id: getShardMapName(RecoveryToken)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -346,17 +346,17 @@ items:
       startLine: 336
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Gibt den shardzuordnungsnamen der shardzuordnung, die von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</p>
+      <p><span data-ttu-id="ad4bd-157">Gibt den shardzuordnungsnamen der shardzuordnung, die von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-157">Returns the shard map name of the shard map processed by DetectMappingDifferences(ShardLocation, string).</span></span></p>
       <p></p>
     syntax:
       content: public String getShardMapName(RecoveryToken token)
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+          description: '<p><span data-ttu-id="ad4bd-158">Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-158">Recovery token returned from DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
       return:
         type: '26831127'
-        description: <p>Der Name des der shardzuordnung für das angegebene Recovery-Token. </p>
+        description: <p><span data-ttu-id="ad4bd-159">Der Name des der shardzuordnung für das angegebene Recovery-Token.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-159">The name of the shard map for the given recovery token.</span></span> </p>
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.getShardMapType(RecoveryToken)
     id: getShardMapType(RecoveryToken)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -374,17 +374,17 @@ items:
       startLine: 313
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Gibt den Shard-Map-Typ der shardzuordnung, die von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</p>
+      <p><span data-ttu-id="ad4bd-160">Gibt den Shard-Map-Typ der shardzuordnung, die von DetectMappingDifferences (ShardLocation, String) verarbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-160">Returns the shard map type of the shard map processed by DetectMappingDifferences(ShardLocation, string).</span></span></p>
       <p></p>
     syntax:
       content: public ShardMapType getShardMapType(RecoveryToken token)
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+          description: '<p><span data-ttu-id="ad4bd-161">Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-161">Recovery token returned from DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
       return:
         type: com.microsoft.azure.elasticdb.shard.map._shard_map_type
-        description: '<p>Der Typ des Shard Zuordnung (Liste in Bereich, usw.) entspricht, mit dem Recovery-Token. </p>'
+        description: '<p><span data-ttu-id="ad4bd-162">Der Typ des Shard Zuordnung (Liste in Bereich, usw.) entspricht, mit dem Recovery-Token.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-162">The type of shard map (list, range, etc...) corresponding to the recovery token.</span></span> </p>'
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShard(RecoveryToken,List<ShardRange>)'
     id: 'rebuildMappingsOnShard(RecoveryToken,List<ShardRange>)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -402,17 +402,17 @@ items:
       startLine: 460
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Erstellt eine shardzuordnung lokalen Bereich aus einer Liste von inkonsistenten Shard Bereiche von DetectMappingDifferences ("ShardLocation", "String") erkannt, und klicken Sie dann GetMappingDifferences zugreift. Die resultierende lokalen Bereich shardzuordnung wird immer noch nicht mit der globalen shardzuordnung in den Shard-Map-Manager-Datenbank sein. Ein nachfolgender Aufruf von ResolveMappingDifferences ist erforderlich, das System wieder in einen fehlerfreien Zustand zu versetzen.</p>
+      <p><span data-ttu-id="ad4bd-163">Erstellt eine shardzuordnung lokalen Bereich aus einer Liste von inkonsistenten Shard Bereiche von DetectMappingDifferences ("ShardLocation", "String") erkannt, und klicken Sie dann GetMappingDifferences zugreift.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-163">Rebuilds a local range shard map from a list of inconsistent shard ranges detected by DetectMappingDifferences(ShardLocation, string) and then accessed by GetMappingDifferences.</span></span> <span data-ttu-id="ad4bd-164">Die resultierende lokalen Bereich shardzuordnung wird immer noch nicht mit der globalen shardzuordnung in den Shard-Map-Manager-Datenbank sein.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-164">The resulting local range shard map will always still be inconsistent with the global shard map in the shard map manager database.</span></span> <span data-ttu-id="ad4bd-165">Ein nachfolgender Aufruf von ResolveMappingDifferences ist erforderlich, das System wieder in einen fehlerfreien Zustand zu versetzen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-165">A subsequent call to ResolveMappingDifferences is necessary to bring the system back to a healthy state.</span></span></p>
       <p></p>
     syntax:
       content: 'public void rebuildMappingsOnShard(RecoveryToken token, List<ShardRange> ranges)'
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: <p>Das Recovery-Token von einem vorherigen Aufruf von DetectMappingDifferences </p>
+          description: <p><span data-ttu-id="ad4bd-166">Das Recovery-Token von einem vorherigen Aufruf von DetectMappingDifferences</span><span class="sxs-lookup"><span data-stu-id="ad4bd-166">The recovery token from a previous call to DetectMappingDifferences</span></span> </p>
         - id: ranges
           type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_rangea08ddfce
-          description: '<p>Der Satz von Bereichen an, um auf den lokalen Shard behalten Sie beim Neuerstellen der lokalen shardzuordnung. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. Nur Shard Bereichen mit Inkonsistenzen können mit dieser Methode neu erstellt werden. Alle Bereiche mit keine Inkonsistenzen zwischen den lokalen Shard und der globale shardzuordnung werden auf den lokalen Shard unverändert beibehalten werden und werden durch diesen Aufruf nicht betroffen. Nachfolgende Änderungen an die nicht in Konflikt stehender Zuordnungen können später mithilfe der regulären Schnittstellen in den shardzuordnungs-Manager vorgenommen werden. Es ist nicht notwendig, den Wiederherstellungs-Manager zu verwenden, nicht in Konflikt stehender Zuordnungen ändern. </p>'
+          description: '<p><span data-ttu-id="ad4bd-167">Der Satz von Bereichen an, um auf den lokalen Shard behalten Sie beim Neuerstellen der lokalen shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-167">The set of ranges to keep on the local shard when rebuilding the local shard map.</span></span> <span data-ttu-id="ad4bd-168">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-168">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-169">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-169">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> <span data-ttu-id="ad4bd-170">Nur Shard Bereichen mit Inkonsistenzen können mit dieser Methode neu erstellt werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-170">Only shard ranges with inconsistencies can be rebuilt using this method.</span></span> <span data-ttu-id="ad4bd-171">Alle Bereiche mit keine Inkonsistenzen zwischen den lokalen Shard und der globale shardzuordnung werden auf den lokalen Shard unverändert beibehalten werden und werden durch diesen Aufruf nicht betroffen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-171">All ranges with no inconsistencies between the local shard and the global shard map will be kept intact on the local shard and are not affected by this call.</span></span> <span data-ttu-id="ad4bd-172">Nachfolgende Änderungen an die nicht in Konflikt stehender Zuordnungen können später mithilfe der regulären Schnittstellen in den shardzuordnungs-Manager vorgenommen werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-172">Subsequent changes to the non-conflicting mappings can be made later using the regular interfaces in the shard map manager.</span></span> <span data-ttu-id="ad4bd-173">Es ist nicht notwendig, den Wiederherstellungs-Manager zu verwenden, nicht in Konflikt stehender Zuordnungen ändern.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-173">It is not necessary to use the recovery manager to change non-conflicting mappings.</span></span> </p>'
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>)
     id: rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -430,14 +430,14 @@ items:
       startLine: 419
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Rekonstruiert eine angegebene eine Sammlung von Shard-Speicherorte die shardzuordnungs-Manager basierend auf Informationen über die Zuordnung in den einzelnen Shards gespeichert. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt. Wenn die Informationen in den einzelnen shardzuordnungen oder inkonsistent, ist das Verhalten nicht definiert. Keine Sperren Cross Shard vorgenommen werden sind, wenn während der Ausführung dieser Methode alle Shards inkonsistent werden, der finalen Status der globalen shardzuordnung möglicherweise beschädigt.</p>
+      <p><span data-ttu-id="ad4bd-174">Rekonstruiert eine angegebene eine Sammlung von Shard-Speicherorte die shardzuordnungs-Manager basierend auf Informationen über die Zuordnung in den einzelnen Shards gespeichert.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-174">Given a collection of shard locations, reconstructs the shard map manager based on mapping information stored in the individual shards.</span></span> <span data-ttu-id="ad4bd-175">Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-175">The specified shards need to be registered already in the global shard map.</span></span> <span data-ttu-id="ad4bd-176">Diese Methode wird nur Zuordnungen neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-176">This method only rebuilds mappings.</span></span> <span data-ttu-id="ad4bd-177">Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-177">It does not rebuild shard membership within the global shard map.</span></span> <span data-ttu-id="ad4bd-178">Wenn die Informationen in den einzelnen shardzuordnungen oder inkonsistent, ist das Verhalten nicht definiert.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-178">If the information in the individual shard maps is or becomes inconsistent, the behavior is undefined.</span></span> <span data-ttu-id="ad4bd-179">Keine Sperren Cross Shard vorgenommen werden sind, wenn während der Ausführung dieser Methode alle Shards inkonsistent werden, der finalen Status der globalen shardzuordnung möglicherweise beschädigt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-179">No cross shard locks are taken, so if any shards become inconsistent during the execution of this method, the final state of the global shard map may be corrupt.</span></span></p>
       <p></p>
     syntax:
       content: public void rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations)
       parameters:
         - id: shardLocations
           type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
-          description: '<p>Die Auflistung der Shard-Positionen. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-180">Die Auflistung der Shard-Positionen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-180">Collection of shard locations.</span></span> <span data-ttu-id="ad4bd-181">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-181">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-182">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-182">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>,String)'
     id: 'rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation>,String)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -455,17 +455,17 @@ items:
       startLine: 436
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Rekonstruiert eine angegebene eine Sammlung von Shard-Speicherorte die shardzuordnungs-Manager basierend auf Informationen über die Zuordnung in den einzelnen Shards gespeichert. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt. Wenn die Informationen in den einzelnen shardzuordnungen oder inkonsistent, ist das Verhalten nicht definiert. Keine Sperren Cross Shard vorgenommen werden sind, wenn während der Ausführung dieser Methode alle Shards inkonsistent werden, der finalen Status der globalen shardzuordnung möglicherweise beschädigt.</p>
+      <p><span data-ttu-id="ad4bd-183">Rekonstruiert eine angegebene eine Sammlung von Shard-Speicherorte die shardzuordnungs-Manager basierend auf Informationen über die Zuordnung in den einzelnen Shards gespeichert.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-183">Given a collection of shard locations, reconstructs the shard map manager based on mapping information stored in the individual shards.</span></span> <span data-ttu-id="ad4bd-184">Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-184">The specified shards need to be registered already in the global shard map.</span></span> <span data-ttu-id="ad4bd-185">Diese Methode wird nur Zuordnungen neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-185">This method only rebuilds mappings.</span></span> <span data-ttu-id="ad4bd-186">Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-186">It does not rebuild shard membership within the global shard map.</span></span> <span data-ttu-id="ad4bd-187">Wenn die Informationen in den einzelnen shardzuordnungen oder inkonsistent, ist das Verhalten nicht definiert.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-187">If the information in the individual shard maps is or becomes inconsistent, the behavior is undefined.</span></span> <span data-ttu-id="ad4bd-188">Keine Sperren Cross Shard vorgenommen werden sind, wenn während der Ausführung dieser Methode alle Shards inkonsistent werden, der finalen Status der globalen shardzuordnung möglicherweise beschädigt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-188">No cross shard locks are taken, so if any shards become inconsistent during the execution of this method, the final state of the global shard map may be corrupt.</span></span></p>
       <p></p>
     syntax:
       content: 'public void rebuildMappingsOnShardMapManagerFromShards(List<ShardLocation> shardLocations, String shardMapName)'
       parameters:
         - id: shardLocations
           type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
-          description: <p>Die Auflistung der Shard-Positionen. </p>
+          description: <p><span data-ttu-id="ad4bd-189">Die Auflistung der Shard-Positionen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-189">Collection of shard locations.</span></span> </p>
         - id: shardMapName
           type: '26831127'
-          description: '<p>Optionaler Name des shardzuordnung. Wenn nicht angegeben, wird versucht, die Wiederherstellung alle shardzuordnungen für jeden Shard vorhanden. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-190">Optionaler Name des shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-190">Optional name of shard map.</span></span> <span data-ttu-id="ad4bd-191">Wenn nicht angegeben, wird versucht, die Wiederherstellung alle shardzuordnungen für jeden Shard vorhanden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-191">If omitted, will attempt to recover from all shard maps present on each shard.</span></span> <span data-ttu-id="ad4bd-192">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-192">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-193">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-193">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>)
     id: rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -483,14 +483,14 @@ items:
       startLine: 385
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Erhält eine Auflistung von Shard-Speicherorte, Basis rekonstruiert, ordnet lokalen shard, auf der gespeicherten Zuordnungsinformationen in der globalen shardzuordnung. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</p>
+      <p><span data-ttu-id="ad4bd-194">Erhält eine Auflistung von Shard-Speicherorte, Basis rekonstruiert, ordnet lokalen shard, auf der gespeicherten Zuordnungsinformationen in der globalen shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-194">Given a collection of shard locations, reconstructs local shard maps based on the mapping information stored in the global shard map.</span></span> <span data-ttu-id="ad4bd-195">Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-195">The specified shards need to be registered already in the global shard map.</span></span> <span data-ttu-id="ad4bd-196">Diese Methode wird nur Zuordnungen neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-196">This method only rebuilds mappings.</span></span> <span data-ttu-id="ad4bd-197">Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-197">It does not rebuild shard membership within the global shard map.</span></span></p>
       <p></p>
     syntax:
       content: public void rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations)
       parameters:
         - id: shardLocations
           type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
-          description: '<p>Die Auflistung der Shard-Positionen. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-198">Die Auflistung der Shard-Positionen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-198">Collection of shard locations.</span></span> <span data-ttu-id="ad4bd-199">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-199">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-200">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-200">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>,String)'
     id: 'rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation>,String)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -508,17 +508,17 @@ items:
       startLine: 400
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Erhält eine Auflistung von Shard-Speicherorte, Basis rekonstruiert, ordnet lokalen shard, auf der gespeicherten Zuordnungsinformationen in der globalen shardzuordnung. Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden. Diese Methode wird nur Zuordnungen neu erstellt. Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</p>
+      <p><span data-ttu-id="ad4bd-201">Erhält eine Auflistung von Shard-Speicherorte, Basis rekonstruiert, ordnet lokalen shard, auf der gespeicherten Zuordnungsinformationen in der globalen shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-201">Given a collection of shard locations, reconstructs local shard maps based on the mapping information stored in the global shard map.</span></span> <span data-ttu-id="ad4bd-202">Die angegebene Shards müssen bereits in der globalen shardzuordnung registriert werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-202">The specified shards need to be registered already in the global shard map.</span></span> <span data-ttu-id="ad4bd-203">Diese Methode wird nur Zuordnungen neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-203">This method only rebuilds mappings.</span></span> <span data-ttu-id="ad4bd-204">Es wird nicht Shard Mitgliedschaft in der globalen shardzuordnung neu erstellt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-204">It does not rebuild shard membership within the global shard map.</span></span></p>
       <p></p>
     syntax:
       content: 'public void rebuildMappingsOnShardsFromShardMapManager(List<ShardLocation> shardLocations, String shardMapName)'
       parameters:
         - id: shardLocations
           type: 5618da2dcom.microsoft.azure.elasticdb.shard.base._shard_locationa08ddfce
-          description: <p>Die Auflistung der Shard-Positionen. </p>
+          description: <p><span data-ttu-id="ad4bd-205">Die Auflistung der Shard-Positionen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-205">Collection of shard locations.</span></span> </p>
         - id: shardMapName
           type: '26831127'
-          description: '<p>Optionaler Parameter, um nach den Namen der shardzuordnung zu filtern. Wenn nicht angegeben, werden alle shardzuordnungen neu erstellt werden. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-206">Optionaler Parameter, um nach den Namen der shardzuordnung zu filtern.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-206">Optional parameter to filter by shard map name.</span></span> <span data-ttu-id="ad4bd-207">Wenn nicht angegeben, werden alle shardzuordnungen neu erstellt werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-207">If omitted, all shard maps will be rebuilt.</span></span> <span data-ttu-id="ad4bd-208">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-208">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-209">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-209">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.RecoveryManager(ShardMapManager)
     id: RecoveryManager(ShardMapManager)
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -536,14 +536,14 @@ items:
       startLine: 74
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Erstellt eine Instanz des Wiederherstellungs-Managers für die angegebene shardzuordnungs-Manager.</p>
+      <p><span data-ttu-id="ad4bd-210">Erstellt eine Instanz des Wiederherstellungs-Managers für die angegebene shardzuordnungs-Manager.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-210">Constructs an instance of the recovery manager for given shard map manager.</span></span></p>
       <p></p>
     syntax:
       content: public RecoveryManager(ShardMapManager shardMapManager)
       parameters:
         - id: shardMapManager
           type: com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager
-          description: <p>Shardzuordnungs-Manager wiederhergestellt werden. </p>
+          description: <p><span data-ttu-id="ad4bd-211">Shardzuordnungs-Manager wiederhergestellt werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-211">Shard map manager being recovered.</span></span> </p>
   - uid: 'com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.resolveMappingDifferences(RecoveryToken,MappingDifferenceResolution)'
     id: 'resolveMappingDifferences(RecoveryToken,MappingDifferenceResolution)'
     parent: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager
@@ -561,17 +561,17 @@ items:
       startLine: 771
     package: com.microsoft.azure.elasticdb.shard.recovery
     summary: |-
-      <p>Wählt einen von der shardzuordnungen (lokal oder global) als Quelle für Wahrheit aus, und schaltet Zuordnungen auf beide synchron shardzuordnungen.</p>
+      <p><span data-ttu-id="ad4bd-212">Wählt einen von der shardzuordnungen (lokal oder global) als Quelle für Wahrheit aus, und schaltet Zuordnungen auf beide synchron shardzuordnungen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-212">Selects one of the shard maps (either local or global) as a source of truth and brings mappings on both shard maps in sync.</span></span></p>
       <p></p>
     syntax:
       content: 'public void resolveMappingDifferences(RecoveryToken token, MappingDifferenceResolution resolution)'
       parameters:
         - id: token
           type: com.microsoft.azure.elasticdb.shard.recovery._recovery_token
-          description: '<p>Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben. </p>'
+          description: '<p><span data-ttu-id="ad4bd-213">Wiederherstellungstoken von DetectMappingDifferences (ShardLocation, String) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-213">Recovery token returned from DetectMappingDifferences(ShardLocation, string).</span></span> </p>'
         - id: resolution
           type: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference_resolution
-          description: '<p>Die Auflösungsstrategie für die Auflösung verwendet werden. Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann. Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren. </p>'
+          description: '<p><span data-ttu-id="ad4bd-214">Die Auflösungsstrategie für die Auflösung verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-214">The resolution strategy to be used for resolution.</span></span> <span data-ttu-id="ad4bd-215">Beachten Sie, dass diese Methode nicht behebbaren Datenverlust führen kann.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-215">Note that this method can cause unrecoverable data loss.</span></span> <span data-ttu-id="ad4bd-216">Stellen Sie sicher, dass Sie Sicherungen oder Kopien Ihrer Datenbanken erstellt haben, und nur mit großer Umsicht fortfahren.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-216">Make sure you have taken backups or copies of your databases and only then proceed with great care.</span></span> </p>'
 references:
   - uid: com.microsoft.azure.elasticdb.shard.recovery._recovery_manager.RecoveryManager*
     name: RecoveryManager
@@ -719,7 +719,7 @@ references:
     nameWithType: RecoveryToken
     fullName: com.microsoft.azure.elasticdb.shard.recovery.RecoveryToken
     type: Class
-    summary: <p>Wiederherstellungstoken generiert und von Methoden des verwendet die <xref uid="com.microsoft.azure.elasticdb.shard.recovery._recovery_manager" data-throw-if-not-resolved="false">RecoveryManager</xref> auszuführenden konflikterkennung und-Lösung für Shard zugeordnet. </p>
+    summary: <p><span data-ttu-id="ad4bd-217">Wiederherstellungstoken generiert und von Methoden des verwendet die <xref uid="com.microsoft.azure.elasticdb.shard.recovery._recovery_manager" data-throw-if-not-resolved="false">RecoveryManager</xref> auszuführenden konflikterkennung und-Lösung für Shard zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-217">Recovery token generated and used by methods of the <xref uid="com.microsoft.azure.elasticdb.shard.recovery._recovery_manager" data-throw-if-not-resolved="false">RecoveryManager</xref> to perform conflict detection and resolution for shard maps.</span></span> </p>
     syntax:
       content: public class RecoveryToken
   - uid: com.microsoft.azure.elasticdb.shard.base._shard_range
@@ -729,7 +729,7 @@ references:
     nameWithType: ShardRange
     fullName: com.microsoft.azure.elasticdb.shard.base.ShardRange
     type: Class
-    summary: <p>Ein Bereich von Shard-Schlüsseln zwischen einem niedrig und eine hohe Schlüssel. Der niedrige Schlüssel ist inklusiv (Teil des Bereichs) während der hohe Schlüssel ist exklusiv (nicht Teil des Bereichs). Die <xref uid="com.microsoft.azure.elasticdb.shard.base._shard_range" data-throw-if-not-resolved="false">ShardRange</xref> -Klasse unveränderlich ist. </p>
+    summary: <p><span data-ttu-id="ad4bd-218">Ein Bereich von Shard-Schlüsseln zwischen einem niedrig und eine hohe Schlüssel.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-218">A range of shard keys between a low key and a high key.</span></span> <span data-ttu-id="ad4bd-219">Der niedrige Schlüssel ist inklusiv (Teil des Bereichs) während der hohe Schlüssel ist exklusiv (nicht Teil des Bereichs).</span><span class="sxs-lookup"><span data-stu-id="ad4bd-219">The low key is inclusive (part of the range) while the high key is exclusive (not part of the range).</span></span> <span data-ttu-id="ad4bd-220">Die <xref uid="com.microsoft.azure.elasticdb.shard.base._shard_range" data-throw-if-not-resolved="false">ShardRange</xref> -Klasse unveränderlich ist.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-220">The <xref uid="com.microsoft.azure.elasticdb.shard.base._shard_range" data-throw-if-not-resolved="false">ShardRange</xref> class is immutable.</span></span> </p>
     syntax:
       content: public class ShardRange
   - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference
@@ -739,7 +739,7 @@ references:
     nameWithType: MappingDifference
     fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingDifference
     type: Class
-    summary: <p>Klasse für die Zuordnung Unterschiede. </p>
+    summary: <p><span data-ttu-id="ad4bd-221">Klasse für die Zuordnung Unterschiede.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-221">Class for mapping differences.</span></span> </p>
     syntax:
       content: public class MappingDifference
   - uid: com.microsoft.azure.elasticdb.shard.store._store_shard_map
@@ -749,7 +749,7 @@ references:
     nameWithType: StoreShardMap
     fullName: com.microsoft.azure.elasticdb.shard.store.StoreShardMap
     type: Class
-    summary: <p>Speichern Sie die Darstellung einer shardzuordnung. </p>
+    summary: <p><span data-ttu-id="ad4bd-222">Speichern Sie die Darstellung einer shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-222">Store representation of a shard map.</span></span> </p>
     syntax:
       content: public class StoreShardMap
   - uid: com.microsoft.azure.elasticdb.shard.store._store_shard
@@ -759,7 +759,7 @@ references:
     nameWithType: StoreShard
     fullName: com.microsoft.azure.elasticdb.shard.store.StoreShard
     type: Class
-    summary: <p>Speicherdarstellung von einem einzelnen shard zusammengeführt. </p>
+    summary: <p><span data-ttu-id="ad4bd-223">Speicherdarstellung von einem einzelnen shard zusammengeführt.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-223">Storage representation of a single shard.</span></span> </p>
     syntax:
       content: public class StoreShard
   - uid: com.microsoft.azure.elasticdb.shard.base._shard_location
@@ -769,7 +769,7 @@ references:
     nameWithType: ShardLocation
     fullName: com.microsoft.azure.elasticdb.shard.base.ShardLocation
     type: Class
-    summary: '<p>Stellt den Speicherort von einem Shard in Bezug auf die Servernamen und den Datenbanknamen dar. Dies dient zum Verwalten von Verbindungen zum Shard und andere Vorgänge auf Shards zu unterstützen. Im Gegensatz zu einer <xref uid="com.microsoft.azure.elasticdb.shard.base._shard" data-throw-if-not-resolved="false">Shard</xref>, ein Shard-Speicherort ist nicht mit der shardzuordnung registriert. </p>'
+    summary: '<p><span data-ttu-id="ad4bd-224">Stellt den Speicherort von einem Shard in Bezug auf die Servernamen und den Datenbanknamen dar.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-224">Represents the location of a shard in terms of its server name and database name.</span></span> <span data-ttu-id="ad4bd-225">Dies dient zum Verwalten von Verbindungen zum Shard und andere Vorgänge auf Shards zu unterstützen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-225">This is used to manage connections to the shard and to support other operations on shards.</span></span> <span data-ttu-id="ad4bd-226">Im Gegensatz zu einer <xref uid="com.microsoft.azure.elasticdb.shard.base._shard" data-throw-if-not-resolved="false">Shard</xref>, ein Shard-Speicherort ist nicht mit der shardzuordnung registriert.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-226">As opposed to a <xref uid="com.microsoft.azure.elasticdb.shard.base._shard" data-throw-if-not-resolved="false">Shard</xref>, a shard location is not registered with the shard map.</span></span> </p>'
     syntax:
       content: public class ShardLocation
   - uid: com.microsoft.azure.elasticdb.shard.mapmanager._shard_map_manager
@@ -779,7 +779,7 @@ references:
     nameWithType: ShardMapManager
     fullName: com.microsoft.azure.elasticdb.shard.mapmanager.ShardMapManager
     type: Class
-    summary: '<p>Stellt den Einstiegspunkt für die Erstellung, Verwaltung und Suchvorgänge für shardzuordnungen. </p>'
+    summary: '<p><span data-ttu-id="ad4bd-227">Stellt den Einstiegspunkt für die Erstellung, Verwaltung und Suchvorgänge für shardzuordnungen.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-227">Serves as the entry point for creation, management and lookup operations over shard maps.</span></span> </p>'
     syntax:
       content: public class ShardMapManager
   - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_location
@@ -789,7 +789,7 @@ references:
     nameWithType: MappingLocation
     fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingLocation
     type: Enum
-    summary: '<p>Der Speicherort, in denen anderen Zuordnungen vorhanden. </p>'
+    summary: '<p><span data-ttu-id="ad4bd-228">Der Speicherort, in denen anderen Zuordnungen vorhanden.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-228">Location where the different mappings exist.</span></span> </p>'
     syntax:
       content: public enum MappingLocation
   - uid: com.microsoft.azure.elasticdb.shard.map._shard_map_type
@@ -799,7 +799,7 @@ references:
     nameWithType: ShardMapType
     fullName: com.microsoft.azure.elasticdb.shard.map.ShardMapType
     type: Enum
-    summary: <p>Typ der shardzuordnung. </p>
+    summary: <p><span data-ttu-id="ad4bd-229">Typ der shardzuordnung.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-229">Type of shard map.</span></span> </p>
     syntax:
       content: public enum ShardMapType
   - uid: com.microsoft.azure.elasticdb.shard.recovery._mapping_difference_resolution
@@ -809,6 +809,6 @@ references:
     nameWithType: MappingDifferenceResolution
     fullName: com.microsoft.azure.elasticdb.shard.recovery.MappingDifferenceResolution
     type: Enum
-    summary: <p>Auflösungsstrategie zum Auflösen von Zuordnung Unterschiede. </p>
+    summary: <p><span data-ttu-id="ad4bd-230">Auflösungsstrategie zum Auflösen von Zuordnung Unterschiede.</span><span class="sxs-lookup"><span data-stu-id="ad4bd-230">Resolution strategy for resolving mapping differences.</span></span> </p>
     syntax:
       content: public enum MappingDifferenceResolution

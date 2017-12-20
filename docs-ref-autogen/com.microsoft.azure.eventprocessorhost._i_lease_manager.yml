@@ -51,18 +51,18 @@ items:
       startLine: 105
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Die Lease auf die gewünschte Partition abrufen, dafür <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</p>
-      <p>Beachten Sie, dass es zulässig ist, eine Lease abgerufen werden, die bereits von einem anderen Host gehört. Lease stehlen ist wie die Partitionen verteilt werden, wenn weitere Hosts gestartet werden.</p>
+      <p><span data-ttu-id="277da-101">Die Lease auf die gewünschte Partition abrufen, dafür <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</span><span class="sxs-lookup"><span data-stu-id="277da-101">Acquire the lease on the desired partition for this <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</span></span></p>
+      <p><span data-ttu-id="277da-102">Beachten Sie, dass es zulässig ist, eine Lease abgerufen werden, die bereits von einem anderen Host gehört.</span><span class="sxs-lookup"><span data-stu-id="277da-102">Note that it is legal to acquire a lease that is already owned by another host.</span></span> <span data-ttu-id="277da-103">Lease stehlen ist wie die Partitionen verteilt werden, wenn weitere Hosts gestartet werden.</span><span class="sxs-lookup"><span data-stu-id="277da-103">Lease-stealing is how partitions are redistributed when additional hosts are started.</span></span></p>
       <p></p>
     syntax: &ref_2
       content: public Future<Boolean> acquireLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></p>"
+          description: "<p><span data-ttu-id=\"277da-104\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-104\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> info for the desired partition as previously obtained from <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span></span></p>"
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease erfolgreich, "false" ist dies nicht eingerichtet wurde </p>'
+        description: '<p><span data-ttu-id="277da-105">"true", wenn die Lease erfolgreich, "false" ist dies nicht eingerichtet wurde</span><span class="sxs-lookup"><span data-stu-id="277da-105">true if the lease was acquired successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.createLeaseIfNotExists(String)
     id: createLeaseIfNotExists(String)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -80,17 +80,17 @@ items:
       startLine: 85
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Erstellen Sie im Store die Lease-Informationen für die angegebene Partition ist nicht vorhanden. Tun Sie nichts, wenn sie bereits im Speicher vorhanden ist.</p>
+      <p><span data-ttu-id="277da-106">Erstellen Sie im Store die Lease-Informationen für die angegebene Partition ist nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="277da-106">Create in the store the lease info for the given partition, if it does not exist.</span></span> <span data-ttu-id="277da-107">Tun Sie nichts, wenn sie bereits im Speicher vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="277da-107">Do nothing if it does exist in the store already.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Lease> createLeaseIfNotExists(String partitionId)
       parameters:
         - id: partitionId
           type: '26831127'
-          description: <p>ID des zu erstellenden Lease-Informationen für die partition </p>
+          description: <p><span data-ttu-id="277da-108">ID des zu erstellenden Lease-Informationen für die partition</span><span class="sxs-lookup"><span data-stu-id="277da-108">id of partition to create lease info for</span></span> </p>
       return:
         type: 9b3030f6com.microsoft.azure.eventprocessorhost._leasea08ddfce
-        description: <p>die vorhandenen oder neu erstellten Lease-Informationen für die partition </p>
+        description: <p><span data-ttu-id="277da-109">die vorhandenen oder neu erstellten Lease-Informationen für die partition</span><span class="sxs-lookup"><span data-stu-id="277da-109">the existing or newly-created lease info for the partition</span></span> </p>
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.createLeaseStoreIfNotExists()
     id: createLeaseStoreIfNotExists()
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -108,13 +108,13 @@ items:
       startLine: 51
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Die Lease-Speicher erstellen, wenn sie nicht vorhanden ist, werden keine Aktionen ausgeführt, wenn er vorhanden ist.</p>
+      <p><span data-ttu-id="277da-110">Die Lease-Speicher erstellen, wenn sie nicht vorhanden ist, werden keine Aktionen ausgeführt, wenn er vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="277da-110">Create the lease store if it does not exist, do nothing if it does exist.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> createLeaseStoreIfNotExists()
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease bereits speichern vorhanden oder wurde erfolgreich erstellt, "false" ist dies nicht der </p>'
+        description: '<p><span data-ttu-id="277da-111">"true", wenn die Lease bereits speichern vorhanden oder wurde erfolgreich erstellt, "false" ist dies nicht der</span><span class="sxs-lookup"><span data-stu-id="277da-111">true if the lease store already exists or was created successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.deleteLease(Lease)
     id: deleteLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -132,17 +132,17 @@ items:
       startLine: 94
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Löschen Sie die Lease-Informationen für die angegebene Partition aus dem Speicher. Wenn keine gespeicherten Leasedauer für die angegebene Partition vorhanden ist, wird, erfolgreich behandelt.</p>
+      <p><span data-ttu-id="277da-112">Löschen Sie die Lease-Informationen für die angegebene Partition aus dem Speicher.</span><span class="sxs-lookup"><span data-stu-id="277da-112">Delete the lease info for the given partition from the store.</span></span> <span data-ttu-id="277da-113">Wenn keine gespeicherten Leasedauer für die angegebene Partition vorhanden ist, wird, erfolgreich behandelt.</span><span class="sxs-lookup"><span data-stu-id="277da-113">If there is no stored lease for the given partition, that is treated as success.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Void> deleteLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></p>"
+          description: "<p><span data-ttu-id=\"277da-114\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-114\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> info for the desired partition as previously obtained from <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span></span></p>"
       return:
         type: 075d0a89
-        description: <p>"void" </p>
+        description: <p><span data-ttu-id="277da-115">"void"</span><span class="sxs-lookup"><span data-stu-id="277da-115">Void</span></span> </p>
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.deleteLeaseStore()
     id: deleteLeaseStore()
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -160,13 +160,13 @@ items:
       startLine: 58
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Nicht verwendet werden, indem <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, aber eine einfache Funktion, für die Tests verwenden.</p>
+      <p><span data-ttu-id="277da-116">Nicht verwendet werden, indem <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, aber eine einfache Funktion, für die Tests verwenden.</span><span class="sxs-lookup"><span data-stu-id="277da-116">Not used by <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, but a convenient function to have for testing.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> deleteLeaseStore()
       return:
         type: ec0e250a
-        description: '<p>True, wenn der Lease Speicher erfolgreich, "false" ist dies nicht der gelöscht wurde </p>'
+        description: '<p><span data-ttu-id="277da-117">True, wenn der Lease Speicher erfolgreich, "false" ist dies nicht der gelöscht wurde</span><span class="sxs-lookup"><span data-stu-id="277da-117">true if the lease store was deleted successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.getAllLeases()
     id: getAllLeases()
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -184,14 +184,14 @@ items:
       startLine: 76
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Geben Sie die Lease-Informationen für alle Partitionen zurück.</p>
-      <p>Eine typische Implementierung rufen konnte einfach <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> für alle Partitionen.</p>
+      <p><span data-ttu-id="277da-118">Geben Sie die Lease-Informationen für alle Partitionen zurück.</span><span class="sxs-lookup"><span data-stu-id="277da-118">Return the lease info for all partitions.</span></span></p>
+      <p><span data-ttu-id="277da-119">Eine typische Implementierung rufen konnte einfach <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> für alle Partitionen.</span><span class="sxs-lookup"><span data-stu-id="277da-119">A typical implementation could just call <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> on all partitions.</span></span></p>
       <p></p>
     syntax:
       content: public Iterable<Future<Lease>> getAllLeases()
       return:
         type: 1f5dfe8ecom.microsoft.azure.eventprocessorhost._leasee7daa122
-        description: <p>Iterable Liste der Lease-Informationen. </p>
+        description: <p><span data-ttu-id="277da-120">Iterable Liste der Lease-Informationen.</span><span class="sxs-lookup"><span data-stu-id="277da-120">Iterable list of lease info.</span></span> </p>
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)
     id: getLease(String)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -209,17 +209,17 @@ items:
       startLine: 67
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Geben Sie die Lease-Informationen für die angegebene Partition zurück. Kann null zurück, wenn keine Lease im Speicher für die angegebene Partition erstellt wurde.</p>
+      <p><span data-ttu-id="277da-121">Geben Sie die Lease-Informationen für die angegebene Partition zurück.</span><span class="sxs-lookup"><span data-stu-id="277da-121">Return the lease info for the specified partition.</span></span> <span data-ttu-id="277da-122">Kann null zurück, wenn keine Lease im Speicher für die angegebene Partition erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="277da-122">Can return null if no lease has been created in the store for the specified partition.</span></span></p>
       <p></p>
     syntax: &ref_1
       content: public Future<Lease> getLease(String partitionId)
       parameters:
         - id: partitionId
           type: '26831127'
-          description: <p>ID der Partition zum Abrufen der Lease für </p>
+          description: <p><span data-ttu-id="277da-123">ID der Partition zum Abrufen der Lease für</span><span class="sxs-lookup"><span data-stu-id="277da-123">id of partition to get lease for</span></span> </p>
       return:
         type: 9b3030f6com.microsoft.azure.eventprocessorhost._leasea08ddfce
-        description: '<p>Lease-Informationen für die Partition, oder null </p>'
+        description: '<p><span data-ttu-id="277da-124">Lease-Informationen für die Partition, oder null</span><span class="sxs-lookup"><span data-stu-id="277da-124">lease info for the partition, or null</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.getLeaseDurationInMilliseconds()
     id: getLeaseDurationInMilliseconds()
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -237,13 +237,13 @@ items:
       startLine: 37
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Meistens zum Testen hilfreich.</p>
+      <p><span data-ttu-id="277da-125">Meistens zum Testen hilfreich.</span><span class="sxs-lookup"><span data-stu-id="277da-125">Mostly useful for testing.</span></span></p>
       <p></p>
     syntax:
       content: public int getLeaseDurationInMilliseconds()
       return:
         type: f75371fa
-        description: '<p>Die Dauer eines Lease, bevor es abläuft, es sei denn, erneuert. </p>'
+        description: '<p><span data-ttu-id="277da-126">Die Dauer eines Lease, bevor es abläuft, es sei denn, erneuert.</span><span class="sxs-lookup"><span data-stu-id="277da-126">Duration of a lease before it expires unless renewed.</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.getLeaseRenewIntervalInMilliseconds()
     id: getLeaseRenewIntervalInMilliseconds()
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -261,13 +261,13 @@ items:
       startLine: 30
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Ermöglicht eine Lease-Manager-Implementierung PartitionManager angeben, wie oft Leases überprüfen und erneuern, werden sollte. Um verteilen Leases rechtzeitig verarbeitet, nachdem ein Host wird nicht mehr funktioniert, empfiehlt es sich um einen relativ kurzen Intervall wie an den zehn Sekunden. Selbstverständlich sollte weniger als die Hälfte der Lease length-Funktion, um eine versehentliche Ablauf zu verhindern können.</p>
+      <p><span data-ttu-id="277da-127">Ermöglicht eine Lease-Manager-Implementierung PartitionManager angeben, wie oft Leases überprüfen und erneuern, werden sollte.</span><span class="sxs-lookup"><span data-stu-id="277da-127">Allows a lease manager implementation to specify to PartitionManager how often it should scan leases and renew them.</span></span> <span data-ttu-id="277da-128">Um verteilen Leases rechtzeitig verarbeitet, nachdem ein Host wird nicht mehr funktioniert, empfiehlt es sich um einen relativ kurzen Intervall wie an den zehn Sekunden.</span><span class="sxs-lookup"><span data-stu-id="277da-128">In order to redistribute leases in a timely fashion after a host ceases operating, we recommend a relatively short interval, such as ten seconds.</span></span> <span data-ttu-id="277da-129">Selbstverständlich sollte weniger als die Hälfte der Lease length-Funktion, um eine versehentliche Ablauf zu verhindern können.</span><span class="sxs-lookup"><span data-stu-id="277da-129">Obviously it should be less than half of the lease length, to prevent accidental expiration.</span></span></p>
       <p></p>
     syntax:
       content: public int getLeaseRenewIntervalInMilliseconds()
       return:
         type: f75371fa
-        description: <p>Das Ruheintervall zwischen Scans in Millisekunden angegeben. </p>
+        description: '<p><span data-ttu-id="277da-130">Das Ruheintervall zwischen Scans in Millisekunden angegeben.</span><span class="sxs-lookup"><span data-stu-id="277da-130">The sleep interval between scans, specified in milliseconds.</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.leaseStoreExists()
     id: leaseStoreExists()
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -285,13 +285,13 @@ items:
       startLine: 44
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Ist der Lease-Speicher vorhanden?</p>
+      <p><span data-ttu-id="277da-131">Ist der Lease-Speicher vorhanden?</span><span class="sxs-lookup"><span data-stu-id="277da-131">Does the lease store exist?</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> leaseStoreExists()
       return:
         type: ec0e250a
-        description: '<p>"true", wenn dies der Fall ist, "false" ist dies nicht der </p>'
+        description: '<p><span data-ttu-id="277da-132">"true", wenn dies der Fall ist, "false" ist dies nicht der</span><span class="sxs-lookup"><span data-stu-id="277da-132">true if it does, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.releaseLease(Lease)
     id: releaseLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -309,18 +309,18 @@ items:
       startLine: 126
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Geben Sie auf eine Lease, die derzeit von diesem Host aufrecht erhalten.</p>
-      <p>Wenn die Lease, abgelaufen sind oder gestohlen wurden, freigegeben wurde, ist nicht erforderlich, und schlägt fehl, wenn versucht.</p>
+      <p><span data-ttu-id="277da-133">Geben Sie auf eine Lease, die derzeit von diesem Host aufrecht erhalten.</span><span class="sxs-lookup"><span data-stu-id="277da-133">Give up a lease currently held by this host.</span></span></p>
+      <p><span data-ttu-id="277da-134">Wenn die Lease, abgelaufen sind oder gestohlen wurden, freigegeben wurde, ist nicht erforderlich, und schlägt fehl, wenn versucht.</span><span class="sxs-lookup"><span data-stu-id="277da-134">If the lease has been stolen, or expired, releasing it is unnecessary, and will fail if attempted.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> releaseLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> aufzugeben werden </p>"
+          description: "<p><span data-ttu-id=\"277da-135\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> aufzugeben werden</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-135\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> to be give up</span></span> </p>"
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease erfolgreich, "false" ist dies nicht veröffentlicht wurde </p>'
+        description: '<p><span data-ttu-id="277da-136">"true", wenn die Lease erfolgreich, "false" ist dies nicht veröffentlicht wurde</span><span class="sxs-lookup"><span data-stu-id="277da-136">true if the lease was released successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.renewLease(Lease)
     id: renewLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -338,18 +338,18 @@ items:
       startLine: 116
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Erneuert eine Lease, die derzeit von diesem Host aufrecht erhalten.</p>
-      <p>Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, ist es nicht möglich, es zu erneuern. Aufrufen, müssen <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> und dann <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.acquireLease(Lease)" data-throw-if-not-resolved="false">acquireLease()</xref> erneut aus.</p>
+      <p><span data-ttu-id="277da-137">Erneuert eine Lease, die derzeit von diesem Host aufrecht erhalten.</span><span class="sxs-lookup"><span data-stu-id="277da-137">Renew a lease currently held by this host.</span></span></p>
+      <p><span data-ttu-id="277da-138">Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, ist es nicht möglich, es zu erneuern.</span><span class="sxs-lookup"><span data-stu-id="277da-138">If the lease has been stolen, or expired, or released, it is not possible to renew it.</span></span> <span data-ttu-id="277da-139">Aufrufen, müssen <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> und dann <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.acquireLease(Lease)" data-throw-if-not-resolved="false">acquireLease()</xref> erneut aus.</span><span class="sxs-lookup"><span data-stu-id="277da-139">You will have to call <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> and then <xref uid="com.microsoft.azure.eventprocessorhost._i_lease_manager.acquireLease(Lease)" data-throw-if-not-resolved="false">acquireLease()</xref> again.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> renewLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> erneuert werden soll. </p>"
+          description: "<p><span data-ttu-id=\"277da-140\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> erneuert werden soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-140\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> to be renewed</span></span> </p>"
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease erfolgreich, "false" ist dies nicht der erneuert wurde </p>'
+        description: '<p><span data-ttu-id="277da-141">"true", wenn die Lease erfolgreich, "false" ist dies nicht der erneuert wurde</span><span class="sxs-lookup"><span data-stu-id="277da-141">true if the lease was renewed successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.updateLease(Lease)
     id: updateLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
@@ -367,18 +367,18 @@ items:
       startLine: 138
     package: com.microsoft.azure.eventprocessorhost
     summary: |-
-      <p>Aktualisieren Sie den Store mit den Informationen in der angegebenen Lease an.</p>
-      <p>Es ist notwendig, eine Lease aktuell zu halten, um es zu aktualisieren. Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, kann er nicht aktualisiert werden. Aktualisieren von sollte die Lease verlängern, vor dem Ausführen der Update aus, um den Ablauf der Lease während des Prozesses zu vermeiden.</p>
+      <p><span data-ttu-id="277da-142">Aktualisieren Sie den Store mit den Informationen in der angegebenen Lease an.</span><span class="sxs-lookup"><span data-stu-id="277da-142">Update the store with the information in the provided lease.</span></span></p>
+      <p><span data-ttu-id="277da-143">Es ist notwendig, eine Lease aktuell zu halten, um es zu aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="277da-143">It is necessary to currently hold a lease in order to update it.</span></span> <span data-ttu-id="277da-144">Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, kann er nicht aktualisiert werden.</span><span class="sxs-lookup"><span data-stu-id="277da-144">If the lease has been stolen, or expired, or released, it cannot be updated.</span></span> <span data-ttu-id="277da-145">Aktualisieren von sollte die Lease verlängern, vor dem Ausführen der Update aus, um den Ablauf der Lease während des Prozesses zu vermeiden.</span><span class="sxs-lookup"><span data-stu-id="277da-145">Updating should renew the lease before performing the update to avoid lease expiration during the process.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> updateLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: <p>Neue Lease-Informationen gespeichert werden </p>
+          description: <p><span data-ttu-id="277da-146">Neue Lease-Informationen gespeichert werden</span><span class="sxs-lookup"><span data-stu-id="277da-146">New lease info to be stored</span></span> </p>
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die aktualisierte erfolgreich, "false" ist dies nicht ausgeführt wurde </p>'
+        description: '<p><span data-ttu-id="277da-147">"true", wenn die aktualisierte erfolgreich, "false" ist dies nicht ausgeführt wurde</span><span class="sxs-lookup"><span data-stu-id="277da-147">true if the updated was performed successfully, false if not</span></span> </p>'
 references:
   - uid: f75371fa
     spec.java:
@@ -499,13 +499,13 @@ references:
     fullName: int com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.getLeaseRenewIntervalInMilliseconds()
     type: Method
     summary: |-
-      <p>Ermöglicht eine Lease-Manager-Implementierung PartitionManager angeben, wie oft Leases überprüfen und erneuern, werden sollte. Um verteilen Leases rechtzeitig verarbeitet, nachdem ein Host wird nicht mehr funktioniert, empfiehlt es sich um einen relativ kurzen Intervall wie an den zehn Sekunden. Selbstverständlich sollte weniger als die Hälfte der Lease length-Funktion, um eine versehentliche Ablauf zu verhindern können.</p>
+      <p><span data-ttu-id="277da-148">Ermöglicht eine Lease-Manager-Implementierung PartitionManager angeben, wie oft Leases überprüfen und erneuern, werden sollte.</span><span class="sxs-lookup"><span data-stu-id="277da-148">Allows a lease manager implementation to specify to PartitionManager how often it should scan leases and renew them.</span></span> <span data-ttu-id="277da-149">Um verteilen Leases rechtzeitig verarbeitet, nachdem ein Host wird nicht mehr funktioniert, empfiehlt es sich um einen relativ kurzen Intervall wie an den zehn Sekunden.</span><span class="sxs-lookup"><span data-stu-id="277da-149">In order to redistribute leases in a timely fashion after a host ceases operating, we recommend a relatively short interval, such as ten seconds.</span></span> <span data-ttu-id="277da-150">Selbstverständlich sollte weniger als die Hälfte der Lease length-Funktion, um eine versehentliche Ablauf zu verhindern können.</span><span class="sxs-lookup"><span data-stu-id="277da-150">Obviously it should be less than half of the lease length, to prevent accidental expiration.</span></span></p>
       <p></p>
     syntax:
       content: public int getLeaseRenewIntervalInMilliseconds()
       return:
         type: f75371fa
-        description: <p>Das Ruheintervall zwischen Scans in Millisekunden angegeben. </p>
+        description: '<p><span data-ttu-id="277da-151">Das Ruheintervall zwischen Scans in Millisekunden angegeben.</span><span class="sxs-lookup"><span data-stu-id="277da-151">The sleep interval between scans, specified in milliseconds.</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLeaseDurationInMilliseconds()
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -514,13 +514,13 @@ references:
     fullName: int com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.getLeaseDurationInMilliseconds()
     type: Method
     summary: |-
-      <p>Meistens zum Testen hilfreich.</p>
+      <p><span data-ttu-id="277da-152">Meistens zum Testen hilfreich.</span><span class="sxs-lookup"><span data-stu-id="277da-152">Mostly useful for testing.</span></span></p>
       <p></p>
     syntax:
       content: public int getLeaseDurationInMilliseconds()
       return:
         type: f75371fa
-        description: '<p>Die Dauer eines Lease, bevor es abläuft, es sei denn, erneuert. </p>'
+        description: '<p><span data-ttu-id="277da-153">Die Dauer eines Lease, bevor es abläuft, es sei denn, erneuert.</span><span class="sxs-lookup"><span data-stu-id="277da-153">Duration of a lease before it expires unless renewed.</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.leaseStoreExists()
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -529,13 +529,13 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.leaseStoreExists()
     type: Method
     summary: |-
-      <p>Ist der Lease-Speicher vorhanden?</p>
+      <p><span data-ttu-id="277da-154">Ist der Lease-Speicher vorhanden?</span><span class="sxs-lookup"><span data-stu-id="277da-154">Does the lease store exist?</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> leaseStoreExists()
       return:
         type: ec0e250a
-        description: '<p>"true", wenn dies der Fall ist, "false" ist dies nicht der </p>'
+        description: '<p><span data-ttu-id="277da-155">"true", wenn dies der Fall ist, "false" ist dies nicht der</span><span class="sxs-lookup"><span data-stu-id="277da-155">true if it does, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.createLeaseStoreIfNotExists()
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -544,13 +544,13 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.createLeaseStoreIfNotExists()
     type: Method
     summary: |-
-      <p>Die Lease-Speicher erstellen, wenn sie nicht vorhanden ist, werden keine Aktionen ausgeführt, wenn er vorhanden ist.</p>
+      <p><span data-ttu-id="277da-156">Die Lease-Speicher erstellen, wenn sie nicht vorhanden ist, werden keine Aktionen ausgeführt, wenn er vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="277da-156">Create the lease store if it does not exist, do nothing if it does exist.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> createLeaseStoreIfNotExists()
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease bereits speichern vorhanden oder wurde erfolgreich erstellt, "false" ist dies nicht der </p>'
+        description: '<p><span data-ttu-id="277da-157">"true", wenn die Lease bereits speichern vorhanden oder wurde erfolgreich erstellt, "false" ist dies nicht der</span><span class="sxs-lookup"><span data-stu-id="277da-157">true if the lease store already exists or was created successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.deleteLeaseStore()
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -559,13 +559,13 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.deleteLeaseStore()
     type: Method
     summary: |-
-      <p>Nicht verwendet werden, indem <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, aber eine einfache Funktion, für die Tests verwenden.</p>
+      <p><span data-ttu-id="277da-158">Nicht verwendet werden, indem <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, aber eine einfache Funktion, für die Tests verwenden.</span><span class="sxs-lookup"><span data-stu-id="277da-158">Not used by <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>, but a convenient function to have for testing.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> deleteLeaseStore()
       return:
         type: ec0e250a
-        description: '<p>True, wenn der Lease Speicher erfolgreich, "false" ist dies nicht der gelöscht wurde </p>'
+        description: '<p><span data-ttu-id="277da-159">True, wenn der Lease Speicher erfolgreich, "false" ist dies nicht der gelöscht wurde</span><span class="sxs-lookup"><span data-stu-id="277da-159">true if the lease store was deleted successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._event_processor_host
     parent: com.microsoft.azure.eventprocessorhost
     href: com.microsoft.azure.eventprocessorhost._event_processor_host.yml
@@ -582,7 +582,7 @@ references:
     nameWithType: Lease
     fullName: com.microsoft.azure.eventprocessorhost.Lease
     type: Class
-    summary: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> sollten keine Objekte dieser Klasse zu verarbeiten oder abgeleiteten Klassen direkt. </p>\n\n<p>Bei der Implementierung einer <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben. Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff. Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen. </p>\n<p>Beachten Sie, dass eine <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Objekt enthält nur Informationen zu einer Partition Lease. Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>. </p>"
+    summary: "<p><span data-ttu-id=\"277da-160\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Klasse ist öffentlich, sodass, dass Sie fortgeschrittene Benutzer implementieren können ein <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-160\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> class is public so that advanced users can implement an <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>.</span></span> <span data-ttu-id=\"277da-161\">Es sei denn, Sie implementieren <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> sollten keine Objekte dieser Klasse zu verarbeiten oder abgeleiteten Klassen direkt.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-161\">Unless you are implementing <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> you should not have to deal with objects of this class or derived classes directly.</span></span> </p>\n\n<p><span data-ttu-id=\"277da-162\">Bei der Implementierung einer <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> es möglicherweise erforderlich sein, leiten Sie von dieser Klasse ausführen, um weitere Informationen und IsExpired zu überschreiben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-162\">When implementing an <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref> it may be necessary to derive from this class to carry around more information and override isExpired.</span></span> <span data-ttu-id=\"277da-163\">Die Datenfelder wurde verlassen haben anstelle von privaten geschützt werden, da sie ein breites Spektrum aufweisen der Getter und Setter (mit Ausnahme der PartitionId, das unveränderlich ist) die bieten einen gleichwertigen Zugriff.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-163\">The data fields have been left private instead of protected because they have a full set of getters and setters (except partitionId, which is immutable) which provide equivalent access.</span></span> <span data-ttu-id=\"277da-164\">Wenn AzureBlobLease zu implementieren, z. B. gab es keine Notwendigkeit mehr Zugriff als der Getter und Setter bereitstellen.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-164\">When implementing AzureBlobLease, for example, there was no need for more access than the getters and setters provide.</span></span> </p>\n<p><span data-ttu-id=\"277da-165\">Beachten Sie, dass eine <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> Objekt enthält nur Informationen zu einer Partition Lease.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-165\">Note that a <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> object just carries information about a partition lease.</span></span> <span data-ttu-id=\"277da-166\">Die entsprechende Funktionalität zum Abrufen/erneuern/Freigabe eine Lease ist alles auf der <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-166\">The functionality to acquire/renew/release a lease is all on the <xref uid=\"com.microsoft.azure.eventprocessorhost._i_lease_manager\" data-throw-if-not-resolved=\"false\">ILeaseManager</xref>.</span></span> </p>"
     syntax:
       content: public class Lease
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)
@@ -593,17 +593,17 @@ references:
     fullName: Future<Lease> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.getLease(String partitionId)
     type: Method
     summary: |-
-      <p>Geben Sie die Lease-Informationen für die angegebene Partition zurück. Kann null zurück, wenn keine Lease im Speicher für die angegebene Partition erstellt wurde.</p>
+      <p><span data-ttu-id="277da-167">Geben Sie die Lease-Informationen für die angegebene Partition zurück.</span><span class="sxs-lookup"><span data-stu-id="277da-167">Return the lease info for the specified partition.</span></span> <span data-ttu-id="277da-168">Kann null zurück, wenn keine Lease im Speicher für die angegebene Partition erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="277da-168">Can return null if no lease has been created in the store for the specified partition.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Lease> getLease(String partitionId)
       parameters:
         - id: partitionId
           type: '26831127'
-          description: <p>ID der Partition zum Abrufen der Lease für </p>
+          description: <p><span data-ttu-id="277da-169">ID der Partition zum Abrufen der Lease für</span><span class="sxs-lookup"><span data-stu-id="277da-169">id of partition to get lease for</span></span> </p>
       return:
         type: 9b3030f6com.microsoft.azure.eventprocessorhost._leasea08ddfce
-        description: '<p>Lease-Informationen für die Partition, oder null </p>'
+        description: '<p><span data-ttu-id="277da-170">Lease-Informationen für die Partition, oder null</span><span class="sxs-lookup"><span data-stu-id="277da-170">lease info for the partition, or null</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getAllLeases()
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -612,14 +612,14 @@ references:
     fullName: Iterable<Future<Lease>> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.getAllLeases()
     type: Method
     summary: |-
-      <p>Geben Sie die Lease-Informationen für alle Partitionen zurück.</p>
-      <p>Eine typische Implementierung rufen konnte einfach <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> für alle Partitionen.</p>
+      <p><span data-ttu-id="277da-171">Geben Sie die Lease-Informationen für alle Partitionen zurück.</span><span class="sxs-lookup"><span data-stu-id="277da-171">Return the lease info for all partitions.</span></span></p>
+      <p><span data-ttu-id="277da-172">Eine typische Implementierung rufen konnte einfach <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> für alle Partitionen.</span><span class="sxs-lookup"><span data-stu-id="277da-172">A typical implementation could just call <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> on all partitions.</span></span></p>
       <p></p>
     syntax:
       content: public Iterable<Future<Lease>> getAllLeases()
       return:
         type: 1f5dfe8ecom.microsoft.azure.eventprocessorhost._leasee7daa122
-        description: <p>Iterable Liste der Lease-Informationen. </p>
+        description: <p><span data-ttu-id="277da-173">Iterable Liste der Lease-Informationen.</span><span class="sxs-lookup"><span data-stu-id="277da-173">Iterable list of lease info.</span></span> </p>
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.getLease(String)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
     href: com.microsoft.azure.eventprocessorhost._i_lease_manager.yml
@@ -628,7 +628,7 @@ references:
     fullName: Future<Lease> com.microsoft.azure.eventprocessorhost.ILeaseManager.getLease(String partitionId)
     type: Method
     summary: |-
-      <p>Geben Sie die Lease-Informationen für die angegebene Partition zurück. Kann null zurück, wenn keine Lease im Speicher für die angegebene Partition erstellt wurde.</p>
+      <p><span data-ttu-id="277da-174">Geben Sie die Lease-Informationen für die angegebene Partition zurück.</span><span class="sxs-lookup"><span data-stu-id="277da-174">Return the lease info for the specified partition.</span></span> <span data-ttu-id="277da-175">Kann null zurück, wenn keine Lease im Speicher für die angegebene Partition erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="277da-175">Can return null if no lease has been created in the store for the specified partition.</span></span></p>
       <p></p>
     syntax: *ref_1
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.createLeaseIfNotExists(String)
@@ -639,17 +639,17 @@ references:
     fullName: Future<Lease> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.createLeaseIfNotExists(String partitionId)
     type: Method
     summary: |-
-      <p>Erstellen Sie im Store die Lease-Informationen für die angegebene Partition ist nicht vorhanden. Tun Sie nichts, wenn sie bereits im Speicher vorhanden ist.</p>
+      <p><span data-ttu-id="277da-176">Erstellen Sie im Store die Lease-Informationen für die angegebene Partition ist nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="277da-176">Create in the store the lease info for the given partition, if it does not exist.</span></span> <span data-ttu-id="277da-177">Tun Sie nichts, wenn sie bereits im Speicher vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="277da-177">Do nothing if it does exist in the store already.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Lease> createLeaseIfNotExists(String partitionId)
       parameters:
         - id: partitionId
           type: '26831127'
-          description: <p>ID des zu erstellenden Lease-Informationen für die partition </p>
+          description: <p><span data-ttu-id="277da-178">ID des zu erstellenden Lease-Informationen für die partition</span><span class="sxs-lookup"><span data-stu-id="277da-178">id of partition to create lease info for</span></span> </p>
       return:
         type: 9b3030f6com.microsoft.azure.eventprocessorhost._leasea08ddfce
-        description: <p>die vorhandenen oder neu erstellten Lease-Informationen für die partition </p>
+        description: <p><span data-ttu-id="277da-179">die vorhandenen oder neu erstellten Lease-Informationen für die partition</span><span class="sxs-lookup"><span data-stu-id="277da-179">the existing or newly-created lease info for the partition</span></span> </p>
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.deleteLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -658,17 +658,17 @@ references:
     fullName: Future<Void> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.deleteLease(Lease lease)
     type: Method
     summary: |-
-      <p>Löschen Sie die Lease-Informationen für die angegebene Partition aus dem Speicher. Wenn keine gespeicherten Leasedauer für die angegebene Partition vorhanden ist, wird, erfolgreich behandelt.</p>
+      <p><span data-ttu-id="277da-180">Löschen Sie die Lease-Informationen für die angegebene Partition aus dem Speicher.</span><span class="sxs-lookup"><span data-stu-id="277da-180">Delete the lease info for the given partition from the store.</span></span> <span data-ttu-id="277da-181">Wenn keine gespeicherten Leasedauer für die angegebene Partition vorhanden ist, wird, erfolgreich behandelt.</span><span class="sxs-lookup"><span data-stu-id="277da-181">If there is no stored lease for the given partition, that is treated as success.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Void> deleteLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></p>"
+          description: "<p><span data-ttu-id=\"277da-182\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-182\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> info for the desired partition as previously obtained from <xref uid=\"com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span></span></p>"
       return:
         type: 075d0a89
-        description: <p>"void" </p>
+        description: <p><span data-ttu-id="277da-183">"void"</span><span class="sxs-lookup"><span data-stu-id="277da-183">Void</span></span> </p>
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.acquireLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -677,18 +677,18 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.acquireLease(Lease lease)
     type: Method
     summary: |-
-      <p>Die Lease auf die gewünschte Partition abrufen, dafür <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</p>
-      <p>Beachten Sie, dass es zulässig ist, eine Lease abgerufen werden, die bereits von einem anderen Host gehört. Lease stehlen ist wie die Partitionen verteilt werden, wenn weitere Hosts gestartet werden.</p>
+      <p><span data-ttu-id="277da-184">Die Lease auf die gewünschte Partition abrufen, dafür <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</span><span class="sxs-lookup"><span data-stu-id="277da-184">Acquire the lease on the desired partition for this <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</span></span></p>
+      <p><span data-ttu-id="277da-185">Beachten Sie, dass es zulässig ist, eine Lease abgerufen werden, die bereits von einem anderen Host gehört.</span><span class="sxs-lookup"><span data-stu-id="277da-185">Note that it is legal to acquire a lease that is already owned by another host.</span></span> <span data-ttu-id="277da-186">Lease stehlen ist wie die Partitionen verteilt werden, wenn weitere Hosts gestartet werden.</span><span class="sxs-lookup"><span data-stu-id="277da-186">Lease-stealing is how partitions are redistributed when additional hosts are started.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> acquireLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></p>"
+          description: "<p><span data-ttu-id=\"277da-187\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> wie zuvor gewonnenen Informationen für die gewünschte Partition <xref uid=\"com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-187\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> info for the desired partition as previously obtained from <xref uid=\"com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)\" data-throw-if-not-resolved=\"false\">getLease()</xref></span></span></p>"
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease erfolgreich, "false" ist dies nicht eingerichtet wurde </p>'
+        description: '<p><span data-ttu-id="277da-188">"true", wenn die Lease erfolgreich, "false" ist dies nicht eingerichtet wurde</span><span class="sxs-lookup"><span data-stu-id="277da-188">true if the lease was acquired successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.renewLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -697,18 +697,18 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.renewLease(Lease lease)
     type: Method
     summary: |-
-      <p>Erneuert eine Lease, die derzeit von diesem Host aufrecht erhalten.</p>
-      <p>Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, ist es nicht möglich, es zu erneuern. Aufrufen, müssen <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> und dann <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.acquireLease(Lease)" data-throw-if-not-resolved="false">acquireLease()</xref> erneut aus.</p>
+      <p><span data-ttu-id="277da-189">Erneuert eine Lease, die derzeit von diesem Host aufrecht erhalten.</span><span class="sxs-lookup"><span data-stu-id="277da-189">Renew a lease currently held by this host.</span></span></p>
+      <p><span data-ttu-id="277da-190">Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, ist es nicht möglich, es zu erneuern.</span><span class="sxs-lookup"><span data-stu-id="277da-190">If the lease has been stolen, or expired, or released, it is not possible to renew it.</span></span> <span data-ttu-id="277da-191">Aufrufen, müssen <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> und dann <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.acquireLease(Lease)" data-throw-if-not-resolved="false">acquireLease()</xref> erneut aus.</span><span class="sxs-lookup"><span data-stu-id="277da-191">You will have to call <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.getLease(String)" data-throw-if-not-resolved="false">getLease()</xref> and then <xref uid="com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.acquireLease(Lease)" data-throw-if-not-resolved="false">acquireLease()</xref> again.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> renewLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> erneuert werden soll. </p>"
+          description: "<p><span data-ttu-id=\"277da-192\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> erneuert werden soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-192\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> to be renewed</span></span> </p>"
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease erfolgreich, "false" ist dies nicht der erneuert wurde </p>'
+        description: '<p><span data-ttu-id="277da-193">"true", wenn die Lease erfolgreich, "false" ist dies nicht der erneuert wurde</span><span class="sxs-lookup"><span data-stu-id="277da-193">true if the lease was renewed successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._i_lease_manager.acquireLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._i_lease_manager
     href: com.microsoft.azure.eventprocessorhost._i_lease_manager.yml
@@ -717,8 +717,8 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.ILeaseManager.acquireLease(Lease lease)
     type: Method
     summary: |-
-      <p>Die Lease auf die gewünschte Partition abrufen, dafür <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</p>
-      <p>Beachten Sie, dass es zulässig ist, eine Lease abgerufen werden, die bereits von einem anderen Host gehört. Lease stehlen ist wie die Partitionen verteilt werden, wenn weitere Hosts gestartet werden.</p>
+      <p><span data-ttu-id="277da-194">Die Lease auf die gewünschte Partition abrufen, dafür <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</span><span class="sxs-lookup"><span data-stu-id="277da-194">Acquire the lease on the desired partition for this <xref uid="com.microsoft.azure.eventprocessorhost._event_processor_host" data-throw-if-not-resolved="false">EventProcessorHost</xref>.</span></span></p>
+      <p><span data-ttu-id="277da-195">Beachten Sie, dass es zulässig ist, eine Lease abgerufen werden, die bereits von einem anderen Host gehört.</span><span class="sxs-lookup"><span data-stu-id="277da-195">Note that it is legal to acquire a lease that is already owned by another host.</span></span> <span data-ttu-id="277da-196">Lease stehlen ist wie die Partitionen verteilt werden, wenn weitere Hosts gestartet werden.</span><span class="sxs-lookup"><span data-stu-id="277da-196">Lease-stealing is how partitions are redistributed when additional hosts are started.</span></span></p>
       <p></p>
     syntax: *ref_2
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.releaseLease(Lease)
@@ -729,18 +729,18 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.releaseLease(Lease lease)
     type: Method
     summary: |-
-      <p>Geben Sie auf eine Lease, die derzeit von diesem Host aufrecht erhalten.</p>
-      <p>Wenn die Lease, abgelaufen sind oder gestohlen wurden, freigegeben wurde, ist nicht erforderlich, und schlägt fehl, wenn versucht.</p>
+      <p><span data-ttu-id="277da-197">Geben Sie auf eine Lease, die derzeit von diesem Host aufrecht erhalten.</span><span class="sxs-lookup"><span data-stu-id="277da-197">Give up a lease currently held by this host.</span></span></p>
+      <p><span data-ttu-id="277da-198">Wenn die Lease, abgelaufen sind oder gestohlen wurden, freigegeben wurde, ist nicht erforderlich, und schlägt fehl, wenn versucht.</span><span class="sxs-lookup"><span data-stu-id="277da-198">If the lease has been stolen, or expired, releasing it is unnecessary, and will fail if attempted.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> releaseLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> aufzugeben werden </p>"
+          description: "<p><span data-ttu-id=\"277da-199\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> aufzugeben werden</span><span class=\"sxs-lookup\"><span data-stu-id=\"277da-199\">\r\n\r\n  <xref uid=\"com.microsoft.azure.eventprocessorhost._lease\" data-throw-if-not-resolved=\"false\">Lease</xref> to be give up</span></span> </p>"
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die Lease erfolgreich, "false" ist dies nicht veröffentlicht wurde </p>'
+        description: '<p><span data-ttu-id="277da-200">"true", wenn die Lease erfolgreich, "false" ist dies nicht veröffentlicht wurde</span><span class="sxs-lookup"><span data-stu-id="277da-200">true if the lease was released successfully, false if not</span></span> </p>'
   - uid: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.updateLease(Lease)
     parent: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager
     href: com.microsoft.azure.eventprocessorhost._in_memory_lease_manager.yml
@@ -749,15 +749,15 @@ references:
     fullName: Future<Boolean> com.microsoft.azure.eventprocessorhost.InMemoryLeaseManager.updateLease(Lease lease)
     type: Method
     summary: |-
-      <p>Aktualisieren Sie den Store mit den Informationen in der angegebenen Lease an.</p>
-      <p>Es ist notwendig, eine Lease aktuell zu halten, um es zu aktualisieren. Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, kann er nicht aktualisiert werden. Aktualisieren von sollte die Lease verlängern, vor dem Ausführen der Update aus, um den Ablauf der Lease während des Prozesses zu vermeiden.</p>
+      <p><span data-ttu-id="277da-201">Aktualisieren Sie den Store mit den Informationen in der angegebenen Lease an.</span><span class="sxs-lookup"><span data-stu-id="277da-201">Update the store with the information in the provided lease.</span></span></p>
+      <p><span data-ttu-id="277da-202">Es ist notwendig, eine Lease aktuell zu halten, um es zu aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="277da-202">It is necessary to currently hold a lease in order to update it.</span></span> <span data-ttu-id="277da-203">Wenn die Lease wurde gestohlen wird oder abgelaufen oder freigegeben wurde, kann er nicht aktualisiert werden.</span><span class="sxs-lookup"><span data-stu-id="277da-203">If the lease has been stolen, or expired, or released, it cannot be updated.</span></span> <span data-ttu-id="277da-204">Aktualisieren von sollte die Lease verlängern, vor dem Ausführen der Update aus, um den Ablauf der Lease während des Prozesses zu vermeiden.</span><span class="sxs-lookup"><span data-stu-id="277da-204">Updating should renew the lease before performing the update to avoid lease expiration during the process.</span></span></p>
       <p></p>
     syntax:
       content: public Future<Boolean> updateLease(Lease lease)
       parameters:
         - id: lease
           type: com.microsoft.azure.eventprocessorhost._lease
-          description: <p>Neue Lease-Informationen gespeichert werden </p>
+          description: <p><span data-ttu-id="277da-205">Neue Lease-Informationen gespeichert werden</span><span class="sxs-lookup"><span data-stu-id="277da-205">New lease info to be stored</span></span> </p>
       return:
         type: ec0e250a
-        description: '<p>"true", wenn die aktualisierte erfolgreich, "false" ist dies nicht ausgeführt wurde </p>'
+        description: '<p><span data-ttu-id="277da-206">"true", wenn die aktualisierte erfolgreich, "false" ist dies nicht ausgeführt wurde</span><span class="sxs-lookup"><span data-stu-id="277da-206">true if the updated was performed successfully, false if not</span></span> </p>'

@@ -53,7 +53,7 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 86
     package: microsoft.servicefabric.data
-    summary: "<p>Bricht einen Zustand Anbieter Replikat erzwungen ab. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder wenn das Replikat Lifecycle aufgrund von internen Fehlern von Service Fabric zuverlässig verwalten kann. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-101\">Bricht einen Zustand Anbieter Replikat erzwungen ab.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-101\">Forcefully abort the state provider replica.</span></span> </p>\n<p><span data-ttu-id=\"d832b-102\">\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder wenn das Replikat Lifecycle aufgrund von internen Fehlern von Service Fabric zuverlässig verwalten kann.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-102\">\r\n\r\n  <b>Remarks:</b>This generally occurs when a permanent fault is detected on the node, or when Service Fabric cannot reliably manage the replica's lifecycle due to internal failures.</span></span> </p>"
     syntax:
       content: public void abort()
     overridden: microsoft.servicefabric.data._state_provider_replica.abort()
@@ -73,22 +73,22 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 39
     package: microsoft.servicefabric.data
-    summary: "<p>Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt. Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben. Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben. Darüber hinaus wird Sicherung als fehlgeschlagen markiert. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-103\">Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-103\">Performs a full backup of all reliable state managed by this <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span></span></p>\n<p><span data-ttu-id=\"d832b-104\">\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-104\">\r\n\r\n  <b>Remarks:</b> A FULL backup will be performed with a one-hour timeout.</span></span> <span data-ttu-id=\"d832b-105\">Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-105\">Boolean returned by the backupCallback indicate whether the service was able to successfully move the backup folder to an external location.</span></span> <span data-ttu-id=\"d832b-106\">Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-106\">If false is returned, BackupAsync throws UnsupportedOperationException with the relevant message indicating backupCallback returned false.</span></span> <span data-ttu-id=\"d832b-107\">Darüber hinaus wird Sicherung als fehlgeschlagen markiert.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-107\">Also, backup will be marked as unsuccessful.</span></span> </p>"
     syntax:
       content: 'public CompletableFuture<?> backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
       parameters:
         - id: option
           type: microsoft.servicefabric.data._backup_option
-          description: <p>Der Typ der Sicherung ausführen. </p>
+          description: <p><span data-ttu-id="d832b-108">Der Typ der Sicherung ausführen.</span><span class="sxs-lookup"><span data-stu-id="d832b-108">The type of backup to perform.</span></span> </p>
         - id: timeout
           type: e02a2de0
-          description: <p>Das Timeout für diesen Vorgang. </p>
+          description: <p><span data-ttu-id="d832b-109">Das Timeout für diesen Vorgang.</span><span class="sxs-lookup"><span data-stu-id="d832b-109">The timeout for this operation.</span></span> </p>
         - id: backupCallback
           type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
-          description: '<p>Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden </p>'
+          description: '<p><span data-ttu-id="d832b-110">Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden</span><span class="sxs-lookup"><span data-stu-id="d832b-110">Callback to be called when the backup folder has been created locally and is ready to be moved out of the node</span></span> </p>'
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-111">Eine Aufgabe, die den asynchronen backup-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-111">Task that represents the asynchronous backup operation.</span></span> </p>'
     overridden: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BackupOption,Duration,BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
   - uid: 'microsoft.servicefabric.data._reliable_state_manager_replica_impl.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
     id: 'backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
@@ -106,16 +106,16 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 33
     package: microsoft.servicefabric.data
-    summary: "<p>Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt. Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben. Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben. Darüber hinaus wird Sicherung als fehlgeschlagen markiert. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-112\">Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-112\">Performs a full backup of all reliable state managed by this <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span></span></p>\n<p><span data-ttu-id=\"d832b-113\">\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-113\">\r\n\r\n  <b>Remarks:</b> A FULL backup will be performed with a one-hour timeout.</span></span> <span data-ttu-id=\"d832b-114\">Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-114\">Boolean returned by the backupCallback indicate whether the service was able to successfully move the backup folder to an external location.</span></span> <span data-ttu-id=\"d832b-115\">Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-115\">If false is returned, BackupAsync throws UnsupportedOperationException with the relevant message indicating backupCallback returned false.</span></span> <span data-ttu-id=\"d832b-116\">Darüber hinaus wird Sicherung als fehlgeschlagen markiert.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-116\">Also, backup will be marked as unsuccessful.</span></span> </p>"
     syntax:
       content: 'public CompletableFuture<?> backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
       parameters:
         - id: backupCallback
           type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
-          description: '<p>Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden </p>'
+          description: '<p><span data-ttu-id="d832b-117">Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden</span><span class="sxs-lookup"><span data-stu-id="d832b-117">Callback to be called when the backup folder has been created locally and is ready to be moved out of the node</span></span> </p>'
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-118">Eine Aufgabe, die den asynchronen backup-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-118">Task that represents the asynchronous backup operation.</span></span> </p>'
     overridden: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
   - uid: 'microsoft.servicefabric.data._reliable_state_manager_replica_impl.changeRoleAsync(ReplicaRole,CancellationToken)'
     id: 'changeRoleAsync(ReplicaRole,CancellationToken)'
@@ -134,20 +134,20 @@ items:
       startLine: 76
     package: microsoft.servicefabric.data
     summary: |-
-      <p>Dem State-Anbieter-Replikat zu benachrichtigen, dass seine Rolle geändert hat, z. B. um Primary oder Secondary sein.</p>
+      <p><span data-ttu-id="d832b-119">Dem State-Anbieter-Replikat zu benachrichtigen, dass seine Rolle geändert hat, z. B. um Primary oder Secondary sein.</span><span class="sxs-lookup"><span data-stu-id="d832b-119">Notify the state provider replica that its role is changing, for example to Primary or Secondary.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<String> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
       parameters:
         - id: newRole
           type: system.fabric._replica_role
-          description: '<p>Die neue replikatrolle, z. B. Primary oder Secondary sein. </p>'
+          description: '<p><span data-ttu-id="d832b-120">Die neue replikatrolle, z. B. Primary oder Secondary sein.</span><span class="sxs-lookup"><span data-stu-id="d832b-120">The new replica role, such as primary or secondary.</span></span> </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p><span data-ttu-id=\"d832b-121\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-121\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> object to indicate the cancellation status of the operation.</span></span> </p>"
       return:
         type: 06be942d
-        description: '<p>Eine Aufgabe, die den asynchronen Rolle Änderungsvorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-122">Eine Aufgabe, die den asynchronen Rolle Änderungsvorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-122">Task that represents the asynchronous change role operation.</span></span> </p>'
     overridden: 'microsoft.servicefabric.data._state_provider_replica.changeRoleAsync(ReplicaRole,CancellationToken)'
   - uid: microsoft.servicefabric.data._reliable_state_manager_replica_impl.closeAsync(CancellationToken)
     id: closeAsync(CancellationToken)
@@ -165,16 +165,16 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 81
     package: microsoft.servicefabric.data
-    summary: "<p>Geschlossen Sie das Replikat der State-Anbieter ordnungsgemäß werden.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn das Replikat Code ein Upgrade wird, das Replikat aufgrund des Lastenausgleichs verschoben wird oder ein vorübergehender Fehler erkannt wird. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-123\">Geschlossen Sie das Replikat der State-Anbieter ordnungsgemäß werden.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-123\">Gracefully close the state provider replica.</span></span></p>\n<p><span data-ttu-id=\"d832b-124\">\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn das Replikat Code ein Upgrade wird, das Replikat aufgrund des Lastenausgleichs verschoben wird oder ein vorübergehender Fehler erkannt wird.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-124\">\r\n\r\n  <b>Remarks:</b>This generally occurs when the replica's code is being upgrade, the replica is being moved due to load balancing, or a transient fault is detected.</span></span> </p>"
     syntax:
       content: public CompletableFuture<Void> closeAsync(CancellationToken cancellationToken)
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p><span data-ttu-id=\"d832b-125\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-125\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> object to indicate the cancellation status of the operation.</span></span> </p>"
       return:
         type: db03ee24
-        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-126">Eine Aufgabe, die den asynchronen Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-126">Task that represents the asynchronous close operation.</span></span> </p>'
     overridden: microsoft.servicefabric.data._state_provider_replica.closeAsync(CancellationToken)
   - uid: microsoft.servicefabric.data._reliable_state_manager_replica_impl.getTransactionalReplicator()
     id: getTransactionalReplicator()
@@ -212,13 +212,13 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 57
     package: microsoft.servicefabric.data
-    summary: "<p>Das Status Anbieter Replikat unter Verwendung des Diensts Initialisierung zu initialisieren.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>keine komplexen Verarbeitung bei der Initialisierung erfolgen soll. Teuer oder lang ausgeführte Initialisierung sollte im OpenAsync erfolgen. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-127\">Das Status Anbieter Replikat unter Verwendung des Diensts Initialisierung zu initialisieren.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-127\">Initialize the state provider replica using the service initialization information.</span></span></p>\n<p><span data-ttu-id=\"d832b-128\">\r\n\r\n  <b>Beschreibung:</b>keine komplexen Verarbeitung bei der Initialisierung erfolgen soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-128\">\r\n\r\n  <b>Remarks:</b>No complex processing should be done during Initialize.</span></span> <span data-ttu-id=\"d832b-129\">Teuer oder lang ausgeführte Initialisierung sollte im OpenAsync erfolgen.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-129\">Expensive or long-running initialization should be done in OpenAsync.</span></span> </p>"
     syntax:
       content: public void initialize(StatefulServiceInitializationParameters initializationParameters)
       parameters:
         - id: initializationParameters
           type: system.fabric._stateful_service_initialization_parameters
-          description: '<p>Initialisierungsinformationen für Dienst z. B. Dienstnamen, Partitions-Id, Replikat-Id und Code-Paketinformationen. </p>'
+          description: '<p><span data-ttu-id="d832b-130">Initialisierungsinformationen für Dienst z. B. Dienstnamen, Partitions-Id, Replikat-Id und Code-Paketinformationen.</span><span class="sxs-lookup"><span data-stu-id="d832b-130">Service initialization information such as service name, partition id, replica id, and code package information.</span></span> </p>'
     overridden: microsoft.servicefabric.data._state_provider_replica.initialize(StatefulServiceInitializationParameters)
   - uid: microsoft.servicefabric.data._reliable_state_manager_replica_impl.onOpenAsync(CancellationToken)
     id: onOpenAsync(CancellationToken)
@@ -259,22 +259,22 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 62
     package: microsoft.servicefabric.data
-    summary: "<p>Öffnen Sie das Replikat des Status-Anbieter für die Verwendung an.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Initialisierungsaufgaben für erweiterte State-Anbieter zu diesem Zeitpunkt gestartet werden können. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-131\">Öffnen Sie das Replikat des Status-Anbieter für die Verwendung an.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-131\">Open the state provider replica for use.</span></span></p>\n<p><span data-ttu-id=\"d832b-132\">\r\n\r\n  <b>Beschreibung:</b>Initialisierungsaufgaben für erweiterte State-Anbieter zu diesem Zeitpunkt gestartet werden können.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-132\">\r\n\r\n  <b>Remarks:</b>Extended state provider initialization tasks can be started at this time.</span></span> </p>"
     syntax:
       content: 'public CompletableFuture<Replicator> openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
       parameters:
         - id: openMode
           type: system.fabric._replica_open_mode
-          description: '<p>Gibt an, ob es sich um ein neues oder vorhandenes Replikat handelt. </p>'
+          description: '<p><span data-ttu-id="d832b-133">Gibt an, ob es sich um ein neues oder vorhandenes Replikat handelt.</span><span class="sxs-lookup"><span data-stu-id="d832b-133">Indicates whether this is a new or existing replica.</span></span> </p>'
         - id: partition
           type: system.fabric._stateful_service_partition
-          description: <p>Die Partition dieses Replikat gehört. </p>
+          description: <p><span data-ttu-id="d832b-134">Die Partition dieses Replikat gehört.</span><span class="sxs-lookup"><span data-stu-id="d832b-134">The partition this replica belongs to.</span></span> </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p><span data-ttu-id=\"d832b-135\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-135\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> object to indicate the cancellation status of the operation.</span></span> </p>"
       return:
         type: 9cdf14d0system.fabric._replicatora08ddfce
-        description: '<p>Eine Aufgabe, die den asynchronen Öffnungsvorgang darstellt. Das Ergebnis enthält Replikator für die Replikation des Status zwischen Replikaten Anbieter Status in der Partition verantwortlich. </p>'
+        description: '<p><span data-ttu-id="d832b-136">Eine Aufgabe, die den asynchronen Öffnungsvorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-136">Task that represents the asynchronous open operation.</span></span> <span data-ttu-id="d832b-137">Das Ergebnis enthält Replikator für die Replikation des Status zwischen Replikaten Anbieter Status in der Partition verantwortlich.</span><span class="sxs-lookup"><span data-stu-id="d832b-137">The result contains the replicator responsible for replicating state between other state provider replicas in the partition.</span></span> </p>'
     overridden: 'microsoft.servicefabric.data._state_provider_replica.openAsync(ReplicaOpenMode,StatefulServicePartition,CancellationToken)'
   - uid: microsoft.servicefabric.data._reliable_state_manager_replica_impl.ReliableStateManagerReplicaImpl(ReliableStateManagerConfiguration)
     id: ReliableStateManagerReplicaImpl(ReliableStateManagerConfiguration)
@@ -313,16 +313,16 @@ items:
       path: src/prod/src/java/microsoft.servicefabric.services/src/microsoft/servicefabric/data/ReliableStateManagerReplicaImpl.java
       startLine: 47
     package: microsoft.servicefabric.data
-    summary: "<p>Stellen Sie eine Sicherung wieder her.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>eine sichere Wiederherstellung ausgeführt, d. h., die Wiederherstellung wird nur ausgeführt, wenn Sie die Daten zum Wiederherstellen nach Status, der das aktuelle Replikat ist. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-138\">Stellen Sie eine Sicherung wieder her.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-138\">Restore a backup taken.</span></span></p>\n<p><span data-ttu-id=\"d832b-139\">\r\n\r\n  <b>Beschreibung:</b>eine sichere Wiederherstellung ausgeführt, d. h., die Wiederherstellung wird nur ausgeführt, wenn Sie die Daten zum Wiederherstellen nach Status, der das aktuelle Replikat ist.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-139\">\r\n\r\n  <b>Remarks:</b>A safe restore will be performed, meaning the restore will only be completed if the data to restore is ahead of state of the current replica.</span></span> </p>"
     syntax:
       content: public CompletableFuture<?> restoreAsync(String backupFolderPath)
       parameters:
         - id: backupFolderPath
           type: '26831127'
-          description: '<p>Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden. Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. </p>'
+          description: '<p><span data-ttu-id="d832b-140">Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-140">The directory where the replica is to be restored from.</span></span> <span data-ttu-id="d832b-141">Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen.</span><span class="sxs-lookup"><span data-stu-id="d832b-141">This parameter cannot be null, empty or contain just whitespace.</span></span> <span data-ttu-id="d832b-142">UNC-Pfade können auch angegeben werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-142">UNC paths may also be provided.</span></span> </p>'
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-143">Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-143">Task that represents the asynchronous restore operation.</span></span> </p>'
     overridden: microsoft.servicefabric.data._state_provider_replica.restoreAsync(String)
   - uid: 'microsoft.servicefabric.data._reliable_state_manager_replica_impl.restoreAsync(String,RestorePolicy)'
     id: 'restoreAsync(String,RestorePolicy)'
@@ -341,20 +341,20 @@ items:
       startLine: 52
     package: microsoft.servicefabric.data
     summary: |-
-      <p>Stellen Sie eine Sicherung wieder her.</p>
+      <p><span data-ttu-id="d832b-144">Stellen Sie eine Sicherung wieder her.</span><span class="sxs-lookup"><span data-stu-id="d832b-144">Restore a backup taken</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<?> restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
       parameters:
         - id: backupFolderPath
           type: '26831127'
-          description: '<p>Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden. Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. </p>'
+          description: '<p><span data-ttu-id="d832b-145">Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-145">The directory where the replica is to be restored from.</span></span> <span data-ttu-id="d832b-146">Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen.</span><span class="sxs-lookup"><span data-stu-id="d832b-146">This parameter cannot be null, empty or contain just whitespace.</span></span> <span data-ttu-id="d832b-147">UNC-Pfade können auch angegeben werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-147">UNC paths may also be provided.</span></span> </p>'
         - id: restorePolicy
           type: microsoft.servicefabric.data._restore_policy
-          description: <p>Die Richtlinie für die Wiederherstellung. </p>
+          description: <p><span data-ttu-id="d832b-148">Die Richtlinie für die Wiederherstellung.</span><span class="sxs-lookup"><span data-stu-id="d832b-148">The restore policy.</span></span> </p>
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-149">Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-149">Task that represents the asynchronous restore operation.</span></span> </p>'
     overridden: 'microsoft.servicefabric.data._state_provider_replica.restoreAsync(String,RestorePolicy)'
   - uid: 'microsoft.servicefabric.data._reliable_state_manager_replica_impl.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
     id: 'setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
@@ -373,14 +373,14 @@ items:
       startLine: 27
     package: microsoft.servicefabric.data
     summary: |-
-      <p>Systemfunktion, die während der potenziellen Datenverlust</p>
+      <p><span data-ttu-id="d832b-150">Systemfunktion, die während der potenziellen Datenverlust</span><span class="sxs-lookup"><span data-stu-id="d832b-150">Function called during suspected data-loss</span></span></p>
       <p></p>
     syntax:
       content: 'public void setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
       parameters:
         - id: onDataLossAsync
           type: 432ffe41system.fabric._cancellation_token774bd4f0
-          description: '<p>TODO. Funktion, die als Teil der Verarbeitung von mutmaßlicher Verlust aufgerufen. Funktion nimmt CancellationToken und gibt eine CompletableFuture, die die asynchrone Verarbeitung des Ereignisses darstellt. "True" zurückgeben, gibt an, dass das Replikat Zustand wiederhergestellt wurde. False gibt an, dass das Replikat Zustand nicht geändert wurde. </p>'
+          description: '<p><span data-ttu-id="d832b-151">TODO.</span><span class="sxs-lookup"><span data-stu-id="d832b-151">TODO.</span></span> <span data-ttu-id="d832b-152">Funktion, die als Teil der Verarbeitung von mutmaßlicher Verlust aufgerufen.</span><span class="sxs-lookup"><span data-stu-id="d832b-152">Function called as part of suspected data loss processing.</span></span> <span data-ttu-id="d832b-153">Funktion nimmt CancellationToken und gibt eine CompletableFuture, die die asynchrone Verarbeitung des Ereignisses darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-153">Function takes in CancellationToken and returns a CompletableFuture that represents the asynchronous processing of the event.</span></span> <span data-ttu-id="d832b-154">"True" zurückgeben, gibt an, dass das Replikat Zustand wiederhergestellt wurde.</span><span class="sxs-lookup"><span data-stu-id="d832b-154">Returning true, indicates that the replica''s state has been restored.</span></span> <span data-ttu-id="d832b-155">False gibt an, dass das Replikat Zustand nicht geändert wurde.</span><span class="sxs-lookup"><span data-stu-id="d832b-155">False indicates that the replica''s state has not been changed.</span></span> </p>'
     overridden: 'microsoft.servicefabric.data._state_provider_replica.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>>)'
 references:
   - uid: e371d27b
@@ -515,7 +515,7 @@ references:
     nameWithType: StateProviderReplica
     fullName: microsoft.servicefabric.data.StateProviderReplica
     type: Interface
-    summary: '<p>Definiert Methoden, die ein Replikat des zuverlässigen Zustand Anbieter, für Service Fabric implementieren muss, damit zu interagieren. </p>'
+    summary: '<p><span data-ttu-id="d832b-156">Definiert Methoden, die ein Replikat des zuverlässigen Zustand Anbieter, für Service Fabric implementieren muss, damit zu interagieren.</span><span class="sxs-lookup"><span data-stu-id="d832b-156">Defines methods a reliable state provider replica must implement for Service Fabric to interact with it.</span></span> </p>'
     syntax:
       content: public interface StateProviderReplica
   - uid: microsoft.servicefabric.data._reliable_state_manager_configuration
@@ -535,14 +535,14 @@ references:
     fullName: 'void microsoft.servicefabric.data.StateProviderReplica.setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
     type: Method
     summary: |-
-      <p>Systemfunktion, die während der potenziellen Datenverlust</p>
+      <p><span data-ttu-id="d832b-157">Systemfunktion, die während der potenziellen Datenverlust</span><span class="sxs-lookup"><span data-stu-id="d832b-157">Function called during suspected data-loss</span></span></p>
       <p></p>
     syntax:
       content: 'public void setOnDataLossCallback(Function<CancellationToken, CompletableFuture<Boolean>> onDataLossAsync)'
       parameters:
         - id: onDataLossAsync
           type: 432ffe41system.fabric._cancellation_token774bd4f0
-          description: '<p>TODO. Funktion, die als Teil der Verarbeitung von mutmaßlicher Verlust aufgerufen. Funktion nimmt CancellationToken und gibt eine CompletableFuture, die die asynchrone Verarbeitung des Ereignisses darstellt. "True" zurückgeben, gibt an, dass das Replikat Zustand wiederhergestellt wurde. False gibt an, dass das Replikat Zustand nicht geändert wurde. </p>'
+          description: '<p><span data-ttu-id="d832b-158">TODO.</span><span class="sxs-lookup"><span data-stu-id="d832b-158">TODO.</span></span> <span data-ttu-id="d832b-159">Funktion, die als Teil der Verarbeitung von mutmaßlicher Verlust aufgerufen.</span><span class="sxs-lookup"><span data-stu-id="d832b-159">Function called as part of suspected data loss processing.</span></span> <span data-ttu-id="d832b-160">Funktion nimmt CancellationToken und gibt eine CompletableFuture, die die asynchrone Verarbeitung des Ereignisses darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-160">Function takes in CancellationToken and returns a CompletableFuture that represents the asynchronous processing of the event.</span></span> <span data-ttu-id="d832b-161">"True" zurückgeben, gibt an, dass das Replikat Zustand wiederhergestellt wurde.</span><span class="sxs-lookup"><span data-stu-id="d832b-161">Returning true, indicates that the replica''s state has been restored.</span></span> <span data-ttu-id="d832b-162">False gibt an, dass das Replikat Zustand nicht geändert wurde.</span><span class="sxs-lookup"><span data-stu-id="d832b-162">False indicates that the replica''s state has not been changed.</span></span> </p>'
   - uid: system.fabric._cancellation_token
     parent: system.fabric
     href: system.fabric._cancellation_token.yml
@@ -550,7 +550,7 @@ references:
     nameWithType: CancellationToken
     fullName: system.fabric.CancellationToken
     type: Class
-    summary: '<p>Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen. Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode. Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll. Das Token kann nicht verwendet werden, um den Abbruch zu initiieren. Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true". Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist. </p>'
+    summary: '<p><span data-ttu-id="d832b-163">Ein <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> wird verwendet, um die Benachrichtigung verteilt wird, dass Vorgänge abgebrochen werden sollen.</span><span class="sxs-lookup"><span data-stu-id="d832b-163">A <xref uid="system.fabric._cancellation_token" data-throw-if-not-resolved="false">CancellationToken</xref> is used to propagate notification that operations should be canceled.</span></span> <span data-ttu-id="d832b-164">Sie erstellen ein Abbruchtoken, das durch die Instanziierung einer <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> -Objekt, das Abbruchtoken verwaltet entnommen seine <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken() </xref> Methode.</span><span class="sxs-lookup"><span data-stu-id="d832b-164">You create a cancellation token by instantiating a <xref uid="system.fabric._cancellation_token_source" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource</xref> object, which manages cancellation tokens retrieved from its <xref uid="system.fabric._cancellation_token_source.getToken()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#getToken()</xref> method.</span></span> <span data-ttu-id="d832b-165">Übergeben Sie dann das Abbruchtoken, das auf eine beliebige Anzahl von Vorgängen, die Nachricht vom Abbruch erhalten soll.</span><span class="sxs-lookup"><span data-stu-id="d832b-165">You then pass the cancellation token to any number of operations that should receive notice of cancellation.</span></span> <span data-ttu-id="d832b-166">Das Token kann nicht verwendet werden, um den Abbruch zu initiieren.</span><span class="sxs-lookup"><span data-stu-id="d832b-166">The token cannot be used to initiate cancellation.</span></span> <span data-ttu-id="d832b-167">Wenn das besitzende Objekt aufruft <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, auf das Abbruchtoken, das die abgebrochene Eigenschaft festgelegt ist auf "true".</span><span class="sxs-lookup"><span data-stu-id="d832b-167">When the owning object calls <xref uid="system.fabric._cancellation_token_source.cancel()" data-throw-if-not-resolved="false">system.fabric.CancellationTokenSource#cancel()</xref>, the cancelled property on the cancellation token is set to true.</span></span> <span data-ttu-id="d832b-168">Die Objekte, die die Benachrichtigung empfangen können Antworten Verfolgungsinformationen geeignet ist.</span><span class="sxs-lookup"><span data-stu-id="d832b-168">The objects that receive the notification can respond in whatever manner is appropriate.</span></span> </p>'
     syntax:
       content: public class CancellationToken
   - uid: 'microsoft.servicefabric.data._state_provider_replica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>>)'
@@ -560,16 +560,16 @@ references:
     nameWithType: 'StateProviderReplica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
     fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
     type: Method
-    summary: "<p>Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt. Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben. Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben. Darüber hinaus wird Sicherung als fehlgeschlagen markiert. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-169\">Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-169\">Performs a full backup of all reliable state managed by this <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span></span></p>\n<p><span data-ttu-id=\"d832b-170\">\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-170\">\r\n\r\n  <b>Remarks:</b> A FULL backup will be performed with a one-hour timeout.</span></span> <span data-ttu-id=\"d832b-171\">Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-171\">Boolean returned by the backupCallback indicate whether the service was able to successfully move the backup folder to an external location.</span></span> <span data-ttu-id=\"d832b-172\">Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-172\">If false is returned, BackupAsync throws UnsupportedOperationException with the relevant message indicating backupCallback returned false.</span></span> <span data-ttu-id=\"d832b-173\">Darüber hinaus wird Sicherung als fehlgeschlagen markiert.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-173\">Also, backup will be marked as unsuccessful.</span></span> </p>"
     syntax:
       content: 'public CompletableFuture<?> backupAsync(BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
       parameters:
         - id: backupCallback
           type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
-          description: '<p>Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden </p>'
+          description: '<p><span data-ttu-id="d832b-174">Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden</span><span class="sxs-lookup"><span data-stu-id="d832b-174">Callback to be called when the backup folder has been created locally and is ready to be moved out of the node</span></span> </p>'
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-175">Eine Aufgabe, die den asynchronen backup-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-175">Task that represents the asynchronous backup operation.</span></span> </p>'
   - uid: microsoft.servicefabric.data._backup_info
     parent: microsoft.servicefabric.data
     href: microsoft.servicefabric.data._backup_info.yml
@@ -577,7 +577,7 @@ references:
     nameWithType: BackupInfo
     fullName: microsoft.servicefabric.data.BackupInfo
     type: Class
-    summary: <p>Enthält Informationen über die Sicherung. </p>
+    summary: <p><span data-ttu-id="d832b-176">Enthält Informationen über die Sicherung.</span><span class="sxs-lookup"><span data-stu-id="d832b-176">Provides info about the backup.</span></span> </p>
     syntax:
       content: public class BackupInfo
   - uid: microsoft.servicefabric.data._reliable_state_manager
@@ -596,22 +596,22 @@ references:
     nameWithType: 'StateProviderReplica.backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
     fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
     type: Method
-    summary: "<p>Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt. Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben. Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben. Darüber hinaus wird Sicherung als fehlgeschlagen markiert. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-177\">Führt eine vollständige Sicherung alle zuverlässigen Zustand, die von diesem verwaltet <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-177\">Performs a full backup of all reliable state managed by this <xref uid=\"microsoft.servicefabric.data._reliable_state_manager\" data-throw-if-not-resolved=\"false\">ReliableStateManager</xref>.</span></span></p>\n<p><span data-ttu-id=\"d832b-178\">\r\n\r\n  <b>Beschreibung:</b> eine vollständige Sicherung mit einem Timeout einer Stunde ausgeführt.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-178\">\r\n\r\n  <b>Remarks:</b> A FULL backup will be performed with a one-hour timeout.</span></span> <span data-ttu-id=\"d832b-179\">Boolescher Wert zurückgegeben, die für die BackupCallback Geben Sie an, ob der Dienst konnte erfolgreich den Sicherungsordner in einem externen Speicherort zu verschieben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-179\">Boolean returned by the backupCallback indicate whether the service was able to successfully move the backup folder to an external location.</span></span> <span data-ttu-id=\"d832b-180\">Wenn \"false\" zurückgegeben wird, löst BackupAsync UnsupportedOperationException mit der entsprechenden Meldung BackupCallback \"false\" zurückgegeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-180\">If false is returned, BackupAsync throws UnsupportedOperationException with the relevant message indicating backupCallback returned false.</span></span> <span data-ttu-id=\"d832b-181\">Darüber hinaus wird Sicherung als fehlgeschlagen markiert.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-181\">Also, backup will be marked as unsuccessful.</span></span> </p>"
     syntax:
       content: 'public CompletableFuture<?> backupAsync(BackupOption option, Duration timeout, BiFunction<BackupInfo, CancellationToken, CompletableFuture<Boolean>> backupCallback)'
       parameters:
         - id: option
           type: microsoft.servicefabric.data._backup_option
-          description: <p>Der Typ der Sicherung ausführen. </p>
+          description: <p><span data-ttu-id="d832b-182">Der Typ der Sicherung ausführen.</span><span class="sxs-lookup"><span data-stu-id="d832b-182">The type of backup to perform.</span></span> </p>
         - id: timeout
           type: e02a2de0
-          description: <p>Das Timeout für diesen Vorgang. </p>
+          description: <p><span data-ttu-id="d832b-183">Das Timeout für diesen Vorgang.</span><span class="sxs-lookup"><span data-stu-id="d832b-183">The timeout for this operation.</span></span> </p>
         - id: backupCallback
           type: 8ead6242microsoft.servicefabric.data._backup_infob33c76fcsystem.fabric._cancellation_token774bd4f0
-          description: '<p>Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden </p>'
+          description: '<p><span data-ttu-id="d832b-184">Rückruf aufgerufen wird, wenn sich der Sicherungsordner lokal erstellt wurde, und kann jetzt aus dem Knoten verschoben werden</span><span class="sxs-lookup"><span data-stu-id="d832b-184">Callback to be called when the backup folder has been created locally and is ready to be moved out of the node</span></span> </p>'
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen backup-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-185">Eine Aufgabe, die den asynchronen backup-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-185">Task that represents the asynchronous backup operation.</span></span> </p>'
   - uid: microsoft.servicefabric.data._backup_option
     parent: microsoft.servicefabric.data
     href: microsoft.servicefabric.data._backup_option.yml
@@ -619,7 +619,7 @@ references:
     nameWithType: BackupOption
     fullName: microsoft.servicefabric.data.BackupOption
     type: Enum
-    summary: <p>Gibt die Art der Sicherung an. </p>
+    summary: <p><span data-ttu-id="d832b-186">Gibt die Art der Sicherung an.</span><span class="sxs-lookup"><span data-stu-id="d832b-186">Indicates the kind of the backup.</span></span> </p>
     syntax:
       content: public enum BackupOption
   - uid: microsoft.servicefabric.data._state_provider_replica.restoreAsync(String)
@@ -629,16 +629,16 @@ references:
     nameWithType: StateProviderReplica.restoreAsync(String backupFolderPath)
     fullName: CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.restoreAsync(String backupFolderPath)
     type: Method
-    summary: "<p>Stellen Sie eine Sicherung wieder her.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>eine sichere Wiederherstellung ausgeführt, d. h., die Wiederherstellung wird nur ausgeführt, wenn Sie die Daten zum Wiederherstellen nach Status, der das aktuelle Replikat ist. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-187\">Stellen Sie eine Sicherung wieder her.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-187\">Restore a backup taken.</span></span></p>\n<p><span data-ttu-id=\"d832b-188\">\r\n\r\n  <b>Beschreibung:</b>eine sichere Wiederherstellung ausgeführt, d. h., die Wiederherstellung wird nur ausgeführt, wenn Sie die Daten zum Wiederherstellen nach Status, der das aktuelle Replikat ist.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-188\">\r\n\r\n  <b>Remarks:</b>A safe restore will be performed, meaning the restore will only be completed if the data to restore is ahead of state of the current replica.</span></span> </p>"
     syntax:
       content: public CompletableFuture<?> restoreAsync(String backupFolderPath)
       parameters:
         - id: backupFolderPath
           type: '26831127'
-          description: '<p>Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden. Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. </p>'
+          description: '<p><span data-ttu-id="d832b-189">Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-189">The directory where the replica is to be restored from.</span></span> <span data-ttu-id="d832b-190">Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen.</span><span class="sxs-lookup"><span data-stu-id="d832b-190">This parameter cannot be null, empty or contain just whitespace.</span></span> <span data-ttu-id="d832b-191">UNC-Pfade können auch angegeben werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-191">UNC paths may also be provided.</span></span> </p>'
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-192">Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-192">Task that represents the asynchronous restore operation.</span></span> </p>'
   - uid: 'microsoft.servicefabric.data._state_provider_replica.restoreAsync(String,RestorePolicy)'
     parent: microsoft.servicefabric.data._state_provider_replica
     href: microsoft.servicefabric.data._state_provider_replica.yml
@@ -647,20 +647,20 @@ references:
     fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
     type: Method
     summary: |-
-      <p>Stellen Sie eine Sicherung wieder her.</p>
+      <p><span data-ttu-id="d832b-193">Stellen Sie eine Sicherung wieder her.</span><span class="sxs-lookup"><span data-stu-id="d832b-193">Restore a backup taken</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<?> restoreAsync(String backupFolderPath, RestorePolicy restorePolicy)'
       parameters:
         - id: backupFolderPath
           type: '26831127'
-          description: '<p>Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden. Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen. UNC-Pfade können auch angegeben werden. </p>'
+          description: '<p><span data-ttu-id="d832b-194">Das Verzeichnis, in dem das Replikat aus wiederhergestellt werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-194">The directory where the replica is to be restored from.</span></span> <span data-ttu-id="d832b-195">Dieser Parameter kann nicht null, leer oder enthält nur Leerzeichen.</span><span class="sxs-lookup"><span data-stu-id="d832b-195">This parameter cannot be null, empty or contain just whitespace.</span></span> <span data-ttu-id="d832b-196">UNC-Pfade können auch angegeben werden.</span><span class="sxs-lookup"><span data-stu-id="d832b-196">UNC paths may also be provided.</span></span> </p>'
         - id: restorePolicy
           type: microsoft.servicefabric.data._restore_policy
-          description: <p>Die Richtlinie für die Wiederherstellung. </p>
+          description: <p><span data-ttu-id="d832b-197">Die Richtlinie für die Wiederherstellung.</span><span class="sxs-lookup"><span data-stu-id="d832b-197">The restore policy.</span></span> </p>
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-198">Eine Aufgabe, die den asynchronen Restore-Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-198">Task that represents the asynchronous restore operation.</span></span> </p>'
   - uid: microsoft.servicefabric.data._restore_policy
     parent: microsoft.servicefabric.data
     href: microsoft.servicefabric.data._restore_policy.yml
@@ -668,7 +668,7 @@ references:
     nameWithType: RestorePolicy
     fullName: microsoft.servicefabric.data.RestorePolicy
     type: Enum
-    summary: <p>Richtlinie für den Wiederherstellungsvorgang. </p>
+    summary: <p><span data-ttu-id="d832b-199">Richtlinie für den Wiederherstellungsvorgang.</span><span class="sxs-lookup"><span data-stu-id="d832b-199">Policy for restore operation.</span></span> </p>
     syntax:
       content: public enum RestorePolicy
   - uid: microsoft.servicefabric.data._state_provider_replica.initialize(StatefulServiceInitializationParameters)
@@ -678,13 +678,13 @@ references:
     nameWithType: StateProviderReplica.initialize(StatefulServiceInitializationParameters initializationParameters)
     fullName: void microsoft.servicefabric.data.StateProviderReplica.initialize(StatefulServiceInitializationParameters initializationParameters)
     type: Method
-    summary: "<p>Das Status Anbieter Replikat unter Verwendung des Diensts Initialisierung zu initialisieren.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>keine komplexen Verarbeitung bei der Initialisierung erfolgen soll. Teuer oder lang ausgeführte Initialisierung sollte im OpenAsync erfolgen. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-200\">Das Status Anbieter Replikat unter Verwendung des Diensts Initialisierung zu initialisieren.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-200\">Initialize the state provider replica using the service initialization information.</span></span></p>\n<p><span data-ttu-id=\"d832b-201\">\r\n\r\n  <b>Beschreibung:</b>keine komplexen Verarbeitung bei der Initialisierung erfolgen soll.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-201\">\r\n\r\n  <b>Remarks:</b>No complex processing should be done during Initialize.</span></span> <span data-ttu-id=\"d832b-202\">Teuer oder lang ausgeführte Initialisierung sollte im OpenAsync erfolgen.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-202\">Expensive or long-running initialization should be done in OpenAsync.</span></span> </p>"
     syntax:
       content: public void initialize(StatefulServiceInitializationParameters initializationParameters)
       parameters:
         - id: initializationParameters
           type: system.fabric._stateful_service_initialization_parameters
-          description: '<p>Initialisierungsinformationen für Dienst z. B. Dienstnamen, Partitions-Id, Replikat-Id und Code-Paketinformationen. </p>'
+          description: '<p><span data-ttu-id="d832b-203">Initialisierungsinformationen für Dienst z. B. Dienstnamen, Partitions-Id, Replikat-Id und Code-Paketinformationen.</span><span class="sxs-lookup"><span data-stu-id="d832b-203">Service initialization information such as service name, partition id, replica id, and code package information.</span></span> </p>'
   - uid: system.fabric._stateful_service_initialization_parameters
     parent: system.fabric
     href: system.fabric._stateful_service_initialization_parameters.yml
@@ -692,7 +692,7 @@ references:
     nameWithType: StatefulServiceInitializationParameters
     fullName: system.fabric.StatefulServiceInitializationParameters
     type: Class
-    summary: <p>Definiert die Dienst-Initialisierungsparameter für ein zustandsbehafteter Dienst. </p>
+    summary: <p><span data-ttu-id="d832b-204">Definiert die Dienst-Initialisierungsparameter für ein zustandsbehafteter Dienst.</span><span class="sxs-lookup"><span data-stu-id="d832b-204">Defines service initialization parameters for a stateful service.</span></span> </p>
     syntax:
       content: public class StatefulServiceInitializationParameters
   - uid: system.fabric._replicator
@@ -711,22 +711,22 @@ references:
     nameWithType: 'StateProviderReplica.openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
     fullName: 'CompletableFuture<Replicator> microsoft.servicefabric.data.StateProviderReplica.openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
     type: Method
-    summary: "<p>Öffnen Sie das Replikat des Status-Anbieter für die Verwendung an.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>Initialisierungsaufgaben für erweiterte State-Anbieter zu diesem Zeitpunkt gestartet werden können. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-205\">Öffnen Sie das Replikat des Status-Anbieter für die Verwendung an.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-205\">Open the state provider replica for use.</span></span></p>\n<p><span data-ttu-id=\"d832b-206\">\r\n\r\n  <b>Beschreibung:</b>Initialisierungsaufgaben für erweiterte State-Anbieter zu diesem Zeitpunkt gestartet werden können.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-206\">\r\n\r\n  <b>Remarks:</b>Extended state provider initialization tasks can be started at this time.</span></span> </p>"
     syntax:
       content: 'public CompletableFuture<Replicator> openAsync(ReplicaOpenMode openMode, StatefulServicePartition partition, CancellationToken cancellationToken)'
       parameters:
         - id: openMode
           type: system.fabric._replica_open_mode
-          description: '<p>Gibt an, ob es sich um ein neues oder vorhandenes Replikat handelt. </p>'
+          description: '<p><span data-ttu-id="d832b-207">Gibt an, ob es sich um ein neues oder vorhandenes Replikat handelt.</span><span class="sxs-lookup"><span data-stu-id="d832b-207">Indicates whether this is a new or existing replica.</span></span> </p>'
         - id: partition
           type: system.fabric._stateful_service_partition
-          description: <p>Die Partition dieses Replikat gehört. </p>
+          description: <p><span data-ttu-id="d832b-208">Die Partition dieses Replikat gehört.</span><span class="sxs-lookup"><span data-stu-id="d832b-208">The partition this replica belongs to.</span></span> </p>
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p><span data-ttu-id=\"d832b-209\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-209\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> object to indicate the cancellation status of the operation.</span></span> </p>"
       return:
         type: 9cdf14d0system.fabric._replicatora08ddfce
-        description: '<p>Eine Aufgabe, die den asynchronen Öffnungsvorgang darstellt. Das Ergebnis enthält Replikator für die Replikation des Status zwischen Replikaten Anbieter Status in der Partition verantwortlich. </p>'
+        description: '<p><span data-ttu-id="d832b-210">Eine Aufgabe, die den asynchronen Öffnungsvorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-210">Task that represents the asynchronous open operation.</span></span> <span data-ttu-id="d832b-211">Das Ergebnis enthält Replikator für die Replikation des Status zwischen Replikaten Anbieter Status in der Partition verantwortlich.</span><span class="sxs-lookup"><span data-stu-id="d832b-211">The result contains the replicator responsible for replicating state between other state provider replicas in the partition.</span></span> </p>'
   - uid: system.fabric._replica_open_mode
     parent: system.fabric
     href: system.fabric._replica_open_mode.yml
@@ -753,20 +753,20 @@ references:
     fullName: 'CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
     type: Method
     summary: |-
-      <p>Dem State-Anbieter-Replikat zu benachrichtigen, dass seine Rolle geändert hat, z. B. um Primary oder Secondary sein.</p>
+      <p><span data-ttu-id="d832b-212">Dem State-Anbieter-Replikat zu benachrichtigen, dass seine Rolle geändert hat, z. B. um Primary oder Secondary sein.</span><span class="sxs-lookup"><span data-stu-id="d832b-212">Notify the state provider replica that its role is changing, for example to Primary or Secondary.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<?> changeRoleAsync(ReplicaRole newRole, CancellationToken cancellationToken)'
       parameters:
         - id: newRole
           type: system.fabric._replica_role
-          description: '<p>Die neue replikatrolle, z. B. Primary oder Secondary sein. </p>'
+          description: '<p><span data-ttu-id="d832b-213">Die neue replikatrolle, z. B. Primary oder Secondary sein.</span><span class="sxs-lookup"><span data-stu-id="d832b-213">The new replica role, such as primary or secondary.</span></span> </p>'
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p><span data-ttu-id=\"d832b-214\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-214\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> object to indicate the cancellation status of the operation.</span></span> </p>"
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen Rolle Änderungsvorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-215">Eine Aufgabe, die den asynchronen Rolle Änderungsvorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-215">Task that represents the asynchronous change role operation.</span></span> </p>'
   - uid: system.fabric._replica_role
     parent: system.fabric
     href: system.fabric._replica_role.yml
@@ -774,7 +774,7 @@ references:
     nameWithType: ReplicaRole
     fullName: system.fabric.ReplicaRole
     type: Enum
-    summary: <p>Definiert die replikatrolle </p>
+    summary: <p><span data-ttu-id="d832b-216">Definiert die replikatrolle</span><span class="sxs-lookup"><span data-stu-id="d832b-216">Defines the replica role</span></span> </p>
     syntax:
       content: public enum ReplicaRole
   - uid: microsoft.servicefabric.data._state_provider_replica.closeAsync(CancellationToken)
@@ -784,16 +784,16 @@ references:
     nameWithType: StateProviderReplica.closeAsync(CancellationToken cancellationToken)
     fullName: CompletableFuture<?> microsoft.servicefabric.data.StateProviderReplica.closeAsync(CancellationToken cancellationToken)
     type: Method
-    summary: "<p>Geschlossen Sie das Replikat der State-Anbieter ordnungsgemäß werden.</p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn das Replikat Code ein Upgrade wird, das Replikat aufgrund des Lastenausgleichs verschoben wird oder ein vorübergehender Fehler erkannt wird. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-217\">Geschlossen Sie das Replikat der State-Anbieter ordnungsgemäß werden.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-217\">Gracefully close the state provider replica.</span></span></p>\n<p><span data-ttu-id=\"d832b-218\">\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn das Replikat Code ein Upgrade wird, das Replikat aufgrund des Lastenausgleichs verschoben wird oder ein vorübergehender Fehler erkannt wird.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-218\">\r\n\r\n  <b>Remarks:</b>This generally occurs when the replica's code is being upgrade, the replica is being moved due to load balancing, or a transient fault is detected.</span></span> </p>"
     syntax:
       content: public CompletableFuture<?> closeAsync(CancellationToken cancellationToken)
       parameters:
         - id: cancellationToken
           type: system.fabric._cancellation_token
-          description: "<p>\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben. </p>"
+          description: "<p><span data-ttu-id=\"d832b-219\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> Objekt, das den Status der Abbruch des Vorgangs anzugeben.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-219\">\r\n\r\n  <xref uid=\"system.fabric._cancellation_token\" data-throw-if-not-resolved=\"false\">system.fabric.CancellationToken</xref> object to indicate the cancellation status of the operation.</span></span> </p>"
       return:
         type: 16409f84
-        description: '<p>Eine Aufgabe, die den asynchronen Vorgang darstellt. </p>'
+        description: '<p><span data-ttu-id="d832b-220">Eine Aufgabe, die den asynchronen Vorgang darstellt.</span><span class="sxs-lookup"><span data-stu-id="d832b-220">Task that represents the asynchronous close operation.</span></span> </p>'
   - uid: microsoft.servicefabric.data._state_provider_replica.abort()
     parent: microsoft.servicefabric.data._state_provider_replica
     href: microsoft.servicefabric.data._state_provider_replica.yml
@@ -801,6 +801,6 @@ references:
     nameWithType: StateProviderReplica.abort()
     fullName: void microsoft.servicefabric.data.StateProviderReplica.abort()
     type: Method
-    summary: "<p>Bricht einen Zustand Anbieter Replikat erzwungen ab. </p>\n<p>\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder wenn das Replikat Lifecycle aufgrund von internen Fehlern von Service Fabric zuverlässig verwalten kann. </p>"
+    summary: "<p><span data-ttu-id=\"d832b-221\">Bricht einen Zustand Anbieter Replikat erzwungen ab.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-221\">Forcefully abort the state provider replica.</span></span> </p>\n<p><span data-ttu-id=\"d832b-222\">\r\n\r\n  <b>Beschreibung:</b>dies im Allgemeinen tritt auf, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder wenn das Replikat Lifecycle aufgrund von internen Fehlern von Service Fabric zuverlässig verwalten kann.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d832b-222\">\r\n\r\n  <b>Remarks:</b>This generally occurs when a permanent fault is detected on the node, or when Service Fabric cannot reliably manage the replica's lifecycle due to internal failures.</span></span> </p>"
     syntax:
       content: public void abort()

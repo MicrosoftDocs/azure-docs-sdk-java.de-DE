@@ -21,7 +21,7 @@ items:
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageHandler.java
       startLine: 10
     package: com.microsoft.azure.servicebus
-    summary: '<p>Definiert den Vertrag für die Registrierung des Rückrufs <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerMessageHandler(IMessageHandler)</xref> und <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerMessageHandler(IMessageHandler)</xref> für <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> und <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>. </p>'
+    summary: '<p><span data-ttu-id="ff7cb-101">Definiert den Vertrag für die Registrierung des Rückrufs <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerMessageHandler(IMessageHandler)</xref> und <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerMessageHandler(IMessageHandler)</xref> für <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> und <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-101">Defines the contract for registering the callback <xref uid="" data-throw-if-not-resolved="false">QueueClient#registerMessageHandler(IMessageHandler)</xref> and <xref uid="" data-throw-if-not-resolved="false">SubscriptionClient#registerMessageHandler(IMessageHandler)</xref> for <xref uid="com.microsoft.azure.servicebus._queue_client" data-throw-if-not-resolved="false">QueueClient</xref> and <xref uid="com.microsoft.azure.servicebus._subscription_client" data-throw-if-not-resolved="false">SubscriptionClient</xref>.</span></span> </p>'
     syntax:
       content: public interface IMessageHandler
   - uid: 'com.microsoft.azure.servicebus._i_message_handler.notifyException(Throwable,ExceptionPhase)'
@@ -41,17 +41,17 @@ items:
       startLine: 26
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfangen die Ausnahmen, die übergeben von Datapump während der Verarbeitung von Nachrichten.</p>
+      <p><span data-ttu-id="ff7cb-102">Empfangen die Ausnahmen, die übergeben von Datapump während der Verarbeitung von Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-102">Receiving the exceptions that passed by pump during message processing.</span></span></p>
       <p></p>
     syntax:
       content: 'public void notifyException(Throwable exception, ExceptionPhase phase)'
       parameters:
         - id: exception
           type: a04fafd7
-          description: <p>Diese Ausnahme in Datapump empfangen wurde. </p>
+          description: <p><span data-ttu-id="ff7cb-103">Diese Ausnahme in Datapump empfangen wurde.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-103">Exception received in pump.</span></span> </p>
         - id: phase
           type: com.microsoft.azure.servicebus._exception_phase
-          description: <p>Phase der Ausnahme. </p>
+          description: <p><span data-ttu-id="ff7cb-104">Phase der Ausnahme.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-104">Exception phase.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_handler.onMessageAsync(IMessage)
     id: onMessageAsync(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_handler
@@ -69,17 +69,17 @@ items:
       startLine: 18
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Der Rückruf für Nachrichtensystem Übergabe empfangenen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>s.</p>
+      <p><span data-ttu-id="ff7cb-105">Der Rückruf für Nachrichtensystem Übergabe empfangenen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>s.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-105">The callback for message pump to pass received <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref>s.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> onMessageAsync(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
-          description: <p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>. </p>
+          description: <p><span data-ttu-id="ff7cb-106">Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-106">The received <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref>.</span></span> </p>
       return:
         type: db03ee24
-        description: <p>CompletableFuture für die Message-Handler. </p>
+        description: <p><span data-ttu-id="ff7cb-107">CompletableFuture für die Message-Handler.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-107">CompletableFuture for the message handler.</span></span> </p>
 references:
   - uid: db03ee24
     spec.java:
@@ -107,7 +107,7 @@ references:
     fullName: com.microsoft.azure.servicebus.IMessage
     type: Interface
     summary: |-
-      <p>Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</p>
+      <p><span data-ttu-id="ff7cb-108">Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-108">Represents a message that is exchanged between Azure Service Bus and clients.</span></span></p>
       <p></p>
     syntax:
       content: public interface IMessage
@@ -128,7 +128,7 @@ references:
     fullName: com.microsoft.azure.servicebus.ExceptionPhase
     type: Enum
     summary: |-
-      <p>Die Enumeration zur Darstellung der Phase in einer Nachrichtensystem oder Sitzung Datapump an dem eine Ausnahme aufgetreten ist.</p>
+      <p><span data-ttu-id="ff7cb-109">Die Enumeration zur Darstellung der Phase in einer Nachrichtensystem oder Sitzung Datapump an dem eine Ausnahme aufgetreten ist.</span><span class="sxs-lookup"><span data-stu-id="ff7cb-109">Enumeration to represent the phase in a message pump or session pump at which an exception occurred.</span></span></p>
       <p></p>
     syntax:
       content: public enum ExceptionPhase

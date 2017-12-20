@@ -54,7 +54,7 @@ items:
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/IMessageReceiver.java
       startLine: 17
     package: com.microsoft.azure.servicebus
-    summary: '<p>Definiert die Nachricht Empfänger-Schnittstelle. Die MessageReceiver kann zum Empfangen von Nachrichten aus Warteschlangen und Abonnements, und bestätigen sie verwendet werden. </p>'
+    summary: '<p><span data-ttu-id="a8e4b-101">Definiert die Nachricht Empfänger-Schnittstelle.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-101">Defines message receiver interface.</span></span> <span data-ttu-id="a8e4b-102">Die MessageReceiver kann zum Empfangen von Nachrichten aus Warteschlangen und Abonnements, und bestätigen sie verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-102">The MessageReceiver can be used to receive messages from Queues and Subscriptions and acknowledge them.</span></span> </p>'
     syntax:
       content: 'public interface IMessageReceiver extends IMessageEntityClient,IMessageBrowser'
     inheritedMembers:
@@ -86,19 +86,19 @@ items:
       startLine: 33
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verwerfen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Sperrtoken. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht erhöht die Übermittlungsanzahl der Nachricht</p>
+      <p><span data-ttu-id="a8e4b-103">Verwerfen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Sperrtoken.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-103">Abandon <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> with lock token.</span></span> <span data-ttu-id="a8e4b-104">Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-104">This will make the message available again for processing.</span></span> <span data-ttu-id="a8e4b-105">Aufgeben einer Nachricht erhöht die Übermittlungsanzahl der Nachricht</span><span class="sxs-lookup"><span data-stu-id="a8e4b-105">Abandoning a message will increase the delivery count on the message</span></span></p>
       <p></p>
     syntax:
       content: public void abandon(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-106\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-106\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-107">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-107">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Abandon fehlgeschlagen ist. </p>
+        description: <p><span data-ttu-id="a8e4b-108">Wenn Abandon fehlgeschlagen ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-108">if abandon failed</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.abandon(UUID,Map<String, Object>)'
     id: 'abandon(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -116,22 +116,22 @@ items:
       startLine: 43
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verwerfen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Lock-token und aktualisierte Message-Eigenschaft. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht erhöht die Übermittlungsanzahl der Nachricht</p>
+      <p><span data-ttu-id="a8e4b-109">Verwerfen <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Lock-token und aktualisierte Message-Eigenschaft.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-109">Abandon <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> with lock token and updated message property.</span></span> <span data-ttu-id="a8e4b-110">Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-110">This will make the message available again for processing.</span></span> <span data-ttu-id="a8e4b-111">Aufgeben einer Nachricht erhöht die Übermittlungsanzahl der Nachricht</span><span class="sxs-lookup"><span data-stu-id="a8e4b-111">Abandoning a message will increase the delivery count on the message</span></span></p>
       <p></p>
     syntax:
       content: 'public void abandon(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-112\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-112\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-113\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-113\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-114">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-114">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Abandon fehlgeschlagen ist. </p>
+        description: <p><span data-ttu-id="a8e4b-115">Wenn Abandon fehlgeschlagen ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-115">if abandon failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.abandonAsync(UUID)
     id: abandonAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -149,17 +149,17 @@ items:
       startLine: 51
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verwerfen Sie asynchron <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Sperrtoken. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht, erhöhen Sie die Übermittlungsanzahl der Nachricht.</p>
+      <p><span data-ttu-id="a8e4b-116">Verwerfen Sie asynchron <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Sperrtoken.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-116">Asynchronously abandon <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> with lock token.</span></span> <span data-ttu-id="a8e4b-117">Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-117">This will make the message available again for processing.</span></span> <span data-ttu-id="a8e4b-118">Aufgeben einer Nachricht, erhöhen Sie die Übermittlungsanzahl der Nachricht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-118">Abandoning a message will increase the delivery count on the message.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> abandonAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-119\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-119\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Abandon darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-120">eine CompletableFuture, die die ausstehenden Abandon darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-120">a CompletableFuture representing the pending abandon.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.abandonAsync(UUID,Map<String, Object>)'
     id: 'abandonAsync(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -177,20 +177,20 @@ items:
       startLine: 60
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verwerfen Sie asynchron <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Lock-token und aktualisierte Message-Eigenschaft. Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung. Aufgeben einer Nachricht, erhöhen Sie die Übermittlungsanzahl der Nachricht.</p>
+      <p><span data-ttu-id="a8e4b-121">Verwerfen Sie asynchron <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Lock-token und aktualisierte Message-Eigenschaft.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-121">Asynchronously abandon <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> with lock token and updated message property.</span></span> <span data-ttu-id="a8e4b-122">Dadurch wird die Nachricht erneut für die Verarbeitung zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-122">This will make the message available again for processing.</span></span> <span data-ttu-id="a8e4b-123">Aufgeben einer Nachricht, erhöhen Sie die Übermittlungsanzahl der Nachricht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-123">Abandoning a message will increase the delivery count on the message.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> abandonAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-124\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-124\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-125\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-125\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Abandon darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-126">eine CompletableFuture, die die ausstehenden Abandon darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-126">a CompletableFuture representing the pending abandon.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.complete(UUID)
     id: complete(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -208,19 +208,19 @@ items:
       startLine: 69
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Schließt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Hierdurch wird die Nachricht vom Dienst gelöscht.</p>
+      <p><span data-ttu-id="a8e4b-127">Schließt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-127">Completes a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> using its lock token.</span></span> <span data-ttu-id="a8e4b-128">Hierdurch wird die Nachricht vom Dienst gelöscht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-128">This will delete the message from the service.</span></span></p>
       <p></p>
     syntax:
       content: public void complete(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-129\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-129\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-130">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-130">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Abandon fehlgeschlagen ist. </p>
+        description: <p><span data-ttu-id="a8e4b-131">Wenn Abandon fehlgeschlagen ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-131">if abandon failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.completeAsync(UUID)
     id: completeAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -238,17 +238,17 @@ items:
       startLine: 79
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Asynchron abgeschlossen ist ein <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Hierdurch wird die Nachricht vom Dienst gelöscht.</p>
+      <p><span data-ttu-id="a8e4b-132">Asynchron abgeschlossen ist ein <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-132">Asynchronously completes a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> using its lock token.</span></span> <span data-ttu-id="a8e4b-133">Hierdurch wird die Nachricht vom Dienst gelöscht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-133">This will delete the message from the service.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> completeAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-134\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-134\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
       return:
         type: db03ee24
-        description: '<p>ein CompletableFuture, die ausstehend. </p>'
+        description: '<p><span data-ttu-id="a8e4b-135">ein CompletableFuture, die ausstehend.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-135">a CompletableFuture representing the pending complete.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID)
     id: deadLetter(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -266,19 +266,19 @@ items:
       startLine: 126
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> auf die Unterwarteschlange für unzustellbare Nachrichten.</p>
+      <p><span data-ttu-id="a8e4b-136">Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> auf die Unterwarteschlange für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-136">Moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue.</span></span></p>
       <p></p>
     syntax:
       content: public void deadLetter(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-137\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-137\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-138">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-138">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
+        description: <p><span data-ttu-id="a8e4b-139">Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-139">if deadletter failed</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,Map<String, Object>)'
     id: 'deadLetter(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -296,22 +296,22 @@ items:
       startLine: 136
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> an die Warteschlange für unzustellbare Nachrichten untergeordnete, mit geänderten Nachrichteneigenschaften.</p>
+      <p><span data-ttu-id="a8e4b-140">Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> an die Warteschlange für unzustellbare Nachrichten untergeordnete, mit geänderten Nachrichteneigenschaften.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-140">Moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with modified message properties.</span></span></p>
       <p></p>
     syntax:
       content: 'public void deadLetter(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-141\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-141\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-142\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-142\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-143">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-143">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
+        description: <p><span data-ttu-id="a8e4b-144">Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-144">if deadletter failed</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,String,String)'
     id: 'deadLetter(UUID,String,String)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -329,25 +329,25 @@ items:
       startLine: 147
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Beschreibung der Ursache und Fehler.</p>
+      <p><span data-ttu-id="a8e4b-145">Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Beschreibung der Ursache und Fehler.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-145">Moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with deadletter reason and error description.</span></span></p>
       <p></p>
     syntax:
       content: 'public void deadLetter(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-146\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-146\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: deadLetterReason
           type: '26831127'
-          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-147">Der Grund für die Warteschlange für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-147">The deadletter reason.</span></span> </p>
         - id: deadLetterErrorDescription
           type: '26831127'
-          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-148">Die fehlerbeschreibung für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-148">The deadletter error description.</span></span> </p>
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-149">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-149">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
+        description: <p><span data-ttu-id="a8e4b-150">Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-150">if deadletter failed</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetter(UUID,String,String,Map<String, Object>)'
     id: 'deadLetter(UUID,String,String,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -365,28 +365,28 @@ items:
       startLine: 159
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Grund und Fehler Beschreibung und die geänderten Eigenschaften.</p>
+      <p><span data-ttu-id="a8e4b-151">Verschiebt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Grund und Fehler Beschreibung und die geänderten Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-151">Moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with deadletter reason and error description and modified properties.</span></span></p>
       <p></p>
     syntax:
       content: 'public void deadLetter(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-152\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-152\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: deadLetterReason
           type: '26831127'
-          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-153">Der Grund für die Warteschlange für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-153">The deadletter reason.</span></span> </p>
         - id: deadLetterErrorDescription
           type: '26831127'
-          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-154">Die fehlerbeschreibung für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-154">The deadletter error description.</span></span> </p>
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-155\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-155\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-156">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-156">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen. </p>
+        description: <p><span data-ttu-id="a8e4b-157">Wenn die Warteschlange für unzustellbare Nachrichten ist fehlgeschlagen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-157">if deadletter failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID)
     id: deadLetterAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -404,17 +404,17 @@ items:
       startLine: 167
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten.</p>
+      <p><span data-ttu-id="a8e4b-158">Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-158">Asynchronously moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with deadletter.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> deadLetterAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-159\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-159\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-160">eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-160">a CompletableFuture representing the pending deadletter.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID,Map<String, Object>)'
     id: 'deadLetterAsync(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -432,20 +432,20 @@ items:
       startLine: 176
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> an die Warteschlange für unzustellbare Nachrichten untergeordnete, mit der geänderten Eigenschaften.</p>
+      <p><span data-ttu-id="a8e4b-161">Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> an die Warteschlange für unzustellbare Nachrichten untergeordnete, mit der geänderten Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-161">Asynchronously moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with modified properties.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-162\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-162\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-163\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-163\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-164">eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-164">a CompletableFuture representing the pending deadletter.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID,String,String)'
     id: 'deadLetterAsync(UUID,String,String)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -463,23 +463,23 @@ items:
       startLine: 186
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Beschreibung der Ursache und Fehler.</p>
+      <p><span data-ttu-id="a8e4b-165">Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Beschreibung der Ursache und Fehler.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-165">Asynchronously moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with deadletter reason and error description.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-166\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-166\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: deadLetterReason
           type: '26831127'
-          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-167">Der Grund für die Warteschlange für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-167">The deadletter reason.</span></span> </p>
         - id: deadLetterErrorDescription
           type: '26831127'
-          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-168">Die fehlerbeschreibung für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-168">The deadletter error description.</span></span> </p>
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-169">eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-169">a CompletableFuture representing the pending deadletter.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deadLetterAsync(UUID,String,String,Map<String, Object>)'
     id: 'deadLetterAsync(UUID,String,String,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -497,26 +497,26 @@ items:
       startLine: 197
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Grund und Fehler Beschreibung und die geänderten Eigenschaften.</p>
+      <p><span data-ttu-id="a8e4b-170">Wechselt asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit in der Warteschlange für unzustellbare Nachrichten untergeordnete Warteschlange für unzustellbare Nachrichten Grund und Fehler Beschreibung und die geänderten Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-170">Asynchronously moves a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to the deadletter sub-queue with deadletter reason and error description and modified properties.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deadLetterAsync(UUID lockToken, String deadLetterReason, String deadLetterErrorDescription, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-171\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-171\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: deadLetterReason
           type: '26831127'
-          description: <p>Der Grund für die Warteschlange für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-172">Der Grund für die Warteschlange für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-172">The deadletter reason.</span></span> </p>
         - id: deadLetterErrorDescription
           type: '26831127'
-          description: <p>Die fehlerbeschreibung für unzustellbare Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-173">Die fehlerbeschreibung für unzustellbare Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-173">The deadletter error description.</span></span> </p>
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-174\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-174\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-175">eine CompletableFuture, die die ausstehenden Warteschlange für unzustellbare Nachrichten darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-175">a CompletableFuture representing the pending deadletter.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.defer(UUID)
     id: defer(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -534,19 +534,19 @@ items:
       startLine: 90
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Orientiert sich eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p><span data-ttu-id="a8e4b-176">Orientiert sich eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-176">Defers a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> using its lock token.</span></span> <span data-ttu-id="a8e4b-177">Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-177">This will move message into deferred subqueue.</span></span></p>
       <p></p>
     syntax:
       content: public void defer(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-178\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-178\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-179">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-179">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn zurückstellen fehlgeschlagen </p>
+        description: <p><span data-ttu-id="a8e4b-180">Wenn zurückstellen fehlgeschlagen</span><span class="sxs-lookup"><span data-stu-id="a8e4b-180">if defer failed</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.defer(UUID,Map<String, Object>)'
     id: 'defer(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -564,22 +564,22 @@ items:
       startLine: 100
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Orientiert sich eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mithilfe seiner Sperrtoken mit Message-Eigenschaft geändert. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p><span data-ttu-id="a8e4b-181">Orientiert sich eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mithilfe seiner Sperrtoken mit Message-Eigenschaft geändert.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-181">Defers a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> using its lock token with modified message property.</span></span> <span data-ttu-id="a8e4b-182">Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-182">This will move message into deferred subqueue.</span></span></p>
       <p></p>
     syntax:
       content: 'public void defer(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-183\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-183\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-184\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-184\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-185">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-185">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn zurückstellen fehlgeschlagen </p>
+        description: <p><span data-ttu-id="a8e4b-186">Wenn zurückstellen fehlgeschlagen</span><span class="sxs-lookup"><span data-stu-id="a8e4b-186">if defer failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.deferAsync(UUID)
     id: deferAsync(UUID)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -597,17 +597,17 @@ items:
       startLine: 108
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verzögert asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p><span data-ttu-id="a8e4b-187">Verzögert asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem Sperrtoken.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-187">Asynchronously defers a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> using its lock token.</span></span> <span data-ttu-id="a8e4b-188">Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-188">This will move message into deferred subqueue.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> deferAsync(UUID lockToken)
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-189\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-189\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Defer darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-190">eine CompletableFuture, die die ausstehenden Defer darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-190">a CompletableFuture representing the pending defer.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.deferAsync(UUID,Map<String, Object>)'
     id: 'deferAsync(UUID,Map<String, Object>)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -625,20 +625,20 @@ items:
       startLine: 117
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Verzögert asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mithilfe seiner Sperrtoken mit Nachricht-Eigenschaft geändert. Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</p>
+      <p><span data-ttu-id="a8e4b-191">Verzögert asynchron eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mithilfe seiner Sperrtoken mit Nachricht-Eigenschaft geändert.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-191">Asynchronously defers a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> using its lock token with modified message propert.</span></span> <span data-ttu-id="a8e4b-192">Dies wird in die Unterwarteschlange für verzögerte Nachricht verschoben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-192">This will move message into deferred subqueue.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> deferAsync(UUID lockToken, Map<String, Object> propertiesToModify)'
       parameters:
         - id: lockToken
           type: add9545a
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></p>"
+          description: "<p><span data-ttu-id=\"a8e4b-193\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Sperrtoken <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-193\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> lock token <xref uid=\"com.microsoft.azure.servicebus._message.getLockToken()\" data-throw-if-not-resolved=\"false\">Message#getLockToken()</xref></span></span></p>"
         - id: propertiesToModify
           type: e7b06046
-          description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern. </p>"
+          description: "<p><span data-ttu-id=\"a8e4b-194\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> Eigenschaften zu ändern.</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-194\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> properties to modify.</span></span> </p>"
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Defer darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-195">eine CompletableFuture, die die ausstehenden Defer darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-195">a CompletableFuture representing the pending defer.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.getPrefetchCount()
     id: getPrefetchCount()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -656,13 +656,13 @@ items:
       startLine: 338
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Abrufen der Prefetch-festgelegte Wert.</p>
+      <p><span data-ttu-id="a8e4b-196">Abrufen der Prefetch-festgelegte Wert.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-196">Get the prefetch value set.</span></span></p>
       <p></p>
     syntax:
       content: public int getPrefetchCount()
       return:
         type: f75371fa
-        description: <p>Der Satz Prefetch Count-Wert. </p>
+        description: <p><span data-ttu-id="a8e4b-197">Der Satz Prefetch Count-Wert.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-197">The set prefetch count value.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.getReceiveMode()
     id: getReceiveMode()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -680,13 +680,13 @@ items:
       startLine: 24
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Abrufen des aktuellen Empfängers <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref>.</p>
+      <p><span data-ttu-id="a8e4b-198">Abrufen des aktuellen Empfängers <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref>.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-198">Get current receiver's <xref uid="com.microsoft.azure.servicebus._receive_mode" data-throw-if-not-resolved="false">ReceiveMode</xref>.</span></span></p>
       <p></p>
     syntax:
       content: public ReceiveMode getReceiveMode()
       return:
         type: com.microsoft.azure.servicebus._receive_mode
-        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._receive_mode\" data-throw-if-not-resolved=\"false\">ReceiveMode</xref>\r\n\r\n</p>"
+        description: "<p><span data-ttu-id=\"a8e4b-199\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._receive_mode\" data-throw-if-not-resolved=\"false\">ReceiveMode</xref>\r\n\r\n</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-199\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._receive_mode\" data-throw-if-not-resolved=\"false\">ReceiveMode</xref>\r\n\r\n</span></span></p>"
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receive()
     id: receive()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -704,18 +704,18 @@ items:
       startLine: 206
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Standardserver Wartezeit.</p>
+      <p><span data-ttu-id="a8e4b-200">Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit Standardserver Wartezeit.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-200">Receives a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> with default server wait time.</span></span></p>
       <p></p>
     syntax:
       content: public IMessage receive()
       return:
         type: com.microsoft.azure.servicebus._i_message
-        description: '<p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist. </p>'
+        description: '<p><span data-ttu-id="a8e4b-201">Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-201">The received <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> or null if there is no message.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-202">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-202">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Fehler beim Empfang </p>
+        description: <p><span data-ttu-id="a8e4b-203">Wenn Fehler beim Empfang</span><span class="sxs-lookup"><span data-stu-id="a8e4b-203">if receive failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receive(Duration)
     id: receive(Duration)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -733,22 +733,22 @@ items:
       startLine: 216
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem angegebenen Server Wartezeit.</p>
+      <p><span data-ttu-id="a8e4b-204">Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> mit dem angegebenen Server Wartezeit.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-204">Receives a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> with specified server wait time.</span></span></p>
       <p></p>
     syntax:
       content: public IMessage receive(Duration serverWaitTime)
       parameters:
         - id: serverWaitTime
           type: e02a2de0
-          description: <p>Die Server-Wartezeit </p>
+          description: <p><span data-ttu-id="a8e4b-205">Die Server-Wartezeit</span><span class="sxs-lookup"><span data-stu-id="a8e4b-205">The server wait time</span></span> </p>
       return:
         type: com.microsoft.azure.servicebus._i_message
-        description: '<p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist. </p>'
+        description: '<p><span data-ttu-id="a8e4b-206">Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-206">The received <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> or null if there is no message.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-207">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-207">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Fehler beim Empfang </p>
+        description: <p><span data-ttu-id="a8e4b-208">Wenn Fehler beim Empfang</span><span class="sxs-lookup"><span data-stu-id="a8e4b-208">if receive failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveAsync()
     id: receiveAsync()
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -766,13 +766,13 @@ items:
       startLine: 264
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure-Servicebus.</p>
+      <p><span data-ttu-id="a8e4b-209">Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure-Servicebus.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-209">Receives a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from Azure Service Bus.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<IMessage> receiveAsync()
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-        description: '<p>Die empfangene Nachricht. Gibt null, wenn keine Nachricht gefunden wird </p>'
+        description: '<p><span data-ttu-id="a8e4b-210">Die empfangene Nachricht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-210">The message received.</span></span> <span data-ttu-id="a8e4b-211">Gibt null, wenn keine Nachricht gefunden wird</span><span class="sxs-lookup"><span data-stu-id="a8e4b-211">Returns null if no message is found</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveAsync(Duration)
     id: receiveAsync(Duration)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -790,17 +790,17 @@ items:
       startLine: 272
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</p>
+      <p><span data-ttu-id="a8e4b-212">Empfängt eine <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-212">Receives a <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from Azure Service Bus with server wait time.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<IMessage> receiveAsync(Duration serverWaitTime)
       parameters:
         - id: serverWaitTime
           type: e02a2de0
-          description: '<p>Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt. </p>'
+          description: '<p><span data-ttu-id="a8e4b-213">Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-213">The time the client waits for receiving a message before it times out.</span></span> </p>'
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-        description: '<p>Die empfangene Nachricht. Gibt null, wenn keine Nachricht gefunden wird </p>'
+        description: '<p><span data-ttu-id="a8e4b-214">Die empfangene Nachricht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-214">The message received.</span></span> <span data-ttu-id="a8e4b-215">Gibt null, wenn keine Nachricht gefunden wird</span><span class="sxs-lookup"><span data-stu-id="a8e4b-215">Returns null if no message is found</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(int)
     id: receiveBatch(int)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -818,22 +818,22 @@ items:
       startLine: 236
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt ein Maximum von MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus.</p>
+      <p><span data-ttu-id="a8e4b-216">Empfängt ein Maximum von MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-216">Receives a maximum of maxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from Azure Service Bus.</span></span></p>
       <p></p>
     syntax:
       content: public Collection<IMessage> receiveBatch(int maxMessageCount)
       parameters:
         - id: maxMessageCount
           type: f75371fa
-          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
+          description: '<p><span data-ttu-id="a8e4b-217">Die maximale Anzahl von Nachrichten, die empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-217">The maximum number of messages that will be received.</span></span> </p>'
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
-        description: '<p>Liste der Nachrichten empfangen. Gibt null zurück, wenn keine Nachricht gefunden wird. </p>'
+        description: '<p><span data-ttu-id="a8e4b-218">Liste der Nachrichten empfangen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-218">List of messages received.</span></span> <span data-ttu-id="a8e4b-219">Gibt null zurück, wenn keine Nachricht gefunden wird.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-219">Returns null if no message is found.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-220">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-220">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Fehler beim Empfang </p>
+        description: <p><span data-ttu-id="a8e4b-221">Wenn Fehler beim Empfang</span><span class="sxs-lookup"><span data-stu-id="a8e4b-221">if receive failed</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.receiveBatch(int,Duration)'
     id: 'receiveBatch(int,Duration)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -851,25 +851,25 @@ items:
       startLine: 247
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt ein Maximum von MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</p>
+      <p><span data-ttu-id="a8e4b-222">Empfängt ein Maximum von MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-222">Receives a maximum of maxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from Azure Service Bus with server wait time.</span></span></p>
       <p></p>
     syntax:
       content: 'public Collection<IMessage> receiveBatch(int maxMessageCount, Duration serverWaitTime)'
       parameters:
         - id: maxMessageCount
           type: f75371fa
-          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
+          description: '<p><span data-ttu-id="a8e4b-223">Die maximale Anzahl von Nachrichten, die empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-223">The maximum number of messages that will be received.</span></span> </p>'
         - id: serverWaitTime
           type: e02a2de0
-          description: '<p>Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt. </p>'
+          description: '<p><span data-ttu-id="a8e4b-224">Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-224">The time the client waits for receiving a message before it times out.</span></span> </p>'
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
-        description: '<p>Liste der Nachrichten empfangen. Gibt null zurück, wenn keine Nachricht gefunden wird. </p>'
+        description: '<p><span data-ttu-id="a8e4b-225">Liste der Nachrichten empfangen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-225">List of messages received.</span></span> <span data-ttu-id="a8e4b-226">Gibt null zurück, wenn keine Nachricht gefunden wird.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-226">Returns null if no message is found.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-227">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-227">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Fehler beim Empfang </p>
+        description: <p><span data-ttu-id="a8e4b-228">Wenn Fehler beim Empfang</span><span class="sxs-lookup"><span data-stu-id="a8e4b-228">if receive failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(int)
     id: receiveBatchAsync(int)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -887,17 +887,17 @@ items:
       startLine: 288
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Asynchron empfängt maximal MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> aus der Entität.</p>
+      <p><span data-ttu-id="a8e4b-229">Asynchron empfängt maximal MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> aus der Entität.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-229">Asynchronously receives a maximum of maxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from the entity.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Collection<IMessage>> receiveBatchAsync(int maxMessageCount)
       parameters:
         - id: maxMessageCount
           type: f75371fa
-          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
+          description: '<p><span data-ttu-id="a8e4b-230">Die maximale Anzahl von Nachrichten, die empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-230">The maximum number of messages that will be received.</span></span> </p>'
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
-        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
+        description: <p><span data-ttu-id="a8e4b-231">eine CompletableFuture der ausstehende Empfang darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-231">a CompletableFuture representing the pending receive.</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_receiver.receiveBatchAsync(int,Duration)'
     id: 'receiveBatchAsync(int,Duration)'
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -915,20 +915,20 @@ items:
       startLine: 297
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Asynchron empfängt maximal MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</p>
+      <p><span data-ttu-id="a8e4b-232">Asynchron empfängt maximal MaxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> von Azure Service Bus mit Server-Wartezeit.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-232">Asynchronously receives a maximum of maxMessageCount <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from Azure Service Bus with server wait time.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Collection<IMessage>> receiveBatchAsync(int maxMessageCount, Duration serverWaitTime)'
       parameters:
         - id: maxMessageCount
           type: f75371fa
-          description: '<p>Die maximale Anzahl von Nachrichten, die empfangen werden. </p>'
+          description: '<p><span data-ttu-id="a8e4b-233">Die maximale Anzahl von Nachrichten, die empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-233">The maximum number of messages that will be received.</span></span> </p>'
         - id: serverWaitTime
           type: e02a2de0
-          description: '<p>Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt. </p>'
+          description: '<p><span data-ttu-id="a8e4b-234">Die Wartezeit, bis der Client für den Empfang einer Nachricht, bevor ein Timeout eintritt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-234">The time the client waits for receiving a message before it times out.</span></span> </p>'
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
-        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
+        description: <p><span data-ttu-id="a8e4b-235">eine CompletableFuture der ausstehende Empfang darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-235">a CompletableFuture representing the pending receive.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessage(long)
     id: receiveDeferredMessage(long)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -946,22 +946,22 @@ items:
       startLine: 226
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt eine verzögerte <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>. Verzögerte Nachrichten können nur mithilfe der Sequenznummer empfangen werden.</p>
+      <p><span data-ttu-id="a8e4b-236">Empfängt eine verzögerte <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-236">Receives a deferred <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref>.</span></span> <span data-ttu-id="a8e4b-237">Verzögerte Nachrichten können nur mithilfe der Sequenznummer empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-237">Deferred messages can only be received by using sequence number.</span></span></p>
       <p></p>
     syntax:
       content: public IMessage receiveDeferredMessage(long sequenceNumber)
       parameters:
         - id: sequenceNumber
           type: 0364520f
-          description: '<p>Die <xref uid="com.microsoft.azure.servicebus._message.getSequenceNumber()" data-throw-if-not-resolved="false">Message#getSequenceNumber()</xref>. </p>'
+          description: '<p><span data-ttu-id="a8e4b-238">Die <xref uid="com.microsoft.azure.servicebus._message.getSequenceNumber()" data-throw-if-not-resolved="false">Message#getSequenceNumber()</xref>.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-238">The <xref uid="com.microsoft.azure.servicebus._message.getSequenceNumber()" data-throw-if-not-resolved="false">Message#getSequenceNumber()</xref>.</span></span> </p>'
       return:
         type: com.microsoft.azure.servicebus._i_message
-        description: '<p>Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist, für das angegebene Sequenznummer. </p>'
+        description: '<p><span data-ttu-id="a8e4b-239">Die empfangenen Daten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> oder null, wenn keine Meldung vorhanden ist, für das angegebene Sequenznummer.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-239">The received <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> or null if there is no message for given sequence number.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-240">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-240">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Fehler beim Empfang </p>
+        description: <p><span data-ttu-id="a8e4b-241">Wenn Fehler beim Empfang</span><span class="sxs-lookup"><span data-stu-id="a8e4b-241">if receive failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageAsync(long)
     id: receiveDeferredMessageAsync(long)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -979,17 +979,17 @@ items:
       startLine: 280
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Empfängt asynchron einen bestimmten verzögert <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> identifizierte Sequenznummer.</p>
+      <p><span data-ttu-id="a8e4b-242">Empfängt asynchron einen bestimmten verzögert <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> identifizierte Sequenznummer.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-242">Asynchronously receives a specific deferred <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> identified by sequence number.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<IMessage> receiveDeferredMessageAsync(long sequenceNumber)
       parameters:
         - id: sequenceNumber
           type: 0364520f
-          description: '<p>Die Sequenznummer der Nachricht, die empfangen werden. </p>'
+          description: '<p><span data-ttu-id="a8e4b-243">Die Sequenznummer der Nachricht, die empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-243">The sequence number of the message that will be received.</span></span> </p>'
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
+        description: <p><span data-ttu-id="a8e4b-244">eine CompletableFuture der ausstehende Empfang darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-244">a CompletableFuture representing the pending receive.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatch(Collection<Long>)
     id: receiveDeferredMessageBatch(Collection<Long>)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -1007,22 +1007,22 @@ items:
       startLine: 257
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Erhält eine Lieferung mit verzögerten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>.</p>
+      <p><span data-ttu-id="a8e4b-245">Erhält eine Lieferung mit verzögerten <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref>.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-245">Receives a batch of deferred <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref>.</span></span></p>
       <p></p>
     syntax:
       content: public Collection<IMessage> receiveDeferredMessageBatch(Collection<Long> sequenceNumbers)
       parameters:
         - id: sequenceNumbers
           type: f936a554
-          description: <p>Die Sequenznummern der gewünschten verzögerte Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-246">Die Sequenznummern der gewünschten verzögerte Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-246">The sequence numbers of desired deferred messages.</span></span> </p>
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
-        description: '<p>Liste der Nachrichten empfangen. Gibt null zurück, wenn keine Nachricht gefunden wird. </p>'
+        description: '<p><span data-ttu-id="a8e4b-247">Liste der Nachrichten empfangen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-247">List of messages received.</span></span> <span data-ttu-id="a8e4b-248">Gibt null zurück, wenn keine Nachricht gefunden wird.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-248">Returns null if no message is found.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-249">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-249">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Fehler beim Empfang </p>
+        description: <p><span data-ttu-id="a8e4b-250">Wenn Fehler beim Empfang</span><span class="sxs-lookup"><span data-stu-id="a8e4b-250">if receive failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.receiveDeferredMessageBatchAsync(Collection<Long>)
     id: receiveDeferredMessageBatchAsync(Collection<Long>)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -1040,17 +1040,17 @@ items:
       startLine: 305
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Asynchron empfängt einen Satz von verzögerte <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> aus der Entität.</p>
+      <p><span data-ttu-id="a8e4b-251">Asynchron empfängt einen Satz von verzögerte <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> aus der Entität.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-251">Asynchronously receives a set of deferred <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> from the entity.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Collection<IMessage>> receiveDeferredMessageBatchAsync(Collection<Long> sequenceNumbers)
       parameters:
         - id: sequenceNumbers
           type: f936a554
-          description: '<p>Die Sequenznummern der Nachricht, die empfangen werden. </p>'
+          description: '<p><span data-ttu-id="a8e4b-252">Die Sequenznummern der Nachricht, die empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-252">The sequence numbers of the message that will be received.</span></span> </p>'
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
-        description: <p>eine CompletableFuture der ausstehende Empfang darstellt. </p>
+        description: <p><span data-ttu-id="a8e4b-253">eine CompletableFuture der ausstehende Empfang darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-253">a CompletableFuture representing the pending receive.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.renewMessageLock(IMessage)
     id: renewMessageLock(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -1068,22 +1068,22 @@ items:
       startLine: 329
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Erneuert die Sperre für die Nachricht durch das Sperrtoken angegeben. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden. Beim Empfang einer Nachricht im <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode #PEEKLOCK</xref> Modus wird die Nachricht ist für eine Dauer entsprechend den Angaben auf dem Server für diese Instanz Empfänger gesperrt, während der Erstellung der Warteschlange/Abonnement (LockDuration). Wenn die Verarbeitung der Nachricht länger als diese Dauer erforderlich ist, muss die Sperre erneuert werden. Bei jeder Verlängerung wird die Sperre durch die Entität LockDuration erneuert.</p>
+      <p><span data-ttu-id="a8e4b-254">Erneuert die Sperre für die Nachricht durch das Sperrtoken angegeben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-254">Renews the lock on the message specified by the lock token.</span></span> <span data-ttu-id="a8e4b-255">Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-255">The lock will be renewed based on the setting specified on the entity.</span></span> <span data-ttu-id="a8e4b-256">Beim Empfang einer Nachricht im <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode #PEEKLOCK</xref> Modus wird die Nachricht ist für eine Dauer entsprechend den Angaben auf dem Server für diese Instanz Empfänger gesperrt, während der Erstellung der Warteschlange/Abonnement (LockDuration).</span><span class="sxs-lookup"><span data-stu-id="a8e4b-256">When a message is received in <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode#PEEKLOCK</xref> mode, the message is locked on the server for this receiver instance for a duration as specified during the Queue/Subscription creation (LockDuration).</span></span> <span data-ttu-id="a8e4b-257">Wenn die Verarbeitung der Nachricht länger als diese Dauer erforderlich ist, muss die Sperre erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-257">If processing of the message requires longer than this duration, the lock needs to be renewed.</span></span> <span data-ttu-id="a8e4b-258">Bei jeder Verlängerung wird die Sperre durch die Entität LockDuration erneuert.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-258">For each renewal, the lock is renewed by the entity's LockDuration.</span></span></p>
       <p></p>
     syntax:
       content: public Instant renewMessageLock(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
-          description: <p>Die <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> erneuert werden soll. </p>
+          description: <p><span data-ttu-id="a8e4b-259">Die <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> erneuert werden soll.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-259">The <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to be renewed</span></span> </p>
       return:
         type: 328f8254
-        description: '<p>Die neue gesperrt, bis die UTC-Zeit. </p>'
+        description: '<p><span data-ttu-id="a8e4b-260">Die neue gesperrt, bis die UTC-Zeit.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-260">The new locked until UTC time.</span></span> </p>'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="a8e4b-261">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="a8e4b-261">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn erneuern fehlgeschlagen </p>
+        description: <p><span data-ttu-id="a8e4b-262">Wenn erneuern fehlgeschlagen</span><span class="sxs-lookup"><span data-stu-id="a8e4b-262">if renew failed</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_receiver.renewMessageLockAsync(IMessage)
     id: renewMessageLockAsync(IMessage)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -1101,17 +1101,17 @@ items:
       startLine: 313
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Asynchron erneuert die Sperre für die Nachricht durch das Sperrtoken angegeben. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</p>
+      <p><span data-ttu-id="a8e4b-263">Asynchron erneuert die Sperre für die Nachricht durch das Sperrtoken angegeben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-263">Asynchronously renews the lock on the message specified by the lock token.</span></span> <span data-ttu-id="a8e4b-264">Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-264">The lock will be renewed based on the setting specified on the entity.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Instant> renewMessageLockAsync(IMessage message)
       parameters:
         - id: message
           type: com.microsoft.azure.servicebus._i_message
-          description: <p>Die <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> erneuert werden soll. </p>
+          description: <p><span data-ttu-id="a8e4b-265">Die <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> erneuert werden soll.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-265">The <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to be renewed</span></span> </p>
       return:
         type: 6666b360
-        description: '<p>eine CompletableFuture, ausstehende erneuern darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-266">eine CompletableFuture, ausstehende erneuern darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-266">a CompletableFuture representing the pending renew.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_receiver.setPrefetchCount(int)
     id: setPrefetchCount(int)
     parent: com.microsoft.azure.servicebus._i_message_receiver
@@ -1129,18 +1129,18 @@ items:
       startLine: 350
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Legen Sie den vorabrufwert des Empfängers. Prefetch beschleunigt den Nachrichtenfluss durch ins Leben gerufen, eine Nachricht, die für den lokalen Abruf unmittelbar verfügbar sein, wenn und vor der Anwendung, für eine aufgefordert Verwendung empfangen. Einen Wert ungleich Null festlegen, vorab PrefetchCount Anzahl der Nachrichten abruft. Festlegen des Werts auf 0 (null) wird Prefetch deaktiviert. RECEIVEANDDELETE-Modus ist der Standardwert 0. PEEKLOCK-Modus ist der Standardwert 100. </p>
-      <p>Der Wert kann nicht festgelegt werden, bis der Empfänger erstellt wird.</p>
+      <p><span data-ttu-id="a8e4b-267">Legen Sie den vorabrufwert des Empfängers.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-267">Set the prefetch count of the receiver.</span></span> <span data-ttu-id="a8e4b-268">Prefetch beschleunigt den Nachrichtenfluss durch ins Leben gerufen, eine Nachricht, die für den lokalen Abruf unmittelbar verfügbar sein, wenn und vor der Anwendung, für eine aufgefordert Verwendung empfangen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-268">Prefetch speeds up the message flow by aiming to have a message readily available for local retrieval when and before the application asks for one using Receive.</span></span> <span data-ttu-id="a8e4b-269">Einen Wert ungleich Null festlegen, vorab PrefetchCount Anzahl der Nachrichten abruft.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-269">Setting a non-zero value prefetches PrefetchCount number of messages.</span></span> <span data-ttu-id="a8e4b-270">Festlegen des Werts auf 0 (null) wird Prefetch deaktiviert.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-270">Setting the value to zero turns prefetch off.</span></span> <span data-ttu-id="a8e4b-271">RECEIVEANDDELETE-Modus ist der Standardwert 0.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-271">For RECEIVEANDDELETE mode, the default value is 0.</span></span> <span data-ttu-id="a8e4b-272">PEEKLOCK-Modus ist der Standardwert 100.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-272">For PEEKLOCK mode, the default value is 100.</span></span> </p>
+      <p><span data-ttu-id="a8e4b-273">Der Wert kann nicht festgelegt werden, bis der Empfänger erstellt wird.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-273">The value cannot be set until the receiver is created.</span></span></p>
       <p></p>
     syntax:
       content: public void setPrefetchCount(int prefetchCount)
       parameters:
         - id: prefetchCount
           type: f75371fa
-          description: <p>Der gewünschte Vorabruf. </p>
+          description: <p><span data-ttu-id="a8e4b-274">Der gewünschte Vorabruf.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-274">The desired prefetch count.</span></span> </p>
     exceptions:
       - type: 73fec9fb
-        description: <p>Wenn der Wert konnte nicht festgelegt </p>
+        description: <p><span data-ttu-id="a8e4b-275">Wenn der Wert konnte nicht festgelegt</span><span class="sxs-lookup"><span data-stu-id="a8e4b-275">if sets the value failed</span></span> </p>
 references:
   - uid: com.microsoft.azure.servicebus._i_message_receiver.getReceiveMode*
     name: getReceiveMode
@@ -1332,7 +1332,7 @@ references:
     nameWithType: ICloseable.close()
     fullName: void com.microsoft.azure.servicebus.ICloseable.close()
     type: Method
-    summary: '<p>Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Beim Aufrufen dieser Methode entspricht der aufrufen. Diese Methode blockiert, bis diese wird das Objekt geschlossen. </p>'
+    summary: '<p><span data-ttu-id="a8e4b-276">Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-276">Synchronously closes and disposes any resources associated with this object.</span></span> <span data-ttu-id="a8e4b-277">Beim Aufrufen dieser Methode entspricht der aufrufen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-277">Calling this method is equivalent of calling .</span></span> <span data-ttu-id="a8e4b-278">Diese Methode blockiert, bis diese wird das Objekt geschlossen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-278">This method blocks until this object is closed.</span></span> </p>'
     syntax:
       content: public void close()
   - uid: com.microsoft.azure.servicebus._i_closeable.closeAsync()
@@ -1342,12 +1342,12 @@ references:
     nameWithType: ICloseable.closeAsync()
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.ICloseable.closeAsync()
     type: Method
-    summary: '<p>Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde. Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben. Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist. </p>'
+    summary: '<p><span data-ttu-id="a8e4b-279">Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-279">Closes and disposes any resources associated with this object.</span></span> <span data-ttu-id="a8e4b-280">Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-280">An object cannot be used after it is closed.</span></span> <span data-ttu-id="a8e4b-281">Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-281">This is an asynchronous method that returns a CompletableFuture immediately.</span></span> <span data-ttu-id="a8e4b-282">Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-282">This object is completely closed when the returned CompletableFuture is completed.</span></span> </p>'
     syntax:
       content: public CompletableFuture<Void> closeAsync()
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die das Schließen des dieses Objekt darstellt. </p>'
+        description: '<p><span data-ttu-id="a8e4b-283">eine CompletableFuture, die das Schließen des dieses Objekt darstellt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-283">a CompletableFuture representing the closing of this object.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_entity_client.getEntityPath()
     parent: com.microsoft.azure.servicebus._i_message_entity_client
     href: com.microsoft.azure.servicebus._i_message_entity_client.yml
@@ -1356,13 +1356,13 @@ references:
     fullName: String com.microsoft.azure.servicebus.IMessageEntityClient.getEntityPath()
     type: Method
     summary: |-
-      <p>Ruft den Pfad der Entität, die dieser Client wird ab, Senden von Nachrichten an oder Empfang von Nachrichten aus.</p>
+      <p><span data-ttu-id="a8e4b-284">Ruft den Pfad der Entität, die dieser Client wird ab, Senden von Nachrichten an oder Empfang von Nachrichten aus.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-284">Gets the path of the entity this client is sending messages to or receiving messages from.</span></span></p>
       <p></p>
     syntax:
       content: public String getEntityPath()
       return:
         type: '26831127'
-        description: '<p>Pfad der Entität, der diesem Client eine Verbindung herstellt </p>'
+        description: '<p><span data-ttu-id="a8e4b-285">Pfad der Entität, der diesem Client eine Verbindung herstellt</span><span class="sxs-lookup"><span data-stu-id="a8e4b-285">path of the entity this client is connecting to</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_browser.peek()
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1371,13 +1371,13 @@ references:
     fullName: IMessage com.microsoft.azure.servicebus.IMessageBrowser.peek()
     type: Method
     summary: |-
-      <p>als Nächstes liest Sie die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung ein. Der erste Aufruf von <xref uid="com.microsoft.azure.servicebus._i_message_browser.peek()" data-throw-if-not-resolved="false">IMessageBrowser#peek()</xref> Ruft die erste aktive Nachricht für diesen Empfänger. Jeder nachfolgender Aufruf ruft die nachfolgende Meldung in der Entität ab.</p>
+      <p><span data-ttu-id="a8e4b-286">als Nächstes liest Sie die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung ein.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-286">reads next the active message without changing the state of the receiver or the message source.</span></span> <span data-ttu-id="a8e4b-287">Der erste Aufruf von <xref uid="com.microsoft.azure.servicebus._i_message_browser.peek()" data-throw-if-not-resolved="false">IMessageBrowser#peek()</xref> Ruft die erste aktive Nachricht für diesen Empfänger.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-287">The first call to <xref uid="com.microsoft.azure.servicebus._i_message_browser.peek()" data-throw-if-not-resolved="false">IMessageBrowser#peek()</xref> fetches the first active message for this receiver.</span></span> <span data-ttu-id="a8e4b-288">Jeder nachfolgender Aufruf ruft die nachfolgende Meldung in der Entität ab.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-288">Each subsequent call fetches the subsequent message in the entity.</span></span></p>
       <p></p>
     syntax:
       content: public IMessage peek()
       return:
         type: com.microsoft.azure.servicebus._i_message
-        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen </p>"
+        description: "<p><span data-ttu-id=\"a8e4b-289\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-289\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> peeked</span></span> </p>"
   - uid: com.microsoft.azure.servicebus._i_message_browser.peek(long)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1386,17 +1386,17 @@ references:
     fullName: IMessage com.microsoft.azure.servicebus.IMessageBrowser.peek(long fromSequenceNumber)
     type: Method
     summary: |-
-      <p>Als Nächstes liest Sie die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung ein.</p>
+      <p><span data-ttu-id="a8e4b-290">Als Nächstes liest Sie die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung ein.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-290">Reads next the active message without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: public IMessage peek(long fromSequenceNumber)
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
-          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
+          description: <p><span data-ttu-id="a8e4b-291">Die Sequenznummer ab dem die Nachricht zu lesen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-291">The sequence number from where to read the message.</span></span> </p>
       return:
         type: com.microsoft.azure.servicebus._i_message
-        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen </p>"
+        description: "<p><span data-ttu-id=\"a8e4b-292\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-292\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> peeked</span></span> </p>"
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekAsync()
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1405,13 +1405,13 @@ references:
     fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekAsync()
     type: Method
     summary: |-
-      <p>Liest asynchron aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p><span data-ttu-id="a8e4b-293">Liest asynchron aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-293">Asynchronously reads the active messages without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<IMessage> peekAsync()
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen </p>"
+        description: "<p><span data-ttu-id=\"a8e4b-294\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Nachricht</xref> eingesehen</span><span class=\"sxs-lookup\"><span data-stu-id=\"a8e4b-294\">\r\n\r\n  <xref uid=\"com.microsoft.azure.servicebus._message\" data-throw-if-not-resolved=\"false\">Message</xref> peeked</span></span> </p>"
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekAsync(long)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1420,17 +1420,17 @@ references:
     fullName: CompletableFuture<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekAsync(long fromSequenceNumber)
     type: Method
     summary: |-
-      <p>Als Nächstes liest die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung asynchron.</p>
+      <p><span data-ttu-id="a8e4b-295">Als Nächstes liest die aktive Nachricht ohne Änderung des Zustands der Empfänger oder die Quelle der Meldung asynchron.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-295">Asynchronously reads next the active message without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<IMessage> peekAsync(long fromSequenceNumber)
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
-          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
+          description: <p><span data-ttu-id="a8e4b-296">Die Sequenznummer ab dem die Nachricht zu lesen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-296">The sequence number from where to read the message.</span></span> </p>
       return:
         type: 9cdf14d0com.microsoft.azure.servicebus._i_messagea08ddfce
-        description: '<p>CompletableFuture, die zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen. </p>'
+        description: '<p><span data-ttu-id="a8e4b-297">CompletableFuture, die zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-297">CompletableFuture that returns <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> peeked.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekBatch(int)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1439,17 +1439,17 @@ references:
     fullName: Collection<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekBatch(int messageCount)
     type: Method
     summary: |-
-      <p>Liest nächste Batch von der aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p><span data-ttu-id="a8e4b-298">Liest nächste Batch von der aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-298">Reads next batch of the active messages without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: public Collection<IMessage> peekBatch(int messageCount)
       parameters:
         - id: messageCount
           type: f75371fa
-          description: <p>Die Anzahl der Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-299">Die Anzahl der Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-299">The number of messages.</span></span> </p>
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
-        description: <p>Batch <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> eingesehen </p>
+        description: <p><span data-ttu-id="a8e4b-300">Batch <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> eingesehen</span><span class="sxs-lookup"><span data-stu-id="a8e4b-300">Batch of <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> peeked</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_browser.peekBatch(long,int)'
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1458,20 +1458,20 @@ references:
     fullName: 'Collection<IMessage> com.microsoft.azure.servicebus.IMessageBrowser.peekBatch(long fromSequenceNumber, int messageCount)'
     type: Method
     summary: |-
-      <p>Liest nächste Batch von der aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p><span data-ttu-id="a8e4b-301">Liest nächste Batch von der aktiven Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-301">Reads next batch of the active messages without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: 'public Collection<IMessage> peekBatch(long fromSequenceNumber, int messageCount)'
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
-          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
+          description: <p><span data-ttu-id="a8e4b-302">Die Sequenznummer ab dem die Nachricht zu lesen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-302">The sequence number from where to read the message.</span></span> </p>
         - id: messageCount
           type: f75371fa
-          description: <p>Die Anzahl der Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-303">Die Anzahl der Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-303">The number of messages.</span></span> </p>
       return:
         type: 12ebb11acom.microsoft.azure.servicebus._i_messagea08ddfce
-        description: <p>Batch <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> eingesehen </p>
+        description: <p><span data-ttu-id="a8e4b-304">Batch <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> eingesehen</span><span class="sxs-lookup"><span data-stu-id="a8e4b-304">Batch of <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> peeked</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_browser.peekBatchAsync(int)
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1480,17 +1480,17 @@ references:
     fullName: CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageBrowser.peekBatchAsync(int messageCount)
     type: Method
     summary: |-
-      <p>Liest asynchron den nächsten Batch aktiver Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p><span data-ttu-id="a8e4b-305">Liest asynchron den nächsten Batch aktiver Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-305">Asynchronously reads the next batch of active messages without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Collection<IMessage>> peekBatchAsync(int messageCount)
       parameters:
         - id: messageCount
           type: f75371fa
-          description: <p>Die Anzahl der Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-306">Die Anzahl der Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-306">The number of messages.</span></span> </p>
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
-        description: '<p>CompletableFuture, der Batch zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen. </p>'
+        description: '<p><span data-ttu-id="a8e4b-307">CompletableFuture, der Batch zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-307">CompletableFuture that returns batch of <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> peeked.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_browser.peekBatchAsync(long,int)'
     parent: com.microsoft.azure.servicebus._i_message_browser
     href: com.microsoft.azure.servicebus._i_message_browser.yml
@@ -1499,20 +1499,20 @@ references:
     fullName: 'CompletableFuture<Collection<IMessage>> com.microsoft.azure.servicebus.IMessageBrowser.peekBatchAsync(long fromSequenceNumber, int messageCount)'
     type: Method
     summary: |-
-      <p>Liest asynchron den nächsten Batch aktiver Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</p>
+      <p><span data-ttu-id="a8e4b-308">Liest asynchron den nächsten Batch aktiver Nachrichten ohne den Zustand der Empfänger oder die Quelle der Meldung zu ändern.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-308">Asynchronously reads the next batch of active messages without changing the state of the receiver or the message source.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Collection<IMessage>> peekBatchAsync(long fromSequenceNumber, int messageCount)'
       parameters:
         - id: fromSequenceNumber
           type: 0364520f
-          description: <p>Die Sequenznummer ab dem die Nachricht zu lesen. </p>
+          description: <p><span data-ttu-id="a8e4b-309">Die Sequenznummer ab dem die Nachricht zu lesen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-309">The sequence number from where to read the message.</span></span> </p>
         - id: messageCount
           type: f75371fa
-          description: <p>Die Anzahl der Nachrichten. </p>
+          description: <p><span data-ttu-id="a8e4b-310">Die Anzahl der Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-310">The number of messages.</span></span> </p>
       return:
         type: 9161dfdccom.microsoft.azure.servicebus._i_messagee7daa122
-        description: '<p>CompletableFuture, der Batch zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen. </p>'
+        description: '<p><span data-ttu-id="a8e4b-311">CompletableFuture, der Batch zurückgibt <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> einsehen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-311">CompletableFuture that returns batch of <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> peeked.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_entity_client
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message_entity_client.yml
@@ -1521,7 +1521,7 @@ references:
     fullName: com.microsoft.azure.servicebus.IMessageEntityClient
     type: Interface
     summary: |-
-      <p>Stellt einen messaging-Client mit einer Azure Service Bus-Entität dar.</p>
+      <p><span data-ttu-id="a8e4b-312">Stellt einen messaging-Client mit einer Azure Service Bus-Entität dar.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-312">Represents a messaging client to an Azure Service Bus entity.</span></span></p>
       <p></p>
     syntax:
       content: public interface IMessageEntityClient extends ICloseable
@@ -1532,7 +1532,7 @@ references:
     nameWithType: IMessageBrowser
     fullName: com.microsoft.azure.servicebus.IMessageBrowser
     type: Interface
-    summary: '<p>Stellt eine nachrichtenbrowser, die Nachrichten von Azure Service Bus durchsuchen können. </p>'
+    summary: '<p><span data-ttu-id="a8e4b-313">Stellt eine nachrichtenbrowser, die Nachrichten von Azure Service Bus durchsuchen können.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-313">Represents a message browser that can browse messages from Azure Service Bus.</span></span> </p>'
     syntax:
       content: public interface IMessageBrowser
   - uid: com.microsoft.azure.servicebus._i_message_session
@@ -1543,10 +1543,10 @@ references:
     fullName: com.microsoft.azure.servicebus.IMessageSession
     type: Interface
     summary: |-
-      <p>Beschreibt ein Sitzungsobjekt. <xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden. </p>
-      <p>Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten. Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung. </p>
-      <p>Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner. Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet. </p>
-      <p>Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist. Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt. </p>
+      <p><span data-ttu-id="a8e4b-314">Beschreibt ein Sitzungsobjekt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-314">Describes a Session object.</span></span> <span data-ttu-id="a8e4b-315"><xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-315"><xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> can be used to perform operations on sessions.</span></span> </p>
+      <p><span data-ttu-id="a8e4b-316">Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-316">Service Bus Sessions, also called 'Groups' in the AMQP 1.0 protocol, are unbounded sequences of related messages.</span></span> <span data-ttu-id="a8e4b-317">Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-317">ServiceBus guarantees ordering of messages in a session.</span></span> </p>
+      <p><span data-ttu-id="a8e4b-318">Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-318">Any sender can create a session when submitting messages into a Topic or Queue by setting the <xref uid="" data-throw-if-not-resolved="false">Message#sessionId</xref> property on <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to some application defined unique identifier.</span></span> <span data-ttu-id="a8e4b-319">Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-319">At the AMQP 1.0 protocol level, this value maps to the group-id property.</span></span> </p>
+      <p><span data-ttu-id="a8e4b-320">Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-320">Sessions come into existence when there is at least one message with the session's SessionId in the Queue or Topic subscription.</span></span> <span data-ttu-id="a8e4b-321">Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-321">Once a Session exists, there is no defined moment or gesture for when the session expires or disappears.</span></span> </p>
     syntax:
       content: public interface IMessageSession
   - uid: com.microsoft.azure.servicebus._message_receiver
@@ -1558,7 +1558,7 @@ references:
     fullName: com.microsoft.azure.servicebus.ReceiveMode
     type: Enum
     summary: |-
-      <p>Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</p>
+      <p><span data-ttu-id="a8e4b-322">Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-322">Enumeration to represent the two receive modes Azure Service Bus supports.</span></span></p>
       <p></p>
     syntax:
       content: public enum ReceiveMode
@@ -1569,7 +1569,7 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
+    summary: '<p><span data-ttu-id="a8e4b-323">Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-323">This is the base exception that service bus will generate for all error cases.</span></span> </p>'
     syntax:
       content: public class ServiceBusException
   - uid: com.microsoft.azure.servicebus._message
@@ -1589,13 +1589,13 @@ references:
     fullName: UUID com.microsoft.azure.servicebus.Message.getLockToken()
     type: Method
     summary: |-
-      <p>Ruft die Sperre token dieser Nachricht, wenn diese Nachricht empfangen wird mit <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode #PEEKLOCK</xref> Modus. Dieses Token wird verwendet, um Sie abzuschließen oder zu verwerfen oder die Warteschlange für unzustellbare Nachrichten oder das Aufschieben der diese Nachricht.</p>
+      <p><span data-ttu-id="a8e4b-324">Ruft die Sperre token dieser Nachricht, wenn diese Nachricht empfangen wird mit <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode #PEEKLOCK</xref> Modus.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-324">Gets the lock token of this message, if this message is received using <xref uid="com.microsoft.azure.servicebus._receive_mode.PEEKLOCK" data-throw-if-not-resolved="false">ReceiveMode#PEEKLOCK</xref> mode.</span></span> <span data-ttu-id="a8e4b-325">Dieses Token wird verwendet, um Sie abzuschließen oder zu verwerfen oder die Warteschlange für unzustellbare Nachrichten oder das Aufschieben der diese Nachricht.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-325">This token is used to complete or abandon or deadletter or defer this message.</span></span></p>
       <p></p>
     syntax:
       content: public UUID getLockToken()
       return:
         type: add9545a
-        description: '<p>Sperrtoken dieser Nachricht, wenn diese Nachricht empfangen wird PEEKLOCK-Modus verwenden. Andernfalls wird ein Token von der alle Nullen (0) zurückgegeben. </p>'
+        description: '<p><span data-ttu-id="a8e4b-326">Sperrtoken dieser Nachricht, wenn diese Nachricht empfangen wird PEEKLOCK-Modus verwenden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-326">lock token of this message if this message is received using PEEKLOCK mode.</span></span> <span data-ttu-id="a8e4b-327">Andernfalls wird ein Token von der alle Nullen (0) zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-327">Otherwise it returns a token of all zeroes.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message
     parent: com.microsoft.azure.servicebus
     href: com.microsoft.azure.servicebus._i_message.yml
@@ -1604,7 +1604,7 @@ references:
     fullName: com.microsoft.azure.servicebus.IMessage
     type: Interface
     summary: |-
-      <p>Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</p>
+      <p><span data-ttu-id="a8e4b-328">Stellt eine Nachricht, die zwischen Clients und Azure Service Bus ausgetauscht werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-328">Represents a message that is exchanged between Azure Service Bus and clients.</span></span></p>
       <p></p>
     syntax:
       content: public interface IMessage
@@ -1616,13 +1616,13 @@ references:
     fullName: long com.microsoft.azure.servicebus.Message.getSequenceNumber()
     type: Method
     summary: |-
-      <p>Abgerufen Sie die Sequenznummer dieser Nachricht werden. Azure Service Bus werden alle Nachrichten in Warteschlangen in einer Entität eine einmalige Sequenznummer zugewiesen.</p>
+      <p><span data-ttu-id="a8e4b-329">Abgerufen Sie die Sequenznummer dieser Nachricht werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-329">Get the sequence number of this message.</span></span> <span data-ttu-id="a8e4b-330">Azure Service Bus werden alle Nachrichten in Warteschlangen in einer Entität eine einmalige Sequenznummer zugewiesen.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-330">Azure Service Bus assigns a unique sequence number to every message enqueued in an entity.</span></span></p>
       <p></p>
     syntax:
       content: public long getSequenceNumber()
       return:
         type: 0364520f
-        description: <p>Sequenznummer dieser Nachricht </p>
+        description: <p><span data-ttu-id="a8e4b-331">Sequenznummer dieser Nachricht</span><span class="sxs-lookup"><span data-stu-id="a8e4b-331">sequence number of this message</span></span> </p>
   - uid: com.microsoft.azure.servicebus._receive_mode.PEEKLOCK
     parent: com.microsoft.azure.servicebus._receive_mode
     href: com.microsoft.azure.servicebus._receive_mode.yml
@@ -1630,6 +1630,6 @@ references:
     nameWithType: ReceiveMode.PEEKLOCK
     fullName: com.microsoft.azure.servicebus.ReceiveMode.PEEKLOCK
     type: Field
-    summary: '<p>In diesem Modus empfangene Nachricht wird nicht aus der Warteschlange oder einem Abonnement gelöscht, es wird stattdessen an den Empfänger, die für andere Empfänger unsichtbar machen vorübergehend gesperrt. Dann wartet der Dienst für eines der drei Ereignisse<itemizedlist><listitem><p>Wenn der Empfänger die Nachricht erfolgreich verarbeitet, aufruft und die Nachricht gelöscht werden. </p></listitem><listitem><p>Wenn der Empfänger entscheidet, dass er die Nachricht nicht erfolgreich verarbeiten kann, aufruft und die Nachricht wird entsperrt und für andere Empfänger verfügbar gemacht werden. </p></listitem><listitem><p>Wenn möchte, dass der Empfänger die Verarbeitung der Nachricht zu einem späteren Zeitpunkt zeitlich verzögern, aufruft und die Nachricht wird verzögert werden. Eine verzögerte kann nur durch seine Sequenznummer empfangen werden. </p></listitem><listitem><p>Wenn der Empfänger unzustellbare Nachricht möchte, aufruft und die Nachricht wird an eine spezielle untergeordnete Warteschlange Warteschlange für unzustellbare Nachrichten verschoben werden. </p></listitem><listitem><p>Der Empfänger keine dieser Methoden in einem konfigurierbaren Zeitraum (standardmäßig 60 Sekunden) aufgerufen wird, geht davon aus der Dienst, dass der Empfänger ein Fehler aufgetreten ist. In diesem Fall verhält, als ob der Empfänger und die Nachricht für andere Empfänger zur Verfügung aufgerufen haben, </p></listitem></itemizedlist></p>'
+    summary: '<p><span data-ttu-id="a8e4b-332">In diesem Modus empfangene Nachricht wird nicht aus der Warteschlange oder einem Abonnement gelöscht, es wird stattdessen an den Empfänger, die für andere Empfänger unsichtbar machen vorübergehend gesperrt.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-332">In this mode, received message is not deleted from the queue or subscription, instead it is temporarily locked to the receiver, making it invisible to other receivers.</span></span> <span data-ttu-id="a8e4b-333">Dann wartet der Dienst für eines der drei Ereignisse<itemizedlist><listitem></span><span class="sxs-lookup"><span data-stu-id="a8e4b-333">Then the service waits for one of the three events <itemizedlist><listitem></span></span><p><span data-ttu-id="a8e4b-334">Wenn der Empfänger die Nachricht erfolgreich verarbeitet, aufruft und die Nachricht gelöscht werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-334">If the receiver processes the message successfully, it calls  and the message will be deleted.</span></span> </p></listitem><listitem><p><span data-ttu-id="a8e4b-335">Wenn der Empfänger entscheidet, dass er die Nachricht nicht erfolgreich verarbeiten kann, aufruft und die Nachricht wird entsperrt und für andere Empfänger verfügbar gemacht werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-335">If the receiver decides that it can''t process the message successfully, it calls  and the message will be unlocked and made available to other receivers.</span></span> </p></listitem><listitem><p><span data-ttu-id="a8e4b-336">Wenn möchte, dass der Empfänger die Verarbeitung der Nachricht zu einem späteren Zeitpunkt zeitlich verzögern, aufruft und die Nachricht wird verzögert werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-336">If the receiver wants to defer the processing of the message to a later point in time, it calls  and the message will be deferred.</span></span> <span data-ttu-id="a8e4b-337">Eine verzögerte kann nur durch seine Sequenznummer empfangen werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-337">A deferred can only be received by its sequence number.</span></span> </p></listitem><listitem><p><span data-ttu-id="a8e4b-338">Wenn der Empfänger unzustellbare Nachricht möchte, aufruft und die Nachricht wird an eine spezielle untergeordnete Warteschlange Warteschlange für unzustellbare Nachrichten verschoben werden.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-338">If the receiver wants to dead-letter the message, it calls  and the message will be moved to a special sub-queue called deadletter queue.</span></span> </p></listitem><listitem><p><span data-ttu-id="a8e4b-339">Der Empfänger keine dieser Methoden in einem konfigurierbaren Zeitraum (standardmäßig 60 Sekunden) aufgerufen wird, geht davon aus der Dienst, dass der Empfänger ein Fehler aufgetreten ist.</span><span class="sxs-lookup"><span data-stu-id="a8e4b-339">If the receiver calls neither of these methods within a configurable period of time (by default, 60 seconds), the service assumes the receiver has failed.</span></span> <span data-ttu-id="a8e4b-340">In diesem Fall verhält, als ob der Empfänger und die Nachricht für andere Empfänger zur Verfügung aufgerufen haben,</span><span class="sxs-lookup"><span data-stu-id="a8e4b-340">In this case, it behaves as if the receiver had called , making the message available to other receivers</span></span> </p></listitem></itemizedlist></p>'
     syntax:
       content: public PEEKLOCK

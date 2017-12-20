@@ -20,7 +20,7 @@ items:
         repo: 'https://github.com/azure/azure-data-lake-store-java'
       path: src/main/java/com/microsoft/azure/datalake/store/retrypolicies/ExponentialBackoffPolicy.java
       startLine: 6
-    summary: <p>Alle wiederholungsrichtlinien. </p>
+    summary: <p><span data-ttu-id="cf06f-101">Alle wiederholungsrichtlinien.</span><span class="sxs-lookup"><span data-stu-id="cf06f-101">All the retry policies.</span></span> </p>
     syntax:
       content: package com.microsoft.azure.datalake.store.retrypolicies
 references:
@@ -32,26 +32,26 @@ references:
     fullName: com.microsoft.azure.datalake.store.retrypolicies.ExponentialBackoffPolicy
     type: Class
     summary: |-
-      <p>implementiert verschiedene wiederholen Sie Ihre Entscheidungen basierend auf den Fehler.</p>
+      <p><span data-ttu-id="cf06f-102">implementiert verschiedene wiederholen Sie Ihre Entscheidungen basierend auf den Fehler.</span><span class="sxs-lookup"><span data-stu-id="cf06f-102">implements different retry decisions based on the error.</span></span></p>
       <p>
 
         <itemizedlist>
 
           <listitem>
 
-            <p>Führen Sie für Nonretryable Fehler (3xx, die meisten 4xx und einige Rückgabecodes 5xx) keine Wiederholung. </p>
+            <p><span data-ttu-id="cf06f-103">Führen Sie für Nonretryable Fehler (3xx, die meisten 4xx und einige Rückgabecodes 5xx) keine Wiederholung.</span><span class="sxs-lookup"><span data-stu-id="cf06f-103">For nonretryable errors (3xx, most 4xx, and some 5xx return codes), do no retry.</span></span> </p>
 
           </listitem>
 
           <listitem>
 
-            <p>Führen Sie für die Einschränkung Fehler, ein erneuter Versuch mit exponenzieller Wartezeit </p>
+            <p><span data-ttu-id="cf06f-104">Führen Sie für die Einschränkung Fehler, ein erneuter Versuch mit exponenzieller Wartezeit</span><span class="sxs-lookup"><span data-stu-id="cf06f-104">For throttling error, do a retry with exponential backoff</span></span> </p>
 
           </listitem>
 
           <listitem>
 
-            <p>Führen Sie bei allen anderen Fehlern ein erneuter Versuch mit linearen Wartezeit </p>
+            <p><span data-ttu-id="cf06f-105">Führen Sie bei allen anderen Fehlern ein erneuter Versuch mit linearen Wartezeit</span><span class="sxs-lookup"><span data-stu-id="cf06f-105">for all other errors, do a retry with linear backoff</span></span> </p>
 
           </listitem>
 
@@ -68,8 +68,8 @@ references:
     fullName: com.microsoft.azure.datalake.store.retrypolicies.NoRetryPolicy
     type: Class
     summary: |-
-      <p>Keine Wiederholung jemals. Gibt immer "false" zeigt an, dass diese Erequest nicht wiederholt werden sollte zurück.</p>
-      <p>Dies sollte verwendet werden, und wiederholen Sie dann ist nicht sicher und at-Most-Once-Semantik mit dem Aufruf der Benutzer möchte. Dies ist nützlich für nicht idempotente-Methoden, in dem der Fehler vom letzten Aufruf zurückgegebene abschließend Erfolg oder Fehler des Aufrufs gibt keine. Z. B. wenn ein Anfügen erfolgreich ausgeführt wird, auf dem Back-End ein Timeout auftritt, Anfügen wiederholen sie dann die Daten zweimal, um die Datei. </p>
+      <p><span data-ttu-id="cf06f-106">Keine Wiederholung jemals.</span><span class="sxs-lookup"><span data-stu-id="cf06f-106">No retry ever.</span></span> <span data-ttu-id="cf06f-107">Gibt immer "false" zeigt an, dass diese Erequest nicht wiederholt werden sollte zurück.</span><span class="sxs-lookup"><span data-stu-id="cf06f-107">Always returns false, indicating that erequest should not be retried.</span></span></p>
+      <p><span data-ttu-id="cf06f-108">Dies sollte verwendet werden, und wiederholen Sie dann ist nicht sicher und at-Most-Once-Semantik mit dem Aufruf der Benutzer möchte.</span><span class="sxs-lookup"><span data-stu-id="cf06f-108">This should be used when retrying is not safe, and user wants at-most-once semantics with the call.</span></span> <span data-ttu-id="cf06f-109">Dies ist nützlich für nicht idempotente-Methoden, in dem der Fehler vom letzten Aufruf zurückgegebene abschließend Erfolg oder Fehler des Aufrufs gibt keine.</span><span class="sxs-lookup"><span data-stu-id="cf06f-109">This is useful for non-idempotent methods, where the error returned by the last call does not conclusively indicate success or failure of the call.</span></span> <span data-ttu-id="cf06f-110">Z. B. wenn ein Anfügen erfolgreich ausgeführt wird, auf dem Back-End ein Timeout auftritt, Anfügen wiederholen sie dann die Daten zweimal, um die Datei.</span><span class="sxs-lookup"><span data-stu-id="cf06f-110">For example, if an append times out but succeeds on the back-end , then retrying it may append the data twice to the file.</span></span> </p>
     syntax:
       content: public class NoRetryPolicy implements RetryPolicy
   - uid: com.microsoft.azure.datalake.store.retrypolicies._retry_policy
@@ -80,7 +80,7 @@ references:
     fullName: com.microsoft.azure.datalake.store.retrypolicies.RetryPolicy
     type: Interface
     summary: |-
-      <p>die <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll. </p>
-      <p>Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien. </p>
+      <p><span data-ttu-id="cf06f-111">die <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> steuert, ob es sich bei eine fehlgeschlagene Anforderung wiederholt, und wie lange warten, und wiederholen Sie dann werden soll.</span><span class="sxs-lookup"><span data-stu-id="cf06f-111">the <xref uid="com.microsoft.azure.datalake.store.retrypolicies._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> controls whether a failed request should be retried, and how long to wait before retrying.</span></span> </p>
+      <p><span data-ttu-id="cf06f-112">Implementierungen dieser Schnittstelle implementieren andere wiederholungsrichtlinien.</span><span class="sxs-lookup"><span data-stu-id="cf06f-112">Implementations of this interface implement different retry policies.</span></span> </p>
     syntax:
       content: public interface RetryPolicy

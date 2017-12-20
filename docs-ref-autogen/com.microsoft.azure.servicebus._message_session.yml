@@ -118,7 +118,7 @@ items:
       content: public Instant getLockedUntilUtc()
       return:
         type: 328f8254
-        description: '<p>Ruft die Zeit ab, die die identifizierte Sitzung <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref> erst für diesen Client gesperrt ist. </p>'
+        description: '<p><span data-ttu-id="1c6d1-101">Ruft die Zeit ab, die die identifizierte Sitzung <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref> erst für diesen Client gesperrt ist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-101">Gets the time that the session identified by <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref> is locked until for this client.</span></span> </p>'
     overridden: com.microsoft.azure.servicebus._i_message_session.getLockedUntilUtc()
   - uid: com.microsoft.azure.servicebus._message_session.getRequestedSessionId()
     id: getRequestedSessionId()
@@ -160,7 +160,7 @@ items:
       content: public String getSessionId()
       return:
         type: '26831127'
-        description: <p>Ruft die SessionId ab. </p>
+        description: <p><span data-ttu-id="1c6d1-102">Ruft die SessionId ab.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-102">Gets the SessionId.</span></span> </p>
     overridden: com.microsoft.azure.servicebus._i_message_session.getSessionId()
   - uid: com.microsoft.azure.servicebus._message_session.getState()
     id: getState()
@@ -179,19 +179,19 @@ items:
       startLine: 70
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Ruft den Sitzungsstatus ab.</p>
+      <p><span data-ttu-id="1c6d1-103">Ruft den Sitzungsstatus ab.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-103">Gets the session state.</span></span></p>
       <p></p>
     syntax:
       content: 'public byte [] getState()'
       return:
         type: ccd9418d
-        description: <p>Der Sitzungsstatus </p>
+        description: <p><span data-ttu-id="1c6d1-104">Der Sitzungsstatus</span><span class="sxs-lookup"><span data-stu-id="1c6d1-104">The session state</span></span> </p>
     overridden: com.microsoft.azure.servicebus._i_message_session.getState()
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="1c6d1-105">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="1c6d1-105">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn Zustand Fehler abzurufen. </p>
+        description: <p><span data-ttu-id="1c6d1-106">Wenn Zustand Fehler abzurufen.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-106">if get state failed.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._message_session.getStateAsync()
     id: getStateAsync()
     parent: com.microsoft.azure.servicebus._message_session
@@ -208,16 +208,16 @@ items:
       path: azure-servicebus/src/main/java/com/microsoft/azure/servicebus/MessageSession.java
       startLine: 75
     package: com.microsoft.azure.servicebus
-    summary: <p>Ruft asynchron den Sitzungsstatus ab. </p>
+    summary: <p><span data-ttu-id="1c6d1-107">Ruft asynchron den Sitzungsstatus ab.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-107">Asynchronously gets the session state.</span></span> </p>
     syntax:
       content: 'public CompletableFuture<byte[]> getStateAsync()'
       return:
         type: 5fe2dfa4
-        description: '<p>eine CompletableFuture, die den Status abrufen ausstehenden Sitzungs darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-108">eine CompletableFuture, die den Status abrufen ausstehenden Sitzungs darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-108">a CompletableFuture representing the pending session state retrieving.</span></span> </p>'
     overridden: com.microsoft.azure.servicebus._i_message_session.getStateAsync()
     see:
       - type: com.microsoft.azure.servicebus._i_message_session.getState()
-        description: 'IMessageSession::getState'
+        description: '<span data-ttu-id="1c6d1-109">IMessageSession::getState</span><span class="sxs-lookup"><span data-stu-id="1c6d1-109">IMessageSession::getState</span></span>'
   - uid: com.microsoft.azure.servicebus._message_session.isBrowsableSession()
     id: isBrowsableSession()
     parent: com.microsoft.azure.servicebus._message_session
@@ -275,18 +275,18 @@ items:
       startLine: 50
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden. </p>
-      <p>Wenn Sie eine Sitzung annehmen, wird die Sitzung während der Erstellung der Warteschlange/Abonnement für diese Clientinstanz vom Dienst für eine Dauer entsprechend den Angaben gesperrt. Wenn länger als diese Dauer der Sitzung Verarbeitung erforderlich ist, muss die Sitzung-Sperre erneuert werden. Bei jeder Verlängerung wird die Sitzung-Sperre durch die Entität LockDuration erneuert. </p>
-      <p>Erneuerung der Sitzung werden alle Nachrichten in der Sitzung auch erneuert. Jede einzelne Nachricht muss nicht erneuert werden.</p>
+      <p><span data-ttu-id="1c6d1-110">Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-110">Renews the lock on the session specified by the <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span></span> <span data-ttu-id="1c6d1-111">Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-111">The lock will be renewed based on the setting specified on the entity.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-112">Wenn Sie eine Sitzung annehmen, wird die Sitzung während der Erstellung der Warteschlange/Abonnement für diese Clientinstanz vom Dienst für eine Dauer entsprechend den Angaben gesperrt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-112">When you accept a session, the session is locked for this client instance by the service for a duration as specified during the Queue/Subscription creation.</span></span> <span data-ttu-id="1c6d1-113">Wenn länger als diese Dauer der Sitzung Verarbeitung erforderlich ist, muss die Sitzung-Sperre erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-113">If processing of the session requires longer than this duration, the session-lock needs to be renewed.</span></span> <span data-ttu-id="1c6d1-114">Bei jeder Verlängerung wird die Sitzung-Sperre durch die Entität LockDuration erneuert.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-114">For each renewal, the session-lock is renewed by the entity's LockDuration.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-115">Erneuerung der Sitzung werden alle Nachrichten in der Sitzung auch erneuert.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-115">Renewal of session renews all the messages in the session as well.</span></span> <span data-ttu-id="1c6d1-116">Jede einzelne Nachricht muss nicht erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-116">Each individual message need not be renewed.</span></span></p>
       <p></p>
     syntax:
       content: public void renewSessionLock()
     overridden: com.microsoft.azure.servicebus._i_message_session.renewSessionLock()
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="1c6d1-117">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="1c6d1-117">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn die Renew fehlgeschlagen ist. </p>
+        description: <p><span data-ttu-id="1c6d1-118">Wenn die Renew fehlgeschlagen ist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-118">if the renew failed.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._message_session.renewSessionLockAsync()
     id: renewSessionLockAsync()
     parent: com.microsoft.azure.servicebus._message_session
@@ -304,17 +304,17 @@ items:
       startLine: 55
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</p>
+      <p><span data-ttu-id="1c6d1-119">Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-119">Renews the lock on the session specified by the <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span></span> <span data-ttu-id="1c6d1-120">Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-120">The lock will be renewed based on the setting specified on the entity.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> renewSessionLockAsync()
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, ausstehende erneuern darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-121">eine CompletableFuture, ausstehende erneuern darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-121">a CompletableFuture representing the pending renew.</span></span> </p>'
     overridden: com.microsoft.azure.servicebus._i_message_session.renewSessionLockAsync()
     see:
       - type: com.microsoft.azure.servicebus._i_message_session.renewSessionLock()
-        description: 'IMessageSession::renewSessionLock()'
+        description: '<span data-ttu-id="1c6d1-122">IMessageSession::renewSessionLock()</span><span class="sxs-lookup"><span data-stu-id="1c6d1-122">IMessageSession::renewSessionLock()</span></span>'
   - uid: 'com.microsoft.azure.servicebus._message_session.setState(byte [])'
     id: 'setState(byte [])'
     parent: com.microsoft.azure.servicebus._message_session
@@ -332,20 +332,20 @@ items:
       startLine: 60
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Legen Sie einen benutzerdefinierten Zustand für die Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</p>
+      <p><span data-ttu-id="1c6d1-123">Legen Sie einen benutzerdefinierten Zustand für die Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-123">Set a custom state on the session which can be later retrieved using <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span></span></p>
       <p></p>
     syntax:
       content: 'public void setState(byte[] sessionState)'
       parameters:
         - id: state
           type: ccd9418d
-          description: <p>der Sitzungsstatus. </p>
+          description: <p><span data-ttu-id="1c6d1-124">der Sitzungsstatus.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-124">The session state.</span></span> </p>
     overridden: 'com.microsoft.azure.servicebus._i_message_session.setState(byte [])'
     exceptions:
       - type: 8256ba40
-        description: <p>Wenn der aktuelle Thread beim Warten unterbrochen wurde </p>
+        description: <p><span data-ttu-id="1c6d1-125">Wenn der aktuelle Thread beim Warten unterbrochen wurde</span><span class="sxs-lookup"><span data-stu-id="1c6d1-125">if the current thread was interrupted while waiting</span></span> </p>
       - type: 73fec9fb
-        description: <p>Wenn der Satz Status fehlgeschlagen ist. </p>
+        description: <p><span data-ttu-id="1c6d1-126">Wenn der Satz Status fehlgeschlagen ist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-126">if the set state failed.</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._message_session.setStateAsync(byte [])'
     id: 'setStateAsync(byte [])'
     parent: com.microsoft.azure.servicebus._message_session
@@ -363,21 +363,21 @@ items:
       startLine: 65
     package: com.microsoft.azure.servicebus
     summary: |-
-      <p>Legen Sie einen benutzerdefinierten Zustand asynchron in der Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</p>
+      <p><span data-ttu-id="1c6d1-127">Legen Sie einen benutzerdefinierten Zustand asynchron in der Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-127">Asynchronously set a custom state on the session which can be later retrieved using <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> setStateAsync(byte[] sessionState)'
       parameters:
         - id: state
           type: ccd9418d
-          description: <p>der Sitzungsstatus. </p>
+          description: <p><span data-ttu-id="1c6d1-128">der Sitzungsstatus.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-128">The session state.</span></span> </p>
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Status sitzungseinstellung darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-129">eine CompletableFuture, die die ausstehenden Status sitzungseinstellung darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-129">a CompletableFuture representing the pending session state setting.</span></span> </p>'
     overridden: 'com.microsoft.azure.servicebus._i_message_session.setStateAsync(byte [])'
     see:
       - type: 'com.microsoft.azure.servicebus._i_message_session.setState(byte [])'
-        description: 'IMessageSession::setState'
+        description: '<span data-ttu-id="1c6d1-130">IMessageSession::setState</span><span class="sxs-lookup"><span data-stu-id="1c6d1-130">IMessageSession::setState</span></span>'
 references:
   - uid: 4dda0764
     spec.java:
@@ -506,7 +506,7 @@ references:
     nameWithType: ICloseable.close()
     fullName: void com.microsoft.azure.servicebus.ICloseable.close()
     type: Method
-    summary: '<p>Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Beim Aufrufen dieser Methode entspricht der aufrufen. Diese Methode blockiert, bis diese wird das Objekt geschlossen. </p>'
+    summary: '<p><span data-ttu-id="1c6d1-131">Synchron wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-131">Synchronously closes and disposes any resources associated with this object.</span></span> <span data-ttu-id="1c6d1-132">Beim Aufrufen dieser Methode entspricht der aufrufen.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-132">Calling this method is equivalent of calling .</span></span> <span data-ttu-id="1c6d1-133">Diese Methode blockiert, bis diese wird das Objekt geschlossen.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-133">This method blocks until this object is closed.</span></span> </p>'
     syntax:
       content: public void close()
   - uid: com.microsoft.azure.servicebus.primitives._client_entity.closeAsync()
@@ -527,12 +527,12 @@ references:
     nameWithType: ICloseable.closeAsync()
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.ICloseable.closeAsync()
     type: Method
-    summary: '<p>Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei. Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde. Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben. Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist. </p>'
+    summary: '<p><span data-ttu-id="1c6d1-134">Wird geschlossen, und gibt diesem Objekt zugeordneten Ressourcen frei.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-134">Closes and disposes any resources associated with this object.</span></span> <span data-ttu-id="1c6d1-135">Ein Objekt kann nicht verwendet werden, nachdem sie geschlossen wurde.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-135">An object cannot be used after it is closed.</span></span> <span data-ttu-id="1c6d1-136">Dies ist eine asynchrone Methode, die eine CompletableFuture wird sofort zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-136">This is an asynchronous method that returns a CompletableFuture immediately.</span></span> <span data-ttu-id="1c6d1-137">Dieses Objekt wird vollständig beendet, wenn die zurückgegebene CompletableFuture abgeschlossen ist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-137">This object is completely closed when the returned CompletableFuture is completed.</span></span> </p>'
     syntax:
       content: public CompletableFuture<Void> closeAsync()
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die das Schließen des dieses Objekt darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-138">eine CompletableFuture, die das Schließen des dieses Objekt darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-138">a CompletableFuture representing the closing of this object.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._message_receiver.complete(UUID)
   - uid: com.microsoft.azure.servicebus._message_receiver.completeAsync(UUID)
   - uid: com.microsoft.azure.servicebus._message_receiver.deadLetter(UUID)
@@ -653,10 +653,10 @@ references:
     fullName: com.microsoft.azure.servicebus.IMessageSession
     type: Interface
     summary: |-
-      <p>Beschreibt ein Sitzungsobjekt. <xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden. </p>
-      <p>Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten. Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung. </p>
-      <p>Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner. Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet. </p>
-      <p>Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist. Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt. </p>
+      <p><span data-ttu-id="1c6d1-139">Beschreibt ein Sitzungsobjekt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-139">Describes a Session object.</span></span> <span data-ttu-id="1c6d1-140"><xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> kann zum Ausführen von Vorgängen für Sitzungen verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-140"><xref uid="com.microsoft.azure.servicebus._i_message_session" data-throw-if-not-resolved="false">IMessageSession</xref> can be used to perform operations on sessions.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-141">Service Bus-Sitzungen, so genannte "Gruppen" in das Protokoll AMQP 1.0 sind ungebundenen Ereignisfolgen zusammengehöriger Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-141">Service Bus Sessions, also called 'Groups' in the AMQP 1.0 protocol, are unbounded sequences of related messages.</span></span> <span data-ttu-id="1c6d1-142">Service Bus garantiert die Reihenfolge der Nachrichten in einer Sitzung.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-142">ServiceBus guarantees ordering of messages in a session.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-143">Beliebiger Sender erstellen Sie eine Sitzung beim Senden von Nachrichten in einer Warteschlange oder ein Thema durch Festlegen der <xref uid="" data-throw-if-not-resolved="false">Nachricht #sessionId</xref> Eigenschaft auf <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Nachricht</xref> zu einer Anwendung definierter Eindeutiger Bezeichner.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-143">Any sender can create a session when submitting messages into a Topic or Queue by setting the <xref uid="" data-throw-if-not-resolved="false">Message#sessionId</xref> property on <xref uid="com.microsoft.azure.servicebus._message" data-throw-if-not-resolved="false">Message</xref> to some application defined unique identifier.</span></span> <span data-ttu-id="1c6d1-144">Auf der Protokollebene AMQP 1.0 wird dieser Wert auf die Gruppen-Id-Eigenschaft zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-144">At the AMQP 1.0 protocol level, this value maps to the group-id property.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-145">Sitzungen sind vorhanden, wenn mindestens eine Nachricht mit der Sitzung SessionId in die Warteschlange oder ein Thema Abonnement vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-145">Sessions come into existence when there is at least one message with the session's SessionId in the Queue or Topic subscription.</span></span> <span data-ttu-id="1c6d1-146">Sobald eine Sitzung vorhanden ist, gibt es keine definierten Moment oder einer Geste für, wenn die Sitzung abläuft, oder wird nicht mehr angezeigt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-146">Once a Session exists, there is no defined moment or gesture for when the session expires or disappears.</span></span> </p>
     syntax:
       content: public interface IMessageSession extends IMessageReceiver
   - uid: com.microsoft.azure.servicebus._browsable_message_session
@@ -668,8 +668,8 @@ references:
     fullName: com.microsoft.azure.servicebus.primitives.ConnectionStringBuilder
     type: Class
     summary: |-
-      <p>Diese Klasse kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können. Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden. </p>
-      <p>Beispielcode: <pre><code>ConnectionStringBuilder connectionStringBuilder = new ConnectionStringBuilder(
+      <p><span data-ttu-id="1c6d1-147">Diese Klasse kann verwendet werden, um eine Verbindungszeichenfolge erstellen. diese Kommunikation mit Service Bus-Entitäten herstellen können.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-147">This class can be used to construct a connection string which can establish communication with ServiceBus entities.</span></span> <span data-ttu-id="1c6d1-148">Sie können auch die grundlegende Validierung auf eine vorhandene Verbindungszeichenfolge verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-148">It can also be used to perform basic validation on an existing connection string.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-149">Beispielcode:</span><span class="sxs-lookup"><span data-stu-id="1c6d1-149">Sample Code:</span></span> <pre><code>ConnectionStringBuilder connectionStringBuilder = new ConnectionStringBuilder(
 
                                                    "ServiceBusNamespaceName", 
 
@@ -685,7 +685,7 @@ references:
 
           </code></pre></p>
 
-      <p>Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste ";". Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem><p>Endpunkt - URL, an den Service Bus-Namespace verweist. </p></listitem><listitem><p>EntityPath - Pfad zu der Servicebus-Entität (Warteschlange/Thema/Abonnement /). Für Warteschlangen und Themen ist es nur die Namen der Entität. Für Abonnements Pfad ist &lt;Name_des_themas&gt;/Subscriptions /&lt;SubscriptionName&gt; </p></listitem><listitem><p>SharedAccessKeyName - Key-Name auf den entsprechenden freigegebenen Zugriffsrichtlinie für den Namespace oder Entität. </p></listitem><listitem><p>SharedAccessKey - Schlüssel-Wert für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität. </p></listitem><listitem><p>SharedAccessSignatureToken - können anstelle einer Schlüsselnamen und einen Schlüsselwert, Clients eine bereits generierte SAS-Token bereitstellen. </p></listitem><listitem><p>OperationTimeout - Standardtimeout für alle Absender, Empfänger und Clients, die aus dieser Verbindungszeichenfolge erstellte verwendet werden. </p></listitem><listitem><p><xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">Die RetryPolicy</xref> - Name der Richtlinie versuchen Sie es erneut. </p></listitem></itemizedlist></p>
+      <p><span data-ttu-id="1c6d1-150">Eine Verbindungszeichenfolge ist im Grunde eine Zeichenfolge von Schlüssel-Wert-Paar senkrechter umfasste ";".</span><span class="sxs-lookup"><span data-stu-id="1c6d1-150">A connection string is basically a string consisted of key-value pair separated by ";".</span></span> <span data-ttu-id="1c6d1-151">Grundlegende Format ist {{ &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;} [; {} &lt;} Schlüssel {&gt;} = { &lt;} Wert {&gt;}]}, in denen unterstützten Schlüsselname lautet wie folgt:<itemizedlist><listitem></span><span class="sxs-lookup"><span data-stu-id="1c6d1-151">Basic format is {{ &lt;}key{&gt;}={ &lt;}value{&gt;}[;{ &lt;}key{&gt;}={ &lt;}value{&gt;}]} where supported key name are as follow: <itemizedlist><listitem></span></span><p><span data-ttu-id="1c6d1-152">Endpunkt - URL, an den Service Bus-Namespace verweist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-152">Endpoint - URL that points to the servicebus namespace</span></span> </p></listitem><listitem><p><span data-ttu-id="1c6d1-153">EntityPath - Pfad zu der Servicebus-Entität (Warteschlange/Thema/Abonnement /).</span><span class="sxs-lookup"><span data-stu-id="1c6d1-153">EntityPath - Path to the service bus entity (queue/topic/subscription/).</span></span> <span data-ttu-id="1c6d1-154">Für Warteschlangen und Themen ist es nur die Namen der Entität.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-154">For queues and topics, it is just the entity name.</span></span> <span data-ttu-id="1c6d1-155">Für Abonnements Pfad ist &lt;Name_des_themas&gt;/Subscriptions /&lt;SubscriptionName&gt;</span><span class="sxs-lookup"><span data-stu-id="1c6d1-155">For subscriptions, path is &lt;topicName&gt;/subscriptions/&lt;subscriptionName&gt;</span></span> </p></listitem><listitem><p><span data-ttu-id="1c6d1-156">SharedAccessKeyName - Key-Name auf den entsprechenden freigegebenen Zugriffsrichtlinie für den Namespace oder Entität.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-156">SharedAccessKeyName - Key name to the corresponding shared access policy rule for the namespace, or entity.</span></span> </p></listitem><listitem><p><span data-ttu-id="1c6d1-157">SharedAccessKey - Schlüssel-Wert für die entsprechenden SAS-Richtlinienregel des Namespace oder der Entität.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-157">SharedAccessKey - Key value for the corresponding shared access policy rule of the namespace or entity.</span></span> </p></listitem><listitem><p><span data-ttu-id="1c6d1-158">SharedAccessSignatureToken - können anstelle einer Schlüsselnamen und einen Schlüsselwert, Clients eine bereits generierte SAS-Token bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-158">SharedAccessSignatureToken - Instead of a key name and key value, clients can provide an already generated SAS Token.</span></span> </p></listitem><listitem><p><span data-ttu-id="1c6d1-159">OperationTimeout - Standardtimeout für alle Absender, Empfänger und Clients, die aus dieser Verbindungszeichenfolge erstellte verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-159">OperationTimeout - Default timeout to be used for all senders, receiver and clients created from this connection string.</span></span> </p></listitem><listitem><p><span data-ttu-id="1c6d1-160"><xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">Die RetryPolicy</xref> - Name der Richtlinie versuchen Sie es erneut.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-160"><xref uid="com.microsoft.azure.servicebus.primitives._retry_policy" data-throw-if-not-resolved="false">RetryPolicy</xref> - Name of the retry policy.</span></span> </p></listitem></itemizedlist></p>
     syntax:
       content: public class ConnectionStringBuilder
   - uid: com.microsoft.azure.servicebus._receive_mode
@@ -696,7 +696,7 @@ references:
     fullName: com.microsoft.azure.servicebus.ReceiveMode
     type: Enum
     summary: |-
-      <p>Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</p>
+      <p><span data-ttu-id="1c6d1-161">Enumeration zur Darstellung der beiden empfangsmodi, Azure Service Bus unterstützt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-161">Enumeration to represent the two receive modes Azure Service Bus supports.</span></span></p>
       <p></p>
     syntax:
       content: public enum ReceiveMode
@@ -707,7 +707,7 @@ references:
     nameWithType: MessagingFactory
     fullName: com.microsoft.azure.servicebus.primitives.MessagingFactory
     type: Class
-    summary: '<p>Abstrahiert alle AMQP im Zusammenhang details und kapselt eine AMQP-Verbindung und zum Verwalten des Lebenszyklus der Reihe nach. Jede Instanz dieser Klasse stellen eine AMQP-Verbindung mit dem Namespace dar. Wenn eine Anwendung mehrere Absender, Empfänger oder Clients, die mithilfe der gleichen MessagingFacotry-Instanz erstellt, gemeinsam alle diese Absender, Empfänger oder Clients die Verbindung mit dem Namespace. </p>'
+    summary: '<p><span data-ttu-id="1c6d1-162">Abstrahiert alle AMQP im Zusammenhang details und kapselt eine AMQP-Verbindung und zum Verwalten des Lebenszyklus der Reihe nach.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-162">Abstracts all AMQP related details and encapsulates an AMQP connection and manages its life cycle.</span></span> <span data-ttu-id="1c6d1-163">Jede Instanz dieser Klasse stellen eine AMQP-Verbindung mit dem Namespace dar.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-163">Each instance of this class represent one AMQP connection to the namespace.</span></span> <span data-ttu-id="1c6d1-164">Wenn eine Anwendung mehrere Absender, Empfänger oder Clients, die mithilfe der gleichen MessagingFacotry-Instanz erstellt, gemeinsam alle diese Absender, Empfänger oder Clients die Verbindung mit dem Namespace.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-164">If an application creates multiple senders, receivers or clients using the same MessagingFacotry instance, all those senders, receivers or clients will share the same connection to the namespace.</span></span> </p>'
     syntax:
       content: public class MessagingFactory
   - uid: com.microsoft.azure.servicebus._i_message_session.getLockedUntilUtc()
@@ -721,7 +721,7 @@ references:
       content: public Instant getLockedUntilUtc()
       return:
         type: 328f8254
-        description: '<p>Ruft die Zeit ab, die die identifizierte Sitzung <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref> erst für diesen Client gesperrt ist. </p>'
+        description: '<p><span data-ttu-id="1c6d1-165">Ruft die Zeit ab, die die identifizierte Sitzung <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref> erst für diesen Client gesperrt ist.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-165">Gets the time that the session identified by <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref> is locked until for this client.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_session.getSessionId()
     parent: com.microsoft.azure.servicebus._i_message_session
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -733,7 +733,7 @@ references:
       content: public String getSessionId()
       return:
         type: '26831127'
-        description: <p>Ruft die SessionId ab. </p>
+        description: <p><span data-ttu-id="1c6d1-166">Ruft die SessionId ab.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-166">Gets the SessionId.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_session.renewSessionLock()
     parent: com.microsoft.azure.servicebus._i_message_session
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -742,9 +742,9 @@ references:
     fullName: void com.microsoft.azure.servicebus.IMessageSession.renewSessionLock()
     type: Method
     summary: |-
-      <p>Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden. </p>
-      <p>Wenn Sie eine Sitzung annehmen, wird die Sitzung während der Erstellung der Warteschlange/Abonnement für diese Clientinstanz vom Dienst für eine Dauer entsprechend den Angaben gesperrt. Wenn länger als diese Dauer der Sitzung Verarbeitung erforderlich ist, muss die Sitzung-Sperre erneuert werden. Bei jeder Verlängerung wird die Sitzung-Sperre durch die Entität LockDuration erneuert. </p>
-      <p>Erneuerung der Sitzung werden alle Nachrichten in der Sitzung auch erneuert. Jede einzelne Nachricht muss nicht erneuert werden.</p>
+      <p><span data-ttu-id="1c6d1-167">Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-167">Renews the lock on the session specified by the <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span></span> <span data-ttu-id="1c6d1-168">Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-168">The lock will be renewed based on the setting specified on the entity.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-169">Wenn Sie eine Sitzung annehmen, wird die Sitzung während der Erstellung der Warteschlange/Abonnement für diese Clientinstanz vom Dienst für eine Dauer entsprechend den Angaben gesperrt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-169">When you accept a session, the session is locked for this client instance by the service for a duration as specified during the Queue/Subscription creation.</span></span> <span data-ttu-id="1c6d1-170">Wenn länger als diese Dauer der Sitzung Verarbeitung erforderlich ist, muss die Sitzung-Sperre erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-170">If processing of the session requires longer than this duration, the session-lock needs to be renewed.</span></span> <span data-ttu-id="1c6d1-171">Bei jeder Verlängerung wird die Sitzung-Sperre durch die Entität LockDuration erneuert.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-171">For each renewal, the session-lock is renewed by the entity's LockDuration.</span></span> </p>
+      <p><span data-ttu-id="1c6d1-172">Erneuerung der Sitzung werden alle Nachrichten in der Sitzung auch erneuert.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-172">Renewal of session renews all the messages in the session as well.</span></span> <span data-ttu-id="1c6d1-173">Jede einzelne Nachricht muss nicht erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-173">Each individual message need not be renewed.</span></span></p>
       <p></p>
     syntax:
       content: public void renewSessionLock()
@@ -755,7 +755,7 @@ references:
     nameWithType: ServiceBusException
     fullName: com.microsoft.azure.servicebus.primitives.ServiceBusException
     type: Class
-    summary: '<p>Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird. </p>'
+    summary: '<p><span data-ttu-id="1c6d1-174">Dies ist die Basis-Ausnahme, die für alle Fehlerfälle Servicebus generiert wird.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-174">This is the base exception that service bus will generate for all error cases.</span></span> </p>'
     syntax:
       content: public class ServiceBusException
   - uid: com.microsoft.azure.servicebus._i_message_session.renewSessionLockAsync()
@@ -766,13 +766,13 @@ references:
     fullName: CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageSession.renewSessionLockAsync()
     type: Method
     summary: |-
-      <p>Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>. Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</p>
+      <p><span data-ttu-id="1c6d1-175">Erneuert die Sperre für die Sitzung, die gemäß der <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-175">Renews the lock on the session specified by the <xref uid="com.microsoft.azure.servicebus._i_message_session.getSessionId()" data-throw-if-not-resolved="false">IMessageSession#getSessionId()</xref>.</span></span> <span data-ttu-id="1c6d1-176">Die Sperre wird basierend auf der Einstellung für die Entität angegeben erneuert werden.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-176">The lock will be renewed based on the setting specified on the entity.</span></span></p>
       <p></p>
     syntax:
       content: public CompletableFuture<Void> renewSessionLockAsync()
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, ausstehende erneuern darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-177">eine CompletableFuture, ausstehende erneuern darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-177">a CompletableFuture representing the pending renew.</span></span> </p>'
   - uid: 'com.microsoft.azure.servicebus._i_message_session.setState(byte [])'
     parent: com.microsoft.azure.servicebus._i_message_session
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -781,14 +781,14 @@ references:
     fullName: 'void com.microsoft.azure.servicebus.IMessageSession.setState(byte[] state)'
     type: Method
     summary: |-
-      <p>Legen Sie einen benutzerdefinierten Zustand für die Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</p>
+      <p><span data-ttu-id="1c6d1-178">Legen Sie einen benutzerdefinierten Zustand für die Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-178">Set a custom state on the session which can be later retrieved using <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span></span></p>
       <p></p>
     syntax:
       content: 'public void setState(byte[] state)'
       parameters:
         - id: state
           type: ccd9418d
-          description: <p>der Sitzungsstatus. </p>
+          description: <p><span data-ttu-id="1c6d1-179">der Sitzungsstatus.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-179">The session state.</span></span> </p>
   - uid: com.microsoft.azure.servicebus._i_message_session.getState()
     parent: com.microsoft.azure.servicebus._i_message_session
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -797,13 +797,13 @@ references:
     fullName: 'byte [] com.microsoft.azure.servicebus.IMessageSession.getState()'
     type: Method
     summary: |-
-      <p>Ruft den Sitzungsstatus ab.</p>
+      <p><span data-ttu-id="1c6d1-180">Ruft den Sitzungsstatus ab.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-180">Gets the session state.</span></span></p>
       <p></p>
     syntax:
       content: 'public byte [] getState()'
       return:
         type: ccd9418d
-        description: <p>Der Sitzungsstatus </p>
+        description: <p><span data-ttu-id="1c6d1-181">Der Sitzungsstatus</span><span class="sxs-lookup"><span data-stu-id="1c6d1-181">The session state</span></span> </p>
   - uid: 'com.microsoft.azure.servicebus._i_message_session.setStateAsync(byte [])'
     parent: com.microsoft.azure.servicebus._i_message_session
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -812,17 +812,17 @@ references:
     fullName: 'CompletableFuture<Void> com.microsoft.azure.servicebus.IMessageSession.setStateAsync(byte[] state)'
     type: Method
     summary: |-
-      <p>Legen Sie einen benutzerdefinierten Zustand asynchron in der Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</p>
+      <p><span data-ttu-id="1c6d1-182">Legen Sie einen benutzerdefinierten Zustand asynchron in der Sitzung mit einem späteren Zeitpunkt abgerufen werden kann <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-182">Asynchronously set a custom state on the session which can be later retrieved using <xref uid="com.microsoft.azure.servicebus._i_message_session.getState()" data-throw-if-not-resolved="false">IMessageSession#getState()</xref>.</span></span></p>
       <p></p>
     syntax:
       content: 'public CompletableFuture<Void> setStateAsync(byte[] state)'
       parameters:
         - id: state
           type: ccd9418d
-          description: <p>der Sitzungsstatus. </p>
+          description: <p><span data-ttu-id="1c6d1-183">der Sitzungsstatus.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-183">The session state.</span></span> </p>
       return:
         type: db03ee24
-        description: '<p>eine CompletableFuture, die die ausstehenden Status sitzungseinstellung darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-184">eine CompletableFuture, die die ausstehenden Status sitzungseinstellung darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-184">a CompletableFuture representing the pending session state setting.</span></span> </p>'
   - uid: com.microsoft.azure.servicebus._i_message_session.getStateAsync()
     parent: com.microsoft.azure.servicebus._i_message_session
     href: com.microsoft.azure.servicebus._i_message_session.yml
@@ -830,9 +830,9 @@ references:
     nameWithType: IMessageSession.getStateAsync()
     fullName: 'CompletableFuture<byte[]> com.microsoft.azure.servicebus.IMessageSession.getStateAsync()'
     type: Method
-    summary: <p>Ruft asynchron den Sitzungsstatus ab. </p>
+    summary: <p><span data-ttu-id="1c6d1-185">Ruft asynchron den Sitzungsstatus ab.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-185">Asynchronously gets the session state.</span></span> </p>
     syntax:
       content: 'public CompletableFuture<byte[]> getStateAsync()'
       return:
         type: 5fe2dfa4
-        description: '<p>eine CompletableFuture, die den Status abrufen ausstehenden Sitzungs darstellt. </p>'
+        description: '<p><span data-ttu-id="1c6d1-186">eine CompletableFuture, die den Status abrufen ausstehenden Sitzungs darstellt.</span><span class="sxs-lookup"><span data-stu-id="1c6d1-186">a CompletableFuture representing the pending session state retrieving.</span></span> </p>'

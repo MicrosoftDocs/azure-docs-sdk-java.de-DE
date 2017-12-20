@@ -23,8 +23,8 @@ items:
       startLine: 21
     package: com.microsoft.azure.datalake.store.oauth2
     summary: |-
-      <p>Ein Azure Active Directory-Token bei der Anforderung zurück. Der Anbieter kann das Token zwischenspeichern, wenn sie bereits abgerufen wurde. Wenn dies der Fall ist, ist der Anbieter für Ablauf überprüfen und aktualisieren nach Bedarf zuständig. </p>
-      <p>In anderen Worten: Dies ist einem Tokencache, der Token angefordert, abruft, wenn die im Cache gespeicherten Token abgelaufen ist. </p>
+      <p><span data-ttu-id="4ac25-101">Ein Azure Active Directory-Token bei der Anforderung zurück.</span><span class="sxs-lookup"><span data-stu-id="4ac25-101">Returns an Azure Active Directory token when requested.</span></span> <span data-ttu-id="4ac25-102">Der Anbieter kann das Token zwischenspeichern, wenn sie bereits abgerufen wurde.</span><span class="sxs-lookup"><span data-stu-id="4ac25-102">The provider can cache the token if it has already retrieved one.</span></span> <span data-ttu-id="4ac25-103">Wenn dies der Fall ist, ist der Anbieter für Ablauf überprüfen und aktualisieren nach Bedarf zuständig.</span><span class="sxs-lookup"><span data-stu-id="4ac25-103">If it does, then the provider is responsible for checking expiry and refreshing as needed.</span></span> </p>
+      <p><span data-ttu-id="4ac25-104">In anderen Worten: Dies ist einem Tokencache, der Token angefordert, abruft, wenn die im Cache gespeicherten Token abgelaufen ist.</span><span class="sxs-lookup"><span data-stu-id="4ac25-104">In other words, this is is a token cache that fetches tokens when requested, if the cached token has expired.</span></span> </p>
     syntax:
       content: public class AccessTokenProvider
     inheritance:
@@ -46,16 +46,16 @@ items:
       startLine: 32
     package: com.microsoft.azure.datalake.store.oauth2
     summary: |-
-      <p>Gibt die <xref uid="com.microsoft.azure.datalake.store.oauth2._azure_a_d_token" data-throw-if-not-resolved="false">AzureADToken</xref> zwischengespeichert (oder abzurufenden), von dieser Instanz.</p>
+      <p><span data-ttu-id="4ac25-105">Gibt die <xref uid="com.microsoft.azure.datalake.store.oauth2._azure_a_d_token" data-throw-if-not-resolved="false">AzureADToken</xref> zwischengespeichert (oder abzurufenden), von dieser Instanz.</span><span class="sxs-lookup"><span data-stu-id="4ac25-105">returns the <xref uid="com.microsoft.azure.datalake.store.oauth2._azure_a_d_token" data-throw-if-not-resolved="false">AzureADToken</xref> cached (or retrieved) by this instance.</span></span></p>
       <p></p>
     syntax:
       content: public synchronized AzureADToken getToken()
       return:
         type: cffad4f2com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
-        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> , die das Zugriffstoken enthält. </p>"
+        description: "<p><span data-ttu-id=\"4ac25-106\">\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> , die das Zugriffstoken enthält.</span><span class=\"sxs-lookup\"><span data-stu-id=\"4ac25-106\">\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> containing the access token</span></span> </p>"
     exceptions:
       - type: cbf33bbe
-        description: <p>Wenn Fehler beim Abrufen von token </p>
+        description: <p><span data-ttu-id="4ac25-107">Wenn Fehler beim Abrufen von token</span><span class="sxs-lookup"><span data-stu-id="4ac25-107">if there is an error fetching the token</span></span> </p>
   - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.refreshToken()
     id: refreshToken()
     parent: com.microsoft.azure.datalake.store.oauth2._access_token_provider
@@ -73,17 +73,17 @@ items:
       startLine: 51
     package: com.microsoft.azure.datalake.store.oauth2
     summary: |-
-      <p>die Methode, die das Zugriffstoken abzurufen. Abgeleitete Klassen müssen diese Methode, um tatsächlich Abrufen eines Tokens aus Azure Active Directory überschreiben. </p>
-      <p>Diese Methode wird zu Beginn aufgerufen werden und anschließend ein Mal, wenn das Token läuft bald ab. </p>
+      <p><span data-ttu-id="4ac25-108">die Methode, die das Zugriffstoken abzurufen.</span><span class="sxs-lookup"><span data-stu-id="4ac25-108">the method to fetch the access token.</span></span> <span data-ttu-id="4ac25-109">Abgeleitete Klassen müssen diese Methode, um tatsächlich Abrufen eines Tokens aus Azure Active Directory überschreiben.</span><span class="sxs-lookup"><span data-stu-id="4ac25-109">Derived classes should override this method to actually get the token from Azure Active Directory.</span></span> </p>
+      <p><span data-ttu-id="4ac25-110">Diese Methode wird zu Beginn aufgerufen werden und anschließend ein Mal, wenn das Token läuft bald ab.</span><span class="sxs-lookup"><span data-stu-id="4ac25-110">This method will be called initially, and then once when the token is about to expire.</span></span> </p>
       <p></p>
     syntax:
       content: protected abstract AzureADToken refreshToken()
       return:
         type: 13c86962com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
-        description: "<p>\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> , die das Zugriffstoken enthält. </p>"
+        description: "<p><span data-ttu-id=\"4ac25-111\">\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> , die das Zugriffstoken enthält.</span><span class=\"sxs-lookup\"><span data-stu-id=\"4ac25-111\">\r\n\r\n  <xref uid=\"com.microsoft.azure.datalake.store.oauth2._azure_a_d_token\" data-throw-if-not-resolved=\"false\">AzureADToken</xref> containing the access token</span></span> </p>"
     exceptions:
       - type: cbf33bbe
-        description: <p>Wenn Fehler beim Abrufen von token </p>
+        description: <p><span data-ttu-id="4ac25-112">Wenn Fehler beim Abrufen von token</span><span class="sxs-lookup"><span data-stu-id="4ac25-112">if there is an error fetching the token</span></span> </p>
   - uid: com.microsoft.azure.datalake.store.oauth2._access_token_provider.token
     id: token
     parent: com.microsoft.azure.datalake.store.oauth2._access_token_provider
@@ -141,7 +141,7 @@ references:
     nameWithType: ClientCredsTokenProvider
     fullName: com.microsoft.azure.datalake.store.oauth2.ClientCredsTokenProvider
     type: Class
-    summary: <p>Token basierend auf Anmeldeinformationen des Clients enthält </p>
+    summary: <p><span data-ttu-id="4ac25-113">Token basierend auf Anmeldeinformationen des Clients enthält</span><span class="sxs-lookup"><span data-stu-id="4ac25-113">Provides tokens based on client credentials</span></span> </p>
     syntax:
       content: public class ClientCredsTokenProvider
   - uid: com.microsoft.azure.datalake.store.oauth2._device_code_token_provider
@@ -151,7 +151,7 @@ references:
     nameWithType: DeviceCodeTokenProvider
     fullName: com.microsoft.azure.datalake.store.oauth2.DeviceCodeTokenProvider
     type: Class
-    summary: '<p>Ermöglicht die interaktive Anmeldung in nicht-Browser basieren Kontexte. Zeigt eine Meldung, die der Aufforderung zum Anmelden mit dem Browser, mit dem bereitgestellten Link und Code. </p>'
+    summary: '<p><span data-ttu-id="4ac25-114">Ermöglicht die interaktive Anmeldung in nicht-Browser basieren Kontexte.</span><span class="sxs-lookup"><span data-stu-id="4ac25-114">Enables interactive login in non-browser based contexts.</span></span> <span data-ttu-id="4ac25-115">Zeigt eine Meldung, die der Aufforderung zum Anmelden mit dem Browser, mit dem bereitgestellten Link und Code.</span><span class="sxs-lookup"><span data-stu-id="4ac25-115">Displays a message asking the user to login using the browser, using the provided link and code.</span></span> </p>'
     syntax:
       content: public class DeviceCodeTokenProvider
   - uid: com.microsoft.azure.datalake.store.oauth2._msi_token_provider
@@ -161,7 +161,7 @@ references:
     nameWithType: MsiTokenProvider
     fullName: com.microsoft.azure.datalake.store.oauth2.MsiTokenProvider
     type: Class
-    summary: <p>Bietet Token basierend auf Azure-VM-Dienstidentität verwaltet </p>
+    summary: <p><span data-ttu-id="4ac25-116">Bietet Token basierend auf Azure-VM-Dienstidentität verwaltet</span><span class="sxs-lookup"><span data-stu-id="4ac25-116">Provides tokens based on Azure VM's Managed Service Identity</span></span> </p>
     syntax:
       content: public class MsiTokenProvider
   - uid: com.microsoft.azure.datalake.store.oauth2._refresh_token_based_token_provider
@@ -171,7 +171,7 @@ references:
     nameWithType: RefreshTokenBasedTokenProvider
     fullName: com.microsoft.azure.datalake.store.oauth2.RefreshTokenBasedTokenProvider
     type: Class
-    summary: '<p>Basierend auf Aktualisierungstoken, das Token enthält </p>'
+    summary: '<p><span data-ttu-id="4ac25-117">Basierend auf Aktualisierungstoken, das Token enthält</span><span class="sxs-lookup"><span data-stu-id="4ac25-117">Provides tokens based on refresh token</span></span> </p>'
     syntax:
       content: public class RefreshTokenBasedTokenProvider
   - uid: com.microsoft.azure.datalake.store.oauth2._user_password_token_provider
@@ -181,7 +181,7 @@ references:
     nameWithType: UserPasswordTokenProvider
     fullName: com.microsoft.azure.datalake.store.oauth2.UserPasswordTokenProvider
     type: Class
-    summary: <p>Bietet Token basierend auf Benutzername und Kennwort </p>
+    summary: <p><span data-ttu-id="4ac25-118">Bietet Token basierend auf Benutzername und Kennwort</span><span class="sxs-lookup"><span data-stu-id="4ac25-118">Provides tokens based on username and password</span></span> </p>
     syntax:
       content: public class UserPasswordTokenProvider
   - uid: com.microsoft.azure.datalake.store.oauth2._azure_a_d_token
@@ -191,6 +191,6 @@ references:
     nameWithType: AzureADToken
     fullName: com.microsoft.azure.datalake.store.oauth2.AzureADToken
     type: Class
-    summary: <p>-Objekt Represnting das AAD-Zugriffstoken zu verwendende HTTP-Anforderungen an Azure Data Lake-Speicher vornehmen. </p>
+    summary: <p><span data-ttu-id="4ac25-119">-Objekt Represnting das AAD-Zugriffstoken zu verwendende HTTP-Anforderungen an Azure Data Lake-Speicher vornehmen.</span><span class="sxs-lookup"><span data-stu-id="4ac25-119">Object represnting the AAD access token to use when making HTTP requests to Azure Data Lake Storage.</span></span> </p>
     syntax:
       content: public class AzureADToken
