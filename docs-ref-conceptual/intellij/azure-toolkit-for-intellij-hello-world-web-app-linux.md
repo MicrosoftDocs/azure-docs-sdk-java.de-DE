@@ -1,6 +1,6 @@
 ---
-title: "Ausführen einer Hallo Welt-Web-App in einem Linux-Container mit dem Azure-Toolkit für IntelliJ"
-description: "Erfahren Sie, wie Sie eine einfache „Hello World“-Web-App in einem Linux-Container erstellen und sie mit dem Azure-Toolkit für IntelliJ in Azure veröffentlichen."
+title: "Bereitstellen der in einem Linux-Container in der Cloud ausgeführten Web-App „Hallo Welt“ mit dem Azure-Toolkit für IntelliJ"
+description: "Führen Sie eine einfache Web-App vom Typ „Hallo Welt“ in einem Linux-Container aus, und stellen Sie sie mithilfe des Azure-Toolkits für IntelliJ in der Cloud bereit."
 services: app-service\web
 documentationcenter: java
 author: rmcmurray
@@ -14,13 +14,13 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 421241b12d8bd9027d4bef8564e1c1ab5a01993a
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: fdf41d6e8b23a6b7d6217ec626480e6c72e13969
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="run-a-hello-world-web-app-in-a-linux-container-by-using-the-azure-toolkit-for-intellij"></a>Ausführen einer Hallo Welt-Web-App in einem Linux-Container mit dem Azure-Toolkit für IntelliJ
+# <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-intellij"></a>Bereitstellen einer Web-App vom Typ „Hallo Welt“ in einem Linux-Container in der Cloud mit dem Azure-Toolkit für IntelliJ
 
 [Docker]-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanwendungen. Mithilfe von Docker-Containern können Entwickler ihre Projektdateien und Abhängigkeiten für die Bereitstellung auf einem Server in einem einzelnen Paket zusammenfassen. Mit dem Azure-Toolkit für IntelliJ wird dieser Prozess für Java-Entwickler vereinfacht, indem Features für die Bereitstellung als Container in Microsoft Azure hinzugefügt werden.
 

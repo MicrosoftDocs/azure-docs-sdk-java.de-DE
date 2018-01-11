@@ -1,6 +1,6 @@
 ---
 title: "Azure-Toolkit für Eclipse"
-description: "Weitere Informationen zum Azure-Toolkit für Eclipse"
+description: "Hier erfahren Sie, wie das Plug-In für das Azure-Toolkit für Eclipse Sie beim Erstellen und Bereitstellen von Cloudanwendungen in Azure unterstützt."
 services: 
 documentationcenter: java
 author: rmcmurray
@@ -14,14 +14,15 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm;asirveda
-ms.openlocfilehash: 1cd0430a6649b1c979da5650b4d817bfb35b5f8c
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 21b757f961096970b7560beac9f15f216f072516
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Azure-Toolkit für Eclipse
-Das Azure-Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, mit denen Sie Azure-Anwendungen mithilfe der Eclipse-IDE-Entwicklungsumgebung (Integrated Development Environment; integrierte Entwicklungsumgebung) einfach erstellen, entwickeln, testen und bereitstellen können.
+
+Das Azure-Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, mit denen Sie Cloudanwendungen mithilfe der Eclipse-IDE-Entwicklungsumgebung (Integrated Development Environment; integrierte Entwicklungsumgebung) einfach in Azure erstellen, entwickeln, testen und bereitstellen können.
 
 > [!NOTE]
 > 

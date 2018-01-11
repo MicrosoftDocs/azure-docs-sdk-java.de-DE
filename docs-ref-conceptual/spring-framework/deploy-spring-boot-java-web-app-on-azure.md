@@ -1,6 +1,6 @@
 ---
-title: Bereitstellen von Spring Boot-Anwendungen in Azure App Service
-description: "Dieses Tutorial führt Entwickler durch die Schritte zum Bereitstellen der Web-App für erste Schritte mit Spring Boot in Azure App Service."
+title: Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
+description: "Dieses Tutorial führt Entwickler durch die Schritte zum Bereitstellen einer Web-App für erste Schritte mit Spring Boot in der Cloud mit Azure App Service."
 services: app-service
 documentationcenter: java
 author: rmcmurray
@@ -14,13 +14,13 @@ ms.devlang: java
 ms.topic: article
 ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: b520cc80360f8162c929bb2cc88c24311a7e20f8
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 4dba6a6cbce2c8f6d4956717b3358c4e5b501e71
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="deploy-a-spring-boot-application-to-the-azure-app-service"></a>Bereitstellen von Spring Boot-Anwendungen in Azure App Service
+# <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
 
 Dieses Tutorial führt Sie durch das Erstellen einer Beispiel-Web-App für die ersten Schritte mit [Spring Boot] und ihrer Bereitstellung in [Azure App Service].
 
@@ -160,7 +160,7 @@ Die folgende Anleitung führt Sie durch die Schritte zum Bereitstellen Ihrer Spr
    </configuration>
    ```
 
-1. Stellen Sie, nachdem die Datei *web.config* im System gespeichert wurde, per FTP mithilfe der URL, des Benutzernamens und des Kennworts aus dem vorherigen Abschnitt dieses Tutorials eine Verbindung mit Ihrer Web-App her. Beispiel:
+1. Stellen Sie, nachdem die Datei *web.config* im System gespeichert wurde, per FTP mithilfe der URL, des Benutzernamens und des Kennworts aus dem vorherigen Abschnitt dieses Tutorials eine Verbindung mit Ihrer Web-App her. Beispiel: 
    ```
    ftp
    open waws-prod-sn0-000.ftp.azurewebsites.windows.net
@@ -168,7 +168,7 @@ Die folgende Anleitung führt Sie durch die Schritte zum Bereitstellen Ihrer Spr
    pass ********
    ```
 
-1. Wechseln Sie im Remoteverzeichnis in den Stammordner der Web-App (in */site/wwwroot*), und kopieren Sie die JAR-Datei Ihrer Spring Boot-Anwendung sowie die Datei *web.config* von oben. Beispiel:
+1. Wechseln Sie im Remoteverzeichnis in den Stammordner der Web-App (in */site/wwwroot*), und kopieren Sie die JAR-Datei Ihrer Spring Boot-Anwendung sowie die Datei *web.config* von oben. Beispiel: 
    ```
    cd site/wwwroot
    put gs-spring-boot-0.1.0.jar
@@ -190,7 +190,7 @@ Die folgende Anleitung führt Sie durch die Schritte zum Bereitstellen Ihrer Spr
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Weitere Informationen zur Verwendung von Spring Boot in Azure finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 
 * [Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service](deploy-spring-boot-java-app-on-linux.md)
 

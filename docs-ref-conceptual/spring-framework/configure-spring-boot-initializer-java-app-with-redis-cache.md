@@ -1,6 +1,6 @@
 ---
-title: "Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Redis Cache"
-description: Erfahren Sie, wie Sie eine mit dem Spring Initializer erstellte Spring Boot-Anwendung so konfigurieren, dass sie Azure Redis Cache verwendet.
+title: "Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Azure Redis Cache"
+description: "Konfigurieren Sie eine mit Spring Initializr erstellte Spring Boot-Anwendung für die Verwendung von Redis in der Cloud mit Azure Redis Cache."
 services: redis-cache
 documentationcenter: java
 author: rmcmurray
@@ -14,17 +14,15 @@ ms.devlang: java
 ms.topic: article
 ms.date: 12/01/2017
 ms.author: robmcm;zhijzhao;yidon
-ms.openlocfilehash: e46a90413321845cb94d72fff893e42aa2353491
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: c029a1518584a953c96870110f7ab3b79409f8ca
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="how-to-configure-a-spring-boot-initializer-app-to-use-redis-cache"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Redis Cache
+# <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Redis in der Cloud mit Azure Redis Cache
 
-## <a name="overview"></a>Übersicht
-
-Dieser Artikel führt Sie durch das Erstellen einer Redis Cache-Instanz über das Azure-Portal, das anschließende Erstellen einer benutzerdefinierten Anwendung mit **[Spring Initializr]** und schließlich das Erstellen einer Java-Webanwendung, die Daten mithilfe Ihrer Redis Cache-Instanz speichert und abruft.
+Dieser Artikel führt Sie durch das Erstellen einer Redis Cache-Instanz in der Cloud über das Azure-Portal, das anschließende Erstellen einer benutzerdefinierten Anwendung mit **[Spring Initializr]** und schließlich das Erstellen einer Java-Webanwendung, die Daten mithilfe Ihrer Redis Cache-Instanz speichert und abruft.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -115,7 +113,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    > [!NOTE] 
    > 
-   > Wenn Sie einen anderen Redis-Client als Jedis verwendet haben, der SSL aktiviert, geben Sie in Ihrer Datei *application.properties* Port 6380 an. Beispiel:
+   > Wenn Sie einen anderen Redis-Client als Jedis verwendet haben, der SSL aktiviert, geben Sie in Ihrer Datei *application.properties* Port 6380 an. Beispiel: 
    > 
    > ```yaml
    > spring.redis.host=myspringbootcache.redis.cache.windows.net
@@ -197,7 +195,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 
-* [Bereitstellen einer Spring Boot-Anwendung in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
+* [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 

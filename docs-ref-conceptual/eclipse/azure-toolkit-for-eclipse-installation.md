@@ -1,6 +1,6 @@
 ---
 title: "Installieren des Azure-Toolkits für Eclipse"
-description: "Erfahren Sie, wie Sie das Azure Toolkit für Eclipse installieren."
+description: "Hier erfahren Sie, wie Sie das Plug-In für das Azure-Toolkit für Eclipse installieren, um in Azure Cloudanwendungen zu erstellen und bereitzustellen."
 services: 
 documentationcenter: java
 author: rmcmurray
@@ -14,15 +14,15 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 1f06b02a4c0b23d98ecd394d42f41f7148b6c8e8
-ms.sourcegitcommit: 062e07cbd42cda74f02c82b933ce90da646a50a0
+ms.openlocfilehash: 54f636f1291832702bfed2b49888b531d358cb73
+ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/04/2018
 ---
-# <a name="installing-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
+# <a name="install-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
 
-Das Azure Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, die Ihnen das einfache Erstellen, Entwickeln, Testen und Bereitstellen von Azure-Anwendungen mithilfe der Eclipse-Entwicklungsumgebung ermöglichen.
+Das Azure-Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, die Ihnen das einfache Erstellen, Entwickeln, Testen und Bereitstellen von Cloudanwendungen in Azure mithilfe der Eclipse-Entwicklungsumgebung ermöglichen.
 
 > [!NOTE] 
 > 
@@ -51,7 +51,7 @@ Die folgenden Schritte veranschaulichen die Installation des Azure-Toolkits für
 
 1. Wenn Sie **Azure-Toolkit für Eclipse** erweitern, wird eine Liste der Komponenten angezeigt, die installiert werden. Beispiel:
 
-   | Feature | Beschreibung | 
+   | Feature | BESCHREIBUNG | 
    |---|---| 
    | **Application Insights Plugin for Java** (Application Insights-Plug-In für Java) | Ermöglicht Ihnen die Verwendung der Telemetriedatenprotokollierung und der Analysedienste von Azure für Ihre Anwendungen und Serverinstanzen. | 
    | **Azure Common Plugin** (Allgemeines Azure-Plug-In) | Stellt die allgemeine Funktionalität bereit, die für andere Toolkit-Komponenten erforderlich ist. | 
