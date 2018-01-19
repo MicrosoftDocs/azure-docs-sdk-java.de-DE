@@ -3,7 +3,7 @@ uid: com.microsoft.azure.management.compute._virtual_machine
 summary: *content
 ---
 
-<span data-ttu-id="42fec-101">Der folgende Code veranschaulicht, wie die Java-SDKS fluent-Syntax zum Erstellen eines neuen [Standard D3](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-sizes/#d-series) virtuellen Linux-Computer ausgeführten 16.04 Ubuntu Server im Rechenzentrum Osten der USA.</span><span class="sxs-lookup"><span data-stu-id="42fec-101">The code below demonstrates how to use the Java SDK's fluent syntax to create a new [Standard D3](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-sizes/#d-series) Linux Virtual Machine running Ubuntu 16.04 server in the Eastern US data center.</span></span>
+<span data-ttu-id="7a762-102">Der folgende Code veranschaulicht, wie die Java-SDKS fluent-Syntax zum Erstellen eines neuen [Standard D3](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-sizes/#d-series) virtuellen Linux-Computer ausgeführten 16.04 Ubuntu Server im Rechenzentrum Osten der USA.</span><span class="sxs-lookup"><span data-stu-id="7a762-102">The code below demonstrates how to use the Java SDK's fluent syntax to create a new [Standard D3](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-sizes/#d-series) Linux Virtual Machine running Ubuntu 16.04 server in the Eastern US data center.</span></span>
 
 ```java
 Azure azure = Azure.authenticate(propertiesFile).withDefaultSubscription();
@@ -26,70 +26,70 @@ System.out.println("Created a Linux VM: " + linuxVM.id());
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.computerName()
-summary: Gets the name of the virtual machine.
+summary: Ruft den Namen des virtuellen Computers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.dataDisks()
-summary: Gets the list of data disks that are attached to the virtual machine.
+summary: 'Ruft die Liste der Datenträger, die mit dem virtuellen Computer angefügt sind.'
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.extensions()
-summary: Gets the extensions that are installed on the virtual machine.
+summary: 'Ruft die Erweiterungen, die auf dem virtuellen Computer installiert sind.'
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.getPrimaryPublicIpAddressId()
-summary: Gets the identifier of the public IP address associated with this virtual machine's primary network interface.
+summary: Ruft den Bezeichner der öffentlichen IP-Adresse primären Netzwerkschnittstelle des virtuellen Computers zugeordnet.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.licenseType()
-summary: Gets the license type of the virtual machine.
+summary: Ruft den Lizenztyp des virtuellen Computers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.osDiskCachingType()
-summary: Gets the caching type of the operating system disk.
+summary: Ruft den Zwischenspeichern des Betriebssystem-Datenträgers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.osDiskSize()
-summary: Gets the size of the operating system disk.
+summary: Ruft die Größe des Betriebssystem-Datenträgers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.osDiskVhdUri()
-summary: Gets the URI of the virtual hard disk that contains the operating system.
+summary: 'Ruft den URI der virtuellen Festplatte, die das Betriebssystem enthält.'
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.osType()
-summary: Gets the type of the operating system.
+summary: Ruft den Typ des Betriebssystems ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.plan()
-summary: Gets the plan for the virtual machine image.
+summary: Ruft den Plan für das Image des virtuellen Computers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.powerState()
-summary: Gets the power state of the virtual machine.
+summary: Ruft den Energiezustand des virtuellen Computers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.provisioningState()
-summary: Gets the prrovisioning state of the virtual machine.
+summary: Ruft den Prrovisioning-Zustand des virtuellen Computers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.size()
-summary: Gets the size of the virtual machine.
+summary: Ruft die Größe des virtuellen Computers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine.vmId()
-summary: Gets the identifier of the virtual machine.
+summary: Ruft den Bezeichner des virtuellen Computers ab.
 ---

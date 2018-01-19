@@ -1,10 +1,10 @@
 ---
 uid: com.microsoft.azure.eventhubs._partition_receiver.receive(final int)
-summary: 'Receives a batch of [EventData](/java/api/com.microsoft.azure.eventhubs._event_data) objects from an Event Hubs partition.'
+summary: 'Erhält eine Lieferung mit [EventData](/java/api/com.microsoft.azure.eventhubs._event_data) Objekte aus einer Partition des Event Hubs.'
 remarks: *content
 ---
 
-<span data-ttu-id="5c55f-101">Im folgenden Beispielcode wird die synchrone Version der API verwendet, aber die Konzepte sind identisch:</span><span class="sxs-lookup"><span data-stu-id="5c55f-101">The following sample code uses the synchronous version of the API, but the concepts are the same:</span></span>
+<span data-ttu-id="cbfce-103">Im folgenden Beispielcode wird die synchrone Version der API verwendet, aber die Konzepte sind identisch:</span><span class="sxs-lookup"><span data-stu-id="cbfce-103">The following sample code uses the synchronous version of the API, but the concepts are the same:</span></span>
 
 ```java
 EventHubClient client = createFromConnectionStringSync(final String connectionString)("connection");
