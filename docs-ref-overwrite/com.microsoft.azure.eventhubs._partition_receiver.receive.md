@@ -1,6 +1,6 @@
 ---
 uid: com.microsoft.azure.eventhubs._partition_receiver.receive(final int)
-summary: 'Receives a batch of [EventData](/java/api/com.microsoft.azure.eventhubs._event_data) objects from an Event Hubs partition.'
+summary: 'Erhält eine Lieferung mit [EventData](/java/api/com.microsoft.azure.eventhubs._event_data) Objekte aus einer Partition des Event Hubs.'
 remarks: *content
 ---
 

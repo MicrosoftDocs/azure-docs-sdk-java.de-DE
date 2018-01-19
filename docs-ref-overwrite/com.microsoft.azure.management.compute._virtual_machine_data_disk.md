@@ -1,19 +1,19 @@
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine_data_disk.creationMethod()
-summary: Gets the method that was used to create the data disk.
+summary: 'Ruft die Methode, die zum Erstellen des Datenträgers verwendet wurde.'
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine_data_disk.lun()
-summary: Gets the logical unit number (lun) of the data disk.
+summary: Ruft die logische Gerätenummer (Lun) des Datenträgers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine_data_disk.size()
-summary: Gets the size of the data disk.
+summary: Ruft die Größe des Datenträgers ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute._virtual_machine_data_disk.vhdUri()
-summary: Gets the URI of the virtual hard disk associated with the data disk.
+summary: 'Ruft den URI der virtuellen Festplatte, die den Datenträger zugeordnet.'
 ---

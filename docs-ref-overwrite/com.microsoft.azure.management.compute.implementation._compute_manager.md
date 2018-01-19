@@ -1,34 +1,34 @@
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.availabilitySets()
-summary: Gets the API entry point for managing availability sets in the subscription.
+summary: Ruft legt den API-Einstiegspunkt für die Verwaltung von Verfügbarkeit im Abonnement fest.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.usages()
-summary: Gets the API entry point for resource usage information in the subscription.
+summary: Ruft die API-Einstiegspunkt für Informationen im Abonnement ab.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.virtualMachineImages()
-summary: Gets the API entry point for managing virtual machine extension images in the subscription.
+summary: Ruft den Einstiegspunkt für die API zum Verwalten von Images für virtuelle Computer-Erweiterung im Abonnement.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.virtualMachineExtensionImages()
-summary: Gets the API entry point for managing virtual machine extension images in the subscription.
+summary: Ruft den Einstiegspunkt für die API zum Verwalten von Images für virtuelle Computer-Erweiterung im Abonnement.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.virtualMachineImages()
-summary: Gets the API entry point for managing virtual machine images in the subscription.
+summary: Ruft den Einstiegspunkt für die API zum Verwalten von Images für virtuelle Computer im Abonnement.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.virtualMachines()
-summary: Gets the API entry point for managing virtual machines in the subscription.
+summary: Ruft den Einstiegspunkt für die API zum Verwalten virtueller Computer im Abonnement.
 ---
 
 ---
 uid: com.microsoft.azure.management.compute.implementation._compute_manager.virtualMachineScaleSets()
-summary: Gets the API entry point for managing virtual machine scale sets in the subscription.
+summary: Ruft legt den API-Einstiegspunkt für die Verwaltung von VM-Skalierungsgruppe im Abonnement fest.
 ---
