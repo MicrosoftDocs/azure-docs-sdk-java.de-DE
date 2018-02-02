@@ -14,11 +14,11 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: robmcm
-ms.openlocfilehash: 8b35a972a00c995730dfa59b1b6a47fab7716b76
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: 165a108147ef5ef7575820bbb6c2ee526888f722
+ms.sourcegitcommit: 558d875e9a255deb5b83b3f1646bd1dd9eee0a0d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -85,8 +85,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
        }
      }
    ]
+   ```
 
-1. Specify the GUID for the account you want to use with Azure; for example:
+1. Geben Sie die GUID für das Konto an, das Sie mit Azure verwenden möchten. Beispiel:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
@@ -98,8 +99,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az group create --name wingtiptoysresources --location westus
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihre Ressourcengruppe an. |
    | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
@@ -123,7 +124,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
-   | Parameter | Beschreibung |
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `id` | Gibt die GUID aus der vorherigen Anwendungsregistrierung an. |
 
@@ -143,8 +144,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihren Schlüsseltresor an. |
    | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
@@ -164,8 +165,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt den Schlüsseltresornamen von vorhin an. |
    | `secret-permission` | Gibt die [Sicherheitsrichtlinien](https://docs.microsoft.com/en-us/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
@@ -193,8 +194,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `vault-name` | Gibt den Schlüsseltresornamen von vorhin an. |
    | `name` | Gibt den Namen Ihres Geheimnisses an. |
@@ -235,8 +236,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `azure.keyvault.uri` | Gibt den URI von der Erstellung Ihres Schlüsseltresors an. |
    | `azure.keyvault.client-id` | Gibt die GUID *appId* von der Erstellung Ihres Dienstprinzipals an. |
@@ -287,7 +288,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Buildstatus der Spring Boot-Anwendung][build-application-01]
 
-1. Führen Sie Ihre Spring Boot-Anwendung mit Maven aus. Die Anwendung zeigt die Verbindungszeichenfolge aus Ihrem Schlüsseltresor an. Beispiel:
+1. Führen Sie Ihre Spring Boot-Anwendung mit Maven aus. Die Anwendung zeigt die Verbindungszeichenfolge aus Ihrem Schlüsseltresor an. Beispiel: 
 
    ```bash
    mvn spring-boot:run
@@ -303,9 +304,9 @@ Weitere Informationen zur Verwendung von Azure Key Vault-Instanzen finden Sie in
 
 * [Erste Schritte mit dem Azure-Schlüsseltresor]
 
-Weitere Informationen zur Verwendung von Spring Boot in Azure finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 
-* [Bereitstellen einer Spring Boot-Anwendung in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
+* [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 
