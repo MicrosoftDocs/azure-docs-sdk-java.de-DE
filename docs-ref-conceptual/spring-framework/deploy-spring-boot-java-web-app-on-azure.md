@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: asirveda;robmcm
-ms.openlocfilehash: 4dba6a6cbce2c8f6d4956717b3358c4e5b501e71
-ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: adf779e2ba6ca73ea3a2406613f9622cc9ecbf99
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
 
@@ -177,7 +177,7 @@ Die folgende Anleitung führt Sie durch die Schritte zum Bereitstellen Ihrer Spr
 
 1. Nachdem Sie die JAR-Datei und die Datei *web.config* in Ihrer Web-App bereitgestellt haben, müssen Sie Ihre Web-App über das Azure-Portal neu starten:
 
-   ![][AZ10]
+   ![Neustarten der Web-App][AZ10]
 
 1. Testen Sie die Web-App, indem Sie in einem Webbrowser zur URL Ihrer Web-App browsen, oder verwenden Sie die Syntax im folgenden Beispiel – sofern Curl verfügbar ist:
    ```

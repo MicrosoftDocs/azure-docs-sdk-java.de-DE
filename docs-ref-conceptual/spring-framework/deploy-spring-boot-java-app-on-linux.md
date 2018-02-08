@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: container-service
-ms.workload: web
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: asirveda;robmcm
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: container-service
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 65e127e43c457b0ff92478f002065bb9d928f270
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.openlocfilehash: c3a10a0d6029ba31b13f82907311d9182f98acb6
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="deploy-a-spring-boot-application-on-linux-in-the-azure-container-service"></a>Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service
 
@@ -142,7 +142,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
    </properties>
    ```
 
-1. Aktualisieren Sie die Auflistung `<plugins>` in der Datei *pom.xml* so, dass `<plugin>` die Adresse des Anmeldeservers und den Registrierungsnamen für Ihre Azure-Containerregistrierung aus dem vorherigen Abschnitt dieses Tutorials enthält. Beispiel:
+1. Aktualisieren Sie die Auflistung `<plugins>` in der Datei *pom.xml* so, dass `<plugin>` die Adresse des Anmeldeservers und den Registrierungsnamen für Ihre Azure-Containerregistrierung aus dem vorherigen Abschnitt dieses Tutorials enthält. Beispiel: 
 
    ```xml
    <plugin>
@@ -218,7 +218,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    ![Konfigurieren von Einstellungen für Web-Apps][LX02]
 
-1. Klicken Sie auf **Erstellen**.
+1. Klicken Sie auf **Create**.
 
 > [!NOTE]
 >

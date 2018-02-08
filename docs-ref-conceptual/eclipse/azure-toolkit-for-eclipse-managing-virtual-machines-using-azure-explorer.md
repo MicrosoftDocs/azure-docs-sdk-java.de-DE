@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 41bb9b8009c0cbae01fec42c56d6a74d84cc166b
-ms.sourcegitcommit: 613c1ffd2e0279fc7a96fca98aa1809563f52ee1
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: a02f8d02f8c5c32091dd106e036b636b1d11cff0
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
 
@@ -78,8 +78,8 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 1. Geben Sie im Fenster **Neues Speicherkonto erstellen** die folgenden Informationen ein:
 
-   * **Ressourcengruppe:** Gibt die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen:
-      * **Neu erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+   * **Ressourcengruppe:** Geben Sie die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen:
+      * **Neu erstellen:** gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
       * **Vorhandene verwenden:** gibt an, dass Sie eine Ressourcengruppe auswählen möchten, die Ihrem Azure-Konto bereits zugeordnet ist.
 
       ![Dialogfeld „Neues Speicherkonto erstellen“][CR05]

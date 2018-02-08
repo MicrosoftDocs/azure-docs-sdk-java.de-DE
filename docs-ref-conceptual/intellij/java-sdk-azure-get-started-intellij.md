@@ -2,20 +2,24 @@
 title: "Erste Schritte mit Azure für Java mithilfe von IntelliJ"
 description: "Machen Sie sich mit der grundlegenden Verwendung der Azure-Bibliotheken für Java mit Ihrem eigenen Azure-Abonnement vertraut."
 keywords: Azure, Java, SDK, API, authentifizieren, erste Schritte
+services: 
+documentationcenter: java
 author: roygara
-ms.author: v-rogara
 manager: timlt
-ms.date: 10/30/2017
-ms.topic: get-started-article
-ms.prod: azure
-ms.technology: azure
+editor: 
+ms.assetid: 
+ms.author: v-rogara
+ms.date: 02/01/2018
 ms.devlang: java
+ms.prod: azure
 ms.service: multiple
-ms.openlocfilehash: 1e10a7c5a46ed0e36143fd4a99decc037c04e1fe
-ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
+ms.topic: get-started-article
+ms.technology: azure
+ms.openlocfilehash: 0a059366f7cdc139dcb5a8e7e9ca78254384d19e
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="get-started-with-the-azure-libraries-using-intellij"></a>Erste Schritte mit den Azure-Bibliotheken mithilfe von IntelliJ
 

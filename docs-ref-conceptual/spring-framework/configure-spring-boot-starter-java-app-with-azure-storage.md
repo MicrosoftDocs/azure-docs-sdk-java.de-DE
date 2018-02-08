@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: yungez;robmcm
-ms.openlocfilehash: 0979c810711a01464c0b2c6e12a582a3f5eefef1
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: storage
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.workload: storage
+ms.openlocfilehash: 50c8475c66250c8e872849007349277fd3fe797b
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -30,7 +30,7 @@ In diesem Artikel erfahren Sie Schritt für Schritt, wie Sie eine benutzerdefini
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) anwenden oder sich für ein [kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) anwenden oder sich für ein [kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 * Die [Azure-Befehlszeilenschnittstelle (CLI)](http://docs.microsoft.com/cli/azure/overview)
 * Ein aktuelles [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) (ab Version 1.7)
 * [Maven](http://maven.apache.org/) von Apache (ab Version 3.0)
@@ -106,8 +106,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az group create --name wingtiptoysresources --location westus
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihre Ressourcengruppe an. |
    | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
@@ -131,8 +131,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihr Speicherkonto an. |
    | `resource-group` | Gibt den Namen der Ressourcengruppe an, die Sie im vorherigen Schritt erstellt haben. |
@@ -160,8 +160,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
-   Hierbei gilt:
-   | Parameter | Beschreibung |
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
    | ---|---|
    | `name` | Gibt einen eindeutigen Namen des Speicherkontos an, das Sie in den vorherigen Schritten erstellt haben. |
    | `resource-group` | Gibt den Namen der Ressourcengruppe an, die Sie in den vorherigen Schritten erstellt haben. |
