@@ -7,95 +7,95 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: c6817c7b-f28c-4c06-8216-41c7a8117de3
-ms.service: multiple
-ms.workload: na
-ms.tgt_pltfrm: multiple
-ms.devlang: Java
-ms.topic: article
-ms.date: 11/01/2017
 ms.author: robmcm
-ms.openlocfilehash: 88476142dbd6fbe05d3d59d14cf71c83893e6452
-ms.sourcegitcommit: 9c354a65b0f8ad49a528f40ddee647b091f7d246
+ms.date: 02/01/2018
+ms.devlang: Java
+ms.service: multiple
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: na
+ms.openlocfilehash: 0f3df5c8cf3c83c1ce9a4ca32c753b5fc39ab1df
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/03/2018
 ---
-# <a name="installing-the-azure-toolkit-for-intellij"></a><span data-ttu-id="71b47-103">Installieren des Azure-Toolkits für IntelliJ</span><span class="sxs-lookup"><span data-stu-id="71b47-103">Installing the Azure Toolkit for IntelliJ</span></span>
+# <a name="installing-the-azure-toolkit-for-intellij"></a><span data-ttu-id="d62a8-103">Installieren des Azure-Toolkits für IntelliJ</span><span class="sxs-lookup"><span data-stu-id="d62a8-103">Installing the Azure Toolkit for IntelliJ</span></span>
 
-<span data-ttu-id="71b47-104">Das Azure-Toolkit für IntelliJ stellt Vorlagen und Funktionen bereit, die Ihnen das einfache Erstellen, Entwickeln, Testen und Bereitstellen von Cloudanwendungen in Azure mithilfe der IntelliJ IDEA-Entwicklungsumgebung ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="71b47-104">The Azure Toolkit for IntelliJ provides templates and functionality that allow you to easily create, develop, test, and deploy cloud application to Azure using the IntelliJ IDEA development environment.</span></span>
+<span data-ttu-id="d62a8-104">Das Azure-Toolkit für IntelliJ stellt Vorlagen und Funktionen bereit, die Ihnen das einfache Erstellen, Entwickeln, Testen und Bereitstellen von Cloudanwendungen in Azure mithilfe der IntelliJ IDEA-Entwicklungsumgebung ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="d62a8-104">The Azure Toolkit for IntelliJ provides templates and functionality that allow you to easily create, develop, test, and deploy cloud application to Azure using the IntelliJ IDEA development environment.</span></span>
 
 > [!NOTE] 
 > 
-> <span data-ttu-id="71b47-105">Das Azure-Toolkit für IntelliJ ist ein Open-Source-Projekt, dessen Quellcode unter der MIT-Lizenz auf der GitHub-Website des Projekts verfügbar ist:</span><span class="sxs-lookup"><span data-stu-id="71b47-105">The Azure Toolkit for IntelliJ is an Open Source project, whose source code is available under the MIT License from the project's site on GitHub at the following URL:</span></span> 
+> <span data-ttu-id="d62a8-105">Das Azure-Toolkit für IntelliJ ist ein Open-Source-Projekt, dessen Quellcode unter der MIT-Lizenz auf der GitHub-Website des Projekts verfügbar ist:</span><span class="sxs-lookup"><span data-stu-id="d62a8-105">The Azure Toolkit for IntelliJ is an Open Source project, whose source code is available under the MIT License from the project's site on GitHub at the following URL:</span></span> 
 > 
-> <span data-ttu-id="71b47-106"><https://github.com/microsoft/azure-tools-for-java></span><span class="sxs-lookup"><span data-stu-id="71b47-106"><https://github.com/microsoft/azure-tools-for-java></span></span> 
+> <span data-ttu-id="d62a8-106"><https://github.com/microsoft/azure-tools-for-java></span><span class="sxs-lookup"><span data-stu-id="d62a8-106"><https://github.com/microsoft/azure-tools-for-java></span></span> 
 > 
 
-<span data-ttu-id="71b47-107">Es gibt zwei Methoden zum Installieren des Azure-Toolkits für IntelliJ: über das Dialogfeld **Einstellungen** und über das Menü **Konfigurieren** auf dem Startbildschirm.</span><span class="sxs-lookup"><span data-stu-id="71b47-107">There are two methods of installing the Azure Toolkit for IntelliJ: by using the **Settings** dialog box, and by using the **Configure** menu on the start screen.</span></span> <span data-ttu-id="71b47-108">Beide Installationsmethoden werden in den folgenden Schritten veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="71b47-108">Both installation methods will be demonstrated in the following steps.</span></span>
+<span data-ttu-id="d62a8-107">Es gibt zwei Methoden zum Installieren des Azure-Toolkits für IntelliJ: über das Dialogfeld **Einstellungen** und über das Menü **Konfigurieren** auf dem Startbildschirm.</span><span class="sxs-lookup"><span data-stu-id="d62a8-107">There are two methods of installing the Azure Toolkit for IntelliJ: by using the **Settings** dialog box, and by using the **Configure** menu on the start screen.</span></span> <span data-ttu-id="d62a8-108">Beide Installationsmethoden werden in den folgenden Schritten veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="d62a8-108">Both installation methods will be demonstrated in the following steps.</span></span>
 
 [!INCLUDE [azure-toolkit-for-IntelliJ-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a><span data-ttu-id="71b47-109">So installieren Sie das Azure-Toolkit für IntelliJ über das Dialogfeld „Einstellungen“</span><span class="sxs-lookup"><span data-stu-id="71b47-109">To install the Azure Toolkit for IntelliJ from the settings dialog box</span></span>
+## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a><span data-ttu-id="d62a8-109">So installieren Sie das Azure-Toolkit für IntelliJ über das Dialogfeld „Einstellungen“</span><span class="sxs-lookup"><span data-stu-id="d62a8-109">To install the Azure Toolkit for IntelliJ from the settings dialog box</span></span>
 
-1. <span data-ttu-id="71b47-110">Starten Sie IntelliJ IDEA.</span><span class="sxs-lookup"><span data-stu-id="71b47-110">Start IntelliJ IDEA.</span></span>
+1. <span data-ttu-id="d62a8-110">Starten Sie IntelliJ IDEA.</span><span class="sxs-lookup"><span data-stu-id="d62a8-110">Start IntelliJ IDEA.</span></span>
 
-1. <span data-ttu-id="71b47-111">Wenn IntelliJ IDEA geöffnet wird, klicken Sie auf **File** (Datei), klicken Sie dann auf **Settings** (Einstellungen).</span><span class="sxs-lookup"><span data-stu-id="71b47-111">When the IntelliJ IDEA opens, click **File**, then click **Settings**.</span></span>
+1. <span data-ttu-id="d62a8-111">Wenn IntelliJ IDEA geöffnet wird, klicken Sie auf **File** (Datei), klicken Sie dann auf **Settings** (Einstellungen).</span><span class="sxs-lookup"><span data-stu-id="d62a8-111">When the IntelliJ IDEA opens, click **File**, then click **Settings**.</span></span>
    
    ![Das Dialogfeld „Settings“ (Einstellungen) von IntelliJ IDEA öffnen][01a]
 
-1. <span data-ttu-id="71b47-113">Klicken Sie im Dialogfeld „Settings“ (Einstellungen) auf **Plugins**, und klicken Sie dann auf **Browse Repositories** (Repositorys durchsuchen).</span><span class="sxs-lookup"><span data-stu-id="71b47-113">In the Settings dialog box, click **Plugins**, and then click **Browse repositories**.</span></span>
+1. <span data-ttu-id="d62a8-113">Klicken Sie im Dialogfeld „Settings“ (Einstellungen) auf **Plugins**, und klicken Sie dann auf **Browse Repositories** (Repositorys durchsuchen).</span><span class="sxs-lookup"><span data-stu-id="d62a8-113">In the Settings dialog box, click **Plugins**, and then click **Browse repositories**.</span></span>
    
    ![Dialogfeld „Settings“ (Einstellungen) von IntelliJ IDEA][02a]
 
-1. <span data-ttu-id="71b47-115">Geben Sie im Dialogfeld **Browse Repositories** (Repositorys durchsuchen) in das Suchfeld „Azure“ ein.</span><span class="sxs-lookup"><span data-stu-id="71b47-115">In the **Browse Repositories** dialog box, type "Azure" in the search box.</span></span> <span data-ttu-id="71b47-116">Markieren Sie **Azure Toolkit for IntelliJ** (Azure Toolkit für IntelliJ), und klicken Sie dann auf **Install** (Installieren).</span><span class="sxs-lookup"><span data-stu-id="71b47-116">Highlight **Azure Toolkit for IntelliJ**, and then click **Install**.</span></span>
+1. <span data-ttu-id="d62a8-115">Geben Sie im Dialogfeld **Browse Repositories** (Repositorys durchsuchen) in das Suchfeld „Azure“ ein.</span><span class="sxs-lookup"><span data-stu-id="d62a8-115">In the **Browse Repositories** dialog box, type "Azure" in the search box.</span></span> <span data-ttu-id="d62a8-116">Markieren Sie **Azure Toolkit for IntelliJ** (Azure Toolkit für IntelliJ), und klicken Sie dann auf **Install** (Installieren).</span><span class="sxs-lookup"><span data-stu-id="d62a8-116">Highlight **Azure Toolkit for IntelliJ**, and then click **Install**.</span></span>
    
    ![Suchen nach dem Azure-Toolkit für IntelliJ][03]
    
-   <span data-ttu-id="71b47-118">IntelliJ IDEA zeigt den Installationsstatus in einem Dialogfeld an.</span><span class="sxs-lookup"><span data-stu-id="71b47-118">IntelliJ IDEA displays the installation progress in a dialog box.</span></span>
+   <span data-ttu-id="d62a8-118">IntelliJ IDEA zeigt den Installationsstatus in einem Dialogfeld an.</span><span class="sxs-lookup"><span data-stu-id="d62a8-118">IntelliJ IDEA displays the installation progress in a dialog box.</span></span>
    
    ![Installationsstatus][04]
 
-1. <span data-ttu-id="71b47-120">Klicken Sie nach Abschluss der Installation auf **Restart IntelliJ IDEA**(IntelliJ IDEA neu starten).</span><span class="sxs-lookup"><span data-stu-id="71b47-120">When the installation has completed, click **Restart IntelliJ IDEA**.</span></span>
+1. <span data-ttu-id="d62a8-120">Klicken Sie nach Abschluss der Installation auf **Restart IntelliJ IDEA**(IntelliJ IDEA neu starten).</span><span class="sxs-lookup"><span data-stu-id="d62a8-120">When the installation has completed, click **Restart IntelliJ IDEA**.</span></span>
    
    ![Restart IntelliJ IDEA][05]
 
-1. <span data-ttu-id="71b47-122">Klicken Sie auf **OK** , um das Dialogfeld „Settings“ (Einstellungen) zu schließen.</span><span class="sxs-lookup"><span data-stu-id="71b47-122">Click **OK** to close the Settings dialog box.</span></span>
+1. <span data-ttu-id="d62a8-122">Klicken Sie auf **OK** , um das Dialogfeld „Settings“ (Einstellungen) zu schließen.</span><span class="sxs-lookup"><span data-stu-id="d62a8-122">Click **OK** to close the Settings dialog box.</span></span>
    
    ![Das Dialogfeld „Settings“ (Einstellungen) von IntelliJ IDEA schließen][06]
 
-1. <span data-ttu-id="71b47-124">Wenn Sie gefragt werden, ob Sie IntelliJ IDEA neu starten oder den Neustart später durchführen möchten, klicken Sie auf **Restart**(Neu starten).</span><span class="sxs-lookup"><span data-stu-id="71b47-124">When prompted to restart IntelliJ IDEA or postpone, click **Restart**.</span></span>
+1. <span data-ttu-id="d62a8-124">Wenn Sie gefragt werden, ob Sie IntelliJ IDEA neu starten oder den Neustart später durchführen möchten, klicken Sie auf **Restart**(Neu starten).</span><span class="sxs-lookup"><span data-stu-id="d62a8-124">When prompted to restart IntelliJ IDEA or postpone, click **Restart**.</span></span>
    
-<span data-ttu-id="71b47-125">1</span><span class="sxs-lookup"><span data-stu-id="71b47-125">1</span></span>   ![Restart IntelliJ IDEA][07]
+<span data-ttu-id="d62a8-125">1</span><span class="sxs-lookup"><span data-stu-id="d62a8-125">1</span></span>   ![Restart IntelliJ IDEA][07]
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-start-screen"></a><span data-ttu-id="71b47-127">So installieren Sie das Azure-Toolkit für IntelliJ über den Startbildschirm</span><span class="sxs-lookup"><span data-stu-id="71b47-127">To install the Azure Toolkit for IntelliJ from the start screen</span></span>
+## <a name="to-install-the-azure-toolkit-for-intellij-from-the-start-screen"></a><span data-ttu-id="d62a8-127">So installieren Sie das Azure-Toolkit für IntelliJ über den Startbildschirm</span><span class="sxs-lookup"><span data-stu-id="d62a8-127">To install the Azure Toolkit for IntelliJ from the start screen</span></span>
 
-1. <span data-ttu-id="71b47-128">Starten Sie IntelliJ IDEA.</span><span class="sxs-lookup"><span data-stu-id="71b47-128">Start IntelliJ IDEA.</span></span>
+1. <span data-ttu-id="d62a8-128">Starten Sie IntelliJ IDEA.</span><span class="sxs-lookup"><span data-stu-id="d62a8-128">Start IntelliJ IDEA.</span></span>
 
-1. <span data-ttu-id="71b47-129">Wenn der Startbildschirm von IntelliJ IDEA angezeigt wird, klicken Sie auf **Configure** (Konfigurieren), und klicken Sie dann auf **Plugins**.</span><span class="sxs-lookup"><span data-stu-id="71b47-129">When the IntelliJ IDEA start screen appears, click **Configure**, then click **Plugins**.</span></span>
+1. <span data-ttu-id="d62a8-129">Wenn der Startbildschirm von IntelliJ IDEA angezeigt wird, klicken Sie auf **Configure** (Konfigurieren), und klicken Sie dann auf **Plugins**.</span><span class="sxs-lookup"><span data-stu-id="d62a8-129">When the IntelliJ IDEA start screen appears, click **Configure**, then click **Plugins**.</span></span>
    
    ![IntelliJ IDEA-Plug-Ins installieren][01b]
 
-1. <span data-ttu-id="71b47-131">Klicken Sie im Dialogfeld **Plugins** auf **Browse Repositories** (Repositorys durchsuchen).</span><span class="sxs-lookup"><span data-stu-id="71b47-131">In the **Plugins** dialog box, click **Browse repositories**.</span></span>
+1. <span data-ttu-id="d62a8-131">Klicken Sie im Dialogfeld **Plugins** auf **Browse Repositories** (Repositorys durchsuchen).</span><span class="sxs-lookup"><span data-stu-id="d62a8-131">In the **Plugins** dialog box, click **Browse repositories**.</span></span>
    
    ![Die Plug-In-Repositorys von IntelliJ IDEA durchsuchen][02b]
 
-1. <span data-ttu-id="71b47-133">Geben Sie im Dialogfeld **Browse Repositories** (Repositorys durchsuchen) in das Suchfeld „Azure“ ein.</span><span class="sxs-lookup"><span data-stu-id="71b47-133">In the **Browse Repositories** dialog box, type "Azure" in the search box.</span></span> <span data-ttu-id="71b47-134">Markieren Sie **Azure Toolkit for IntelliJ** (Azure Toolkit für IntelliJ), und klicken Sie dann auf **Install** (Installieren).</span><span class="sxs-lookup"><span data-stu-id="71b47-134">Highlight **Azure Toolkit for IntelliJ**, and then click **Install**.</span></span>
+1. <span data-ttu-id="d62a8-133">Geben Sie im Dialogfeld **Browse Repositories** (Repositorys durchsuchen) in das Suchfeld „Azure“ ein.</span><span class="sxs-lookup"><span data-stu-id="d62a8-133">In the **Browse Repositories** dialog box, type "Azure" in the search box.</span></span> <span data-ttu-id="d62a8-134">Markieren Sie **Azure Toolkit for IntelliJ** (Azure Toolkit für IntelliJ), und klicken Sie dann auf **Install** (Installieren).</span><span class="sxs-lookup"><span data-stu-id="d62a8-134">Highlight **Azure Toolkit for IntelliJ**, and then click **Install**.</span></span>
    
    ![Suchen nach dem Azure-Toolkit für IntelliJ][03]
    
-   <span data-ttu-id="71b47-136">IntelliJ IDEA zeigt den Installationsstatus in einem Dialogfeld an.</span><span class="sxs-lookup"><span data-stu-id="71b47-136">IntelliJ IDEA will display the installation progress in a dialog box.</span></span>
+   <span data-ttu-id="d62a8-136">IntelliJ IDEA zeigt den Installationsstatus in einem Dialogfeld an.</span><span class="sxs-lookup"><span data-stu-id="d62a8-136">IntelliJ IDEA will display the installation progress in a dialog box.</span></span>
    
    ![Installationsstatus][04]
 
-1. <span data-ttu-id="71b47-138">Klicken Sie nach Abschluss der Installation auf **Restart IntelliJ IDEA**(IntelliJ IDEA neu starten).</span><span class="sxs-lookup"><span data-stu-id="71b47-138">When the installation has completed, click **Restart IntelliJ IDEA**.</span></span>
+1. <span data-ttu-id="d62a8-138">Klicken Sie nach Abschluss der Installation auf **Restart IntelliJ IDEA**(IntelliJ IDEA neu starten).</span><span class="sxs-lookup"><span data-stu-id="d62a8-138">When the installation has completed, click **Restart IntelliJ IDEA**.</span></span>
    
    ![Restart IntelliJ IDEA][05]
 
-1. <span data-ttu-id="71b47-140">Wenn Sie gefragt werden, ob Sie IntelliJ IDEA neu starten oder den Neustart später durchführen möchten, klicken Sie auf **Restart**(Neu starten).</span><span class="sxs-lookup"><span data-stu-id="71b47-140">When prompted to restart IntelliJ IDEA or postpone, click **Restart**.</span></span>
+1. <span data-ttu-id="d62a8-140">Wenn Sie gefragt werden, ob Sie IntelliJ IDEA neu starten oder den Neustart später durchführen möchten, klicken Sie auf **Restart**(Neu starten).</span><span class="sxs-lookup"><span data-stu-id="d62a8-140">When prompted to restart IntelliJ IDEA or postpone, click **Restart**.</span></span>
    
    ![Restart IntelliJ IDEA][07]
 
-## <a name="next-steps"></a><span data-ttu-id="71b47-142">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="71b47-142">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="d62a8-142">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="d62a8-142">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
