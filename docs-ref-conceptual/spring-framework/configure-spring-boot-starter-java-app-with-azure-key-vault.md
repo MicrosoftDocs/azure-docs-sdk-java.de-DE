@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: key-vault
-ms.workload: identity
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 11/29/2017
 ms.author: robmcm
-ms.openlocfilehash: 165a108147ef5ef7575820bbb6c2ee526888f722
-ms.sourcegitcommit: 558d875e9a255deb5b83b3f1646bd1dd9eee0a0d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: key-vault
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: identity
+ms.openlocfilehash: 52e7dc3f84ea96f22d8e478a597452c76ed8bf22
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -85,9 +85,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
        }
      }
    ]
-   ```
 
-1. Geben Sie die GUID für das Konto an, das Sie mit Azure verwenden möchten. Beispiel:
+1. Specify the GUID for the account you want to use with Azure; for example:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
@@ -124,9 +123,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
+   Hinweis:
    | Parameter | BESCHREIBUNG |
    |---|---|
-   | `id` | Gibt die GUID aus der vorherigen Anwendungsregistrierung an. |
+   | `name` | Gibt den Namen für den Azure-Dienstprinzipal an. |
 
    Die Azure-Befehlszeilenschnittstelle gibt eine JSON-Statusmeldung mit der App-ID (*appId*) und dem Kennwort (*password*) zurück. Diese Werte werden später als Client-ID und Clientkennwort verwendet. Beispiel:
 
@@ -170,7 +170,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    |---|---|
    | `name` | Gibt den Schlüsseltresornamen von vorhin an. |
    | `secret-permission` | Gibt die [Sicherheitsrichtlinien](https://docs.microsoft.com/en-us/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
-   | `object-id` | Gibt die GUID für Ihre Anwendungsregistrierung von vorhin an. |
+   | `spn` | Gibt die GUID für Ihre Anwendungsregistrierung von vorhin an. |
 
    Die Azure-Befehlszeilenschnittstelle zeigt die Ergebnisse der Sicherheitsrichtlinienerstellung an. Beispiel:  
 

@@ -7,18 +7,18 @@ author: rmcmurray
 manager: routlaw
 editor: 
 ms.assetid: 
-ms.service: active-directory
-ms.workload: identity
-ms.tgt_pltfrm: multiple
-ms.devlang: java
-ms.topic: article
-ms.date: 12/01/2017
 ms.author: robmcm
-ms.openlocfilehash: a999e33674ea01e776db10186e8af83ce157ef20
-ms.sourcegitcommit: fc48e038721e6910cb8b1f8951df765d517e504d
+ms.date: 02/01/2018
+ms.devlang: java
+ms.service: active-directory
+ms.tgt_pltfrm: multiple
+ms.topic: article
+ms.workload: identity
+ms.openlocfilehash: cf1cad0b87626058f7204a6565d09fb8901b7ce4
+ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>Verwenden von Spring Boot Starter für Azure Active Directory
 
@@ -143,12 +143,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    # Specifies the list of Active Directory groups to use for authentication:
    azure.activedirectory.activeDirectoryGroups=Users
    ```
-   Hierbei gilt:
-   Parameter | Beschreibung
-   ---|---|---
-   `azure.activedirectory.clientId` | Enthält Ihre **Anwendungs-ID** von vorhin.
-   `azure.activedirectory.clientSecret` | Enthält den Schlüsselwert aus der zuvor durchgeführten App-Registrierung.
-   `azure.activedirectory.activeDirectoryGroups` | Enthält eine Liste mit Active Directory-Gruppen für die Authentifizierung.
+   Hinweis:
+   | Parameter | BESCHREIBUNG |
+   |---|---|
+   | `azure.activedirectory.clientId` | Enthält Ihre **Anwendungs-ID** von vorhin. |
+   | `azure.activedirectory.clientSecret` | Enthält den Schlüsselwert aus der zuvor durchgeführten App-Registrierung. |
+   | `azure.activedirectory.activeDirectoryGroups` | Enthält eine Liste mit Active Directory-Gruppen für die Authentifizierung. |
 
 
 1. Speichern und schließen Sie die Datei *application.properties*.
@@ -222,7 +222,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    mvn clean package
    ```
 
-   ![][build-application]
+   ![Erstellen Ihrer Anwendung][build-application]
 
 1. Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:
 
@@ -230,8 +230,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    mvn clean package
    mvn spring-boot:run
    ```
-
-
 
 1. Nachdem Ihre Anwendung mit Maven erstellt und gestartet wurde, öffnen Sie <http://localhost:8080> in einem Webbrowser.
 
@@ -241,9 +239,9 @@ Weitere Informationen zur Verwendung von Azure Active Directory finden Sie in de
 
 * [Dokumentation zu Azure Active Directory]
 
-Weitere Informationen zur Verwendung von Spring Boot in Azure finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 
-* [Bereitstellen einer Spring Boot-Anwendung in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
+* [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 
