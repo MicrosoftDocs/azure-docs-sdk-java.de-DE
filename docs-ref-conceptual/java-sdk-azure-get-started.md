@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: 2f40fa22244e5ffa3be76d4de579959dcb5591d6
-ms.sourcegitcommit: 0676cbb530207544090c1fd051a2f09760873cd8
+ms.openlocfilehash: f069183c96cdc42d590d2e58a5a6a500be5ab69a
+ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für Java
 
@@ -86,10 +86,10 @@ Legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfa
 export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 ```
 
-Wenn Sie eine Windows-Umgebung verwenden, fügen Sie die Variable zu Ihren Systemeigenschaften hinzu. Öffnen Sie PowerShell, ersetzen Sie die zweite Variable durch den Pfad zu Ihrer Datei, und geben Sie den folgenden Befehl ein:
+Wenn Sie eine Windows-Umgebung verwenden, fügen Sie die Variable zu Ihren Systemeigenschaften hinzu. Öffnen Sie ein PowerShell-Fenster mit Administratorberechtigungen, ersetzen Sie die zweite Variable durch den Pfad zu Ihrer Datei, und geben Sie den folgenden Befehl ein:
 
 ```powershell
-[Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\<fullpath>\azureauth.properties", "Machine")
+setx AZURE_AUTH_LOCATION "C:\<fullpath>\azureauth.properties" /m
 ```
 
 ## <a name="create-a-new-maven-project"></a>Erstellen eines neuen Maven-Projekts
@@ -421,7 +421,7 @@ Führen Sie das Beispiel über die Befehlszeile aus:
 mvn clean compile exec:java
 ```
 
-Sie können über das Azure-Portal oder mit dem [Azure-Speicher-Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs) zur Datei `helloazure.txt` in Ihrem Speicherkonto navigieren.
+Sie können über das Azure-Portal oder mit dem [Azure Storage-Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs) zur Datei `helloazure.txt` in Ihrem Speicherkonto navigieren.
 
 Bereinigen Sie das Speicherkonto über die Befehlszeilenschnittstelle:
 
