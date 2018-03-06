@@ -15,10 +15,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: f92040b34b9897d9feea8d2ec5e8748e75fff7f7
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 381a865f2849be8e3044d24cd4b3b54e9bbb7abc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ
 
@@ -89,9 +89,8 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
       * **Neues Speicherkonto**: Erstellen Sie ein Speicherkonto für Ihren Host.
       * **Vorhandenes Speicherkonto**: Geben Sie ein vorhandenes Speicherkonto Ihres Azure-Kontos an.
        
-5. Klicken Sie auf **Weiter**.
-     
-  Das Fenster **Configure log in credentials and port settings** (Anmeldeinformationen und Porteinstellungen konfigurieren) wird geöffnet.
+5. Klicken Sie auf **Weiter**.  
+     Das Fenster **Configure log in credentials and port settings** (Anmeldeinformationen und Porteinstellungen konfigurieren) wird geöffnet.
 
       ![Fenster „Configure log in credentials and port settings“ (Anmeldeinformationen und Porteinstellungen konfigurieren)][PUB05]
 
@@ -131,9 +130,8 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
    ![Assistent „Deploy Docker Container on Azure“ (Docker-Container in Azure bereitstellen)][PUB07]
 
-8. Klicken Sie auf **Weiter**.
-     
- Das Fenster **Configure the Docker container to be created** (Zu erstellenden Docker-Container konfigurieren) wird geöffnet.
+8. Klicken Sie auf **Weiter**.  
+    Das Fenster **Configure the Docker container to be created** (Zu erstellenden Docker-Container konfigurieren) wird geöffnet.
 
    ![Fenster „Configure the Docker container to be created“ (Zu erstellenden Docker-Container konfigurieren)][PUB08]
 
