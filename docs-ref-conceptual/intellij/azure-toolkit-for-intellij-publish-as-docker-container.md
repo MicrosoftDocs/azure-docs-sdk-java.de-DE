@@ -1,12 +1,12 @@
 ---
-title: "Veröffentlichen eines Docker-Containers mit dem Azure-Toolkit für IntelliJ"
-description: "Erfahren Sie, wie Sie mit dem Azure-Toolkit für IntelliJ eine Web-App in Microsoft Azure als Docker-Container veröffentlichen."
-services: 
+title: Veröffentlichen eines Docker-Containers mit dem Azure-Toolkit für IntelliJ
+description: Erfahren Sie, wie Sie mit dem Azure-Toolkit für IntelliJ eine Web-App in Microsoft Azure als Docker-Container veröffentlichen.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: f92040b34b9897d9feea8d2ec5e8748e75fff7f7
-ms.sourcegitcommit: 381a865f2849be8e3044d24cd4b3b54e9bbb7abc
+ms.openlocfilehash: 64cefc1ace5d0377dea25fdbdc83d8dada31ddf7
+ms.sourcegitcommit: ed130145f9e5c2d803791d96bb118023175e644a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ
 
@@ -103,27 +103,43 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
       * **New log in credentials** (Neue Anmeldeinformationen): Erstellen Sie neue Anmeldeinformationen. Gehen Sie bei Auswahl dieser Option wie folgt vor:
 
-        a. Geben Sie auf der Registerkarte **VM Credentials** (VM-Anmeldeinformationen) die folgenden Angaben für die VM-Anmeldeinformationen Ihres Docker-Hosts an: * **Benutzername**: Geben Sie den Benutzernamen für Ihre VM-Anmeldeinformationen ein.
-             * **Kennwort** und **Bestätigen**: Geben Sie das Kennwort für Ihre VM-Anmeldeinformationen ein.
-             * **SSH**: Geben Sie die SSH-Einstellungen (Secure Shell) für Ihren Docker-Host ein. Sie können eine der folgenden Optionen auswählen: * **Keine**: Gibt an, dass für Ihren virtuellen Computer keine SSH-Verbindungen zulässig sind.
-                * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über SSH automatisch erstellt.
-                * **Import from directory** (Aus Verzeichnis importieren): Ermöglicht das Angeben eines Verzeichnisses, das zuvor gespeicherte SSH-Einstellungen enthält. Das Verzeichnis muss die folgenden beiden Dateien enthalten:
-                
-                  * *id_rsa*: Contains the RSA identification for a user.
-                  * *id_rsa.pub*: Contains the RSA public key that is used for authentication.
-            
-        b. Geben Sie auf der Registerkarte **Docker Daemon Access** (Docker-Daemon-Zugriff) die folgenden Informationen an:
+    a. Geben Sie auf der Registerkarte **VM-Anmeldeinformationen** Anmeldeinformationen für den virtuellen Computer Ihres Docker-Hosts an:
 
-          ![Erstellen eines Docker-Hosts][PUB06]
+    * **Benutzername:** Geben Sie den Benutzernamen für die Anmeldungsinformationen bei Ihrem virtuellen Computer an.
+
+    * **Kennwort** und **Bestätigen**: Geben Sie das Kennwort für Ihre VM-Anmeldeinformationen ein.
+
+    * **SSH**: Geben Sie die SSH-Einstellungen (Secure Shell) für Ihren Docker-Host ein. Wählen Sie eine der folgenden Optionen aus:
+
+        * **Keine:** gibt an, dass Ihr virtueller Computer keine SSH-Verbindungen zulässt.
+
+        * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über SSH automatisch erstellt.
+
+        * **Import from directory** (Aus Verzeichnis importieren): ermöglicht das Angeben eines Verzeichnisses, das zuvor gespeicherte SSH-Einstellungen enthält. Das Verzeichnis muss die folgenden beiden Dateien enthalten:
+
+            * *id_rsa*: Enthält die RSA-Kennung eines Benutzers.
+
+            * *id_rsa.pub*: Enthält den öffentlichen RSA-Schlüssel, der für die Authentifizierung verwendet wird.
+
+    b. Geben Sie auf der Registerkarte **Docker Daemon Access** (Docker-Daemon-Zugriff) die folgenden Informationen an:
+
+    ![Erstellen eines Docker-Hosts][PUB06]
     
-             * **Docker Daemon port**: Enter the unique TCP port for your Docker host.
-             * **TLS Security**: Enter the Transport Layer Security settings for your Docker host. You can choose from the following options:
-                * **None**: Specifies that your virtual machine does not allow TLS connections.
-                * **Auto-generate**: Automatically creates the requisite settings for connecting via TLS.
-                * **Import from directory**: Specifies a directory that contains a set of previously saved TLS settings. The directory must contain the following six files: 
-                   * *ca.pem* and *ca-key.pem*: Contain the certificate and public key for the TLS Certificate Authority.
-                   * *cert.pem* and *key.pem*: Contain client certificate and public key which will be used for TLS authentication.
-                   * *server.pem* and *server-key.pem*: Contain the client certificate and public key that is used for TLS authentication.
+    * **Docker-Daemon-Port**: Geben Sie den eindeutigen TCP-Port für den Docker-Host an.
+    
+    * **TLS-Sicherheit**: Geben Sie die Transport Layer Security-Einstellungen für Ihren Docker-Host an. Sie können zwischen folgenden Optionen wählen:
+    
+        * **Keine:** gibt an, dass Ihr virtueller Computer keine TLS-Verbindungen zulässt.
+        
+        * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über TLS automatisch erstellt.
+        
+        * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte TLS-Einstellungen enthält. Das Verzeichnis muss die folgenden sechs Dateien enthalten:
+        
+            * *ca.pem* und *ca-key.pem*: Enthalten das Zertifikat und den öffentlichen Schlüssel für die TLS-Zertifizierungsstelle.
+            
+            * *cert.pem* und *key.pem*: enthalten das Clientzertifikat und einen öffentlichen Schlüssel für die TLS-Authentifizierung.
+            
+            * *server.pem* und *server-key.pem*: enthalten das Clientzertifikat und einen öffentlichen Schlüssel für die TLS-Authentifizierung.
 
 7. Klicken Sie nach dem Eingeben der erforderlichen Informationen auf **Fertig stellen**.  
     Der Assistent **Deploy Docker Container on Azure** (Docker-Container in Azure bereitstellen) wird wieder angezeigt.
