@@ -1,6 +1,6 @@
 ---
-title: "Azure CDN-Bibliotheken für Java"
-description: "Referenzdokumentation für die Java-CDN-Bibliotheken"
+title: Azure CDN-Bibliotheken für Java
+description: Referenzdokumentation für die Java-CDN-Bibliotheken
 keywords: Azure, Java, SDK, API, Inhalt, Verteilung, Netzwerk, CDN
 author: rloutlaw
 ms.author: routlaw
@@ -11,25 +11,25 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: cdn
-ms.openlocfilehash: 91df958d2d78fb4fd959c228b28c6ae003716be6
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 199e9b4b2b2431e23954d24e4adeb4326eb4741c
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="azure-cdn-libraries-for-java"></a><span data-ttu-id="64bed-104">Azure CDN-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="64bed-104">Azure CDN libraries for Java</span></span>
+# <a name="azure-cdn-libraries-for-java"></a><span data-ttu-id="23262-104">Azure CDN-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="23262-104">Azure CDN libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="64bed-105">Übersicht</span><span class="sxs-lookup"><span data-stu-id="64bed-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="23262-105">Übersicht</span><span class="sxs-lookup"><span data-stu-id="23262-105">Overview</span></span>
 
-<span data-ttu-id="64bed-106">Speichern Sie mit [Azure Content Delivery Network (CDN)](/azure/cdn/cdn-overview) statische Webinhalte an strategisch platzierten Standorten zwischen, um für Benutzer einen maximalen Durchsatz zu ermöglichen</span><span class="sxs-lookup"><span data-stu-id="64bed-106">Cache static web content at strategically placed locations to provide maximum throughput for users with [Azure Content Delivery Network](/azure/cdn/cdn-overview) (CDN).</span></span>
+<span data-ttu-id="23262-106">Speichern Sie mit [Azure Content Delivery Network (CDN)](/azure/cdn/cdn-overview) statische Webinhalte an strategisch platzierten Standorten zwischen, um für Benutzer einen maximalen Durchsatz zu ermöglichen</span><span class="sxs-lookup"><span data-stu-id="23262-106">Cache static web content at strategically placed locations to provide maximum throughput for users with [Azure Content Delivery Network](/azure/cdn/cdn-overview) (CDN).</span></span>
 
-<span data-ttu-id="64bed-107">Informationen zu den ersten Schritten mit Azure CDN finden Sie unter [Erste Schritte mit Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span><span class="sxs-lookup"><span data-stu-id="64bed-107">To get started with Azure CDN, see [Getting started with Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span></span>
+<span data-ttu-id="23262-107">Informationen zu den ersten Schritten mit Azure CDN finden Sie unter [Erste Schritte mit Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span><span class="sxs-lookup"><span data-stu-id="23262-107">To get started with Azure CDN, see [Getting started with Azure CDN](/azure/cdn/cdn-create-new-endpoint).</span></span>
 
-## <a name="management-api"></a><span data-ttu-id="64bed-108">Verwaltungs-API</span><span class="sxs-lookup"><span data-stu-id="64bed-108">Management API</span></span>
+## <a name="management-api"></a><span data-ttu-id="23262-108">Verwaltungs-API</span><span class="sxs-lookup"><span data-stu-id="23262-108">Management API</span></span>
 
-<span data-ttu-id="64bed-109">Mit der Verwaltungs-API können Sie CDN-Profile erstellen, Endpunkte definieren und dem CDN Inhalte hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="64bed-109">Create CDN profiles, define endpoints, and add content to the CDN using the management API.</span></span>
+<span data-ttu-id="23262-109">Mit der Verwaltungs-API können Sie CDN-Profile erstellen, Endpunkte definieren und dem CDN Inhalte hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="23262-109">Create CDN profiles, define endpoints, and add content to the CDN using the management API.</span></span>
 
-<span data-ttu-id="64bed-110">Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Verwaltungs-API in Ihrem Projekt zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="64bed-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
+<span data-ttu-id="23262-110">Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Verwaltungs-API in Ihrem Projekt zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="23262-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the management API in your project.</span></span>
 
 ```XML
 <dependency>
@@ -39,9 +39,9 @@ ms.lasthandoff: 10/09/2017
 </dependency>
 ```   
 
-### <a name="example"></a><span data-ttu-id="64bed-111">Beispiel</span><span class="sxs-lookup"><span data-stu-id="64bed-111">Example</span></span>
+### <a name="example"></a><span data-ttu-id="23262-111">Beispiel</span><span class="sxs-lookup"><span data-stu-id="23262-111">Example</span></span>
 
-<span data-ttu-id="64bed-112">Erstellen Sie ein CDN-Profil, weisen Sie Endpunkte zu, und laden Sie Inhalte ins CDN:</span><span class="sxs-lookup"><span data-stu-id="64bed-112">Create a CDN profile, assign endpoints, and load content into the CDN.</span></span>
+<span data-ttu-id="23262-112">Erstellen Sie ein CDN-Profil, weisen Sie Endpunkte zu, und laden Sie Inhalte ins CDN:</span><span class="sxs-lookup"><span data-stu-id="23262-112">Create a CDN profile, assign endpoints, and load content into the CDN.</span></span>
 
 ```java
 CdnProfile profile = azure.cdnProfiles().define("testCDN")
@@ -62,10 +62,10 @@ for (CdnEndpoint endpoint : profile.endpoints().values()) {
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="64bed-113">Informationen zu den Verwaltungs-APIs</span><span class="sxs-lookup"><span data-stu-id="64bed-113">Explore the Management APIs</span></span>](/java/api/overview/azure/cdn/managementapi)
+> [<span data-ttu-id="23262-113">Informationen zu den Verwaltungs-APIs</span><span class="sxs-lookup"><span data-stu-id="23262-113">Explore the Management APIs</span></span>](/java/api/overview/azure/cdn/management)
 
-## <a name="samples"></a><span data-ttu-id="64bed-114">Beispiele</span><span class="sxs-lookup"><span data-stu-id="64bed-114">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="23262-114">Beispiele</span><span class="sxs-lookup"><span data-stu-id="23262-114">Samples</span></span>
 
-[<span data-ttu-id="64bed-115">Verwalten von CDNs mit Java</span><span class="sxs-lookup"><span data-stu-id="64bed-115">Manage CDNs with Java</span></span>](https://github.com/Azure-Samples/cdn-java-manage-cdn)
+[<span data-ttu-id="23262-115">Verwalten von CDNs mit Java</span><span class="sxs-lookup"><span data-stu-id="23262-115">Manage CDNs with Java</span></span>](https://github.com/Azure-Samples/cdn-java-manage-cdn)
 
-<span data-ttu-id="64bed-116">Sehen Sie sich weitere [Java-Codebeispiele für Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) an, die Sie in Ihren Apps verwenden können.</span><span class="sxs-lookup"><span data-stu-id="64bed-116">Explore more [sample Java code for Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) you can use in your apps.</span></span>
+<span data-ttu-id="23262-116">Sehen Sie sich weitere [Java-Codebeispiele für Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) an, die Sie in Ihren Apps verwenden können.</span><span class="sxs-lookup"><span data-stu-id="23262-116">Explore more [sample Java code for Azure CDN](https://azure.microsoft.com/resources/samples/?platform=java&term=cdn) you can use in your apps.</span></span>
