@@ -1,6 +1,6 @@
 ---
-title: "Azure SQL-Datenbank-Bibliotheken für Java"
-description: "Stellen Sie über den JDBC-Treiber eine Verbindung mit Azure SQL-Datenbank her, oder verwalten Sie Instanzen von Azure SQL-Datenbank über die Verwaltungs-API."
+title: Azure SQL-Datenbank-Bibliotheken für Java
+description: Stellen Sie über den JDBC-Treiber eine Verbindung mit Azure SQL-Datenbank her, oder verwalten Sie Instanzen von Azure SQL-Datenbank über die Verwaltungs-API.
 keywords: Azure, Java, SDK, API, SQL, Datenbank, JDBC
 author: rloutlaw
 ms.author: routlaw
@@ -11,17 +11,17 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: sql-database
-ms.openlocfilehash: 3ae4015ae57e5eac4dafb30f4a42881986501853
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 37f7d3caf10e6b709cee2452c63a543d49e0ead8
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-sql-database-libraries-for-java"></a>Azure SQL-Datenbank-Bibliotheken für Java
 
 ## <a name="overview"></a>Übersicht
 
-[Azure SQL-Datenbank](/azure/sql-database/sql-database-technical-overview) ist ein relationaler Datenbankdienst und verwendet das Microsoft SQL Server-Modul, das sowohl Tabellen-, JSON- und XML-Daten als auch räumliche Daten unterstützt. 
+[Azure SQL-Datenbank](/azure/sql-database/sql-database-technical-overview) ist ein relationaler Datenbankdienst und verwendet die Microsoft SQL Server-Engine, das sowohl Tabellen-, JSON- und XML-Daten als auch räumliche Daten unterstützt. 
 
 Informationen zu den ersten Schritten mit Azure SQL-Datenbank finden Sie unter [Abfragen einer Azure SQL-Datenbank mithilfe von Java](/azure/sql-database/sql-database-connect-query-java).
 
@@ -69,7 +69,7 @@ Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.o
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/sql/managementapi)
+> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/sql/management)
 
 ### <a name="example"></a>Beispiel
 

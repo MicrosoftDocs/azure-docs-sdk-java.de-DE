@@ -1,7 +1,7 @@
 ---
-title: "Azure Key Vault-Bibliotheken für Java"
-description: "Übersicht über die Azure Key Vault-Bibliotheken für Java"
-keywords: "Azure, Java, SDK, API, Key Vault, sicher, Schlüssel, Geheimnisse, Tresor"
+title: Azure Key Vault-Bibliotheken für Java
+description: Übersicht über die Azure Key Vault-Bibliotheken für Java
+keywords: Azure, Java, SDK, API, Key Vault, sicher, Schlüssel, Geheimnisse, Tresor
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: keyvault
-ms.openlocfilehash: 51ac51f5436397a0c9f1a4572dcf79a40f10b538
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: 396d02b8bba5878ffb24f5f8994ae29aef36cfdc
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-key-vault-libraries-for-java"></a>Azure Key Vault-Bibliotheken für Java
 
@@ -45,12 +45,12 @@ Abrufen eines [JSON-Webschlüssels](https://tools.ietf.org/html/draft-ietf-jose-
 
 ```java
 KeyVaultClient kvc = new KeyVaultClient(credentials);
-KeyBundle returnedKeyBundle = getKey(vaultUrl, keyName);
+KeyBundle returnedKeyBundle = kvc.getKey(vaultUrl, keyName);
 JsonWebKey jsonKey = returnedKeyBundle.key();
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Client-APIs](/java/api/overview/azure/keyvault/clientlibrary)
+> [Informationen zu den Client-APIs](/java/api/overview/azure/keyvault/client)
 
 
 ## <a name="management-api"></a>Verwaltungs-API
@@ -83,7 +83,7 @@ vault1 = vault1.update()
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/keyvault/managementapi)
+> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/keyvault/management)
 
 
 ## <a name="samples"></a>Beispiele

@@ -1,12 +1,12 @@
 ---
-title: "Verwenden von Spring Boot Starter für Azure Storage"
+title: Verwenden von Spring Boot Starter für Azure Storage
 description: Hier erfahren Sie, wie Sie eine Spring Boot Initializer-App mit Azure Storage Starter konfigurieren.
 services: storage
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: yungez;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,11 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 50c8475c66250c8e872849007349277fd3fe797b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: e10ecfb7f6d705aa3ccffc49d354d1019f7f1a0b
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -93,8 +93,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
        }
      }
    ]
+   ```
 
-1. Specify the GUID for the account you want to use with Azure; for example:
+1. Geben Sie die GUID für das Konto an, das Sie mit Azure verwenden möchten. Beispiel:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
@@ -317,7 +318,7 @@ Weitere Informationen zu weiteren verfügbaren Spring Boot Starter-Optionen für
 Weitere Informationen zum Integrieren von Azure-Funktionen in Spring-basierte Anwendungen finden Sie unter [Spring Framework in Azure](/java/azure/spring-framework/).
 
 Ausführliche Informationen zu weiteren Azure Storage-APIs, die Sie über Ihre Spring Boot-Anwendungen aufrufen können, finden Sie in den folgenden Artikeln:
-* [Verwenden des Blob-Speichers mit Java](/azure/storage/blobs/storage-java-how-to-use-blob-storage)
+* [Verwenden von Azure Blob Storage mit Java](/azure/storage/blobs/storage-java-how-to-use-blob-storage)
 * [Verwenden des Warteschlangenspeichers mit Java](/azure/storage/queues/storage-java-how-to-use-queue-storage)
 * [Verwenden von Azure Table Storage mit Java](/azure/cosmos-db/table-storage-how-to-use-java)
 * [Entwickeln für Azure Files mit Java](/azure/storage/files/storage-java-how-to-use-file-storage)

@@ -1,6 +1,6 @@
 ---
-title: "Service Bus-Bibliotheken für Java"
-description: "Referenzdokumentation für die Java-Clientbibliotheken und -Verwaltungsbibliotheken für Service Bus"
+title: Service Bus-Bibliotheken für Java
+description: Referenzdokumentation für die Java-Clientbibliotheken und -Verwaltungsbibliotheken für Service Bus
 keywords: Azure, Java, SDK, API, Nessaging, AMQP, Qpid, JMS, PubSub, Pub-Sub, Nachrichtenbroker
 author: rloutlaw
 ms.author: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: service-bus
-ms.openlocfilehash: 6fccbc76a3600e2bbe43e4332c6146d2be81b6c9
-ms.sourcegitcommit: fcf1189ede712ae30f8c7626bde50c9b8bb561bc
+ms.openlocfilehash: 7468d9b920debc778e7e3d298fbcb913add6afdd
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="service-bus-libraries-for-java"></a>Service Bus-Bibliotheken für Java
 
@@ -116,7 +116,7 @@ public class BasicSendReceiveWithQueueClient {
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Client-APIs](/java/api/overview/azure/servicebus/clientlibrary)
+> [Informationen zu den Client-APIs](/java/api/overview/azure/servicebus/client)
 
 ## <a name="management-api"></a>Verwaltungs-API
 
@@ -133,7 +133,7 @@ Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.o
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/servicebus/managementapi)
+> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/servicebus/management)
 
 
 ## <a name="examples"></a>Beispiele

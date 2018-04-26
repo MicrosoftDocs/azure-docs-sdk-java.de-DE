@@ -1,7 +1,7 @@
 ---
-title: "Redis Cache-Bibliotheken für Java"
-description: "Referenzdokumentation für die Java-Clientbibliotheken und -Verwaltungsbibliotheken für Redis Cache"
-keywords: "Azure, Java, SDK, API, Cache, Redis, Webcache, Schlüssel-Wert, In-Memory"
+title: Redis Cache-Bibliotheken für Java
+description: Referenzdokumentation für die Java-Clientbibliotheken und -Verwaltungsbibliotheken für Redis Cache
+keywords: Azure, Java, SDK, API, Cache, Redis, Webcache, Schlüssel-Wert, In-Memory
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: redis-cache
-ms.openlocfilehash: 6d436c49124fd0a406486e0c7bac4d1605de5d32
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: dd03825d9ae7cba32087f92262d5ef213cf3af0b
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="redis-cache-libraries-for-java"></a>Redis Cache-Bibliotheken für Java
 
@@ -75,7 +75,7 @@ RedisCache cache = azure.redisCaches().define(redisCacheName1)
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/rediscache/managementapi)
+> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/rediscache/management)
 
 ## <a name="samples"></a>Beispiele
 

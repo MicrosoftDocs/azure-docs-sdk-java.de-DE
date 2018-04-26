@@ -1,6 +1,6 @@
 ---
-title: "Azure Traffic Manager-Bibliotheken für Java"
-description: "Referenzdokumentation für die Java-Verwaltungsbibliotheken für Azure Traffic Manager"
+title: Azure Traffic Manager-Bibliotheken für Java
+description: Referenzdokumentation für die Java-Verwaltungsbibliotheken für Azure Traffic Manager
 keywords: Azure, Java, SDK, API, Lastenausgleich, Lastverteilung, Netzwerk, Traffic Manager
 author: rloutlaw
 ms.author: routlaw
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: traffic-manager
-ms.openlocfilehash: 9e13f97c6ddb763fb162b3de0c8d09c77eae1ccb
-ms.sourcegitcommit: 634ab7578c73a219f8f3a2a6d43999d9d372cb43
+ms.openlocfilehash: fd78402f50df16ad7d57c0ca67815bfad5b18d51
+ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="azure-traffic-manager-libraries-for-java"></a>Azure Traffic Manager-Bibliotheken für Java
 
@@ -56,7 +56,7 @@ TrafficManagerProfile tmProfile = azure.trafficManagerProfiles().define("testTMP
 ```
 
 > [!div class="nextstepaction"]
-> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/trafficmanager/managementapi)
+> [Informationen zu den Verwaltungs-APIs](/java/api/overview/azure/trafficmanager/management)
 
 ## <a name="samples"></a>Beispiele
 
