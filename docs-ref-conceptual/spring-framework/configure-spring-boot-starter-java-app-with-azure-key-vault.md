@@ -1,12 +1,12 @@
 ---
-title: "Verwenden von Spring Boot Starter für Azure Key Vault"
+title: Verwenden von Spring Boot Starter für Azure Key Vault
 description: Hier erfahren Sie, wie Sie eine Spring Boot Initializer-App mit Azure Key Vault Starter konfigurieren.
 services: key-vault
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -14,11 +14,11 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 52e7dc3f84ea96f22d8e478a597452c76ed8bf22
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 1dda697cac80a6cad3ebbbbf8a5a4f18b515dfd8
+ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -85,8 +85,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
        }
      }
    ]
+   ```
 
-1. Specify the GUID for the account you want to use with Azure; for example:
+1. Geben Sie die GUID für das Konto an, das Sie mit Azure verwenden möchten. Beispiel:
 
    ```azurecli
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
