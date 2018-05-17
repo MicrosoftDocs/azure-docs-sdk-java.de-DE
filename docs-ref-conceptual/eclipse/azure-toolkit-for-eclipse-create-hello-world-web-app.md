@@ -1,11 +1,11 @@
 ---
-title: "Erstellen einer „Hello World“-Web-App für Azure mit Eclipse"
-description: "In diesem Tutorial erfahren Sie, wie Sie mit dem Azure-Toolkit für Eclipse eine „Hello World“-Web-App für Azure erstellen."
+title: Erstellen einer „Hello World“-Web-App für Azure mit Eclipse
+description: In diesem Tutorial erfahren Sie, wie Sie mit dem Azure-Toolkit für Eclipse eine „Hello World“-Web-App für Azure erstellen.
 services: app-service
 documentationcenter: java
 author: selvasingh
 manager: routlaw
-editor: 
+editor: ''
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
 ms.author: robmcm;asirveda
 ms.date: 02/01/2018
@@ -14,11 +14,11 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: bec94e65951330c933e0173fd580c3578e759c18
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
+ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a>Erstellen einer „Hello World“-Web-App für Azure mit Eclipse
 
@@ -98,7 +98,7 @@ Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der 
 
    ![Bereitstellen eines App-Diensts][deploy-app-service]
 
-1. Im Toolkit wird ein **Azure-Aktivitätsprotokoll** mit dem Status **Veröffentlicht** angezeigt, wenn die Web-App bereitgestellt wurde. Der Status ist als Link für die URL der bereitgestellten Web-App formatiert.
+1. Im Toolkit wird auf der Registerkarte **Azure-Aktivitätsprotokoll** der Status **Veröffentlicht** angezeigt, wenn die Web-App bereitgestellt wurde. Der Status ist als Link für die URL der bereitgestellten Web-App formatiert.
 
    ![Veröffentlichungsstatus][publish-status]
 

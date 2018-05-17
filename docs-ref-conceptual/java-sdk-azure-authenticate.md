@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
-ms.openlocfilehash: 3808c6d56b04f28c84a89a25219e4ec523f87964
-ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
+ms.openlocfilehash: 1d556955fcc5b73f1ba099a0b846b571ba64ccff
+ms.sourcegitcommit: 107c3c5ed8c6991c751f95bcaf3757220940df9e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Authentifizieren bei den Azure-Bibliotheken für Java 
 
@@ -90,7 +90,7 @@ Azure azure = Azure
 
 `client`, `tenant` und `key` sind die gleichen Dienstprinzipalwerte, die auch bei der [dateibasierten Authentifizierung](#mgmt-file) verwendet werden. Der `AzureEnvironment.AZURE`-Wert erstellt Anmeldeinformationen für die öffentliche Azure-Cloud. Ändern Sie diesen Wert, wenn Sie auf eine andere Cloud (etwa `AzureEnvironment.AZURE_GERMANY`) zugreifen müssen.  
 
- Lesen Sie die Dienstprinzipalwerte aus Umgebungsvariablen oder einem Geheimnisverwaltungsspeicher wie [Key Vault](/azure/key-vault/key-vault-whatis.md) ein. Legen Sie diese Werte nicht als Klartextzeichenfolgen in Ihrem Code fest, damit Anmeldeinformationen nicht versehentlich im Versionskontrollverlauf verfügbar gemacht werden.   
+ Lesen Sie die Dienstprinzipalwerte aus Umgebungsvariablen oder einem Geheimnisverwaltungsspeicher wie [Key Vault](/azure/key-vault/key-vault-whatis) ein. Legen Sie diese Werte nicht als Klartextzeichenfolgen in Ihrem Code fest, damit Anmeldeinformationen nicht versehentlich im Versionskontrollverlauf verfügbar gemacht werden.   
 
 <a name="mgmt-file"></a>
 
