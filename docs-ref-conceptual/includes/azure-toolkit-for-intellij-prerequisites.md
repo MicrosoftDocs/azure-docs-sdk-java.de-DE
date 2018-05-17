@@ -1,16 +1,16 @@
-## <a name="prerequisites"></a>Voraussetzungen
-Damit Sie die Schritte in diesem Artikel ausführen können, müssen Sie das Azure-Toolkit für IntelliJ installieren. Dafür sind die folgenden Softwarekomponenten erforderlich:
+## <a name="prerequisites"></a><span data-ttu-id="a9d3e-101">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="a9d3e-101">Prerequisites</span></span>
+<span data-ttu-id="a9d3e-102">Damit Sie die Schritte in diesem Artikel ausführen können, müssen Sie das Azure-Toolkit für IntelliJ installieren. Dafür sind die folgenden Softwarekomponenten erforderlich:</span><span class="sxs-lookup"><span data-stu-id="a9d3e-102">To complete the steps in his article, you will need to install the Azure Toolkit for IntelliJ, which requires the following software components:</span></span>
 
-* IntelliJ IDEA Ultimate Edition oder Community Edition (kann von der [JetBrains-Website](https://www.jetbrains.com/idea/download/) heruntergeladen werden)
-* Ein Java Developer Kit (JDK) Version 1.8 oder höher
-* Ein Betriebssystem. Das Azure-Toolkit für IntelliJ wurde unter folgenden Betriebssystemen getestet:
+* <span data-ttu-id="a9d3e-103">IntelliJ IDEA Ultimate Edition oder Community Edition (kann von der [JetBrains-Website](https://www.jetbrains.com/idea/download/) heruntergeladen werden)</span><span class="sxs-lookup"><span data-stu-id="a9d3e-103">IntelliJ IDEA Ultimate Edition or Community Edition, which can be downloaded from the [JetBrains website](https://www.jetbrains.com/idea/download/).</span></span>
+* <span data-ttu-id="a9d3e-104">Ein Java Developer Kit (JDK) Version 1.8 oder höher</span><span class="sxs-lookup"><span data-stu-id="a9d3e-104">A Java Developer Kit (JDK), version 1.8 or later.</span></span>
+* <span data-ttu-id="a9d3e-105">Ein Betriebssystem.</span><span class="sxs-lookup"><span data-stu-id="a9d3e-105">An operating system.</span></span> <span data-ttu-id="a9d3e-106">Das Azure-Toolkit für IntelliJ wurde unter folgenden Betriebssystemen getestet:</span><span class="sxs-lookup"><span data-stu-id="a9d3e-106">The Azure Toolkit for IntelliJ has been tested on the following operating systems:</span></span>
   
-  * Windows 10, Windows 8.1, Windows 8 und Windows 7
-  * Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 und Windows Server 2008
-  * [Mac OS X](http://www.apple.com/osx)-Version „Yosemite“ und höher
-  * [Ubuntu Linux](http://www.ubuntu.com)-Versionen 14, 15 und 16
+  * <span data-ttu-id="a9d3e-107">Windows 10, Windows 8.1, Windows 8 und Windows 7</span><span class="sxs-lookup"><span data-stu-id="a9d3e-107">Windows 10, Windows 8.1, Windows 8, and Windows 7</span></span>
+  * <span data-ttu-id="a9d3e-108">Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 und Windows Server 2008</span><span class="sxs-lookup"><span data-stu-id="a9d3e-108">Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, and Windows Server 2008</span></span>
+  * <span data-ttu-id="a9d3e-109">[Mac OS X](http://www.apple.com/osx)-Version „Yosemite“ und höher</span><span class="sxs-lookup"><span data-stu-id="a9d3e-109">[Mac OS X](http://www.apple.com/osx) version "Yosemite" or later</span></span>
+  * <span data-ttu-id="a9d3e-110">[Ubuntu Linux](http://www.ubuntu.com)-Versionen 14, 15 und 16</span><span class="sxs-lookup"><span data-stu-id="a9d3e-110">[Ubuntu Linux](http://www.ubuntu.com) version 14, 15, and 16</span></span>
 
-Weitere Informationen finden Sie im Repository für JetBrains-Plug-Ins auf der Seite [Azure-Toolkit für IntelliJ](https://plugins.jetbrains.com/plugin/8053).
+<span data-ttu-id="a9d3e-111">Weitere Informationen finden Sie im Repository für JetBrains-Plug-Ins auf der Seite [Azure-Toolkit für IntelliJ](https://plugins.jetbrains.com/plugin/8053).</span><span class="sxs-lookup"><span data-stu-id="a9d3e-111">For more information, see the [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) page at the JetBrains Plugin Repository.</span></span>
 
 <!--
 > [!IMPORTANT]

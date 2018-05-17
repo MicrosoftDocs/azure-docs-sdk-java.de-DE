@@ -1,1 +1,1 @@
-Weitere Informationen zum Erstellen und Bereitstellen von Java-Apps in Azure finden Sie im [Java Developer Center](https://docs.microsoft.com/java/api).
+<span data-ttu-id="bfb5e-101">Weitere Informationen zum Erstellen und Bereitstellen von Java-Apps in Azure finden Sie im [Java Developer Center](https://docs.microsoft.com/java/api).</span><span class="sxs-lookup"><span data-stu-id="bfb5e-101">For more information on creating and deploying Java apps on Azure, visit the [Java developer center](https://docs.microsoft.com/java/api).</span></span>
