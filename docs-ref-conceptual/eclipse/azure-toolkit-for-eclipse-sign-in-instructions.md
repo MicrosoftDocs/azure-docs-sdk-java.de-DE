@@ -1,12 +1,12 @@
 ---
-title: "Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse"
-description: "Erfahren Sie, wie Sie sich bei Microsoft Azure mit dem Azure-Toolkit für Eclipse anmelden."
-services: 
+title: Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse
+description: Erfahren Sie, wie Sie sich bei Microsoft Azure mit dem Azure-Toolkit für Eclipse anmelden.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 498a22c455e54b8038169cf4e9f6ac7d7287c0bb
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: eb6099ab0c19bf3588cb7fd668f070771e58fe74
+ms.sourcegitcommit: 8230cf6b15ac51a9f8a209e9b76411a0385029aa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="azure-sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse
 
@@ -91,7 +91,7 @@ Wenn Sie sich bei Verwendung von Eclipse von Azure abmelden, müssen Sie das Azu
 
    ![Anmeldedialogfeld][A02]
 
-1. Wenn das Dialogfeld **Authentifizierungsdatei auswählen** angezeigt wird, wählen Sie eine zuvor erstellte Datei mit Anmeldeinformationen aus, und klicken Sie dann auf **Auswählen**.
+1. Wenn das Dialogfeld **Authentifizierungsdatei auswählen** angezeigt wird, wählen Sie eine zuvor erstellte Datei mit Anmeldeinformationen aus, und klicken Sie dann auf **Öffnen**.
 
    ![Anmeldedialogfeld][A08]
 
