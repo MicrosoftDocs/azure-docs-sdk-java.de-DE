@@ -1,12 +1,12 @@
 ---
-title: "Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse"
-description: "Erfahren Sie, wie Sie Ihre virtuellen Azure-Computer mit dem Azure-Explorer für Eclipse verwalten."
-services: 
+title: Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
+description: Erfahren Sie, wie Sie Ihre virtuellen Azure-Computer mit dem Azure-Explorer für Eclipse verwalten.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,11 +14,11 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: a02f8d02f8c5c32091dd106e036b636b1d11cff0
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: ec67ed44ec570da7b826c12a9f8a24a5b0170e99
+ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
 
@@ -32,7 +32,7 @@ Der Azure-Explorer gehört zum Azure-Toolkit für Eclipse und bietet Java-Entwic
 
 Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explorer zu erstellen:
 
-1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen unter [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse] an.
+1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen in [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse](https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-sign-in-instructions) an.
 
 1. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Virtuelle Computer**, und klicken Sie dann auf **VM erstellen**.
 
@@ -60,7 +60,6 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 1. Klicken Sie auf **Weiter**.
 
-
 1. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
 
    * **Name des virtuellen Computers:** gibt den Namen Ihres virtuellen Computers an. Dieser muss mit einem Buchstaben beginnen und darf nur Buchstaben, Ziffern und Bindestriche enthalten.
@@ -74,7 +73,6 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
    ![Fenster „Grundlegende Einstellungen des virtuellen Computers“][CR04]
 
 1. Klicken Sie auf **Weiter**.
-
 
 1. Geben Sie im Fenster **Neues Speicherkonto erstellen** die folgenden Informationen ein:
 
