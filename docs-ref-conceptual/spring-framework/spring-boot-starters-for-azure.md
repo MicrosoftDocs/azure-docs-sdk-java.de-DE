@@ -1,12 +1,12 @@
 ---
-title: "Spring Boot Starter für Azure"
-description: "In diesem Artikel werden die verschiedenen verfügbaren Spring Boot Starter-Optionen für Azure beschrieben."
-services: 
+title: Spring Boot Starter für Azure
+description: In diesem Artikel werden die verschiedenen verfügbaren Spring Boot Starter-Optionen für Azure beschrieben.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954441"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Spring Boot Starter für Azure
 

@@ -1,6 +1,6 @@
 ---
 title: Verwalten von VM-Skalierungsgruppen mit Java | Microsoft-Dokumentation
-description: "Beispielcode zum Verwalten von Azure-VM-Skalierungsgruppen mithilfe des Azure SDKs für Java"
+description: Beispielcode zum Verwalten von Azure-VM-Skalierungsgruppen mithilfe des Azure SDKs für Java
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931156"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Verwalten von Azure-VM-Skalierungsgruppen über Ihre Java-Anwendungen
 

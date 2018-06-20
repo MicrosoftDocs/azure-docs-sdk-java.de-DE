@@ -1,12 +1,12 @@
 ---
 title: Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
-description: "Dieses Tutorial führt Entwickler durch die Schritte zum Bereitstellen einer Web-App für erste Schritte mit Spring Boot in der Cloud mit Azure App Service."
+description: Dieses Tutorial führt Entwickler durch die Schritte zum Bereitstellen einer Web-App für erste Schritte mit Spring Boot in der Cloud mit Azure App Service.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: asirveda;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954523"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
 

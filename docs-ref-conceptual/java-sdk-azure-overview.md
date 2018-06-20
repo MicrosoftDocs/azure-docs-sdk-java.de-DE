@@ -1,6 +1,6 @@
 ---
-title: "Azure-Bibliotheken für Java"
-description: "Übersicht über die Azure-Verwaltungsbibliotheken und -Dienstbibliotheken für Java"
+title: Azure-Bibliotheken für Java
+description: Übersicht über die Azure-Verwaltungsbibliotheken und -Dienstbibliotheken für Java
 keywords: Azure, Java, SDK, API
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930876"
 ---
 # <a name="azure-libraries-for-java"></a>Azure-Bibliotheken für Java
 

@@ -1,6 +1,6 @@
 ---
-title: "Entwicklerhandbuch für die Azure-Verwaltungsbibliotheken für Java"
-description: "Muster und Konzepte für die Verwendung der Java-Verwaltungsbibliotheken zum Verwalten von Cloudressourcen in Azure."
+title: Entwicklerhandbuch für die Azure-Verwaltungsbibliotheken für Java
+description: Muster und Konzepte für die Verwendung der Java-Verwaltungsbibliotheken zum Verwalten von Cloudressourcen in Azure.
 keywords: Azure, Java, SDK, API, Maven, Gradle, Authentifizierung, Active Directory, Dienstprinzipal
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1f6a80e067a8bdbbb4b2da2e2145fda73d5fe65a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2017
+ms.locfileid: "26184644"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Muster und bewährte Methoden für die Entwicklung mit den Azure-Bibliotheken für Java 
 

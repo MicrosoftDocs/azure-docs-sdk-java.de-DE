@@ -1,6 +1,6 @@
 ---
 title: Konfigurieren von Web-App-Bereitstellungen mithilfe von Java | Microsoft-Dokumentation
-description: "Java-Beispielcode zum Konfigurieren der Git- oder FTP-basierten Azure App Service-Bereitstellungen mithilfe des Azure SDKs für Java"
+description: Java-Beispielcode zum Konfigurieren der Git- oder FTP-basierten Azure App Service-Bereitstellungen mithilfe des Azure SDKs für Java
 author: rloutlaw
 manager: douge
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931186"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Konfigurieren von Azure App Service-Bereitstellungsquellen über Ihre Java-Anwendungen
 

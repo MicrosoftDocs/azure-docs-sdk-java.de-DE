@@ -1,6 +1,6 @@
 ---
-title: "Versionshinweise zu Azure-Verwaltungsbibliotheken für Java | Microsoft-Dokumentation"
-description: "Informieren Sie sich über Neuigkeiten und wichtige Änderungen in den Azure-Verwaltungsbibliotheken für Java."
+title: Versionshinweise zu Azure-Verwaltungsbibliotheken für Java | Microsoft-Dokumentation
+description: Informieren Sie sich über Neuigkeiten und wichtige Änderungen in den Azure-Verwaltungsbibliotheken für Java.
 keywords: Azure, Java, API, Referenz, Hinweise, Updates, veraltet
 author: routlaw
 manager: douge
@@ -15,6 +15,7 @@ ms.sourcegitcommit: acc83bb537d77568b2a5427479d6354d6ae30885
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 11/03/2017
+ms.locfileid: "23982162"
 ---
 # <a name="release-notes"></a>Versionsinformationen 
 

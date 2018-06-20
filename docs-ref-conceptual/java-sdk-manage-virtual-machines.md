@@ -1,6 +1,6 @@
 ---
 title: Verwalten von virtuellen Azure-Computern mit Java | Microsoft-Dokumentation
-description: "Beispielcode zum Verwalten virtueller Azure-Computer mit dem Azure SDK für Java"
+description: Beispielcode zum Verwalten virtueller Azure-Computer mit dem Azure SDK für Java
 author: rloutlaw
 manager: douge
 ms.assetid: 88629aee-6279-433e-a08b-4f8e290446d0
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931166"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>Verwalten von virtuellen Azure-Computern über Ihre Java-Anwendungen
 

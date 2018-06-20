@@ -1,12 +1,12 @@
 ---
-title: "Erste Schritte mit Azure für Java mithilfe von Eclipse"
-description: "Machen Sie sich mit der grundlegenden Verwendung der Azure-Bibliotheken für Java mit Ihrem eigenen Azure-Abonnement vertraut."
+title: Erste Schritte mit Azure für Java mithilfe von Eclipse
+description: Machen Sie sich mit der grundlegenden Verwendung der Azure-Bibliotheken für Java mit Ihrem eigenen Azure-Abonnement vertraut.
 keywords: Azure, Java, SDK, API, authentifizieren, erste Schritte
-services: 
+services: ''
 documentationcenter: java
 author: roygara
 manager: timlt
-editor: 
+editor: ''
 ms.author: v-rogara
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065517"
 ---
 # <a name="get-started-with-the-azure-libraries-using-eclipse"></a>Erste Schritte mit den Azure-Bibliotheken mithilfe von Eclipse
 

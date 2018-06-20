@@ -1,6 +1,6 @@
 ---
 title: Verwalten von Azure-Speicherkonten mit Java | Microsoft-Dokumentation
-description: "Beispielcode zum Verwalten von Azure-Speicherkonten mit dem Azure SDK für Java"
+description: Beispielcode zum Verwalten von Azure-Speicherkonten mit dem Azure SDK für Java
 author: rloutlaw
 manager: douge
 ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
@@ -15,6 +15,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931056"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Verwalten von Azure-Speicherkonten über Ihre Java-Anwendungen
 

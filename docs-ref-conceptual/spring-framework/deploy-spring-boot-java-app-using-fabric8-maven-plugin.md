@@ -1,12 +1,12 @@
 ---
 title: Bereitstellen einer Spring Boot-App unter Verwendung des Fabric8 Maven-Plug-Ins
-description: "In diesem Tutorial werden die Schritte zum Bereitstellen einer Spring Boot-Anwendung in Microsoft Azure mit dem Fabric8-Plug-In für Apache Maven erläutert."
+description: In diesem Tutorial werden die Schritte zum Bereitstellen einer Spring Boot-Anwendung in Microsoft Azure mit dem Fabric8-Plug-In für Apache Maven erläutert.
 services: container-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: yuwzho;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954891"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>Bereitstellen einer Spring Boot-App unter Verwendung des Fabric8 Maven-Plug-Ins
 

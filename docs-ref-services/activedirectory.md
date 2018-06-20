@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823783"
 ---
 # <a name="azure-active-directory-libraries-for-java"></a>Azure Active Directory-Bibliotheken für Java
 
