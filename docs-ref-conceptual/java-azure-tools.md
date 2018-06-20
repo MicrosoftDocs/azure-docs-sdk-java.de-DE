@@ -1,6 +1,6 @@
 ---
-title: "Tools für Azure-Java-Entwickler | Microsoft-Dokumentation"
-description: "IDE-Integrationen, Emulatoren, Ressourcen-Explorer und Befehlszeilenschnittstellen für Java-Entwickler, die in Azure arbeiten."
+title: Tools für Azure-Java-Entwickler | Microsoft-Dokumentation
+description: IDE-Integrationen, Emulatoren, Ressourcen-Explorer und Befehlszeilenschnittstellen für Java-Entwickler, die in Azure arbeiten.
 author: rloutlaw
 manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
@@ -15,6 +15,7 @@ ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 12/05/2017
+ms.locfileid: "26288309"
 ---
 # <a name="azure-tools-for-java-developers"></a><span data-ttu-id="d2b04-103">Azure-Tools für Java-Entwickler</span><span class="sxs-lookup"><span data-stu-id="d2b04-103">Azure tools for Java developers</span></span>
 

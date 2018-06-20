@@ -1,5 +1,5 @@
 ---
-title: "Erste Schritte mit den Azure-Bibliotheken für Java"
+title: Erste Schritte mit den Azure-Bibliotheken für Java
 description: Hier finden Sie Informationen zum Erstellen von Azure-Cloudressourcen und erfahren, wie Sie sie verbinden und in Ihren Java-Anwendungen nutzen.
 keywords: Azure, Java, SDK, API, authentifizieren, erste Schritte
 author: rloutlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/09/2018
+ms.locfileid: "29065527"
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a><span data-ttu-id="9c090-104">Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="9c090-104">Get started with cloud development using the Azure libraries for Java</span></span>
 

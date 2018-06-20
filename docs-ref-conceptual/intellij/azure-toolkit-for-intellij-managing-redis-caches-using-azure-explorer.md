@@ -1,12 +1,12 @@
 ---
-title: "Verwalten von Redis Caches mit dem Azure-Explorer für IntelliJ"
-description: "Erfahren Sie, wie Sie Ihre Azure Redis Caches mit dem Azure-Explorer für IntelliJ verwalten."
-services: 
+title: Verwalten von Redis Caches mit dem Azure-Explorer für IntelliJ
+description: Erfahren Sie, wie Sie Ihre Azure Redis Caches mit dem Azure-Explorer für IntelliJ verwalten.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954181"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a><span data-ttu-id="03e06-103">Verwalten von Redis Caches mit dem Azure-Explorer für IntelliJ</span><span class="sxs-lookup"><span data-stu-id="03e06-103">Managing Redis Caches using the Azure Explorer for IntelliJ</span></span>
 
@@ -101,10 +102,14 @@ ms.lasthandoff: 02/03/2018
 <!-- URL List -->
 
 [Redis Cache – Preise]: https://azure.microsoft.com/pricing/details/cache/
+[Redis Cache Pricing]: https://azure.microsoft.com/pricing/details/cache/
 [Azure Redis Cache]: https://azure.microsoft.com/services/cache/
 [Dokumentation zu Redis Cache]: /azure/redis-cache
+[Redis Cache Documentation]: /azure/redis-cache
 [Konfigurieren von Azure Redis Cache]: /azure/redis-cache/cache-configure
+[How to configure Azure Redis Cache]: /azure/redis-cache/cache-configure
 [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md (Anleitung zur Azure-Anmeldung für das Azure-Toolkit für IntelliJ)
+[Sign In Instructions for the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
 
 <!-- IMG List -->
 

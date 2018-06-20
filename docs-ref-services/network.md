@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823603"
 ---
 # <a name="azure-network-libraries-for-java"></a><span data-ttu-id="3a5b2-104">Azure-Netzwerkbibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="3a5b2-104">Azure Network libraries for Java</span></span>
 

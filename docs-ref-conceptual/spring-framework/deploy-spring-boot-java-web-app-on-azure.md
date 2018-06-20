@@ -1,12 +1,12 @@
 ---
 title: Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
-description: "Dieses Tutorial führt Entwickler durch die Schritte zum Bereitstellen einer Web-App für erste Schritte mit Spring Boot in der Cloud mit Azure App Service."
+description: Dieses Tutorial führt Entwickler durch die Schritte zum Bereitstellen einer Web-App für erste Schritte mit Spring Boot in der Cloud mit Azure App Service.
 services: app-service
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: asirveda;robmcm
 ms.date: 02/01/2018
 ms.devlang: java
@@ -19,6 +19,7 @@ ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 02/03/2018
+ms.locfileid: "28954523"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a><span data-ttu-id="fcbc7-103">Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service</span><span class="sxs-lookup"><span data-stu-id="fcbc7-103">Deploy a Spring Boot application to the cloud with Azure App Service</span></span>
 
@@ -211,15 +212,23 @@ ms.lasthandoff: 02/03/2018
 [Azure App Service]: https://azure.microsoft.com/services/app-service/
 [Azure Container Service]: https://azure.microsoft.com/services/container-service/
 [Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
+[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure-Portal]: https://portal.azure.com/
+[Azure portal]: https://portal.azure.com/
 [Konfigurieren von Web-Apps in Azure App Service]: /azure/app-service/web-sites-configure
+[Configure web apps in Azure App Service]: /azure/app-service/web-sites-configure
 [Bereitstellen der App in Azure App Service mithilfe von FTP/S]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
+[Deploy your app to Azure App Service using FTP/S]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
+[free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git-Client]: https://github.com/
+[Git]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
+[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot Getting Started]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/

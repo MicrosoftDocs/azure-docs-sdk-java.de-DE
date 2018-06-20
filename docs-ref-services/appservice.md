@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823793"
 ---
 # <a name="azure-app-service-libraries-for-java"></a><span data-ttu-id="2d7be-104">Azure App Service-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="2d7be-104">Azure App Service libraries for Java</span></span>
 

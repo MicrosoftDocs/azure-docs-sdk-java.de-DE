@@ -1,6 +1,6 @@
 ---
-title: "Azure-Verwaltungsbibliotheken für Java-Web-App-Beispiele"
-description: "Abrufen von Beispielcode zum Erstellen und Aktualisieren von in App Service gehosteten Azure-Web-Apps mit den Azure-Verwaltungsbibliotheken für Java"
+title: Azure-Verwaltungsbibliotheken für Java-Web-App-Beispiele
+description: Abrufen von Beispielcode zum Erstellen und Aktualisieren von in App Service gehosteten Azure-Web-Apps mit den Azure-Verwaltungsbibliotheken für Java
 keywords: Azure, Java, SDK, API, Maven, Gradle, Web-Apps, App Service
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930896"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-web-apps"></a><span data-ttu-id="a8ccd-104">Azure-Verwaltungsbibliotheken für Java-Beispiele für Web-Apps</span><span class="sxs-lookup"><span data-stu-id="a8ccd-104">Azure management libraries for Java samples for web apps</span></span>
 

@@ -1,6 +1,6 @@
 ---
-title: "Paralleles regionsübergreifendes Erstellen von virtuellen Computern | Microsoft-Dokumentation"
-description: "Beispielcode zum parallelen Erstellen virtueller Computer in verschiedenen Azure-Regionen mithilfe des Azure SDKs für Java"
+title: Paralleles regionsübergreifendes Erstellen von virtuellen Computern | Microsoft-Dokumentation
+description: Beispielcode zum parallelen Erstellen virtueller Computer in verschiedenen Azure-Regionen mithilfe des Azure SDKs für Java
 author: rloutlaw
 manager: douge
 ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21931196"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a><span data-ttu-id="5323f-103">Erstellen virtueller Computer in mehreren Regionen über Ihre Java-Anwendungen</span><span class="sxs-lookup"><span data-stu-id="5323f-103">Create virtual machines across multiple regions from your Java applications</span></span>
 

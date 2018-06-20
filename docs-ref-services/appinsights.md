@@ -16,6 +16,7 @@ ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/26/2018
+ms.locfileid: "31823763"
 ---
 # <a name="azure-application-insights-libraries-for-java"></a><span data-ttu-id="ec9fd-104">Azure Application Insights-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="ec9fd-104">Azure Application Insights libraries for Java</span></span>
 

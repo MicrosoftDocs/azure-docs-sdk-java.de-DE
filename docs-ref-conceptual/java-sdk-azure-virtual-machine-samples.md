@@ -1,6 +1,6 @@
 ---
-title: "Azure-Verwaltungsbibliotheken für Java-Beispiele für virtuelle Computer"
-description: "Abrufen von Beispielcode zum Erstellen und Aktualisieren von virtuellen Azure-Computern mit den Azure-Verwaltungsbibliotheken für Java"
+title: Azure-Verwaltungsbibliotheken für Java-Beispiele für virtuelle Computer
+description: Abrufen von Beispielcode zum Erstellen und Aktualisieren von virtuellen Azure-Computern mit den Azure-Verwaltungsbibliotheken für Java
 keywords: Azure, Java, SDK, API, Maven, Gradle, virtuelle Computer
 author: rloutlaw
 ms.author: routlaw
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/28/2017
+ms.locfileid: "21930806"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-virtual-machines"></a><span data-ttu-id="0eed2-104">Azure-Verwaltungsbibliotheken für Java-Beispiele für virtuelle Computer</span><span class="sxs-lookup"><span data-stu-id="0eed2-104">Azure management libraries for Java samples for virtual machines</span></span>
 
