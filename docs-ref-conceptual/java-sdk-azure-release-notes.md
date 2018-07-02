@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: 924ccf9bdaad4bc635f133adbcfcc8f797d06644
-ms.sourcegitcommit: acc83bb537d77568b2a5427479d6354d6ae30885
+ms.openlocfilehash: 0aaa83ceb42192441decb5972baae56fed337fb2
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
-ms.locfileid: "23982162"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090683"
 ---
 # <a name="release-notes"></a>Versionsinformationen 
 
@@ -35,7 +35,7 @@ Einige der Beta-APIs aus vorherigen Releases sind nun allgemein verfügbar. Hier
 - Alle Methoden im CDN, die sich zuvor noch in der Betaphase befanden
 - Alle Methoden und Schnittstellen in Anwendungsgateways, die sich zuvor noch in der Betaphase befanden
 
- Teile der Bibliothek befinden sich immer noch in der Vorschauphase. Die folgende Tabelle gibt Aufschluss über den aktuellen Status der Bibliotheken:
+  Teile der Bibliothek befinden sich immer noch in der Vorschauphase. Die folgende Tabelle gibt Aufschluss über den aktuellen Status der Bibliotheken:
 
 Dienst oder Feature | Allgemein verfügbar | Als Vorschauversion verfügbar 
 ---------|---------|---------|-

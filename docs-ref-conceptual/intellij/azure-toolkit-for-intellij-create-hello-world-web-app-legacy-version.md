@@ -14,16 +14,16 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: ebe98a604b52dc9a4b5a47cbf65a4c68a5c86fe3
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: efc1dffa248987772827bbe7bc0caa9f10a0b4ef
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954781"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090783"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für IntelliJ
 
-Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello World“-Anwendung in Azure als Web-App mithilfe von Version 3.0.6 (oder einer älteren Version) des [Azure-Toolkits für IntelliJ].
+Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello World“-Anwendung in Azure als Web-App mithilfe von Version 3.0.6 (oder einer älteren Version) des [Azure-Toolkit für IntelliJ].
 
 > [!NOTE]
 >
@@ -161,14 +161,14 @@ Nachdem Sie die Moduleinstellungen konfiguriert haben, können Sie Ihre Anwendun
 
    h. (Optional) Azure stellt standardmäßig automatisch eine aktuelle Distribution von Java 8 in Ihrem Web-App-Container als JVM bereit. Sie können jedoch eine andere JVM-Version und -Distribution auswählen. Führen Sie dazu die folgenden Schritte aus:
       
-      * Klicken Sie im Dialogfeld **New Web App Container** (Neuer Web-App-Container) auf die Registerkarte **JDK**.
-      * Folgende Optionen stehen zur Auswahl:
+   * Klicken Sie im Dialogfeld **New Web App Container** (Neuer Web-App-Container) auf die Registerkarte **JDK**.
+   * Folgende Optionen stehen zur Auswahl:
         
-         * Bereitstellen des Standard-JDKs von Azure
-         * Bereitstellen eines Drittanbieter-JDKs aus einer Dropdownliste mit zusätzlichen JDKs, die in Azure verfügbar sind
-         * Bereitstellen eines benutzerdefinierten JDKs, das als ZIP-Datei verpackt und entweder öffentlich verfügbar sein oder sich in Ihrem Azure-Speicherkonto befinden muss
+      * Bereitstellen des Standard-JDKs von Azure
+      * Bereitstellen eines Drittanbieter-JDKs aus einer Dropdownliste mit zusätzlichen JDKs, die in Azure verfügbar sind
+      * Bereitstellen eines benutzerdefinierten JDKs, das als ZIP-Datei verpackt und entweder öffentlich verfügbar sein oder sich in Ihrem Azure-Speicherkonto befinden muss
         
-      ![New App Container (Neuer App-Container) Registerkarte „JDK“][11b]
+     ![New App Container (Neuer App-Container) Registerkarte „JDK“][11b]
 
    i. Wenn Sie alle oben genannten Schritte abgeschlossen haben, sollte das Dialogfeld „New Web App Container“ (Neuer Web-App-Container) folgender Abbildung ähneln:
       
@@ -241,7 +241,7 @@ Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-App
 
 <!-- URL List -->
 
-[Azure-Toolkits für IntelliJ]: azure-toolkit-for-intellij.md
+[Azure-Toolkit für IntelliJ]: azure-toolkit-for-intellij.md
 [Azure-Toolkit für Eclipse]: ../eclipse/azure-toolkit-for-eclipse.md
 [eclipse-hello-world]: ../eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app.md
 [Web-Apps – Übersicht]: /azure/app-service/app-service-web-overview
