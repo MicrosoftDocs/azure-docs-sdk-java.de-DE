@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: ec67ed44ec570da7b826c12a9f8a24a5b0170e99
-ms.sourcegitcommit: 3d3460289ab6b9165c2cf6a3dd56eafd0692501e
+ms.openlocfilehash: c04f5225f0bb99898f69b26a4782aa57d75c4f22
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34283048"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090661"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
 
@@ -35,17 +35,17 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen in [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse](https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse-sign-in-instructions) an.
 
-1. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Virtuelle Computer**, und klicken Sie dann auf **VM erstellen**.
+2. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Virtuelle Computer**, und klicken Sie dann auf **VM erstellen**.
 
    ![Befehl „VM erstellen“][CR01]  
 
    Der **Assistent zum Erstellen eines neuen virtuellen Computers** wird geöffnet.
 
-1. Wählen Sie im Dialogfeld **Abonnement auswählen** Ihr Abonnement aus, und klicken Sie dann auf **Weiter**.
+3. Wählen Sie im Dialogfeld **Abonnement auswählen** Ihr Abonnement aus, und klicken Sie dann auf **Weiter**.
 
    ![Fenster „Abonnement auswählen“][CR02]
 
-1. Geben Sie im Fenster **Virtuelles Computerimage auswählen** die folgenden Informationen ein:
+4. Geben Sie im Fenster **Virtuelles Computerimage auswählen** die folgenden Informationen ein:
 
    * **Standort:** gibt den Standort an, an dem Ihr virtueller Computer erstellt wird (z.B. *USA, Westen*).
 
@@ -59,9 +59,9 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    ![Fenster „Virtuelles Computerimage auswählen“][CR03]
 
-1. Klicken Sie auf **Weiter**.
+5. Klicken Sie auf **Weiter**.
 
-1. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
+6. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
 
    * **Name des virtuellen Computers:** gibt den Namen Ihres virtuellen Computers an. Dieser muss mit einem Buchstaben beginnen und darf nur Buchstaben, Ziffern und Bindestriche enthalten.
 
@@ -73,15 +73,15 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    ![Fenster „Grundlegende Einstellungen des virtuellen Computers“][CR04]
 
-1. Klicken Sie auf **Weiter**.
+7. Klicken Sie auf **Weiter**.
 
-1. Geben Sie im Fenster **Neues Speicherkonto erstellen** die folgenden Informationen ein:
+8. Geben Sie im Fenster **Neues Speicherkonto erstellen** die folgenden Informationen ein:
 
    * **Ressourcengruppe:** Geben Sie die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen:
-      * **Neu erstellen:** gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
-      * **Vorhandene verwenden:** gibt an, dass Sie eine Ressourcengruppe auswählen möchten, die Ihrem Azure-Konto bereits zugeordnet ist.
+     * **Neu erstellen:** gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+     * **Vorhandene verwenden:** gibt an, dass Sie eine Ressourcengruppe auswählen möchten, die Ihrem Azure-Konto bereits zugeordnet ist.
 
-      ![Dialogfeld „Neues Speicherkonto erstellen“][CR05]
+       ![Dialogfeld „Neues Speicherkonto erstellen“][CR05]
 
    * **Speicherkonto:** gibt das Speicherkonto an, das zum Speichern des virtuellen Computers verwendet werden soll. Sie können ein vorhandenes Speicherkonto auswählen oder ein neues erstellen.
 
@@ -89,7 +89,7 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
       ![Dialogfeld „Neues virtuelles Netzwerk erstellen“][CR06]
 
-1. Geben Sie im Fenster **Zugeordnete Ressourcen** die folgenden Informationen ein:
+9. Geben Sie im Fenster **Zugeordnete Ressourcen** die folgenden Informationen ein:
 
    * **Öffentliche IP-Adresse:** gibt eine externe IP-Adresse für den virtuellen Computer an. Sie können eine neue IP-Adresse erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer nicht über eine öffentliche IP-Adresse verfügt.
 
@@ -99,11 +99,11 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    ![Fenster „Zugeordnete Ressourcen“][CR07]
 
-1. Klicken Sie auf **Fertig stellen**.  
+10. Klicken Sie auf **Fertig stellen**.  
 
-   Der neue virtuelle Computer wird im Toolfenster von Azure-Explorer angezeigt.
+    Der neue virtuelle Computer wird im Toolfenster von Azure-Explorer angezeigt.
 
-   ![Neuer virtueller Computer][CR08]
+    ![Neuer virtueller Computer][CR08]
 
 ## <a name="restart-a-virtual-machine-in-eclipse"></a>Neustarten eines virtuellen Computers in Eclipse
 

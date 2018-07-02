@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: aec3682cc14204ca2b395d4b851db7bb68cb8728
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: be76733bffa36160d6e366c383672a15374a9996
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954771"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090843"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für Eclipse
 
@@ -35,7 +35,7 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
 1. Öffnen Sie Ihr Web-App-Projekt in Eclipse.
 
-1. Wählen Sie eine der Optionen, um den Assistenten **Publish as Docker Container** (Als Docker-Container veröffentlichen) zu starten:
+2. Wählen Sie eine der Optionen, um den Assistenten **Publish as Docker Container** (Als Docker-Container veröffentlichen) zu starten:
 
    * Klicken Sie in der Ansicht **Navigator** mit der rechten Maustaste auf Ihr Projekt, und klicken Sie dann auf **Azure** und **Publish as Docker Container** (Als Docker-Container veröffentlichen).
 
@@ -49,7 +49,7 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
    ![Assistent „Deploy Docker Container on Azure“ (Docker-Container in Azure bereitstellen)][PUB03]
 
-1. Gehen Sie im Fenster **Type an image name, select the artifact's path and check a Docker host to be used** (Geben Sie einen Imagenamen ein, wählen Sie den Pfad des Artefakts aus, und aktivieren Sie den gewünschten Docker-Host) wie folgt vor:
+3. Gehen Sie im Fenster **Type an image name, select the artifact's path and check a Docker host to be used** (Geben Sie einen Imagenamen ein, wählen Sie den Pfad des Artefakts aus, und aktivieren Sie den gewünschten Docker-Host) wie folgt vor:
 
    a. Geben Sie im Feld **Docker image name** (Docker-Imagename) einen eindeutigen Namen für Ihren Docker-Host ein. (Der Assistent gibt automatisch einen Namen vor, aber Sie können den Namen ändern.)
 
@@ -62,7 +62,7 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
    ![Assistent „Deploy Docker Container on Azure“ (Docker-Container in Azure bereitstellen)][PUB04a]
 
-1. Geben Sie im Fenster **Configure the new virtual machine** (Neuen virtuellen Computer konfigurieren) die folgenden Optionen für Ihren Docker-Host an. (Der Assistent generiert die meisten Optionen für Sie automatisch, aber Sie können sie ändern.)
+4. Geben Sie im Fenster **Configure the new virtual machine** (Neuen virtuellen Computer konfigurieren) die folgenden Optionen für Ihren Docker-Host an. (Der Assistent generiert die meisten Optionen für Sie automatisch, aber Sie können sie ändern.)
 
    a. **Name**: Geben Sie einen eindeutigen Name für den Docker-Host ein. (Dieser ist nicht mit dem Namen des Docker-Image identisch, den Sie zuvor angegeben haben.)
 
@@ -86,10 +86,9 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
    * **Neues Speicherkonto**: Erstellen Sie ein neues Speicherkonto für Ihren Host.
    * **Vorhandenes Speicherkonto**: Geben Sie ein vorhandenes Speicherkonto Ihres Azure-Kontos ein.
 
-1. Klicken Sie auf **Weiter**.
+5. Klicken Sie auf **Weiter**.
 
-
-1. Wählen Sie im Fenster **Configure log in credentials and port settings** (Anmeldeinformationen und Porteinstellungen konfigurieren) eine der folgenden Optionen aus:
+6. Wählen Sie im Fenster **Configure log in credentials and port settings** (Anmeldeinformationen und Porteinstellungen konfigurieren) eine der folgenden Optionen aus:
 
    * **Import credentials from Azure Key Vault** (Anmeldeinformationen aus Azure Key Vault importieren): Gibt zuvor gespeicherte Anmeldeinformationen an, die in Ihrem Azure-Abonnement gespeichert sind. 
 
@@ -99,61 +98,61 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
    * **New log in credentials** (Neue Anmeldeinformationen): Erstellt neue Anmeldeinformationen. Gehen Sie bei Auswahl dieser Option wie folgt vor: 
     
-      * Wählen Sie auf der Registerkarte **VM-Anmeldeinformationen** eine der folgenden Optionen für die Anmeldung beim virtuellen Computer Ihres Docker-Hosts: 
+     * Wählen Sie auf der Registerkarte **VM-Anmeldeinformationen** eine der folgenden Optionen für die Anmeldung beim virtuellen Computer Ihres Docker-Hosts: 
 
-         * **Benutzername**: Geben Sie den Benutzernamen für die Anmeldungsinformationen bei Ihrem virtuellen Computer an. 
-         * **Kennwort** und **Bestätigen**: Geben Sie das Kennwort für Ihre VM-Anmeldeinformationen ein. 
-         * **SSH**: Geben Sie die SSH-Einstellungen (Secure Shell) für Ihren Docker-Host ein. Sie können zwischen folgenden Optionen wählen: 
-            * **Keine**: Gibt an, dass Ihr virtueller Computer keine SSH-Verbindungen zulässt. 
-            * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über SSH automatisch erstellt. 
-            * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte SSH-Einstellungen enthält. Das Verzeichnis muss die folgenden beiden Dateien enthalten: 
-               * *id_rsa*: Enthält die RSA-Kennung eines Benutzers. 
-               * *id_rsa.pub*: Enthält den öffentlichen RSA-Schlüssel, der für die Authentifizierung verwendet wird. 
+       * **Benutzername**: Geben Sie den Benutzernamen für die Anmeldungsinformationen bei Ihrem virtuellen Computer an. 
+       * **Kennwort** und **Bestätigen**: Geben Sie das Kennwort für Ihre VM-Anmeldeinformationen ein. 
+       * **SSH**: Geben Sie die SSH-Einstellungen (Secure Shell) für Ihren Docker-Host ein. Sie können zwischen folgenden Optionen wählen: 
+          * **Keine**: Gibt an, dass Ihr virtueller Computer keine SSH-Verbindungen zulässt. 
+          * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über SSH automatisch erstellt. 
+          * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte SSH-Einstellungen enthält. Das Verzeichnis muss die folgenden beiden Dateien enthalten: 
+             * *id_rsa*: Enthält die RSA-Kennung eines Benutzers. 
+             * *id_rsa.pub*: Enthält den öffentlichen RSA-Schlüssel, der für die Authentifizierung verwendet wird. 
         
          ![Erstellen eines Docker-Hosts][PUB05]
 
-      * Geben Sie auf der Registerkarte **Docker-Daemon-Anmeldeinformationen** die folgenden Optionen an: 
+     * Geben Sie auf der Registerkarte **Docker-Daemon-Anmeldeinformationen** die folgenden Optionen an: 
 
-         * **Docker-Daemon-Port**: Geben Sie den eindeutigen TCP-Port für den Docker-Host an. 
-         * **TLS-Sicherheit**: Geben Sie die Transport Layer Security-Einstellungen für Ihren Docker-Host an. Sie können zwischen folgenden Optionen wählen: 
-            * **Keine**: Gibt an, dass Ihr virtueller Computer keine TLS-Verbindungen zulässt. 
-            * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über TLS automatisch erstellt. 
-            * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte TLS-Einstellungen enthält. Genauer gesagt muss das Verzeichnis die folgenden sechs Dateien enthalten: 
-               * *ca.pem* und *ca-key.pem*: Enthalten das Zertifikat und den öffentlichen Schlüssel für die TLS-Zertifizierungsstelle. 
-               * *cert.pem* und *key.pem*: Enthalten das Clientzertifikat und einen öffentlichen Schlüssel für die TLS-Authentifizierung. 
-               * *server.pem* und *server-key.pem*: Enthalten das Serverzertifikat und den öffentlichen Schlüssel für den Host. 
+       * **Docker-Daemon-Port**: Geben Sie den eindeutigen TCP-Port für den Docker-Host an. 
+       * **TLS-Sicherheit**: Geben Sie die Transport Layer Security-Einstellungen für Ihren Docker-Host an. Sie können zwischen folgenden Optionen wählen: 
+          * **Keine**: Gibt an, dass Ihr virtueller Computer keine TLS-Verbindungen zulässt. 
+          * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über TLS automatisch erstellt. 
+          * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte TLS-Einstellungen enthält. Genauer gesagt muss das Verzeichnis die folgenden sechs Dateien enthalten: 
+             * *ca.pem* und *ca-key.pem*: Enthalten das Zertifikat und den öffentlichen Schlüssel für die TLS-Zertifizierungsstelle. 
+             * *cert.pem* und *key.pem*: Enthalten das Clientzertifikat und einen öffentlichen Schlüssel für die TLS-Authentifizierung. 
+             * *server.pem* und *server-key.pem*: Enthalten das Serverzertifikat und den öffentlichen Schlüssel für den Host. 
 
          ![Erstellen eines Docker-Hosts][PUB06]
 
-1. Klicken Sie nach dem Eingeben aller erforderlichen Informationen auf **Fertig stellen**.
+7. Klicken Sie nach dem Eingeben aller erforderlichen Informationen auf **Fertig stellen**.
 
-1. Klicken Sie im Assistenten **Deploy Docker Container on Azure** (Docker-Container in Azure bereitstellen) auf **Weiter**.
+8. Klicken Sie im Assistenten **Deploy Docker Container on Azure** (Docker-Container in Azure bereitstellen) auf **Weiter**.
 
    ![Assistent „Deploy Docker Container on Azure“ (Docker-Container in Azure bereitstellen)][PUB07]
 
-1. Im Fenster **Configure the Docker container to be created** (Zu erstellenden Docker-Container konfigurieren) tun Sie Folgendes:
+9. Im Fenster **Configure the Docker container to be created** (Zu erstellenden Docker-Container konfigurieren) tun Sie Folgendes:
 
    a. Geben Sie im Feld **Docker container name** (Name des Docker-Containers) einen eindeutigen Namen für Ihren Docker-Container ein.
 
    b. Wählen Sie eines der folgenden Docker-Images aus: 
 
-      * **Predefined Docker image** (Vordefiniertes Docker-Image): Gibt ein bereits in Azure vorhandenes Docker-Image an. 
+   * **Predefined Docker image** (Vordefiniertes Docker-Image): Gibt ein bereits in Azure vorhandenes Docker-Image an. 
 
-      >[!NOTE]
-      >Die Liste mit den Docker-Images in diesem Feld enthält mehrere Images, für deren Patching das Azure-Toolkit konfiguriert ist, damit Ihr Artefakt automatisch bereitgestellt wird.
-      >
+     >[!NOTE]
+     >Die Liste mit den Docker-Images in diesem Feld enthält mehrere Images, für deren Patching das Azure-Toolkit konfiguriert ist, damit Ihr Artefakt automatisch bereitgestellt wird.
+     >
 
-      * **Custom Dockerfile** (Benutzerdefinierte Dockerfile): Gibt eine zuvor auf Ihrem lokalen Computer gespeicherte Dockerfile an.
+   * **Custom Dockerfile** (Benutzerdefinierte Dockerfile): Gibt eine zuvor auf Ihrem lokalen Computer gespeicherte Dockerfile an.
 
-      >[!NOTE]
-      >Dies ist eine komplexere Funktion für Entwickler, die ihre eigene Dockerfile bereitstellen möchten. Es ist jedoch Aufgabe von Entwickler, die diese Option wählen, dafür zu sorgen, dass ihre Dockerfile ordnungsgemäß erstellt wurde. Das Azure-Toolkit überprüft nicht den Inhalt einer benutzerdefinierten Dockerfile, sodass die Bereitstellung möglicherweise fehlschlägt, wenn die Dockerfile Probleme verursacht. Weil vom Azure-Toolkit erwartet wird, dass die benutzerdefinierte Dockerfile ein Web-App-Artefakt enthält, wird außerdem versucht, eine HTTP-Verbindung zu öffnen. Wenn Entwickler eine andere Art von Artefakt veröffentlichen, können nach der Bereitstellung womöglich harmlose Fehler auftreten.
-      >
+     >[!NOTE]
+     >Dies ist eine komplexere Funktion für Entwickler, die ihre eigene Dockerfile bereitstellen möchten. Es ist jedoch Aufgabe von Entwickler, die diese Option wählen, dafür zu sorgen, dass ihre Dockerfile ordnungsgemäß erstellt wurde. Das Azure-Toolkit überprüft nicht den Inhalt einer benutzerdefinierten Dockerfile, sodass die Bereitstellung möglicherweise fehlschlägt, wenn die Dockerfile Probleme verursacht. Weil vom Azure-Toolkit erwartet wird, dass die benutzerdefinierte Dockerfile ein Web-App-Artefakt enthält, wird außerdem versucht, eine HTTP-Verbindung zu öffnen. Wenn Entwickler eine andere Art von Artefakt veröffentlichen, können nach der Bereitstellung womöglich harmlose Fehler auftreten.
+     >
 
    c. **Porteinstellungen**: Geben Sie die eindeutige TCP-Portbindung für Ihren Docker-Container ein.
 
       ![Fenster „Configure the Docker container to be created“ (Zu erstellenden Docker-Container konfigurieren)][PUB08]
 
-1. Nachdem Sie alle obigen Schritte abgeschlossen haben, können Sie auf **Fertig stellen** klicken.
+10. Nachdem Sie alle obigen Schritte abgeschlossen haben, können Sie auf **Fertig stellen** klicken.
 
 Das Azure-Toolkit beginnt damit, Ihre Web-App in einem Docker-Container in Azure bereitzustellen. 
 
