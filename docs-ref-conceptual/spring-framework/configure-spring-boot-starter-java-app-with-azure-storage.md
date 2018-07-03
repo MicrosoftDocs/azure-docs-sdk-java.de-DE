@@ -14,11 +14,12 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e10ecfb7f6d705aa3ccffc49d354d1019f7f1a0b
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: 2f9381fce2fee207360287c57443b56eb5128e42
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090693"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -30,7 +31,7 @@ In diesem Artikel erfahren Sie Schritt für Schritt, wie Sie eine benutzerdefini
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) anwenden oder sich für ein [kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren.
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) anwenden oder sich für ein [Kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren
 * Die [Azure-Befehlszeilenschnittstelle (CLI)](http://docs.microsoft.com/cli/azure/overview)
 * Ein aktuelles [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) (ab Version 1.7)
 * [Maven](http://maven.apache.org/) von Apache (ab Version 3.0)
@@ -108,6 +109,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    az group create --name wingtiptoysresources --location westus
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihre Ressourcengruppe an. |
@@ -128,11 +130,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    }
    ```
 
-1. Erstellen Sie in der Ressourcengruppe für Ihre Spring Boot-App ein Azure-Speicherkonto. Beispiel:
+2. Erstellen Sie in der Ressourcengruppe für Ihre Spring Boot-App ein Azure-Speicherkonto. Beispiel:
    ```azurecli
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihr Speicherkonto an. |
@@ -141,7 +144,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    | `sku` | Gibt eine der folgenden Optionen an: `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, `Standard_ZRS`. |
 
    Azure gibt eine lange JSON-Zeichenfolge mit dem Bereitstellungszustand zurück. Beispiel: |
-   
+
    ```json
    {
      "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
@@ -157,11 +160,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    }
    ```
 
-1. Rufen Sie die Verbindungszeichenfolge für Ihr Speicherkonto ab. Beispiel:
+3. Rufen Sie die Verbindungszeichenfolge für Ihr Speicherkonto ab. Beispiel:
    ```azurecli
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    | ---|---|
    | `name` | Gibt einen eindeutigen Namen des Speicherkontos an, das Sie in den vorherigen Schritten erstellt haben. |
@@ -270,7 +274,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```shell
    mvn clean package spring-boot:run
    ```
-   
+
    Die Anwendung erstellt einen Container und lädt eine Textdatei als Blob in den Container hoch. Das Blob wird dann unter Ihrem Speicherkonto im [Azure-Portal](https://portal.azure.com) aufgelistet.
 
    ![Auflisten von Blobs im Azure-Portal](media/configure-spring-boot-starter-java-app-with-azure-storage/list-blobs-in-portal.png)
