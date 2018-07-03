@@ -14,12 +14,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 1dda697cac80a6cad3ebbbbf8a5a4f18b515dfd8
-ms.sourcegitcommit: 798f4d4199d3be9fc5c9f8bf7a754d7393de31ae
+ms.openlocfilehash: a2734fc08f2f59f64ba6c6c20ff18d75070b68d5
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33883683"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090713"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -31,7 +31,7 @@ In diesem Artikel erfahren Sie, wie Sie eine App mit **[Spring Initializr]** ers
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -101,6 +101,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    az group create --name wingtiptoysresources --location westus
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihre Ressourcengruppe an. |
@@ -121,11 +122,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    }
    ```
 
-1. Erstellen Sie einen Azure-Dienstprinzipal auf der Grundlage Ihrer Anwendungsregistrierung. Beispiel:
+2. Erstellen Sie einen Azure-Dienstprinzipal auf der Grundlage Ihrer Anwendungsregistrierung. Beispiel:
    ```shell
    az ad sp create-for-rbac --name "wingtiptoysuser"
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt den Namen für den Azure-Dienstprinzipal an. |
@@ -142,11 +144,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    }
    ```
 
-1. Erstellen Sie in der Ressourcengruppe einen neuen Schlüsseltresor. Beispiel:
+3. Erstellen Sie in der Ressourcengruppe einen neuen Schlüsseltresor. Beispiel:
    ```azurecli
    az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihren Schlüsseltresor an. |
@@ -163,11 +166,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    "https://wingtiptoyskeyvault.vault.azure.net"
    ```
 
-1. Legen Sie die Zugriffsrichtlinie für den zuvor erstellten Azure-Dienstprinzipal fest. Beispiel:
+4. Legen Sie die Zugriffsrichtlinie für den zuvor erstellten Azure-Dienstprinzipal fest. Beispiel:
    ```azurecli
    az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt den Schlüsseltresornamen von vorhin an. |
@@ -192,11 +196,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    }
    ```
 
-1. Speichern Sie ein Geheimnis in Ihrem neuen Schlüsseltresor. Beispiel:
+5. Speichern Sie ein Geheimnis in Ihrem neuen Schlüsseltresor. Beispiel:
    ```azurecli
    az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `vault-name` | Gibt den Schlüsseltresornamen von vorhin an. |
@@ -230,24 +235,26 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Extrahieren Sie die Dateien aus den zuvor heruntergeladenen Spring Boot-Projektarchivdateien in ein Verzeichnis.
 
-1. Navigieren Sie in Ihrem Projekt zum Ordner *src/main/resources*, und öffnen Sie die Datei *application.properties* in einem Text-Editor.
+2. Navigieren Sie in Ihrem Projekt zum Ordner *src/main/resources*, und öffnen Sie die Datei *application.properties* in einem Text-Editor.
 
-1. Fügen Sie die Werte für Ihren Schlüsseltresor hinzu. Verwenden Sie dabei Werte aus den vorherigen Schritten dieses Tutorials. Beispiel:
+3. Fügen Sie die Werte für Ihren Schlüsseltresor hinzu. Verwenden Sie dabei Werte aus den vorherigen Schritten dieses Tutorials. Beispiel:
    ```yaml
    azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
    Hinweis:
-   | Parameter | BESCHREIBUNG |
-   |---|---|
-   | `azure.keyvault.uri` | Gibt den URI von der Erstellung Ihres Schlüsseltresors an. |
-   | `azure.keyvault.client-id` | Gibt die GUID *appId* von der Erstellung Ihres Dienstprinzipals an. |
+
+   |          Parameter          |                                 BESCHREIBUNG                                 |
+   |-----------------------------|-----------------------------------------------------------------------------|
+   |    `azure.keyvault.uri`     |           Gibt den URI von der Erstellung Ihres Schlüsseltresors an.           |
+   | `azure.keyvault.client-id`  |  Gibt die GUID *appId* von der Erstellung Ihres Dienstprinzipals an.   |
    | `azure.keyvault.client-key` | Gibt die GUID *password* von der Erstellung Ihres Dienstprinzipals an. |
 
-1. Navigieren Sie zur Quellcode-Hauptdatei Ihres Projekts. Beispiel: */src/main/java/com/wingtiptoys/secrets*.
 
-1. Öffnen Sie die Java-Hauptdatei der Anwendung (beispielsweise *SecretsApplication.java*) in einem Text-Editor, und fügen Sie ihr folgende Zeilen hinzu:
+4. Navigieren Sie zur Quellcode-Hauptdatei Ihres Projekts. Beispiel: */src/main/java/com/wingtiptoys/secrets*.
+
+5. Öffnen Sie die Java-Hauptdatei der Anwendung (beispielsweise *SecretsApplication.java*) in einem Text-Editor, und fügen Sie ihr folgende Zeilen hinzu:
 
    ```java
    package com.wingtiptoys.secrets;
@@ -274,7 +281,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```
    Dieses Codebeispiel ruft die Verbindungszeichenfolge aus dem Schlüsseltresor ab und zeigt sie in der Befehlszeile an.
 
-1. Speichern und schließen Sie die Java-Datei.
+6. Speichern und schließen Sie die Java-Datei.
 
 ## <a name="build-and-test-your-app"></a>Erstellen und Testen der App
 
@@ -321,7 +328,7 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure f
 [Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
-[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
