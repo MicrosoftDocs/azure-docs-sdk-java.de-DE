@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 396d0ecfb051109924f09ae8b5d9b8074e49c404
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: f05dca50f84b27f157892d63cda02286c6755795
+ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954891"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090813"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>Bereitstellen einer Spring Boot-App unter Verwendung des Fabric8 Maven-Plug-Ins
 
@@ -31,7 +31,7 @@ In diesem Tutorial wird die Verwendung des Fabric8-Plug-Ins für Maven zur Entwi
 
 Zur Durchführung der Schritte in diesem Tutorial benötigen Sie Folgendes:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
 * Die [Azure-Befehlszeilenschnittstelle (CLI)]
 * Ein aktuelles [Java Developer Kit (JDK)]
 * Das Erstellungstool Apache [Maven] (Version 3)
@@ -58,7 +58,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    cd C:\SpringBoot
    ```
 
-1. Klonen Sie das Beispielprojekt [Erste Schritte mit Spring Boot] in das Verzeichnis.
+1. Klonen Sie das Beispielprojekt [Spring Boot on Docker Getting Started] in das Verzeichnis.
    ```shell
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
@@ -96,7 +96,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    az login
    ```
    Folgen Sie den Anweisungen, um den Anmeldevorgang abzuschließen.
-   
+
    Die Azure CLI zeigt eine Liste Ihrer Konten an, Beispiel:
 
    ```json
@@ -255,6 +255,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    az acr create --admin-enabled --resource-group wingtiptoys-kubernetes --location westeurope --name wingtiptoysregistry --sku Basic
    ```
    Hinweis:
+
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `wingtiptoys-kubernetes` | Gibt den Namen Ihrer Ressourcengruppe von weiter oben in diesem Artikel an. |
@@ -285,7 +286,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    }
    ```
 
-1. Rufen Sie das Kennwort für Ihre Containerregistrierung über die Azure-Befehlszeilenschnittstelle ab.
+2. Rufen Sie das Kennwort für Ihre Containerregistrierung über die Azure-Befehlszeilenschnittstelle ab.
    ```azurecli
    az acr credential show --name wingtiptoysregistry --query passwords[0]
    ```
@@ -299,10 +300,10 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    }
    ```
 
-1. Navigieren Sie zu dem Konfigurationsverzeichnis Ihrer Maven-Installation (Standard: „~/.m2/“ oder „C:\Users\username\.m2“), und öffnen Sie die Datei *settings.xml* mit einem Text-Editor.
+3. Navigieren Sie zu dem Konfigurationsverzeichnis Ihrer Maven-Installation (Standard: „~/.m2/“ oder „C:\Users\username\.m2“), und öffnen Sie die Datei *settings.xml* mit einem Text-Editor.
 
-1. Fügen Sie die URL, den Benutzernamen und das Kennwort für Azure Container Registry einer neuen `<server>`-Sammlung in der Datei *settings.xml* hinzu.
-`id` und `username` bilden den Namen der Registrierung. Verwenden Sie den `password`-Wert des vorherigen Befehls (ohne Anführungszeichen).
+4. Fügen Sie die URL, den Benutzernamen und das Kennwort für Azure Container Registry einer neuen `<server>`-Sammlung in der Datei *settings.xml* hinzu.
+   `id` und `username` bilden den Namen der Registrierung. Verwenden Sie den `password`-Wert des vorherigen Befehls (ohne Anführungszeichen).
 
    ```xml
    <servers>
@@ -314,9 +315,9 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    </servers>
    ```
 
-1. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung (z.B. *C:\SpringBoot\gs-spring-boot-docker\complete* oder */home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*), und öffnen Sie die Datei *pom.xml* mit einem Text-Editor.
+5. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung (z.B. *C:\SpringBoot\gs-spring-boot-docker\complete* oder */home/GenaSoto/SpringBoot/gs-spring-boot-docker/complete*), und öffnen Sie die Datei *pom.xml* mit einem Text-Editor.
 
-1. Aktualisieren Sie die `<properties>`-Sammlung in der Datei *pom.xml* mit dem Wert des Anmeldeservers für Ihre Azure Container Registry-Instanz.
+6. Aktualisieren Sie die `<properties>`-Sammlung in der Datei *pom.xml* mit dem Wert des Anmeldeservers für Ihre Azure Container Registry-Instanz.
 
    ```xml
    <properties>
@@ -325,7 +326,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    </properties>
    ```
 
-1. Aktualisieren Sie die `<plugins>`-Sammlung in der Datei *pom.xml* so, dass `<plugin>` die Adresse des Anmeldeservers und den Registrierungsnamen für Ihre Azure Container Registry-Instanz enthält.
+7. Aktualisieren Sie die `<plugins>`-Sammlung in der Datei *pom.xml* so, dass `<plugin>` die Adresse des Anmeldeservers und den Registrierungsnamen für Ihre Azure Container Registry-Instanz enthält.
 
    ```xml
    <plugin>
@@ -340,7 +341,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    </plugin>
    ```
 
-1. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Maven-Befehl aus, um den Docker-Container zu erstellen und das Image per Push in die Registrierung zu übertragen:
+8. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Maven-Befehl aus, um den Docker-Container zu erstellen und das Image per Push in die Registrierung zu übertragen:
 
    ```shell
    mvn package dockerfile:build -DpushImage
@@ -485,13 +486,13 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    ```
 
    `kubectl` zeigt die internen und externen IP-Adressen an, Beispiel:
-   
+
    ```shell
    NAME                    CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
    kubernetes              10.0.0.1     <none>        443/TCP        19h
    gs-spring-boot-docker   10.0.242.8   13.65.196.3   80:31215/TCP   3m
    ```
-   
+
    Sie können die externe IP-Adresse verwenden, um Ihre Anwendung in einem Webbrowser zu öffnen.
 
    ![Externes Durchsuchen der Beispielanwendung][SB02]
@@ -514,11 +515,11 @@ Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden
 
 Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und im Thema zu den [Java-Tools für Visual Studio Team Services].
 
-Weitere Informationen zum Spring Boot-Beispielprojekt in Docker finden Sie unter [Erste Schritte mit Spring Boot].
+Weitere Informationen zum Spring Boot-Beispielprojekt in Docker finden Sie unter [Spring Boot on Docker Getting Started].
 
-Hilfe zu den ersten Schritten mit eigenen Spring Boot-Anwendungen finden Sie im **Spring Initializr** unter <https://start.spring.io/>.
+Hilfe zu den ersten Schritten mit eigenen Spring Boot-Anwendungen finden Sie bei **Spring Initializr** unter <https://start.spring.io/>.
 
-Weitere Informationen zu den ersten Schritten beim Erstellen einer einfachen Spring Boot-Anwendung finden Sie im Spring Initializr unter <https://start.spring.io/>.
+Weitere Informationen zu den ersten Schritten beim Erstellen einer einfachen Spring Boot-Anwendung finden Sie bei Spring Initializr unter <https://start.spring.io/>.
 
 Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Docker-Images mit Azure finden Sie unter [Verwenden eines benutzerdefinierten Docker-Images für Azure-Web-Apps unter Linux].
 
@@ -538,9 +539,9 @@ Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Dock
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
 [Kubernetes]: https://kubernetes.io/
 [Maven]: http://maven.apache.org/
-[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Erste Schritte mit Spring Boot]: https://github.com/spring-guides/gs-spring-boot-docker (Erste Schritte mit Spring Boot in Docker)
+[Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker (Erste Schritte mit Spring Boot in Docker)
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->
