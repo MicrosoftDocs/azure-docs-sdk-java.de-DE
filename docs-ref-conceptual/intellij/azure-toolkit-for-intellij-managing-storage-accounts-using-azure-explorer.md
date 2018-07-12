@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 4edb8c1ceef508dd251db693ccc3b98d77ec452b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954841"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075429"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für IntelliJ
 
@@ -119,7 +119,7 @@ Weitere Informationen zu Azure Storage-Konten sowie Größen und Preisen finden 
 [Informationen zu Azure-Speicherkonten]: /azure/storage/storage-create-storage-account
 [Azure-Speicherreplikation]: /azure/storage/storage-redundancy
 [Skalierbarkeits- und Leistungsziele für Azure Storage]: /azure/storage/storage-scalability-targets
-[Benennen von Containern, Blobs und Metadaten und Verweisen auf diese]: http://go.microsoft.com/fwlink/?LinkId=255555
+[Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese]: http://go.microsoft.com/fwlink/?LinkId=255555
 
 [Größen für Windows-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Größen für Linux-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes

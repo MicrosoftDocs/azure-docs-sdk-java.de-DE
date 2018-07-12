@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: article
-ms.date: 05/23/2018
+ms.date: 07/02/2018
 ms.author: robmcm
-ms.openlocfilehash: 29b2b598968c9a3a896fffee3ce56f9b0cb4b1ee
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 3f2de63f7eb1422ff1dd6db45d68e02f4af188b8
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090733"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864040"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Hinzufügen eines Stammzertifikats zum Java-ZS-Zertifikatspeicher
 
@@ -68,12 +68,12 @@ Das Baltimore-Zertifikat ist möglicherweise bereits in Ihrem cacerts-Speicher i
    ```
    Hinweis:
 
-   |  Parameter   |                              Beschreibung                               |
+   |  Parameter   |                              BESCHREIBUNG                               |
    |--------------|------------------------------------------------------------------------|
-   |  `keystore`  |                    Gibt den Zertifikatspeicher an.                    |
-   | `importcert` |            Gibt an, dass Sie ein Zertifikat importieren.             |
-   |   `alias`    |                Gibt einen Alias für das Zertifikat an.                 |
-   |    `file`    | Gibt den Dateinamen des Stammzertifikats an, das Sie importieren. |
+   | `keystore`   | Gibt den Zertifikatspeicher an.                                       |
+   | `importcert` | Gibt an, dass Sie ein Zertifikat importieren.                        |
+   | `alias`      | Gibt einen Alias für das Zertifikat an.                                |
+   | `file`       | Gibt den Dateinamen des Stammzertifikats an, das Sie importieren. |
 
 
 3. Wenn Sie aufgefordert werden, dem Zertifikat zu vertrauen, vergewissern Sie sich, dass es den Fingerabdruck `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74` hat, und geben Sie **y** ein, wenn der Fingerabdruck korrekt ist.
@@ -90,6 +90,6 @@ Nachdem Sie das Stammzertifikat erfolgreich Ihrem JDK hinzugefügt haben, könne
 
 Weitere Informationen zum keytool-Hilfsprogramm finden Sie unter <http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>.
 
-Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie unter [Azure Root Certificate Migration](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx)(in englischer Sprache).
-
 Weitere Informationen zu Java finden Sie im Artikel [Azure für Java-Entwickler](/java/azure).
+
+<!-- For more information about the root certificates used by Azure, see [Azure Root Certificate Migration](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx). -->

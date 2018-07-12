@@ -1,12 +1,12 @@
 ---
-title: "Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse"
-description: "Erfahren Sie, wie Sie mit dem Azure-Toolkit für Eclipse eine Web-App in Microsoft Azure als Docker-Container veröffentlichen."
-services: 
+title: Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse
+description: Erfahren Sie, wie Sie mit dem Azure-Toolkit für Eclipse eine Web-App in Microsoft Azure als Docker-Container veröffentlichen.
+services: ''
 documentationcenter: java
 author: rmcmurray
 manager: routlaw
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.author: robmcm
 ms.date: 02/01/2018
 ms.devlang: Java
@@ -14,15 +14,16 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: b54c10dc33324d902a0e778770df8ec4d71dc9a1
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.openlocfilehash: c116e0712afd8e48983f946f43eddfd0c79c0ba8
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38075472"
 ---
 # <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse
 
-[Spring Framework] ist eine Open Source-Lösung, die Java-Entwickler bei der Erstellung professioneller Anwendungen unterstützt. Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.
+[Spring-Framework] ist eine Open Source-Lösung, die Java-Entwickler bei der Erstellung professioneller Anwendungen unterstützt. Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.
 
 [Docker] ist eine Open Source-Lösung, die Entwickler beim Automatisieren der Bereitstellung, Skalierung und Verwaltung ihrer in Containern ausgeführten Anwendungen unterstützt.
 
@@ -50,7 +51,6 @@ Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem loka
    
    c. Klicken Sie auf **Weiter**.
 
-
    ![Dialogfeld „Importieren“][CL02]
 
 1. Auf der Seite **Repositoryquelle auswählen**:
@@ -58,7 +58,6 @@ Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem loka
    a. Wählen Sie **URI klonen** aus.
    
    b. Klicken Sie auf **Weiter**.
-
 
    ![Seite „Repositoryquelle auswählen“][CL03]
 
@@ -69,7 +68,6 @@ Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem loka
    b. Da das Spring Boot-Repository öffentlich ist, müssen Sie nicht Ihren Git-Benutzernamen und das Kennwort eingeben.
    
    c. Klicken Sie auf **Weiter**.
-
 
    ![Seite „Quelle Git-Repository“][CL04]
 
@@ -83,7 +81,6 @@ Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem loka
    
    b. Klicken Sie auf **Weiter**.
 
-
    ![Seite „Lokales Ziel“][CL06]
 
 1. Auf der Seite **Assistent zum Importieren von Projekten auswählen**:
@@ -91,7 +88,6 @@ Mit den folgenden Schritte wird das Spring Boot-Docker-Repository auf Ihrem loka
    a. Wählen Sie **Als allgemeines Projekt importieren** aus.
    
    b. Klicken Sie auf **Weiter**.
-
 
    ![Seite „Assistent zum Importieren von Projekten auswählen“][CL07]
 
@@ -122,7 +118,6 @@ Das Docker-Repository von Spring Boot enthält ein abgeschlossenes Maven-Projekt
    b. Wählen Sie **Vorhandene Maven-Projekte**.
    
    c. Klicken Sie auf **Weiter**.
-
 
    ![Dialogfeld „Importieren“][MV01]
 
@@ -208,7 +203,7 @@ Das Docker-Repository von Spring Boot enthält ein abgeschlossenes Maven-Projekt
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Zusätzliche Ressourcen für Docker finden Sie auf der offiziellen [Docker-Website].
+Zusätzliche Ressourcen für Docker finden Sie auf der offiziellen [Docker-Website](https://www.docker.com/).
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
@@ -219,7 +214,7 @@ Zusätzliche Ressourcen für Docker finden Sie auf der offiziellen [Docker-Websi
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: azure-toolkit-for-eclipse-publish-as-docker-container.md
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Spring Framework]: https://spring.io/
+[Spring-Framework]: https://spring.io/
 
 <!-- IMG List -->
 

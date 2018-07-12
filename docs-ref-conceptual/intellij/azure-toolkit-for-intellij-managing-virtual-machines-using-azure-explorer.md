@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 213efa7fc31705b0ffcba6f2fe40e7186a365fae
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954871"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38074530"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Verwalten virtueller Computer mit dem Azure-Explorer für IntelliJ
 
@@ -62,8 +62,7 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    ![Fenster „Virtuelles Computerimage auswählen“][CR03]
 
-5. Klicken Sie auf **Weiter**.
- 
+5. Klicken Sie auf **Weiter**. 
 
 6. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
 
@@ -77,8 +76,7 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    ![Fenster „Grundlegende Einstellungen des virtuellen Computers“][CR04]
 
-7. Klicken Sie auf **Weiter**.
- 
+7. Klicken Sie auf **Weiter**. 
 
 8. Geben Sie im Fenster **Zugeordnete Ressourcen** die folgenden Informationen ein:
 
