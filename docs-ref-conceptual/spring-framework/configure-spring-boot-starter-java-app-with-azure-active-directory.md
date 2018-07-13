@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 06/20/2018
+ms.date: 07/02/2018
 ms.devlang: java
 ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: adcbc78cc129daf589bf070741308e4024432e5d
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 6d20593620c7fb73f8481be8705bdc42d4e9ce32
+ms.sourcegitcommit: 0ed7c5af0152125322ff1d265c179f35028f3c15
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090833"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37864050"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-active-directory"></a>Verwenden von Spring Boot Starter für Azure Active Directory
 
@@ -31,7 +31,7 @@ In diesem Artikel erfahren Sie, wie Sie eine App mit **[Spring Initializr]** ers
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -67,7 +67,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Erstellen einer neuen Azure Active Directory-Instanz][directory-01]
 
-1. Geben Sie Werte für **Name der Organisation** und **Name der Anfangsdomäne** ein, und klicken Sie anschließend auf **Erstellen**.
+1. Geben Sie Werte für **Name der Organisation** und **Name der Anfangsdomäne** ein. Kopieren Sie die vollständige URL Ihres Verzeichnisses. Sie verwenden diese später in diesem Tutorial zum Hinzufügen von Benutzerkonten. (Beispiel: `wingtiptoysdirectory.onmicrosoft.com`.) Wenn Sie fertig sind, klicken Sie auf **Erstellen**.
 
    ![Angeben von Azure Active Directory-Namen][directory-02]
 
@@ -75,7 +75,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Auswählen Ihrer Azure Active Directory-Instanz][directory-03]
 
-1. Klicken Sie im Portalmenü auf **Azure Active Directory**, klicken Sie auf **Eigenschaften**, und kopieren Sie die **Verzeichnis-ID**. (Sie wird im weiteren Verlauf des Artikels benötigt.)
+1. Wählen Sie im Portalmenü **Azure Active Directory**, klicken Sie auf **Eigenschaften**, und kopieren Sie die **Verzeichnis-ID**. Diesen Wert verwenden Sie später in diesem Tutorial zum Konfigurieren Ihrer Datei *application.properties*.
 
    ![Kopieren der Azure Active Directory-ID][directory-13]
 
@@ -93,11 +93,11 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Auswählen Ihrer App-Registrierung][directory-06]
 
-1. Kopieren Sie auf der Seite für Ihre App-Registrierung Ihre **Anwendungs-ID** zur späteren Verwendung, klicken Sie auf **Einstellungen**, und klicken Sie anschließend auf **Schlüssel**.
+1. Wenn die Seite für Ihre App-Registrierung angezeigt wird, kopieren Sie Ihre **Anwendungs-ID**. Diesen Wert verwenden Sie später in diesem Tutorial zum Konfigurieren Ihrer Datei *application.properties*. Klicken Sie auf **Einstellungen** und dann auf **Schlüssel**.
 
    ![Erstellen von App-Registrierungsschlüsseln][directory-07]
 
-1. Fügen Sie eine **Beschreibung** hinzu, geben Sie die **Dauer** für einen neuen Schlüssel an, und klicken Sie auf **Speichern**. Der Wert für den Schlüssel wird nach dem Klicken auf das Symbol **Speichern** automatisch ausgefüllt. Notieren Sie sich den Wert des Schlüssels zur späteren Verwendung. (Dieser Wert kann später nicht mehr abgerufen werden.)
+1. Fügen Sie eine **Beschreibung** hinzu, geben Sie die **Dauer** für einen neuen Schlüssel an, und klicken Sie auf **Speichern**. Der Wert für den Schlüssel wird nach dem Klicken auf das Symbol **Speichern** automatisch ausgefüllt. Notieren Sie sich den Wert des Schlüssels, um später in diesem Tutorial Ihre Datei *application.properties* damit zu konfigurieren. (Dieser Wert kann später nicht mehr abgerufen werden.)
 
    ![Angeben von Parametern für App-Registrierungsschlüssel][directory-08]
 
@@ -125,13 +125,55 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Hinzufügen einer neuen Antwort-URL][directory-15]
 
+1. Klicken Sie auf der Hauptseite für Ihre App-Registrierung auf **Manifest**, legen Sie den Wert des `oauth2AllowImplicitFlow`-Parameters auf `true` fest, und klicken Sie dann auf **Speichern**.
+
+   ![App-Manifest konfigurieren][directory-16]
+
+   > [!NOTE]
+   > 
+   > Weitere Informationen zum `oauth2AllowImplicitFlow`-Parameter und anderen Anwendungseinstellungen finden Sie unter [Azure Active Directory-Anwendungsmanifest][AAD app manifest]. 
+   >
+
+### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>Hinzufügen eines Benutzerkontos zu Ihrem Verzeichnis und Hinzufügen dieses Kontos zu einer Gruppe
+
+1. Klicken Sie auf der Seite **Übersicht** Ihrer Active Directory-Instanz auf **Benutzer**.
+
+   ![Öffnen des Bereichs „Benutzer“][directory-17]
+
+1. Wenn der Bereich **Benutzer** angezeigt wird, klicken Sie auf **Neuer Benutzer**.
+
+   ![Hinzufügen eines neuen Benutzerkontos][directory-18]
+
+1. Wenn der Bereich **Benutzer** angezeigt wird, geben Sie den **Namen** und den **Benutzernamen** ein.
+
+   ![Eingeben der Benutzerkontoinformationen][directory-19]
+
+   > [!NOTE]
+   > 
+   > Sie müssen die Verzeichnis-URL von weiter oben in diesem Tutorial eingeben, wenn Sie den Benutzernamen eingeben. Beispiel:
+   >
+   > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
+   > 
+
+1. Klicken Sie auf **Gruppen**, wählen Sie dann die Gruppen aus, die Sie für die Autorisierung in Ihrer Anwendung verwenden, und klicken Sie dann auf **Auswählen**. (Fügen Sie in diesem Tutorial das Konto der Gruppe _Benutzer_ hinzu.)
+
+   ![Auswählen der Gruppen des Benutzers][directory-20]
+
+1. Klicken Sie auf **Kennwort anzeigen**, und kopieren Sie das Kennwort, Sie verwenden es später in diesem Tutorial für die Anmeldung bei Ihrer Anwendung.
+
+   ![Anzeigen des Kennworts][directory-21]
+
+1. Klicken Sie auf **Erstellen** um das neue Benutzerkonto Ihrem Verzeichnis hinzuzufügen.
+
+   ![Erstellen des neuen Benutzerkontos][directory-22]
+
 ## <a name="configure-and-compile-your-spring-boot-application"></a>Konfigurieren und Kompilieren Ihrer Spring Boot-Anwendung
 
-1. Extrahieren Sie die Dateien aus dem heruntergeladenen Projektarchiv in ein Verzeichnis.
+1. Extrahieren Sie die Dateien aus dem Projektarchiv, das Sie zuvor in diesem Tutorial erstellt und heruntergeladen haben, in ein Verzeichnis.
 
-2. Navigieren Sie in Ihrem Projekt zum übergeordneten Ordner, und öffnen Sie die Datei *pom.xml* in einem Text-Editor.
+1. Navigieren Sie zum übergeordneten Ordner für Ihr Projekt, und öffnen Sie die Datei *pom.xml* in einem Text-Editor.
 
-3. Fügen Sie die Abhängigkeiten für Spring OAuth2-Sicherheit hinzu. Beispiel:
+1. Fügen Sie die Abhängigkeiten für Spring OAuth2-Sicherheit hinzu. Beispiel:
 
    ```xml
    <dependency>
@@ -144,11 +186,11 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    </dependency>
    ```
 
-4. Speichern und schließen Sie die Datei *pom.xml*.
+1. Speichern und schließen Sie die Datei *pom.xml*.
 
-5. Navigieren Sie in Ihrem Projekt zum Ordner *src/main/resources*, und öffnen Sie die Datei *application.properties* in einem Text-Editor.
+1. Navigieren Sie in Ihrem Projekt zum Ordner *src/main/resources*, und öffnen Sie die Datei *application.properties* in einem Text-Editor.
 
-6. Fügen Sie den Schlüssel für Ihr Speicherkonto hinzu. Verwenden Sie dabei den Wert von vorhin. Beispiel:
+1. Geben Sie die Einstellungen für Ihre App-Registrierung mithilfe der zuvor erstellten Werte an. Beispiel:
 
    ```yaml
    # Specifies your Active Directory ID:
@@ -160,30 +202,30 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    # Specifies your App Registration's secret key:
    spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
-   # Specifies the list of Active Directory groups to use for authentication:
+   # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
    Hinweis:
 
-   | Parameter | Beschreibung |
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `azure.activedirectory.tenant-id` | Enthält die **Verzeichnis-ID** Ihrer Active Directory-Instanz von vorhin. |
    | `spring.security.oauth2.client.registration.azure.client-id` | Enthält die **Anwendungs-ID** aus der zuvor durchgeführten App-Registrierung. |
    | `spring.security.oauth2.client.registration.azure.client-secret` | Enthält den **Wert** aus dem zuvor erstellten App-Registrierungsschlüssel. |
-   | `azure.activedirectory.active-directory-groups` | Enthält eine Liste mit Active Directory-Gruppen für die Authentifizierung. |
+   | `azure.activedirectory.active-directory-groups` | Enthält eine Liste mit Active Directory-Gruppen für die Autorisierung. |
 
    > [!NOTE]
    > 
    > Eine vollständige Liste mit verfügbaren Werten in der Datei *application.properties* finden Sie im [Spring Boot-Beispiel für Azure Active Directory][AAD Spring Boot Sample] auf GitHub.
    >
 
-7. Speichern und schließen Sie die Datei *application.properties*.
+1. Speichern und schließen Sie die Datei *application.properties*.
 
-8. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *controller*. Beispiel: *src/main/java/com/wingtiptoys/security/controller*.
+1. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *controller*. Beispiel: *src/main/java/com/wingtiptoys/security/controller*.
 
-9. Erstellen Sie im Ordner *controller* eine neue Java-Datei namens *HelloController.java*, und öffnen Sie sie in einem Text-Editor.
+1. Erstellen Sie im Ordner *controller* eine neue Java-Datei namens *HelloController.java*, und öffnen Sie sie in einem Text-Editor.
 
-10. Geben Sie den folgenden Code ein, speichern Sie die Datei, und schließen Sie sie:
+1. Geben Sie den folgenden Code ein, speichern Sie die Datei, und schließen Sie sie:
 
    ```java
    package com.wingtiptoys.security;
@@ -237,11 +279,11 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    > ```
    >    
 
-11. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *security*. Beispiel: *src/main/java/com/wingtiptoys/security/security*.
+1. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *security*. Beispiel: *src/main/java/com/wingtiptoys/security/security*.
 
-12. Erstellen Sie im Ordner *security* eine neue Java-Datei namens *WebSecurityConfig.java*, und öffnen Sie sie in einem Text-Editor.
+1. Erstellen Sie im Ordner *security* eine neue Java-Datei namens *WebSecurityConfig.java*, und öffnen Sie sie in einem Text-Editor.
 
-13. Geben Sie den folgenden Code ein, speichern Sie die Datei, und schließen Sie sie:
+1. Geben Sie den folgenden Code ein, speichern Sie die Datei, und schließen Sie sie:
 
     ```java
     package com.wingtiptoys.security;
@@ -291,6 +333,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Anmelden bei Ihrer Anwendung][application-login]
 
+   > [!NOTE]
+   > 
+   > Wenn dies die erste Anmeldung für ein neues Benutzerkonto ist, werden Sie möglicherweise zum Ändern Ihres Kennworts aufgefordert.
+   > 
+   > ![Ändern des Kennworts][update-password]
+   > 
+
 1. Nach erfolgreicher Anmeldung sollte der Beispieltext „Hello World“ des Controllers angezeigt werden.
 
    ![Erfolgreiche Anmeldung][hello-world]
@@ -321,8 +370,9 @@ Ein ausführlicheres Beispiel finden Sie im [Spring Boot-Beispiel für Azure Act
 <!-- URL List -->
 
 [Azure Active Directory-Dokumentation]: /azure/active-directory/
+[AAD app manifest]: /azure/active-directory/develop/active-directory-application-manifest
 [Get started with Azure AD]: /azure/active-directory/get-started-azure-ad
-[Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
+[Azure für Java-Entwickler]: /java/azure/
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
 [Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -353,7 +403,15 @@ Ein ausführlicheres Beispiel finden Sie im [Spring Boot-Beispiel für Azure Act
 [directory-13]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-13.png
 [directory-14]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-14.png
 [directory-15]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-15.png
+[directory-16]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-16.png
+[directory-17]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-17.png
+[directory-18]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-18.png
+[directory-19]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-19.png
+[directory-20]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-20.png
+[directory-21]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-21.png
+[directory-22]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/directory-22.png
 
-[build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [application-login]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/application-login.png
+[build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
+[update-password]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/update-password.png
