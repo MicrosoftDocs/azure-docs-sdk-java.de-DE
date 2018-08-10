@@ -12,12 +12,12 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: f069183c96cdc42d590d2e58a5a6a500be5ab69a
-ms.sourcegitcommit: 720c2eaf66532d277015610ec375c71e934d9ee6
+ms.openlocfilehash: dee41f08dc303fc95fcfa6a585a5d1a06726f2ef
+ms.sourcegitcommit: dad28b332346dfa9af249b5a64e042cbb1eb90d7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29065527"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39625036"
 ---
 # <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für Java
 
@@ -93,7 +93,9 @@ Wenn Sie eine Windows-Umgebung verwenden, fügen Sie die Variable zu Ihren Syste
 setx AZURE_AUTH_LOCATION "C:\<fullpath>\azureauth.properties" /m
 ```
 
-## <a name="create-a-new-maven-project"></a>Erstellen eines neuen Maven-Projekts
+## <a name="tooling"></a>Tools
+
+### <a name="create-a-new-maven-project"></a>Erstellen eines neuen Maven-Projekts
 
 > [!NOTE]
 > Der Beispielcode in diesem Leitfaden wird mithilfe des Maven-Erstellungstools erstellt und ausgeführt. Die Azure-Bibliotheken für Java können aber auch mit anderen Erstellungstools (beispielsweise Gradle) verwendet werden. 
@@ -142,7 +144,27 @@ Fügen Sie unter dem Element `project` der obersten Ebene einen Eintrag vom Typ 
     </plugins>
 </build>
  ```
-   
+
+### <a name="install-the-azure-toolkit-for-intellij"></a>Installieren des Azure-Toolkits für IntelliJ
+
+Das [Azure-Toolkit](intellij/azure-toolkit-for-intellij-installation.md) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Ausführliche Schritte finden Sie unter [Installieren des Azure-Toolkits für IntelliJ](intellij/azure-toolkit-for-intellij-installation.md).
+
+Wählen Sie im Menü **Datei** die Option **Einstellungen...** aus. 
+
+Klicken Sie auf **Browse repositories...** (Repositorys durchsuchen), suchen Sie nach „Azure“, und installieren Sie dann das **Azure-Toolkit für IntelliJ**.
+
+Starten Sie IntelliJ neu.
+
+### <a name="install-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
+
+Das [Azure-Toolkit](eclipse/azure-toolkit-for-eclipse.md) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Ausführliche Schritte finden Sie unter [Azure-Toolkit für Eclipse](eclipse/azure-toolkit-for-eclipse.md).
+
+Klicken Sie auf das Menü **Help** (Hilfe) und dann auf **Install New Software** (Neue Software installieren).
+
+Geben Sie `http://dl.microsoft.com/eclipse` in das Feld **Work with:** (Arbeiten mit:) ein, und drücken Sie die EINGABETASTE.
+
+Aktivieren Sie anschließend das Kontrollkästchen neben **Azure toolkit for Java** (Azure-Toolkit für Java), und deaktivieren Sie das Kontrollkästchen **Contact all update sites during install to find required software** (Während der Installation alle Updatesites kontaktieren, um erforderliche Software zu finden). Klicken Sie anschließend auf „Next“ (Weiter).
+
 ## <a name="create-a-linux-virtual-machine"></a>Erstellen einer virtuellen Linux-Maschine
 
 Erstellen Sie im Projektverzeichnis `src/main/java/com/fabirkam` eine neue Datei namens `AzureApp.java`, und fügen Sie den folgenden Codeblock ein. Aktualisieren Sie die Variablen `userName` und `sshKey` mit echten Werten für Ihren Computer. Der Code erstellt einen neuen virtuellen Linux-Computer namens `testLinuxVM` in der Ressourcengruppe `sampleResourceGroup` in der Azure-Region „USA, Osten“.
@@ -286,7 +308,7 @@ az group delete --name sampleWebResourceGroup
 ## <a name="connect-to-an-azure-sql-database"></a>Herstellen einer Verbindung mit einer Azure SQL-Datenbank
 
 Ersetzen Sie die aktuelle main-Methode in `AzureApp.java` durch den im Anschluss angegebenen Code, und legen Sie die Variable `dbPassword` auf einen echten Wert fest.
-Dieser Code erstellt eine neue SQL­-Datenbank mit einer Firewallregel, die Remotezugriffe zulässt, und stellt anschließend unter Verwendung des SQL-Datenbank-JBDC-Treibers eine Verbindung mit der Datenbank her. 
+Mit diesem Code wird eine neue SQL-Datenbank mit einer Firewallregel erstellt, die Remotezugriff zulässt, und anschließend über den SQL-Datenbank-JBDC-Treiber eine Verbindung hergestellt. 
 
 ```java
 
