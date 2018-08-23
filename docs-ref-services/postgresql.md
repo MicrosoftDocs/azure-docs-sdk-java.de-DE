@@ -7,22 +7,20 @@ ms.author: routlaw
 manager: douge
 ms.date: 05/17/2017
 ms.topic: article
-ms.prod: azure
-ms.technology: azure
 ms.devlang: java
 ms.service: postgresql
-ms.openlocfilehash: d6fa2acb9a2f44b157ae52ba6e41f6777a43b574
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.openlocfilehash: 0f93d26a07de9acf72a46792793b573dba878fba
+ms.sourcegitcommit: 1b22376e4ceb3d2f2734c8fc80823a44cc5fe8fb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21930976"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42703340"
 ---
 # <a name="azure-database-for-postgresql-libraries-for-java"></a>Bibliotheken zu Azure-Datenbank für PostgreSQL für Java
 
 ## <a name="overview"></a>Übersicht
 
-[Azure-Datenbank für PostgreSQL](/azure/sql-database/sql-database-technical-overview) ist ein relationaler Datenbankdienst in Azure für Entwickler, der auf der Communityversion des Open Source-Datenbankmoduls für [PostgreSQL](https://www.postgresql.org/) basiert.
+[Azure Database for PostgreSQL](/azure/sql-database/sql-database-technical-overview) ist ein relationaler Datenbankdienst in Azure für Entwickler, der auf der Communityversion der Open Source-Datenbank-Engine für [PostgreSQL](https://www.postgresql.org/) basiert.
 
 Informationen zu den ersten Schritten mit Azure-Datenbank für PostgreSQL finden Sie unter [Verwenden von Java zum Verbinden und Abfragen von Daten](/azure/postgresql/connect-java).
 
