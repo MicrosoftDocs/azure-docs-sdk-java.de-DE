@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: ''
 ms.assetid: ''
-ms.author: robmcm;yungez;kevinzha
-ms.date: 07/05/2018
+ms.author: robmcm
+ms.date: 08/10/2018
 ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 3306f3ef66ec1b53ab004765b8fb7aef04de9077
-ms.sourcegitcommit: 1ff4654193404415841252a130b87a8b53b7c6d8
+ms.openlocfilehash: dcb5ef5f12cc1682175da147268eb4a6a89f820b
+ms.sourcegitcommit: 0f38ef9ad64cffdb7b2e9e966224dfd0af251b0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39235974"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42703523"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB
 
@@ -75,7 +75,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    > [!IMPORTANT]
    >
-   > An den APIs in Spring Boot-Version 2.0.n wurden wichtige Änderungen vorgenommen. Daher benötigen Sie zum Ausführen der Schritte in diesem Tutorial eine der Versionen von Spring Boot 1.5.n.
+   > An den APIs in Spring Boot Version 2.0.n, die zum Durchführen der Schritte in diesem Artikel verwendet werden, sind mehrere Breaking Changes erfolgt. Sie können weiterhin eine der Spring Boot 1.5.n-Versionen verwenden, um die Schritte in diesem Tutorial auszuführen. Die Unterschiede sind ggf. hervorgehoben.
    >
 
    ![Grundlegende Spring Initializr-Optionen][SI01]
@@ -111,22 +111,39 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-documentdb-spring-boot-starter</artifactId>
-      <version>0.1.4</version>
+      <version>2.0.4</version>
    </dependency>
    ```
 
    ![Bearbeiten der Datei „pom.xml“][PM02]
 
-1. Vergewissern Sie sich, dass es sich um eine Version von Spring Boot 1.5.n handelt, etwa:
+   > [!IMPORTANT]
+   >
+   > Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie die ältere Version des Azure Cosmos DB-Starters angeben; zum Beispiel:
+   >
+   > ```xml
+   > <dependency>
+   >   <groupId>com.microsoft.azure</groupId>
+   >   <artifactId>azure-documentdb-spring-boot-starter</artifactId>
+   >   <version>0.1.4</version>
+   > </dependency>
+   > ```
+
+1. Stellen Sie sicher, dass die Spring Boot-Version die Version ist, die Sie beim Erstellen Ihrer Anwendung mit Spring Initializr ausgewählt haben; zum Beispiel:
 
    ```xml
    <parent>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-parent</artifactId>
-      <version>1.5.14.RELEASE</version>
+      <version>2.0.1.RELEASE</version>
       <relativePath/>
    </parent>
    ```
+
+   > [!NOTE]
+   >
+   > Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie sicherstellen, dass die richtige Version verwendet wird; zum Beispiel: `<version>1.5.14.RELEASE</version>`.
+   >
 
 1. Speichern und schließen Sie die Datei *pom.xml*.
 
@@ -177,6 +194,9 @@ In diesem Abschnitt erstellen Sie zwei Java-Klassen zum Speichern von Benutzerda
       private String id;
       private String firstName;
       private String lastName;
+   
+      public User() {
+      }
    
       public User(String id, String firstName, String lastName) {
          this.id = id;
@@ -251,50 +271,57 @@ In diesem Abschnitt erstellen Sie zwei Java-Klassen zum Speichern von Benutzerda
 
    ```java
    package com.example.wingtiptoysdata;
-   
+
    // These imports are required for the application.
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.boot.CommandLineRunner;
-   
+
    // These imports are only used to create an ID for this example.
    import java.util.Date;
    import java.text.SimpleDateFormat;
-   
+
    @SpringBootApplication
    public class wingtiptoysdataApplication implements CommandLineRunner {
-   
+
       @Autowired
       private UserRepository repository;
-   
+
       public static void main(String[] args) {
          // Execute the command line runner.
          SpringApplication.run(wingtiptoysdataApplication.class, args);
+         System.exit(0);
       }
-   
+
       public void run(String... args) throws Exception {
          // Create a simple date/time ID.
          SimpleDateFormat userId = new SimpleDateFormat("yyyyMMddHHmmssSSS");
          Date currentDate = new Date();
-   
+
          // Create a new User class.
          final User testUser = new User(userId.format(currentDate), "Gena", "Soto");
-   
+
          // For this example, remove all of the existing records.
          repository.deleteAll();
-   
+
          // Save the User class to the Azure database.
          repository.save(testUser);
-         
+      
          // Retrieve the database record for the User class you just saved by ID.
-         final User result = repository.findOne(testUser.getId());
-   
+         // final User result = repository.findOne(testUser.getId());
+         final User result = repository.findById(testUser.getId()).get();
+
          // Display the results of the database record retrieval.
          System.out.printf("\n\n%s\n\n",result.toString());
       }
    }
    ```
+
+   > [!IMPORTANT]
+   >
+   > Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie die `final User result = repository.findById(testUser.getId()).get();`-Syntax durch `final User result = repository.findOne(testUser.getId());` ersetzen.
+   >
 
 1. Speichern und schließen Sie die Java-Hauptanwendungsdatei.
 
@@ -315,7 +342,11 @@ In diesem Abschnitt erstellen Sie zwei Java-Klassen zum Speichern von Benutzerda
    mvn spring-boot:run
    ```
 
-1. Die Anwendung zeigt mehrere Laufzeitmeldungen an. Dabei sollte die Meldung `User: testFirstName testLastName` angezeigt werden, die darauf hinweist, dass Werte erfolgreich gespeichert und von Ihrer Datenbank abgerufen wurden.
+1. Ihre Anwendung zeigt mehrere Laufzeitmeldungen an. Dabei wird eine Meldung wie die folgenden Beispiele angezeigt, die darauf hinweist, dass Werte erfolgreich gespeichert und von Ihrer Datenbank abgerufen wurden.
+
+   ```
+   User: 20170724025215132 Gena Soto
+   ```
 
    ![Erfolgreiche Ausgabe aus der Anwendung][JV02]
 
