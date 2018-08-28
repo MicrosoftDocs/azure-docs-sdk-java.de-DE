@@ -59,8 +59,7 @@ Die folgenden Schritte veranschaulichen die Installation des Azure-Toolkits für
    | **Azure Container Tools for Eclipse** (Azure-Containertools für Eclipse) | Ermöglicht das Erstellen und Bereitstellen einer WAR-Datei als Docker-Container auf einem Docker-Computer. | 
    | **Azure Containers for Eclipse** (Azure-Container für Eclipse) | Ermöglicht das Bereitstellen eines WAR- oder JAR-Artefakts als Docker-Container auf einem virtuellen Azure-Computer. | 
    | **Azure Explorer for Eclipse** (Azure Explorer für Eclipse) | Bietet eine dem Explorer ähnliche Oberfläche zum Verwalten Ihrer Azure-Ressourcen. | 
-   | 
-  **Microsoft JDBC-Treiber 6.1 für SQL Server** | Stellt die JDBC-API für SQL Server und Microsoft Azure SQL-Datenbank für Java Platform Enterprise Edition 8 bereit. | 
+   | **Microsoft JDBC-Treiber 6.1 für SQL Server** | Stellt die JDBC-API für SQL Server und Microsoft Azure SQL-Datenbank für Java Platform Enterprise Edition 8 bereit. | 
    | **Package for Microsoft Azure Libraries for Java** (Paket für Microsoft Azure-Bibliotheken für Java) | Stellt APIs für den Zugriff auf Microsoft Azure-Dienste wie Storage, Service Bus, Service Runtime usw. bereit. | 
 
 1. Klicken Sie auf **Weiter**. (Wenn ungewöhnliche Verzögerungen bei der Installation des Toolkits auftreten, achten Sie darauf, dass **Contact all update sites during install to find required software** deaktiviert ist.)
