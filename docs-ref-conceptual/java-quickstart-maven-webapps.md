@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 03/17/2017
 ms.author: routlaw
-ms.openlocfilehash: 1adc0a104ba22bcd353664e68323165890e46c64
-ms.sourcegitcommit: 30d502b3150fa14bcc1251f5f88c7c0dd83e531e
+ms.openlocfilehash: 70b508118c50b75693e2d746dc1e2919c827cb29
+ms.sourcegitcommit: 0f38ef9ad64cffdb7b2e9e966224dfd0af251b0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/12/2017
-ms.locfileid: "22033632"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "42703543"
 ---
 # <a name="create-and-deploy-a-java-app-to-azure-with-maven"></a>Erstellen und Bereitstellen einer Java-App in Azure mit Maven
 
@@ -28,7 +28,7 @@ In dieser Schnellstartanleitung erfahren Sie, wie Sie mithilfe von [Apache Maven
 
 Richten Sie zunächst Folgendes ein:
 
-- [Git](https://git-scm.com/)
+- [Git-Client](https://git-scm.com/)
 - [Java 8](https://www.azul.com/downloads/zulu/)
 - [Maven 3](http://maven.apache.org/download.cgi)
 - [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)
@@ -53,7 +53,7 @@ mvn package
 mvn tomcat7:run-war
 ```
 
-Navigieren Sie in einem Webbrowser zu http://localhost:8080, um eine Vorschau der App anzuzeigen:
+Öffnen Sie einen Webbrowser, und navigieren Sie zu http://localhost:8080, um eine Vorschau auf die App anzuzeigen:
 
   ![Ausgabe „Hello World“ der Java-Beispielanwendung](media/maven-quickstart/java-app-hello-world-output.png)
 
@@ -236,7 +236,7 @@ Aktualisieren Sie Ihren Browser, nachdem die App erneut bereitgestellt wurde, um
 
 Sehen Sie sich die soeben erstellte Web-App im Azure-Portal an.
 
-Melden Sie sich hierzu bei [https://portal.azure.com](https://portal.azure.com) an.
+Melden Sie sich dazu bei [https://portal.azure.com](https://portal.azure.com) an.
 
 Klicken Sie im linken Menü auf **App Service** und anschließend auf den Namen Ihrer Azure-Web-App.
 
