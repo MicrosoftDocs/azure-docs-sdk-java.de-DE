@@ -11,12 +11,12 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: java
 ms.service: batch
-ms.openlocfilehash: 67381d68d23f98579a472aefbebaa929af622b8d
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.openlocfilehash: d8e7a6969bf35d98f03c5d3e335fbaf2f6b3a51d
+ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823593"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43324357"
 ---
 # <a name="azure-batch-libraries-for-java"></a>Azure Batch-Bibliotheken für Java
 
@@ -30,13 +30,13 @@ Informationen zu den ersten Schritte mit Azure Batch finden Sie unter [Erstellen
 
 Mit den Azure Batch-Clientbibliotheken können Sie Computeknoten und -pools konfigurieren, Aufgaben definieren und ihre Ausführung in Aufträgen konfigurieren sowie einen Auftrags-Manager zum Steuern und Überwachen der Auftragsausführung einrichten. [Erfahren Sie mehr](/azure/batch/batch-api-basics) über die Verwendung dieser Objekte zum Ausführen umfangreicher paralleler Computelösungen.
 
-Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Clientbibliothek in Ihrem Projekt zu verwenden.
+Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Clientbibliothek in Ihrem Projekt zu verwenden. Der Quellcode der Clientbibliothek steht auf [GitHub](https://github.com/Azure/azure-batch-sdk-for-java) zur Verfügung.
 
 ```XML
 <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-batch</artifactId>
-    <version>2.0.0</version>
+    <version>4.0.0</version>
 </dependency>
 ```   
 
