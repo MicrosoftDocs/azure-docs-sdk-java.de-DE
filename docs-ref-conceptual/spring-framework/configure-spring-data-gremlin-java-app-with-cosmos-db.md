@@ -7,19 +7,18 @@ author: rmcmurray
 manager: mbaldwin
 editor: ''
 ms.assetid: ''
-ms.author: robmcm
 ms.date: 08/20/2018
 ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 0976f4b0c13ce5c577458f2974f5dce123bf7e59
-ms.sourcegitcommit: 77dc6c03a2e6264df688d91a04fc6b40950779ef
+ms.openlocfilehash: 4e0138e3cc474b4c47d3bf492e696ec49ea3ef37
+ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43241018"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040268"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
 
@@ -165,7 +164,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
       telemetryAllowed: false
    ```
    Hinweis:
-   | Feld | Beschreibung |
+   | Feld | BESCHREIBUNG |
    | ---|---|
    | `endpoint` | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in diesem Tutorial beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben. |
    | `port` | Gibt den TCP/IP-Port an (**443** für HTTPS). |

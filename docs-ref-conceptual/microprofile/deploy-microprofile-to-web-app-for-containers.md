@@ -14,12 +14,12 @@ ms.service: container-registry;app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 323ae247c3df8c7d7b180d9d60b9014e4e2d7382
-ms.sourcegitcommit: 77dc6c03a2e6264df688d91a04fc6b40950779ef
+ms.openlocfilehash: 1eb0e7d7a718a1c106adebbf89011f6e3fa1504e
+ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43240960"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040248"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Bereitstellen eines Java-basierten MicroProfile-Diensts in Azure-Web-App für Container
 
@@ -137,7 +137,7 @@ Damit kennen Sie den gesamten Code, der zum Erstellen eines Microservice mit Mic
 Wir haben nun unsere MicroProfile-Anwendung erstellt und auf unserem lokalen Computer ausgeführt. Als Nächstes pushen wir den Container in unsere Containerregistrierung. In diesem Tutorial verwenden wir Azure Container Registry. Es kann aber auch eine beliebige andere Containerregistrierung verwendet werden (vorausgesetzt, die Datei `pom.xml` wird bearbeitet, um auf den entsprechenden Ort zu verweisen).
 
 1. Führen Sie `mvn clean package` aus, um ein lokales Docker-Image zu bereinigen, zu kompilieren und zu erstellen.
-2. Führen Sie `mvn dockerfile:push` aus, um einen Pushvorgang an die Azure Container Repository-Instanz auszuführen.
+2. Führen Sie für die Übertragung an Azure Container Registry per Push `mvn dockerfile:push` aus.
 
 Sie haben nun Ihr Docker-Containerimage in die Azure Container Registry-Instanz hochgeladen, es wird jedoch noch nicht ausgeführt, da es noch in einer Instanz von Azure-Web-App für Container bereitgestellt werden muss. Diesen Schritt führen wir als Nächstes aus.
 

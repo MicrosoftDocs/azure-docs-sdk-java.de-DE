@@ -12,14 +12,14 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.openlocfilehash: dee41f08dc303fc95fcfa6a585a5d1a06726f2ef
-ms.sourcegitcommit: dad28b332346dfa9af249b5a64e042cbb1eb90d7
+ms.openlocfilehash: fdf0334a8796d636a1968943cc34d7ae98d6361c
+ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39625036"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040258"
 ---
-# <a name="get-started-with-cloud-development-using-the-azure-libraries-for-java"></a>Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für Java
+# <a name="get-started-with-cloud-development-using-java-on-azure"></a>Erste Schritte bei der Cloudentwicklung mit Java in Azure
 
 In diesem Leitfaden werden die Schritte zum Einrichten einer Entwicklungsumgebung für die Azure-Entwicklung in Java erläutert. Sie erstellen Azure-Ressourcen und verbinden Sie, um einige allgemeine Aufgaben (etwa Hochladen einer Datei oder Bereitstellen einer Webanwendung) auszuführen. Wenn Sie fertig sind, können Sie Azure-Dienste in Ihren eigenen Java-Anwendungen verwenden.
 
