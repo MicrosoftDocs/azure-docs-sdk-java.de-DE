@@ -14,12 +14,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: a2734fc08f2f59f64ba6c6c20ff18d75070b68d5
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: 78b7a9a2e26168b19dc8a1d12e47456752b57ffc
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090713"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639773"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -31,7 +31,7 @@ In diesem Artikel erfahren Sie, wie Sie eine App mit **[Spring Initializr]** ers
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -154,10 +154,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihren Schlüsseltresor an. |
    | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
-   | `enabled-for-deployment` | Gibt die [Bereitstellungsoption für den Schlüsseltresor](https://docs.microsoft.com/en-us/cli/azure/keyvault) an. |
-   | `enabled-for-disk-encryption` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](https://docs.microsoft.com/en-us/cli/azure/keyvault) an. |
-   | `enabled-for-template-deployment` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](https://docs.microsoft.com/en-us/cli/azure/keyvault) an. |
-   | `sku` | Gibt die [SKU-Option für den Schlüsseltresor](https://docs.microsoft.com/en-us/cli/azure/keyvault) an. |
+   | `enabled-for-deployment` | Gibt die [Bereitstellungsoption für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
+   | `enabled-for-disk-encryption` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
+   | `enabled-for-template-deployment` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
+   | `sku` | Gibt die [SKU-Option für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
    | `query` | Gibt einen Wert an, der aus der Antwort abgerufen werden soll. Hierbei handelt es sich um den Schlüsseltresor-URI, den Sie im Rahmen dieses Tutorials benötigen. |
 
    Die Azure-Befehlszeilenschnittstelle zeigt den URI für den Schlüsseltresor an. Dieser wird später verwendet. Beispiel:  
@@ -175,7 +175,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt den Schlüsseltresornamen von vorhin an. |
-   | `secret-permission` | Gibt die [Sicherheitsrichtlinien](https://docs.microsoft.com/en-us/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
+   | `secret-permission` | Gibt die [Sicherheitsrichtlinien](https://docs.microsoft.com/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
    | `spn` | Gibt die GUID für Ihre Anwendungsregistrierung von vorhin an. |
 
    Die Azure-Befehlszeilenschnittstelle zeigt die Ergebnisse der Sicherheitsrichtlinienerstellung an. Beispiel:  

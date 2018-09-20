@@ -14,12 +14,12 @@ ms.service: Azure Monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 0e57bfb304185b8b98dedfdecb2e0374c4a72fe5
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.openlocfilehash: e78987a05527aef739bc1467511381665513a3ab
+ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090773"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639733"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights
 
@@ -33,7 +33,7 @@ In diesem Artikel erfahren Sie Schritt für Schritt, wie Sie eine Spring Boot-An
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Ein Java Development Kit (JDK), Version 1.7 und 1.8
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -91,7 +91,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
  <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>applicationinsights-spring-boot-starter</artifactId>
-    <version>1.0.0-BETA</version>
+    <version>1.0.1-BETA</version>
 </dependency>
 ```
 
@@ -222,7 +222,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>applicationinsights-spring-boot-starter</artifactId>
-        <version>1.0.0-BETA</version>
+        <version>1.0.1-BETA</version>
     </dependency>
 
     <dependency>
@@ -278,7 +278,7 @@ Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Application Insights unterstützt die automatische Erfassung externer Abhängigkeiten und deren Korrelation mit eingehenden Anforderungen. Aktuell wird die automatische Erfassung von Oracle, MsSQL, MySQL und Redis unterstützt. Weitere Informationen zum Aktivieren der automatischen Erfassung finden Sie im Artikel [Überwachen von Abhängigkeiten, abgefangene Ausnahmen und Methodenausführungszeiten in Java-Web-Apps](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-java-agent).
+Application Insights unterstützt die automatische Erfassung externer Abhängigkeiten und deren Korrelation mit eingehenden Anforderungen. Aktuell wird die automatische Erfassung von Oracle, MsSQL, MySQL und Redis unterstützt. Weitere Informationen zum Aktivieren der automatischen Erfassung finden Sie im Artikel [Überwachen von Abhängigkeiten, abgefangene Ausnahmen und Methodenausführungszeiten in Java-Web-Apps](https://docs.microsoft.com/azure/application-insights/app-insights-java-agent).
 
 Weitere Informationen zu Azure Application Insights und den verfügbaren Überwachungsfunktionen finden Sie unter **[Application Insights]**.
 
@@ -300,7 +300,7 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure f
 [Spezifische Eigenschaften für Spring Boot-Profile]: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-profile-specific-properties
 [Spring Initializr]: https://start.spring.io/
 [Spring-Framework]: https://spring.io/
-[Application Insights]: https://docs.microsoft.com/en-us/azure/application-insights/
+[Application Insights]: https://docs.microsoft.com/azure/application-insights/
 
 <!-- IMG List -->
 
