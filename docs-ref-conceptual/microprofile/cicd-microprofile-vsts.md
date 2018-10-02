@@ -120,7 +120,7 @@ Die Releasepipeline in Azure DevOps löst die Bereitstellung von Buildartefakten
  
 4. Legen Sie einen **Stufennamen** fest (z. B. „Entwicklung“, „Test“, „Staging“ oder „Produktion“).  Klicken Sie dann auf die Schaltfläche mit dem **X**, um das Popupfenster zu schließen.
 5. Klicken Sie im Abschnitt „Artefakte“ auf die Schaltfläche **+ Hinzufügen**.  Dadurch werden Artefakte aus der Builddefinition mit dieser Releasedefinition verknüpft.  
-6. Wählen Sie im Dropdownmenü **Source (build pipeline)** (Quelle [Buildpipeline]) Ihre Builddefinition aus. Klicken Sie dann auf die Schaltfläche **Hinzufügen**, um fortzufahren.
+6. Wählen Sie im Dropdownmenü **Source (build pipeline)** (Quelle (Buildpipeline)) Ihre Builddefinition aus. Klicken Sie dann auf die Schaltfläche **Hinzufügen**, um fortzufahren.
 
 <img src="media/VSTS/add-artifact9.png">
  
