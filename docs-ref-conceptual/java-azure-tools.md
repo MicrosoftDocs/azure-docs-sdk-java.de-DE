@@ -10,12 +10,12 @@ ms.service: Azure
 ms.technology: Azure
 ms.date: 4/10/2017
 ms.author: routlaw;asirveda
-ms.openlocfilehash: 425d4c3a5a347e4706e9c37ebd7247cf0d8c9846
-ms.sourcegitcommit: f0dadb22efb191182c3b79dcaa97a76cfcdcc324
+ms.openlocfilehash: fad860e19382fb320892dcc5eada95e6d663739e
+ms.sourcegitcommit: bb7286fad75a2bb43e6ce1a8f1b09e701147c9f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2017
-ms.locfileid: "26288309"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48047117"
 ---
 # <a name="azure-tools-for-java-developers"></a>Azure-Tools für Java-Entwickler
 
@@ -29,7 +29,7 @@ Mit den Azure-Toolkits für [Eclipse](eclipse/azure-toolkit-for-eclipse.md) und 
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
 
-VS Code ist ein einfacher, aber leistungsstarker Code-Editor für MacOS, Windows und Linux. VS Code unterstützt über verschiedene Erweiterungen für Projektunterstützung, Codevervollständigung, Debugging, Linting und Navigation einen einfachen, modernen Java-Entwicklungsworkflow.
+[VS Code](https://code.visualstudio.com/) ist ein einfacher, aber leistungsstarker Code-Editor für MacOS, Windows und Linux. VS Code unterstützt über verschiedene Erweiterungen für Projektunterstützung, Codevervollständigung, Debugging, Linting und Navigation einen einfachen, modernen Java-Entwicklungsworkflow.
 
 [Erste Schritte mit VS Code und Java](https://code.visualstudio.com/docs/java)
 [Java-Erweiterungspaket für VS Code](https://code.visualstudio.com/docs/java/extensions)  
@@ -40,8 +40,8 @@ Die Azure CLI 2.0 bietet eine Befehlszeilenumgebung für die Verwaltung von Azur
 
 [Erste Schritte mit der Azure CLI 2.0](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)
 
-## <a name="azure-storage-explorer"></a>Azure-Speicher-Explorer 
+## <a name="azure-storage-explorer"></a>Azure Storage-Explorer 
 
-Verwalten Sie Azure-Speicherkonten, Container und Blobs/Dateien von Ihrem Desktop aus. Der Azure-Speicher-Explorer ist derzeit als Vorschauversion für Windows, macOS und Linux verfügbar.
+Verwalten Sie Azure-Speicherkonten, Container und Blobs/Dateien von Ihrem Desktop aus. Der Azure Storage-Explorer ist derzeit als Vorschauversion für Windows, macOS und Linux verfügbar.
 
-[Erste Schritte mit dem Speicher-Explorer (Vorschau)](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+[Erste Schritte mit dem Azure Storage-Explorer (Vorschau)](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer)
