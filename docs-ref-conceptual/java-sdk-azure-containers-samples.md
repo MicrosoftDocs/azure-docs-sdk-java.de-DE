@@ -12,14 +12,14 @@ ms.technology: azure
 ms.devlang: java
 ms.service: multiple
 ms.openlocfilehash: 534a31dd6e81605de03d17643d06a75f8621e50c
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21930826"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893641"
 ---
-# <a name="java-samples-for-azure-container-service"></a><span data-ttu-id="47b7e-104">Java-Beispiele für Azure Container Service</span><span class="sxs-lookup"><span data-stu-id="47b7e-104">Java samples for Azure Container Service</span></span>
+# <a name="java-samples-for-azure-container-service"></a><span data-ttu-id="1a39b-104">Java-Beispiele für Azure Container Service</span><span class="sxs-lookup"><span data-stu-id="1a39b-104">Java samples for Azure Container Service</span></span>
 
-<span data-ttu-id="47b7e-105">Die folgende Tabelle enthält Links zu Java-Ressourcen, die Sie zum Erstellen und Konfigurieren von in Containern ausgeführten Anwendungen verwenden können.</span><span class="sxs-lookup"><span data-stu-id="47b7e-105">The following table links to Java source you can use to create and configure applications running in containers.</span></span>
+<span data-ttu-id="1a39b-105">Die folgende Tabelle enthält Links zu Java-Ressourcen, die Sie zum Erstellen und Konfigurieren von in Containern ausgeführten Anwendungen verwenden können.</span><span class="sxs-lookup"><span data-stu-id="1a39b-105">The following table links to Java source you can use to create and configure applications running in containers.</span></span>
 
 [!INCLUDE [java-container-samples](includes/java-container-samples.md)]

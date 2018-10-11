@@ -15,20 +15,20 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: dcbd7e8a78470df0ab3bc2d7c87137a97fc4665c
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954401"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893421"
 ---
-# <a name="whats-new-in-the-azure-toolkit-for-intellij"></a><span data-ttu-id="7186b-103">Neuerungen im Azure-Toolkit für IntelliJ</span><span class="sxs-lookup"><span data-stu-id="7186b-103">What's New in the Azure Toolkit for IntelliJ</span></span>
+# <a name="whats-new-in-the-azure-toolkit-for-intellij"></a><span data-ttu-id="cf58a-103">Neuerungen im Azure-Toolkit für IntelliJ</span><span class="sxs-lookup"><span data-stu-id="cf58a-103">What's New in the Azure Toolkit for IntelliJ</span></span>
 
-<span data-ttu-id="7186b-104">Die folgende Webseite enthält Informationen zu den verschiedenen Versionen und den neuesten Updates des Azure-Toolkits für IntelliJ.</span><span class="sxs-lookup"><span data-stu-id="7186b-104">The following web page contains information on the various releases and latest updates to the Azure Toolkit for IntelliJ.</span></span>
+<span data-ttu-id="cf58a-104">Die folgende Webseite enthält Informationen zu den verschiedenen Versionen und den neuesten Updates des Azure-Toolkits für IntelliJ.</span><span class="sxs-lookup"><span data-stu-id="cf58a-104">The following web page contains information on the various releases and latest updates to the Azure Toolkit for IntelliJ.</span></span>
 
-<span data-ttu-id="7186b-105"><https://github.com/Microsoft/azure-tools-for-java/releases></span><span class="sxs-lookup"><span data-stu-id="7186b-105"><https://github.com/Microsoft/azure-tools-for-java/releases></span></span>
+<https://github.com/Microsoft/azure-tools-for-java/releases>
 
 > [!NOTE] 
-> <span data-ttu-id="7186b-106">Es gibt auch ein Azure-Toolkit für die Eclipse-IDE.</span><span class="sxs-lookup"><span data-stu-id="7186b-106">There is also an Azure Toolkit for the Eclipse IDE.</span></span> <span data-ttu-id="7186b-107">Weitere Informationen finden Sie unter [Azure-Toolkit für Eclipse].</span><span class="sxs-lookup"><span data-stu-id="7186b-107">For more information, see [Azure Toolkit for Eclipse].</span></span> 
+> <span data-ttu-id="cf58a-105">Es gibt auch ein Azure-Toolkit für die Eclipse-IDE.</span><span class="sxs-lookup"><span data-stu-id="cf58a-105">There is also an Azure Toolkit for the Eclipse IDE.</span></span> <span data-ttu-id="cf58a-106">Weitere Informationen finden Sie unter [Azure-Toolkit für Eclipse].</span><span class="sxs-lookup"><span data-stu-id="cf58a-106">For more information, see [Azure Toolkit for Eclipse].</span></span> 
 > 
 
 <!--
@@ -72,7 +72,7 @@ The Azure Toolkit for IntelliJ - April 2016 release includes the following enhan
 
 -->
 
-## <a name="next-steps"></a><span data-ttu-id="7186b-108">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="7186b-108">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="cf58a-107">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="cf58a-107">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 

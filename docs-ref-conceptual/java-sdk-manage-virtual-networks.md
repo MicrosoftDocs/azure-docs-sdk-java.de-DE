@@ -11,19 +11,19 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 3d21cdd890912c1fc58fc65a79ba972b8327edeb
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931086"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892541"
 ---
-# <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a><span data-ttu-id="67332-103">Erstellen und Verwalten von virtuellen Azure-Netzwerken über Ihre Java-Apps</span><span class="sxs-lookup"><span data-stu-id="67332-103">Create and manage Azure virtual networks from your Java apps</span></span>
+# <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a><span data-ttu-id="fe8ea-103">Erstellen und Verwalten von virtuellen Azure-Netzwerken über Ihre Java-Apps</span><span class="sxs-lookup"><span data-stu-id="fe8ea-103">Create and manage Azure virtual networks from your Java apps</span></span>
 
-<span data-ttu-id="67332-104">In [diesem Beispiel](https://github.com/Azure-Samples/network-java-manage-virtual-network) wird ein [virtuelles Netzwerk](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) erstellt, um Ihre Azure-Ressourcen in dem von Ihnen gesteuerten Netzwerksegment zu isolieren.</span><span class="sxs-lookup"><span data-stu-id="67332-104">[This sample](https://github.com/Azure-Samples/network-java-manage-virtual-network) creates a [virtual network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) to isolate your Azure resources on network segment you control.</span></span>
+<span data-ttu-id="fe8ea-104">In [diesem Beispiel](https://github.com/Azure-Samples/network-java-manage-virtual-network) wird ein [virtuelles Netzwerk](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) erstellt, um Ihre Azure-Ressourcen in dem von Ihnen gesteuerten Netzwerksegment zu isolieren.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-104">[This sample](https://github.com/Azure-Samples/network-java-manage-virtual-network) creates a [virtual network](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) to isolate your Azure resources on network segment you control.</span></span>
 
-## <a name="run-the-sample"></a><span data-ttu-id="67332-105">Ausführen des Beispiels</span><span class="sxs-lookup"><span data-stu-id="67332-105">Run the sample</span></span>
+## <a name="run-the-sample"></a><span data-ttu-id="fe8ea-105">Ausführen des Beispiels</span><span class="sxs-lookup"><span data-stu-id="fe8ea-105">Run the sample</span></span>
 
-<span data-ttu-id="67332-106">Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest.</span><span class="sxs-lookup"><span data-stu-id="67332-106">Create an [authentication file](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) and set an environment variable `AZURE_AUTH_LOCATION` with the full path to the file on your computer.</span></span> <span data-ttu-id="67332-107">Führen Sie anschließend Folgendes aus:</span><span class="sxs-lookup"><span data-stu-id="67332-107">Then run:</span></span>
+<span data-ttu-id="fe8ea-106">Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-106">Create an [authentication file](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md) and set an environment variable `AZURE_AUTH_LOCATION` with the full path to the file on your computer.</span></span> <span data-ttu-id="fe8ea-107">Führen Sie anschließend Folgendes aus:</span><span class="sxs-lookup"><span data-stu-id="fe8ea-107">Then run:</span></span>
 
 ```
 git clone https://github.com/Azure-Samples/network-java-manage-virtual-network.git
@@ -31,13 +31,13 @@ cd network-java-manage-virtual-network
 mvn clean compile exec:java
 ```
 
-<span data-ttu-id="67332-108">Sehen Sie sich das [vollständige Codebeispiel auf GitHub](https://github.com/Azure-Samples/network-java-manage-virtual-network/blob/master/src/main/java/com/microsoft/azure/management/network/samples/ManageVirtualNetwork.java) an.</span><span class="sxs-lookup"><span data-stu-id="67332-108">View the [complete code sample on GitHub](https://github.com/Azure-Samples/network-java-manage-virtual-network/blob/master/src/main/java/com/microsoft/azure/management/network/samples/ManageVirtualNetwork.java).</span></span>
+<span data-ttu-id="fe8ea-108">Sehen Sie sich das [vollständige Codebeispiel auf GitHub](https://github.com/Azure-Samples/network-java-manage-virtual-network/blob/master/src/main/java/com/microsoft/azure/management/network/samples/ManageVirtualNetwork.java) an.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-108">View the [complete code sample on GitHub](https://github.com/Azure-Samples/network-java-manage-virtual-network/blob/master/src/main/java/com/microsoft/azure/management/network/samples/ManageVirtualNetwork.java).</span></span>
 
-## <a name="authenticate-with-azure"></a><span data-ttu-id="67332-109">Authentifizierung über Azure</span><span class="sxs-lookup"><span data-stu-id="67332-109">Authenticate with Azure</span></span>
+## <a name="authenticate-with-azure"></a><span data-ttu-id="fe8ea-109">Authentifizieren über Azure</span><span class="sxs-lookup"><span data-stu-id="fe8ea-109">Authenticate with Azure</span></span>
 
 [!INCLUDE [auth-include](includes/java-auth-include.md)]
 
-## <a name="create-a-network-security-group-to-block-internet-traffic"></a><span data-ttu-id="67332-110">Erstellen einer Netzwerksicherheitsgruppe zum Blockieren von Internetdatenverkehr</span><span class="sxs-lookup"><span data-stu-id="67332-110">Create a network security group to block Internet traffic</span></span>
+## <a name="create-a-network-security-group-to-block-internet-traffic"></a><span data-ttu-id="fe8ea-110">Erstellen einer Netzwerksicherheitsgruppe zum Blockieren von Internetdatenverkehr</span><span class="sxs-lookup"><span data-stu-id="fe8ea-110">Create a network security group to block Internet traffic</span></span>
 
 ```java
 // this NSG definition block traffic to and from the public Internet
@@ -64,9 +64,9 @@ NetworkSecurityGroup backEndSubnetNsg = azure.networkSecurityGroups()
                     .create();
 ```
 
-<span data-ttu-id="67332-111">Mit dieser [Netzwerksicherheitsregel](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) wird sowohl eingehender als auch ausgehender öffentlicher Internetdatenverkehr blockiert.</span><span class="sxs-lookup"><span data-stu-id="67332-111">This [network security rule](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) blocks both inbound and outbound public Internet traffic.</span></span> <span data-ttu-id="67332-112">Diese Netzwerksicherheitsgruppe hat erst dann eine Auswirkung, wenn sie auf ein Subnetz im virtuellen Netzwerk angewendet wird.</span><span class="sxs-lookup"><span data-stu-id="67332-112">This network security group will not have an effect until applied to a subnet in your virtual network.</span></span>
+<span data-ttu-id="fe8ea-111">Mit dieser [Netzwerksicherheitsregel](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) wird sowohl eingehender als auch ausgehender öffentlicher Internetdatenverkehr blockiert.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-111">This [network security rule](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) blocks both inbound and outbound public Internet traffic.</span></span> <span data-ttu-id="fe8ea-112">Diese Netzwerksicherheitsgruppe hat erst dann eine Auswirkung, wenn sie auf ein Subnetz im virtuellen Netzwerk angewendet wird.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-112">This network security group will not have an effect until applied to a subnet in your virtual network.</span></span>
 
-## <a name="create-a-virtual-network-with-two-subnets"></a><span data-ttu-id="67332-113">Erstellen eines virtuellen Netzwerks mit zwei Subnetzen</span><span class="sxs-lookup"><span data-stu-id="67332-113">Create a virtual network with two subnets</span></span>
+## <a name="create-a-virtual-network-with-two-subnets"></a><span data-ttu-id="fe8ea-113">Erstellen eines virtuellen Netzwerks mit zwei Subnetzen</span><span class="sxs-lookup"><span data-stu-id="fe8ea-113">Create a virtual network with two subnets</span></span>
 
 ```java
 // create the a virtual network with two subnets
@@ -83,9 +83,9 @@ Network virtualNetwork1 = azure.networks().define(vnetName1)
                     .create();
 ```
 
-<span data-ttu-id="67332-114">Das Back-End-Subnetz verweigert den Internetzugriff gemäß den Regeln, die in der Netzwerksicherheitsgruppe festgelegt sind.</span><span class="sxs-lookup"><span data-stu-id="67332-114">The backend subnet denies Internet access usingfollowing the rules set in the network security group.</span></span> <span data-ttu-id="67332-115">Das Front-End-Subnetz verwendet die [Standardregeln](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg), die ausgehenden Datenverkehr an das Internet ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="67332-115">The front end subnet uses the [default rules](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) which allow outbound traffic to the Internet.</span></span>
+<span data-ttu-id="fe8ea-114">Das Back-End-Subnetz verweigert den Internetzugriff gemäß den Regeln, die in der Netzwerksicherheitsgruppe festgelegt sind.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-114">The backend subnet denies Internet access usingfollowing the rules set in the network security group.</span></span> <span data-ttu-id="fe8ea-115">Das Front-End-Subnetz verwendet die [Standardregeln](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg), die ausgehenden Datenverkehr an das Internet ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-115">The front end subnet uses the [default rules](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) which allow outbound traffic to the Internet.</span></span>
 
-## <a name="create-a-network-security-group-to-allow-inbound-http-traffic"></a><span data-ttu-id="67332-116">Erstellen einer Netzwerksicherheitsgruppe zum Zulassen von eingehendem HTTP-Datenverkehr</span><span class="sxs-lookup"><span data-stu-id="67332-116">Create a network security group to allow inbound HTTP traffic</span></span>
+## <a name="create-a-network-security-group-to-allow-inbound-http-traffic"></a><span data-ttu-id="fe8ea-116">Erstellen einer Netzwerksicherheitsgruppe zum Zulassen von eingehendem HTTP-Datenverkehr</span><span class="sxs-lookup"><span data-stu-id="fe8ea-116">Create a network security group to allow inbound HTTP traffic</span></span>
 ```java
 // create a rule that allows inbound HTTP and blocks outbound Internet traffic
 NetworkSecurityGroup frontEndSubnetNsg = azure.networkSecurityGroups()
@@ -111,9 +111,9 @@ NetworkSecurityGroup frontEndSubnetNsg = azure.networkSecurityGroups()
                     .create();
 ```
 
-<span data-ttu-id="67332-117">Diese Netzwerksicherheitsgruppe lässt eingehenden Datenverkehr an Port 80 aus dem öffentlichen Internet zu und blockiert den gesamten ausgehenden Datenverkehr vom Netzwerk an das öffentliche Internet.</span><span class="sxs-lookup"><span data-stu-id="67332-117">This network security rule opens up inbound traffic on port 80 from the public Internet, and blocks all outbound traffic from inside the network to the public Internet.</span></span> 
+<span data-ttu-id="fe8ea-117">Diese Netzwerksicherheitsgruppe lässt eingehenden Datenverkehr an Port 80 aus dem öffentlichen Internet zu und blockiert den gesamten ausgehenden Datenverkehr vom Netzwerk an das öffentliche Internet.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-117">This network security rule opens up inbound traffic on port 80 from the public Internet, and blocks all outbound traffic from inside the network to the public Internet.</span></span> 
 
-## <a name="update-a-virtual-network"></a><span data-ttu-id="67332-118">Erstellen eines virtuellen Netzwerks</span><span class="sxs-lookup"><span data-stu-id="67332-118">Update a virtual network</span></span>
+## <a name="update-a-virtual-network"></a><span data-ttu-id="fe8ea-118">Erstellen eines virtuellen Netzwerks</span><span class="sxs-lookup"><span data-stu-id="fe8ea-118">Update a virtual network</span></span>
 ```java
 // update the front end subnet to use the rules in the new network security group
 virtualNetwork1.update()
@@ -123,9 +123,9 @@ virtualNetwork1.update()
           .apply();
 ```
 
-<span data-ttu-id="67332-119">Aktualisieren Sie das Front-End-Subnetz, um mithilfe der im vorherigen Schritt erstellten Netzwerksicherheitsregel eingehenden HTTP-Datenverkehr zuzulassen.</span><span class="sxs-lookup"><span data-stu-id="67332-119">Update the front end subnet to allow inbound HTTP traffic using the network security rule created in the previous step.</span></span>
+<span data-ttu-id="fe8ea-119">Aktualisieren Sie das Front-End-Subnetz, um mithilfe der im vorherigen Schritt erstellten Netzwerksicherheitsregel eingehenden HTTP-Datenverkehr zuzulassen.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-119">Update the front end subnet to allow inbound HTTP traffic using the network security rule created in the previous step.</span></span>
 
-## <a name="create-a-virtual-machine-on-a-subnet"></a><span data-ttu-id="67332-120">Erstellen eines virtuellen Computers in einem Subnetz</span><span class="sxs-lookup"><span data-stu-id="67332-120">Create a virtual machine on a subnet</span></span>
+## <a name="create-a-virtual-machine-on-a-subnet"></a><span data-ttu-id="fe8ea-120">Erstellen eines virtuellen Computers in einem Subnetz</span><span class="sxs-lookup"><span data-stu-id="fe8ea-120">Create a virtual machine on a subnet</span></span>
 ```java
 // attach the new VM to the front end subnet on the virtual network
 VirtualMachine frontEndVM = azure.virtualMachines().define(frontEndVmName)
@@ -142,9 +142,9 @@ VirtualMachine frontEndVM = azure.virtualMachines().define(frontEndVmName)
                     .create();
 ```
 
-<span data-ttu-id="67332-121">Mit `withExistingPrimaryNetwork()` und `withSubnet()` wird der virtuelle Computer zur Verwendung des Front-End-Subnetzes im virtuellen Netzwerk konfiguriert, das im vorherigen Schritt erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="67332-121">`withExistingPrimaryNetwork()` and `withSubnet()` configure the virtual machine to use the front-end subnet on the virtual network created in the previous steps.</span></span>
+<span data-ttu-id="fe8ea-121">Mit `withExistingPrimaryNetwork()` und `withSubnet()` wird der virtuelle Computer zur Verwendung des Front-End-Subnetzes im virtuellen Netzwerk konfiguriert, das im vorherigen Schritt erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-121">`withExistingPrimaryNetwork()` and `withSubnet()` configure the virtual machine to use the front-end subnet on the virtual network created in the previous steps.</span></span>
 
-## <a name="list-virtual-networks-in-a-resource-group"></a><span data-ttu-id="67332-122">Auflisten virtueller Netzwerke in einer Ressourcengruppe</span><span class="sxs-lookup"><span data-stu-id="67332-122">List virtual networks in a resource group</span></span>
+## <a name="list-virtual-networks-in-a-resource-group"></a><span data-ttu-id="fe8ea-122">Auflisten virtueller Netzwerke in einer Ressourcengruppe</span><span class="sxs-lookup"><span data-stu-id="fe8ea-122">List virtual networks in a resource group</span></span>
 ```java
 // iterate over every virtual network in the resource group 
 for (Network virtualNetwork : azure.networks().listByResourceGroup(rgName)) {
@@ -158,9 +158,9 @@ for (Network virtualNetwork : azure.networks().listByResourceGroup(rgName)) {
 }
 ```       
 
-<span data-ttu-id="67332-123">Sie können `Network`-Objekte mit der äußeren Abfrage auflisten und untersuchen oder mit der geschachtelten For-Each-Schleife alle untergeordneten Ressourcen für jedes Netzwerk wie in diesem Beispiel gezeigt durchlaufen.</span><span class="sxs-lookup"><span data-stu-id="67332-123">You can list and inspect `Network` object using the outer collection or iterate through each child resource for each network using the nested for-each loop as seen in this example.</span></span>
+<span data-ttu-id="fe8ea-123">Sie können `Network`-Objekte mit der äußeren Abfrage auflisten und untersuchen oder mit der geschachtelten For-Each-Schleife alle untergeordneten Ressourcen für jedes Netzwerk wie in diesem Beispiel gezeigt durchlaufen.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-123">You can list and inspect `Network` object using the outer collection or iterate through each child resource for each network using the nested for-each loop as seen in this example.</span></span>
 
-## <a name="delete-a-virtual-network"></a><span data-ttu-id="67332-124">Löschen eines virtuellen Netzwerks</span><span class="sxs-lookup"><span data-stu-id="67332-124">Delete a virtual network</span></span>
+## <a name="delete-a-virtual-network"></a><span data-ttu-id="fe8ea-124">Löschen eines virtuellen Netzwerks</span><span class="sxs-lookup"><span data-stu-id="fe8ea-124">Delete a virtual network</span></span>
 ```java
 // if you already have the virtual network object it is easiest to delete by ID
 azure.networks().deleteById(virtualNetwork1.id());
@@ -169,18 +169,18 @@ azure.networks().deleteById(virtualNetwork1.id());
 azure.networks().deleteByResourceGroup(rgName,vnetName1);
 ```
 
-<span data-ttu-id="67332-125">Wenn Sie ein virtuelles Netzwerk entfernen, werden die Subnetze im Netzwerk, aber nicht die auf die Subnetze angewendeten Regeln der Netzwerksicherheitsgruppe gelöscht.</span><span class="sxs-lookup"><span data-stu-id="67332-125">Removing a virtual network deletes the subnets on the network but does not delete the network security group rules applied to the subnets.</span></span> <span data-ttu-id="67332-126">Diese Definitionen können wieder auf andere Subnetze angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="67332-126">Those definitions can be reapplied to other subnets.</span></span>
+<span data-ttu-id="fe8ea-125">Wenn Sie ein virtuelles Netzwerk entfernen, werden die Subnetze im Netzwerk, aber nicht die auf die Subnetze angewendeten Regeln der Netzwerksicherheitsgruppe gelöscht.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-125">Removing a virtual network deletes the subnets on the network but does not delete the network security group rules applied to the subnets.</span></span> <span data-ttu-id="fe8ea-126">Diese Definitionen können wieder auf andere Subnetze angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-126">Those definitions can be reapplied to other subnets.</span></span>
 
-## <a name="sample-explanation"></a><span data-ttu-id="67332-127">Erläuterung des Beispiels</span><span class="sxs-lookup"><span data-stu-id="67332-127">Sample explanation</span></span>
+## <a name="sample-explanation"></a><span data-ttu-id="fe8ea-127">Erläuterung des Beispiels</span><span class="sxs-lookup"><span data-stu-id="fe8ea-127">Sample explanation</span></span>
 
-<span data-ttu-id="67332-128">In diesem Beispiel wird ein virtuelles Netzwerk mit zwei Subnetzen und einem virtuellen Computer in jedem Subnetz erstellt.</span><span class="sxs-lookup"><span data-stu-id="67332-128">This sample creates a virtual network with two subnets and with one virtual machine on each subnet.</span></span> <span data-ttu-id="67332-129">Das Back-End-Subnetz ist nicht mit dem öffentlichen Internet verbunden.</span><span class="sxs-lookup"><span data-stu-id="67332-129">The back subnet is cut off from the public Internet.</span></span> <span data-ttu-id="67332-130">Das Front-End-Subnetz akzeptiert eingehenden HTTP-Datenverkehr vom Internet.</span><span class="sxs-lookup"><span data-stu-id="67332-130">The front-facing subnet accepts inbound HTTP traffic from the Internet.</span></span> <span data-ttu-id="67332-131">Beide virtuellen Computer im virtuellen Netzwerk kommunizieren über die Netzwerksicherheitsgruppen-Standardregeln miteinander.</span><span class="sxs-lookup"><span data-stu-id="67332-131">Both virtual machines in the virtual network communicate with each other through the default network security group rules.</span></span>
+<span data-ttu-id="fe8ea-128">In diesem Beispiel wird ein virtuelles Netzwerk mit zwei Subnetzen und einem virtuellen Computer in jedem Subnetz erstellt.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-128">This sample creates a virtual network with two subnets and with one virtual machine on each subnet.</span></span> <span data-ttu-id="fe8ea-129">Das Back-End-Subnetz ist nicht mit dem öffentlichen Internet verbunden.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-129">The back subnet is cut off from the public Internet.</span></span> <span data-ttu-id="fe8ea-130">Das Front-End-Subnetz akzeptiert eingehenden HTTP-Datenverkehr vom Internet.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-130">The front-facing subnet accepts inbound HTTP traffic from the Internet.</span></span> <span data-ttu-id="fe8ea-131">Beide virtuellen Computer im virtuellen Netzwerk kommunizieren über die Netzwerksicherheitsgruppen-Standardregeln miteinander.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-131">Both virtual machines in the virtual network communicate with each other through the default network security group rules.</span></span>
 
-| <span data-ttu-id="67332-132">Im Beispiel verwendete Klasse</span><span class="sxs-lookup"><span data-stu-id="67332-132">Class used in sample</span></span> | <span data-ttu-id="67332-133">Hinweise</span><span class="sxs-lookup"><span data-stu-id="67332-133">Notes</span></span>
+| <span data-ttu-id="fe8ea-132">Im Beispiel verwendete Klasse</span><span class="sxs-lookup"><span data-stu-id="fe8ea-132">Class used in sample</span></span> | <span data-ttu-id="fe8ea-133">Notizen</span><span class="sxs-lookup"><span data-stu-id="fe8ea-133">Notes</span></span>
 |-------|-------|
-| [<span data-ttu-id="67332-134">Netzwerk</span><span class="sxs-lookup"><span data-stu-id="67332-134">Network</span></span>](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | <span data-ttu-id="67332-135">Lokale Objektdarstellung des über `azure.networks().define()...create()` erstellten virtuellen Netzwerks.</span><span class="sxs-lookup"><span data-stu-id="67332-135">Local object representation of the virtual network created from `azure.networks().define()...create()` .</span></span> <span data-ttu-id="67332-136">Aktualisieren Sie mit der `update()...apply()`-Fluent-Kette ein vorhandenes virtuelles Netzwerk.</span><span class="sxs-lookup"><span data-stu-id="67332-136">Use the `update()...apply()` fluent chain to update an existing virtual network.</span></span>
-| [<span data-ttu-id="67332-137">Subnetz</span><span class="sxs-lookup"><span data-stu-id="67332-137">Subnet</span></span>](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | <span data-ttu-id="67332-138">Erstellen Sie Subnetze im virtuellen Netzwerk, wenn Sie das Netzwerk mit `withSubnet()` definieren oder aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="67332-138">Create subnets on the virtual network when defining or updating the network using `withSubnet()`.</span></span> <span data-ttu-id="67332-139">Rufen Sie Objektdarstellungen eines Subnetzes über `Network.subnets().get()` oder `Network.subnets().entrySet()` ab.</span><span class="sxs-lookup"><span data-stu-id="67332-139">Get object representations of a subnet from `Network.subnets().get()` or `Network.subnets().entrySet()`.</span></span> <span data-ttu-id="67332-140">Diese Objekte enthalten Methoden zum Abfragen der Subnetzeigenschaften.</span><span class="sxs-lookup"><span data-stu-id="67332-140">These objects have methods to query subnet properties.</span></span>
-| [<span data-ttu-id="67332-141">NetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="67332-141">NetworkSecurityGroup</span></span>](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network_security_group) | <span data-ttu-id="67332-142">Wird mit der `azure.networkSecurityGroups().define()...create()`-Fluent-Kette erstellt und dann durch Aktualisieren oder Erstellen von Subnetzen in einem virtuellen Netzwerk auf Subnetze angewendet.</span><span class="sxs-lookup"><span data-stu-id="67332-142">Created using the `azure.networkSecurityGroups().define()...create()` fluent chain and then applied to subnets through the updating or creating subnets in a virtual network.</span></span> 
+| [<span data-ttu-id="fe8ea-134">Netzwerk</span><span class="sxs-lookup"><span data-stu-id="fe8ea-134">Network</span></span>](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | <span data-ttu-id="fe8ea-135">Lokale Objektdarstellung des über `azure.networks().define()...create()` erstellten virtuellen Netzwerks.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-135">Local object representation of the virtual network created from `azure.networks().define()...create()` .</span></span> <span data-ttu-id="fe8ea-136">Aktualisieren Sie mit der `update()...apply()`-Fluent-Kette ein vorhandenes virtuelles Netzwerk.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-136">Use the `update()...apply()` fluent chain to update an existing virtual network.</span></span>
+| [<span data-ttu-id="fe8ea-137">Subnetz</span><span class="sxs-lookup"><span data-stu-id="fe8ea-137">Subnet</span></span>](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | <span data-ttu-id="fe8ea-138">Erstellen Sie Subnetze im virtuellen Netzwerk, wenn Sie das Netzwerk mit `withSubnet()` definieren oder aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-138">Create subnets on the virtual network when defining or updating the network using `withSubnet()`.</span></span> <span data-ttu-id="fe8ea-139">Rufen Sie Objektdarstellungen eines Subnetzes über `Network.subnets().get()` oder `Network.subnets().entrySet()` ab.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-139">Get object representations of a subnet from `Network.subnets().get()` or `Network.subnets().entrySet()`.</span></span> <span data-ttu-id="fe8ea-140">Diese Objekte enthalten Methoden zum Abfragen der Subnetzeigenschaften.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-140">These objects have methods to query subnet properties.</span></span>
+| [<span data-ttu-id="fe8ea-141">NetworkSecurityGroup</span><span class="sxs-lookup"><span data-stu-id="fe8ea-141">NetworkSecurityGroup</span></span>](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network_security_group) | <span data-ttu-id="fe8ea-142">Wird mit der `azure.networkSecurityGroups().define()...create()`-Fluent-Kette erstellt und dann durch Aktualisieren oder Erstellen von Subnetzen in einem virtuellen Netzwerk auf Subnetze angewendet.</span><span class="sxs-lookup"><span data-stu-id="fe8ea-142">Created using the `azure.networkSecurityGroups().define()...create()` fluent chain and then applied to subnets through the updating or creating subnets in a virtual network.</span></span> 
 
-## <a name="next-steps"></a><span data-ttu-id="67332-143">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="67332-143">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="fe8ea-143">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="fe8ea-143">Next steps</span></span>
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

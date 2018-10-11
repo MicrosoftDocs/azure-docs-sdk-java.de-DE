@@ -12,25 +12,25 @@ ms.technology: azure
 ms.devlang: java
 ms.service: cosmosdb
 ms.openlocfilehash: 6fc9f90cb3c8130aa82b20554a94a8b5ab78c083
-ms.sourcegitcommit: 33c70f921f1524c8bdb69ad5a1a3c1b4b1de97ba
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37026792"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48898980"
 ---
-# <a name="azure-cosmos-db-libraries-for-java"></a><span data-ttu-id="70001-104">Azure DB Cosmos-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="70001-104">Azure Cosmos DB libraries for Java</span></span>
+# <a name="azure-cosmos-db-libraries-for-java"></a><span data-ttu-id="b68bd-104">Azure DB Cosmos-Bibliotheken für Java</span><span class="sxs-lookup"><span data-stu-id="b68bd-104">Azure Cosmos DB libraries for Java</span></span>
 
-## <a name="overview"></a><span data-ttu-id="70001-105">Übersicht</span><span class="sxs-lookup"><span data-stu-id="70001-105">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="b68bd-105">Übersicht</span><span class="sxs-lookup"><span data-stu-id="b68bd-105">Overview</span></span>
 
-<span data-ttu-id="70001-106">Mit [Azure Cosmos DB](/azure/cosmos-db/introduction) können Sie Schlüsselwerte, JSON-Dokumente, Diagramme und Spaltendaten in einer global verteilten Datenbank speichern und abfragen.</span><span class="sxs-lookup"><span data-stu-id="70001-106">Store and query key-value, JSON document, graph, and columnar data in a globally distributed database with [Azure Cosmos DB](/azure/cosmos-db/introduction).</span></span>
+<span data-ttu-id="b68bd-106">Mit [Azure Cosmos DB](/azure/cosmos-db/introduction) können Sie Schlüsselwerte, JSON-Dokumente, Diagramme und Spaltendaten in einer global verteilten Datenbank speichern und abfragen.</span><span class="sxs-lookup"><span data-stu-id="b68bd-106">Store and query key-value, JSON document, graph, and columnar data in a globally distributed database with [Azure Cosmos DB](/azure/cosmos-db/introduction).</span></span>
 
-<span data-ttu-id="70001-107">Informationen zu den ersten Schritten mit Azure Cosmos DB finden Sie unter [Azure Cosmos DB: Erstellen einer Dokumentdatenbank mit Java und dem Azure-Portal](/azure/cosmos-db/create-sql-api-java).</span><span class="sxs-lookup"><span data-stu-id="70001-107">To get started with Azure Cosmos DB, see [Azure Cosmos DB: Build an API app with Java and the Azure portal](/azure/cosmos-db/create-sql-api-java).</span></span>
+<span data-ttu-id="b68bd-107">Informationen zu den ersten Schritten mit Azure Cosmos DB finden Sie unter [Azure Cosmos DB: Erstellen einer Dokumentdatenbank mit Java und dem Azure-Portal](/azure/cosmos-db/create-sql-api-java).</span><span class="sxs-lookup"><span data-stu-id="b68bd-107">To get started with Azure Cosmos DB, see [Azure Cosmos DB: Build an API app with Java and the Azure portal](/azure/cosmos-db/create-sql-api-java).</span></span>
 
-## <a name="client-library"></a><span data-ttu-id="70001-108">Clientbibliothek</span><span class="sxs-lookup"><span data-stu-id="70001-108">Client library</span></span>
+## <a name="client-library"></a><span data-ttu-id="b68bd-108">Clientbibliothek</span><span class="sxs-lookup"><span data-stu-id="b68bd-108">Client library</span></span>
 
-<span data-ttu-id="70001-109">Stellen Sie mithilfe der [SQL-API](/azure/cosmos-db/sql-api-introduction)-Clientbibliothek eine Verbindung mit Azure Cosmos DB her, um mit JSON-Daten mit [SQL-Abfragesyntax](/azure/cosmos-db/sql-api-sql-query) zu arbeiten.</span><span class="sxs-lookup"><span data-stu-id="70001-109">Connect to Azure Cosmos DB using the [SQL API](/azure/cosmos-db/sql-api-introduction) client library to work with JSON data with [SQL query syntax](/azure/cosmos-db/sql-api-sql-query).</span></span>
+<span data-ttu-id="b68bd-109">Stellen Sie mithilfe der [SQL-API](/azure/cosmos-db/sql-api-introduction)-Clientbibliothek eine Verbindung mit Azure Cosmos DB her, um mit JSON-Daten mit [SQL-Abfragesyntax](/azure/cosmos-db/sql-api-sql-query) zu arbeiten.</span><span class="sxs-lookup"><span data-stu-id="b68bd-109">Connect to Azure Cosmos DB using the [SQL API](/azure/cosmos-db/sql-api-introduction) client library to work with JSON data with [SQL query syntax](/azure/cosmos-db/sql-api-sql-query).</span></span>
 
-<span data-ttu-id="70001-110">Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Cosmos DB-Clientbibliothek in Ihrem Projekt zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="70001-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the Cosmos DB client library in your project.</span></span>
+<span data-ttu-id="b68bd-110">Fügen Sie der Maven-Datei `pom.xml` eine [Abhängigkeit](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) hinzu, um die Cosmos DB-Clientbibliothek in Ihrem Projekt zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="b68bd-110">[Add a dependency](https://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies) to your Maven `pom.xml` file to use the Cosmos DB client library in your project.</span></span>
 
 ```XML
 <dependency>
@@ -40,9 +40,9 @@ ms.locfileid: "37026792"
 </dependency>
 ```
 
-### <a name="example"></a><span data-ttu-id="70001-111">Beispiel</span><span class="sxs-lookup"><span data-stu-id="70001-111">Example</span></span>
+### <a name="example"></a><span data-ttu-id="b68bd-111">Beispiel</span><span class="sxs-lookup"><span data-stu-id="b68bd-111">Example</span></span>
 
-<span data-ttu-id="70001-112">Wählen Sie übereinstimmende JSON-Dokumente in Cosmos DB mit der SQL-Abfragesyntax aus:</span><span class="sxs-lookup"><span data-stu-id="70001-112">Select matching JSON documents in Cosmos DB using SQL query syntax.</span></span>
+<span data-ttu-id="b68bd-112">Wählen Sie übereinstimmende JSON-Dokumente in Cosmos DB mit der SQL-Abfragesyntax aus:</span><span class="sxs-lookup"><span data-stu-id="b68bd-112">Select matching JSON documents in Cosmos DB using SQL query syntax.</span></span>
 
 ```java
 DocumentClient client = new DocumentClient("https://contoso.documents.azure.com:443",
@@ -59,16 +59,16 @@ List<Document> results = client.queryDocuments("dbs/" + DATABASE_ID + "/colls/" 
 ```
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="70001-113">Informationen zu den Client-APIs</span><span class="sxs-lookup"><span data-stu-id="70001-113">Explore the Client APIs</span></span>](/java/api/overview/azure/cosmosdb/client)
+> [<span data-ttu-id="b68bd-113">Informationen zu den Client-APIs</span><span class="sxs-lookup"><span data-stu-id="b68bd-113">Explore the Client APIs</span></span>](/java/api/overview/azure/cosmosdb/client)
 
 
-## <a name="samples"></a><span data-ttu-id="70001-114">Beispiele</span><span class="sxs-lookup"><span data-stu-id="70001-114">Samples</span></span>
+## <a name="samples"></a><span data-ttu-id="b68bd-114">Beispiele</span><span class="sxs-lookup"><span data-stu-id="b68bd-114">Samples</span></span>
 
-<span data-ttu-id="70001-115">[Entwickeln einer Java-App mit der MongoDB-API von Azure Cosmos DB][2] </span><span class="sxs-lookup"><span data-stu-id="70001-115">[Develop a Java app using Azure Cosmos DB MongoDB API][2] </span></span>  
-<span data-ttu-id="70001-116">[Entwickeln einer Java-App mit der Graph-API von Azure Cosmos DB][3] </span><span class="sxs-lookup"><span data-stu-id="70001-116">[Develop a Java app using Azure Cosmos DB Graph API][3] </span></span>  
-<span data-ttu-id="70001-117">[Entwickeln einer Java-App mit der SQL-API von Azure Cosmos DB][4]</span><span class="sxs-lookup"><span data-stu-id="70001-117">[Develop a Java app using Azure Cosmos DB SQL API][4]</span></span>        
+<span data-ttu-id="b68bd-115">[Entwickeln einer Java-App mit der MongoDB-API von Azure Cosmos DB][2] </span><span class="sxs-lookup"><span data-stu-id="b68bd-115">[Develop a Java app using Azure Cosmos DB MongoDB API][2] </span></span>  
+<span data-ttu-id="b68bd-116">[Entwickeln einer Java-App mit der Graph-API von Azure Cosmos DB][3] </span><span class="sxs-lookup"><span data-stu-id="b68bd-116">[Develop a Java app using Azure Cosmos DB Graph API][3] </span></span>  
+<span data-ttu-id="b68bd-117">[Entwickeln einer Java-App mit der SQL-API von Azure Cosmos DB][4]</span><span class="sxs-lookup"><span data-stu-id="b68bd-117">[Develop a Java app using Azure Cosmos DB SQL API][4]</span></span>        
 
-<span data-ttu-id="70001-118">Sehen Sie sich weitere [Java-Codebeispiele für Azure Cosmos DB](https://azure.microsoft.com/resources/samples/?platform=java&term=cosmos) an, die Sie in Ihren Apps verwenden können.</span><span class="sxs-lookup"><span data-stu-id="70001-118">Explore more [sample Java code for Azure Cosmos DB](https://azure.microsoft.com/resources/samples/?platform=java&term=cosmos) you can use in your apps.</span></span>
+<span data-ttu-id="b68bd-118">Sehen Sie sich weitere [Java-Codebeispiele für Azure Cosmos DB](https://azure.microsoft.com/resources/samples/?platform=java&term=cosmos) an, die Sie in Ihren Apps verwenden können.</span><span class="sxs-lookup"><span data-stu-id="b68bd-118">Explore more [sample Java code for Azure Cosmos DB](https://azure.microsoft.com/resources/samples/?platform=java&term=cosmos) you can use in your apps.</span></span>
 
 [2]: https://github.com/Azure-Samples/azure-cosmos-db-mongodb-java-getting-started
 [3]: https://github.com/Azure-Samples/azure-cosmos-db-graph-java-getting-started
