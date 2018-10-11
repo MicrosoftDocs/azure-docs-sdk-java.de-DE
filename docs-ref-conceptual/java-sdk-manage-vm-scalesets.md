@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 4653726b387369c18942b6c11392f15b9f0351f3
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931156"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893491"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Verwalten von Azure-VM-Skalierungsgruppen über Ihre Java-Anwendungen
 
@@ -228,7 +228,7 @@ Skalieren Sie die Anzahl virtueller Computer in der Skalierungsgruppe mit `withC
 
 Der [Beispielcode](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets/blob/master/src/main/java/com/microsoft/azure/management/compute/samples/ManageVirtualMachineScaleSet.java) erstellt zunächst ein virtuelles Netzwerk, über das die Skalierungsgruppe kommunizieren kann, und einen Lastenausgleich, um den Datenverkehr auf die virtuellen Computer zu verteilen. Die Methode `azure.virtualMachineScaleSets().define()...create()` erstellt die Skalierungsgruppe mit drei Linux-Instanzen, die den Apache-Webserver ausführen.    
    
-| Im Beispiel verwendete Klasse | Hinweise
+| Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
 | [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set) | Dient zum Abfragen, Starten, Beenden, Aktualisieren und Löschen aller virtuellen Computer in der Skalierungsgruppe.
 | [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_v_m) | Wird aus `virtualMachineScaleSet.virtualMachines().get()` oder `list()` abgerufen und ermöglicht das Abfragen, Starten, Beenden, Konfigurieren und Löschen virtueller Computer in der Skalierungsgruppe.

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: adf779e2ba6ca73ea3a2406613f9622cc9ecbf99
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954523"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893161"
 ---
 # <a name="deploy-a-spring-boot-application-to-the-cloud-with-azure-app-service"></a>Bereitstellen von Spring Boot-Anwendungen in der Cloud mit Azure App Service
 
@@ -29,7 +29,7 @@ Dieses Tutorial führt Sie durch das Erstellen einer Beispiel-Web-App für die e
 
 Zum Durchführen der Schritte in diesem Tutorial benötigen Sie Folgendes:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Ein aktuelles [Java Developer Kit (JDK)]
 * Das Erstellungstool Apache [Maven] (Version 3)
 * Einen [Git-Client]
@@ -71,7 +71,7 @@ Die folgende Anleitung führt Sie durch die erforderlichen Schritte für das Ers
    java -jar gs-spring-boot-0.1.0.jar
    ```
 
-1. Testen Sie die Web-App, indem Sie zu http://localhost:8080 browsen, oder verwenden Sie die Syntax im folgenden Beispiel – sofern Curl verfügbar ist:
+1. Testen Sie die Web-App unter http://localhost:8080 in einem Webbrowser, oder verwenden Sie die Syntax aus dem folgenden Beispiel (sofern Curl verfügbar ist):
    ```
    curl http://localhost:8080
    ```
@@ -203,7 +203,7 @@ Weitere Informationen zum Bereitstellen von Web-Apps in Azure mithilfe von FTP f
 
 Weitere Informationen zum Spring Boot-Beispielprojekt finden Sie unter [Spring Boot Getting Started] (Erste Schritte mit Spring Boot).
 
-Hilfe zu den ersten Schritten mit eigenen Spring Boot-Anwendungen finden Sie im **Spring Initializr** unter https://start.spring.io/.
+Hilfe zu den ersten Schritten mit eigenen Spring Boot-Anwendungen finden Sie bei **Spring Initializr** unter https://start.spring.io/.
 
 Weitere Informationen zum Konfigurieren zusätzlicher Einstellungen für Ihre Web-App finden Sie unter [Konfigurieren von Web-Apps in Azure App Service].
 
@@ -215,12 +215,12 @@ Weitere Informationen zum Konfigurieren zusätzlicher Einstellungen für Ihre We
 [Azure-Portal]: https://portal.azure.com/
 [Konfigurieren von Web-Apps in Azure App Service]: /azure/app-service/web-sites-configure
 [Bereitstellen der App in Azure App Service mithilfe von FTP/S]: https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp
-[kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
+[Kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Git-Client]: https://github.com/
 [Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
-[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Boot Getting Started]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/

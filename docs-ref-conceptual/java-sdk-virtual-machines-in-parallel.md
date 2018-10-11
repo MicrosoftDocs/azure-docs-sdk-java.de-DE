@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: e20feb555c3a360eceae60c1569af9a00a5cd027
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931196"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893211"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Erstellen virtueller Computer in mehreren Regionen über Ihre Java-Anwendungen
 
@@ -186,13 +186,13 @@ Danach ruft der Beispielcode die IP-Adressen für alle erstellten virtuellen Com
 
 Der Block `finally` löscht die Ressourcen aus Ihrem Azure-Abonnement (auch im Falle eines Fehlers).
 
-| Im Beispiel verwendete Klasse | Hinweise
+| Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
 | [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine) | Dient zum Abfragen der Eigenschaften sowie zum Verwalten des Zustands virtueller Computer. Wird in Listenform (`azure.virtualMachines().list()`) oder nach Name oder ID (`azure.virtualMachines().getByResourceGroup()`) abgerufen.
 | [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_size_types) | Statische Werte, die [Größenoptionen für virtuelle Computer](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) entsprechen und beim Definieren eines virtuellen Computers als Parameter für `withSize()` angegeben werden können.
 | [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._public_i_p_address) | Wird für die einzelnen virtuellen Computer über `azure.publicIpAddresses().define()` definiert, aber nicht sofort erstellt. Speichern Sie den Schlüssel für die einzelnen Objekte vom Typ `Creatable`, und rufen Sie sie später über `createdRelatedResource()` ab.
 | [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Satz von Optionen für virtuelle Linux-Computer, die beim Definieren eines virtuellen Computers als Parameter für die Methode `withPopularLinuxImage()` angegeben werden können.
-| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | Das Beispiel definiert ein virtuelles Netzwerk für die einzelnen Regionen über `azure.networks().define()`. 
+| [Netzwerk](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | Das Beispiel definiert ein virtuelles Netzwerk für die einzelnen Regionen über `azure.networks().define()`. 
 
 ## <a name="next-steps"></a>Nächste Schritte
 

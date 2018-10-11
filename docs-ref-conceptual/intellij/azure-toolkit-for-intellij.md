@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: dd76cb3a0355e4e8471b7a32b6b33cb71bd3f16b
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954791"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892791"
 ---
 # <a name="azure-toolkit-for-intellij"></a>Azure Toolkit für IntelliJ
 Das Azure-Toolkit für IntelliJ stellt Vorlagen und Funktionen bereit, mit denen Sie Azure-Anwendungen mithilfe der IntelliJ-IDE-Entwicklungsumgebung einfach erstellen, entwickeln, testen und bereitstellen können.
@@ -32,7 +32,7 @@ Das Azure-Toolkit für IntelliJ stellt Vorlagen und Funktionen bereit, mit denen
 ## <a name="get-started-with-the-azure-toolkit-for-intellij"></a>Erste Schritte mit dem Azure-Toolkit für IntelliJ
 Die folgenden Artikel helfen Ihnen beim Einstieg in die Verwendung des Azure-Toolkit für IntelliJ:
 
-* [Installieren des Azure Toolkit für IntelliJ](azure-toolkit-for-intellij-installation.md)
+* [Installieren des Azure-Toolkits für IntelliJ](azure-toolkit-for-intellij-installation.md)
 
 * [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ](azure-toolkit-for-intellij-sign-in-instructions.md)
 

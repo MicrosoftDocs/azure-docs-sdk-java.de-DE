@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: d8ab3de791d1a4893efb77a51418c437f81c86ff
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954211"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893461"
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Azure-Toolkit für Eclipse
 
@@ -33,7 +33,7 @@ Das Azure-Toolkit für Eclipse stellt Vorlagen und Funktionen bereit, mit denen 
 ## <a name="get-started-with-the-azure-toolkit-for-eclipse"></a>Erste Schritte mit dem Azure-Toolkit für Eclipse
 Die folgenden Artikel helfen Ihnen beim Einstieg in die Verwendung des Azure-Toolkit für Eclipse:
 
-* [Installieren des Azure-Toolkits für Eclipse](azure-toolkit-for-eclipse-installation.md)
+* [Installation des Azure Toolkit für Eclipse](azure-toolkit-for-eclipse-installation.md)
 
 * [Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse](azure-toolkit-for-eclipse-sign-in-instructions.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Verwalten von Pools für elastische SQL-Datenbanken mit Java | Microsoft-Dokumentation
+title: Verwalten von Pools für elastische SQL-Datenbank-Instanzen mit Java | Microsoft-Dokumentation
 description: Beispielcode zum Erstellen und Konfigurieren von Azure SQL-Datenbanken mithilfe des Azure SDKs für Java
 author: rloutlaw
 manager: douge
@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 9ec0cf3083b8659fa850b798ca0ecf18b2757234
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931116"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893571"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Verwalten von Azure SQL-Datenbanken in Pools für elastische Datenbanken über Ihre Java-Anwendungen
 
@@ -52,7 +52,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
                     .create();
 ```
 
-Aktuelle Editionswerte finden Sie in der [ElasticPoolEditions-Klassenreferenz](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions). Die Merkmale der Editionsressourcen können Sie in der [Dokumentation zu Pools für elastische SQL-Datenbanken](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) vergleichen. 
+Aktuelle Editionswerte finden Sie in der [ElasticPoolEditions-Klassenreferenz](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions). Die Merkmale der Editionsressourcen können Sie in der [Dokumentation zu Pools für elastische SQL-Datenbank-Instanzen](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool) vergleichen. 
 
 ## <a name="change-database-transaction-unit-dtu-settings-in-an-elastic-pool"></a>Ändern der DTU-Einstellungen (Database Transaction Unit, Datenübertragungseinheit) in einem Pool für elastische Datenbanken
 
@@ -102,7 +102,7 @@ for (ElasticPoolDatabaseActivity databaseActivity : elasticPool.listDatabaseActi
 Zu Datenbankaktivitäten zählen das Verschieben in einen oder aus einem Pool für elastische Datenbanken sowie das Aktualisieren von Datenbanken in einem Pool für elastische Datenbanken.
 
 
-## <a name="list-databases-in-an-elastic-pool"></a>Auflisten von Datenbanken in einem elastischen Pool
+## <a name="list-databases-in-an-elastic-pool"></a>Auflisten von Datenbanken in einem Pool für elastische Datenbanken
 ```java
 // Log a list of databases in the elastic pool 
 for (SqlDatabase databaseInServer : elasticPool.listDatabases()) {
@@ -125,13 +125,13 @@ Das Beispiel erstellt eine SQL Server-Instanz mit zwei Datenbanken, die in einem
 
 Vor dem Beenden des Beispiels werden alle erstellten Ressourcen wieder gelöscht.
 
-| Im Beispiel verwendete Klasse | Hinweise |
+| Im Beispiel verwendete Klasse | Notizen |
 |-------|-------|
 | [SqlServer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_server) | Durch die Fluent-Kette `azure.sqlServers().define()...create()` erstellter SQL-Datenbankserver in Azure. Stellt Methoden zum Erstellen und Verwenden von Datenbanken und von Pools für elastische Datenbanken bereit. 
 | [SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_database) | Clientseitiges Objekt, das eine SQL-Datenbank darstellt. Erstellt durch `sqlServer().define()...create()`. 
 | [DatabaseEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._database_editions) | Konstante statische Felder zum Festlegen von Datenbankressourcen beim Erstellen einer Datenbank außerhalb eines Pools für elastische Datenbanken oder beim Verschieben einer Datenbank aus einem Pool für elastische Datenbanken.  
 | [SqlElasticPool](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_elastic_pool) | Wird auf der Grundlage des Abschnitts `withNewElasticPool()` der Fluent-Kette erstellt, die die SQL Server-Instanz in Azure erstellt hat. Stellt Methoden zum Festlegen der Ressourcenlimits bereit, die für Datenbanken, die im Pool für elastische Datenbanken ausgeführt werden, und für den eigentlichen Pool für elastische Datenbanken gelten. 
-| [ElasticPoolEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions) | Klasse konstanter Felder zum Definieren der verfügbaren Ressourcen für einen Pool für elastische Datenbanken. Tarifdetails finden Sie in der [Dokumentation zu Pools für elastische SQL-Datenbanken](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool). 
+| [ElasticPoolEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions) | Klasse konstanter Felder zum Definieren der verfügbaren Ressourcen für einen Pool für elastische Datenbanken. Tarifdetails finden Sie in der [Dokumentation zu Pools für elastische SQL-Datenbank-Instanzen](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool). 
 | [ElasticPoolDatabaseActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_database_activity) | Abgerufen aus `SqlElasticPool.listDatabaseActivities()`. Jedes Objekt dieses Typs stellt eine Aktivität dar, die für eine Datenbank im Pool für elastische Datenbanken ausgeführt wurde.
 | [ElasticPoolActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_activity) | Abgerufen in einer Liste aus `SqlElasticPool.listActivities()`. Jedes Objekt in der Liste stellt eine Aktivität dar, die für den Pool für elastische Datenbanken (nicht für die Datenbanken im Pool) ausgeführt wurde.
 

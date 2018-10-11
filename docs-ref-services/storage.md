@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: java
 ms.service: storage
 ms.openlocfilehash: ec06e79374176b5a4795d27c5fbbb2260e65cd8c
-ms.sourcegitcommit: 49b17bbf34732512f836ee634818f1058147ff5c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "31823653"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893591"
 ---
 # <a name="azure-storage-libraries-for-java"></a>Azure Storage-Bibliotheken für Java
 

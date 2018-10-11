@@ -15,11 +15,11 @@ ms.tgt_pltfrm: cache-redis
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 8bfe7c2ddd238e0e5a259de9078b831a97b1b1a4
-ms.sourcegitcommit: 151aaa6ccc64d94ed67f03e846bab953bde15b4a
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28954581"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892911"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Redis in der Cloud mit Azure Redis Cache
 
@@ -29,7 +29,7 @@ Dieser Artikel führt Sie durch das Erstellen einer Redis Cache-Instanz in der C
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -60,7 +60,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-a-redis-cache-on-azure"></a>Erstellen eines Redis-Caches in Azure
 
-1. Navigieren Sie unter <https://portal.azure.com/> zum Azure-Portal, und klicken Sie auf **+Neu**.
+1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Neu**.
 
    ![Azure-Portal][AZ01]
 
@@ -188,7 +188,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    mvn spring-boot:run
    ```
 
-1. Testen Sie die Web-App, indem Sie zu http://localhost:8080 browsen, oder verwenden Sie die Syntax im folgenden Beispiel – sofern Curl verfügbar ist:
+1. Testen Sie die Web-App unter http://localhost:8080 in einem Webbrowser, oder verwenden Sie die Syntax aus dem folgenden Beispiel (sofern Curl verfügbar ist):
 
    ```shell
    curl http://localhost:8080
@@ -215,7 +215,7 @@ Weitere Informationen zu den ersten Schritten mit Redis Cache mit Java in Azure 
 [Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
-[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/

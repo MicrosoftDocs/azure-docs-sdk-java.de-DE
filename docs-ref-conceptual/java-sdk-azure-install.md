@@ -11,11 +11,11 @@ ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
 ms.openlocfilehash: 5c8bb4b81080461285551573eefc0d76b47b2d3d
-ms.sourcegitcommit: 61030d025614b084e897809e603b2ec79900ec8d
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30302548"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892531"
 ---
 # <a name="azure-libraries-for-java"></a>Azure-Bibliotheken für Java
 
@@ -23,7 +23,7 @@ Azure-Bibliotheken unterstützen Sie bei der Nutzung von Azure-Diensten in Ihren
 
 | | | | |
 |:-------------:|:----------:|:----:|:---:|
-| [Azure Storage](#azure-storage) | [SQL-Datenbank](#sql-database)  | [Redis Cache](#redis-cache)   | [Azure Cosmos DB](#cosmos-db) |
+| [Azure Storage (in englischer Sprache)](#azure-storage) | [SQL-Datenbank](#sql-database)  | [Redis Cache](#redis-cache)   | [Azure Cosmos DB](#cosmos-db) |
 | [Service Bus](#servicebus)  | [Azure Active Directory](#azuread) | [Schlüsseltresor](#keyvault)  | [Event Hub](#eventhub)
 | [IoT-Dienst](#iotservice) | [IoT-Gerät](#iotdevice) | [Data Lake](#datalake)  | [AppInsights](#appinsights) | 
 | [Batch](#batch) | [Manage Azure resources (Verwalten von Azure-Ressourcen)](#management) |
@@ -50,7 +50,7 @@ Integrieren Sie Azure-Dienste, um den Funktionsumfang Ihrer Apps mithilfe dieser
 
 <a name="azure-storage"></a>
 
-### <a name="azure-storageazurestoragestorage-introduction"></a>[Azure Storage](/azure/storage/storage-introduction)  
+### <a name="azure-storageazurestoragestorage-introduction"></a>[Azure Storage (in englischer Sprache)](/azure/storage/storage-introduction)  
 
 Datenspeicher und Messaging für Ihre Anwendungen.
 

@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 5945164b2b04e1fa9169590a71f6c5f9f45842d6
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931056"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893061"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Verwalten von Azure-Speicherkonten über Ihre Java-Anwendungen
 
@@ -37,7 +37,7 @@ Sehen Sie sich das [vollständige Codebeispiel auf GitHub](https://github.com/Az
 
 [!INCLUDE [auth-include](includes/java-auth-include.md)] 
 
-## <a name="create-a-storage-account"></a>Erstellen Sie ein Speicherkonto.
+## <a name="create-a-storage-account"></a>Speicherkonto erstellen
 
 ```java
 // create a new storage account
@@ -81,7 +81,7 @@ for (StorageAccount sa : accounts) {
 
 Unter [com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account) finden Sie eine Reihe nützlicher Methoden zum Überprüfen der Konfiguration eines Speicherkontos.
 
-## <a name="delete-a-storage-account"></a>Löschen eines Speicherkontos
+## <a name="delete-a-storage-account"></a>Löschen von Speicherkonten
 ```java
 // delete by ID when you already have a storage account object
 azure.storageAccounts().deleteById(storageAccount.id());
@@ -102,7 +102,7 @@ Der [Beispielcode auf GitHub](https://github.com/Azure-Samples/storage-java-mana
 - listet alle Speicherkonten in einer Ressourcengruppe auf.
 - löscht das Speicherkonto. 
 
-| Im Beispiel verwendete Klasse | Hinweise
+| Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
 | [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account)  | Darstellung eines Azure-Speicherkontos. Verwenden Sie die Methoden in der Klasse, um Informationen zum Speicherkonto abzurufen.
 | [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account_key) | `StorageAccount.getKeys()` gibt die Speicherkontoschlüssel zurück. Verwenden Sie die `regenerateKey`-Methoden in `StorageAccount`, um die Schlüssel zu aktualisieren.

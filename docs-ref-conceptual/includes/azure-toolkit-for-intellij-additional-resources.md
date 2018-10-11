@@ -2,7 +2,7 @@ Unter den folgenden Links erhalten Sie weitere Informationen zum Azure-Toolkit f
 
 * [Azure-Toolkit für IntelliJ](../intellij/azure-toolkit-for-intellij.md) 
 * [Anmerkungen zu dieser Version](https://github.com/Microsoft/azure-tools-for-java/releases) 
-* [Installieren des Azure Toolkit für IntelliJ](../intellij/azure-toolkit-for-intellij-installation.md) 
+* [Installieren des Azure-Toolkits für IntelliJ](../intellij/azure-toolkit-for-intellij-installation.md) 
 * [Erstellen einer „Hello World“-Web-App für Azure in IntelliJ](../intellij/azure-toolkit-for-intellij-create-hello-world-web-app.md) 
 * [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ](../intellij/azure-toolkit-for-intellij-sign-in-instructions.md) 
 

@@ -15,11 +15,11 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 88eb64c07ad4f480dc2d2c2869e710c0ae910c4d
-ms.sourcegitcommit: 5282a51bf31771671df01af5814df1d2b8e4620c
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090793"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892681"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Bereitstellen einer Spring Boot-App in Azure Container Registry in Azure App Service mithilfe des Maven-Plug-Ins für Azure-Web-Apps
 
@@ -36,7 +36,7 @@ In diesem Artikel wird veranschaulicht, wie Sie eine [Spring Boot]-Beispielanwen
 
 Zur Durchführung der Schritte in diesem Tutorial benötigen Sie Folgendes:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
 * Die [Azure CLI (Command-Line Interface, Befehlszeilenschnittstelle)]
 * Ein aktuelles [Java Development Kit (JDK)], Version 1.7 oder höher
 * Das Erstellungstool Apache [Maven] (Version 3)
@@ -222,7 +222,7 @@ In diesem Abschnitt erstellen Sie einen Azure-Dienstprinzipal, den das Maven-Plu
    |   `<client>`    |                                                             Enthält den Wert `appId` aus dem Dienstprinzipal.                                                             |
    |   `<tenant>`    |                                                            Enthält den Wert `tenant` aus dem Dienstprinzipal.                                                             |
    |     `<key>`     |                                                           Enthält den Wert `password` aus dem Dienstprinzipal.                                                            |
-   | `<environment>` | Definiert die Azure-Zielcloudumgebung (in diesem Beispiel: `AZURE`). (Eine vollständige Liste der Umgebungen finden Sie in der Dokumentation zum [Maven-Plug-In für Azure-Web-Apps].) |
+   | `<environment>` | Definiert die Azure-Zielcloudumgebung (in diesem Beispiel: `AZURE`). (Eine vollständige Liste der Umgebungen finden Sie in der Dokumentation zum [Maven Plugin for Azure Web Apps].) |
 
 
 4. Speichern und schließen Sie die Datei *settings.xml*.
@@ -320,15 +320,15 @@ In diesem Abschnitt erstellen Sie einen Azure-Dienstprinzipal, den das Maven-Plu
    </plugin>
    ```
 
-Für das Maven-Plug-In können mehrere Werte angepasst werden. Eine ausführliche Beschreibung der einzelnen Elemente finden Sie in der Dokumentation zum [Maven-Plug-In für Azure-Web-Apps]. Für diesen Artikel sind jedoch besonders folgende Werte hervorzuheben:
+Für das Maven-Plug-In können mehrere Werte angepasst werden. Eine ausführliche Beschreibung der einzelnen Elemente finden Sie in der Dokumentation zum [Maven Plugin for Azure Web Apps]. Für diesen Artikel sind jedoch besonders folgende Werte hervorzuheben:
 
 | Element | BESCHREIBUNG |
 |---|---|
-| `<version>` | Gibt die Version des [Maven-Plug-In für Azure-Web-Apps] an. Überprüfen Sie die im [zentralen Maven-Respository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) angegebene Version, um sicherzustellen, dass Sie die neueste Version verwenden. |
+| `<version>` | Gibt die Version des [Maven Plugin for Azure Web Apps] an. Überprüfen Sie die im [zentralen Maven-Respository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) angegebene Version, um sicherzustellen, dass Sie die neueste Version verwenden. |
 | `<authentication>` | Gibt die Authentifizierungsinformationen für Azure an, die in diesem Beispiel ein `<serverId>`-Element enthalten, das `azure-auth` enthält. Maven nutzt diesen Wert, um die Azure-Dienstprinzipalwerte in Ihrer Maven-Datei *settings.xml* abzurufen, die Sie weiter oben in diesem Artikel festgelegt haben. |
 | `<resourceGroup>` | Gibt die Zielressourcengruppe an (in diesem Beispiel: `wingtiptoysresources`). Wenn die Ressourcengruppe nicht bereits vorhanden ist, wird sie während der Bereitstellung erstellt. |
 | `<appName>` | Gibt den Zielnamen für Ihre Web-App an. In diesem Beispiel lautet der Zielname `maven-linux-app-${maven.build.timestamp}`. Dabei wird das Suffix `${maven.build.timestamp}` angehängt, um Konflikte zu vermeiden. (Der Zeitstempel ist optional. Sie können eine beliebige eindeutige Zeichenfolge für den App-Namen angeben.) |
-| `<region>` | Gibt die Zielregion an (in diesem Beispiel: `westus`). (Eine vollständige Liste finden Sie in der Dokumentation zum [Maven-Plug-In für Azure-Web-Apps].) |
+| `<region>` | Gibt die Zielregion an (in diesem Beispiel: `westus`). (Eine vollständige Liste finden Sie in der Dokumentation zum [Maven Plugin for Azure Web Apps].) |
 | `<containerSettings>` | Gibt die Eigenschaften an, die den Namen und die URL des Containers enthalten. |
 | `<appSettings>` | Gibt eindeutige Einstellungen für Maven an, die beim Bereitstellen der Web-App in Azure verwendet werden sollen. In diesem Beispiel enthält ein `<property>`-Element ein Name/Wert-Paar untergeordneter Elemente, die den Port für Ihre App angeben. |
 
@@ -383,7 +383,7 @@ Wenn Ihre Web-App bereitgestellt wurde, können Sie sie mit dem [Azure-Portal] v
 
 Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Technologien finden Sie in den folgenden Artikeln:
 
-* [Maven-Plug-In für Azure-Web-Apps] (Maven-Plug-In für Azure-Web-Apps)
+* [Maven Plugin for Azure Web Apps] (Maven-Plug-In für Azure-Web-Apps)
 
 * [Anmelden bei Azure über die Azure-Befehlszeilenschnittstelle (CLI)](/azure/xplat-cli-connect)
 
@@ -399,7 +399,7 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
 [Azure-Portal]: https://portal.azure.com/
-[Maven-Plug-In für Azure-Web-Apps]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin (Maven-Plug-In für Azure-Web-Apps)
+[Maven Plugin for Azure Web Apps]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin (Maven-Plug-In für Azure-Web-Apps)
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [Using a custom Docker image for Azure Web App on Linux]: /azure/app-service/containers/tutorial-custom-docker-image
 [Docker]: https://www.docker.com/

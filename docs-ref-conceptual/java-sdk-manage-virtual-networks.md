@@ -11,11 +11,11 @@ ms.technology: Azure
 ms.date: 3/30/2017
 ms.author: routlaw;asirveda
 ms.openlocfilehash: 3d21cdd890912c1fc58fc65a79ba972b8327edeb
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21931086"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48892541"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Erstellen und Verwalten von virtuellen Azure-Netzwerken über Ihre Java-Apps
 
@@ -33,7 +33,7 @@ mvn clean compile exec:java
 
 Sehen Sie sich das [vollständige Codebeispiel auf GitHub](https://github.com/Azure-Samples/network-java-manage-virtual-network/blob/master/src/main/java/com/microsoft/azure/management/network/samples/ManageVirtualNetwork.java) an.
 
-## <a name="authenticate-with-azure"></a>Authentifizierung über Azure
+## <a name="authenticate-with-azure"></a>Authentifizieren über Azure
 
 [!INCLUDE [auth-include](includes/java-auth-include.md)]
 
@@ -175,7 +175,7 @@ Wenn Sie ein virtuelles Netzwerk entfernen, werden die Subnetze im Netzwerk, abe
 
 In diesem Beispiel wird ein virtuelles Netzwerk mit zwei Subnetzen und einem virtuellen Computer in jedem Subnetz erstellt. Das Back-End-Subnetz ist nicht mit dem öffentlichen Internet verbunden. Das Front-End-Subnetz akzeptiert eingehenden HTTP-Datenverkehr vom Internet. Beide virtuellen Computer im virtuellen Netzwerk kommunizieren über die Netzwerksicherheitsgruppen-Standardregeln miteinander.
 
-| Im Beispiel verwendete Klasse | Hinweise
+| Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
 | [Netzwerk](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | Lokale Objektdarstellung des über `azure.networks().define()...create()` erstellten virtuellen Netzwerks. Aktualisieren Sie mit der `update()...apply()`-Fluent-Kette ein vorhandenes virtuelles Netzwerk.
 | [Subnetz](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | Erstellen Sie Subnetze im virtuellen Netzwerk, wenn Sie das Netzwerk mit `withSubnet()` definieren oder aktualisieren. Rufen Sie Objektdarstellungen eines Subnetzes über `Network.subnets().get()` oder `Network.subnets().entrySet()` ab. Diese Objekte enthalten Methoden zum Abfragen der Subnetzeigenschaften.
