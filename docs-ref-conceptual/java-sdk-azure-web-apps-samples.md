@@ -13,11 +13,11 @@ ms.devlang: java
 ms.service: multiple
 ms.assetid: 43633e5c-9fb1-4807-ba63-e24c126754e2
 ms.openlocfilehash: 2f1e43f3835ffcdb138bf7e29a1656b7ee381281
-ms.sourcegitcommit: 1500f341a96d9da461c288abf4baf79f494ae662
+ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2017
-ms.locfileid: "21930896"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48893031"
 ---
 # <a name="azure-management-libraries-for-java-samples-for-web-apps"></a>Azure-Verwaltungsbibliotheken für Java-Beispiele für Web-Apps
 
@@ -28,10 +28,10 @@ ms.locfileid: "21930896"
 | **Konfigurieren der App** ||
 | [Erstellen einer Web-App und Konfigurieren einer benutzerdefinierten Domäne][3] | Erstellen einer Web-App mit einer benutzerdefinierten Domäne und einem selbstsignierten SSL-Zertifikat |
 | **Skalieren von Apps** ||
-| [Skalieren einer Web-App mit hoher Verfügbarkeit in mehreren Regionen][4] | Skalieren einer Web-App in drei verschiedenen geografischen Regionen und Verfügbarmachen der App mithilfe von Azure Traffic Manager über einen einzelnen Endpunkt | 
+| [Skalieren einer Web-App mit Hochverfügbarkeit in mehreren Regionen][4] | Skalieren einer Web-App in drei verschiedenen geografischen Regionen und Verfügbarmachen der App mithilfe von Azure Traffic Manager über einen einzelnen Endpunkt | 
 | **Verbinden der App mit Ressourcen** ||
 | [Verbinden einer Web-App mit einem Speicherkonto][5] | Erstellen eines Azure-Speicherkontos und Hinzufügen der Speicherkonto-Verbindungszeichenfolge zu den App-Einstellungen |
-| [Verbinden einer Web-App mit einer SQL­Datenbank][6] | Erstellen einer Web-App und einer SQL-Datenbank und Hinzufügen der SQL Datenbank-Verbindungszeichenfolge zu den App-Einstellungen |
+| [Verbinden einer Web-App mit einer SQL-Datenbank][6] | Erstellen einer Web-App und einer SQL-Datenbank und Hinzufügen der SQL Datenbank-Verbindungszeichenfolge zu den App-Einstellungen |
 
 [1]: java-sdk-configure-webapp-sources.md
 [2]: https://azure.microsoft.com/resources/samples/app-service-java-manage-staging-and-production-slots-for-web-apps/
