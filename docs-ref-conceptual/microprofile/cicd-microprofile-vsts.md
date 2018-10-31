@@ -14,12 +14,12 @@ ms.service: Azure DevOps
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: c2b6bf3370982d26d8d23fede370e0105a70b734
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: 818e37291fa47f99cb161c63a86062bddbf6248c
+ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46506436"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49799936"
 ---
 # <a name="cicd-for-microprofile-applications-using-azure-devops"></a>CI/CD für MicroProfile-Anwendungen mit Azure DevOps
 
@@ -38,9 +38,9 @@ Wir beginnen mit dem Azure DevOps-Containerisierungsprozess, indem wir ein Docke
 - Erstellen Sie ein neues [Azure DevOps-Projekt](https://docs.microsoft.com/en-us/vsts/organizations/projects/create-project?view=vsts&tabs=new-nav), und verwenden Sie die oben genannte Git-URL zum **Importieren eines Repositorys**.
 - Erstellen Sie eine [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry)-Instanz (ACR).
 - Erstellen Sie eine Azure-Web-App für Container-Instanz.
-> [!NOTE]
->
-> Wählen Sie beim Bereitstellen der Web-App-Instanz die Option „Schnellstart“ in den Containereinstellungen aus.
+  > [!NOTE]
+  >
+  > Wählen Sie beim Bereitstellen der Web-App-Instanz die Option „Schnellstart“ in den Containereinstellungen aus.
 
 
 ## <a name="create-a-build-definition"></a>Erstellen einer Builddefinition
@@ -54,17 +54,17 @@ Jedes Mal, wenn in der Java EE-Quellanwendung Commit ausgeführt wird, führt di
 2. Klicken Sie auf die Schaltfläche **Neue Pipeline** und dann auf **Weiter**, um mit der Definition Ihrer Buildaufgaben zu beginnen.
 3. Wählen Sie in der Vorlagenliste die Option „Maven“ aus, und klicken Sie auf die Schaltfläche **Anwenden**, um Ihr Java-Projekt zu erstellen.
 4. Wählen Sie im Dropdownmenü des Felds „Agentpool“ die Option **Gehostete Linux-Vorschau** aus.
-> [!NOTE]
->
-> Dadurch wird Azure DevOps der zu verwendende Server mitgeteilt.  Sie können Ihren privaten angepassten Buildserver verwenden.
+   > [!NOTE]
+   >
+   > Dadurch wird Azure DevOps der zu verwendende Server mitgeteilt.  Sie können Ihren privaten angepassten Buildserver verwenden.
 
 5. Um Ihren Build für Continuous Integration zu konfigurieren, klicken Sie auf die Registerkarte **Trigger**, und aktivieren Sie das Kontrollkästchen **Continuous Integration aktivieren**.  
 
 <img src="media/VSTS/Build-Triggers2.png"> 
- 
-6. Klicken Sie auf die Registerkarte **Aufgaben**, um zur Hauptseite für die Buildpipeline zurückzukehren.
-7. Wählen Sie im Dropdownmenü **Speichern und in Warteschlange einreihen** die Option **Speichern** aus.
- 
+
+6. Klicken Sie auf die Registerkarte <strong>Aufgaben</strong>, um zur Hauptseite für die Buildpipeline zurückzukehren.
+7. Wählen Sie im Dropdownmenü <strong>Speichern und in Warteschlange einreihen&amp; die Option <strong>Speichern</strong> aus.
+
 
 ## <a name="create-a-docker-build-image"></a>Erstellen eines Docker-Buildimages
 
@@ -72,15 +72,14 @@ In dieser Aufgabe erstellt Azure DevOps anhand einer Dockerfile-Datei mit einem 
 
 1. Klicken Sie auf die Registerkarte **Aufgaben**, um zur Hauptseite für die Buildpipeline zurückzukehren.
 2. Klicken Sie auf das Symbol **+**, um der Builddefinition eine neue Aufgabe hinzuzufügen.
- 
+
 <img src="media/VSTS/Tasks-add4.png">
- 
-3. Wählen Sie in der Vorlagenliste die Option „Docker“ aus, und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
-4. Geben Sie einen beschreibenden Namen in das Feld **Anzeigename** ein.
-5. Vergewissern Sie sich, dass im Dropdownmenü **Containerregistrierungstyp** die Option **Azure Container Registry** ausgewählt ist.
-> [!NOTE]
->
->  Wenn Sie Docker-Hub oder eine andere Registrierung verwenden, wählen Sie stattdessen „Containerregistrierung“ aus.  Klicken Sie dann auf die Schaltfläche „+ Neu“, um die zugehörigen Anmelde- und Verbindungsinformationen anzugeben. Wechseln Sie anschließend zum Abschnitt „Befehle“, um fortzufahren.
+
+3. Wählen Sie in der Vorlagenliste die Option &quot;Docker&quot; aus, und klicken Sie dann auf die Schaltfläche <strong>Hinzufügen</strong>.
+4. Geben Sie einen beschreibenden Namen in das Feld <strong>Anzeigename</strong> ein.
+5. Vergewissern Sie sich, dass im Dropdownmenü <strong>Containerregistrierungstyp</strong> die Option <strong>Azure Container Registry</strong> ausgewählt ist.
+&gt; [!NOTE]
+&gt; &gt;  Wenn Sie Docker-Hub oder eine andere Registrierung verwenden, wählen Sie stattdessen &quot;Containerregistrierung&quot; aus.  Klicken Sie dann auf die Schaltfläche &quot;+ Neu&quot;, um die zugehörigen Anmelde- und Verbindungsinformationen anzugeben. Wechseln Sie anschließend zum Abschnitt „Befehle“, um fortzufahren.
 
 6. Wählen Sie im Dropdownmenü **Azure-Abonnement** Ihre Azure-Abonnement-ID aus.  Klicken Sie auf die Schaltfläche **Autorisieren**.
 7. Wählen Sie im Dropdownmenü **Azure Container Registry** den Namen der Registrierung aus, die Sie in Azure erstellt haben.
@@ -103,7 +102,7 @@ In dieser Aufgabe pusht Azure DevOps das Docker-Image in Ihre Azure Container Re
 5. Klicken Sie auf die Buildnummer, um zu überprüfen, ob die Buildpipeline für das Java-Projekt erfolgreich abgeschlossen wurde.
 
 <img src="media/VSTS/Build-Number6.png">
- 
+
 
 ## <a name="create-a-release-definition-for-a-java-app"></a>Erstellen einer Releasedefinition für eine Java-App
 
@@ -112,20 +111,19 @@ Die Releasepipeline in Azure DevOps löst die Bereitstellung von Buildartefakten
 1. Klicken Sie oben auf der Azure DevOps-Projektseite auf die Registerkarte „Build und Release“.  Klicken Sie dann auf den Link **Releases**.
 
 <img src="media/VSTS/Release-new-pipeline7.png">
- 
-2. Klicken Sie auf die Schaltfläche „Neue Pipeline“.
-3. Wählen Sie in der Vorlagenliste die Option **Java-App in Azure App Service bereitstellen** aus, und klicken Sie dann auf die Schaltfläche **Anwenden**.
+
+2. Klicken Sie auf die Schaltfläche &quot;Neue Pipeline**.
+3. Wählen Sie in der Vorlagenliste die Option <strong>Java-App in Azure App Service bereitstellen</strong> aus, und klicken Sie dann auf die Schaltfläche <strong>Anwenden</strong>.
 
 <img src="media/VSTS/deploy-java-template8.png">
- 
-4. Legen Sie einen **Stufennamen** fest (z. B. „Entwicklung“, „Test“, „Staging“ oder „Produktion“).  Klicken Sie dann auf die Schaltfläche mit dem **X**, um das Popupfenster zu schließen.
-5. Klicken Sie im Abschnitt „Artefakte“ auf die Schaltfläche **+ Hinzufügen**.  Dadurch werden Artefakte aus der Builddefinition mit dieser Releasedefinition verknüpft.  
-6. Wählen Sie im Dropdownmenü **Source (build pipeline)** (Quelle (Buildpipeline)) Ihre Builddefinition aus. Klicken Sie dann auf die Schaltfläche **Hinzufügen**, um fortzufahren.
+
+4. Legen Sie einen <strong>Stufennamen</strong> fest (z. B. „Entwicklung“, „Test“, „Staging“ oder „Produktion“).  Klicken Sie dann auf die Schaltfläche mit dem <strong>X</strong>, um das Popupfenster zu schließen.
+5. Klicken Sie im Abschnitt „Artefakte“ auf die Schaltfläche <strong>+ Hinzufügen</strong>.  Dadurch werden Artefakte aus der Builddefinition mit dieser Releasedefinition verknüpft.<br/>6. Wählen Sie im Dropdownmenü <strong>Source (build pipeline)</strong> (Quelle (Buildpipeline)) Ihre Builddefinition aus. Klicken Sie dann auf die Schaltfläche <strong>Hinzufügen</strong>, um fortzufahren.
 
 <img src="media/VSTS/add-artifact9.png">
- 
-7. Klicken Sie auf die Registerkarte **Aufgaben** für die Pipeline.  Wählen Sie dann Ihren Stufennamen aus.
- 
+
+7. Klicken Sie auf die Registerkarte <strong>Aufgaben</strong> für die Pipeline.  Wählen Sie dann Ihren Stufennamen aus.
+
 <img src="media/VSTS/release-stage10.png">
 
 8. Wählen Sie im Dropdownmenü **Azure-Abonnement** Ihre Azure-Abonnement-ID aus.
@@ -152,13 +150,13 @@ Beispiel:
 4. Klicken Sie auf **Azure App Service bereitstellen**. 
 5. Erweitern Sie den Abschnitt **Anwendungs- und Konfigurationseinstellungen**, und klicken Sie dann auf den Navigationspfad für das Feld **App-Einstellungen**, um Umgebungsvariablen hinzuzufügen, damit während der Bereitstellung eine Verbindung mit der Containerregistrierung hergestellt wird.
 6. Klicken Sie auf die Schaltfläche „+ Hinzufügen“, um die folgenden App-Einstellungen zu definieren und die Umgebungsvariablen zuzuweisen.
-- DOCKER_REGISTRY_SERVER_PASSWORD = $(registry.password)
-- DOCKER_REGISTRY_SERVER_URL = $(registry.url)
-- DOCKER_REGISTRY_SERVER_USERNAME = $(registry.username)
+7. DOCKER_REGISTRY_SERVER_PASSWORD = $(registry.password)
+8. DOCKER_REGISTRY_SERVER_URL = $(registry.url)
+9. DOCKER_REGISTRY_SERVER_USERNAME = $(registry.username)
 
 <img src="media/VSTS/environment-variables14.png">
- 
-7. Klicken Sie auf **OK**, um fortzufahren.
+
+7. Klicken Sie auf <strong>OK</strong>, um fortzufahren.
 
 ## <a name="setup-continious-deployment--deploy-java-application"></a>Einrichten von Continuous Deployment und Bereitstellen der Java-Anwendung
 
@@ -166,22 +164,22 @@ Beispiel:
 2. Klicken Sie im Abschnitt „Artefakte“ auf das Blitzsymbol.  Legen Sie dann **Continuous Deployment-Trigger** auf „Aktiviert“ fest.
 
 <img src="media/VSTS/release-enable-CD.png">
- 
-3. Klicken Sie auf die Schaltfläche **Speichern** und dann auf **OK**. 
-4. Klicken Sie auf das Dropdownmenü **+ Freigabe**, und wählen Sie dann **Create a release** (Release erstellen) aus.
-5. Aktivieren Sie im Dropdownmenü **Stages for a trigger change from automated to manual** (Stufen für einen Trigger werden von automatisiert in manuell geändert) das Kontrollkästchen für Ihren Stufennamen.
-6. Klicken Sie auf die Schaltfläche **Erstellen**, um fortzufahren.
-7. Klicken Sie auf die Releasenummer.  Zeigen Sie anschließend mit dem Mauscursor auf den Stufennamen, und klicken Sie auf die Schaltfläche **Bereitstellen**.
-8. Klicken Sie im Popupfenster auf die Schaltfläche **Bereitstellen**, um den Prozess der Bereitstellung in Azure zu starten.
+
+3. Klicken Sie auf die Schaltfläche <strong>Speichern</strong> und dann auf <strong>OK</strong>. 
+4. Klicken Sie auf das Dropdownmenü <strong>+ Freigabe</strong>, und wählen Sie dann <strong>Create a release</strong> (Release erstellen) aus.
+5. Aktivieren Sie im Dropdownmenü <strong>Stages for a trigger change from automated to manual</strong> (Stufen für einen Trigger werden von automatisiert in manuell geändert) das Kontrollkästchen für Ihren Stufennamen.
+6. Klicken Sie auf die Schaltfläche <strong>Erstellen</strong>, um fortzufahren.
+7. Klicken Sie auf die Releasenummer.  Zeigen Sie anschließend mit dem Mauscursor auf den Stufennamen, und klicken Sie auf die Schaltfläche <strong>Bereitstellen</strong>.
+8. Klicken Sie im Popupfenster auf die Schaltfläche <strong>Bereitstellen</strong>, um den Prozess der Bereitstellung in Azure zu starten.
 
 
 ## <a name="test-the-java-web-application"></a>Testen der Java-Webanwendung
 1. Geben Sie die Web-App-URL im Webbrowser ein:  
-https://{Ihr-App-Service-Name}.azurewebsites.net/api/hello
+   https://{Ihr-App-Service-Name}.azurewebsites.net/api/hello
 
- 
+
 <img src="media/VSTS/web-app16.png">
 
 2. Auf der Webseite sollte **Hello Azure!** angezeigt werden.
- 
+
 <img src="media/VSTS/web-api17.png">
