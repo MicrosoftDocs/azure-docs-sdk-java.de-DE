@@ -14,12 +14,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: dcb5ef5f12cc1682175da147268eb4a6a89f820b
-ms.sourcegitcommit: 0f38ef9ad64cffdb7b2e9e966224dfd0af251b0f
+ms.openlocfilehash: aa753692b1a3f342a47a07d3bb0cd4e90558a0f8
+ms.sourcegitcommit: a168dc8c2396b6c4749abef03debb1f69298da38
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42703523"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50747011"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB
 
@@ -33,7 +33,7 @@ Dieser Artikel zeigt, wie zuerst über das Azure-Portal eine Azure Cosmos DB-Ins
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -384,8 +384,8 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure f
 [Spring-Daten für SQL-API von Azure Cosmos DB]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [Spring Boot Document DB Starter für Azure]:https://github.com/Microsoft/azure-spring-boot-starters/tree/master/azure-documentdb-spring-boot-starter-sample
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
-[Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
-[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[Java-Tools für Visual Studio Team Services]: https://azure.microsoft.com/services/devops/java/
+[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
