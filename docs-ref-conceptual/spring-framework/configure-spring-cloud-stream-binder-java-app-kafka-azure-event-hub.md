@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 85fe1d9c56530b716a1f1750713f4c87d43dfad3
-ms.sourcegitcommit: 4d52e47073fb0b3ac40a2689daea186bad5b1ef5
+ms.openlocfilehash: ccef834d0ff1c40b061946f8ab1852584da80d7b
+ms.sourcegitcommit: a168dc8c2396b6c4749abef03debb1f69298da38
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49799956"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50747001"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Verwenden von Spring Boot Starter für Apache Kafka mit Azure Event Hubs
 
@@ -31,7 +31,7 @@ In diesem Artikel wird beschrieben, wie Sie eine mit Spring Boot Initializer ers
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
@@ -182,8 +182,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
        }
      }
    ]
-
-1. Specify the GUID for the subscription you want to use with Azure; for example:
+   ```
+   
+1. Geben Sie die GUID für das Abonnement an, das Sie mit Azure verwenden möchten. Beispiel:
 
    ```azurecli
    az account set -s 11111111-1111-1111-1111-111111111111
@@ -441,7 +442,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter „Azur
 [Apache Kafka]: http://kafka.apache.org
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
-[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
