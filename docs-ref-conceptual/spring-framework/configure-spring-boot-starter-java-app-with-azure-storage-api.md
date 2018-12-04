@@ -4,22 +4,22 @@ description: Erfahren Sie, wie Sie eine Spring Boot Initializer-App mit der Azur
 services: storage
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 09/10/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 8ee985f28b7fa80548e13681089e0a5a9226851d
-ms.sourcegitcommit: fd67d4088be2cad01c642b9ecf3f9475d9cb4f3c
+ms.openlocfilehash: 94f7b1148d9282d33bc67da0e0d97a284a81d4d4
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46506460"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339054"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>Verwenden von Spring Boot Starter mit der Azure Storage-API
 
@@ -33,7 +33,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) anwenden oder sich für ein [Kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren
 * Die [Azure-Befehlszeilenschnittstelle (CLI)](http://docs.microsoft.com/cli/azure/overview)
-* Ein aktuelles [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/) (ab Version 1.7)
+* Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Maven](http://maven.apache.org/) von Apache (ab Version 3.0)
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>Erstellen einer benutzerdefinierten Anwendung mit dem Spring Initializr

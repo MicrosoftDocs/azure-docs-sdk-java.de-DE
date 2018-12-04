@@ -4,19 +4,19 @@ description: Hier erfahren Sie, wie Sie eine Spring Boot-App mithilfe des Maven-
 services: app-service
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: brborges
 ms.author: robmcm
-ms.date: 10/18/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: dc3038fed6859203f36e0c4dc9a9b01e81a7c4c5
-ms.sourcegitcommit: dae7511a9d93ca7f388d5b0e05dc098e22c2f2f6
+ms.openlocfilehash: 066ac30697c6adccc0c6a7b9d57205de488bdc53
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49962494"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339004"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>Bereitstellen einer Spring Boot-App mit JAR-Datei in Azure App Service unter Linux
 
@@ -30,7 +30,7 @@ Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](htt
 Zur Durchführung der Schritte in diesem Tutorial müssen die folgenden Komponenten installiert und konfiguriert sein:
 
 * Die [Azure CLI](/cli/azure/), entweder lokal oder über [Azure Cloud Shell](https://shell.azure.com)
-* [Java Development Kit (JDK)](https://www.azul.com/downloads/azure-only/zulu/), mindestens Version 1.7
+* Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Maven](https://maven.apache.org/) von Apache, Version 3)
 * Einen [Git-Client](https://git-scm.com/downloads)
 
@@ -180,7 +180,6 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 [Azure-Portal]: https://portal.azure.com/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
-[Java Developer Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Maven]: http://maven.apache.org/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
@@ -188,6 +187,9 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 [Spring Boot Getting Started]: https://github.com/spring-guides/gs-spring-boot
 [Spring Framework]: https://spring.io/
 [Maven Plugin for Azure Web Apps]: https://docs.microsoft.com/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme (Maven-Plug-In für Azure-Web-Apps)
+
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->
 

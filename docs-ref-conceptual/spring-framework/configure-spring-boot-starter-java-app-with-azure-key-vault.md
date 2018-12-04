@@ -4,22 +4,22 @@ description: Hier erfahren Sie, wie Sie eine Spring Boot Initializer-App mit Azu
 services: key-vault
 documentationcenter: java
 author: rmcmurray
-manager: routlaw
+manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 02/01/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 78b7a9a2e26168b19dc8a1d12e47456752b57ffc
-ms.sourcegitcommit: e017de4677c5bedd6ef88c8c1b6da279dc973efe
+ms.openlocfilehash: fcb18de809f4465239f1f360a755624a5095e03a
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45639773"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52339154"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -31,11 +31,11 @@ In diesem Artikel erfahren Sie, wie Sie eine App mit **[Spring Initializr]** ers
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
-* [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/), Version 1.7 oder höher
+* Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
+* Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
-## <a name="create-an-app-using-the-spring-initialzr"></a>Erstellen einer App mithilfe von Spring Initializr
+## <a name="create-an-app-using-spring-initializr"></a>Erstellen einer App mithilfe von Spring Initializr
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
@@ -53,7 +53,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
-## <a name="sign-into-azure-and-select-the-subscription-to-use"></a>Anmelden bei Azure und Auswählen des zu verwendenden Abonnements
+## <a name="sign-into-azure"></a>Anmelden bei Azure
 
 1. Öffnen Sie eine Eingabeaufforderung.
 
@@ -94,7 +94,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    az account set -s ssssssss-ssss-ssss-ssss-ssssssssssss
    ```
 
-## <a name="create-and-configure-a-new-azure-key-vault-using-the-azure-cli"></a>Erstellen und Konfigurieren einer neuen Azure Key Vault-Instanz mithilfe der Azure-Befehlszeilenschnittstelle
+## <a name="create-a-new-azure-key-vault"></a>Erstellen einer neuen Azure Key Vault-Instanz
 
 1. Erstellen Sie eine Ressourcengruppe für die Azure-Ressourcen, die Sie für Ihren Schlüsseltresor verwenden. Beispiel:
    ```azurecli
@@ -231,7 +231,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    }
    ```
 
-## <a name="configure-and-compile-your-spring-boot-application"></a>Konfigurieren und Kompilieren Ihrer Spring Boot-Anwendung
+## <a name="configure-and-compile-your-app"></a>Konfigurieren und Kompilieren Ihrer App
 
 1. Extrahieren Sie die Dateien aus den zuvor heruntergeladenen Spring Boot-Projektarchivdateien in ein Verzeichnis.
 
@@ -305,7 +305,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Spring Boot-Laufzeitmeldung][build-application-02]
 
-## <a name="next-steps"></a>Nächste Schritte
+## <a name="summary"></a>Zusammenfassung
+
+In diesem Tutorial haben Sie mit **[Spring Initializr]** eine neue Java-Web-App und eine Azure Key Vault-Instanz zum Speichern vertraulicher Informationen erstellt und anschließend Ihre Anwendung zum Abrufen von Informationen aus dem Schlüsseltresor konfiguriert.
 
 Weitere Informationen zur Verwendung von Azure Key Vault-Instanzen finden Sie in den folgenden Artikeln:
 
@@ -321,6 +323,13 @@ Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden
 
 Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und im Thema zu den [Java-Tools für Visual Studio Team Services].
 
+## <a name="next-steps"></a>Nächste Schritte
+
+Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
+
+> [!div class="nextstepaction"]
+> [Spring Framework in Azure](/java/azure/spring-framework)
+
 <!-- URL List -->
 
 [Dokumentation zu Key Vault]: /azure/key-vault/
@@ -328,7 +337,7 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure f
 [Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
-[Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
+[MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
