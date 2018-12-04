@@ -8,18 +8,18 @@ manager: routlaw
 editor: brunoborges
 ms.assetid: ''
 ms.author: brborges
-ms.date: 07/30/2018
+ms.date: 11/21/2018
 ms.devlang: java
 ms.service: container-instances
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 336af51bbdf5d2f843c3868ebc2358e128daaeaa
-ms.sourcegitcommit: 280d13b43cef94177d95e03879a5919da234a23c
+ms.openlocfilehash: 22870b7ba32f115e7270c63d1bf42cbfc6531d7e
+ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43324326"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52338784"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Bereitstellen einer MicroProfile-Anwendung in der Cloud mit Docker und Azure
 
@@ -35,7 +35,7 @@ Zur Durchführung der Schritte in diesem Tutorial benötigen Sie Folgendes:
 
 * Ein Azure-Abonnement. Sollten Sie noch nicht über ein Azure-Abonnement verfügen, können Sie sich für ein [kostenloses Azure-Konto] registrieren.
 * Die [Azure-Befehlszeilenschnittstelle (CLI)]
-* Ein aktuelles [Java Development Kit (JDK)] ab Version 1.8
+* Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * Das Erstellungstool [Maven] von Apache (ab Version 3)
 * Einen [Git]
 
@@ -165,6 +165,7 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Maven]: http://maven.apache.org/
-[Java Development Kit (JDK)]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+<!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 [Azure Container Instances]: https://docs.microsoft.com/azure/container-instances/
 [Azure Container Registry]:  https://docs.microsoft.com/azure/container-registry
