@@ -33,7 +33,7 @@ In diesem Tutorial erfahren Sie, wie Sie mithilfe des Azure-Toolkits für Intell
 
 ## <a name="clone-the-default-spring-boot-docker-repo"></a>Klonen des standardmäßigen Spring Boot-Docker-Repositorys
 
-Mit den folgenden Schritten wird das Spring Boot-Docker-Repository mithilfe von IntelliJ geklont. Informationen zur Verwendung einer Befehlszeile finden unter [Deploy a Spring Boot application on Linux in the Azure Container Service][Deploy Spring Boot on Linux in AKS] (Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service).
+Mit den folgenden Schritten wird das Spring Boot-Docker-Repository mithilfe von IntelliJ geklont. Informationen zur Verwendung einer Befehlszeile finden unter [Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service][Deploy Spring Boot on Linux in AKS].
 
 1. Öffnen Sie IntelliJ.
 
