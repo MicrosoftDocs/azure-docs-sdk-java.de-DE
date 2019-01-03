@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 94f7b1148d9282d33bc67da0e0d97a284a81d4d4
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 984a3edb89608c806537f991b42e309f31130896
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339054"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991444"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>Verwenden von Spring Boot Starter mit der Azure Storage-API
 
@@ -316,6 +316,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    > 
 
 ## <a name="next-steps"></a>Nächste Schritte
+
+Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
+
+> [!div class="nextstepaction"]
+> [Spring Framework in Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Weitere Ressourcen
 
 Weitere Informationen zu weiteren verfügbaren Spring Boot Starter-Optionen für Microsoft Azure finden Sie unter [Spring Boot Starter für Azure](spring-boot-starters-for-azure.md).
 

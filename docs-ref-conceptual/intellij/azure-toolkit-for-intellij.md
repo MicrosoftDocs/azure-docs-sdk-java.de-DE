@@ -7,19 +7,19 @@ author: rmcmurray
 manager: routlaw
 editor: ''
 ms.assetid: 115a095d-1b70-41d6-adb4-78f24b2a4451
-ms.author: robmcm;asirveda
-ms.date: 02/01/2018
+ms.author: robmcm
+ms.date: 12/12/2018
 ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: dd76cb3a0355e4e8471b7a32b6b33cb71bd3f16b
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 0cbb515a62e540fdc9decb8055bb57e0cb35e7b2
+ms.sourcegitcommit: 8e530a2ce58ea0e2bf5c136e427a9be863231a1b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892791"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53638989"
 ---
 # <a name="azure-toolkit-for-intellij"></a>Azure Toolkit für IntelliJ
 Das Azure-Toolkit für IntelliJ stellt Vorlagen und Funktionen bereit, mit denen Sie Azure-Anwendungen mithilfe der IntelliJ-IDE-Entwicklungsumgebung einfach erstellen, entwickeln, testen und bereitstellen können.
@@ -66,7 +66,7 @@ Auf den folgenden Seiten erhalten Sie weitere Informationen zum Azure-Toolkit f�
 
 * [Azure Toolkit for IntelliJ in the JetBrains Plugins Repository](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij) (Azure-Toolkit für IntelliJ im JetBrains-Plug-In-Repository)
 
-Weitere Informationen zur Verwendung von Java mit Azure finden Sie unter [Azure für Java-Entwickler](https://docs.microsoft.com/java/azure/) und im Thema zu den [Java-Tools für Visual Studio Team Services](https://java.visualstudio.com/).
+Weitere Informationen zur Verwendung von Java mit Azure finden Sie unter [Azure für Java-Entwickler](https://docs.microsoft.com/java/azure/) und im Thema zu den [Java-Tools für Visual Studio Team Services](/azure/devops/java/).
 
 > [!NOTE]
 > 
@@ -78,7 +78,6 @@ Weitere Informationen zur Verwendung von Java mit Azure finden Sie unter [Azure 
 <!-- URL List -->
 
 [Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 
 <!-- Temporarily Deprecated URLs -->
 
