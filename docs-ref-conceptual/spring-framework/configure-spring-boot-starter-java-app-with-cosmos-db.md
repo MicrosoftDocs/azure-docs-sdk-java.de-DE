@@ -8,104 +8,104 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 6675b3f76f19ec0bfdb28351681258b8c4792104
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 1d3ae6c12f32a3443f2783d0c88112746197f5be
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339104"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991544"
 ---
-# <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a><span data-ttu-id="8ae98-103">Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8ae98-103">How to use the Spring Boot Starter with the Azure Cosmos DB SQL API</span></span>
+# <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a><span data-ttu-id="44033-103">Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="44033-103">How to use the Spring Boot Starter with the Azure Cosmos DB SQL API</span></span>
 
-## <a name="overview"></a><span data-ttu-id="8ae98-104">Übersicht</span><span class="sxs-lookup"><span data-stu-id="8ae98-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="44033-104">Übersicht</span><span class="sxs-lookup"><span data-stu-id="44033-104">Overview</span></span>
 
-<span data-ttu-id="8ae98-105">Azure Cosmos DB ist ein global verteilter Datenbankdienst, der Entwicklern durch eine Vielzahl von Standard-APIs wie der SQL-, MongoDB-, Graph- und Tabellen-API die Arbeit mit Daten ermöglicht.</span><span class="sxs-lookup"><span data-stu-id="8ae98-105">Azure Cosmos DB is a globally-distributed database service that allows developers to work with data using a variety of standard APIs, such as SQL, MongoDB, Graph, and Table APIs.</span></span> <span data-ttu-id="8ae98-106">Mit Spring Boot Starter von Microsoft können Entwickler Spring Boot-Anwendungen verwenden, die sich mithilfe der SQL-APIs mühelos in Azure Cosmos DB integrieren lassen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-106">Microsoft's Spring Boot Starter enables developers to use Spring Boot applications that easily integrate with Azure Cosmos DB by using the SQL API.</span></span>
+<span data-ttu-id="44033-105">Azure Cosmos DB ist ein global verteilter Datenbankdienst, der Entwicklern durch eine Vielzahl von Standard-APIs wie der SQL-, MongoDB-, Graph- und Tabellen-API die Arbeit mit Daten ermöglicht.</span><span class="sxs-lookup"><span data-stu-id="44033-105">Azure Cosmos DB is a globally-distributed database service that allows developers to work with data using a variety of standard APIs, such as SQL, MongoDB, Graph, and Table APIs.</span></span> <span data-ttu-id="44033-106">Mit Spring Boot Starter von Microsoft können Entwickler Spring Boot-Anwendungen verwenden, die sich mithilfe der SQL-APIs mühelos in Azure Cosmos DB integrieren lassen.</span><span class="sxs-lookup"><span data-stu-id="44033-106">Microsoft's Spring Boot Starter enables developers to use Spring Boot applications that easily integrate with Azure Cosmos DB by using the SQL API.</span></span>
 
-<span data-ttu-id="8ae98-107">Dieser Artikel zeigt, wie zuerst über das Azure-Portal eine Azure Cosmos DB-Instanz und anschließend mit **[Spring Initializr]** eine benutzerdefinierte Java-Anwendung erstellt wird. Anschließend wird veranschaulicht, wie Spring Boot Starter-Funktionen zu Ihrer benutzerdefinierten Anwendung hinzugefügt werden, um Daten mithilfe der SQL-API in Ihrer Azure Cosmos DB-Instanz zu speichern und daraus abzurufen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-107">This article demonstrates creating an Azure Cosmos DB using the Azure portal, then using the **[Spring Initializr]** to create a custom java application, and then add the Spring Boot Starter functionality to your custom application to store data in and retrieve data from your Azure Cosmos DB by using the SQL API.</span></span>
+<span data-ttu-id="44033-107">Dieser Artikel zeigt, wie zuerst über das Azure-Portal eine Azure Cosmos DB-Instanz und anschließend mit **[Spring Initializr]** eine benutzerdefinierte Java-Anwendung erstellt wird. Anschließend wird veranschaulicht, wie Spring Boot Starter-Funktionen zu Ihrer benutzerdefinierten Anwendung hinzugefügt werden, um Daten mithilfe der SQL-API in Ihrer Azure Cosmos DB-Instanz zu speichern und daraus abzurufen.</span><span class="sxs-lookup"><span data-stu-id="44033-107">This article demonstrates creating an Azure Cosmos DB using the Azure portal, then using the **[Spring Initializr]** to create a custom java application, and then add the Spring Boot Starter functionality to your custom application to store data in and retrieve data from your Azure Cosmos DB by using the SQL API.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="8ae98-108">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="8ae98-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="44033-108">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="44033-108">Prerequisites</span></span>
 
-<span data-ttu-id="8ae98-109">Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:</span><span class="sxs-lookup"><span data-stu-id="8ae98-109">The following prerequisites are required in order to follow the steps in this article:</span></span>
+<span data-ttu-id="44033-109">Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:</span><span class="sxs-lookup"><span data-stu-id="44033-109">The following prerequisites are required in order to follow the steps in this article:</span></span>
 
-* <span data-ttu-id="8ae98-110">Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren</span><span class="sxs-lookup"><span data-stu-id="8ae98-110">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="8ae98-111">Ein unterstütztes Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="8ae98-111">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="8ae98-112">Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="8ae98-112">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
-* <span data-ttu-id="8ae98-113">[Apache Maven](http://maven.apache.org/), Version 3.0 oder höher</span><span class="sxs-lookup"><span data-stu-id="8ae98-113">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="44033-110">Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren</span><span class="sxs-lookup"><span data-stu-id="44033-110">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="44033-111">Ein unterstütztes Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="44033-111">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="44033-112">Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="44033-112">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
+* <span data-ttu-id="44033-113">[Apache Maven](http://maven.apache.org/), Version 3.0 oder höher</span><span class="sxs-lookup"><span data-stu-id="44033-113">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
 
-## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a><span data-ttu-id="8ae98-114">Erstellen einer Azure Cosmos DB-Instanz mithilfe des Azure-Portals</span><span class="sxs-lookup"><span data-stu-id="8ae98-114">Create an Azure Cosmos DB by using the Azure portal</span></span>
+## <a name="create-an-azure-cosmos-db-by-using-the-azure-portal"></a><span data-ttu-id="44033-114">Erstellen einer Azure Cosmos DB-Instanz mithilfe des Azure-Portals</span><span class="sxs-lookup"><span data-stu-id="44033-114">Create an Azure Cosmos DB by using the Azure portal</span></span>
 
-1. <span data-ttu-id="8ae98-115">Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Ressource erstellen**.</span><span class="sxs-lookup"><span data-stu-id="8ae98-115">Browse to the Azure portal at <https://portal.azure.com/> and click **+Create a resource**.</span></span>
+1. <span data-ttu-id="44033-115">Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Ressource erstellen**.</span><span class="sxs-lookup"><span data-stu-id="44033-115">Browse to the Azure portal at <https://portal.azure.com/> and click **+Create a resource**.</span></span>
 
    ![Azure-Portal][AZ01]
 
-1. <span data-ttu-id="8ae98-117">Klicken Sie auf **Datenbanken** und anschließend auf **Azure Cosmos DB**.</span><span class="sxs-lookup"><span data-stu-id="8ae98-117">Click **Databases**, and then click **Azure Cosmos DB**.</span></span>
+1. <span data-ttu-id="44033-117">Klicken Sie auf **Datenbanken** und anschließend auf **Azure Cosmos DB**.</span><span class="sxs-lookup"><span data-stu-id="44033-117">Click **Databases**, and then click **Azure Cosmos DB**.</span></span>
 
    ![Azure-Portal][AZ02]
 
-1. <span data-ttu-id="8ae98-119">Geben Sie auf der Seite **Azure Cosmos DB** die folgenden Informationen ein:</span><span class="sxs-lookup"><span data-stu-id="8ae98-119">On the **Azure Cosmos DB** page, enter the following information:</span></span>
+1. <span data-ttu-id="44033-119">Geben Sie auf der Seite **Azure Cosmos DB** die folgenden Informationen ein:</span><span class="sxs-lookup"><span data-stu-id="44033-119">On the **Azure Cosmos DB** page, enter the following information:</span></span>
 
-   * <span data-ttu-id="8ae98-120">Geben Sie eine eindeutige **ID** ein, die als URI für Ihre Datenbank verwendet werden soll.</span><span class="sxs-lookup"><span data-stu-id="8ae98-120">Enter a unique **ID**, which you will use as the URI for your database.</span></span> <span data-ttu-id="8ae98-121">Beispiel: *wingtiptoysdata.documents.azure.com*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-121">For example: *wingtiptoysdata.documents.azure.com*.</span></span>
-   * <span data-ttu-id="8ae98-122">Wählen Sie für die API **SQL** aus.</span><span class="sxs-lookup"><span data-stu-id="8ae98-122">Choose **SQL** for the API.</span></span>
-   * <span data-ttu-id="8ae98-123">Wählen Sie das **Abonnement**, das Sie für Ihre Datenbank verwenden möchten.</span><span class="sxs-lookup"><span data-stu-id="8ae98-123">Choose the **Subscription** you want to use for your database.</span></span>
-   * <span data-ttu-id="8ae98-124">Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihre Datenbank erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.</span><span class="sxs-lookup"><span data-stu-id="8ae98-124">Specify whether to create a new **Resource group** for your database, or choose an existing resource group.</span></span>
-   * <span data-ttu-id="8ae98-125">Geben Sie den **Speicherort** für Ihre Datenbank an.</span><span class="sxs-lookup"><span data-stu-id="8ae98-125">Specify the **Location** for your database.</span></span>
+   * <span data-ttu-id="44033-120">Geben Sie eine eindeutige **ID** ein, die als URI für Ihre Datenbank verwendet werden soll.</span><span class="sxs-lookup"><span data-stu-id="44033-120">Enter a unique **ID**, which you will use as the URI for your database.</span></span> <span data-ttu-id="44033-121">Beispiel: *wingtiptoysdata.documents.azure.com*.</span><span class="sxs-lookup"><span data-stu-id="44033-121">For example: *wingtiptoysdata.documents.azure.com*.</span></span>
+   * <span data-ttu-id="44033-122">Wählen Sie für die API **SQL** aus.</span><span class="sxs-lookup"><span data-stu-id="44033-122">Choose **SQL** for the API.</span></span>
+   * <span data-ttu-id="44033-123">Wählen Sie das **Abonnement**, das Sie für Ihre Datenbank verwenden möchten.</span><span class="sxs-lookup"><span data-stu-id="44033-123">Choose the **Subscription** you want to use for your database.</span></span>
+   * <span data-ttu-id="44033-124">Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihre Datenbank erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.</span><span class="sxs-lookup"><span data-stu-id="44033-124">Specify whether to create a new **Resource group** for your database, or choose an existing resource group.</span></span>
+   * <span data-ttu-id="44033-125">Geben Sie den **Speicherort** für Ihre Datenbank an.</span><span class="sxs-lookup"><span data-stu-id="44033-125">Specify the **Location** for your database.</span></span>
    
-   <span data-ttu-id="8ae98-126">Wenn Sie diese Optionen angegeben haben, klicken Sie zum Erstellen Ihrer Datenbank auf **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="8ae98-126">When you have specified these options, click **Create** to create your database.</span></span>
+   <span data-ttu-id="44033-126">Wenn Sie diese Optionen angegeben haben, klicken Sie zum Erstellen Ihrer Datenbank auf **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="44033-126">When you have specified these options, click **Create** to create your database.</span></span>
 
    ![Azure-Portal][AZ03]
 
-1. <span data-ttu-id="8ae98-128">Wenn Ihre Datenbank erstellt wurde, wird Sie in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt.</span><span class="sxs-lookup"><span data-stu-id="8ae98-128">When your database has been created, it is listed on your Azure **Dashboard**, as well as under the **All Resources** and **Azure Cosmos DB** pages.</span></span> <span data-ttu-id="8ae98-129">Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-129">You can click on your database on any of those locations to open the properties page for your cache.</span></span>
+1. <span data-ttu-id="44033-128">Wenn Ihre Datenbank erstellt wurde, wird Sie in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt.</span><span class="sxs-lookup"><span data-stu-id="44033-128">When your database has been created, it is listed on your Azure **Dashboard**, as well as under the **All Resources** and **Azure Cosmos DB** pages.</span></span> <span data-ttu-id="44033-129">Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="44033-129">You can click on your database on any of those locations to open the properties page for your cache.</span></span>
 
    ![Azure-Portal][AZ04]
 
-1. <span data-ttu-id="8ae98-131">Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Zugriffsschlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.</span><span class="sxs-lookup"><span data-stu-id="8ae98-131">When the properties page for your database is displayed, click **Access keys** and copy your URI and access keys for your database; you will use these values in your Spring Boot application.</span></span>
+1. <span data-ttu-id="44033-131">Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Zugriffsschlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.</span><span class="sxs-lookup"><span data-stu-id="44033-131">When the properties page for your database is displayed, click **Access keys** and copy your URI and access keys for your database; you will use these values in your Spring Boot application.</span></span>
 
    ![Azure-Portal][AZ05]
 
-## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a><span data-ttu-id="8ae98-133">Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="8ae98-133">Create a simple Spring Boot application with the Spring Initializr</span></span>
+## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a><span data-ttu-id="44033-133">Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="44033-133">Create a simple Spring Boot application with the Spring Initializr</span></span>
 
-1. <span data-ttu-id="8ae98-134">Navigieren Sie zu <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="8ae98-134">Browse to <https://start.spring.io/>.</span></span>
+1. <span data-ttu-id="44033-134">Navigieren Sie zu <https://start.spring.io/>.</span><span class="sxs-lookup"><span data-stu-id="44033-134">Browse to <https://start.spring.io/>.</span></span>
 
-1. <span data-ttu-id="8ae98-135">Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein, und geben Sie Ihre **Spring Boot**-Version an. Klicken Sie anschließend auf die Schaltfläche **Projekt generieren**.</span><span class="sxs-lookup"><span data-stu-id="8ae98-135">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Artifact** names for your application, specify your **Spring Boot** version, and then click the button to **Generate Project**.</span></span>
+1. <span data-ttu-id="44033-135">Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein, und geben Sie Ihre **Spring Boot**-Version an. Klicken Sie anschließend auf die Schaltfläche **Projekt generieren**.</span><span class="sxs-lookup"><span data-stu-id="44033-135">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Artifact** names for your application, specify your **Spring Boot** version, and then click the button to **Generate Project**.</span></span>
 
    > [!IMPORTANT]
    >
-   > <span data-ttu-id="8ae98-136">An den APIs in Spring Boot Version 2.0.n, die zum Durchführen der Schritte in diesem Artikel verwendet werden, sind mehrere Breaking Changes erfolgt.</span><span class="sxs-lookup"><span data-stu-id="8ae98-136">There were several breaking changes to the APIs in Spring Boot version 2.0.n, which will be used to complete the steps in this article.</span></span> <span data-ttu-id="8ae98-137">Sie können weiterhin eine der Spring Boot 1.5.n-Versionen verwenden, um die Schritte in diesem Tutorial auszuführen. Die Unterschiede sind ggf. hervorgehoben.</span><span class="sxs-lookup"><span data-stu-id="8ae98-137">You can still use one of the Spring Boot 1.5.n versions to complete the steps in this tutorial, and the differences will be highlighted when necessary.</span></span>
+   > <span data-ttu-id="44033-136">An den APIs in Spring Boot Version 2.0.n, die zum Durchführen der Schritte in diesem Artikel verwendet werden, sind mehrere Breaking Changes erfolgt.</span><span class="sxs-lookup"><span data-stu-id="44033-136">There were several breaking changes to the APIs in Spring Boot version 2.0.n, which will be used to complete the steps in this article.</span></span> <span data-ttu-id="44033-137">Sie können weiterhin eine der Spring Boot 1.5.n-Versionen verwenden, um die Schritte in diesem Tutorial auszuführen. Die Unterschiede sind ggf. hervorgehoben.</span><span class="sxs-lookup"><span data-stu-id="44033-137">You can still use one of the Spring Boot 1.5.n versions to complete the steps in this tutorial, and the differences will be highlighted when necessary.</span></span>
    >
 
    ![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
    >
-   > <span data-ttu-id="8ae98-139">Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt**, z.B. *com.example.wintiptoysdata*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-139">The Spring Initializr uses the **Group** and **Artifact** names to create the package name; for example: *com.example.wintiptoysdata*.</span></span>
+   > <span data-ttu-id="44033-139">Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt**, z.B. *com.example.wintiptoysdata*.</span><span class="sxs-lookup"><span data-stu-id="44033-139">The Spring Initializr uses the **Group** and **Artifact** names to create the package name; for example: *com.example.wintiptoysdata*.</span></span>
    >
 
-1. <span data-ttu-id="8ae98-140">Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.</span><span class="sxs-lookup"><span data-stu-id="8ae98-140">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="44033-140">Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.</span><span class="sxs-lookup"><span data-stu-id="44033-140">When prompted, download the project to a path on your local computer.</span></span>
 
    ![Herunterladen eines benutzerdefinierten Spring Boot-Projekts][SI02]
 
-1. <span data-ttu-id="8ae98-142">Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, kann Ihre einfache Spring Boot-Anwendung bearbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="8ae98-142">After you have extracted the files on your local system, your simple Spring Boot application will be ready for editing.</span></span>
+1. <span data-ttu-id="44033-142">Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, kann Ihre einfache Spring Boot-Anwendung bearbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="44033-142">After you have extracted the files on your local system, your simple Spring Boot application will be ready for editing.</span></span>
 
    ![Dateien eines benutzerdefinierten Spring Boot-Projekts][SI03]
 
-## <a name="configure-your-spring-boot-app-to-use-the-azure-spring-boot-starter"></a><span data-ttu-id="8ae98-144">Konfigurieren der Spring Boot-App für die Verwendung von Azure Spring Boot Starter</span><span class="sxs-lookup"><span data-stu-id="8ae98-144">Configure your Spring Boot app to use the Azure Spring Boot Starter</span></span>
+## <a name="configure-your-spring-boot-app-to-use-the-azure-spring-boot-starter"></a><span data-ttu-id="44033-144">Konfigurieren der Spring Boot-App für die Verwendung von Azure Spring Boot Starter</span><span class="sxs-lookup"><span data-stu-id="44033-144">Configure your Spring Boot app to use the Azure Spring Boot Starter</span></span>
 
-1. <span data-ttu-id="8ae98-145">Suchen Sie die Datei *pom.xml* im Verzeichnis Ihrer App. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-145">Locate the *pom.xml* file in the directory of your app; for example:</span></span>
+1. <span data-ttu-id="44033-145">Suchen Sie die Datei *pom.xml* im Verzeichnis Ihrer App. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-145">Locate the *pom.xml* file in the directory of your app; for example:</span></span>
 
    `C:\SpringBoot\wingtiptoysdata\pom.xml`
 
-   <span data-ttu-id="8ae98-146">Oder</span><span class="sxs-lookup"><span data-stu-id="8ae98-146">-or-</span></span>
+   <span data-ttu-id="44033-146">Oder</span><span class="sxs-lookup"><span data-stu-id="44033-146">-or-</span></span>
 
    `/users/example/home/wingtiptoysdata/pom.xml`
 
    ![Suchen der Datei „pom.xml“][PM01]
 
-1. <span data-ttu-id="8ae98-148">Öffnen Sie die Datei *pom.xml* in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Liste der `<dependencies>` hinzu:</span><span class="sxs-lookup"><span data-stu-id="8ae98-148">Open the *pom.xml* file in a text editor, and add the following lines to list of `<dependencies>`:</span></span>
+1. <span data-ttu-id="44033-148">Öffnen Sie die Datei *pom.xml* in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Liste der `<dependencies>` hinzu:</span><span class="sxs-lookup"><span data-stu-id="44033-148">Open the *pom.xml* file in a text editor, and add the following lines to list of `<dependencies>`:</span></span>
 
    ```xml
    <dependency>
@@ -119,7 +119,7 @@ ms.locfileid: "52339104"
 
    > [!IMPORTANT]
    >
-   > <span data-ttu-id="8ae98-150">Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie die ältere Version des Azure Cosmos DB-Starters angeben; zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-150">If you are using one of Spring Boot 1.5.n versions to complete this tutorial, you will need to specify the older version of the Azure Cosmos DB starter; for example:</span></span>
+   > <span data-ttu-id="44033-150">Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie die ältere Version des Azure Cosmos DB-Starters angeben; zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-150">If you are using one of Spring Boot 1.5.n versions to complete this tutorial, you will need to specify the older version of the Azure Cosmos DB starter; for example:</span></span>
    >
    > ```xml
    > <dependency>
@@ -129,7 +129,7 @@ ms.locfileid: "52339104"
    > </dependency>
    > ```
 
-1. <span data-ttu-id="8ae98-151">Stellen Sie sicher, dass die Spring Boot-Version die Version ist, die Sie beim Erstellen Ihrer Anwendung mit Spring Initializr ausgewählt haben; zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-151">Verify that the Spring Boot version is the version that you chose when you created your application with the Spring Initializr; for example:</span></span>
+1. <span data-ttu-id="44033-151">Stellen Sie sicher, dass die Spring Boot-Version die Version ist, die Sie beim Erstellen Ihrer Anwendung mit Spring Initializr ausgewählt haben; zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-151">Verify that the Spring Boot version is the version that you chose when you created your application with the Spring Initializr; for example:</span></span>
 
    ```xml
    <parent>
@@ -142,24 +142,24 @@ ms.locfileid: "52339104"
 
    > [!NOTE]
    >
-   > <span data-ttu-id="8ae98-152">Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie sicherstellen, dass die richtige Version verwendet wird; zum Beispiel: `<version>1.5.14.RELEASE</version>`.</span><span class="sxs-lookup"><span data-stu-id="8ae98-152">If you are using one of Spring Boot 1.5.n versions to complete this tutorial, you will need to verify the correct version; for example: `<version>1.5.14.RELEASE</version>`.</span></span>
+   > <span data-ttu-id="44033-152">Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie sicherstellen, dass die richtige Version verwendet wird; zum Beispiel: `<version>1.5.14.RELEASE</version>`.</span><span class="sxs-lookup"><span data-stu-id="44033-152">If you are using one of Spring Boot 1.5.n versions to complete this tutorial, you will need to verify the correct version; for example: `<version>1.5.14.RELEASE</version>`.</span></span>
    >
 
-1. <span data-ttu-id="8ae98-153">Speichern und schließen Sie die Datei *pom.xml*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-153">Save and close the *pom.xml* file.</span></span>
+1. <span data-ttu-id="44033-153">Speichern und schließen Sie die Datei *pom.xml*.</span><span class="sxs-lookup"><span data-stu-id="44033-153">Save and close the *pom.xml* file.</span></span>
 
-## <a name="configure-your-spring-boot-app-to-use-your-azure-cosmos-db"></a><span data-ttu-id="8ae98-154">Konfigurieren der Spring Boot-App für die Verwendung von Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="8ae98-154">Configure your Spring Boot app to use your Azure Cosmos DB</span></span>
+## <a name="configure-your-spring-boot-app-to-use-your-azure-cosmos-db"></a><span data-ttu-id="44033-154">Konfigurieren der Spring Boot-App für die Verwendung von Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="44033-154">Configure your Spring Boot app to use your Azure Cosmos DB</span></span>
 
-1. <span data-ttu-id="8ae98-155">Suchen Sie die Datei *application.properties* im *Ressourcen*-Verzeichnis Ihrer App. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-155">Locate the *application.properties* file in the *resources* directory of your app; for example:</span></span>
+1. <span data-ttu-id="44033-155">Suchen Sie die Datei *application.properties* im *Ressourcen*-Verzeichnis Ihrer App. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-155">Locate the *application.properties* file in the *resources* directory of your app; for example:</span></span>
 
    `C:\SpringBoot\wingtiptoysdata\src\main\resources\application.properties`
 
-   <span data-ttu-id="8ae98-156">Oder</span><span class="sxs-lookup"><span data-stu-id="8ae98-156">-or-</span></span>
+   <span data-ttu-id="44033-156">Oder</span><span class="sxs-lookup"><span data-stu-id="44033-156">-or-</span></span>
 
    `/users/example/home/wingtiptoysdata/src/main/resources/application.properties`
 
    ![Suchen der Datei „application.properties“][RE01]
 
-1. <span data-ttu-id="8ae98-158">Öffnen Sie die Datei *application.properties* in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Datei hinzu. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Eigenschaften für Ihre Datenbank:</span><span class="sxs-lookup"><span data-stu-id="8ae98-158">Open the *application.properties* file in a text editor, and add the following lines to the file, and replace the sample values with the appropriate properties for your database:</span></span>
+1. <span data-ttu-id="44033-158">Öffnen Sie die Datei *application.properties* in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Datei hinzu. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Eigenschaften für Ihre Datenbank:</span><span class="sxs-lookup"><span data-stu-id="44033-158">Open the *application.properties* file in a text editor, and add the following lines to the file, and replace the sample values with the appropriate properties for your database:</span></span>
 
    ```yaml
    # Specify the DNS URI of your Azure Cosmos DB.
@@ -174,17 +174,17 @@ ms.locfileid: "52339104"
 
    ![Bearbeiten der Datei „application.properties“][RE02]
 
-1. <span data-ttu-id="8ae98-160">Speichern und schließen Sie die Datei *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-160">Save and close the *application.properties* file.</span></span>
+1. <span data-ttu-id="44033-160">Speichern und schließen Sie die Datei *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="44033-160">Save and close the *application.properties* file.</span></span>
 
-## <a name="add-sample-code-to-implement-basic-database-functionality"></a><span data-ttu-id="8ae98-161">Hinzufügen eines Beispielcodes zur Implementierung von grundlegenden Datenbankfunktionen</span><span class="sxs-lookup"><span data-stu-id="8ae98-161">Add sample code to implement basic database functionality</span></span>
+## <a name="add-sample-code-to-implement-basic-database-functionality"></a><span data-ttu-id="44033-161">Hinzufügen eines Beispielcodes zur Implementierung von grundlegenden Datenbankfunktionen</span><span class="sxs-lookup"><span data-stu-id="44033-161">Add sample code to implement basic database functionality</span></span>
 
-<span data-ttu-id="8ae98-162">In diesem Abschnitt erstellen Sie zwei Java-Klassen zum Speichern von Benutzerdaten und ändern dann die Hauptanwendungsklasse, um eine Instanz der Benutzerklasse zu erstellen und in der Datenbank zu speichern.</span><span class="sxs-lookup"><span data-stu-id="8ae98-162">In this section you create two Java classes for storing user data, and then you modify your main application class to create an instance of the user class and save it to your database.</span></span>
+<span data-ttu-id="44033-162">In diesem Abschnitt erstellen Sie zwei Java-Klassen zum Speichern von Benutzerdaten und ändern dann die Hauptanwendungsklasse, um eine Instanz der Benutzerklasse zu erstellen und in der Datenbank zu speichern.</span><span class="sxs-lookup"><span data-stu-id="44033-162">In this section you create two Java classes for storing user data, and then you modify your main application class to create an instance of the user class and save it to your database.</span></span>
 
-### <a name="define-a-basic-class-for-storing-user-data"></a><span data-ttu-id="8ae98-163">Definieren einer einfachen Klasse zum Speichern von Benutzerdaten</span><span class="sxs-lookup"><span data-stu-id="8ae98-163">Define a basic class for storing user data</span></span>
+### <a name="define-a-basic-class-for-storing-user-data"></a><span data-ttu-id="44033-163">Definieren einer einfachen Klasse zum Speichern von Benutzerdaten</span><span class="sxs-lookup"><span data-stu-id="44033-163">Define a basic class for storing user data</span></span>
 
-1. <span data-ttu-id="8ae98-164">Erstellen Sie im selben Verzeichnis wie die Java-Hauptanwendungsdatei eine neue Datei mit dem Namen *User.java*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-164">Create a new file named *User.java* in the same directory as your main application Java file.</span></span>
+1. <span data-ttu-id="44033-164">Erstellen Sie im selben Verzeichnis wie die Java-Hauptanwendungsdatei eine neue Datei mit dem Namen *User.java*.</span><span class="sxs-lookup"><span data-stu-id="44033-164">Create a new file named *User.java* in the same directory as your main application Java file.</span></span>
 
-1. <span data-ttu-id="8ae98-165">Öffnen Sie in einem Text-Editor die Datei *User.java*, und fügen Sie die folgenden Zeilen zur Datei hinzu, um eine generische Benutzerklasse zu definieren, die Werte speichert und diese von Ihrer Datenbank abruft:</span><span class="sxs-lookup"><span data-stu-id="8ae98-165">Open the *User.java* file in a text editor, and add the following lines to the file to define a generic user class that stores and retrieve values in your database:</span></span>
+1. <span data-ttu-id="44033-165">Öffnen Sie in einem Text-Editor die Datei *User.java*, und fügen Sie die folgenden Zeilen zur Datei hinzu, um eine generische Benutzerklasse zu definieren, die Werte speichert und diese von Ihrer Datenbank abruft:</span><span class="sxs-lookup"><span data-stu-id="44033-165">Open the *User.java* file in a text editor, and add the following lines to the file to define a generic user class that stores and retrieve values in your database:</span></span>
 
    ```java
    package com.example.wingtiptoysdata;
@@ -235,13 +235,13 @@ ms.locfileid: "52339104"
    }
    ```
 
-1. <span data-ttu-id="8ae98-166">Speichern und schließen Sie die Datei *User.java*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-166">Save and close the *User.java* file.</span></span>
+1. <span data-ttu-id="44033-166">Speichern und schließen Sie die Datei *User.java*.</span><span class="sxs-lookup"><span data-stu-id="44033-166">Save and close the *User.java* file.</span></span>
 
-### <a name="define-a-data-repository-interface"></a><span data-ttu-id="8ae98-167">Definieren einer Datenrepositoryschnittstelle</span><span class="sxs-lookup"><span data-stu-id="8ae98-167">Define a data repository interface</span></span>
+### <a name="define-a-data-repository-interface"></a><span data-ttu-id="44033-167">Definieren einer Datenrepositoryschnittstelle</span><span class="sxs-lookup"><span data-stu-id="44033-167">Define a data repository interface</span></span>
 
-1. <span data-ttu-id="8ae98-168">Erstellen Sie im selben Verzeichnis wie die Java-Hauptanwendungsdatei eine neue Datei mit dem Namen *UserRepository.java*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-168">Create a new file named *UserRepository.java* in the same directory as your main application Java file.</span></span>
+1. <span data-ttu-id="44033-168">Erstellen Sie im selben Verzeichnis wie die Java-Hauptanwendungsdatei eine neue Datei mit dem Namen *UserRepository.java*.</span><span class="sxs-lookup"><span data-stu-id="44033-168">Create a new file named *UserRepository.java* in the same directory as your main application Java file.</span></span>
 
-1. <span data-ttu-id="8ae98-169">Öffnen Sie in einem Text-Editor die Datei *UserRepository.java*, und fügen Sie die folgenden Zeilen zur Datei hinzu, um zur Erweiterung der standardmäßigen DocumentDB-Repositoryschnittstelle eine Benutzerrepositoryschnittstelle zu definieren:</span><span class="sxs-lookup"><span data-stu-id="8ae98-169">Open the *UserRepository.java* file in a text editor, and add the following lines to the file to define a user repository interface that extends the default DocumentDB repository interface:</span></span>
+1. <span data-ttu-id="44033-169">Öffnen Sie in einem Text-Editor die Datei *UserRepository.java*, und fügen Sie die folgenden Zeilen zur Datei hinzu, um zur Erweiterung der standardmäßigen DocumentDB-Repositoryschnittstelle eine Benutzerrepositoryschnittstelle zu definieren:</span><span class="sxs-lookup"><span data-stu-id="44033-169">Open the *UserRepository.java* file in a text editor, and add the following lines to the file to define a user repository interface that extends the default DocumentDB repository interface:</span></span>
 
    ```java
    package com.example.wingtiptoysdata;
@@ -253,21 +253,21 @@ ms.locfileid: "52339104"
    public interface UserRepository extends DocumentDbRepository<User, String> { } 
    ```
 
-1. <span data-ttu-id="8ae98-170">Speichern und schließen Sie die Datei *UserRepository.java*.</span><span class="sxs-lookup"><span data-stu-id="8ae98-170">Save and close the *UserRepository.java* file.</span></span>
+1. <span data-ttu-id="44033-170">Speichern und schließen Sie die Datei *UserRepository.java*.</span><span class="sxs-lookup"><span data-stu-id="44033-170">Save and close the *UserRepository.java* file.</span></span>
 
-### <a name="modify-the-main-application-class"></a><span data-ttu-id="8ae98-171">Ändern der Hauptanwendungsklasse</span><span class="sxs-lookup"><span data-stu-id="8ae98-171">Modify the main application class</span></span>
+### <a name="modify-the-main-application-class"></a><span data-ttu-id="44033-171">Ändern der Hauptanwendungsklasse</span><span class="sxs-lookup"><span data-stu-id="44033-171">Modify the main application class</span></span>
 
-1. <span data-ttu-id="8ae98-172">Suchen Sie die Java-Hauptanwendungsdatei im Paketverzeichnis Ihrer App. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-172">Locate the main application Java file in the package directory of your app; for example:</span></span>
+1. <span data-ttu-id="44033-172">Suchen Sie die Java-Hauptanwendungsdatei im Paketverzeichnis Ihrer App. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-172">Locate the main application Java file in the package directory of your app; for example:</span></span>
 
    `C:\SpringBoot\wingtiptoysdata\src\main\java\com\example\wingtiptoysdata\WingtiptoysdataApplication.java`
 
-   <span data-ttu-id="8ae98-173">Oder</span><span class="sxs-lookup"><span data-stu-id="8ae98-173">-or-</span></span>
+   <span data-ttu-id="44033-173">Oder</span><span class="sxs-lookup"><span data-stu-id="44033-173">-or-</span></span>
 
    `/users/example/home/wingtiptoysdata/src/main/java/com/example/wingtiptoysdata/WingtiptoysdataApplication.java`
 
    ![Suchen der Java-Anwendungsdatei][JV01]
 
-1. <span data-ttu-id="8ae98-175">Öffnen Sie die Java-Hauptanwendungsdatei in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Datei hinzu:</span><span class="sxs-lookup"><span data-stu-id="8ae98-175">Open the main application Java file in a text editor, and add the following lines to the file:</span></span>
+1. <span data-ttu-id="44033-175">Öffnen Sie die Java-Hauptanwendungsdatei in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Datei hinzu:</span><span class="sxs-lookup"><span data-stu-id="44033-175">Open the main application Java file in a text editor, and add the following lines to the file:</span></span>
 
    ```java
    package com.example.wingtiptoysdata;
@@ -320,29 +320,29 @@ ms.locfileid: "52339104"
 
    > [!IMPORTANT]
    >
-   > <span data-ttu-id="8ae98-176">Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie die `final User result = repository.findById(testUser.getId()).get();`-Syntax durch `final User result = repository.findOne(testUser.getId());` ersetzen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-176">If you are using one of Spring Boot 1.5.n versions to complete this tutorial, you will need to replace the `final User result = repository.findById(testUser.getId()).get();` syntax with `final User result = repository.findOne(testUser.getId());`.</span></span>
+   > <span data-ttu-id="44033-176">Wenn Sie eine der Spring Boot-1.5.n-Versionen zum Abschließen dieses Tutorials verwenden, müssen Sie die `final User result = repository.findById(testUser.getId()).get();`-Syntax durch `final User result = repository.findOne(testUser.getId());` ersetzen.</span><span class="sxs-lookup"><span data-stu-id="44033-176">If you are using one of Spring Boot 1.5.n versions to complete this tutorial, you will need to replace the `final User result = repository.findById(testUser.getId()).get();` syntax with `final User result = repository.findOne(testUser.getId());`.</span></span>
    >
 
-1. <span data-ttu-id="8ae98-177">Speichern und schließen Sie die Java-Hauptanwendungsdatei.</span><span class="sxs-lookup"><span data-stu-id="8ae98-177">Save and close the main application Java file.</span></span>
+1. <span data-ttu-id="44033-177">Speichern und schließen Sie die Java-Hauptanwendungsdatei.</span><span class="sxs-lookup"><span data-stu-id="44033-177">Save and close the main application Java file.</span></span>
 
-## <a name="build-and-test-your-app"></a><span data-ttu-id="8ae98-178">Erstellen und Testen der App</span><span class="sxs-lookup"><span data-stu-id="8ae98-178">Build and test your app</span></span>
+## <a name="build-and-test-your-app"></a><span data-ttu-id="44033-178">Erstellen und Testen der App</span><span class="sxs-lookup"><span data-stu-id="44033-178">Build and test your app</span></span>
 
-1. <span data-ttu-id="8ae98-179">Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordnerverzeichnis, in dem sich die Datei *pom.xml* befindet. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-179">Open a command prompt and change directory to the folder where your *pom.xml* file is located; for example:</span></span>
+1. <span data-ttu-id="44033-179">Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordnerverzeichnis, in dem sich die Datei *pom.xml* befindet. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-179">Open a command prompt and change directory to the folder where your *pom.xml* file is located; for example:</span></span>
 
    `cd C:\SpringBoot\wingtiptoysdata`
 
-   <span data-ttu-id="8ae98-180">Oder</span><span class="sxs-lookup"><span data-stu-id="8ae98-180">-or-</span></span>
+   <span data-ttu-id="44033-180">Oder</span><span class="sxs-lookup"><span data-stu-id="44033-180">-or-</span></span>
 
    `cd /users/example/home/wingtiptoysdata`
 
-1. <span data-ttu-id="8ae98-181">Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="8ae98-181">Build your Spring Boot application with Maven and run it; for example:</span></span>
+1. <span data-ttu-id="44033-181">Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="44033-181">Build your Spring Boot application with Maven and run it; for example:</span></span>
 
    ```shell
    mvn clean package
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="8ae98-182">Ihre Anwendung zeigt mehrere Laufzeitmeldungen an. Dabei wird eine Meldung wie die folgenden Beispiele angezeigt, die darauf hinweist, dass Werte erfolgreich gespeichert und von Ihrer Datenbank abgerufen wurden.</span><span class="sxs-lookup"><span data-stu-id="8ae98-182">Your application will display several runtime messages, and it will display a message like the following examples to indicate that values have been successfully stored and retrieved from your database.</span></span>
+1. <span data-ttu-id="44033-182">Ihre Anwendung zeigt mehrere Laufzeitmeldungen an. Dabei wird eine Meldung wie die folgenden Beispiele angezeigt, die darauf hinweist, dass Werte erfolgreich gespeichert und von Ihrer Datenbank abgerufen wurden.</span><span class="sxs-lookup"><span data-stu-id="44033-182">Your application will display several runtime messages, and it will display a message like the following examples to indicate that values have been successfully stored and retrieved from your database.</span></span>
 
    ```
    User: 20170724025215132 Gena Soto
@@ -350,47 +350,53 @@ ms.locfileid: "52339104"
 
    ![Erfolgreiche Ausgabe aus der Anwendung][JV02]
 
-1. <span data-ttu-id="8ae98-184">OPTIONAL: Im Azure-Portal können Sie auf der Eigenschaftenseite die Inhalte von Azure Cosmos DB für Ihre Datenbank anzeigen, indem Sie auf **Daten-Explorer** klicken und dann zum Anzeigen der Inhalte ein Element in der angezeigten Liste auswählen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-184">OPTIONAL: You can use the Azure portal to view the contents of your Azure Cosmos DB from the properties page for your database by clicking  **Data Explorer**, and then selecting and item from the displayed list to view the contents.</span></span>
+1. <span data-ttu-id="44033-184">OPTIONAL: Sie können im Azure-Portal auf der Eigenschaftenseite für Ihre Datenbank Ihre Azure Cosmos DB-Inhalte anzeigen, indem Sie auf **Daten-Explorer** klicken und dann zum Anzeigen der Inhalte ein Element in der angezeigten Liste auswählen.</span><span class="sxs-lookup"><span data-stu-id="44033-184">OPTIONAL: You can use the Azure portal to view the contents of your Azure Cosmos DB from the properties page for your database by clicking  **Data Explorer**, and then selecting and item from the displayed list to view the contents.</span></span>
 
    ![Anzeigen von Daten mit dem Document-Explorer][JV03]
 
-## <a name="next-steps"></a><span data-ttu-id="8ae98-186">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="8ae98-186">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="44033-186">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="44033-186">Next steps</span></span>
 
-<span data-ttu-id="8ae98-187">Weitere Informationen zur Verwendung von Azure Cosmos DB und Java finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="8ae98-187">For more information about using Azure Cosmos DB and Java, see the following articles:</span></span>
+<span data-ttu-id="44033-187">Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.</span><span class="sxs-lookup"><span data-stu-id="44033-187">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
 
-* <span data-ttu-id="8ae98-188">[Dokumentation für Azure Cosmos DB]</span><span class="sxs-lookup"><span data-stu-id="8ae98-188">[Azure Cosmos DB Documentation].</span></span>
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="44033-188">Spring Framework in Azure</span><span class="sxs-lookup"><span data-stu-id="44033-188">Spring on Azure</span></span>](/java/azure/spring-framework)
 
-* <span data-ttu-id="8ae98-189">[Azure Cosmos DB: Erstellen einer Dokumentdatenbank mit Java und dem Azure-Portal][Build a SQL API app with Java]</span><span class="sxs-lookup"><span data-stu-id="8ae98-189">[Azure Cosmos DB: Create a document database using Java and the Azure portal][Build a SQL API app with Java]</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="44033-189">Weitere Ressourcen</span><span class="sxs-lookup"><span data-stu-id="44033-189">Additional Resources</span></span>
 
-* <span data-ttu-id="8ae98-190">[Spring-Daten für SQL-API von Azure Cosmos DB]</span><span class="sxs-lookup"><span data-stu-id="8ae98-190">[Spring Data for Azure Cosmos DB SQL API]</span></span>
+<span data-ttu-id="44033-190">Weitere Informationen zur Verwendung von Azure Cosmos DB und Java finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="44033-190">For more information about using Azure Cosmos DB and Java, see the following articles:</span></span>
 
-<span data-ttu-id="8ae98-191">Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="8ae98-191">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+* <span data-ttu-id="44033-191">[Dokumentation für Azure Cosmos DB]</span><span class="sxs-lookup"><span data-stu-id="44033-191">[Azure Cosmos DB Documentation].</span></span>
 
-* <span data-ttu-id="8ae98-192">[Spring Boot Document DB Starter für Azure]</span><span class="sxs-lookup"><span data-stu-id="8ae98-192">[Spring Boot Document DB Starter for Azure]</span></span>
+* <span data-ttu-id="44033-192">[Azure Cosmos DB: Erstellen einer Dokumentdatenbank mit Java und dem Azure-Portal][Build a SQL API app with Java]</span><span class="sxs-lookup"><span data-stu-id="44033-192">[Azure Cosmos DB: Create a document database using Java and the Azure portal][Build a SQL API app with Java]</span></span>
 
-* [<span data-ttu-id="8ae98-193">Bereitstellen von Spring Boot-Anwendungen in Azure App Service</span><span class="sxs-lookup"><span data-stu-id="8ae98-193">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+* <span data-ttu-id="44033-193">[Spring-Daten für SQL-API von Azure Cosmos DB]</span><span class="sxs-lookup"><span data-stu-id="44033-193">[Spring Data for Azure Cosmos DB SQL API]</span></span>
 
-* [<span data-ttu-id="8ae98-194">Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service</span><span class="sxs-lookup"><span data-stu-id="8ae98-194">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+<span data-ttu-id="44033-194">Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="44033-194">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
 
-<span data-ttu-id="8ae98-195">Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und im Thema zu den [Java-Tools für Visual Studio Team Services].</span><span class="sxs-lookup"><span data-stu-id="8ae98-195">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Java Tools for Visual Studio Team Services].</span></span>
+* <span data-ttu-id="44033-195">[Spring Boot Document DB Starter für Azure]</span><span class="sxs-lookup"><span data-stu-id="44033-195">[Spring Boot Document DB Starter for Azure]</span></span>
 
-<span data-ttu-id="8ae98-196">**[Spring Framework]** ist eine Open-Source-Lösung, die Java-Entwicklern beim Erstellen von Anwendungen auf Unternehmensebene hilft.</span><span class="sxs-lookup"><span data-stu-id="8ae98-196">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="8ae98-197">Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-197">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="8ae98-198">Um Entwicklern den Einstieg in Spring Boot zu vereinfachen, werden unter <https://github.com/spring-guides/> mehrere Spring Boot-Beispielpakete bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="8ae98-198">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="8ae98-199">Neben der Auswahl einer Liste grundlegender Spring Boot-Projekte ermöglicht **[Spring Initializr]** Entwicklern einen einfacheren Einstieg bei der Erstellung von benutzerdefinierten Spring Boot-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="8ae98-199">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
+* [<span data-ttu-id="44033-196">Bereitstellen von Spring Boot-Anwendungen in Azure App Service</span><span class="sxs-lookup"><span data-stu-id="44033-196">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+
+* [<span data-ttu-id="44033-197">Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service</span><span class="sxs-lookup"><span data-stu-id="44033-197">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+
+<span data-ttu-id="44033-198">Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).</span><span class="sxs-lookup"><span data-stu-id="44033-198">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Working with Azure DevOps and Java].</span></span>
+
+<span data-ttu-id="44033-199">**[Spring Framework]** ist eine Open-Source-Lösung, die Java-Entwicklern beim Erstellen von Anwendungen auf Unternehmensebene hilft.</span><span class="sxs-lookup"><span data-stu-id="44033-199">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="44033-200">Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="44033-200">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="44033-201">Um Entwicklern den Einstieg in Spring Boot zu vereinfachen, werden unter <https://github.com/spring-guides/> mehrere Spring Boot-Beispielpakete bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="44033-201">To help developers get started with Spring Boot, several sample Spring Boot packages are available at <https://github.com/spring-guides/>.</span></span> <span data-ttu-id="44033-202">Neben der Auswahl einer Liste grundlegender Spring Boot-Projekte ermöglicht **[Spring Initializr]** Entwicklern einen einfacheren Einstieg bei der Erstellung von benutzerdefinierten Spring Boot-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="44033-202">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
 
 <!-- URL List -->
 
 [Dokumentation für Azure Cosmos DB]: /azure/cosmos-db/
 [Azure Cosmos DB Documentation]: /azure/cosmos-db/
-[Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
-[Build a SQL API app with Java]: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-java 
+[Azure für Java-Entwickler]: /java/azure/
+[Azure for Java Developers]: /java/azure/
+[Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
 [Spring-Daten für SQL-API von Azure Cosmos DB]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [Spring Data for Azure Cosmos DB SQL API]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [Spring Boot Document DB Starter für Azure]:https://github.com/Microsoft/azure-spring-boot-starters/tree/master/azure-documentdb-spring-boot-starter-sample
 [Spring Boot Document DB Starter for Azure]:https://github.com/Microsoft/azure-spring-boot-starters/tree/master/azure-documentdb-spring-boot-starter-sample
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
-[Java-Tools für Visual Studio Team Services]: https://azure.microsoft.com/services/devops/java/
-[Java Tools for Visual Studio Team Services]: https://azure.microsoft.com/services/devops/java/
+[Working with Azure DevOps and Java]: https://azure.microsoft.com/services/devops/java/ (Arbeiten mit Azure DevOps und Java)
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
