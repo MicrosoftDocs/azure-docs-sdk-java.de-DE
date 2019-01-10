@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: fcb18de809f4465239f1f360a755624a5095e03a
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: 78dadcf93bfc57ab669271495393fa9ba164c89d
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339154"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991364"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -154,10 +154,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihren Schlüsseltresor an. |
    | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
-   | `enabled-for-deployment` | Gibt die [Bereitstellungsoption für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
-   | `enabled-for-disk-encryption` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
-   | `enabled-for-template-deployment` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
-   | `sku` | Gibt die [SKU-Option für den Schlüsseltresor](https://docs.microsoft.com/cli/azure/keyvault) an. |
+   | `enabled-for-deployment` | Gibt die [Bereitstellungsoption für den Schlüsseltresor](/cli/azure/keyvault) an. |
+   | `enabled-for-disk-encryption` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](/cli/azure/keyvault) an. |
+   | `enabled-for-template-deployment` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](/cli/azure/keyvault) an. |
+   | `sku` | Gibt die [SKU-Option für den Schlüsseltresor](/cli/azure/keyvault) an. |
    | `query` | Gibt einen Wert an, der aus der Antwort abgerufen werden soll. Hierbei handelt es sich um den Schlüsseltresor-URI, den Sie im Rahmen dieses Tutorials benötigen. |
 
    Die Azure-Befehlszeilenschnittstelle zeigt den URI für den Schlüsseltresor an. Dieser wird später verwendet. Beispiel:  
@@ -175,7 +175,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt den Schlüsseltresornamen von vorhin an. |
-   | `secret-permission` | Gibt die [Sicherheitsrichtlinien](https://docs.microsoft.com/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
+   | `secret-permission` | Gibt die [Sicherheitsrichtlinien](/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
    | `spn` | Gibt die GUID für Ihre Anwendungsregistrierung von vorhin an. |
 
    Die Azure-Befehlszeilenschnittstelle zeigt die Ergebnisse der Sicherheitsrichtlinienerstellung an. Beispiel:  
@@ -254,7 +254,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 4. Navigieren Sie zur Quellcode-Hauptdatei Ihres Projekts. Beispiel: */src/main/java/com/wingtiptoys/secrets*.
 
-5. Öffnen Sie die Java-Hauptdatei der Anwendung (beispielsweise *SecretsApplication.java*) in einem Text-Editor, und fügen Sie ihr folgende Zeilen hinzu:
+5. Öffnen Sie die Java-Hauptdatei der Anwendung in einem Text-Editor (z. B. *SecretsApplication.java*), und fügen Sie in der Datei die folgenden Zeilen hinzu:
 
    ```java
    package com.wingtiptoys.secrets;
@@ -309,6 +309,15 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 In diesem Tutorial haben Sie mit **[Spring Initializr]** eine neue Java-Web-App und eine Azure Key Vault-Instanz zum Speichern vertraulicher Informationen erstellt und anschließend Ihre Anwendung zum Abrufen von Informationen aus dem Schlüsseltresor konfiguriert.
 
+## <a name="next-steps"></a>Nächste Schritte
+
+Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
+
+> [!div class="nextstepaction"]
+> [Spring Framework in Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Weitere Ressourcen
+
 Weitere Informationen zur Verwendung von Azure Key Vault-Instanzen finden Sie in den folgenden Artikeln:
 
 * [Dokumentation zu Key Vault]
@@ -321,22 +330,15 @@ Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 
-Weitere Informationen zum Verwenden von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und im Thema zu den [Java-Tools für Visual Studio Team Services].
-
-## <a name="next-steps"></a>Nächste Schritte
-
-Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
-
-> [!div class="nextstepaction"]
-> [Spring Framework in Azure](/java/azure/spring-framework)
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
 
 <!-- URL List -->
 
 [Dokumentation zu Key Vault]: /azure/key-vault/
 [Erste Schritte mit dem Azure-Schlüsseltresor]: /azure/key-vault/key-vault-get-started
-[Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
+[Azure für Java-Entwickler]: /java/azure/
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
-[Java-Tools für Visual Studio Team Services]: https://java.visualstudio.com/
+[Working with Azure DevOps and Java]: /azure/devops/ (Arbeiten mit Azure DevOps und Java)
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
