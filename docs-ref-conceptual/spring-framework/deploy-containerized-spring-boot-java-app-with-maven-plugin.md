@@ -8,18 +8,18 @@ manager: mbaldwin
 editor: ''
 ms.assetid: ''
 ms.author: robmcm
-ms.date: 11/21/2018
+ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: cc14ac8dfd393d60924c39be0870c3caedc9741c
-ms.sourcegitcommit: 8d0c59ae7c91adbb9be3c3e6d4a3429ffe51519d
+ms.openlocfilehash: bcc56a92e2fd6891cdccb92c5541787f227d828a
+ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339084"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53991494"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Bereitstellen einer containerbasierten Spring Boot-App in Azure mithilfe des Maven-Plug-Ins für Azure-Web-Apps
 
@@ -37,10 +37,10 @@ In diesem Artikel wird veranschaulicht, wie Sie mithilfe des [Maven-Plug-Ins fü
 Zur Durchführung der Schritte in diesem Tutorial benötigen Sie Folgendes:
 
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [Vorteile für MSDN-Abonnenten] anwenden oder sich für ein [kostenloses Azure-Konto] registrieren
-* Die [Azure CLI (Command-Line Interface, Befehlszeilenschnittstelle)]
+* Die [Azure-Befehlszeilenschnittstelle (CLI)]
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * Das Erstellungstool Apache [Maven] (Version 3)
-* Einen [Git]
+* Einen [Git-Client]
 * Einen [Docker]-Client
 
 > [!NOTE]
@@ -88,7 +88,7 @@ In diesem Abschnitt klonen Sie eine containerbasierte Spring Boot-Anwendung und 
    curl http://localhost:8080
    ```
 
-1. Es sollte die folgende Meldung angezeigt werden: **Hello Docker World**.
+1. Die folgende Meldung sollte angezeigt werden: **Hello Docker World!**
 
 ## <a name="create-an-azure-service-principal"></a>Erstellen eines Azure-Dienstprinzipals
 
@@ -168,7 +168,7 @@ In diesem Abschnitt verwenden Sie die Werte Ihres Azure-Dienstprinzipals zum Kon
 
 3. Speichern und schließen Sie die Datei *settings.xml*.
 
-## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>OPTIONAL: Bereitstellen der lokalen Docker-Datei auf Docker Hub
+## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>OPTIONAL: Bereitstellen der lokalen Docker-Datei in Docker Hub
 
 Wenn Sie ein Docker-Konto besitzen, können Sie das Docker-Containerimage lokal erstellen und per Push an Docker Hub übertragen. Führen Sie dazu die folgenden Schritte aus:
 
@@ -310,6 +310,13 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 ## <a name="next-steps"></a>Nächste Schritte
 
+Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
+
+> [!div class="nextstepaction"]
+> [Spring Framework in Azure](/java/azure/spring-framework)
+
+### <a name="additional-resources"></a>Weitere Ressourcen
+
 Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Technologien finden Sie in den folgenden Artikeln:
 
 * [Maven Plugin for Azure Web Apps] (Maven-Plug-In für Azure-Web-Apps)
@@ -324,16 +331,18 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 
 * [Docker plugin for Maven] (Docker-Plug-In für Maven)
 
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
+
 <!-- URL List -->
 
-[Azure CLI (Command-Line Interface, Befehlszeilenschnittstelle)]: /cli/azure/overview
-[Azure for Java Developers]: https://docs.microsoft.com/java/azure/
+[Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
+[Azure für Java-Entwickler]: /java/azure/
 [Azure-Portal]: https://portal.azure.com/
 [Docker]: https://www.docker.com/
 [Docker plugin for Maven]: https://github.com/spotify/docker-maven-plugin (Docker-Plug-In für Maven)
 [Kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
-[Git]: https://github.com/
-[Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
+[Git-Client]: https://github.com/
+[Working with Azure DevOps and Java]: /azure/devops/ (Arbeiten mit Azure DevOps und Java)
 [Maven]: http://maven.apache.org/
 [Vorteile für MSDN-Abonnenten]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
