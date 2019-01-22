@@ -14,74 +14,75 @@ ms.service: Azure Monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: f69cdcc5b479e83b230f23a8a76f96284a1b785b
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: bf4f7e51f3108d684503465050d69461240f17e3
+ms.sourcegitcommit: 9df42bd342ef2d25d56a6045f1ab1baf6f2c250e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991434"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54237291"
 ---
-# <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a><span data-ttu-id="ec4f8-103">Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights</span><span class="sxs-lookup"><span data-stu-id="ec4f8-103">Configure a Spring Boot Initializer app to use Application Insights</span></span>
+# <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a><span data-ttu-id="83e45-103">Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights</span><span class="sxs-lookup"><span data-stu-id="83e45-103">Configure a Spring Boot Initializer app to use Application Insights</span></span>
 
-<span data-ttu-id="ec4f8-104">In diesem Artikel erfahren Sie Schritt für Schritt, wie Sie eine Spring Boot-Anwendung unter Verwendung von **[Spring Initializr]** erstellen, die Azure Application Insights Spring Boot Starter für die End-to-End-Überwachung von Java-Anwendungen in der Cloud verwendet.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-104">This article walks you through creating a Spring Boot application using **[Spring Initializr]**, that uses Azure Application Insights Spring Boot Starter for end-to-end monitoring of Java applications on cloud.</span></span>
+<span data-ttu-id="83e45-104">In diesem Artikel erfahren Sie Schritt für Schritt, wie Sie eine Spring Boot-Anwendung unter Verwendung von **[Spring Initializr]** erstellen, die Azure Application Insights Spring Boot Starter für die End-to-End-Überwachung von Java-Anwendungen in der Cloud verwendet.</span><span class="sxs-lookup"><span data-stu-id="83e45-104">This article walks you through creating a Spring Boot application using **[Spring Initializr]**, that uses Azure Application Insights Spring Boot Starter for end-to-end monitoring of Java applications on cloud.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="ec4f8-105">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="ec4f8-105">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="83e45-105">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="83e45-105">Prerequisites</span></span>
 
-<span data-ttu-id="ec4f8-106">Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-106">The following prerequisites are required in order to complete the steps in this article:</span></span>
+<span data-ttu-id="83e45-106">Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:</span><span class="sxs-lookup"><span data-stu-id="83e45-106">The following prerequisites are required in order to complete the steps in this article:</span></span>
 
-* <span data-ttu-id="ec4f8-107">Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren</span><span class="sxs-lookup"><span data-stu-id="ec4f8-107">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
-* <span data-ttu-id="ec4f8-108">Ein unterstütztes Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-108">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="ec4f8-109">Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-109">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
-* <span data-ttu-id="ec4f8-110">[Apache Maven](http://maven.apache.org/), Version 3.0 oder höher</span><span class="sxs-lookup"><span data-stu-id="ec4f8-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="83e45-107">Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren</span><span class="sxs-lookup"><span data-stu-id="83e45-107">An Azure subscription; if you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits] or sign up for a [free Azure account].</span></span>
+* <span data-ttu-id="83e45-108">Ein unterstütztes Java Development Kit (JDK).</span><span class="sxs-lookup"><span data-stu-id="83e45-108">A supported Java Development Kit (JDK).</span></span> <span data-ttu-id="83e45-109">Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.</span><span class="sxs-lookup"><span data-stu-id="83e45-109">For more information about the JDKs available for use when developing on Azure, see <https://aka.ms/azure-jdks>.</span></span>
+* <span data-ttu-id="83e45-110">[Apache Maven](http://maven.apache.org/), Version 3.0 oder höher</span><span class="sxs-lookup"><span data-stu-id="83e45-110">[Apache Maven](http://maven.apache.org/), version 3.0 or later.</span></span>
+* <span data-ttu-id="83e45-111">WebFlux- und Netty-APIs werden mit Application Insights Spring Boot Starter **derzeit nicht unterstützt**.</span><span class="sxs-lookup"><span data-stu-id="83e45-111">Web Flux and Netty APIs are **not currently supported** with the Application Insights Spring Boot starter.</span></span>
 
-## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="ec4f8-111">Erstellen einer benutzerdefinierten Anwendung mit dem Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="ec4f8-111">Create a custom application using the Spring Initializr</span></span>
+## <a name="create-a-custom-application-using-the-spring-initializr"></a><span data-ttu-id="83e45-112">Erstellen einer benutzerdefinierten Anwendung mit dem Spring Initializr</span><span class="sxs-lookup"><span data-stu-id="83e45-112">Create a custom application using the Spring Initializr</span></span>
 
-1. <span data-ttu-id="ec4f8-112">Navigieren Sie zu [https://start.spring.io/](https://start.spring.io/).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-112">Browse to [https://start.spring.io/](https://start.spring.io/).</span></span>
+1. <span data-ttu-id="83e45-113">Navigieren Sie zu [https://start.spring.io/](https://start.spring.io/).</span><span class="sxs-lookup"><span data-stu-id="83e45-113">Browse to [https://start.spring.io/](https://start.spring.io/).</span></span>
 
-1. <span data-ttu-id="ec4f8-113">Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein, und wählen Sie im Abschnitt mit den Abhängigkeiten die Webabhängigkeit aus.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-113">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Artifact** names for your application, and then select web dependency in the dependenies section.</span></span>
+1. <span data-ttu-id="83e45-114">Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein, und wählen Sie im Abschnitt mit den Abhängigkeiten die Webabhängigkeit aus.</span><span class="sxs-lookup"><span data-stu-id="83e45-114">Specify that you want to generate a **Maven** project with **Java**, enter the **Group** and **Artifact** names for your application, and then select web dependency in the dependenies section.</span></span>
 
    ![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
    >
-   > <span data-ttu-id="ec4f8-115">Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise *com.example.demo*).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-115">The Spring Initializr will use the **Group** and **Artifact** names to create the package name; for example: *com.example.demo*.</span></span>
+   > <span data-ttu-id="83e45-116">Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise *com.example.demo*).</span><span class="sxs-lookup"><span data-stu-id="83e45-116">The Spring Initializr will use the **Group** and **Artifact** names to create the package name; for example: *com.example.demo*.</span></span>
    >
 
-1. <span data-ttu-id="ec4f8-116">Klicken Sie auf die Schaltfläche **Projekt generieren**.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-116">Click the button to **Generate Project**.</span></span>
+1. <span data-ttu-id="83e45-117">Klicken Sie auf die Schaltfläche **Projekt generieren**.</span><span class="sxs-lookup"><span data-stu-id="83e45-117">Click the button to **Generate Project**.</span></span>
 
-1. <span data-ttu-id="ec4f8-117">Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-117">When prompted, download the project to a path on your local computer.</span></span>
+1. <span data-ttu-id="83e45-118">Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.</span><span class="sxs-lookup"><span data-stu-id="83e45-118">When prompted, download the project to a path on your local computer.</span></span>
 
-1. <span data-ttu-id="ec4f8-118">Nachdem Sie die Dateien auf dem lokalen System extrahiert haben, kann Ihre benutzerdefinierte Spring Boot-Anwendung bearbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-118">After you have extracted the files on your local system, your custom Spring Boot application will be ready for editing.</span></span>
+1. <span data-ttu-id="83e45-119">Nachdem Sie die Dateien auf dem lokalen System extrahiert haben, kann Ihre benutzerdefinierte Spring Boot-Anwendung bearbeitet werden.</span><span class="sxs-lookup"><span data-stu-id="83e45-119">After you have extracted the files on your local system, your custom Spring Boot application will be ready for editing.</span></span>
 
    ![Dateien eines benutzerdefinierten Spring Boot-Projekts][SI02]
 
-## <a name="create-an-application-insights-resource-on-azure"></a><span data-ttu-id="ec4f8-120">Erstellen einer Application Insights-Ressource in Azure</span><span class="sxs-lookup"><span data-stu-id="ec4f8-120">Create an Application Insights Resource on Azure</span></span>
+## <a name="create-an-application-insights-resource-on-azure"></a><span data-ttu-id="83e45-121">Erstellen einer Application Insights-Ressource in Azure</span><span class="sxs-lookup"><span data-stu-id="83e45-121">Create an Application Insights Resource on Azure</span></span>
 
-1. <span data-ttu-id="ec4f8-121">Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Neu**.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-121">Browse to the Azure portal at <https://portal.azure.com/> and click **+New**.</span></span>
+1. <span data-ttu-id="83e45-122">Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Neu**.</span><span class="sxs-lookup"><span data-stu-id="83e45-122">Browse to the Azure portal at <https://portal.azure.com/> and click **+New**.</span></span>
 
    ![Azure-Portal][AZ01]
 
-1. <span data-ttu-id="ec4f8-123">Klicken Sie auf **Verwaltungstools** und anschließend auf **Application Insights**.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-123">Click **Management Tools**, and then click **Application Insights**.</span></span>
+1. <span data-ttu-id="83e45-124">Klicken Sie auf **Verwaltungstools** und anschließend auf **Application Insights**.</span><span class="sxs-lookup"><span data-stu-id="83e45-124">Click **Management Tools**, and then click **Application Insights**.</span></span>
 
    ![Azure-Portal][AZ02]
 
-1. <span data-ttu-id="ec4f8-125">Geben Sie auf der Seite **Neue Application Insights-Ressource** folgende Informationen an:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-125">On the **New Application Insights Resource** page, specify the following information:</span></span>
+1. <span data-ttu-id="83e45-126">Geben Sie auf der Seite **Neue Application Insights-Ressource** folgende Informationen an:</span><span class="sxs-lookup"><span data-stu-id="83e45-126">On the **New Application Insights Resource** page, specify the following information:</span></span>
 
-   * <span data-ttu-id="ec4f8-126">Geben Sie unter **Name** den Namen für Ihre Application Insights-Ressource ein.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-126">Enter the **Name** for your Application Insights resource.</span></span>
-   * <span data-ttu-id="ec4f8-127">Legen Sie den **Anwendungstyp** auf „Java-Webanwendung“ fest.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-127">Choose the **Application Type** to Java Web Application.</span></span>
-   * <span data-ttu-id="ec4f8-128">Geben Sie Ihr **Abonnement**, Ihre **Ressourcengruppe** und Ihren **Standort** an.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-128">Specify your **Subscription**, **Resource group** and **Location**.</span></span>
-   * <span data-ttu-id="ec4f8-129">Aktivieren Sie die Option „An Dashboard anheften“, wenn Sie die Ressource an Ihr Azure-Portal anheften möchten.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-129">Select Pin to dashboard option, if you would like to pin the resource on your Azure portal.</span></span>
+   * <span data-ttu-id="83e45-127">Geben Sie unter **Name** den Namen für Ihre Application Insights-Ressource ein.</span><span class="sxs-lookup"><span data-stu-id="83e45-127">Enter the **Name** for your Application Insights resource.</span></span>
+   * <span data-ttu-id="83e45-128">Legen Sie den **Anwendungstyp** auf „Java-Webanwendung“ fest.</span><span class="sxs-lookup"><span data-stu-id="83e45-128">Choose the **Application Type** to Java Web Application.</span></span>
+   * <span data-ttu-id="83e45-129">Geben Sie Ihr **Abonnement**, Ihre **Ressourcengruppe** und Ihren **Standort** an.</span><span class="sxs-lookup"><span data-stu-id="83e45-129">Specify your **Subscription**, **Resource group** and **Location**.</span></span>
+   * <span data-ttu-id="83e45-130">Aktivieren Sie die Option „An Dashboard anheften“, wenn Sie die Ressource an Ihr Azure-Portal anheften möchten.</span><span class="sxs-lookup"><span data-stu-id="83e45-130">Select Pin to dashboard option, if you would like to pin the resource on your Azure portal.</span></span>
 
-   <span data-ttu-id="ec4f8-130">Wenn Sie diese Optionen angegeben haben, klicken Sie auf **Erstellen**, um Ihre Application Insights-Ressource zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-130">When you have specified these options, click **Create** to create your Application Insights resource.</span></span>
+   <span data-ttu-id="83e45-131">Wenn Sie diese Optionen angegeben haben, klicken Sie auf **Erstellen**, um Ihre Application Insights-Ressource zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="83e45-131">When you have specified these options, click **Create** to create your Application Insights resource.</span></span>
 
    ![Azure-Portal][AZ03]
 
-1. <span data-ttu-id="ec4f8-132">Die erstellte Ressource wird auf Ihrem **Azure-Dashboard** sowie auf den Seiten **Alle Ressourcen** angezeigt.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-132">Once your resource has been created, you will see it listed on your Azure **Dashboard**, as well as under the **All Resources** pages.</span></span> <span data-ttu-id="ec4f8-133">Klicken Sie an einem dieser Orte auf Ihre Ressource, um die Übersichtsseite der Application Insights-Ressource zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-133">You can click on your resource on any of those locations to open the overview page of the Application Insights resource.</span></span> <span data-ttu-id="ec4f8-134">Kopieren Sie auf dieser Übersichtsseite den **Instrumentierungsschlüssel**.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-134">From this overview page please copy the **instrumentation key**.</span></span>
+1. <span data-ttu-id="83e45-133">Die erstellte Ressource wird auf Ihrem **Azure-Dashboard** sowie auf den Seiten **Alle Ressourcen** angezeigt.</span><span class="sxs-lookup"><span data-stu-id="83e45-133">Once your resource has been created, you will see it listed on your Azure **Dashboard**, as well as under the **All Resources** pages.</span></span> <span data-ttu-id="83e45-134">Klicken Sie an einem dieser Orte auf Ihre Ressource, um die Übersichtsseite der Application Insights-Ressource zu öffnen.</span><span class="sxs-lookup"><span data-stu-id="83e45-134">You can click on your resource on any of those locations to open the overview page of the Application Insights resource.</span></span> <span data-ttu-id="83e45-135">Kopieren Sie auf dieser Übersichtsseite den **Instrumentierungsschlüssel**.</span><span class="sxs-lookup"><span data-stu-id="83e45-135">From this overview page please copy the **instrumentation key**.</span></span>
 
    ![Azure-Portal][AZ04]
 
-## <a name="configure-your-downloaded-spring-boot-application-to-use-application-insights"></a><span data-ttu-id="ec4f8-136">Konfigurieren Ihrer heruntergeladenen Spring Boot-Anwendung für die Verwendung von Application Insights</span><span class="sxs-lookup"><span data-stu-id="ec4f8-136">Configure your downloaded Spring Boot Application to use Application Insights</span></span>
+## <a name="configure-your-downloaded-spring-boot-application-to-use-application-insights"></a><span data-ttu-id="83e45-137">Konfigurieren Ihrer heruntergeladenen Spring Boot-Anwendung für die Verwendung von Application Insights</span><span class="sxs-lookup"><span data-stu-id="83e45-137">Configure your downloaded Spring Boot Application to use Application Insights</span></span>
 
-1. <span data-ttu-id="ec4f8-137">Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *POM.xml*, und fügen Sie dem Abschnitt mit den Abhängigkeiten die folgende Abhängigkeit hinzu.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-137">Locate the *POM.xml* file in the root directory of your app, and add the following dependency in its dependencies section.</span></span> 
+1. <span data-ttu-id="83e45-138">Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *POM.xml*, und fügen Sie dem Abschnitt mit den Abhängigkeiten die folgende Abhängigkeit hinzu.</span><span class="sxs-lookup"><span data-stu-id="83e45-138">Locate the *POM.xml* file in the root directory of your app, and add the following dependency in its dependencies section.</span></span> 
 
 ```XML
  <dependency>
@@ -91,11 +92,11 @@ ms.locfileid: "53991434"
 </dependency>
 ```
 
-1. <span data-ttu-id="ec4f8-138">Suchen Sie die Datei *application.properties* im *Ressourcen*-Verzeichnis Ihrer App, oder erstellen Sie diese Datei, wenn sie noch nicht vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-138">Locate the *application.properties* file in the *resources* directory of your app, or create the file if it does not already exist.</span></span>
+1. <span data-ttu-id="83e45-139">Suchen Sie die Datei *application.properties* im *Ressourcen*-Verzeichnis Ihrer App, oder erstellen Sie diese Datei, wenn sie noch nicht vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="83e45-139">Locate the *application.properties* file in the *resources* directory of your app, or create the file if it does not already exist.</span></span>
 
    ![Suchen der Datei „application.properties“][RE01]
 
-1. <span data-ttu-id="ec4f8-140">Öffnen Sie die Datei *application.properties* in einem Text-Editor, und fügen Sie der Datei die folgenden Zeilen hinzu. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Eigenschaften mit entsprechenden Anmeldeinformationen:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-140">Open the *application.properties* file in a text editor, and add the following lines to the file, and replace the sample values with the appropriate properties with appropriate credentials:</span></span>
+1. <span data-ttu-id="83e45-141">Öffnen Sie die Datei *application.properties* in einem Text-Editor, und fügen Sie der Datei die folgenden Zeilen hinzu. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Eigenschaften mit entsprechenden Anmeldeinformationen:</span><span class="sxs-lookup"><span data-stu-id="83e45-141">Open the *application.properties* file in a text editor, and add the following lines to the file, and replace the sample values with the appropriate properties with appropriate credentials:</span></span>
 
    ```yaml
    # Specify the instrumentation key of your Application Insights resource.
@@ -104,23 +105,23 @@ ms.locfileid: "53991434"
    spring.application.name=[your app name]
    ```
 
-   <span data-ttu-id="ec4f8-141">Weitere Optimierungsoptionen für Application Insights finden Sie in der [Infodatei für Application Insights Spring Boot Starter](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-141">For more ways to fine tune Application Insights please refer to [Application Insights Springboot starter readme](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span></span>
+   <span data-ttu-id="83e45-142">Weitere Optimierungsoptionen für Application Insights finden Sie in der [Infodatei für Application Insights Spring Boot Starter](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span><span class="sxs-lookup"><span data-stu-id="83e45-142">For more ways to fine tune Application Insights please refer to [Application Insights Springboot starter readme](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span></span>
 
    > [!NOTE]
    > 
-   > <span data-ttu-id="ec4f8-142">Sie können verschiedene Application Insights-Instrumentierungsschlüssel (sprich:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-142">You can use different Application Insights instrumentation keys (i.e</span></span> <span data-ttu-id="ec4f8-143">verschiedene Ressourcen) für verschiedene Profile (etwa PROD oder DEV) verwenden. Weitere Informationen finden Sie unter [Spezifische Eigenschaften für Spring Boot-Profile] für zusätzliche Informationen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-143">different resources) for different profiles like PROD, DEV etc. Please refer to [Spring Boot Profile Specific Properties] for additional information.</span></span> 
+   > <span data-ttu-id="83e45-143">Sie können verschiedene Application Insights-Instrumentierungsschlüssel (sprich:</span><span class="sxs-lookup"><span data-stu-id="83e45-143">You can use different Application Insights instrumentation keys (i.e</span></span> <span data-ttu-id="83e45-144">verschiedene Ressourcen) für verschiedene Profile (etwa PROD oder DEV) verwenden. Weitere Informationen finden Sie unter [Spezifische Eigenschaften für Spring Boot-Profile] für zusätzliche Informationen.</span><span class="sxs-lookup"><span data-stu-id="83e45-144">different resources) for different profiles like PROD, DEV etc. Please refer to [Spring Boot Profile Specific Properties] for additional information.</span></span> 
 
-1. <span data-ttu-id="ec4f8-144">Speichern und schließen Sie die Datei *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-144">Save and close the *application.properties* file.</span></span>
+1. <span data-ttu-id="83e45-145">Speichern und schließen Sie die Datei *application.properties*.</span><span class="sxs-lookup"><span data-stu-id="83e45-145">Save and close the *application.properties* file.</span></span>
 
-1. <span data-ttu-id="ec4f8-145">Erstellen Sie einen Ordner mit dem Namen *controller* unter den Quellordner für Ihr Paket, zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-145">Create a folder named *controller* under the source folder for your package; for example:</span></span>
+1. <span data-ttu-id="83e45-146">Erstellen Sie einen Ordner mit dem Namen *controller* unter den Quellordner für Ihr Paket, zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="83e45-146">Create a folder named *controller* under the source folder for your package; for example:</span></span>
 
    `D:\Microsoft\demo\src\main\java\com\example\demo\controller`
 
-   <span data-ttu-id="ec4f8-146">Oder</span><span class="sxs-lookup"><span data-stu-id="ec4f8-146">-or-</span></span>
+   <span data-ttu-id="83e45-147">Oder</span><span class="sxs-lookup"><span data-stu-id="83e45-147">-or-</span></span>
 
    `/users/example/home/demo/src/main/java/com/example/demo/controller`
 
-1. <span data-ttu-id="ec4f8-147">Erstellen Sie im Ordner *controller* eine neue Datei mit dem Namen *TestController.java*.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-147">Create a new file named *TestController.java* in the *controller* folder.</span></span> <span data-ttu-id="ec4f8-148">Öffnen Sie die Datei in einem Text-Editor, und fügen Sie den folgenden Code hinzu:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-148">Open the file in a text editor and add the following code to it:</span></span>
+1. <span data-ttu-id="83e45-148">Erstellen Sie im Ordner *controller* eine neue Datei mit dem Namen *TestController.java*.</span><span class="sxs-lookup"><span data-stu-id="83e45-148">Create a new file named *TestController.java* in the *controller* folder.</span></span> <span data-ttu-id="83e45-149">Öffnen Sie die Datei in einem Text-Editor, und fügen Sie den folgenden Code hinzu:</span><span class="sxs-lookup"><span data-stu-id="83e45-149">Open the file in a text editor and add the following code to it:</span></span>
 
    ```java
     package com.example.demo;
@@ -160,36 +161,36 @@ ms.locfileid: "53991434"
     }
    ```
 
-   <span data-ttu-id="ec4f8-149">Dabei müssen Sie `com.example.demo` durch den Paketnamen für das Projekt ersetzen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-149">Where you will need to replace `com.example.demo` with the package name for your project.</span></span>
+   <span data-ttu-id="83e45-150">Dabei müssen Sie `com.example.demo` durch den Paketnamen für das Projekt ersetzen.</span><span class="sxs-lookup"><span data-stu-id="83e45-150">Where you will need to replace `com.example.demo` with the package name for your project.</span></span>
 
-1. <span data-ttu-id="ec4f8-150">Speichern und schließen Sie die Datei *TestController.java*.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-150">Save and close the *TestController.java* file.</span></span>
+1. <span data-ttu-id="83e45-151">Speichern und schließen Sie die Datei *TestController.java*.</span><span class="sxs-lookup"><span data-stu-id="83e45-151">Save and close the *TestController.java* file.</span></span>
 
-1. <span data-ttu-id="ec4f8-151">Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-151">Build your Spring Boot application with Maven and run it; for example:</span></span>
+1. <span data-ttu-id="83e45-152">Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:</span><span class="sxs-lookup"><span data-stu-id="83e45-152">Build your Spring Boot application with Maven and run it; for example:</span></span>
 
    ```shell
    mvn clean package
    mvn spring-boot:run
    ```
 
-1. <span data-ttu-id="ec4f8-152">Testen Sie die Web-App unter http://localhost:8080/sample/hello in einem Webbrowser, oder verwenden Sie die Syntax aus dem folgenden Beispiel (sofern Curl verfügbar ist):</span><span class="sxs-lookup"><span data-stu-id="ec4f8-152">Test the web app by browsing to http://localhost:8080/sample/hello using a web browser, or use the syntax like the following example if you have curl available:</span></span>
+1. <span data-ttu-id="83e45-153">Testen Sie die Web-App unter http://localhost:8080/sample/hello in einem Webbrowser, oder verwenden Sie die Syntax aus dem folgenden Beispiel (sofern Curl verfügbar ist):</span><span class="sxs-lookup"><span data-stu-id="83e45-153">Test the web app by browsing to http://localhost:8080/sample/hello using a web browser, or use the syntax like the following example if you have curl available:</span></span>
 
    ```shell
    curl http://localhost:8080/sample/hello
    ```
 
-   <span data-ttu-id="ec4f8-153">Es sollte die Nachricht „hello“</span><span class="sxs-lookup"><span data-stu-id="ec4f8-153">You should see the "hello!"</span></span> <span data-ttu-id="ec4f8-154">von Ihrem Beispielcontroller angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-154">message from your sample controller displayed.</span></span> <span data-ttu-id="ec4f8-155">Application Insights erfasst diese Anforderung automatisch und sendet sie gemäß Angabe in der Controllerlogik als Telemetrieelement mit dem dazugehörigen benutzerdefinierten Ereignis, der benutzerdefinierten Metrik, der benutzerdefinierten Abhängigkeit und der benutzerdefinierten Ablaufverfolgung.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-155">Application Insights will automatically collect this request and send it as a telemetry item with it's associated custom event, custom metric, custom dependency and custom trace as specified in the controller logic.</span></span> 
+   <span data-ttu-id="83e45-154">Es sollte die Nachricht „hello“</span><span class="sxs-lookup"><span data-stu-id="83e45-154">You should see the "hello!"</span></span> <span data-ttu-id="83e45-155">von Ihrem Beispielcontroller angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="83e45-155">message from your sample controller displayed.</span></span> <span data-ttu-id="83e45-156">Application Insights erfasst diese Anforderung automatisch und sendet sie gemäß Angabe in der Controllerlogik als Telemetrieelement mit dem dazugehörigen benutzerdefinierten Ereignis, der benutzerdefinierten Metrik, der benutzerdefinierten Abhängigkeit und der benutzerdefinierten Ablaufverfolgung.</span><span class="sxs-lookup"><span data-stu-id="83e45-156">Application Insights will automatically collect this request and send it as a telemetry item with it's associated custom event, custom metric, custom dependency and custom trace as specified in the controller logic.</span></span> 
 
-   <span data-ttu-id="ec4f8-156">Die Daten sollten nach wenigen Sekunden im Azure-Portal angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-156">After a few seconds you should see the data on Azure portal.</span></span> 
+   <span data-ttu-id="83e45-157">Die Daten sollten nach wenigen Sekunden im Azure-Portal angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="83e45-157">After a few seconds you should see the data on Azure portal.</span></span> 
 
    ![Azure-Portal][AZ05]
 
-   <span data-ttu-id="ec4f8-158">Sie können auf die Kachel „Anwendungsübersicht“ klicken, um übergeordnete Komponenten und deren Interaktionen anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-158">You can click on Application Map tile to view high level components and their interaction with each other.</span></span> <span data-ttu-id="ec4f8-159">Hier können Sie sich einen allgemeinen Überblick über die gesamte Anwendung verschaffen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-159">This is a recommended place to get a high level overview of entire application.</span></span> <span data-ttu-id="ec4f8-160">Jeder Spring Boot-Microservice wird anhand des Spring-Anwendungsnamens erkannt.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-160">Each Spring Boot Microservice is recognized by the spring application name.</span></span> <span data-ttu-id="ec4f8-161">Vergessen Sie nicht, ihn festzulegen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-161">Please remember to set it.</span></span>
+   <span data-ttu-id="83e45-159">Sie können auf die Kachel „Anwendungsübersicht“ klicken, um übergeordnete Komponenten und deren Interaktionen anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="83e45-159">You can click on Application Map tile to view high level components and their interaction with each other.</span></span> <span data-ttu-id="83e45-160">Hier können Sie sich einen allgemeinen Überblick über die gesamte Anwendung verschaffen.</span><span class="sxs-lookup"><span data-stu-id="83e45-160">This is a recommended place to get a high level overview of entire application.</span></span> <span data-ttu-id="83e45-161">Jeder Spring Boot-Microservice wird anhand des Spring-Anwendungsnamens erkannt.</span><span class="sxs-lookup"><span data-stu-id="83e45-161">Each Spring Boot Microservice is recognized by the spring application name.</span></span> <span data-ttu-id="83e45-162">Vergessen Sie nicht, ihn festzulegen.</span><span class="sxs-lookup"><span data-stu-id="83e45-162">Please remember to set it.</span></span>
 
    ![Azure-Portal][AZ08] 
 
-## <a name="configure-springboot-application-to-send-log4j-logs-to-application-insights"></a><span data-ttu-id="ec4f8-163">Konfigurieren der Spring Boot-Anwendung zum Senden von log4j-Protokollen an Application Insights</span><span class="sxs-lookup"><span data-stu-id="ec4f8-163">Configure Springboot Application to send log4j logs to Application Insights</span></span>
+## <a name="configure-springboot-application-to-send-log4j-logs-to-application-insights"></a><span data-ttu-id="83e45-164">Konfigurieren der Spring Boot-Anwendung zum Senden von log4j-Protokollen an Application Insights</span><span class="sxs-lookup"><span data-stu-id="83e45-164">Configure Springboot Application to send log4j logs to Application Insights</span></span>
 
-1. <span data-ttu-id="ec4f8-164">Bearbeiten Sie die Datei „POM.xml“ des Projekts, und fügen Sie den Abschnitt „dependencies“ mit Folgendem hinzu (oder passen Sie ihn entsprechend an).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-164">Modify the POM.xml file of the project and add/modify the dependencies section with following.</span></span> 
+1. <span data-ttu-id="83e45-165">Bearbeiten Sie die Datei „POM.xml“ des Projekts, und fügen Sie den Abschnitt „dependencies“ mit Folgendem hinzu (oder passen Sie ihn entsprechend an).</span><span class="sxs-lookup"><span data-stu-id="83e45-165">Modify the POM.xml file of the project and add/modify the dependencies section with following.</span></span> 
 
 ```xml
 <dependencies>
@@ -229,9 +230,9 @@ ms.locfileid: "53991434"
 </dependencies>
 ```
 
-2. <span data-ttu-id="ec4f8-165">Speichern und schließen Sie die Datei *POM.xml*.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-165">Save and close the *POM.xml* file.</span></span>
+2. <span data-ttu-id="83e45-166">Speichern und schließen Sie die Datei *POM.xml*.</span><span class="sxs-lookup"><span data-stu-id="83e45-166">Save and close the *POM.xml* file.</span></span>
 
-3. <span data-ttu-id="ec4f8-166">Erstellen Sie im Ordner „\src\main\resources“ eine neue Datei namens *log4j2.xml*, und konfigurieren Sie sie.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-166">In \src\main\resources folder, create a new file *log4j2.xml* and configure it.</span></span> <span data-ttu-id="ec4f8-167">Beispiel: </span><span class="sxs-lookup"><span data-stu-id="ec4f8-167">For example:</span></span>
+3. <span data-ttu-id="83e45-167">Erstellen Sie im Ordner „\src\main\resources“ eine neue Datei namens *log4j2.xml*, und konfigurieren Sie sie.</span><span class="sxs-lookup"><span data-stu-id="83e45-167">In \src\main\resources folder, create a new file *log4j2.xml* and configure it.</span></span> <span data-ttu-id="83e45-168">Beispiel: </span><span class="sxs-lookup"><span data-stu-id="83e45-168">For example:</span></span>
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -256,42 +257,42 @@ ms.locfileid: "53991434"
   </Loggers>
 </Configuration>
 ```
-4. <span data-ttu-id="ec4f8-168">Erstellen Sie die Spring Boot-Anwendung wie oben gezeigt, und führen Sie sie erneut aus.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-168">Build and run the Spring Boot application again as shown above.</span></span> 
+4. <span data-ttu-id="83e45-169">Erstellen Sie die Spring Boot-Anwendung wie oben gezeigt, und führen Sie sie erneut aus.</span><span class="sxs-lookup"><span data-stu-id="83e45-169">Build and run the Spring Boot application again as shown above.</span></span> 
 
-<span data-ttu-id="ec4f8-169">Innerhalb weniger Sekunden sollten alle Spring-Protokolle angezeigt werden, die im Azure-Portal verfügbar sind.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-169">Within few seconds, you should see all the spring logs being available on Azure Portal.</span></span> 
+<span data-ttu-id="83e45-170">Innerhalb weniger Sekunden sollten alle Spring-Protokolle angezeigt werden, die im Azure-Portal verfügbar sind.</span><span class="sxs-lookup"><span data-stu-id="83e45-170">Within few seconds, you should see all the spring logs being available on Azure Portal.</span></span> 
 
 ![Azure-Portal][AZ06]
 
-<span data-ttu-id="ec4f8-171">Sie können sich sogar die ausführlichen Protokollmeldungen ansehen und Analysen im Analytics-Portal durchführen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-171">You can even look at the detailed log messages and do analysis on Analytics Portal.</span></span> 
+<span data-ttu-id="83e45-172">Sie können sich sogar die ausführlichen Protokollmeldungen ansehen und Analysen im Analytics-Portal durchführen.</span><span class="sxs-lookup"><span data-stu-id="83e45-172">You can even look at the detailed log messages and do analysis on Analytics Portal.</span></span> 
 
 ![Azure-Portal][AZ07]
 
-## <a name="next-steps"></a><span data-ttu-id="ec4f8-173">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="ec4f8-173">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="83e45-174">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="83e45-174">Next steps</span></span>
 
-<span data-ttu-id="ec4f8-174">Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-174">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
+<span data-ttu-id="83e45-175">Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.</span><span class="sxs-lookup"><span data-stu-id="83e45-175">To learn more about Spring and Azure, continue to the Spring on Azure documentation center.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="ec4f8-175">Spring Framework in Azure</span><span class="sxs-lookup"><span data-stu-id="ec4f8-175">Spring on Azure</span></span>](/java/azure/spring-framework)
+> [<span data-ttu-id="83e45-176">Spring Framework in Azure</span><span class="sxs-lookup"><span data-stu-id="83e45-176">Spring on Azure</span></span>](/java/azure/spring-framework)
 
-### <a name="additional-resources"></a><span data-ttu-id="ec4f8-176">Weitere Ressourcen</span><span class="sxs-lookup"><span data-stu-id="ec4f8-176">Additional Resources</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="83e45-177">Weitere Ressourcen</span><span class="sxs-lookup"><span data-stu-id="83e45-177">Additional Resources</span></span>
 
-<span data-ttu-id="ec4f8-177">Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="ec4f8-177">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
+<span data-ttu-id="83e45-178">Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="83e45-178">For more information about using Spring Boot applications on Azure, see the following articles:</span></span>
 
-* [<span data-ttu-id="ec4f8-178">Bereitstellen von Spring Boot-Anwendungen in Azure App Service</span><span class="sxs-lookup"><span data-stu-id="ec4f8-178">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
+* [<span data-ttu-id="83e45-179">Bereitstellen von Spring Boot-Anwendungen in Azure App Service</span><span class="sxs-lookup"><span data-stu-id="83e45-179">Deploy a Spring Boot Application to the Azure App Service</span></span>](deploy-spring-boot-java-web-app-on-azure.md)
 
-* [<span data-ttu-id="ec4f8-179">Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service</span><span class="sxs-lookup"><span data-stu-id="ec4f8-179">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
+* [<span data-ttu-id="83e45-180">Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service</span><span class="sxs-lookup"><span data-stu-id="83e45-180">Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service</span></span>](deploy-spring-boot-java-app-on-kubernetes.md)
 
-<span data-ttu-id="ec4f8-180">Application Insights unterstützt die automatische Erfassung externer Abhängigkeiten und deren Korrelation mit eingehenden Anforderungen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-180">Application Insights supports automatic collection of external dependencies and its correlation with incoming requests.</span></span> <span data-ttu-id="ec4f8-181">Aktuell wird die automatische Erfassung von Oracle, MsSQL, MySQL und Redis unterstützt.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-181">Currently we support autocollection of Oracle, MsSQL, MySQL and Redis.</span></span> <span data-ttu-id="ec4f8-182">Weitere Informationen zum Aktivieren der automatischen Erfassung finden Sie im Artikel [Überwachen von Abhängigkeiten, abgefangene Ausnahmen und Methodenausführungszeiten in Java-Web-Apps](/azure/application-insights/app-insights-java-agent).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-182">For more details on enabling autocollection please follow the article [how to use Application Insights Java agent](/azure/application-insights/app-insights-java-agent).</span></span>
+<span data-ttu-id="83e45-181">Application Insights unterstützt die automatische Erfassung externer Abhängigkeiten und deren Korrelation mit eingehenden Anforderungen.</span><span class="sxs-lookup"><span data-stu-id="83e45-181">Application Insights supports automatic collection of external dependencies and its correlation with incoming requests.</span></span> <span data-ttu-id="83e45-182">Aktuell wird die automatische Erfassung von Oracle, MsSQL, MySQL und Redis unterstützt.</span><span class="sxs-lookup"><span data-stu-id="83e45-182">Currently we support autocollection of Oracle, MsSQL, MySQL and Redis.</span></span> <span data-ttu-id="83e45-183">Weitere Informationen zum Aktivieren der automatischen Erfassung finden Sie im Artikel [Überwachen von Abhängigkeiten, abgefangene Ausnahmen und Methodenausführungszeiten in Java-Web-Apps](/azure/application-insights/app-insights-java-agent).</span><span class="sxs-lookup"><span data-stu-id="83e45-183">For more details on enabling autocollection please follow the article [how to use Application Insights Java agent](/azure/application-insights/app-insights-java-agent).</span></span>
 
-<span data-ttu-id="ec4f8-183">Weitere Informationen zu Azure Application Insights und den verfügbaren Überwachungsfunktionen finden Sie unter **[Application Insights]**.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-183">For more information about Azure Application Insights, and it's monitoring capabilities, see the **[Application Insights]** home page.</span></span>
+<span data-ttu-id="83e45-184">Weitere Informationen zu Azure Application Insights und den verfügbaren Überwachungsfunktionen finden Sie unter **[Application Insights]**.</span><span class="sxs-lookup"><span data-stu-id="83e45-184">For more information about Azure Application Insights, and it's monitoring capabilities, see the **[Application Insights]** home page.</span></span>
 
-<span data-ttu-id="ec4f8-184">Weitere Informationen zu weiteren Konfigurationsdetails von Application Insights Spring Boot Starter finden Sie [hier](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-184">For more information about additional configuration details of Application Insights Spring Boot Starter, please refer to this [link](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span></span>
+<span data-ttu-id="83e45-185">Weitere Informationen zu weiteren Konfigurationsdetails von Application Insights Spring Boot Starter finden Sie [hier](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span><span class="sxs-lookup"><span data-stu-id="83e45-185">For more information about additional configuration details of Application Insights Spring Boot Starter, please refer to this [link](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).</span></span>
 
-<span data-ttu-id="ec4f8-185">Wenn Sie Funktionen anfragen oder potenzielle Fehler melden möchten, stellen Sie bitte eine entsprechende Anfrage über unser [GitHub-Repository](https://github.com/Microsoft/ApplicationInsights-Java/issues).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-185">For feature requests and potential bugs, please open issues on our [GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues) repository.</span></span>
+<span data-ttu-id="83e45-186">Wenn Sie Funktionen anfragen oder potenzielle Fehler melden möchten, stellen Sie bitte eine entsprechende Anfrage über unser [GitHub-Repository](https://github.com/Microsoft/ApplicationInsights-Java/issues).</span><span class="sxs-lookup"><span data-stu-id="83e45-186">For feature requests and potential bugs, please open issues on our [GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues) repository.</span></span>
 
-<span data-ttu-id="ec4f8-186">Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).</span><span class="sxs-lookup"><span data-stu-id="ec4f8-186">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Working with Azure DevOps and Java].</span></span>
+<span data-ttu-id="83e45-187">Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).</span><span class="sxs-lookup"><span data-stu-id="83e45-187">For more information about using Azure with Java, see the [Azure for Java Developers] and the [Working with Azure DevOps and Java].</span></span>
 
-<span data-ttu-id="ec4f8-187">**[Spring Framework]** ist eine Open-Source-Lösung, die Java-Entwicklern beim Erstellen von Anwendungen auf Unternehmensebene hilft.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-187">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="ec4f8-188">Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-188">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="ec4f8-189">Um Entwicklern den Einstieg in Spring Boot zu vereinfachen, werden unter [https://github.com/spring-guides/](https://github.com/spring-guides/) mehrere Spring Boot-Beispielpakete bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-189">To help developers get started with Spring Boot, several sample Spring Boot packages are available at [https://github.com/spring-guides/](https://github.com/spring-guides/).</span></span> <span data-ttu-id="ec4f8-190">Neben der Auswahl einer Liste grundlegender Spring Boot-Projekte ermöglicht **[Spring Initializr]** Entwicklern einen einfacheren Einstieg bei der Erstellung von benutzerdefinierten Spring Boot-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="ec4f8-190">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
+<span data-ttu-id="83e45-188">**[Spring Framework]** ist eine Open-Source-Lösung, die Java-Entwicklern beim Erstellen von Anwendungen auf Unternehmensebene hilft.</span><span class="sxs-lookup"><span data-stu-id="83e45-188">The **[Spring Framework]** is an open-source solution that helps Java developers create enterprise-level applications.</span></span> <span data-ttu-id="83e45-189">Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="83e45-189">One of the more-popular projects that is built on top of that platform is [Spring Boot], which provides a simplified approach for creating stand-alone Java applications.</span></span> <span data-ttu-id="83e45-190">Um Entwicklern den Einstieg in Spring Boot zu vereinfachen, werden unter [https://github.com/spring-guides/](https://github.com/spring-guides/) mehrere Spring Boot-Beispielpakete bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="83e45-190">To help developers get started with Spring Boot, several sample Spring Boot packages are available at [https://github.com/spring-guides/](https://github.com/spring-guides/).</span></span> <span data-ttu-id="83e45-191">Neben der Auswahl einer Liste grundlegender Spring Boot-Projekte ermöglicht **[Spring Initializr]** Entwicklern einen einfacheren Einstieg bei der Erstellung von benutzerdefinierten Spring Boot-Anwendungen.</span><span class="sxs-lookup"><span data-stu-id="83e45-191">In addition to choosing from the list of basic Spring Boot projects, the **[Spring Initializr]** helps developers get started with creating custom Spring Boot applications.</span></span>
 
 <!-- URL List -->
 
