@@ -13,18 +13,18 @@ ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 371a8c686f7ad045443328d02a32a4e65af55981
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: 29f3c957dd0ccd754eedef12e3fc01c3484dddf3
+ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53992340"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57335393"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Verwenden von Spring Data-JDBC mit Azure PostgreSQL
 
 ## <a name="overview"></a>Übersicht
 
-In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen in einer Azure [PostgreSQL]https://www.postgresql.org/-Datenbank mithilfe von [Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) zu speichern und abzurufen.
+In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen in einer Azure [PostgreSQL](https://www.postgresql.org/)-Datenbank mithilfe von [Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) zu speichern und abzurufen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -61,7 +61,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    - **Kennwort** und **Kennwort bestätigen**: Geben Sie das Kennwort für den Datenbankadministrator an.
    - **Standort**: Geben Sie die nächstgelegene geografische Region für Ihre Datenbank an.
    - **Version**: Geben Sie aktuelle Datenbankversion an.
-   - **Tarif**: Geben Sie für dieses Tutorial den kostengünstigsten Tarif an.
+   - **Tarif:** Geben Sie für dieses Tutorial den kostengünstigsten Tarif an.
 
    ![Festlegen der Eigenschaften der PostgreSQL-Datenbank][POSTGRESQL02]
 
