@@ -14,12 +14,12 @@ ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: cdd157abdb993517f7c880a7edaff10f0e3d1033
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: a1f35df5939a51fa5ce50c29752226b6c7649a9d
+ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991584"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57335383"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -167,8 +167,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
        }
      }
    ]
+   ```
 
-1. Specify the GUID for the subscription you want to use with Azure; for example:
+1. Geben Sie die GUID für das Abonnement an, das Sie mit Azure verwenden möchten. Beispiel:
 
    ```azurecli
    az account set -s 11111111-1111-1111-1111-111111111111

@@ -14,12 +14,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 98b3dc1243bf293ede121eafd51b041649d165db
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: 9223cc425fcef28369431fa1c7a7b93062a210c2
+ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53991424"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57335403"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
 
@@ -143,12 +143,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```xml
    <dependency>
       <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-eventhub-stream-binder</artifactId>
-      <version>1.0.0.M2</version>
+      <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
+      <version>1.1.0.RC2</version>
    </dependency>
    ```
-
-   ![Bearbeiten der Datei „pom.xml“][SI03]
 
 1. Speichern und schließen Sie die Datei *pom.xml*.
 
@@ -197,6 +195,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
      }
    ]
    ```
+   
 1. Geben Sie die GUID für das Abonnement an, das Sie mit Azure verwenden möchten. Beispiel:
 
    ```azurecli
@@ -410,13 +409,14 @@ Weitere Informationen zur Azure-Unterstützung für Event Hub Stream Binder find
 
 * [Verwenden von Spring Boot Starter für Apache Kafka mit Azure Event Hubs](configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md)
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter „Azure für Java-Entwickler“ und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
 
 **[Spring Framework]** ist eine Open-Source-Lösung, die Java-Entwicklern beim Erstellen von Anwendungen auf Unternehmensebene hilft. Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen. Um Entwicklern den Einstieg in Spring Boot zu vereinfachen, werden unter <https://github.com/spring-guides/> mehrere Spring Boot-Beispielpakete bereitgestellt. Neben der Auswahl einer Liste grundlegender Spring Boot-Projekte ermöglicht **[Spring Initializr]** Entwicklern einen einfacheren Einstieg bei der Erstellung von benutzerdefinierten Spring Boot-Anwendungen.
 
 <!-- URL List -->
 
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
+[Azure für Java-Entwickler]: https://docs.microsoft.com/java/azure/
 [Working with Azure DevOps and Java]: /azure/devops/ (Arbeiten mit Azure DevOps und Java)
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
