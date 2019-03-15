@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: c98f966eb17e3fbde877451c8f8fefb21e6bf686
+ms.sourcegitcommit: dca98b953fa3149fb2e6aa49e27e843b6df0c6c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893091"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57786889"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a>Erstellen einer „Hello World“-Web-App für Azure mit Eclipse
 
@@ -32,7 +32,7 @@ Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello W
 
 > [!IMPORTANT]
 > 
-> Das Azure-Toolkit für Eclipse wurde im August 2017 mit einem anderen Workflow aktualisiert. In diesem Artikel wird das Erstellen einer „Hello World“-Web-App mithilfe der Version 3.0.7 (oder höher) des Azure-Toolkits für Eclipse veranschaulicht. Wenn Sie die Version 3.0.6 (oder eine ältere Version) des Toolkits verwenden, müssen Sie die Schritte unter [Create a Hello World web app for Azure using the legacy toolkit for Eclipse][Legacy Version] (Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für Eclipse) ausführen.
+> Das Azure-Toolkit für Eclipse wurde im August 2017 mit einem anderen Workflow aktualisiert. In diesem Artikel wird das Erstellen einer „Hello World“-Web-App mithilfe der Version 3.0.7 (oder höher) des Azure-Toolkit für Eclipse veranschaulicht. Wenn Sie die Version 3.0.6 (oder eine ältere Version) des Toolkits verwenden, müssen Sie die Schritte unter [Create a Hello World web app for Azure using the legacy toolkit for Eclipse][Legacy Version] (Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für Eclipse) ausführen.
 > 
 
 Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der Anzeige in einem Webbrowser etwa der folgenden Abbildung:
@@ -92,6 +92,8 @@ Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der 
       ![Erstellen eines App Service][create-app-service]
 
       Geben Sie die erforderlichen Informationen für Ihre Web-App im Dialogfeld **App Service erstellen** an, und klicken Sie dann auf **Erstellen**.
+
+      Hier können Sie die Runtime-Umgebung, App-Einstellungen, den Dienstplan und die Ressourcengruppe konfigurieren.
 
       ![Dialogfeld „App Service erstellen“][create-app-service-dialog]
 
