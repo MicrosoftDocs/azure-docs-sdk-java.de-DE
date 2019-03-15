@@ -14,108 +14,110 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 5e025c90c2619ec72ffddf5815fd49c3ac59c00f
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: c98f966eb17e3fbde877451c8f8fefb21e6bf686
+ms.sourcegitcommit: dca98b953fa3149fb2e6aa49e27e843b6df0c6c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48893091"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57786889"
 ---
-# <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a><span data-ttu-id="393d1-103">Erstellen einer „Hello World“-Web-App für Azure mit Eclipse</span><span class="sxs-lookup"><span data-stu-id="393d1-103">Create a Hello World web app for Azure using Eclipse</span></span>
+# <a name="create-a-hello-world-web-app-for-azure-using-eclipse"></a><span data-ttu-id="551e6-103">Erstellen einer „Hello World“-Web-App für Azure mit Eclipse</span><span class="sxs-lookup"><span data-stu-id="551e6-103">Create a Hello World web app for Azure using Eclipse</span></span>
 
-<span data-ttu-id="393d1-104">Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello World“-Anwendung in Azure als Web-App mithilfe des [Azure-Toolkit für Eclipse].</span><span class="sxs-lookup"><span data-stu-id="393d1-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for Eclipse].</span></span>
+<span data-ttu-id="551e6-104">Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello World“-Anwendung in Azure als Web-App mithilfe des [Azure-Toolkit für Eclipse].</span><span class="sxs-lookup"><span data-stu-id="551e6-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for Eclipse].</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="393d1-105">Eine Version dieses Artikels, in dem das [Azure-Toolkit für IntelliJ] verwendet wird, finden Sie unter [Erstellen einer einfachen Azure-Web-App in IntelliJ][intellij-hello-world].</span><span class="sxs-lookup"><span data-stu-id="393d1-105">For a version of this article that uses the [Azure Toolkit for IntelliJ], see [Create a Hello World web app for Azure using IntelliJ][intellij-hello-world].</span></span>
+> <span data-ttu-id="551e6-105">Eine Version dieses Artikels, in dem das [Azure-Toolkit für IntelliJ] verwendet wird, finden Sie unter [Erstellen einer einfachen Azure-Web-App in IntelliJ][intellij-hello-world].</span><span class="sxs-lookup"><span data-stu-id="551e6-105">For a version of this article that uses the [Azure Toolkit for IntelliJ], see [Create a Hello World web app for Azure using IntelliJ][intellij-hello-world].</span></span>
 >
 
 > [!IMPORTANT]
 > 
-> <span data-ttu-id="393d1-106">Das Azure-Toolkit für Eclipse wurde im August 2017 mit einem anderen Workflow aktualisiert.</span><span class="sxs-lookup"><span data-stu-id="393d1-106">The Azure Toolkit for Eclipse was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="393d1-107">In diesem Artikel wird das Erstellen einer „Hello World“-Web-App mithilfe der Version 3.0.7 (oder höher) des Azure-Toolkits für Eclipse veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="393d1-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for Eclipse.</span></span> <span data-ttu-id="393d1-108">Wenn Sie die Version 3.0.6 (oder eine ältere Version) des Toolkits verwenden, müssen Sie die Schritte unter [Create a Hello World web app for Azure using the legacy toolkit for Eclipse][Legacy Version] (Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für Eclipse) ausführen.</span><span class="sxs-lookup"><span data-stu-id="393d1-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in Eclipse using the legacy toolkit][Legacy Version].</span></span>
+> <span data-ttu-id="551e6-106">Das Azure-Toolkit für Eclipse wurde im August 2017 mit einem anderen Workflow aktualisiert.</span><span class="sxs-lookup"><span data-stu-id="551e6-106">The Azure Toolkit for Eclipse was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="551e6-107">In diesem Artikel wird das Erstellen einer „Hello World“-Web-App mithilfe der Version 3.0.7 (oder höher) des Azure-Toolkit für Eclipse veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="551e6-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for Eclipse.</span></span> <span data-ttu-id="551e6-108">Wenn Sie die Version 3.0.6 (oder eine ältere Version) des Toolkits verwenden, müssen Sie die Schritte unter [Create a Hello World web app for Azure using the legacy toolkit for Eclipse][Legacy Version] (Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für Eclipse) ausführen.</span><span class="sxs-lookup"><span data-stu-id="551e6-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in Eclipse using the legacy toolkit][Legacy Version].</span></span>
 > 
 
-<span data-ttu-id="393d1-109">Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der Anzeige in einem Webbrowser etwa der folgenden Abbildung:</span><span class="sxs-lookup"><span data-stu-id="393d1-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
+<span data-ttu-id="551e6-109">Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der Anzeige in einem Webbrowser etwa der folgenden Abbildung:</span><span class="sxs-lookup"><span data-stu-id="551e6-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
 
 ![Vorschau der Hello World-App][browse-web-app]
 
 [!INCLUDE [azure-toolkit-for-eclipse-prerequisites](../includes/azure-toolkit-for-eclipse-prerequisites.md)]
 
-## <a name="create-a-new-web-app-project"></a><span data-ttu-id="393d1-111">Erstellen eines neuen Web-App-Projekts</span><span class="sxs-lookup"><span data-stu-id="393d1-111">Create a new web app project</span></span>
+## <a name="create-a-new-web-app-project"></a><span data-ttu-id="551e6-111">Erstellen eines neuen Web-App-Projekts</span><span class="sxs-lookup"><span data-stu-id="551e6-111">Create a new web app project</span></span>
 
-1. <span data-ttu-id="393d1-112">Starten Sie Eclipse, und melden Sie sich beim Azure-Konto gemäß den Anweisungen im Artikel [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse][eclipse-sign-in-instructions] an.</span><span class="sxs-lookup"><span data-stu-id="393d1-112">Start Eclipse, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for Eclipse][eclipse-sign-in-instructions] article.</span></span>
+1. <span data-ttu-id="551e6-112">Starten Sie Eclipse, und melden Sie sich beim Azure-Konto gemäß den Anweisungen im Artikel [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse][eclipse-sign-in-instructions] an.</span><span class="sxs-lookup"><span data-stu-id="551e6-112">Start Eclipse, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for Eclipse][eclipse-sign-in-instructions] article.</span></span>
 
-1. <span data-ttu-id="393d1-113">Klicken Sie auf **Datei**, dann auf **Neu** und schließlich auf **Dynamisches Webprojekt**.</span><span class="sxs-lookup"><span data-stu-id="393d1-113">Click **File**, click **New**, and then click **Dynamic Web Project**.</span></span> <span data-ttu-id="393d1-114">(Wenn **Dynamic Web Project** (Dynamisches Webprojekt) nach dem Klicken auf **File** (Datei) und **New** (Neu) nicht als verfügbares Projekt aufgeführt ist, gehen Sie wie folgt vor: Klicken Sie auf **File** (Datei), anschließend auf **New** (Neu) und dann auf **Project...** (Projekt...). Erweitern Sie die Option **Web**, klicken Sie auf **Dynamic Web Project** (Dynamisches Webprojekt) und dann auf **Next** (Weiter).)</span><span class="sxs-lookup"><span data-stu-id="393d1-114">(If you don't see **Dynamic Web Project** listed as an available project after clicking **File** and **New**, then do the following: click **File**, click **New**, click **Project...**, expand **Web**, click **Dynamic Web Project**, and click **Next**.)</span></span>
+1. <span data-ttu-id="551e6-113">Klicken Sie auf **Datei**, dann auf **Neu** und schließlich auf **Dynamisches Webprojekt**.</span><span class="sxs-lookup"><span data-stu-id="551e6-113">Click **File**, click **New**, and then click **Dynamic Web Project**.</span></span> <span data-ttu-id="551e6-114">(Wenn **Dynamic Web Project** (Dynamisches Webprojekt) nach dem Klicken auf **File** (Datei) und **New** (Neu) nicht als verfügbares Projekt aufgeführt ist, gehen Sie wie folgt vor: Klicken Sie auf **File** (Datei), anschließend auf **New** (Neu) und dann auf **Project...** (Projekt...). Erweitern Sie die Option **Web**, klicken Sie auf **Dynamic Web Project** (Dynamisches Webprojekt) und dann auf **Next** (Weiter).)</span><span class="sxs-lookup"><span data-stu-id="551e6-114">(If you don't see **Dynamic Web Project** listed as an available project after clicking **File** and **New**, then do the following: click **File**, click **New**, click **Project...**, expand **Web**, click **Dynamic Web Project**, and click **Next**.)</span></span>
 
    ![Erstellen eines neuen dynamischen Webprojekts][file-new-dynamic-web-project]
 
-2. <span data-ttu-id="393d1-116">Nennen Sie das Projekt für die Zwecke dieses Tutorials **MyWebApp**.</span><span class="sxs-lookup"><span data-stu-id="393d1-116">For purposes of this tutorial, name the project **MyWebApp**.</span></span> <span data-ttu-id="393d1-117">Ihr Bildschirm sieht dann in etwa wie folgt aus:</span><span class="sxs-lookup"><span data-stu-id="393d1-117">Your screen will appear similar to the following:</span></span>
+2. <span data-ttu-id="551e6-116">Nennen Sie das Projekt für die Zwecke dieses Tutorials **MyWebApp**.</span><span class="sxs-lookup"><span data-stu-id="551e6-116">For purposes of this tutorial, name the project **MyWebApp**.</span></span> <span data-ttu-id="551e6-117">Ihr Bildschirm sieht dann in etwa wie folgt aus:</span><span class="sxs-lookup"><span data-stu-id="551e6-117">Your screen will appear similar to the following:</span></span>
    
    ![Eigenschaften des neuen dynamischen Webprojekts][dynamic-web-project-properties]
 
-3. <span data-ttu-id="393d1-119">Klicken Sie auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="393d1-119">Click **Finish**.</span></span>
+3. <span data-ttu-id="551e6-119">Klicken Sie auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="551e6-119">Click **Finish**.</span></span>
 
-4. <span data-ttu-id="393d1-120">Erweitern Sie in der Project Explorer-Ansicht von Eclipse die Option **MyWebApp**.</span><span class="sxs-lookup"><span data-stu-id="393d1-120">Within Eclipse's Project Explorer view, expand **MyWebApp**.</span></span> <span data-ttu-id="393d1-121">Klicken Sie mit der rechten Maustaste auf **WebContent**, und klicken Sie dann auf **Neu** sowie auf **JSP-Datei**.</span><span class="sxs-lookup"><span data-stu-id="393d1-121">Right-click **WebContent**, click **New**, and then click **JSP File**.</span></span>
+4. <span data-ttu-id="551e6-120">Erweitern Sie in der Project Explorer-Ansicht von Eclipse die Option **MyWebApp**.</span><span class="sxs-lookup"><span data-stu-id="551e6-120">Within Eclipse's Project Explorer view, expand **MyWebApp**.</span></span> <span data-ttu-id="551e6-121">Klicken Sie mit der rechten Maustaste auf **WebContent**, und klicken Sie dann auf **Neu** sowie auf **JSP-Datei**.</span><span class="sxs-lookup"><span data-stu-id="551e6-121">Right-click **WebContent**, click **New**, and then click **JSP File**.</span></span>
 
    ![Erstellen einer neuen JSP-Datei][create-new-jsp-file]
 
-5. <span data-ttu-id="393d1-123">Geben Sie im Dialogfeld **New JSP File** (Neue JSP-Datei) den Namen **index.jsp** für die Datei ein. Behalten Sie den übergeordneten Ordner als **MyWebApp/WebContent** bei, und klicken Sie auf **Next** (Weiter).</span><span class="sxs-lookup"><span data-stu-id="393d1-123">In the **New JSP File** dialog box, name the file **index.jsp**, keep the parent folder as **MyWebApp/WebContent**, and then click **Next**.</span></span>
+5. <span data-ttu-id="551e6-123">Geben Sie im Dialogfeld **New JSP File** (Neue JSP-Datei) den Namen **index.jsp** für die Datei ein. Behalten Sie den übergeordneten Ordner als **MyWebApp/WebContent** bei, und klicken Sie auf **Next** (Weiter).</span><span class="sxs-lookup"><span data-stu-id="551e6-123">In the **New JSP File** dialog box, name the file **index.jsp**, keep the parent folder as **MyWebApp/WebContent**, and then click **Next**.</span></span>
 
    ![Dialogfeld „New JSP File“ (Neue JSP-Datei)][new-jsp-file-dialog]
 
-6. <span data-ttu-id="393d1-125">Wählen Sie im Dialogfeld **Select JSP Template** (JSP-Vorlage auswählen) im Rahmen dieses Tutorials **New JSP File (html)** (Neue JSP-Datei (HTML)) aus, und klicken Sie dann auf **Finish** (Fertig stellen).</span><span class="sxs-lookup"><span data-stu-id="393d1-125">In the **Select JSP Template** dialog box, for purposes of this tutorial select **New JSP File (html)**, and then click **Finish**.</span></span>
+6. <span data-ttu-id="551e6-125">Wählen Sie im Dialogfeld **Select JSP Template** (JSP-Vorlage auswählen) im Rahmen dieses Tutorials **New JSP File (html)** (Neue JSP-Datei (HTML)) aus, und klicken Sie dann auf **Finish** (Fertig stellen).</span><span class="sxs-lookup"><span data-stu-id="551e6-125">In the **Select JSP Template** dialog box, for purposes of this tutorial select **New JSP File (html)**, and then click **Finish**.</span></span>
 
    ![Auswählen einer JSP-Vorlage][select-jsp-template]
 
-7. <span data-ttu-id="393d1-127">Wenn in Eclipse die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein,</span><span class="sxs-lookup"><span data-stu-id="393d1-127">When your index.jsp file opens in Eclipse, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="393d1-128">damit er dynamisch im vorhandenen `<body>`-Element angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="393d1-128">within the existing `<body>` element.</span></span> <span data-ttu-id="393d1-129">Der aktualisierte `<body>` -Inhalt sollte in etwa wie folgt aussehen:</span><span class="sxs-lookup"><span data-stu-id="393d1-129">Your updated `<body>` content should resemble the following example:</span></span>
+7. <span data-ttu-id="551e6-127">Wenn in Eclipse die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein,</span><span class="sxs-lookup"><span data-stu-id="551e6-127">When your index.jsp file opens in Eclipse, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="551e6-128">damit er dynamisch im vorhandenen `<body>`-Element angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="551e6-128">within the existing `<body>` element.</span></span> <span data-ttu-id="551e6-129">Der aktualisierte `<body>` -Inhalt sollte in etwa wie folgt aussehen:</span><span class="sxs-lookup"><span data-stu-id="551e6-129">Your updated `<body>` content should resemble the following example:</span></span>
    
    ```jsp
    <body><b><% out.println("Hello World!"); %></b></body>
    ```
 
-8. <span data-ttu-id="393d1-130">Speichern Sie die Datei „index.jsp“.</span><span class="sxs-lookup"><span data-stu-id="393d1-130">Save index.jsp.</span></span>
+8. <span data-ttu-id="551e6-130">Speichern Sie die Datei „index.jsp“.</span><span class="sxs-lookup"><span data-stu-id="551e6-130">Save index.jsp.</span></span>
 
-## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="393d1-131">Bereitstellen der Web-App in Azure</span><span class="sxs-lookup"><span data-stu-id="393d1-131">Deploy your web app to Azure</span></span>
+## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="551e6-131">Bereitstellen der Web-App in Azure</span><span class="sxs-lookup"><span data-stu-id="551e6-131">Deploy your web app to Azure</span></span>
 
-1. <span data-ttu-id="393d1-132">Klicken Sie in der Projekt-Explorer-Ansicht von Eclipse mit der rechten Maustaste auf das Projekt, wählen Sie **Azure** aus, und wählen Sie dann **Publish as Azure Web App** (Als Azure-Web-App veröffentlichen) aus.</span><span class="sxs-lookup"><span data-stu-id="393d1-132">Within Eclipse's Project Explorer view, right-click your project, choose **Azure**, and then choose **Publish as Azure Web App**.</span></span>
+1. <span data-ttu-id="551e6-132">Klicken Sie in der Projekt-Explorer-Ansicht von Eclipse mit der rechten Maustaste auf das Projekt, wählen Sie **Azure** aus, und wählen Sie dann **Publish as Azure Web App** (Als Azure-Web-App veröffentlichen) aus.</span><span class="sxs-lookup"><span data-stu-id="551e6-132">Within Eclipse's Project Explorer view, right-click your project, choose **Azure**, and then choose **Publish as Azure Web App**.</span></span>
    
    ![Veröffentlichen als Azure-Web-App][publish-as-azure-web-app]
 
-1. <span data-ttu-id="393d1-134">Im Dialogfeld **Web-App bereitstellen** können Sie eine der folgenden Optionen auswählen:</span><span class="sxs-lookup"><span data-stu-id="393d1-134">When the **Deploy Web App** dialog box appears, you can choose one of the following options:</span></span>
+1. <span data-ttu-id="551e6-134">Im Dialogfeld **Web-App bereitstellen** können Sie eine der folgenden Optionen auswählen:</span><span class="sxs-lookup"><span data-stu-id="551e6-134">When the **Deploy Web App** dialog box appears, you can choose one of the following options:</span></span>
 
-   * <span data-ttu-id="393d1-135">Wählen Sie eine vorhandene Web-App aus, sofern vorhanden.</span><span class="sxs-lookup"><span data-stu-id="393d1-135">Select an existing web app if one exists.</span></span>
+   * <span data-ttu-id="551e6-135">Wählen Sie eine vorhandene Web-App aus, sofern vorhanden.</span><span class="sxs-lookup"><span data-stu-id="551e6-135">Select an existing web app if one exists.</span></span>
 
       ![Auswählen eines App-Diensts][select-app-service]
 
-   * <span data-ttu-id="393d1-137">Klicken Sie auf **Create New Web App** (Neue Web-App erstellen).</span><span class="sxs-lookup"><span data-stu-id="393d1-137">Click **Create New Web App**.</span></span>
+   * <span data-ttu-id="551e6-137">Klicken Sie auf **Create New Web App** (Neue Web-App erstellen).</span><span class="sxs-lookup"><span data-stu-id="551e6-137">Click **Create New Web App**.</span></span>
 
       ![Erstellen eines App Service][create-app-service]
 
-      <span data-ttu-id="393d1-139">Geben Sie die erforderlichen Informationen für Ihre Web-App im Dialogfeld **App Service erstellen** an, und klicken Sie dann auf **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="393d1-139">Specify the requisite information for your web app in the **Create App Service** dialog box, and then click **Create**.</span></span>
+      <span data-ttu-id="551e6-139">Geben Sie die erforderlichen Informationen für Ihre Web-App im Dialogfeld **App Service erstellen** an, und klicken Sie dann auf **Erstellen**.</span><span class="sxs-lookup"><span data-stu-id="551e6-139">Specify the requisite information for your web app in the **Create App Service** dialog box, and then click **Create**.</span></span>
+
+      <span data-ttu-id="551e6-140">Hier können Sie die Runtime-Umgebung, App-Einstellungen, den Dienstplan und die Ressourcengruppe konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="551e6-140">Here you can configure the runtime environment, app settings, service plan and resource group.</span></span>
 
       ![Dialogfeld „App Service erstellen“][create-app-service-dialog]
 
-1. <span data-ttu-id="393d1-141">Wählen Sie Ihre Web-App aus, und klicken Sie dann auf **Bereitstellen**.</span><span class="sxs-lookup"><span data-stu-id="393d1-141">Select your web app and then click **Deploy**.</span></span>
+1. <span data-ttu-id="551e6-142">Wählen Sie Ihre Web-App aus, und klicken Sie dann auf **Bereitstellen**.</span><span class="sxs-lookup"><span data-stu-id="551e6-142">Select your web app and then click **Deploy**.</span></span>
 
    ![Bereitstellen eines App-Diensts][deploy-app-service]
 
-1. <span data-ttu-id="393d1-143">Im Toolkit wird auf der Registerkarte **Azure-Aktivitätsprotokoll** der Status **Veröffentlicht** angezeigt, wenn die Web-App bereitgestellt wurde. Der Status ist als Link für die URL der bereitgestellten Web-App formatiert.</span><span class="sxs-lookup"><span data-stu-id="393d1-143">The toolkit will display a **Published** status under the **Azure Activity Log** tab when it has successfully deployed your web app, which is a hyperlink for the URL of your deployed web app.</span></span>
+1. <span data-ttu-id="551e6-144">Im Toolkit wird auf der Registerkarte **Azure-Aktivitätsprotokoll** der Status **Veröffentlicht** angezeigt, wenn die Web-App bereitgestellt wurde. Der Status ist als Link für die URL der bereitgestellten Web-App formatiert.</span><span class="sxs-lookup"><span data-stu-id="551e6-144">The toolkit will display a **Published** status under the **Azure Activity Log** tab when it has successfully deployed your web app, which is a hyperlink for the URL of your deployed web app.</span></span>
 
    ![Veröffentlichungsstatus][publish-status]
 
-1. <span data-ttu-id="393d1-145">Sie können über den Link in der Statusmeldung zu Ihrer Web-App navigieren.</span><span class="sxs-lookup"><span data-stu-id="393d1-145">You can browse to your web app using the link provided in the status message.</span></span>
+1. <span data-ttu-id="551e6-146">Sie können über den Link in der Statusmeldung zu Ihrer Web-App navigieren.</span><span class="sxs-lookup"><span data-stu-id="551e6-146">You can browse to your web app using the link provided in the status message.</span></span>
 
    ![Navigieren zur Web-App][browse-web-app]
 
-1. <span data-ttu-id="393d1-147">Nachdem Sie Ihre Web-App in Azure veröffentlicht haben, können Sie die App verwalten, indem Sie mit der rechten Maustaste darauf klicken und eine der Optionen im Kontextmenü auswählen.</span><span class="sxs-lookup"><span data-stu-id="393d1-147">After you have published your web to Azure, you can manage your app by right-clicking on it and selecting one of the options on the context menu.</span></span> <span data-ttu-id="393d1-148">Sie können für die Web-App beispielsweise die Option zum **Starten**, **Beenden** oder **Löschen** auswählen.</span><span class="sxs-lookup"><span data-stu-id="393d1-148">For example, you can **Start**, **Stop**, or **Delete** your web app.</span></span>
+1. <span data-ttu-id="551e6-148">Nachdem Sie Ihre Web-App in Azure veröffentlicht haben, können Sie die App verwalten, indem Sie mit der rechten Maustaste darauf klicken und eine der Optionen im Kontextmenü auswählen.</span><span class="sxs-lookup"><span data-stu-id="551e6-148">After you have published your web to Azure, you can manage your app by right-clicking on it and selecting one of the options on the context menu.</span></span> <span data-ttu-id="551e6-149">Sie können für die Web-App beispielsweise die Option zum **Starten**, **Beenden** oder **Löschen** auswählen.</span><span class="sxs-lookup"><span data-stu-id="551e6-149">For example, you can **Start**, **Stop**, or **Delete** your web app.</span></span>
 
    ![Verwalten des App-Diensts][manage-app-service]
 
-## <a name="next-steps"></a><span data-ttu-id="393d1-150">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="393d1-150">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="551e6-151">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="551e6-151">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-eclipse-additional-resources](../includes/azure-toolkit-for-eclipse-additional-resources.md)]
 
-<span data-ttu-id="393d1-151">Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-Apps – Übersicht].</span><span class="sxs-lookup"><span data-stu-id="393d1-151">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
+<span data-ttu-id="551e6-152">Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-Apps – Übersicht].</span><span class="sxs-lookup"><span data-stu-id="551e6-152">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
 
 <!-- URL List -->
 
