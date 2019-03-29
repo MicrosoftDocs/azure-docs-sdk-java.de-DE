@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: cc68e16a6940a1f0f2b08f0b63c90c58ec6dbc4e
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 7055751d1b1c37e019ef4ed59f1710ce6905e9f8
+ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892861"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58489638"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a>Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ
 
@@ -91,7 +91,7 @@ Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der 
 
       ![Dialogfeld „Run on Web App“ (In Web-App ausführen)][run-on-web-app-dialog]
 
-   * Klicken Sie auf **Create New Web App** (Neue Web-App erstellen). Wenn Sie eine neue Web-App erstellen, geben Sie die erforderlichen Informationen für Ihre Web-App an, und klicken Sie dann auf **Run** (Ausführen).
+   * Klicken Sie im WebApp-Dropdownmenü auf **Neue Web-App erstellen**. Wenn Sie eine neue Web-App erstellen, geben Sie die erforderlichen Informationen für Ihre Web-App an, und klicken Sie nach ihrer Erstellung auf **Run** (Ausführen).
 
       ![Create new web app (Neue Web-App erstellen)][create-new-web-app-dialog]
 
