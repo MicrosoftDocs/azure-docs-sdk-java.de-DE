@@ -14,62 +14,62 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: cc68e16a6940a1f0f2b08f0b63c90c58ec6dbc4e
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 7055751d1b1c37e019ef4ed59f1710ce6905e9f8
+ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892861"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58489638"
 ---
-# <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a><span data-ttu-id="11d27-103">Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ</span><span class="sxs-lookup"><span data-stu-id="11d27-103">Create a Hello World web app for Azure using IntelliJ</span></span>
+# <a name="create-a-hello-world-web-app-for-azure-using-intellij"></a><span data-ttu-id="90c21-103">Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ</span><span class="sxs-lookup"><span data-stu-id="90c21-103">Create a Hello World web app for Azure using IntelliJ</span></span>
 
-<span data-ttu-id="11d27-104">Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello World“-Anwendung in Azure als Web-App mithilfe des [Azure-Toolkit für IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="11d27-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for IntelliJ].</span></span>
+<span data-ttu-id="90c21-104">Dieses Tutorial zeigt das Erstellen und Bereitstellen einer einfachen „Hello World“-Anwendung in Azure als Web-App mithilfe des [Azure-Toolkit für IntelliJ].</span><span class="sxs-lookup"><span data-stu-id="90c21-104">This tutorial shows how to create and deploy a basic Hello World application to Azure as a web app by using the [Azure Toolkit for IntelliJ].</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="11d27-105">Eine Version dieses Artikels, in dem das [Azure-Toolkit für Eclipse] verwendet wird, finden Sie unter [Erstellen einer einfachen Azure-Web-App mit Eclipse][eclipse-hello-world].</span><span class="sxs-lookup"><span data-stu-id="11d27-105">For a version of this article that uses the [Azure Toolkit for Eclipse], see [Create a Hello World web app for Azure using Eclipse][eclipse-hello-world].</span></span>
+> <span data-ttu-id="90c21-105">Eine Version dieses Artikels, in dem das [Azure-Toolkit für Eclipse] verwendet wird, finden Sie unter [Erstellen einer einfachen Azure-Web-App mit Eclipse][eclipse-hello-world].</span><span class="sxs-lookup"><span data-stu-id="90c21-105">For a version of this article that uses the [Azure Toolkit for Eclipse], see [Create a Hello World web app for Azure using Eclipse][eclipse-hello-world].</span></span>
 >
 
 > [!IMPORTANT]
 > 
-> <span data-ttu-id="11d27-106">Das Azure-Toolkit für IntelliJ wurde im August 2017 mit einem anderen Workflow aktualisiert.</span><span class="sxs-lookup"><span data-stu-id="11d27-106">The Azure Toolkit for IntelliJ was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="11d27-107">In diesem Artikel wird das Erstellen einer „Hello World“-Web-App mithilfe der Version 3.0.7 (oder höher) des Azure-Toolkits für IntelliJ veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="11d27-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for IntelliJ.</span></span> <span data-ttu-id="11d27-108">Wenn Sie die Version 3.0.6 (oder eine ältere Version) des Toolkits verwenden, müssen Sie die Schritte unter [Create a Hello World web app for Azure using the legacy toolkit for IntelliJ][Legacy Version] (Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für IntelliJ) ausführen.</span><span class="sxs-lookup"><span data-stu-id="11d27-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in IntelliJ using the legacy toolkit][Legacy Version].</span></span>
+> <span data-ttu-id="90c21-106">Das Azure-Toolkit für IntelliJ wurde im August 2017 mit einem anderen Workflow aktualisiert.</span><span class="sxs-lookup"><span data-stu-id="90c21-106">The Azure Toolkit for IntelliJ was updated in August 2017 with a different workflow.</span></span> <span data-ttu-id="90c21-107">In diesem Artikel wird das Erstellen einer „Hello World“-Web-App mithilfe der Version 3.0.7 (oder höher) des Azure-Toolkits für IntelliJ veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="90c21-107">This article illustrates creating a Hello World web app by using version 3.0.7 (or later) of the Azure Toolkit for IntelliJ.</span></span> <span data-ttu-id="90c21-108">Wenn Sie die Version 3.0.6 (oder eine ältere Version) des Toolkits verwenden, müssen Sie die Schritte unter [Create a Hello World web app for Azure using the legacy toolkit for IntelliJ][Legacy Version] (Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für IntelliJ) ausführen.</span><span class="sxs-lookup"><span data-stu-id="90c21-108">If you are using the version 3.0.6 (or earlier) of the toolkit, you will need to follow the steps in [Create a Hello World web app for Azure in IntelliJ using the legacy toolkit][Legacy Version].</span></span>
 > 
 
-<span data-ttu-id="11d27-109">Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der Anzeige in einem Webbrowser etwa der folgenden Abbildung:</span><span class="sxs-lookup"><span data-stu-id="11d27-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
+<span data-ttu-id="90c21-109">Wenn Sie dieses Tutorial abgeschlossen haben, entspricht Ihre Anwendung bei der Anzeige in einem Webbrowser etwa der folgenden Abbildung:</span><span class="sxs-lookup"><span data-stu-id="90c21-109">When you have completed this tutorial, your application will look similar to the following illustration when you view it in a web browser:</span></span>
 
 ![Vorschau der Hello World-App][browse-web-app]
 
 [!INCLUDE [azure-toolkit-for-intellij-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
 
-## <a name="create-a-new-web-app-project"></a><span data-ttu-id="11d27-111">Erstellen eines neuen Web-App-Projekts</span><span class="sxs-lookup"><span data-stu-id="11d27-111">Create a new web app project</span></span>
+## <a name="create-a-new-web-app-project"></a><span data-ttu-id="90c21-111">Erstellen eines neuen Web-App-Projekts</span><span class="sxs-lookup"><span data-stu-id="90c21-111">Create a new web app project</span></span>
 
-1. <span data-ttu-id="11d27-112">Starten Sie IntelliJ, und melden Sie sich beim Azure-Konto gemäß den Anweisungen im Artikel [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ][intelliJ-sign-in-instructions] an.</span><span class="sxs-lookup"><span data-stu-id="11d27-112">Start IntelliJ, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for IntelliJ][intelliJ-sign-in-instructions] article.</span></span>
+1. <span data-ttu-id="90c21-112">Starten Sie IntelliJ, und melden Sie sich beim Azure-Konto gemäß den Anweisungen im Artikel [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ][intelliJ-sign-in-instructions] an.</span><span class="sxs-lookup"><span data-stu-id="90c21-112">Start IntelliJ, and sign into your Azure account by using the instructions in the [Azure Sign In Instructions for the Azure Toolkit for IntelliJ][intelliJ-sign-in-instructions] article.</span></span>
 
-1. <span data-ttu-id="11d27-113">Klicken Sie im Menü **Datei** auf **Neu** und dann auf **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="11d27-113">Click the **File** menu, then click **New**, and then click **Project**.</span></span>
+1. <span data-ttu-id="90c21-113">Klicken Sie im Menü **Datei** auf **Neu** und dann auf **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="90c21-113">Click the **File** menu, then click **New**, and then click **Project**.</span></span>
    
    ![Erstellen eines neuen Projekts][file-new-project]
 
-1. <span data-ttu-id="11d27-115">Wählen Sie im Dialogfeld **Neues Projekt** die Option **Maven** und abschließend **maven-archetype-webapp** aus, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="11d27-115">In the **New Project** dialog box, select **Maven**, then **maven-archetype-webapp**, and then click **Next**.</span></span>
+1. <span data-ttu-id="90c21-115">Wählen Sie im Dialogfeld **Neues Projekt** die Option **Maven** und abschließend **maven-archetype-webapp** aus, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="90c21-115">In the **New Project** dialog box, select **Maven**, then **maven-archetype-webapp**, and then click **Next**.</span></span>
    
    ![Auswählen der Maven-archetype-Web-App][maven-archetype-webapp]
    
-1. <span data-ttu-id="11d27-117">Geben Sie die **GroupId** und **ArtifactId** für Ihre Web-App an, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="11d27-117">Specify the **GroupId** and **ArtifactId** for your web app, and then click **Next**.</span></span>
+1. <span data-ttu-id="90c21-117">Geben Sie die **GroupId** und **ArtifactId** für Ihre Web-App an, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="90c21-117">Specify the **GroupId** and **ArtifactId** for your web app, and then click **Next**.</span></span>
    
    ![Eingeben von GroupId und ArtifactId][groupid-and-artifactid]
 
-1. <span data-ttu-id="11d27-119">Passen Sie alle gewünschten Maven-Einstellungen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="11d27-119">Customize any Maven settings or accept the defaults, and then click **Next**.</span></span>
+1. <span data-ttu-id="90c21-119">Passen Sie alle gewünschten Maven-Einstellungen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie dann auf **Weiter**.</span><span class="sxs-lookup"><span data-stu-id="90c21-119">Customize any Maven settings or accept the defaults, and then click **Next**.</span></span>
    
    ![Angeben von Maven-Einstellungen][maven-options]
 
-1. <span data-ttu-id="11d27-121">Geben Sie den Projektnamen und einen Speicherort an, und klicken Sie anschließend auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="11d27-121">Specify your project name and location, and then click **Finish**.</span></span>
+1. <span data-ttu-id="90c21-121">Geben Sie den Projektnamen und einen Speicherort an, und klicken Sie anschließend auf **Fertig stellen**.</span><span class="sxs-lookup"><span data-stu-id="90c21-121">Specify your project name and location, and then click **Finish**.</span></span>
    
    ![Angeben des Projektnamens][project-name]
 
-1. <span data-ttu-id="11d27-123">Erweitern Sie in der Projektexplorer-Ansicht von IntelliJ **src**, dann **main**, dann **webapp**, und doppelklicken Sie dann auf **index.jsp**.</span><span class="sxs-lookup"><span data-stu-id="11d27-123">Within IntelliJ's Project Explorer view, expand **src**, then **main**, then **webapp**, and then double-click **index.jsp**.</span></span>
+1. <span data-ttu-id="90c21-123">Erweitern Sie in der Projektexplorer-Ansicht von IntelliJ **src**, dann **main**, dann **webapp**, und doppelklicken Sie dann auf **index.jsp**.</span><span class="sxs-lookup"><span data-stu-id="90c21-123">Within IntelliJ's Project Explorer view, expand **src**, then **main**, then **webapp**, and then double-click **index.jsp**.</span></span>
    
    ![Öffnen der Indexseite][open-index-page]
 
-1. <span data-ttu-id="11d27-125">Wenn in IntelliJ die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein,</span><span class="sxs-lookup"><span data-stu-id="11d27-125">When your index.jsp file opens in IntelliJ, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="11d27-126">damit er dynamisch im vorhandenen `<body>`-Element angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="11d27-126">within the existing `<body>` element.</span></span> <span data-ttu-id="11d27-127">Der aktualisierte `<body>` -Inhalt sollte in etwa wie folgt aussehen:</span><span class="sxs-lookup"><span data-stu-id="11d27-127">Your updated `<body>` content should resemble the following example:</span></span>
+1. <span data-ttu-id="90c21-125">Wenn in IntelliJ die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein,</span><span class="sxs-lookup"><span data-stu-id="90c21-125">When your index.jsp file opens in IntelliJ, add in text to dynamically display **Hello World!**</span></span> <span data-ttu-id="90c21-126">damit er dynamisch im vorhandenen `<body>`-Element angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="90c21-126">within the existing `<body>` element.</span></span> <span data-ttu-id="90c21-127">Der aktualisierte `<body>` -Inhalt sollte in etwa wie folgt aussehen:</span><span class="sxs-lookup"><span data-stu-id="90c21-127">Your updated `<body>` content should resemble the following example:</span></span>
    
    ```java
    <body><b><% out.println("Hello World!"); %></b></body>
@@ -77,45 +77,45 @@ ms.locfileid: "48892861"
 
    ![Bearbeiten der Indexseite][edit-index-page]
 
-1. <span data-ttu-id="11d27-129">Speichern Sie die Datei „index.jsp“.</span><span class="sxs-lookup"><span data-stu-id="11d27-129">Save index.jsp.</span></span>
+1. <span data-ttu-id="90c21-129">Speichern Sie die Datei „index.jsp“.</span><span class="sxs-lookup"><span data-stu-id="90c21-129">Save index.jsp.</span></span>
 
-## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="11d27-130">Bereitstellen der Web-App in Azure</span><span class="sxs-lookup"><span data-stu-id="11d27-130">Deploy your web app to Azure</span></span>
+## <a name="deploy-your-web-app-to-azure"></a><span data-ttu-id="90c21-130">Bereitstellen der Web-App in Azure</span><span class="sxs-lookup"><span data-stu-id="90c21-130">Deploy your web app to Azure</span></span>
 
-1. <span data-ttu-id="11d27-131">Klicken Sie in der Projekt-Explorer-Ansicht von IntelliJ mit der rechten Maustaste auf das Projekt, wählen Sie **Azure** aus, und wählen Sie dann **Run on Web App** (In Web-App ausführen) aus.</span><span class="sxs-lookup"><span data-stu-id="11d27-131">Within IntelliJ's Project Explorer view, right-click your project, choose **Azure**, and then choose **Run on Web App**.</span></span>
+1. <span data-ttu-id="90c21-131">Klicken Sie in der Projekt-Explorer-Ansicht von IntelliJ mit der rechten Maustaste auf das Projekt, wählen Sie **Azure** aus, und wählen Sie dann **Run on Web App** (In Web-App ausführen) aus.</span><span class="sxs-lookup"><span data-stu-id="90c21-131">Within IntelliJ's Project Explorer view, right-click your project, choose **Azure**, and then choose **Run on Web App**.</span></span>
    
    ![Menü „Run on web app“ (In Web-App ausführen)][run-on-web-app-menu]
 
-1. <span data-ttu-id="11d27-133">Im Dialogfeld „Run on Web App“ (In Web-App ausführen) können Sie eine der folgenden Optionen auswählen:</span><span class="sxs-lookup"><span data-stu-id="11d27-133">In the Run on Web App dialog box, you can choose one of the following options:</span></span>
+1. <span data-ttu-id="90c21-133">Im Dialogfeld „Run on Web App“ (In Web-App ausführen) können Sie eine der folgenden Optionen auswählen:</span><span class="sxs-lookup"><span data-stu-id="90c21-133">In the Run on Web App dialog box, you can choose one of the following options:</span></span>
 
-   * <span data-ttu-id="11d27-134">Wählen Sie eine vorhandene Web-App aus (sofern vorhanden), und klicken Sie dann auf **Run** (Ausführen).</span><span class="sxs-lookup"><span data-stu-id="11d27-134">Choose an existing web app (if one exists), and then click **Run**.</span></span>
+   * <span data-ttu-id="90c21-134">Wählen Sie eine vorhandene Web-App aus (sofern vorhanden), und klicken Sie dann auf **Run** (Ausführen).</span><span class="sxs-lookup"><span data-stu-id="90c21-134">Choose an existing web app (if one exists), and then click **Run**.</span></span>
 
       ![Dialogfeld „Run on Web App“ (In Web-App ausführen)][run-on-web-app-dialog]
 
-   * <span data-ttu-id="11d27-136">Klicken Sie auf **Create New Web App** (Neue Web-App erstellen).</span><span class="sxs-lookup"><span data-stu-id="11d27-136">Click **Create New Web App**.</span></span> <span data-ttu-id="11d27-137">Wenn Sie eine neue Web-App erstellen, geben Sie die erforderlichen Informationen für Ihre Web-App an, und klicken Sie dann auf **Run** (Ausführen).</span><span class="sxs-lookup"><span data-stu-id="11d27-137">If you choose to create a new web app, specify the requisite information for your web app, and then click **Run**.</span></span>
+   * <span data-ttu-id="90c21-136">Klicken Sie im WebApp-Dropdownmenü auf **Neue Web-App erstellen**.</span><span class="sxs-lookup"><span data-stu-id="90c21-136">Click **Create New Web App** from WebApp dropdown.</span></span> <span data-ttu-id="90c21-137">Wenn Sie eine neue Web-App erstellen, geben Sie die erforderlichen Informationen für Ihre Web-App an, und klicken Sie nach ihrer Erstellung auf **Run** (Ausführen).</span><span class="sxs-lookup"><span data-stu-id="90c21-137">If you choose to create a new web app, specify the requisite information for your web app, and then click **Run** after web app creation.</span></span>
 
       ![Create new web app (Neue Web-App erstellen)][create-new-web-app-dialog]
 
-1. <span data-ttu-id="11d27-139">Im Toolkit wird eine Statusmeldung angezeigt, sobald Ihre Web-App bereitgestellt wurde. Dies schließt auch die URL Ihrer bereitgestellten Web-App ein.</span><span class="sxs-lookup"><span data-stu-id="11d27-139">The toolkit will display a status message when it has successfully deployed your web app, which will also display the URL of your deployed web app.</span></span>
+1. <span data-ttu-id="90c21-139">Im Toolkit wird eine Statusmeldung angezeigt, sobald Ihre Web-App bereitgestellt wurde. Dies schließt auch die URL Ihrer bereitgestellten Web-App ein.</span><span class="sxs-lookup"><span data-stu-id="90c21-139">The toolkit will display a status message when it has successfully deployed your web app, which will also display the URL of your deployed web app.</span></span>
 
    ![Erfolgreiche Bereitstellung][successfully-deployed]
 
-1. <span data-ttu-id="11d27-141">Sie können über den Link in der Statusmeldung zu Ihrer Web-App navigieren.</span><span class="sxs-lookup"><span data-stu-id="11d27-141">You can browse to your web app using the link provided in the status message.</span></span>
+1. <span data-ttu-id="90c21-141">Sie können über den Link in der Statusmeldung zu Ihrer Web-App navigieren.</span><span class="sxs-lookup"><span data-stu-id="90c21-141">You can browse to your web app using the link provided in the status message.</span></span>
 
    ![Navigieren zur Web-App][browse-web-app]
 
-1. <span data-ttu-id="11d27-143">Nachdem Sie Ihre Web-App veröffentlicht haben, werden die Einstellungen als Standard gespeichert. Sie können Ihre Anwendung in Azure ausführen, indem Sie auf der Symbolleiste auf den grünen Pfeil klicken.</span><span class="sxs-lookup"><span data-stu-id="11d27-143">After you have published your web app, your settings will be saved as the default, and you can run your application on Azure by clicking the green arrow icon on the toolbar.</span></span> <span data-ttu-id="11d27-144">Sie können die Einstellungen ändern, indem Sie auf das Dropdownmenü für Ihre Web-App und dann auf **Konfigurationen bearbeiten** klicken.</span><span class="sxs-lookup"><span data-stu-id="11d27-144">You can modify your settings by clicking the drop-down menu for your web app and click **Edit Configurations**.</span></span>
+1. <span data-ttu-id="90c21-143">Nachdem Sie Ihre Web-App veröffentlicht haben, werden die Einstellungen als Standard gespeichert. Sie können Ihre Anwendung in Azure ausführen, indem Sie auf der Symbolleiste auf den grünen Pfeil klicken.</span><span class="sxs-lookup"><span data-stu-id="90c21-143">After you have published your web app, your settings will be saved as the default, and you can run your application on Azure by clicking the green arrow icon on the toolbar.</span></span> <span data-ttu-id="90c21-144">Sie können die Einstellungen ändern, indem Sie auf das Dropdownmenü für Ihre Web-App und dann auf **Konfigurationen bearbeiten** klicken.</span><span class="sxs-lookup"><span data-stu-id="90c21-144">You can modify your settings by clicking the drop-down menu for your web app and click **Edit Configurations**.</span></span>
 
    ![Bearbeitungsmenü für die Konfiguration][edit-configuration-menu]
 
-1. <span data-ttu-id="11d27-146">Wenn das Dialogfeld für die **Ausführungs-/Debugkonfigurationen** angezeigt wird, können Sie beliebige Standardeinstellungen ändern. Klicken Sie anschließend auf **OK**.</span><span class="sxs-lookup"><span data-stu-id="11d27-146">When the **Run/Debug Configurations** dialog box is displayed, you can modify any of the default settings, and then click **OK**.</span></span>
+1. <span data-ttu-id="90c21-146">Wenn das Dialogfeld für die **Ausführungs-/Debugkonfigurationen** angezeigt wird, können Sie beliebige Standardeinstellungen ändern. Klicken Sie anschließend auf **OK**.</span><span class="sxs-lookup"><span data-stu-id="90c21-146">When the **Run/Debug Configurations** dialog box is displayed, you can modify any of the default settings, and then click **OK**.</span></span>
 
    ![Bearbeitungsdialogfeld für die Konfiguration][edit-configuration-dialog]
 
-## <a name="next-steps"></a><span data-ttu-id="11d27-148">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="11d27-148">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="90c21-148">Nächste Schritte</span><span class="sxs-lookup"><span data-stu-id="90c21-148">Next steps</span></span>
 
 [!INCLUDE [azure-toolkit-for-intellij-additional-resources](../includes/azure-toolkit-for-intellij-additional-resources.md)]
 
-<span data-ttu-id="11d27-149">Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-Apps – Übersicht].</span><span class="sxs-lookup"><span data-stu-id="11d27-149">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
+<span data-ttu-id="90c21-149">Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-Apps – Übersicht].</span><span class="sxs-lookup"><span data-stu-id="90c21-149">For additional information about creating Azure Web Apps, see the [Web Apps Overview].</span></span>
 
 <!-- URL List -->
 
