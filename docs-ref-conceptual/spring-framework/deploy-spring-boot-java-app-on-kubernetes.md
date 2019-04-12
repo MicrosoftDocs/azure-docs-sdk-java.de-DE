@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: 87bbf46fe5b22c4a147d6010d3813334caa774fb
-ms.sourcegitcommit: 1c1412ad5d8960975c3fc7fd3d1948152ef651ef
+ms.openlocfilehash: 42bb030a916cc5aaf1e20242518a0a400b8baa88
+ms.sourcegitcommit: 3b10fe30dcc83e4c2e4c94d5b55e37ddbaa23c7a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57335413"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59071009"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Bereitstellen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Kubernetes Service
 
@@ -103,98 +103,54 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
 
 1. Erstellen Sie eine private Azure Container Registry-Instanz in der Ressourcengruppe. Die Beispiel-App wird in diesem Tutorial in späteren Schritten als Docker-Image per Push in diese Registrierung übertragen. Ersetzen Sie `wingtiptoysregistry` durch einen eindeutigen Namen für die Registrierung.
    ```azurecli
-   az acr create --admin-enabled --resource-group wingtiptoys-kubernetes--location eastus \
+   az acr create --resource-group wingtiptoys-kubernetes --location eastus \
     --name wingtiptoysregistry --sku Basic
    ```
 
-## <a name="push-your-app-to-the-container-registry"></a>Übertragen der App in die Containerregistrierung per Push
+## <a name="push-your-app-to-the-container-registry-via-jib"></a>Pushen der App in die Containerregistrierung über Jib
 
-1. Navigieren Sie zu dem Konfigurationsverzeichnis Ihrer Maven-Installation (Standard: „~/.m2/“ oder „C:\Users\username\.m2“), und öffnen Sie die Datei *settings.xml* mit einem Text-Editor.
-
-1. Rufen Sie das Kennwort für Ihre Containerregistrierung über die Azure-Befehlszeilenschnittstelle ab.
+1. Melden Sie sich über die Azure-Befehlszeilenschnittstelle bei Ihrer Azure Container Registry-Instanz an.
    ```azurecli
-   az acr credential show --name wingtiptoysregistry --query passwords[0]
-   ```
-
-   ```json
-   {
-     "name": "password",
-     "value": "AbCdEfGhIjKlMnOpQrStUvWxYz"
-   }
-   ```
-
-1. Fügen Sie die ID und das Kennwort für Azure Container Registry einer neuen `<server>`-Sammlung in der Datei *Settings.xml* hinzu.
-`id` und `username` bilden den Namen der Registrierung. Verwenden Sie den `password`-Wert des vorherigen Befehls (ohne Anführungszeichen).
-
-   ```xml
-   <servers>
-      <server>
-         <id>wingtiptoysregistry</id>
-         <username>wingtiptoysregistry</username>
-         <password>AbCdEfGhIjKlMnOpQrStUvWxYz</password>
-      </server>
-   </servers>
+   # set the default name for Azure Container Registry, otherwise you will need to specify the name in "az acr login"
+   az configure --defaults acr=wingtiptoysregistry
+   az acr login
    ```
 
 1. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung (z.B.„*C:\SpringBoot\gs-spring-boot-docker\complete*“ oder „*/users/robert/SpringBoot/gs-spring-boot-docker/complete*“), und öffnen Sie die Datei *pom.xml* mit einem Text-Editor.
 
-1. Aktualisieren Sie die `<properties>`-Sammlung in der Datei *pom.xml* mit dem Wert des Anmeldeservers für Ihre Azure Container Registry-Instanz.
+1. Aktualisieren Sie die Sammlung `<properties>` in der Datei *pom.xml* mit dem Registrierungsnamen für Ihre Azure Container Registry-Instanz und der aktuellen Version von [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin).
 
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
+      <jib-maven-plugin.version>1.0.2</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
 
-1. Aktualisieren Sie die `<plugins>`-Sammlung in der Datei *pom.xml* so, dass `<plugin>` die Adresse des Anmeldeservers und den Registrierungsnamen für Ihre Azure Container Registry-Instanz enthält.
+1. Aktualisieren Sie die Sammlung `<plugins>` in der Datei *pom.xml* so, dass `<plugin>` das Element `jib-maven-plugin` enthält.
 
    ```xml
    <plugin>
-      <groupId>com.spotify</groupId>
-      <artifactId>docker-maven-plugin</artifactId>
-      <version>0.4.11</version>
-      <configuration>
-         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         <buildArgs>
-            <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
-         </buildArgs>
-         <baseImage>java</baseImage>
-         <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-         <resources>
-            <resource>
-               <targetPath>/</targetPath>
-               <directory>${project.build.directory}</directory>
-               <include>${project.build.finalName}.jar</include>
-            </resource>
-         </resources>
-         <serverId>wingtiptoysregistry</serverId>
-         <registryUrl>https://wingtiptoysregistry.azurecr.io</registryUrl>
-      </configuration>
+     <artifactId>jib-maven-plugin</artifactId>
+     <groupId>com.google.cloud.tools</groupId>
+     <version>${jib-maven-plugin.version}</version>
+     <configuration>
+        <from>              
+            <image>openjdk:8-jre-alpine</image>
+        </from>
+        <to>                
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+        </to>
+     </configuration>
    </plugin>
    ```
 
-1. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Befehl aus, um den Docker-Container zu erstellen und das Image per Push in die Registrierung zu übertragen:
+1. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Befehl aus, um das Image zu erstellen und per Push in die Registrierung zu übertragen:
 
    ```
-   mvn package dockerfile:build -DpushImage
+   mvn compile jib:build
    ```
-
-> [!NOTE]
->
->  Möglicherweise wird eine Fehlermeldung ähnlich einer der folgenden Meldungen angezeigt, wenn Maven das Image per Push in Azure überträgt:
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: no basic auth credentials`
->
-> * `[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.11:build (default-cli) on project gs-spring-boot-docker: Exception caught: Incomplete Docker registry authorization credentials. Please provide all of username, password, and email or none.`
->
-> Wenn dieser Fehler angezeigt wird, melden Sie sich über die Docker-Befehlszeile bei Azure an.
->
-> `docker login -u wingtiptoysregistry -p "AbCdEfGhIjKlMnOpQrStUvWxYz" wingtiptoysregistry.azurecr.io`
->
-> Übertragen Sie dann den Container per Push:
->
-> `docker push wingtiptoysregistry.azurecr.io/gs-spring-boot-docker`
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Erstellen eines Kubernetes-Clusters in AKS über die Azure-Befehlszeilenschnittstelle
 
@@ -205,8 +161,31 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    ```
    Die Ausführung des Befehls kann eine Weile dauern.
 
-1. Wenn Sie Azure Container Registry (ACR) mit dem Azure Kubernetes Service (AKS) nutzen, ist es erforderlich, einen Authentifizierungsmechanismus einzurichten. Führen Sie die Schritte unter [Authentifizieren per Azure Container Registry über Azure Kubernetes Service] aus, um AKS Zugriff auf ACR zu gewähren.
+1. Wenn Sie Azure Container Registry (ACR) zusammen mit Azure Kubernetes Service (AKS) verwenden, müssen Sie Azure Kubernetes Service Pullzugriff auf Azure Container Registry gewähren. Azure generiert beim Erstellen einer Azure Kubernetes Service-Instanz einen Standarddienstprinzipal. Führen Sie die folgenden Skripts in Bash oder Powershell aus, um AKS Zugriff auf ACR zu gewähren. Ausführlichere Informationen finden Sie unter [Authentifizieren per Azure Container Registry über Azure Kubernetes Service].
 
+```bash
+   # Get the id of the service principal configured for AKS
+   CLIENT_ID=$(az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
+   
+   # Get the ACR registry resource id
+   ACR_ID=$(az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
+   
+   # Create role assignment
+   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+```
+
+  – oder –
+
+```PowerShell
+   # Get the id of the service principal configured for AKS
+   $CLIENT_ID = az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv
+   
+   # Get the ACR registry resource id
+   $ACR_ID = az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv
+   
+   # Create role assignment
+   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
+```
 
 1. Installieren Sie `kubectl` über die Azure-Befehlszeilenschnittstelle. Linux-Benutzer müssen diesem Befehl möglicherweise das Präfix `sudo` voranstellen, da er die Kubernetes-Befehlszeilenschnittstelle in `/usr/local/bin` bereitstellt.
    ```azurecli
@@ -221,6 +200,44 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
 ## <a name="deploy-the-image-to-your-kubernetes-cluster"></a>Bereitstellen des Images in Ihrem Kubernetes-Cluster
 
 In diesem Tutorial wird die App mit `kubectl` bereitgestellt, dann können Sie die Bereitstellung über die Kubernetes-Weboberfläche erkunden.
+
+### <a name="deploy-with-kubectl"></a>Bereitstellen mit kubectl
+
+1. Öffnen Sie eine Eingabeaufforderung.
+
+1. Führen Sie den Container im Kubernetes-Cluster mit dem Befehl `kubectl run` aus. Geben Sie einen Dienstnamen für die App in Kubernetes und den vollständigen Imagenamen an. Beispiel: 
+   ```
+   kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
+   ```
+   In diesem Befehl:
+
+   * Der Containername `gs-spring-boot-docker` wird direkt nach dem Befehl `run` angegeben.
+
+   * Der Parameter `--image` gibt die Kombination aus Anmeldeserver und Imagename als `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest` an.
+
+1. Machen Sie den Kubernetes-Cluster mit dem Befehl `kubectl expose` extern verfügbar. Geben Sie den Dienstnamen, den öffentlichen TCP-Port für den Zugriff auf die App und den internen Zielport, auf dem die App lauscht, an. Beispiel: 
+   ```
+   kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
+   ```
+   In diesem Befehl:
+
+   * Der Containername `gs-spring-boot-docker` wird direkt nach dem Befehl `expose deployment` angegeben.
+
+   * Der Parameter `--type` gibt an, dass der Cluster einen Lastenausgleich verwendet.
+
+   * Der Parameter `--port` gibt den öffentlichen TCP-Port 80 an. Sie greifen über diesen Port auf die App zu.
+
+   * Der Parameter `--target-port` gibt den internen TCP-Port 8080 an. Der Load Balancer leitet über diesen Port Anforderungen an die App weiter.
+
+1. Nachdem die App im Cluster bereitgestellt wurde, fragen Sie die externe IP-Adresse ab, und öffnen Sie sie im Webbrowser:
+
+   ```
+   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=default
+   ```
+
+   ![Navigieren zur Beispiel-App in Azure][SB02]
+
+
 
 ### <a name="deploy-with-the-kubernetes-web-interface"></a>Bereitstellen über die Kubernetes-Weboberfläche
 
@@ -264,44 +281,6 @@ In diesem Tutorial wird die App mit `kubectl` bereitgestellt, dann können Sie d
 
    ![Navigieren zur Beispiel-App in Azure][SB02]
 
-
-### <a name="deploy-with-kubectl"></a>Bereitstellen mit kubectl
-
-1. Öffnen Sie eine Eingabeaufforderung.
-
-1. Führen Sie den Container im Kubernetes-Cluster mit dem Befehl `kubectl run` aus. Geben Sie einen Dienstnamen für die App in Kubernetes und den vollständigen Imagenamen an. Beispiel: 
-   ```
-   kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
-   ```
-   In diesem Befehl:
-
-   * Der Containername `gs-spring-boot-docker` wird direkt nach dem Befehl `run` angegeben.
-
-   * Der Parameter `--image` gibt die Kombination aus Anmeldeserver und Imagename als `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest` an.
-
-1. Machen Sie den Kubernetes-Cluster mit dem Befehl `kubectl expose` extern verfügbar. Geben Sie den Dienstnamen, den öffentlichen TCP-Port für den Zugriff auf die App und den internen Zielport, auf dem die App lauscht, an. Beispiel: 
-   ```
-   kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
-   ```
-   In diesem Befehl:
-
-   * Der Containername `gs-spring-boot-docker` wird direkt nach dem Befehl `expose deployment` angegeben.
-
-   * Der Parameter `--type` gibt an, dass der Cluster einen Lastenausgleich verwendet.
-
-   * Der Parameter `--port` gibt den öffentlichen TCP-Port 80 an. Sie greifen über diesen Port auf die App zu.
-
-   * Der Parameter `--target-port` gibt den internen TCP-Port 8080 an. Der Load Balancer leitet über diesen Port Anforderungen an die App weiter.
-
-1. Nachdem die App im Cluster bereitgestellt wurde, fragen Sie die externe IP-Adresse ab, und öffnen Sie sie im Webbrowser:
-
-   ```
-   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=${namespace}
-   ```
-
-   ![Navigieren zur Beispiel-App in Azure][SB02]
-
-
 ## <a name="next-steps"></a>Nächste Schritte
 
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
@@ -311,10 +290,9 @@ Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu 
 
 ### <a name="additional-resources"></a>Weitere Ressourcen
 
-Weitere Informationen zur Verwendung von Spring Boot in Azure finden Sie in den folgenden Artikeln:
+Weitere Informationen zur Verwendung von Spring Boot in Azure finden Sie im folgenden Artikel:
 
 * [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-web-app-on-azure.md)
-* [Bereitstellen einer Spring Boot-Anwendung unter Linux in Azure Container Service](deploy-spring-boot-java-app-on-linux.md)
 
 Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
 
@@ -338,7 +316,9 @@ Die Kubernetes-Website umfasst mehrere Artikel zur Verwendung von Images in priv
 * [Namespaces]
 * [Pulling an Image from a Private Registry] (Übertragen eines Images aus einer privaten Registrierung per Pull)
 
-Weitere Beispiele zur Verwendung benutzerdefinierter Docker-Images mit Azure finden Sie unter [Verwenden eines benutzerdefinierten Docker-Images für Azure-Web-Apps unter Linux].
+Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Docker-Images mit Azure finden Sie unter [Verwenden eines benutzerdefinierten Docker-Images für Azure-Web-Apps unter Linux].
+
+Weitere Informationen zum iterativen Ausführen und Debuggen von Containern mit Azure Dev Spaces direkt in Azure Kubernetes Service (AKS) finden Sie unter [Erste Schritte in Azure Dev Spaces mit Java].
 
 <!-- URL List -->
 
@@ -369,7 +349,7 @@ Weitere Beispiele zur Verwendung benutzerdefinierter Docker-Images mit Azure fin
 <!-- Newly added -->
 [Authentifizieren per Azure Container Registry über Azure Kubernetes Service]: /azure/container-registry/container-registry-auth-aks/
 [Visual Studio Code-Tutorials für Java]: https://code.visualstudio.com/docs/java/java-kubernetes/
-
+[Erste Schritte in Azure Dev Spaces mit Java]: https://docs.microsoft.com/en-us/azure/dev-spaces/get-started-java
 <!-- IMG List -->
 
 [SB01]: ./media/deploy-spring-boot-java-app-on-kubernetes/SB01.png
