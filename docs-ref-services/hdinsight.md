@@ -1,25 +1,25 @@
 ---
-title: Azure HDInsight Java SDK
-description: Referenz zum Azure HDInsight Java SDK Das HDInsight Java SDK bietet Klassen und Methoden, mit denen Sie Ihre HDInsight-Cluster verwalten können.
+title: Azure HDInsight SDK für Java
+description: Referenz zum Azure HDInsight SDK für Java Das HDInsight SDK für Java bietet Klassen und Methoden, mit denen Sie Ihre HDInsight-Cluster verwalten können.
 author: tylerfox
 ms.author: tyfox
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: reference
 ms.devlang: java
-ms.date: 11/21/2018
-ms.openlocfilehash: 0ae8d78a0618c4dbcc5e734fce311f7c2e5684bd
-ms.sourcegitcommit: a108a82414bd35be896e3c4e7047f5eb7b1518cb
+ms.date: 04/15/2019
+ms.openlocfilehash: fe87c9214e2a620230cf2f1f52261fd66a2b8857
+ms.sourcegitcommit: f33befab25a66a252b4c91c7aeb1b77cb32821bb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58489648"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59705118"
 ---
-# <a name="hdinsight-java-management-sdk-preview"></a>HDInsight Java Management SDK (Vorschauversion)
+# <a name="hdinsight-sdk-for-java"></a>HDInsight SDK für Java
 
 ## <a name="overview"></a>Übersicht
 
-Das HDInsight Java SDK bietet Klassen und Methoden, mit denen Sie Ihre HDInsight-Cluster verwalten können. Es enthält Vorgänge zum Erstellen, Löschen, Aktualisieren, Auflisten, Ändern der Größe, Ausführen von Skriptaktionen, Überwachen, Abrufen der Eigenschaften von HDInsight-Clustern und mehr.
+Das HDInsight SDK für Java bietet Klassen und Methoden, mit denen Sie Ihre HDInsight-Cluster verwalten können. Es enthält Vorgänge zum Erstellen, Löschen, Aktualisieren, Auflisten, Ändern der Größe, Ausführen von Skriptaktionen, Überwachen, Abrufen der Eigenschaften von HDInsight-Clustern und mehr.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -29,7 +29,7 @@ Das HDInsight Java SDK bietet Klassen und Methoden, mit denen Sie Ihre HDInsight
 
 ## <a name="sdk-installation"></a>SDK-Installation
 
-Das HDInsight Java SDK steht über Maven [hier](https://mvnrepository.com/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight) zur Verfügung. Fügen Sie Ihrer Datei „pom.xml“ die folgende Abhängigkeit hinzu:
+Das HDInsight SDK für Java steht über Maven [hier](https://search.maven.org/artifact/com.microsoft.azure.hdinsight.v2018_06_01_preview/azure-mgmt-hdinsight) zur Verfügung. Fügen Sie Ihrer Datei „pom.xml“ die folgende Abhängigkeit hinzu:
 
 ```
 <dependency>
@@ -41,21 +41,21 @@ Das HDInsight Java SDK steht über Maven [hier](https://mvnrepository.com/artifa
 
 Außerdem müssen Sie der Datei „pom.xml“ die folgenden Abhängigkeiten hinzufügen:
 
-* [Azure-Clientauthentifizierungsbibliothek:](https://mvnrepository.com/artifact/com.microsoft.azure/azure-client-authentication/1.6.2)
+* [Azure-Clientauthentifizierungsbibliothek:](https://search.maven.org/artifact/com.microsoft.azure/azure-client-authentication)
   ```
   <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-client-authentication</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.5</version>
   </dependency>
   ```
 
-* [Azure Java-Clientruntime für ARM:](https://mvnrepository.com/artifact/com.microsoft.azure/azure-arm-client-runtime/1.6.2)
+* [Azure Java-Clientruntime für ARM:](https://search.maven.org/artifact/com.microsoft.azure/azure-arm-client-runtime)
   ```
   <dependency>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-arm-client-runtime</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.5</version>
   </dependency>
   ```
 
@@ -153,7 +153,6 @@ public class Main {
                 .withSubscriptionId(SUBSCRIPTION_ID);
 ```
 
-
 ## <a name="cluster-management"></a>Clusterverwaltung
 
 > [!NOTE]
@@ -162,6 +161,10 @@ public class Main {
 ### <a name="create-a-cluster"></a>Erstellen eines Clusters
 
 Sie können einen neuen Cluster erstellen, indem Sie `client.clusters().create()` aufrufen.
+
+#### <a name="samples"></a>Beispiele
+
+Codebeispiele zum Erstellen verschiedener allgemeiner HDInsight-Clustertypen stehen zur Verfügung: [HDInsight-Java-Beispiele](https://github.com/Azure-Samples/hdinsight-java-sdk-samples).
 
 #### <a name="example"></a>Beispiel
 
