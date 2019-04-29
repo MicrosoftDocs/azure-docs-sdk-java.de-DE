@@ -38,7 +38,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-an-azure-sql-satabase"></a>Erstellen einer Azure SQL-Datenbank
 
-### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Erstellen eines Azure SQL-Datenbankservers im Azure-Portal
+### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Erstellen eines Azure SQL-Datenbank-Servers im Azure-Portal
 
 > [!NOTE]
 > 
