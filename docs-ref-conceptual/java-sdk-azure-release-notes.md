@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: reference
 ms.technology: Azure
 ms.date: 3/06/2016
-ms.openlocfilehash: 0aaa83ceb42192441decb5972baae56fed337fb2
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 4681e07993e18344655f91e35148bbe956974e95
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48899080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61592595"
 ---
 # <a name="release-notes"></a>Versionsinformationen 
 
@@ -40,7 +40,7 @@ Einige der Beta-APIs aus vorherigen Releases sind nun allgemein verfügbar. Hier
 Dienst oder Feature | Allgemein verfügbar | Als Vorschauversion verfügbar 
 ---------|---------|---------|-
 Compute  | Virtuelle Computer und VM-Erweiterungen, VM-Skalierungsgruppen, verwaltete Datenträger   | Azure Container Service, Azure Container Registry 
-Speicher   |  Speicherkonten       |    Verschlüsselung     
+Storage   |  Speicherkonten       |    Verschlüsselung     
 SQL-Datenbank  | Datenbanken, Firewalls, Pools für elastische Datenbanken              
 Netzwerk    |  Virtuelle Netzwerke, Netzwerkschnittstellen, IP-Adressen, Routingtabellen, Netzwerksicherheitsgruppen, DNS, Traffic Manager, Anwendungsgateways  |    Lastenausgleichsmodule, Netzwerkpeering, Gateway für virtuelle Netzwerke, Network Watcher 
 Weitere Dienste    |  Ressourcen-Manager, Key Vault, Redis, CDN, Batch       |  Web-Apps, Funktions-Apps, Service Bus, Graph (rollenbasierte Zugriffssteuerung), Cosmos DB, Search  

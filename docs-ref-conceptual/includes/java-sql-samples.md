@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 8d8ca00d6707927c0664908f1e79deddf63d80d7
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61592648"
+---
 |  |  |
 |---------|---------|
 | [Herstellen einer Verbindung und Abfragen von Daten aus Azure SQL-Datenbank mit JDBC][4] | Konfigurieren einer Beispieldatenbank und Ausführen von Befehlen zum Auswählen, Einfügen, Aktualisieren und Löschen |
