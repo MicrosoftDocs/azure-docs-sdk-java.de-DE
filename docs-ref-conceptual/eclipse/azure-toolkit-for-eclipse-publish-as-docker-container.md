@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: be76733bffa36160d6e366c383672a15374a9996
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: 4eb159bef52b384de32ada18937b0b9a47a93afc
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48898920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61590793"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für Eclipse
 
@@ -100,10 +100,10 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
     
      * Wählen Sie auf der Registerkarte **VM-Anmeldeinformationen** eine der folgenden Optionen für die Anmeldung beim virtuellen Computer Ihres Docker-Hosts: 
 
-       * **Benutzername**: Geben Sie den Benutzernamen für die Anmeldungsinformationen bei Ihrem virtuellen Computer an. 
-       * **Kennwort** und **Bestätigen**: Geben Sie das Kennwort für Ihre VM-Anmeldeinformationen ein. 
+       * **Benutzername**: Geben Sie den Benutzernamen für die Anmeldeinformationen Ihres virtuellen Computers an. 
+       * **Kennwort** und **Bestätigen**: Geben Sie das Kennwort für die Anmeldeinformationen Ihres virtuellen Computers an. 
        * **SSH**: Geben Sie die SSH-Einstellungen (Secure Shell) für Ihren Docker-Host ein. Sie können zwischen folgenden Optionen wählen: 
-          * **Keine**: Gibt an, dass Ihr virtueller Computer keine SSH-Verbindungen zulässt. 
+          * **Keine:** Gibt an, dass Ihr virtueller Computer keine SSH-Verbindungen zulässt. 
           * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über SSH automatisch erstellt. 
           * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte SSH-Einstellungen enthält. Das Verzeichnis muss die folgenden beiden Dateien enthalten: 
              * *id_rsa*: Enthält die RSA-Kennung eines Benutzers. 
@@ -115,11 +115,11 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
        * **Docker-Daemon-Port**: Geben Sie den eindeutigen TCP-Port für den Docker-Host an. 
        * **TLS-Sicherheit**: Geben Sie die Transport Layer Security-Einstellungen für Ihren Docker-Host an. Sie können zwischen folgenden Optionen wählen: 
-          * **Keine**: Gibt an, dass Ihr virtueller Computer keine TLS-Verbindungen zulässt. 
+          * **Keine:** Gibt an, dass Ihr virtueller Computer keine TLS-Verbindungen zulässt. 
           * **Automatisch generieren**: Mit dieser Option werden die erforderlichen Einstellungen zum Herstellen einer Verbindung über TLS automatisch erstellt. 
           * **Import from directory** (Aus Verzeichnis importieren): Gibt ein Verzeichnis an, das zuvor gespeicherte TLS-Einstellungen enthält. Genauer gesagt muss das Verzeichnis die folgenden sechs Dateien enthalten: 
              * *ca.pem* und *ca-key.pem*: Enthalten das Zertifikat und den öffentlichen Schlüssel für die TLS-Zertifizierungsstelle. 
-             * *cert.pem* und *key.pem*: Enthalten das Clientzertifikat und einen öffentlichen Schlüssel für die TLS-Authentifizierung. 
+             * *cert.pem* und *key.pem*: Enthalten das Clientzertifikat und den öffentlichen Schlüssel für die TLS-Authentifizierung. 
              * *server.pem* und *server-key.pem*: Enthalten das Serverzertifikat und den öffentlichen Schlüssel für den Host. 
 
          ![Erstellen eines Docker-Hosts][PUB06]

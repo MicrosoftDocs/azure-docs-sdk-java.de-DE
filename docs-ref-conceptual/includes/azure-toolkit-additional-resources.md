@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: ebe035b7275083cf715f4b94be876fe49514e562
+ms.sourcegitcommit: 115f4c8ad07a11f17d79e9d945d63917836b11c8
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61590408"
+---
 Weitere Informationen zu den Azure-Toolkits für Eclipse und IntelliJ-IDEs finden Sie unter den folgenden Links:
 
 * [Azure-Toolkit für Eclipse](../eclipse/azure-toolkit-for-eclipse.md) 
