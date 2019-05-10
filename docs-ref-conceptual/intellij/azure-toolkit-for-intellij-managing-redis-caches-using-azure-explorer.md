@@ -14,12 +14,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 046ae0428d50a7f173f5ad15be53ffd8e66c11c5
-ms.sourcegitcommit: b64017f119177f97da7a5930489874e67b09c0fc
+ms.openlocfilehash: ee5d286f3c5979b3a10e3e3be08a68caa6eef31d
+ms.sourcegitcommit: 420fcd58e3a907d629c9c15fda56ad818d9dfe7c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48892521"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470185"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>Verwalten von Redis Caches mit dem Azure-Explorer für IntelliJ
 
@@ -43,15 +43,15 @@ Mit den folgenden Schritten werden die Schritte zum Erstellen eines Redis Cache 
 
    ![Dialogfeld zum Erstellen eines neuen Redis Cache][CR02]
 
-   a. **DNS-Name**: Gibt die DNS-Unterdomäne für den neuen Redis Cache an. Sie wird „.redis.cache.windows.net“ vorangestellt, z.B.: *wingtiptoys.redis.cache.windows.net*.
+   a. **DNS-Name**: Gibt die DNS-Unterdomäne für den neuen Redis Cache an. Sie wird „.redis.cache.windows.net“ vorangestellt. Beispiel: *wingtiptoys.redis.cache.windows.net*
 
-   b. **Abonnement:** Wählen Sie das Azure-Abonnement aus, das Sie für den neuen Redis Cache verwenden möchten.
+   b. **Abonnement**: Wählen Sie das Azure-Abonnement aus, das Sie für den neuen Redis Cache verwenden möchten.
 
-   c. **Ressourcengruppe**: Gibt die Ressourcengruppe für den neuen Redis Cache an. Sie müssen eine der folgenden Optionen auswählen: 
-      * **Create New**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten. 
-      * **Vorhandene verwenden:** Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten. 
+   c. **Ressourcengruppe**: Gibt die Ressourcengruppe für den Redis Cache an. Sie müssen eine der folgenden Optionen auswählen: 
+      * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten. 
+      * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen. 
 
-   d. **Ort**: Gibt den Ort an, an dem Ihr Redis Cache erstellt wird, z.B. *USA, Westen*.
+   d. **Standort**: Gibt den Ort an, an dem Ihr Redis Cache erstellt wird, z. B. *USA, Westen*.
 
    e. **Tarif**: Gibt an, welcher Tarif für Ihren Redis Cache verwendet wird. Diese Einstellung bestimmt die Anzahl von Clientverbindungen. (Weitere Informationen finden Sie unter [Redis Cache – Preise].)
 
