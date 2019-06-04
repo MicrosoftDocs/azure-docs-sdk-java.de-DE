@@ -13,12 +13,12 @@ ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 7119283bec250a4ab0854ba2c29b0906624448e9
-ms.sourcegitcommit: f0f140b0862ca5338b1b7e5c33cec3e58a70b8fd
+ms.openlocfilehash: 02b6eff059c8b7dff1c7473d0460ca44e76f6f2e
+ms.sourcegitcommit: 04cff6e3c6d3a9c15f7d88d5d3c238f0bdc787fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53992333"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64673957"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Verwenden der Spring Data-JPA mit Azure SQL-Datenbank
 
@@ -36,7 +36,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 * [cURL](https://curl.haxx.se/) oder ein ähnliches HTTP-Hilfsprogramm zum Testen der Funktionalität
 * Einen [Git-Client](https://git-scm.com/downloads)
 
-## <a name="create-an-azure-sql-satabase"></a>Erstellen einer Azure SQL-Datenbank
+## <a name="create-an-azure-sql-database"></a>Erstellen einer Azure-SQL-Datenbank
 
 ### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Erstellen eines Azure SQL-Datenbank-Servers im Azure-Portal
 
