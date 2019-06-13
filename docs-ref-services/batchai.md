@@ -1,6 +1,6 @@
 ---
-title: Azure Batch AI-Bibliotheken für Java
-description: Referenzdokumentation für die Java-Batch AI-Bibliotheken
+title: Azure Batch KI-Bibliotheken für Java
+description: Referenzdokumentation für die Java-Batch KI-Bibliotheken
 author: garyericson
 ms.author: garye
 ms.reviewer: routlaw
@@ -18,10 +18,10 @@ ms.contentlocale: de-DE
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "59745148"
 ---
-# <a name="azure-batch-ai-libraries-for-java"></a>Azure Batch AI-Bibliotheken für Java
+# <a name="azure-batch-ai-libraries-for-java"></a>Azure Batch KI-Bibliotheken für Java
 
 >[!Note]
->**Der Azure Batch AI-Dienst wurde eingestellt.** Die Funktionen von Azure Batch AI sind nun als verwaltetes Computeziel in Azure Machine Learning Service verfügbar. Weitere Informationen finden Sie unter [Was passiert mit Batch AI?](https://aka.ms/batchai-retirement)
+>**Der Azure Batch AI-Dienst wurde eingestellt.** Die Funktionen von Azure Batch KI sind nun als verwaltetes Computeziel in Azure Machine Learning Service verfügbar. Weitere Informationen finden Sie unter [Was passiert mit Batch KI?](https://aka.ms/batchai-retirement).
 
 ## <a name="packages"></a>Pakete
 
