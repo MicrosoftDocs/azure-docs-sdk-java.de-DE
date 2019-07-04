@@ -14,36 +14,39 @@ ms.service: container-registry;app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 1eb0e7d7a718a1c106adebbf89011f6e3fa1504e
-ms.sourcegitcommit: c2019ba6da6c7c28b17b5a85f89e49bb5e570ba4
+ms.openlocfilehash: 4ecfbf92bc30bc491c991e30111cce8375da7f1a
+ms.sourcegitcommit: f8faa4a14c714e148c513fd46f119524f3897abf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040248"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67533591"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Bereitstellen eines Java-basierten MicroProfile-Diensts in Azure-Web-App für Container
 
-MicroProfile eignet sich sehr gut, um besonders kleine Java-Anwendungen zu erstellen, die schnell und einfach in Diensten wie [Azure-Web-App für Container](https://azure.microsoft.com/services/app-service/containers/) bereitgestellt werden können. In diesem Tutorial erstellen wir einen einfachen MicroProfile-basierten Microservice, der dann in einen Docker-Container gepackt, in einer [Azure Container Registry-Instanz](https://azure.microsoft.com/services/container-registry/) bereitgestellt und anschließend mithilfe von Azure-Web-App für Container gehostet wird.
+MicroProfile eignet sich sehr gut, um besonders kleine Java-Anwendungen zu erstellen, die Sie schnell und einfach in Diensten wie [Azure-Web-App für Container](https://azure.microsoft.com/services/app-service/containers/) bereitstellen können. In diesem Tutorial erstellen Sie einen einfachen MicroProfile-basierten Microservice, den Sie dann in einen Docker-Container packen, in einer [Azure Container Registry-Instanz](https://azure.microsoft.com/services/container-registry/) bereitstellen und anschließend über Azure Web-App für Container hosten.
 
 > [!NOTE]
->
-> Dieses Verfahren kann für jede Implementierung von „MicroProfile.io“ verwendet werden, solange das Docker-Containerimage selbstausführbar ist (sprich: die Runtime enthält).
+> Dieses Verfahren kann für jede Implementierung von „MicroProfile.io“ verwendet werden, solange das Docker-Containerimage selbstausführbar ist (d. h., das Image enthält die Runtime).
 
-In diesem Beispiel werden [Payara Micro](https://www.payara.fish/payara_micro) und [MicroProfile 1.3](https://microprofile.io/) verwendet, um eine kleine Java-WAR-Datei (5.085 Bytes auf dem Erstellercomputer) zu erstellen. Diese wird dann in ein Docker-Image (mit einer Größe von etwa 174 MB) verpackt. Dieses Docker-Image enthält alles, was für eine vollständige Containerbereitstellung dieser Web-App benötigt wird.
+In diesem Beispiel verwenden Sie [Payara Micro](https://www.payara.fish/payara_micro) und [MicroProfile 1.3](https://microprofile.io/), um eine kleine (ungefähr 5.000 Byte) Java-WAR-Datei (Web Application Requirement) zu erstellen und diese dann in ein Docker-Image von etwa 174 Megabyte (MB) zu verpacken. Das Docker-Image enthält alles, was für eine vollständige Containerbereitstellung der Web-App benötigt wird.
 
-Aufgrund der Funktionsweise von Docker muss häufig nicht das gesamte 174 MB große Docker-Image erneut bereitgestellt werden, wenn der Quellcode der Anwendung geändert wird, da Docker lediglich die (deutlich kleineren) Unterschiede hochlädt. Der Prozess zum Ausführen einer neuen MicroProfile-Anwendungsversion über eine CI/CD-Pipeline wird so äußerst effizient und schnell. Darüber hinaus wird der Prozess dadurch reibungsloser und ermöglicht eine schnelle Entwicklungsiteration.
+Wenn sich der Quellcode der Anwendung geändert hat, muss nicht das gesamte 174-MB-Docker-Image erneut bereitgestellt werden, weil Docker nur die Unterschiede hochlädt (die deutlich kleiner sind). Daher ist der Prozess zum Ausführen einer neuen MicroProfile-Anwendungsversion über eine CI/CD-Pipeline äußerst effizient und schnell, wodurch die Reibungsverluste verringert werden und eine schnelle Entwicklungsiteration ermöglicht wird.
 
-In diesem Tutorial erstellen wir zunächst den Code und führen ihn lokal aus. Danach führen wir die Bereitstellung als Web-App in Azure durch. In beiden Fällen nutzen wir Docker zur Vereinfachung und Standardisierung. Bevor wir beginnen, erstellen wir eine Azure Container Registry-Instanz, in der wir unsere Docker-Container speichern können.
+Sie arbeiten dieses Tutorial durch, indem Sie zuerst den Code lokal erstellen und ausführen und ihn dann als Web-App in Azure bereitstellen. In beiden Phasen können Sie Docker nutzen, um Ihre Aktivitäten zu vereinfachen und zu standardisieren. Bevor Sie beginnen, erstellen Sie eine Azure Container Registry-Instanz, in der Sie Ihre Docker-Container speichern können.
 
-## <a name="creating-an-azure-container-registry"></a>Erstellen einer Azure Container Registry-Instanz
+## <a name="create-an-azure-container-registry-instance"></a>Erstellen einer Azure Container Registry-Instanz
 
-Wir erstellen die Azure Container Registry-Instanz über das [Azure-Portal](http://portal.azure.com). Für die Erstellung kann aber beispielsweise auch die Azure-Befehlszeilenschnittstelle verwendet werden. Führen Sie die folgenden Schritte aus, um eine neue Azure Container Registry-Instanz zu erstellen:
+Sie können das [Azure-Portal](http://portal.azure.com) verwenden, um die Azure Container Registry-Instanz zu erstellen, es gibt aber auch andere Optionen, etwa die Azure-Befehlszeilenschnittstelle. Um eine neue Azure Container Registry-Instanz zu erstellen, gehen Sie wie folgt vor:
 
-1. Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an, und erstellen Sie eine neue Azure Container Registry-Ressource. Geben Sie einen Registrierungsnamen an. (Hinweis: Dieser Name muss als `docker.registry`-Eigenschaft in `pom.xml` festgelegt werden.) Ändern Sie die Standardeinstellungen nach Belieben, und klicken Sie anschließend auf „Erstellen“.
+1. Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an, und erstellen Sie eine neue Azure Container Registry-Ressource. Geben Sie einen Registrierungsnamen an (dieser Name muss als `docker.registry`-Eigenschaft in der *pom.xml*-Datei festgelegt werden). Ändern Sie die Standardeinstellungen nach Bedarf, und wählen Sie anschließend **Erstellen** aus.
 
-1. Wenn die Containerregistrierung aktiv ist (ungefähr 30 Sekunden nach dem Klicken auf „Erstellen“), klicken Sie auf die Containerregistrierung und anschließend im linken Menübereich auf „Zugriffsschlüssel“. Hier müssen Sie die Einstellung „Administratorbenutzer“ aktivieren, damit von unseren Computern aus auf diese Containerregistrierung zugegriffen werden kann (um Docker-Container per Push hinzuzufügen) und um den Zugriff über die Instanz von Azure-Web-App für Container zu ermöglichen, die wir in Kürze einrichten.
+1. Nach etwa 30 Sekunden, wenn die Container Registry-Instanz aktiv ist, wählen Sie die Container Registry-Instanz aus, und wählen Sie dann im linken Bereich den Link **Zugriffsschlüssel** aus. 
 
-1. Notieren Sie sich die Werte `username` und `password`, während Sie sich im Bereich „Zugriffsschlüssel“ befinden. Diese Werte fügen wir später in unsere globale Maven-Datei `settings.xml` ein. (Weitere Informationen zu Maven-Einstellungen finden Sie in auf der [Website des Apache Maven-Projekts](https://maven.apache.org/settings.html).) Zu Referenzzwecken sehen Sie hier eine verschleierte Version der Datei `${user.home}/.m2/settings.xml` vom Erstellersystem:
+    Aktivieren Sie die Einstellung *Administratorbenutzer*, damit Sie von Ihren Computern Zugriff auf diese Container Registry-Instanz haben und Docker-Container in die Instanz pushen können. Dadurch wird auch Zugriff aus der Azure Web-App für Container-Instanz aktiviert, die Sie bald schnell einrichten werden.
+
+1. Kopieren Sie im Bereich **Zugriffsschlüssel** die Werte von **username** und **password**, und fügen Sie diese Werte in Ihre globale *settings.xml*-Maven-Datei ein. Weitere Informationen zu Maven-Einstellungen finden Sie auf der [Apache Maven Project](https://maven.apache.org/settings.html)-Website. 
+
+   Zu Referenzzwecken ist hier ein Beispiel der *${user.home}/.m2/settings.xml*-Datei aufgeführt:
 
     ```xml
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
@@ -60,16 +63,19 @@ Wir erstellen die Azure Container Registry-Instanz über das [Azure-Portal](http
     </settings>
     ```
 
-Kommen wir nun zum Erstellen und lokalen Ausführen der MicroProfile-Anwendung.
+Nachdem Sie Ihre Container-Registry-Instanz erstellt haben, können Sie nun Ihre MicroProfile-Anwendung lokal erstellen und ausführen.
 
-## <a name="creating-our-microprofile-application"></a>Erstellen der MicroProfile-Anwendung
+## <a name="create-your-microprofile-application"></a>Erstellen Ihrer MicroProfile-Anwendung
 
-Dieses Beispiel basiert auf einer auf GitHub verfügbaren Beispielanwendung, deren Code wir hier klonen und Schritt für Schritt durchgehen. Gehen Sie wie folgt vor, um den Code auf Ihrem Computer zu klonen:
+Dieser Beispielcode basiert auf einer Beispielanwendung, die auf GitHub verfügbar ist. Um den Code auf Ihrem Computer zu klonen, geben Sie die folgenden Befehle ein:
 
-1. `git clone https://github.com/Azure-Samples/microprofile-docker-helloworld.git`
-1. `cd microprofile-docker-helloworld`
+```
+git clone https://github.com/Azure-Samples/microprofile-docker-helloworld.git
 
-In diesem Verzeichnis befindet sich eine Datei namens `pom.xml`, die dazu dient, das Projekt im vom Maven-Erstellungstool verwendeten Format anzugeben. Diese Datei kann bearbeitet und an Ihre Anforderungen angepasst werden. Insbesondere die Eigenschaften `docker.registry` und `docker.name` müssen auf die Werte von `docker.registry` und `docker.name` festgelegt werden, die beim Einrichten der Azure Container Registry-Instanz erstellt wurden.
+cd microprofile-docker-helloworld
+```
+
+Dieses Verzeichnis enthält eine *pom.xml*-Datei, die Sie dazu verwenden können, das Projekt in dem Format anzugeben, das vom Maven-Erstellungstool verwendet wird. Sie können die Datei bearbeiten, damit sie Ihren Anforderungen entspricht. Insbesondere müssen die Eigenschaften `docker.registry` und `docker.name` entsprechend der `docker.registry`- und der `docker.name`-Eigenschaft geändert werden, die erstellt wurden, als Sie die Azure Container Registry-Instanz eingerichtet haben.
 
 Eine andere wichtige Datei in diesem Verzeichnis ist die Dockerfile, die wie folgt aussieht:
 
@@ -82,9 +88,9 @@ COPY target/${WAR_FILE} $DEPLOY_DIR
 EXPOSE 8080
 ```
 
-Diese Dockerfile erstellt einfach einen neuen Docker-Container auf der Grundlage des Payara Micro-Docker-Containers und kopiert die WAR-Datei hinein, die im Rahmen unseres Buildprozesses erstellt wird. Außerdem macht sie den Port 8080 verfügbar, damit wir auf den Dienst zugreifen können, wenn er innerhalb eines Docker-Containers ausgeführt wird.
+Das Dockerfile erstellt einen neuen Docker-Container, der auf dem Payara Micro-Docker-Container basiert. Es kopiert in die WAR-Datei, die als Teil Ihres Buildprozesses erstellt wurde. Es macht den Port 8080 verfügbar, sodass Sie auf den Dienst zugreifen können, nachdem er in einem Docker-Container aktiviert ist und ausgeführt wird.
 
-Im Verzeichnis `src` befindet sich unter anderem auch die Klasse `Application`:
+Wenn Sie das Verzeichnis *src* öffnen, finden Sie schließlich die `Application`-Klasse, die hier reproduziert ist:
 
 ```java
 package com.microsoft.azure.samples.microprofile.docker.helloworld;
@@ -95,9 +101,9 @@ import javax.ws.rs.ApplicationPath;
 public class Application extends javax.ws.rs.core.Application { }
 ```
 
-Die Anmerkung `@ApplicationPath("/api")` gibt den Basisendpunkt für diesen Microservice an. Das bedeutet, dass bei allen Endpunkten dem restlichen Teil der URL, die für den Zugriff auf einen bestimmen REST-Endpunkt benötigt wird, `/api` vorangestellt wird.
+Die *@ApplicationPath("/api")* -Annotation gibt den Basisendpunkt für diesen Microservice an. Das heißt, für alle Endpunkte wird */api* dem Rest der URL vorangestellt, die erforderlich ist, um auf einen bestimmten REST-Endpunkt zuzugreifen.
 
-Das Paket `api` enthält eine Klasse namens `API` mit folgendem Code:
+Das Paket *api* enthält eine Klasse namens `API` mit folgendem Code:
 
 ```java
 package com.microsoft.azure.samples.microprofile.docker.helloworld.api;
@@ -122,41 +128,44 @@ public class API {
 }
 ```
 
-Die Anmerkung `@Path("/helloworld")` macht deutlich, dass dieser REST-Endpunkt in Kombination mit der Angabe von `/api` aus der Klasse `Application` wie folgt lautet: `/api/helloworld`. Wenn dieser Endpunkt mithilfe einer HTTP GET-Anforderung aufgerufen wird, wird durch die Methode Text/HTML (die hartcodierte Zeichenfolge „Hello, world!“) erzeugt.
+Durch Verwenden der *@Path("/helloworld")* -Annotation können Sie sehen, dass dieser REST-Endpunkt, wenn er mit der */api* kombiniert wird, die in der `Application`-Klasse angegeben ist, gleich */api/helloworld* ist. Wenn Sie diesen Endpunkt über eine HTTP GET-Anforderung aufrufen, können Sie sehen, dass durch die Methode Text/HTML erzeugt wird, und dies ist tatsächlich einfach die hartcodierte Zeichenfolge „Hello, world!“.
 
-Damit kennen Sie den gesamten Code, der zum Erstellen eines Microservice mit MicroProfile benötigt wird. Wir können nun Maven verwenden, um ihn zu erstellen, in einen Docker-Container zu packen und lokal auszuführen. Gehen Sie dazu wie folgt vor:
+Bisher ist in diesem Artikel der gesamten Code angegeben, der für die Erstellung eines Microservice mithilfe von MicroProfile erforderlich ist. Sie können nun Maven verwenden, um den Code zu erstellen, ihn in einen Docker-Container zu packen und ihn lokal auszuführen. Gehen Sie dazu wie folgt vor:
 
-1. Führen Sie `mvn clean package` aus, und warten Sie, bis der Vorgang erfolgreich abgeschlossen wurde.
+1. Führen Sie `mvn clean package` aus, und warten Sie, bis der Befehl abgeschlossen ist.
 
-1. Führen Sie `docker run -it --rm -p 8080:8080 <docker.registry>/<docker.name>:latest` aus. (Beispiel: `docker run -it --rm -p 8080:8080 jogilescr.azurecr.io/samples/docker-helloworld:latest`, wenn `docker.registry` auf `jogilescr.azurecr.io` und `docker.name` auf `samples/docker-helloworld` festgelegt ist.)
+1. Führen Sie `docker run -it --rm -p 8080:8080 <docker.registry>/<docker.name>:latest` aus. Zum Beispiel *docker run -it --rm -p 8080:8080 jogilescr.azurecr.io/samples/docker-helloworld:latest*, wobei *\<docker.registry>* gleich *jogilescr.azurecr.io* and *\<docker.name>* gleich *samples/docker-helloworld* ist.
 
 1. Greifen Sie in Ihrem Webbrowser auf [http://localhost:8080/microprofile/api/helloworld](http://localhost:8080/microprofile/api/helloworld) und [http://localhost:8080/health](http://localhost:8080/health) zu. Wenn Sie die erwartete Antwort „Hello, world!“ (und integritätsbezogene Informationen für den Endpunkt [/health](http://localhost:8080/health)) sehen, haben Sie die MicroProfile-Anwendung erfolgreich auf Ihrem lokalen Computer bereitgestellt.
 
-## <a name="pushing-to-the-azure-container-registry"></a>Ausführen von Pushvorgängen an die Azure Container Registry-Instanz
+## <a name="push-the-container-to-the-azure-container-registry-instance"></a>Pushen des Containers in die Azure Container Registry-Instanz
 
-Wir haben nun unsere MicroProfile-Anwendung erstellt und auf unserem lokalen Computer ausgeführt. Als Nächstes pushen wir den Container in unsere Containerregistrierung. In diesem Tutorial verwenden wir Azure Container Registry. Es kann aber auch eine beliebige andere Containerregistrierung verwendet werden (vorausgesetzt, die Datei `pom.xml` wird bearbeitet, um auf den entsprechenden Ort zu verweisen).
+Nachdem Sie Ihre MicroProfile-Anwendung erfolgreich auf Ihrem lokalen Computer erstellt und ausgeführt haben, pushen Sie den Container in Ihre Container Registry-Instanz. 
 
-1. Führen Sie `mvn clean package` aus, um ein lokales Docker-Image zu bereinigen, zu kompilieren und zu erstellen.
-2. Führen Sie für die Übertragung an Azure Container Registry per Push `mvn dockerfile:push` aus.
+> [!NOTE]
+> Obwohl in diesem Artikel eine Azure Container Registry-Instanz verwendet wird, sollte jede Container Registry-Instanz funktionieren, sofern die *pom.xml*-Datei bearbeitet wurde, sodass in ihr auf den entsprechenden Speicherort verwiesen wird.
 
-Sie haben nun Ihr Docker-Containerimage in die Azure Container Registry-Instanz hochgeladen, es wird jedoch noch nicht ausgeführt, da es noch in einer Instanz von Azure-Web-App für Container bereitgestellt werden muss. Diesen Schritt führen wir als Nächstes aus.
+1. Um ein lokales Docker-Image zu bereinigen, zu kompilieren und zu erstellen, führen Sie `mvn clean package` aus.
+2. Um den Container in die Azure Container Registry-Instanz zu pushen, führen Sie `mvn dockerfile:push` aus.
 
-## <a name="creating-an-azure-web-app-for-containers-instance"></a>Erstellen einer Instanz von Azure-Web-App für Container
+Sie haben jetzt Ihr Docker-Containerimage in die Azure Container Registry-Instanz hochgeladen. Das Image wird aber noch nicht ausgeführt. Sie müssen es in einer Azure-Web-App für Container-Instanz bereitstellen. 
 
-1. Kehren Sie zum [Azure-Portal](http://portal.azure.com) zurück, und erstellen Sie eine neue Instanz von Web-App für Container (unter der Überschrift „Web + Mobil“ im Menü). Ein paar Hinweise:
+## <a name="create-an-azure-web-app-for-containers-instance"></a>Erstellen einer Azure-Web-App für Container-Instanz
 
-   1. Der hier angegebene Name ist die öffentliche URL der Web-App (auch wenn später bei Bedarf eine benutzerdefinierte Domäne hinzugefügt werden kann). Es empfiehlt sich daher, einen leicht zu merkenden Namen zu verwenden.
+1. Wählen Sie im [Azure-Portal](http://portal.azure.com) im linken Bereich den Eintrag **Web + Mobil** aus, und gehen Sie dann wie folgt vor:
 
-   1. Im Abschnitt „Container konfigurieren“ können Sie als Imagequelle „Azure Container Registry“ und anschließend das korrekte Image aus den Dropdownlisten auswählen.
+   a. Geben Sie einen Namen an. Der Name wird die öffentliche URL der Web-App, daher ist es eine gute Idee, einen Namen auszuwählen, den Sie sich leicht merken können. Bei Bedarf können Sie später einen benutzerdefinierten Domänennamen hinzufügen.
 
-   1. Im Feld „Startdatei“ muss kein Wert angegeben werden.
+   b. Wählen Sie im Abschnitt **Container konfigurieren** unter **Imagequelle** die Option **Azure Container Registry** aus, und wählen Sie anschließend in der Dropdownliste das richtige Image aus.
 
-1. Warten Sie, bis die Instanz erstellt wurde (was nicht lange dauert), klicken Sie auf die Instanz, und klicken Sie anschließend auf das Menüelement „Anwendungseinstellungen“. Hier müssen Sie eine neue Anwendungseinstellung mit dem Schlüssel `WEBSITES_PORT` und dem Wert `8080` hinzufügen. So teilen Sie Azure mit, welchen Port Sie im Container verfügbar machen möchten, und er wird extern dem Port 80 zugeordnet.
+   c. Sie müssen keinen Wert im Feld **Startdatei** angeben.
 
-1. Klicken Sie optional auf den Link „Docker-Container“, und aktivieren Sie „Continuous Deployment“. Dadurch erfolgt nach jeder Aktualisierung des Azure Container Registry-Images automatisch eine Aktualisierung in der Instanz von Azure-Web-App für Container.
+1. Nachdem Sie die Instanz erstellt haben, wählen Sie diese aus, und wählen Sie dann **Anwendungseinstellungen** aus. Geben Sie für **Schlüssel** die Einstellung **WEBSITES_PORT** und für **Wert** die Einstellung **8080** ein. Diese Einstellungen geben für Azure an, welcher Port im Container verfügbar zu machen ist, und dass er extern Port 80 zugeordnet werden soll.
 
-1. Sie sollten auf die von Azure gehosteten Instanzen unter `http://<appname>.azurewebsites.net/microprofile/api/helloworld` und `http://<appname>.azurewebsites.net/health` zugreifen können.
+1. (Optional) Wählen Sie den Link **Docker-Container** aus, und aktivieren Sie dann die Option **Continuous Deployment**. Dies bewirkt, dass das Image nach jeder Aktualisierung, die Sie an ihm in der Azure Container Registry-Instanz vorgenommen haben, automatisch in der Azure-Web-App für Container-Instanz aktualisiert wird.
+
+1. Sie sollten nun auf die von Azure gehosteten Instanzen unter `http://<appname>.azurewebsites.net/microprofile/api/helloworld` und `http://<appname>.azurewebsites.net/health` zugreifen können.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Tutorial sind wir Schritt für Schritt die Erstellung eines einfachen MicroProfile-basierten Microservice durchgegangen, haben ihn in einen Docker-Container gepackt und ihn lokal ausgeführt und in Azure veröffentlicht. In diesem Tutorial wird nicht auf die Erweiterung des Microservice mit nützlicheren Funktionen eingegangen. Im Internet stehen jedoch zahlreiche MicroProfile-Tutorials und -Tipps zur Verfügung – unter anderem unter [MicroProfile.io](https://microprofile.io/).
+In diesem Tutorial haben Sie Schritt für Schritt die Erstellung eines einfachen MicroProfile-basierten Microservice durchlaufen, haben ihn in einen Docker-Container gepackt, haben ihn lokal ausgeführt und haben ihn in Azure veröffentlicht. Sie können Ihren Microservice erweitern, um weitere nützliche Funktionen bereitzustellen. Weitere Informationen finden Sie auf [MicroProfile.io](https://microprofile.io/).
